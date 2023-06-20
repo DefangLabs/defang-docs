@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Defang Docs',
+  title: 'Defang Docss',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
   favicon: 'img/favicon.ico',
 
