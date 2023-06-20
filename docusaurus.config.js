@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Defang Docss',
+  title: 'Defang Docs',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
   favicon: 'img/favicon.ico',
 
@@ -111,7 +111,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/DefangLabs',
               },
             ],
           },
