@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[3994],{6844:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/defang-docs/blog/tags/docusaurus","allTagsPath":"/defang-docs/blog/tags","count":4}')}}]);
