@@ -9,6 +9,9 @@ on:
 
 jobs:
   deploy:
+    permissions:
+      # This is required to allow the GH actions bot to commit to the `gh-pages` branch
+      contents: write
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
