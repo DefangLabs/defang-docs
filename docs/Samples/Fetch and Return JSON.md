@@ -3,7 +3,8 @@ sidebar_position: 5
 ---
 
 # Fetch and Return JSON
-<br/><br/>
+
+<pre>
 
 [Golang](https://github.com/defang-io/defang/tree/main/samples/golang/Fetch%20and%20Return%20JSON)
 ---
@@ -12,4 +13,4 @@ sidebar_position: 5
 [Python](https://github.com/defang-io/defang/tree/main/samples/python/Fetch%20and%20Return%20JSON)
 ---
 
-
+<pre_>
