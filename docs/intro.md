@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-<span style="color:#056EBC;">## **What is the Defang Opinionated Platform (DOP)?**</span>
+**What is the Defang Opinionated Platform (DOP)?**
 
 The Defang Opinionated Platform (DOP) is a radically simpler way to build and deploy production-ready cloud apps. The DOP is a serverless platform that lets you quickly build your application in the language of your choice and deploy to the cloud with a single command. The DOP CLI includes an AI-assisted co-pilot that translates natural language to a starting point in code for your services that you can then refine. Once you publish your code and the DOP automatically builds your project and deploys it to the cloud, taking care of all the heavy lifting such as configuring the networking, auto-scaling, security, observability and all the other details that usually trip up the average cloud developer. 
 
