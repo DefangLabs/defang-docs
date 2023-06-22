@@ -1,4 +1,4 @@
-# **FAQ**
+# FAQ
 
 1. **Which cloud/region is the app being deployed to?**
 
