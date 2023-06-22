@@ -1,1 +1,5 @@
-*Generating code using AI assistance*
+---
+sidebar_position: 2
+---
+
+**Generating code using AI assistance**
