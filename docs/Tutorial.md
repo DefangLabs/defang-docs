@@ -1,5 +1,3 @@
-## **Tutorial**
-
 ### **Downloading CLI**
 
 ```bash
