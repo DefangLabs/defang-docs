@@ -3,9 +3,9 @@ sidebar_position: 5
 ---
 
 # Fetch and Return JSON
+Invisible&#8203;Text
 
-<!-- This is an invisible line of text -->
-
+---
 [Golang](https://github.com/defang-io/defang/tree/main/samples/golang/Fetch%20and%20Return%20JSON)
 ---
 [Node.js](https://github.com/defang-io/defang/tree/main/samples/nodejs/Fetch%20and%20Return%20JSON)
