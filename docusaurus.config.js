@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Defang Docs',
+  title: 'Defang Docss',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/defangnotext.svg',
 
   // Set the production url of your site here
   url: 'http://docs.defang.io/',
@@ -69,14 +69,14 @@ const config = {
         title: 'Defang Docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -93,7 +93,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro',
               },
             ],
@@ -102,16 +102,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/defang/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Slack',
+                href: 'https://join.slack.com/share/enQtNTQxMTM2ODU2MTAxNS1jYjc0ZDc1NjAyZDQ1NDIxYzFiZDIzMDU4Y2Y0ZWI0OWZiMGM0NGEzMDdlY2YzMzViYjkwZGMzNTcwOTYwYzE2',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/DefangLabs',
+                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
@@ -124,12 +124,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/defang-io',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Defang All Rights Reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
