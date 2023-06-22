@@ -2,5 +2,5 @@
 sidebar_position: 2
 ---
 
-# AWS
+# AWS S3
 
