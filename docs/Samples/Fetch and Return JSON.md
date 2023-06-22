@@ -3,6 +3,7 @@ sidebar_position: 5
 ---
 
 # Fetch and Return JSON
+<br/><br/>
 
 [Golang](https://github.com/defang-io/defang/tree/main/samples/golang/Fetch%20and%20Return%20JSON)
 ---
