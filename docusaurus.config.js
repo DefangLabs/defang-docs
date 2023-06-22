@@ -62,6 +62,12 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    presets: [
+  [
+    '@docusaurus/preset-classic',
+    {
+      docs: {
+        routeBasePath: '/',
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
