@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://docs.defang.io/blog"/>
     <subtitle>Defang Docs Blog</subtitle>
-    <icon>http://docs.defang.io/img/favicon.ico</icon>
+    <icon>http://docs.defang.io/http://www.google.com/s2/favicons?domain=defang.io</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>http://docs.defang.io/blog/welcome</id>
