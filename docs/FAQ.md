@@ -3,26 +3,26 @@ sidebar_position: 4
 ---
 # FAQ
 
-1. **Which cloud/region is the app being deployed to?**
+**Which cloud/region is the app being deployed to?**
 
 - Currently we are deploying to AWS us-west-2.
 
-2. **Can I bring my own AWS or other cloud account?**
+**Can I bring my own AWS or other cloud account?**
 
 - With the current release, which is designed for customers to try out the Defang model with non-production apps, your apps are deployed to Defang’s AWS account. We are working on bring-your-own-account for an upcoming release.
 
-3. **On AWS, can I deploy to services such as EC2, EKS, or Lambda?**
+**On AWS, can I deploy to services such as EC2, EKS, or Lambda?**
 
 - The current release includes support for containers only, deployed to ECS. Future releases shall include support for Lambda, EC2 etc. Using our Pulumi provider, it is possible to combine Defang services with other native AWS resources.
 
-5. **Can I access AWS storage services such as S3 or database services such as RDS ? How?**
+**Can I access AWS storage services such as S3 or database services such as RDS ? How?**
 
 - Yes, you can access any storage service from the underlying cloud platform (AWS) or from a remote database service. To secure access from your Defang services, you should use our published public IPs in your AWS security group or IP allow list.
 
-6. **Do you plan to support other clouds?**
+**Do you plan to support other clouds?**
 
 - While we currently deploy to AWS, the Defang model is designed to be inherently portable. We plan to support other clouds in future releases.
 
-7. **Can I run production apps on DOP?**
+ **Can I run production apps on DOP?**
 
 - The current release of DOP is meant for testing and trial purposes only. Deployment of productions apps is not supported and explicitly disallowed by the [Terms and Conditions](https://defang.io/terms-conditions.html).
