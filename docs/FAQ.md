@@ -19,10 +19,10 @@ sidebar_position: 4
 
 - Yes, you can access any storage service from the underlying cloud platform (AWS) or from a remote database service. To secure access from your Defang services, you should use our published public IPs in your AWS security group or IP allow list.
 
-7. **Do you plan to support other clouds?**
+6. **Do you plan to support other clouds?**
 
 - While we currently deploy to AWS, the Defang model is designed to be inherently portable. We plan to support other clouds in future releases.
 
-6. **Can I run production apps on DOP?**
+7. **Can I run production apps on DOP?**
 
 - The current release of DOP is meant for testing and trial purposes only. Deployment of productions apps is not supported and explicitly disallowed by the [Terms and Conditions](https://defang.io/terms-conditions.html).
