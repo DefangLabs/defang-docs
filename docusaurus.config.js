@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Defang Docs',
+  title: 'Defang Home',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
   favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
 
@@ -63,7 +63,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Defang Docs',
+        title: 'Defang Home',
         logo: {
           alt: 'My Site Logo',
           src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
@@ -80,11 +80,6 @@ const config = {
             href: 'https://github.com/defang-io/defang-docs',
             label: 'GitHub',
             position: 'right',   
-          },
-          {
-             href: 'https://defang.io/',
-             label: 'Back to home',
-             position: 'left',
           },
         ],
       },
