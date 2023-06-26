@@ -12,3 +12,8 @@ sidebar_position: 2
 [Python](https://github.com/defang-io/defang/tree/main/samples/python/AWS%20S3)
 ---
 
+<Tabs className="unique-tabs">
+  <TabItem value="Golang">This is an apple 🍎</TabItem>
+  <TabItem value="Node.js">This is an orange 🍊</TabItem>
+  <TabItem value="Python">This is a banana 🍌</TabItem>
+</Tabs>
