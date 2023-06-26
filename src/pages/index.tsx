@@ -26,16 +26,12 @@ function HomepageHeader() {
   );
 }
 
-export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
+import React, { useEffect } from 'react';
+
+export default function Home() {
+  useEffect(() => {
+    window.location.href = 'https://defang.io/';
+  }, []);
+
+  return null;
 }
