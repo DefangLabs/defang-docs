@@ -23,6 +23,6 @@ sidebar_position: 4
 
 - While we currently deploy to AWS, the Defang model is designed to be inherently portable. We plan to support other clouds in future releases.
 
- **Can I run production apps on DOP?**
+**Can I run production apps on DOP?**
 
 - The current release of DOP is meant for testing and trial purposes only. Deployment of productions apps is not supported and explicitly disallowed by the [Terms and Conditions](https://defang.io/terms-conditions.html).
