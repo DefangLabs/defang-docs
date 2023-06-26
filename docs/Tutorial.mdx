@@ -140,3 +140,39 @@ By default, all the output (stdout and stderr) from your app is routed through t
 
 To upgrade your app (for example, updating the base image of your container) you can run the same update command as before and it will build and deploy the latest version. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
 
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def hello_world():
+print 'Hello, world!'
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello, World");
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
