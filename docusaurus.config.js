@@ -83,8 +83,8 @@ const config = {
           },
           {
              href: 'https://defang.io/',
-             label: 'Defang Website',
-             position: 'right',
+             label: 'Back to home',
+             position: 'left',
           },
         ],
       },
