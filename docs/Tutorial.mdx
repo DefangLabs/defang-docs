@@ -8,6 +8,20 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="Using Docker Compose YML" label="Using Docker Compose YML">
 
+Create a new file  `docker-compose.yml` with the following contents:
+
+```yaml
+services:
+  service1:
+		image: nginx:latest
+```
+
+Build and deploy your app to your environment:
+
+```bash
+defang compose up --tail
+```
+
 </TabItem>
 <TabItem value="py" label="Python">
 
