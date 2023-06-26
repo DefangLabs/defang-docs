@@ -68,65 +68,6 @@ const service1 = new defang.Service("…", {
 });
 ```
 
-<Tabs>
-  <TabItem value="using docker compose YML" label="Using Docker Compose YML" default>
-
-Create a new file  `docker-compose.yml` with the following contents:
-
-```yaml
-services:
-  service1:
-		image: nginx:latest
-```
-
-Build and deploy your app to your environment:
-
-```bash
-defang compose up --tail
-```
-    
-  </TabItem>
-  <TabItem value="Using Defang CLI Imperatively" label="Using Defang CLI Imperatively">
-
-- Using the Defang CLI imperatively with a pre-built container image:
-    
-    ```bash
-    defang up --name service1 --image … --tail
-    ```
-    
-- Using the Defang CLI imperatively, building from local sources:
-    
-    ```bash
-    defang up --name service1 --build . --tail
-    ```
-
-  </TabItem>
-  <TabItem value="Using the Defang TypeScript Pulumi provider" label="Using the Defang TypeScript Pulumi provider">
-	  
-    ```tsx
-const image = new docker.Image("…", {
-	context: ".",
-});
-
-const service1 = new defang.Service("…", {
-	image: image.url,
-});
-```
-
-  </TabItem>
-</Tabs>
-
-
-
-
-
-
-
-
-
-
-
-
 By default, Pulumi will not touch the deployment if nothing has changed. Set `forceNewDeployment: true` to instruct Pulumi to force the re-deployment of the service.
 
 ### **Monitoring your app**
