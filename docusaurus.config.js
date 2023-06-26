@@ -79,7 +79,12 @@ const config = {
           {
             href: 'https://github.com/defang-io/defang-docs',
             label: 'GitHub',
-            position: 'right',
+            position: 'right',   
+          },
+          {
+             href: 'https://defang.io/',
+             label: 'Defang Website',
+             position: 'right',
           },
         ],
       },
@@ -90,7 +95,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Defang Docs',
                 to: '/docs/intro',
               },
             ],
