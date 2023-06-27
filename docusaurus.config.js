@@ -6,12 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Defang Home',
+  title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  head: {
-    favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
-  },
-};
+  favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
     
   // Set the production url of your site here
   url: 'http://docs.defang.io/',
