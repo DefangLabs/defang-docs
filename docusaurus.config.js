@@ -8,8 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Defang Home',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
-
+  head: {
+    favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
+  },
+};
+    
   // Set the production url of your site here
   url: 'http://docs.defang.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
