@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://docs.defang.io/blog</id>
     <title>Defang Home Blog</title>
-    <updated>2023-06-27T05:06:46.000Z</updated>
+    <updated>2023-06-27T05:11:19.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://docs.defang.io/blog"/>
     <subtitle>Defang Home Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Blog Post]]></title>
         <id>http://docs.defang.io/blog/Blog Post</id>
         <link href="http://docs.defang.io/blog/Blog Post"/>
-        <updated>2023-06-27T05:06:46.000Z</updated>
+        <updated>2023-06-27T05:11:19.000Z</updated>
         <summary type="html"><![CDATA[Coming Soon!]]></summary>
         <content type="html"><![CDATA[<p>Coming Soon!</p>]]></content>
     </entry>
