@@ -57,82 +57,82 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'Defang Home',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
-        },
+ themeConfig: {
+  image: 'img/docusaurus-social-card.jpg',
+  navbar: {
+    title: 'Defang Home',
+    logo: {
+      alt: 'My Site Logo',
+      src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
+    },
+    items: [
+      {
+        type: 'docSidebar',
+        sidebarId: 'tutorialSidebar',
+        position: 'left',
+        label: 'Docs',
+      },
+      { to: '/blog', label: 'Blog', position: 'left' },
+      {
+        href: 'https://github.com/defang-io/defang-docs',
+        label: 'GitHub',
+        position: 'right',
+      },
+    ],
+  },
+  footer: {
+    style: 'dark',
+    links: [
+      {
+        title: 'Docs',
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Docs',
+            label: 'Defang Docs',
+            to: '/docs/intro',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+        ],
+      },
+      {
+        title: 'Community',
+        items: [
           {
-            href: 'https://github.com/defang-io/defang-docs',
+            label: 'LinkedIn',
+            href: 'https://www.linkedin.com/company/defang/',
+          },
+          {
+            label: 'Slack',
+            href: 'https://join.slack.com/share/enQtNTQxMTM2ODU2MTAxNS1jYjc0ZDc1NjAyZDQ1NDIxYzFiZDIzMDU4Y2Y0ZWI0OWZiMGM0NGEzMDdlY2YzMzViYjkwZGMzNTcwOTYwYzE2',
+          },
+          {
+            label: 'Twitter',
+            href: 'https://twitter.com/DefangLabs',
+          },
+        ],
+      },
+      {
+        title: 'More',
+        items: [
+          {
+            label: 'Blog',
+            to: '/blog',
+          },
+          {
             label: 'GitHub',
-            position: 'right',   
+            href: 'https://github.com/defang-io',
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Defang Docs',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/defang/',
-              },
-              {
-                label: 'Slack',
-                href: 'https://join.slack.com/share/enQtNTQxMTM2ODU2MTAxNS1jYjc0ZDc1NjAyZDQ1NDIxYzFiZDIzMDU4Y2Y0ZWI0OWZiMGM0NGEzMDdlY2YzMzViYjkwZGMzNTcwOTYwYzE2',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/DefangLabs',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/defang-io',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Defang All Rights Reserved.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
-};
-
-module.exports = config;
+    ],
+    copyright: `Copyright © ${new Date().getFullYear()} Defang All Rights Reserved.`,
+  },
+  prism: {
+    theme: lightCodeTheme,
+    darkTheme: darkCodeTheme,
+  },
+  scripts: [
+    {
+      src: '/redirect.js',
+      async: true,
+    },
+  ],
+},
