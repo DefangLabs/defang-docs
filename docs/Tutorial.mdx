@@ -81,12 +81,14 @@ defang compose up --tail
 </TabItem>
 <TabItem value="Defang TypeScript Pulumi provider" label="Defang TypeScript Pulumi provider">
 
-```java
-class HelloWorld {
-    public static void main(String args[]) {
-      System.out.println("Hello, World");
-  }
-}
+```tsx
+const image = new docker.Image("…", {
+	context: ".",
+});
+
+const service1 = new defang.Service("…", {
+	image: image.url,
+});
 ```
 
 - By default, Pulumi will not touch the deployment if nothing has changed. Set `forceNewDeployment: true` to instruct Pulumi to force the re-deployment of the service.
