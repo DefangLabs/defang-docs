@@ -129,31 +129,17 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    redirects: [
+      {
+        to: '/docs/intro',
+        from: '/docs',
+      },
+    ],
   },
 };
 
-// Check if routes array already exists
-const existingRoutes = config.themeConfig.routes;
-
-if (!existingRoutes) {
-  // If routes array does not exist, add it
-  config.themeConfig.routes = [
-    {
-      path: '/docs',
-      exact: true,
-      to: '/docs/intro',
-    },
-  ];
-} else {
-  // If routes array already exists, append the redirect route to it
-  config.themeConfig.routes.push({
-    path: '/docs',
-    exact: true,
-    to: '/docs/intro',
-  });
-}
-
 module.exports = config;
+
 
 
 
