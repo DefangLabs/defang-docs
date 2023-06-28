@@ -1,1 +1,3 @@
-window.location.href = '/docs/intro';
+<script>
+  window.location.href = '/docs/intro';
+</script>
