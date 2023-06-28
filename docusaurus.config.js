@@ -43,6 +43,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+
         },
         blog: {
           showReadingTime: true,
@@ -128,27 +129,32 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-    scripts: [
-      {
-        src: '/redirect.js',
-        async: true,
-      },
-    ],
   },
 };
 
-// Add the redirect route to config.themeConfig.routes
-if (!config.themeConfig.routes) {
-  config.themeConfig.routes = [];
+// Check if routes array already exists
+const existingRoutes = config.themeConfig.routes;
+
+if (!existingRoutes) {
+  // If routes array does not exist, add it
+  config.themeConfig.routes = [
+    {
+      path: '/docs',
+      exact: true,
+      to: '/docs/intro',
+    },
+  ];
+} else {
+  // If routes array already exists, append the redirect route to it
+  config.themeConfig.routes.push({
+    path: '/docs',
+    exact: true,
+    to: '/docs/intro',
+  });
 }
 
-config.themeConfig.routes.push({
-  path: '/docs',
-  exact: true,
-  component: '@site/static/redirect.html',
-});
-
 module.exports = config;
+
 
 
 
