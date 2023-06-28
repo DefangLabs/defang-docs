@@ -1,11 +1,4 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = {
   title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
   favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
@@ -54,16 +47,6 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
-    ],
-  ],
-
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        from: '/docs',
-        to: '/docs/intro',
-      },
     ],
   ],
 
@@ -147,6 +130,7 @@ const config = {
     ],
   },
 };
+
 
 module.exports = config;
 
