@@ -3,14 +3,14 @@ module.exports = {
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
   favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
     
-  // Set the production url of your site here
+  // Set the production URL of your site here
   url: 'http://docs.defang.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // For GitHub Pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
+  // GitHub Pages deployment config.
+  // If you aren't using GitHub Pages, you don't need these.
   organizationName: 'defang-io', // Usually your GitHub org/user name.
   projectName: 'defang-docs', // Usually your repo name.
   deploymentBranch: 'main',
@@ -19,7 +19,7 @@ module.exports = {
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
+  // Even if you don't use internationalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
@@ -36,7 +36,6 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-
         },
         blog: {
           showReadingTime: true,
@@ -131,7 +130,5 @@ module.exports = {
   },
 };
 
-
-module.exports = config;
 
 
