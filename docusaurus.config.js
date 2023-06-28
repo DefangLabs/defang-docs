@@ -57,6 +57,16 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        from: '/docs',
+        to: '/docs/intro',
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -138,26 +148,6 @@ const config = {
   },
 };
 
-// Check if routes array already exists
-const existingRoutes = config.themeConfig.routes;
-
-if (!existingRoutes) {
-  // If routes array does not exist, add it
-  config.themeConfig.routes = [
-    {
-      path: '/docs/',
-      exact: true,
-      component: '@site/static/redirect.html',
-    },
-  ];
-} else {
-  // If routes array already exists, append the redirect route to it
-  config.themeConfig.routes.push({
-    path: '/docs/',
-    exact: true,
-    component: '@site/static/redirect.html',
-  });
-}
-
 module.exports = config;
+
 
