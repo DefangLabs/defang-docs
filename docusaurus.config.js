@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
   title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
@@ -20,7 +20,6 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'defang-io', // Usually your GitHub org/user name.
   projectName: 'defang-docs', // Usually your repo name.
-  deploymentBranch: 'main',
   trailingSlash: false,
 
   onBrokenLinks: 'ignore',
@@ -36,14 +35,12 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-
         },
         blog: {
           showReadingTime: true,
@@ -53,48 +50,33 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
   themeConfig: {
-  image: 'img/docusaurus-social-card.jpg',
-  navbar: {
-    title: 'Defang Home',
-    logo: {
-      alt: 'My Site Logo',
-      src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
-    },
-    items: [
-      {
-        type: 'docSidebar',
-        sidebarId: 'tutorialSidebar',
-        position: 'left',
-        label: 'Docs',
-        to: '/docs', // Update the "Docs" button to point to /docs
+    image: 'img/docusaurus-social-card.jpg',
+    navbar: {
+      title: 'Defang Home',
+      logo: {
+        alt: 'My Site Logo',
+        src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
       },
-      { to: '/blog', label: 'Blog', position: 'left' },
-      {
-        href: 'https://github.com/defang-io/defang-docs',
-        label: 'GitHub',
-        position: 'right',
-      },
-    ],
-  },
-  footer: {
-    // Existing footer configuration...
-  },
-  prism: {
-    theme: lightCodeTheme,
-    darkTheme: darkCodeTheme,
-  },
-  redirects: [
-    {
-      to: '/docs/intro',
-      from: '/docs(/)?$',
+      items: [
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'Docs',
+        },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          href: 'https://github.com/defang-io/defang-docs',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
-  ],
-},
     footer: {
       style: 'dark',
       links: [
@@ -103,7 +85,7 @@ const config = {
           items: [
             {
               label: 'Defang Docs',
-              to: '/docs',
+              to: '/docs/intro',
             },
           ],
         },
@@ -138,7 +120,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Defang All Rights Reserved.`,
+      // Existing footer configuration...
     },
     prism: {
       theme: lightCodeTheme,
@@ -154,3 +136,4 @@ const config = {
 };
 
 module.exports = config;
+
