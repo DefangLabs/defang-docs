@@ -1,8 +1,8 @@
 ---
 title: Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization
-description: This is my first post on Docusaurus 2.
+description: Defang provides a radically simpler way to build, deploy, and optimize production-ready cloud apps.
 slug: Announcement
-tags: [hello, docusaurus-v2]
+tags: [#Cloud, #GenerativeAI, #NoDevOps]
 hide_table_of_contents: false
 ---
 
@@ -10,11 +10,11 @@ hide_table_of_contents: false
 
 We're thrilled to announce the release of our Private Beta for the Defang Opinionated Platform (DOP). We started Defang because, as practitioners with experience in both building cloud apps and building cloud platforms, we were unhappy with the state of the art. It was, and remains, too difficult to develop, deploy, and optimize cloud applications. In architecting and building a cloud app, developers need to consider a variety of factors such as performance, scalability, cost, security, flexibility, simplicity, etc. At the same time, they face a bewildering array of choices - from app architecture to choice of cloud platforms and services, to configuration and deployment, CI-CD, security setting, etc. - in topics that they are not experts in. Clearly, we need a better way.
 
-We realize that improving on this state of affairs is a long journey. Today, we are taking an initial step with the release of the Private Beta of the DOP. The DOP enables **AI-assisted development**, with the ability to specify a high-level prompt and get back an initial version of your cloud service code, which can then be refined further. The DOP **simplifies CI-CD** by automatically building and deploying new artifacts to your target environments when you push new code to your source repository, taking care of all dependency management and build tasks. And the DOP pre-provisions properly secured and configured staging and production environments for your application, optimized for security, scaling, and cost.
+We realize that improving on this state of affairs is a long journey. Today, we are taking an initial step with the release of the Private Beta of the DOP. The DOP enables **AI-assisted development**, with the ability to specify a high-level prompt and get back an initial version of your cloud service code, which can then be refined further. The DOP **simplifies CI-CD** by automatically building and deploying new artifacts to your target environments when you push new code to your source repository, taking care of all dependency management and build tasks. And the **DOP pre-provisions properly secured and configured staging and production environments** for your application, optimized for security, scaling, and cost.
 
 **Try the Private Beta!**
 
-To try the Private Beta, please go to [defang.io](http://defang.io) and register. We would love to have you kick the tires and give us your feedback! You can also check out our documentation and [samples](https://docs.defang.io/docs/intro) and our [Github repository](https://github.com/defang-io).
+To try the Private Beta, please go to [defang.io](http://defang.io) and register. We would love to have you kick the tires and give us your feedback! You can also check out our [documentation](https://docs.defang.io/docs/intro),[samples](https://docs.defang.io/docs/intro), and our [Github repository](https://github.com/defang-io).
 
 **Stay Tuned for More**
 
