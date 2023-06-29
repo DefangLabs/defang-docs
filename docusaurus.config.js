@@ -58,28 +58,43 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
-    navbar: {
-      title: 'Defang Home',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
-      },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/defang-io/defang-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+  image: 'img/docusaurus-social-card.jpg',
+  navbar: {
+    title: 'Defang Home',
+    logo: {
+      alt: 'My Site Logo',
+      src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
     },
+    items: [
+      {
+        type: 'docSidebar',
+        sidebarId: 'tutorialSidebar',
+        position: 'left',
+        label: 'Docs',
+        to: '/docs', // Update the "Docs" button to point to /docs
+      },
+      { to: '/blog', label: 'Blog', position: 'left' },
+      {
+        href: 'https://github.com/defang-io/defang-docs',
+        label: 'GitHub',
+        position: 'right',
+      },
+    ],
+  },
+  footer: {
+    // Existing footer configuration...
+  },
+  prism: {
+    theme: lightCodeTheme,
+    darkTheme: darkCodeTheme,
+  },
+  redirects: [
+    {
+      to: '/docs/intro',
+      from: '/docs(/)?$',
+    },
+  ],
+},
     footer: {
       style: 'dark',
       links: [
