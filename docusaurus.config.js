@@ -131,6 +131,10 @@ const config = {
         to: '/docs/intro',
         from: '/docs(/)?$',
       },
+      {
+        to: '/docs/intro',
+        from: '/docs',
+      },
     ],
   },
 };
