@@ -132,7 +132,7 @@ const config = {
     redirects: [
       {
         to: '/docs/intro',
-        from: '/docs',
+        from: '/docs(/)?$',
       },
     ],
   },
