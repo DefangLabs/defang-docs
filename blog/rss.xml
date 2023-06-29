@@ -4,7 +4,7 @@
         <title>Defang Blog</title>
         <link>http://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Thu, 29 Jun 2023 07:17:41 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 29 Jun 2023 07:18:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Blog Post]]></title>
             <link>http://docs.defang.io/blog/Blog Post</link>
             <guid>http://docs.defang.io/blog/Blog Post</guid>
-            <pubDate>Thu, 29 Jun 2023 07:17:41 GMT</pubDate>
+            <pubDate>Thu, 29 Jun 2023 07:18:09 GMT</pubDate>
             <description><![CDATA[Coming Soon!]]></description>
             <content:encoded><![CDATA[<p>Coming Soon!</p>]]></content:encoded>
         </item>
