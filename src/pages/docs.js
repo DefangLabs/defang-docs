@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function DocsPage() {
-  // Perform any additional logic or rendering you need for this page
-  // You can add links or buttons to navigate to `https://docs.defang.io/docs`
+  useEffect(() => {
+    // Redirect to the specific documentation page
+    window.location.href = 'https://docs.defang.io/docs/intro';
+  }, []);
+
+  // This component will only be rendered briefly before the redirect happens
   return (
     <div>
       <h1>Documentation</h1>
       <p>
-        Click <a href="https://docs.defang.io/docs">here</a> to access the documentation.
+        Redirecting to the documentation...
       </p>
     </div>
   );
 }
 
 export default DocsPage;
+
