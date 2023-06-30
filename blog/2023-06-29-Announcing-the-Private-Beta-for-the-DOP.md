@@ -1,9 +1,7 @@
 ---
-title: Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization
-description: Defang provides a radically simpler way to build, deploy, and optimize production-ready cloud apps.
 slug: Announcement
-tags: [#Cloud, #GenerativeAI, #NoDevOps]
-hide_table_of_contents: false
+title: Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization
+tags: [Cloud, GenerativeAI, NoDevOps]
 ---
 
 **Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying and Cloud Application Development, Deployment, and Optimization**
@@ -19,4 +17,3 @@ To try the Private Beta, please go to [defang.io](http://defang.io) and register
 **Stay Tuned for More**
 
 While the Private Beta is a start, we have already heard requests for additional features from some of our early adopters and have a lot more in the pipeline! Top of the list is the ability to bring your own cloud accounts (AWS, Azure, GCP). Another frequent request is the ability to access a variety of compute and storage services native to the underlying platform while still maintaining app portability. And we also hear about the need to be able to monitor and optimize an app once deployed. We are already working on all these items and hope to have more to share in the coming months - stay tuned!
-
