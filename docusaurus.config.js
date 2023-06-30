@@ -84,7 +84,7 @@ const config = {
           items: [
             {
               label: 'Defang Docs',
-              to: '/docs/01-Intro',
+              to: '/docs/Intro',
             },
           ],
         },
