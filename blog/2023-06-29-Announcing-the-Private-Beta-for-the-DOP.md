@@ -1,5 +1,5 @@
 ---
-slug: Announcement
+id: announcement
 title: Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization
 tags: [Cloud, GenerativeAI, NoDevOps]
 ---
