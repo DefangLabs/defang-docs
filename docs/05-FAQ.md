@@ -1,6 +1,3 @@
----
-sidebar_position: 4
----
 # FAQ
 
 ### **Which cloud/region is the app being deployed to?**

@@ -71,7 +71,7 @@ const config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/defang-io/defang-docs',
+          href: 'https://github.com/defang-io/defang',
           label: 'GitHub',
           position: 'right',
         },

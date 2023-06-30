@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Overview
 
 ### **What is the Defang Opinionated Platform (DOP)?**

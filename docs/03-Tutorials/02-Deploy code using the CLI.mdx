@@ -1,0 +1,24 @@
+
+# Deploy code using the CLI
+
+This tutorial assumes that the code normally gets built into a container and has a Dockerfile file in the current folder.
+
+# Step 1 - Docker Compose
+If you already have a Docker Compose file for your service(s) you can use it directly. Else you can create one like this:
+
+```yaml
+version: '3.9'
+services:
+  service1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - mode: ingress
+        target: 3000		
+```
+
+# Step 2 - Deploy
+```text
+defang compose up --tail
+```

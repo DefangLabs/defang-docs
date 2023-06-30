@@ -1,0 +1,40 @@
+
+# Generate new code using AI
+
+Defang supports generating new projects using integration with an AI model. Using this feature, you can describe what you would like the service to do and the CLI will then generate a project skeleton with all the files required to make it work.
+
+
+## Step 1 - Create a new folder for the project
+```text
+mkdir service1
+cd service1
+```
+
+## Step 2 - Use the CLI generate command
+
+```text
+defang login
+defang generate
+
+? Choose the language you'd like to use:  [Use arrows to move, type to filter]
+> Nodejs
+  Golang
+  Python
+
+? Please describe the service you'd like to build:
+A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: { "status": "OK" }. The /echo endpoint will echo back all request parameters in the response.
+```
+
+This should generate different files in the current folder, based on the language selected.
+
+
+## Step 3 - Review the Code
+You can open the files in a code editor to review or make changes as needed before deploying the service.
+
+## Step 4 - Deploy
+
+```bash
+defang compose up --tail
+```
+
+

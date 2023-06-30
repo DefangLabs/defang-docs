@@ -1,0 +1,25 @@
+
+# Deploy container using the CLI
+
+This example is useful if you already have a Docker container built manually or through a CI/CD system and have that the resulting image is available in a public or private repository accessible by Defang.
+
+# Step 1 - Docker Compose
+If you already have a Docker Compose file for your service(s) you can use it directly. Else you can create one like this:
+
+```yaml
+version: '3.9'
+services:
+  service1:
+    # This is just an example, replace with the image you want
+    image: "docker.io/nginx:latest"
+    ports:
+      - mode: ingress
+        target: 3000		
+```
+
+# Step 2 - Deploy
+```text
+defang compose up --tail
+```
+    
+
