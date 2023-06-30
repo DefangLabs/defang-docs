@@ -64,8 +64,7 @@ const config = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
+          to: '/docs/Intro',
           position: 'left',
           label: 'Docs',
         },
@@ -85,7 +84,7 @@ const config = {
           items: [
             {
               label: 'Defang Docs',
-              to: '/docs/intro',
+              to: '/docs/01-Intro',
             },
           ],
         },
@@ -128,11 +127,11 @@ const config = {
     },
     redirects: [
       {
-        to: '/docs/intro',
+        to: '/docs/01-Intro',
         from: '/docs(/)?$',
       },
       {
-        to: '/docs/intro',
+        to: '/docs/01-Intro',
         from: '/docs',
       },
     ],
