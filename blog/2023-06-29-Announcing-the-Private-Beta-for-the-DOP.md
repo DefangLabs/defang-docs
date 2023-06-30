@@ -1,6 +1,6 @@
 ---
 id: announcement
-title: Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization
+title: "Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization"
 tags: [Cloud, GenerativeAI, NoDevOps]
 ---
 
@@ -12,7 +12,7 @@ We realize that improving on this state of affairs is a long journey. Today, we 
 
 **Try the Private Beta!**
 
-To try the Private Beta, please go to [defang.io](http://defang.io) and register. We would love to have you kick the tires and give us your feedback! You can also check out our [documentation](https://docs.defang.io/docs/intro),[samples](https://docs.defang.io/docs/intro), and our [Github repository](https://github.com/defang-io).
+To try the Private Beta, please go to [defang.io](http://defang.io) and register. We would love to have you kick the tires and give us your feedback! You can also check out our [documentation](https://docs.defang.io/docs/intro), [samples](https://docs.defang.io/docs/intro), and our [Github repository](https://github.com/defang-io).
 
 **Stay Tuned for More**
 
