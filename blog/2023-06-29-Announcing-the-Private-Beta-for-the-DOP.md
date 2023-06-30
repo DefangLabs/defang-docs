@@ -1,6 +1,6 @@
 ---
 slug: announcement
-title: "Announcing the Private Beta for the Defang Opinionated Platform: Radically Simplifying Cloud Application Development, Deployment, and Optimization"
+title: "Announcing the Private Beta for the Defang Opinionated Platform"
 tags: [Cloud, GenerativeAI, NoDevOps]
 ---
 
