@@ -39,7 +39,7 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/defang-io/defang-docs/edit/master/docs/{{docPath}}',
+          editUrl: 'https://github.com/defang-io/defang-docs/edit/main{{docPath}}',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
