@@ -39,7 +39,12 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/defang-io/defang-docs/edit/main{{docPath}}',
+          editUrl:
+            'https://github.com/defang-io/defang-docs/edit/main/{{docPath}}',
+        },
+        blog: {
+          showReadingTime: true,
+          // Remove the editUrl property for the blog section
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
