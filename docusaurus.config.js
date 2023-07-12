@@ -40,7 +40,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/defang-io/defang-docs/edit/main/docs/{{docPath}}',
+            'https://github.com/defang-io/defang-docs.git',
         },
         blog: {
           showReadingTime: true,
