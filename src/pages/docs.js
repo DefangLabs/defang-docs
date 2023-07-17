@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 function DocsPage() {
   useEffect(() => {
     // Redirect to the specific documentation page
-    window.location.href = 'https://docs.defang.io/docs/intro';
+    window.location.href = 'https://docs.defang.io/docs/Intro';
   }, []);
 
   // This component will only be rendered briefly before the redirect happens
