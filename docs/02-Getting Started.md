@@ -3,7 +3,7 @@
 
 ### **Install the CLI**
 
-Download the CLI appropriate for your system from https://github.com/defang-io/defang/releases/latest
+Download the CLI appropriate for your system from https://github.com/defang-io/defang/releases/latest.
 
 ### **Authenticate with Defang**
 
