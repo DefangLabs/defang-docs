@@ -3,9 +3,7 @@
 
 ### **Install the CLI**
 
-```bash
 Download the CLI appropriate for your system from https://github.com/defang-io/defang/releases/latest
-```
 
 ### **Authenticate with Defang**
 
