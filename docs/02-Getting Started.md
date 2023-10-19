@@ -33,10 +33,10 @@ By default, all the output (stdout and stderr) from your app is routed through t
     
 - From the Defang portal:
     
-    [https://portal.defang.io/](https://portal.defang.io/) 
+    [https://portal.defang.dev/](https://portal.defang.dev/) 
     
 
 ### **Upgrade a Service**
 
-To upgrade your app (for example, updating the base image of your container) you can run the same update command as before and it will build and deploy the latest version. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
+To upgrade your app (for example, updating the base image of your container) you can run the update command and it will build and deploy the latest version with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
 

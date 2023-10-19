@@ -6,7 +6,7 @@ The Defang Opinionated Platform (DOP) is a radically simpler way to build, deplo
 
 ### **Details** 
 
-The DOP provides a unified experience to develop, deploy, run, observe, and optimize your cloud applications. The DOP includes following:
+The DOP provides a unified experience to develop, deploy, run, observe, and optimize your cloud applications. The DOP includes the following:
 
 - Support for various types of applications: Web services and APIs, mobile app backends, ML services, etc.
 - Support for your programming language of choice: Node.js, Python, Golang, etc.
