@@ -1,3 +1,10 @@
+---
+sidebar_position: 100
+title: Overview
+description: Overview of Defang, a radically simpler way to build, deploy, and optimize production-ready cloud apps.
+---
+
+
 # Overview
 
 ### **What is the Defang Opinionated Platform (DOP)?**
