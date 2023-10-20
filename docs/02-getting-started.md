@@ -15,10 +15,10 @@ defang login
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more details:
 
-1. [Generate new code using AI](./03-Tutorials/01-Generate%20new%20code%20using%20AI.mdx)
-2. [Deploy code using the CLI](./03-Tutorials/02-Deploy%20code%20using%20the%20CLI.mdx)
-3. [Deploy container using the CLI](./03-Tutorials/03-Deploy%20container%20using%20the%20CLI.mdx)
-4. [Deploy using Pulumi](./03-Tutorials/04-Deploy%20using%20Pulumi.mdx)
+1. [Generate new code using AI](./03-tutorials/01-generate-new-code-using-ai.mdx)
+2. [Deploy code using the CLI](./03-tutorials/02-deploy-code-using-the-cli.mdx)
+3. [Deploy container using the CLI](./03-tutorials/03-deploy-container-using-the-cli.mdx)
+4. [Deploy using Pulumi](./03-tutorials/04-deploy-using-pulumi.mdx)
 
 
 ### **Monitor a Service**
