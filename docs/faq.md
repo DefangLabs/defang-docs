@@ -1,5 +1,5 @@
 ---
-sidebar_position: 500
+sidebar_position: 600
 title: FAQ
 description: Frequently asked questions about Defang.
 ---

@@ -125,6 +125,7 @@ const config = {
       darkTheme: darkCodeTheme,
     },
   },
+  plugins: [require.resolve('docusaurus-lunr-search')],
 };
 
 module.exports = config;
