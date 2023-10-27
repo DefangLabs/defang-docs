@@ -59,7 +59,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/defang-social-card.jpg',
     navbar: {
       title: 'Defang Home',
       logo: {
