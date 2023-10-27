@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[237],{9754:(e,n,f)=>{f.r(n),f.d(n,{default:()=>t});var s=f(7294);function t(){return(0,s.useEffect)((()=>{window.location.href="https://defang.io/"}),[]),null}}}]);
