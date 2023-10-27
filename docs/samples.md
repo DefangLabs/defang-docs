@@ -1,7 +1,7 @@
 ---
 title: Samples
 description: Sample projects to help you launch services faster with Defang.
-sidebar_position: 400
+sidebar_position: 500
 ---
 
 import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"

@@ -1,0 +1,9 @@
+{
+  "label": "Concepts",
+  "position": 300,
+  "link": {
+    "type": "generated-index",
+    "description": "Some concepts to help explain how the Defang system is organized and tooling that will help you manage your applications."
+  }
+}
+
