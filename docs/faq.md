@@ -1,3 +1,10 @@
+---
+sidebar_position: 500
+title: FAQ
+description: Frequently asked questions about Defang.
+---
+
+
 # FAQ
 
 ### **Which cloud/region is the app being deployed to?**

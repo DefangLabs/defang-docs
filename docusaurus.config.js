@@ -58,7 +58,7 @@ const config = {
     navbar: {
       title: 'Defang Home',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Defang Logo',
         src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
       },
       items: [
@@ -83,7 +83,7 @@ const config = {
           items: [
             {
               label: 'Defang Docs',
-              to: '/docs/Intro',
+              to: '/docs/intro',
             },
           ],
         },
@@ -124,16 +124,6 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-    redirects: [
-      {
-        to: '/docs/01-Intro',
-        from: '/docs(/)?$',
-      },
-      {
-        to: '/docs/01-Intro',
-        from: '/docs',
-      },
-    ],
   },
 };
 
