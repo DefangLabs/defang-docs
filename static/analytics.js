@@ -59,7 +59,6 @@ if (window.location.hostname !== "localhost") {
         analytics._writeKey = "Ho2Ew9Z3tzvH4jaBZU3UsMaXA2lin7wR";
         analytics.SNIPPET_VERSION = "4.16.1";
         analytics.load("Ho2Ew9Z3tzvH4jaBZU3UsMaXA2lin7wR");
-        analytics.page();
       }
   })();
 }

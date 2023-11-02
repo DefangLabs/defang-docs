@@ -13,10 +13,10 @@ const config = {
   ],
   title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  favicon: 'http://www.google.com/s2/favicons?domain=defang.io',
+  favicon: 'https://www.google.com/s2/favicons?domain=defang.io',
 
   // Set the production URL of your site here
-  url: 'http://docs.defang.io/',
+  url: 'https://docs.defang.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -59,7 +59,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/defang-social-card.jpg',
     navbar: {
       title: 'Defang Home',
       logo: {
