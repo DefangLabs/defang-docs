@@ -38,9 +38,14 @@ By default, all the output (stdout and stderr) from your app is routed through t
     defang tail --name service1
     ```
     
-- From the Defang portal:
+- From the Defang Portal:
     
     [https://portal.defang.dev/](https://portal.defang.dev/) 
+
+
+:::info
+Note that the Defang Portal only displays services deployed to Defang Cloud.
+:::
     
 
 ### **Upgrade a Service**

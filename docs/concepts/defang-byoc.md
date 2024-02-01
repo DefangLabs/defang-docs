@@ -1,12 +1,12 @@
 ---
-title: Cloud Providers
+title: Defang BYOC
 description: Defang allows you deploy services, defined as containers, to your own cloud accounts.
 sidebar_position: 000
 ---
 
-# Cloud Providers
+# Defang BYOC
 
-Defang aims to to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC). We also provide a hosted version, but it is only intended for non-production workloads so you can get a feel for how Defang works.
+Defang aims to to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC). We also provide Defang Hosted, but it is only intended for non-production workloads so you can get a feel for how Defang works.
 
 To the extent possible, Defang will use resources that are native to the cloud provider you are using. The following describes the current state of Defang's support for various cloud providers, the specific resources that Defang uses, and the roadmap for future support.
 
