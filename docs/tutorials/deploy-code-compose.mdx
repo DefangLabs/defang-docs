@@ -63,7 +63,7 @@ services:
 
 # Step 4 - Deploy
 
-Now that we have the code and the Docker Compose file, we can deploy the service using the `defang compose up` command. This will bundle the code into a container and deploy it with Defang. If you have [cloud credentials configured](../concepts/cloud-providers.md), the service will be deployed to AWS. If you don't have AWS credentials set up, the service will be deployed to the Defang cloud.
+Now that we have the code and the Docker Compose file, we can deploy the service using the `defang compose up` command. This will bundle the code into a container and deploy it with Defang. If you have [cloud credentials configured](../concepts/defang-byoc), the service will be deployed to AWS. If you don't have AWS credentials set up, the service will be deployed to [Defang Hosted](../concepts/defang-hosted).
 
 ```sh
 defang compose up
