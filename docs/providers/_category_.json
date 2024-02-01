@@ -1,0 +1,8 @@
+{
+  "label": "Providers",
+  "position": 350,
+  "link": {
+    "type": "generated-index",
+    "description": "Defang allows you to use your own cloud accounts to deploy your applications. Click on a link below to read documentation about specific providers."
+  }
+}
