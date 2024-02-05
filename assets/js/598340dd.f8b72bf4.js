@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[304],{895:s=>{s.exports=JSON.parse('{"label":"NoDevOps","permalink":"/blog/tags/no-dev-ops","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
