@@ -10,9 +10,9 @@ You might be familiar with the [docker-compose.yml](https://docs.docker.com/comp
 
 ## How it works
 
-When you bootstrap a project with the `defang generate` command, it will generate a `docker-compose.yml` file in the root of your project. This file is used to define your application's services and how they run. You can edit this file to add more services or change the configuration of existing services.
+You can define your [services](./services.md) using a `docker-compose.yml` file in the root of your project, or use the [`defang generate` command](../tutorials/generate-new-code-using-ai.mdx) to generate one (along with other resources). This file is used to define your application's services and how they run. You can edit this file to add more services or change the configuration of existing services.
 
-When you run `defang up`, Defang will read your `docker-compose.yml` file and deploy the services named in that file to the cloud.
+When you run `defang up`, Defang will read your `docker-compose.yml` file and [deploy](./deployments.md) the services named in that file to the cloud.
 
 ## Service Name Resolution
 
@@ -20,7 +20,7 @@ One thing to keep in mind is that, at the time of this writing, Defang identifie
 
 ## Configuration
 
-If you have a service that depends on a secret like an api key, you can set that secret using the CLI:
+If you have a service that depends on a secret like an api key, you can set that [secret](./secrets.md) using the CLI:
 
 ```
 defang secret set --name MY_API_KEY
@@ -34,3 +34,7 @@ services:
     secrets:
       - MY_API_KEY
 ```
+
+:::info Configuration & Secrets
+Read more about configuration in the [configuration page](./configuration.md) and about secrets in the [secrets page](./secrets.md).
+:::

@@ -6,7 +6,7 @@ sidebar_position: 700
 
 # Portal
 
-You can log into the Defang portal at [portal.defang.dev](https://portal.defang.dev) to view the state of your Defang services running on the hosted Defang platform for non-production applications.
+You can log into the Defang portal at [portal.defang.dev](https://portal.defang.dev) using your [Defang account](./accounts.md) to view the state of your Defang services running in the Defang Playground for non-production applications.
 
 You can use the portal to get an overview of your services, view the logs for each service, quickly access exposed ports, view environment variables, and more.
 

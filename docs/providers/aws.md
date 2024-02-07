@@ -28,9 +28,9 @@ The Defang CLI does not depend on the AWS CLI. It uses the [AWS SDK for Go](http
 
 Defang uses resources that are native to the cloud provider you are using. The following describes the current state of Defang's support for AWS, the specific resources that Defang uses, and the roadmap for future support.
 
-### Configuration
+### Secrets
 
-Defang allows you to configure your services with secrets. Secrets are stored in AWS Systems Manager Parameter Store, and are encrypted using AWS Key Management Service (KMS). The Defang CLI automatically creates a KMS key and a Parameter Store hierarchy for your services.
+Defang allows you to configure your services with secrets. Secrets are stored in AWS Systems Manager Parameter Store, and are encrypted.
 
 ### Deployment
 
