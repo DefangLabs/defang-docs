@@ -51,7 +51,7 @@ By default, all the output (stdout and stderr) from your app is logged. You can 
 
 :::info
 * To learn more about observability in Defang, check out the [observability page](../concepts/observability.md).
-* Note that the Defang Portal only displays services deployed to Defang Hosted.
+* Note that the Defang Portal only displays services deployed to Defang Playground.
 :::
     
 

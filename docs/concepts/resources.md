@@ -15,8 +15,8 @@ You can configure the resources available to your Defang services as required. Y
 ```yaml
 services:
   gpu-service:
-    scale: 3
     deploy:
+      replicas: 3
       resources:
         reservations:
           cpus: '1.0'
@@ -41,4 +41,8 @@ const service = new defang.DefangService("gpu-service", {
   }
 });
 ```
+
+:::info GPUs
+If you require access to GPUs, you can specify this in the `deploy.resources.reservations.devices[0].capabilities` section of your service as in the examples above. You can learn more about this in the [docker-compose documentation](https://docs.docker.com/compose/gpu-support/). This is the only supported value in the `deploy.resources.reservations.devices` section.
+:::
 

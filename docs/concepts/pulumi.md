@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 # Pulumi
 
 :::warning
-Pulumi support is currently only available for Defang Hosted. We are working on support for Defang BYOC.
+Pulumi support is currently only available for Defang Playground. We are working on support for Defang BYOC.
 :::
 
 You can use Pulumi to define your Defang services. This allows you to integrate your Defang services with other cloud resources.
@@ -19,29 +19,29 @@ For example, you might define an Aiven PostgreSQL database in your Pulumi code a
 
 It also allows you to manage configuration for different environments using Pulumi's config system.
 
-## Provider
+## Defang Pulumi Provider
 
-To get started with Pulumi and Defang you will need to install the Defang provider:
+To get started with Pulumi and Defang you will need to install the Defang provider in [your Pulumi project](https://www.pulumi.com/learn/pulumi-fundamentals/create-a-pulumi-project/):
 
 <Tabs>
   <TabItem value="npm" label="npm" default>
 
 ```bash
-npm i @pulumi/pulumi
+npm i @defang-io/pulumi-defang
 ```
 
   </TabItem>
   <TabItem value="pnpm" label="pnpm">
 
 ```bash
-pnpm i @pulumi/pulumi
+pnpm i @defang-io/pulumi-defang
 ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
 ```bash
-yarn add @pulumi/pulumi
+yarn add @defang-io/pulumi-defang
 ```
 
   </TabItem>
