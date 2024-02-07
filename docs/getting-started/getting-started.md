@@ -20,19 +20,23 @@ To do pretty much anything with Defang, you'll need to authenticate with the pla
 defang login
 ```
 
+:::info
+To learn more about how authentication works in defang, check out the [authenticating page](./authenticating.md).
+:::
+
 ### Build and Deploy a Service
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more detail:
 
-1. [Generate new code using AI](../tutorials/generate-new-code-using-ai.mdx)
-2. [Deploy an existing container using a docker-compose file](../tutorials/deploy-container-using-the-cli.mdx)
-3. [Deploy your code using a docker-compose file](../tutorials/deploy-code-compose.mdx)
+1. [Create an outline using AI](../tutorials/generate-new-code-using-ai.mdx)
+2. [Build and deploy your code](../tutorials/deploy-code-compose.mdx)
+3. [Deploy an existing container](../tutorials/deploy-container-using-the-cli.mdx)
 4. [Deploy using Pulumi](../tutorials/deploy-using-pulumi.mdx)
 
 
 ### Monitor a Service
 
-By default, all the output (stdout and stderr) from your app is routed through the Defang log cluster. You can view these logs in real-time. You can view logs for all your services, one service, or even one specific deployment of a service.
+By default, all the output (stdout and stderr) from your app is logged. You can view these logs in real-time. You can view logs for all your services, one service, or even one specific deployment of a service.
 
 - From the CLI:
     
@@ -46,7 +50,8 @@ By default, all the output (stdout and stderr) from your app is routed through t
 
 
 :::info
-Note that the Defang Portal only displays services deployed to Defang Hosted.
+* To learn more about observability in Defang, check out the [observability page](../concepts/observability.md).
+* Note that the Defang Portal only displays services deployed to Defang Hosted.
 :::
     
 

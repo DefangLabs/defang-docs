@@ -18,3 +18,7 @@ The `defang tail` command will tail the logs for all your services by default. Y
 defang tail --name my-service
 defang tail --etag ua119053ehi2
 ```
+
+## Architecture
+
+In [BYOC](./defang-byoc.md), output is logged to the native logging tools within your cloud provider. The CLI then tails the output as needed.
