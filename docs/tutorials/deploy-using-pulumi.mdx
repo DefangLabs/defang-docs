@@ -125,6 +125,20 @@ You can monitor the deployment by running the following command:
 defang tail --name minio
 ```
 
-## Loging In
+## Logging Into Minio
 
-The [Defang Playground](../concepts/defang-playground.md) will give you a 
+The [Defang Playground](../concepts/defang-playground.md) will give you a domain, which you can obtain by running the following command:
+
+```bash
+defang ls | grep 'minio.*9001'
+```
+
+If you navigate to the domain in your browser, you will be prompted to log in. Use the username `minio` and the password `minio123`.
+
+## Clean Up
+
+To clean up the deployment, run the following command:
+
+```bash
+pulumi destroy --stack=dev
+```
