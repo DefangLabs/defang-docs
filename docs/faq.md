@@ -29,4 +29,4 @@ description: Frequently asked questions about Defang.
 
 ### **Can I run production apps on DOP?**
 
-- The current release of DOP is meant for testing and trial purposes only. Deployment of productions apps is not supported and explicitly disallowed by the [Terms and Conditions](https://defang.io/terms-conditions.html).
+- The current release of DOP is meant for testing and trial purposes only. Deployment of productions apps is not supported and explicitly disallowed by the [Terms of Service](https://defang.io/terms-service.html).
