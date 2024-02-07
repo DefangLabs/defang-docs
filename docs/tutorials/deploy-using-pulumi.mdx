@@ -3,13 +3,128 @@ title: Build and deploy using Pulumi
 sidebar_position: 400
 ---
 
-
 # Deploy using Pulumi
 
-TODO: Write this section
+## Installing Dependencies
 
-```
-...
+Make sure to install the [Pulumi CLI](https://www.pulumi.com/docs/install/) and the [Defang CLI](../getting-started/installing.md).
+
+Make sure you are logged into the [Defang CLI](../getting-started/authenticating.md). Don't worry about the Pulumi CLI for now.
+
+## Project Directory Setup
+
+Create a new directory for your project and navigate to it.
+
+```bash
+mkdir project && cd project
 ```
 
-- By default, Pulumi will not touch the deployment if nothing has changed. Set `forceNewDeployment: true` to instruct Pulumi to force the re-deployment of the service.
+If you're familiar with Pulumi and/or are already logged in with the Pulumi CLI, you can skip the next step.
+
+If you are new to pulumi and/or don't have an account, you can "login" to the filesystem by running the following command:
+
+```bash
+pulumi login file://./
+```
+
+This will make the Pulumi CLI store the state of your infrastructure in the current directory.
+
+## Initialize the Project
+
+Run the following command to set your encryption passphrase for this terminal session:
+
+```bash
+export PULUMI_CONFIG_PASSPHRASE="super-secure-passphrase"
+```
+
+Now let's initialize the Pulumi project:
+
+```bash
+pulumi new typescript -y --force
+```
+
+This will create a new Pulumi project in the current directory and will create a Pulumi stack called `dev` by default. We use the `--force` flag because the directory isn't empty (we created a folder when we logged in with the Pulumi CLI).
+
+Run the following command to add to the `.gitignore` file:
+
+```bash
+echo ".pulumi" >> .gitignore
+```
+
+## Install the Defang Provider
+
+Run the following command to install the Defang provider:
+
+```bash
+npm install @defang-io/pulumi-defang
+```
+
+## Write the Pulumi Code
+
+Your `index.ts` file should look like this:
+
+```typescript
+import * as defang from '@defang-io/pulumi-defang/lib';
+
+export const service = new defang.DefangService('minio', {
+    name: 'minio',
+    image: 'quay.io/minio/minio',
+    // starts the server with the console address set to :9001
+    command: ['server', '--console-address', ':9001', '/data'],
+    // Set the root username
+    environment: {
+        MINIO_ROOT_USER: 'minio',
+    },
+    secrets: [
+        // Set the root password as a secret which will be encrypted at rest
+        {
+            source: 'MINIO_ROOT_PASSWORD',
+            value: 'minio123',
+        },
+    ],
+    // Run a healthcheck every 30 seconds
+    healthcheck: {
+        test: ['CMD', 'curl', 'http://localhost:9000/minio/health/live'],
+        interval: 30,
+        timeout: 5,
+        retries: 3,
+    },
+    // Expose the server on port 9000 and the console on port 9001
+    ports: [
+        {
+            target: 9000,
+            protocol: 'http',
+            mode: 'ingress',
+        },
+        {
+            target: 9001,
+            protocol: 'http',
+            mode: 'ingress',
+        },
+    ],
+});
+```
+
+## Deploy to Defang
+
+:::warning
+At the time of writing, the Defang Pulumi Provider only works with [Defang Playground](../concepts/defang-playground.md). We are working on [BYOC](../concepts/defang-byoc.md) support.
+:::
+
+Run the following command to deploy your service:
+
+```bash
+pulumi up --stack=dev
+```
+
+## Monitor the Deployment
+
+You can monitor the deployment by running the following command:
+
+```bash
+defang tail --name minio
+```
+
+## Loging In
+
+The [Defang Playground](../concepts/defang-playground.md) will give you a 
