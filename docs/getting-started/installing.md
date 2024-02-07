@@ -1,10 +1,12 @@
 ---
 sidebar_position: 100
-title: Installing the CLI
-description: How to install the Defang CLI.
+title: Installing
+description: How to install Defang.
 ---
 
-# Installing the Defang CLI
+# Installing
+
+Defang doesn't require installing anything in your cloud, but you will need to install the Defang command line interface (CLI) to interact with your Defang resources and account.
 
 We offer a few different ways to install the Defang CLI. You can use Homebrew, a bash script, or download the binary directly.
 

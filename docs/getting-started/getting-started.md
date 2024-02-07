@@ -8,11 +8,11 @@ description: Get started with Defang.
 # Getting Started
 
 
-### **Install the CLI**
+### Install the CLI
 
 First, you'll need to install the Defang CLI. The CLI is the primary way to interact with Defang. It allows you to create, deploy, and manage your services. You can find the [different installation methods here](./getting-started/installing-the-cli).
 
-### **Authenticate with Defang**
+### Authenticate with Defang
 
 To do pretty much anything with Defang, you'll need to authenticate with the platform. You can do this by running the following command:
 
@@ -24,17 +24,17 @@ defang login
 To learn more about how authentication works in defang, check out the [authenticating page](./authenticating.md).
 :::
 
-### Build and Deploy a Service
+### Build and Deploy Services
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more detail:
 
 1. [Create an outline using AI](../tutorials/generate-new-code-using-ai.mdx)
 2. [Build and deploy your code](../tutorials/deploy-code-compose.mdx)
-3. [Deploy an existing container](../tutorials/deploy-container-using-the-cli.mdx)
+3. [Deploy existing containers](../tutorials/deploy-container-using-the-cli.mdx)
 4. [Deploy using Pulumi](../tutorials/deploy-using-pulumi.mdx)
 
 
-### Monitor a Service
+### Monitor Services
 
 By default, all the output (stdout and stderr) from your app is logged. You can view these logs in real-time. You can view logs for all your services, one service, or even one specific deployment of a service.
 
@@ -55,7 +55,11 @@ By default, all the output (stdout and stderr) from your app is logged. You can 
 :::
     
 
-### Upgrade a Service
+### Update Services
 
-To upgrade your app (for example, updating the base image of your container) you can run the `defang compose up` command and it will build and deploy the latest version with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
+To update your app (for example, updating the base image of your container, or making changes to your code) you can run the `defang compose up` command and it will build and deploy a new version with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
+
+:::info
+If you are using [compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
+:::
 
