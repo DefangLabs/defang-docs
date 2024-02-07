@@ -10,7 +10,7 @@ description: Get started with Defang.
 
 ### Install the CLI
 
-First, you'll need to install the Defang CLI. The CLI is the primary way to interact with Defang. It allows you to create, deploy, and manage your services. You can find the [different installation methods here](./getting-started/installing-the-cli).
+First, you'll need to install the Defang CLI. The CLI is the primary way to interact with Defang. It allows you to create, deploy, and manage your services. You can find the [different installation methods here](./installing.md).
 
 ### Authenticate with Defang
 
