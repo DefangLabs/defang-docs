@@ -45,9 +45,9 @@ COPY . .
 ENTRYPOINT [ "node", "main.js" ]
 ```
 
-# Step 3 - Create docker-compose.yml
+# Step 3 - Create compose.yaml
 
-Let's create a Docker Compose file to deploy the node.js service. We'll call the service minimal and expose port 3000. Create a file called `docker-compose.yml` with the following content:
+Let's create a Compose file to deploy the node.js service. We'll call the service minimal and expose port 3000. Create a file called `compose.yaml` with the following content:
 
 ```yaml
 version: '3.9'
