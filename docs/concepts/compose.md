@@ -28,7 +28,7 @@ defang secret set --name MY_API_KEY
 
 and then connect it to the service by specifying it in the `compose.yaml`:
 
-```
+```yaml
 services:
   my-service:
     secrets:
