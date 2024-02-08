@@ -11,3 +11,7 @@ When you deploy using Defang, whether it's with `defang compose up` with a [comp
 :::info
 In [Defang BYOC](./defang-byoc.md), Defang will use your cloud provider account to build and store your images. In [Defang Playground](./defang-playground.md) we will build and store your images for you.
 :::
+
+:::warning
+Workloads with GPUs do not support zero downtime deployments. If you have a workload with a GPU, you will experience downtime during updates.
+:::
