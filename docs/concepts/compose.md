@@ -33,6 +33,10 @@ services:
   my-service:
     secrets:
       - MY_API_KEY
+
+secrets:
+  MY_API_KEY:
+    external: true
 ```
 
 :::info Configuration & Secrets
