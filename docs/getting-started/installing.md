@@ -6,7 +6,7 @@ description: How to install Defang.
 
 # Installing
 
-Defang doesn't require installing anything in your cloud, but you will need to install the Defang command line interface (CLI) to interact with your Defang resources and account.
+Defang doesn't require installing anything in your cloud, but you will need to install the [open source](https://github.com/defang-io/defang) Defang command line interface (CLI) to interact with your Defang resources and account.
 
 We offer a few different ways to install the Defang CLI. You can use Homebrew, a bash script, or download the binary directly.
 

@@ -1,7 +1,7 @@
 ---
 title: Secrets
 description: Secrets are a way to securely store sensitive information such as API keys, passwords, and other credentials.
-sidebar_position: 300
+sidebar_position: 250
 ---
 
 # Secrets

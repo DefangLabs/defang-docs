@@ -1,0 +1,71 @@
+---
+title: Networking    
+description: Defang helps you safely configure your services' networking.
+sidebar_position: 300
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Networking
+
+Defang configures Security Groups, deploys applications to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required.
+
+To make your service accessible from the public internet, you can expose ports in your service definition. In a [`compose.yaml`](./compose.md) file, you can use the `ports` section of your service definition. In a [Pulumi program](./pulumi.md), you can use the `ports` property of your service definition.
+
+
+<Tabs>
+  <TabItem value="compose" label="Compose" default>
+```yaml
+services:
+    # [...]
+    serviceName:
+        ports:
+        - mode: ingress
+          target: 3000	
+          protocol: http
+```
+  </TabItem>
+  <TabItem value="pulumi" label="Pulumi">
+```typescript
+const service = new defang.DefangService("serviceName", {
+    // [...]
+    ports: [{
+        target: 3000,
+        mode: "ingress",
+        protocol: "http",
+    }],
+});
+```
+  </TabItem>
+</Tabs>
+
+## Internal Communication
+
+Internal communication between services is done using a combination of the username and service name. For example, if you are logged in as `developer1` have services called `service1` and `service2` and `service1` has port `3000` exposed, you can communicate with `service1` from `service2`  using `http://developer1-service1`.
+
+
+<Tabs>
+  <TabItem value="compose" label="Compose" default>
+```yaml
+services:
+    # [...]
+    service1:
+        ports:
+        - mode: host
+          target: 3000	
+          protocol: http
+```
+  </TabItem>
+  <TabItem value="pulumi" label="Pulumi">
+```typescript
+const service = new defang.DefangService("service1", {
+    // [...]
+    ports: [{
+        target: 3000,
+        mode: "host",
+        protocol: "http",
+    }],
+});
+```
+  </TabItem>
+</Tabs>

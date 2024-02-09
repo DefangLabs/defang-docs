@@ -1,7 +1,7 @@
 ---
 title: Security    
 description: Defang configures your cloud applications and services with security best practices.
-sidebar_position: 600
+sidebar_position: 275
 ---
 
 # Security
