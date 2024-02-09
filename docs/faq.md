@@ -30,3 +30,69 @@ description: Frequently asked questions about Defang.
 ### Can I run production apps with Defang?
 
 - The [Defang Playground](./concepts/defang-playground.md) is meant for testing and trial purposes only. Deployment of productions apps with [Defang BYOC](./concepts/defang-byoc.md) is not yet supported and disallowed by the [Terms of Service](https://defang.io/terms-service.html). If you are interested in running production apps, please [contact us](https://defang.io/#Contact-us).
+
+## Warnings
+
+### "The folder is not empty. Files may be overwritten."
+- This message is displayed when you run `defang generate` and the target folder is not empty. If you proceed, Defang will overwrite any existing files with the same name. If you want to keep the existing files, you should move them to a different folder before running `defang generate` or pick a different target folder.
+
+### "environment variable not found"
+- This message is displayed when you run `defang compose up` and the Compose file references an environment variable that is not set. If you proceed, the environment variable will be empty in the container. If you want to set the environment variable, you should set it in the environment where you run `defang compose up`.
+
+### "Unsupported platform"
+- This message is displayed when you run `defang compose up` and the Compose file references a platform that is not supported by Defang. Defang Beta only supports Linux operating systems.
+
+### "not logged in"
+- This message is displayed when you run `defang compose config` but you are not logged in. The displayed configuration will be incomplete. If you want to see the complete configuration, you should log in first using `defang login`.
+
+### "No port mode was specified; assuming 'host'"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `port` that does not specify a port `mode`. By default, Defang will keep the port private. If you want to expose the port to the public internet, you should specify the `mode` as `ingress`:
+```
+services:
+  service1:
+    ports:
+      - target: 80
+        mode: ingress
+```
+
+### "Published ports are not supported in ingress mode; assuming 'host'"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `port` with `mode` set to `ingress` and `published` set to a port number. Defang does not support published ports in ingress mode. If you want to expose the port to the public internet, you should specify the `mode` as `ingress` and remove the `published` setting.
+
+### "TCP ingress is not supported; assuming HTTP"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `port` with `mode` set to `ingress` and `protocol` set to `tcp`. Defang does not support arbitrary TCP ingress and will assume the port is used for HTTP traffic. To silence the warning, remove the `protocol` setting.
+
+### "unsupported compose directive"
+- This message is displayed when you run `defang compose up` and the Compose file declares a directive that is not supported by Defang. The deployment will continue, but the unsupported directive will be ignored, which may cause unexpected behavior.
+
+### "no reservations specified; using limits as reservations"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `resource` with `limits` but no `reservations`. Defang will use the `limits` as `reservations` to ensure the container has enough resources. Specify `reservations` if you want to silence the warning or reserve a different amount of resources:
+```
+services:
+  service1:
+    deploy:
+      resources:
+        reservations:
+          cpus: 0.5
+          memory: 512MB
+```
+
+### "ingress port without healthcheck defaults to GET / HTTP/1.1"
+- This message is displayed when you run `defang compose up` and the Compose file declares an `ingress` with a `port` but no `healthcheck`. Defang will assume the default healthcheck of `GET / HTTP/1.1` to ensure the port is healthy. Specify a `healthcheck` if you want to silence the warning or use a different healthcheck:
+```
+services:
+  service1:
+    deploy:
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+```
+
+### "missing memory reservation; specify deploy.resources.reservations.memory to avoid out-of-memory errors"
+- This message is displayed when you run `defang compose up` and the Compose file doesn't specify a `memory` reservation. If available, Defang will use the `memory` limit as the `memory` reservation. Specify a `memory` reservation if you want to silence the warning or reserve a different amount of memory:
+```
+services:
+  service1:
+    deploy:
+      resources:
+        reservations:
+          memory: 512MB
+```
