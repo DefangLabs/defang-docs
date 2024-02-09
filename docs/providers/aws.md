@@ -42,4 +42,4 @@ To deploy your services, the Defang CLI packages your code and uploads it to an 
 
 ### Runtime
 
-The provider runs your workloads using ECS using Fargate. It provisions a VPC with public and private subnets, and deploys your services to the private subnets. It then provisions an Application Load Balancer (ALB) and CloudFront to route traffic to your services.
+The provider runs your workloads using ECS using Fargate. It provisions a VPC with public and private subnets, and deploys your services to the private subnets. It then provisions an Application Load Balancer (ALB) and routes traffic to your services.
