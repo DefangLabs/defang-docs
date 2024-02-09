@@ -10,6 +10,10 @@ Defang aims to make it easier to deploy your services to the cloud. Specifically
 
 Defang Playground is a free tier that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
 
+:::warning
+Please note that the Defang Playground is intended for testing/learning purposes only. The environment may be reset at any time. Do not run production workloads in Defang Playground.
+:::
+
 ## Limitations
 
 There are a few limitations to Defang Playground. These limitations are in place to ensure that Defang Playground is only used for non-production workloads. If you are interested in running production workloads, you should use Defang BYOC.

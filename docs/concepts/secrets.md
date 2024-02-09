@@ -8,7 +8,7 @@ sidebar_position: 300
 
 The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials.
 
-You can use secrets by specifying them in the `secrets` section of a service in a `docker-compose.yml` file, or by specifying a secret in your Pulumi code.
+You can use secrets by specifying them in the `secrets` section of a service in a `compose.yaml` file, or by specifying a secret in your Pulumi code.
 
 ## Connecting Services
 
