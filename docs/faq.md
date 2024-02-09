@@ -104,3 +104,12 @@ services:
         reservations:
           memory: 512MB
 ```
+
+### "The build context contains more than 10 files"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `build` with a `context` that contains more than 10 files. Ensure the context refers to the correct folder. Defang will use the `context` as is, but you may experience slow build times. If you want to speed up the build, you should reduce the number of files in the `context`.
+
+### "AWS provider was selected, but AWS environment variables are not set"
+- This message is displayed when you run `defang compose up` with the `--provider=aws` but none of the AWS environment variables were not set. If you proceed, the deployment might fail.
+
+### "Using Defang provider, but AWS environment variables were detected"
+- This message is displayed when you run `defang compose up` with the `--provider=defang` but AWS environment variables were detected. The AWS environment variables will be ignored.
