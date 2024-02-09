@@ -15,6 +15,8 @@ Defang configures Security Groups, deploys applications to a private subnet and 
 To make your service accessible from the public internet, you can expose ports in your service definition. In a [`compose.yaml`](./compose.md) file, you can use the `ports` section of your service definition. In a [Pulumi program](./pulumi.md), you can use the `ports` property of your service definition.
 
 
+### Sample Configuration
+
 <Tabs>
   <TabItem value="compose" label="Compose" default>
 ```yaml
@@ -41,10 +43,32 @@ const service = new defang.DefangService("serviceName", {
   </TabItem>
 </Tabs>
 
+### Domains
+
+Currently, Defang provides a Defang-hosted domain for your service when you deploy it. This domain is based on your username and service name. We do not currently support custom domains, though we are working on it.
+
+<Tabs>
+  <TabItem value="playground" label="Playground" default>
+If you have a publicly accessible service, you will automatically receive a domain to access it. If you're deploying to the [Defang Playground](./defang-playground.md), your domain will be:
+
+```
+https://<username>-<service-name>--<port>.defang.dev
+```
+  </TabItem>
+  <TabItem value="byoc" label="BYOC">
+If you're using [Defang BYOC](./defang-byoc.md), your domain will be:
+
+```
+https://<service-name>--<port>.username.defang.app
+```
+  </TabItem>
+</Tabs>
+
 ## Internal Communication
 
-Internal communication between services is done using a combination of the username and service name. For example, if you are logged in as `developer1` have services called `service1` and `service2` and `service1` has port `3000` exposed, you can communicate with `service1` from `service2`  using `http://developer1-service1`.
+You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition, but set the `mode` to `host` instead of `ingress` to allow other services to communicate with it through the internal network.
 
+### Sample Configuration
 
 <Tabs>
   <TabItem value="compose" label="Compose" default>
@@ -68,6 +92,27 @@ const service = new defang.DefangService("service1", {
         protocol: "http",
     }],
 });
+```
+  </TabItem>
+</Tabs>
+
+### Internal Domains
+
+Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
+
+<Tabs>
+  <TabItem value="playground" label="Playground" default>
+Internal communication between services in the Defang Playground follows the following pattern:
+
+```
+http://<username>-<service-name>:<port>
+```
+  </TabItem>
+  <TabItem value="byoc" label="BYOC">
+Internal communication between services in Defang BYOC follows the following pattern:
+  
+```
+http://<service-name>:<port>
 ```
   </TabItem>
 </Tabs>

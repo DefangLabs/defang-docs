@@ -30,3 +30,11 @@ description: Frequently asked questions about Defang.
 ### Can I run production apps with Defang?
 
 - The [Defang Playground](./concepts/defang-playground.md) is meant for testing and trial purposes only. Deployment of productions apps with [Defang BYOC](./concepts/defang-byoc.md) is not yet supported and disallowed by the [Terms of Service](https://defang.io/terms-service.html). If you are interested in running production apps, please [contact us](https://defang.io/#Contact-us).
+
+### I'm having trouble running the binary on my Mac. What should I do?
+
+- MacOS users will need to allow the binary to run due to security settings:
+    1. Attempt to run the binary. You'll see a security prompt preventing you from running it.
+    2. Go to System Preferences > Privacy & Security > General.
+    3. In the 'Allow applications downloaded from:' section, you should see a message about Defang being blocked. Click 'Open Anyway'.
+    4. Alternatively, select the option "App Store and identified developers" to allow all applications from the App Store and identified developers to run.
