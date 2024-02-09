@@ -1,12 +1,12 @@
 ---
 title: Compose
 description: Defang allows you to use the compose.yaml specification to deploy your application to the cloud.
-sidebar_position: 400
+sidebar_position: 150
 ---
 
 # Compose
 
-You might be familiar with [docker-compose.yml](https://docs.docker.com/compose/compose-file/) files, now known as the Compose specification and `compose.yaml` files. It's a simple way to define and run multi-container Docker applications. Defang allows you to use `compose.yaml` files to deploy your application to the cloud.
+You might be familiar with `docker-compose.yml` files, now known as the [Compose specification](https://docs.docker.com/compose/compose-file/) and `compose.yaml` files. It's a simple way to define and run multi-container Docker applications. Defang allows you to use `compose.yaml` files to deploy your application to the cloud.
 
 ## How it works
 
