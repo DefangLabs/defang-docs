@@ -6,6 +6,7 @@ sidebar_position: 100
 
 # AI
 
+
 Defang includes an AI-driven assistant that translates natural language prompts to an outline for your project that you can then refine. The AI assistant is available through the [Defang CLI](./getting-started/installing.md).
 
 :::info
@@ -20,4 +21,20 @@ Here are some example prompts that the AI assistant can help you with:
 
 ```
 A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: { "status": "OK" }. The /echo endpoint will echo back all request parameters in the response.
+```
+
+```
+A simple service that runs in the cloud and serves a web page
+```
+
+```
+A simple flask app with one route that responds with a json object
+```
+
+```
+A simple next.js app that serves a static page
+```
+
+```
+A simple api with a single route built on express
 ```
