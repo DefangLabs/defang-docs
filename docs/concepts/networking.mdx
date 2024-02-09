@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 Defang configures Security Groups, deploys applications to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required.
 
+## Public Communication
+
 To make your service accessible from the public internet, you can expose ports in your service definition. In a [`compose.yaml`](./compose.md) file, you can use the `ports` section of your service definition. In a [Pulumi program](./pulumi.md), you can use the `ports` property of your service definition.
 
 
