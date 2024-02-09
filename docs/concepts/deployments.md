@@ -19,3 +19,11 @@ In [Defang BYOC](./defang-byoc.md), Defang will use your cloud provider account 
 :::warning
 Workloads with GPUs do not support zero downtime deployments. If you have a workload with a GPU, you will experience downtime during updates.
 :::
+
+## Instance Types
+
+Defang defaults to "spot" instances. This is a cost-effective way to run your workloads, but it does mean that your workloads can be interrupted at any time. This is consistent with the [12 Factor](https://12factor.net/) principle of [disposability](https://12factor.net/disposability). 
+
+:::info
+In the future, we may provide a way to use "on-demand" instances for workloads that require more stability.
+:::
