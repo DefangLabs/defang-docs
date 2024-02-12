@@ -4,10 +4,31 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Thu, 29 Jun 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Feb 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Announcing the Defang Public Beta]]></title>
+            <link>https://docs.defang.io/blog/announcing-defang-public-beta</link>
+            <guid>https://docs.defang.io/blog/announcing-defang-public-beta</guid>
+            <pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Announcing the Defang Public Beta]]></description>
+            <content:encoded><![CDATA[<p><strong>Announcing the Defang Public Beta</strong></p>
+<p><strong>A radically simpler way for developers to create, deploy, and manage cloud applications.</strong></p>
+<p>Ever since we shipped our Private Beta in 2023, we have been working with early adopters and listening to their feedback. While these early customers loved the ease with which they could create, deploy, and manage a cloud application, they had one big request - to deploy their applications to their own cloud (e.g. AWS) account. This was important to them for a number of reasons - to leverage their cloud credits, to enforce their IAM roles and security settings, to integrate new application components with their existing deployments, and more.</p>
+<p>And so, today with our Public Beta, we are addressing this request. With today’s release of <a href="https://docs.defang.io/docs/concepts/defang-byoc" target="_blank" rel="noopener noreferrer">Defang BYOC</a> (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang <strong>and</strong> deploy applications to your own AWS account!! Our Private Beta experience is still available as <a href="https://docs.defang.io/docs/concepts/defang-playground" target="_blank" rel="noopener noreferrer">Defang Playground</a> for you to quickly and easily prototype applications and deploy them to our hosted environment.</p>
+<p>You can learn more about Defang <a href="https://docs.defang.io/docs/intro" target="_blank" rel="noopener noreferrer">here</a>. Also check out our <a href="https://docs.defang.io/docs/category/tutorials" target="_blank" rel="noopener noreferrer">tutorials</a>, <a href="https://docs.defang.io/docs/samples" target="_blank" rel="noopener noreferrer">samples</a>, and <a href="https://docs.defang.io/docs/faq" target="_blank" rel="noopener noreferrer">FAQ</a> to know more</p>
+<p><strong>Try the Public Beta!</strong></p>
+<p>To try the Public Beta, please go to <a href="http://defang.io/" target="_blank" rel="noopener noreferrer">defang.io</a> and click on <a href="https://github.com/defang-io/defang/releases/latest" target="_blank" rel="noopener noreferrer">Download</a> to download the CLI and <a href="https://docs.defang.io/docs/getting-started" target="_blank" rel="noopener noreferrer">get started</a>. We would love to have you kick the tires and give us your feedback!</p>
+<p><strong>Stay Tuned for More</strong></p>
+<p>While the Public Beta is an important step forward, we have already heard requests for additional features - from support for additional cloud platforms such as Azure and GCP, to the ability to easily write cloud-agnostic applications while leveraging the best of each cloud platform. We are already working on these items and shall have more to share in the coming months - stay tuned!</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>GenerativeAI</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>AWS</category>
+        </item>
         <item>
             <title><![CDATA[Announcing the Private Beta for the Defang Opinionated Platform]]></title>
             <link>https://docs.defang.io/blog/announcement</link>

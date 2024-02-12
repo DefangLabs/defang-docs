@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[2304],{9624:s=>{s.exports=JSON.parse('{"label":"AWS","permalink":"/blog/tags/aws","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
