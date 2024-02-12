@@ -113,3 +113,8 @@ services:
 
 ### "Using Defang provider, but AWS environment variables were detected"
 - This message is displayed when you run `defang compose up` with the `--provider=defang` but AWS environment variables were detected. The AWS environment variables will be ignored.
+
+## Errors
+
+### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
+- This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
