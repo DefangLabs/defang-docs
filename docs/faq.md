@@ -38,7 +38,7 @@ description: Frequently asked questions about Defang.
     2. Go to System Preferences > Privacy & Security > General.
     3. In the 'Allow applications downloaded from:' section, you should see a message about Defang being blocked. Click 'Open Anyway'.
     4. Alternatively, select the option "App Store and identified developers" to allow all applications from the App Store and identified developers to run.
-    
+
 ## Warnings
 
 ### "The folder is not empty. Files may be overwritten."
@@ -58,6 +58,7 @@ description: Frequently asked questions about Defang.
 ```
 services:
   service1:
+    …
     ports:
       - target: 80
         mode: ingress
@@ -77,6 +78,7 @@ services:
 ```
 services:
   service1:
+    …
     deploy:
       resources:
         reservations:
@@ -89,6 +91,7 @@ services:
 ```
 services:
   service1:
+    …
     deploy:
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:80/health"]
@@ -99,6 +102,7 @@ services:
 ```
 services:
   service1:
+    …
     deploy:
       resources:
         reservations:
@@ -113,6 +117,28 @@ services:
 
 ### "Using Defang provider, but AWS environment variables were detected"
 - This message is displayed when you run `defang compose up` with the `--provider=defang` but AWS environment variables were detected. The AWS environment variables will be ignored.
+
+### "secret … is not defined in the top-level secrets section"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not defined in the top-level `secrets` section. To silence the warning, define the secret in the top-level `secrets` section:
+```
+services:
+  service1:
+    …
+    secrets:
+      - my_secret
+secrets:
+  my_secret:
+    external: true
+```
+
+### "unsupported secret …: not marked external:true"
+- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not marked `external:true`. Defang only supports external secrets, managed by the `defang secret` command. To silence the warning, mark the secret as `external:true` in the top-level `secrets` section:
+```
+…
+secrets:
+  my_secret:
+    external: true
+```
 
 ## Errors
 
