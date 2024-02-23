@@ -64,7 +64,7 @@ const config = {
       title: 'Defang Home',
       logo: {
         alt: 'Defang Logo',
-        src: 'https://defang.io/images/DEFANG-1_4x-no-text-256.svg',
+        src: '/img/defang-logo.svg',
       },
       items: [
         {
