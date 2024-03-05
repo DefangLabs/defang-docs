@@ -24,11 +24,19 @@ defang login
 To learn more about how authentication works in defang, check out the [authenticating page](./authenticating.md).
 :::
 
+### Agree to the terms of service
+
+Before you can deploy code you should read and agree to our the terms of service. You can do this by running:
+
+```bash
+defang terms
+```
+
 ### Build and Deploy Services
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more detail:
 
-1. [Create an outline using AI](../tutorials/generate-new-code-using-ai.mdx)
+1. [Deploy an outline using AI](../tutorials/generate-new-code-using-ai.mdx)
 2. [Build and deploy your code](../tutorials/deploy-code-compose.mdx)
 3. [Deploy existing containers](../tutorials/deploy-container-using-the-cli.mdx)
 4. [Deploy using Pulumi](../tutorials/deploy-using-pulumi.mdx)
