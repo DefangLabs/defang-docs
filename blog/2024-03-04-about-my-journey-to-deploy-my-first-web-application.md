@@ -3,10 +3,10 @@ slug: about-my-journey-to-deploy-my-first-web-application
 title: About my Journey to Deploy my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
-<div align="center" style="color: #808080;">
+<span align="center" style="color: gray;">
     <em>About the author: Hongchen Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
-</div>
-
+</span>
+<br>
 
 
 As a student at University of British Columbia, new to the area of web development, I needed to develop and deploy a web application as a course project. It was already a huge challenge to complete the coding part. I could not believe that an even bigger challenge awaited. Picking the right platform and services is tough to start with. Do you know that AWS offers 200 different services? Lucky for me my professors’ instructed us to use ECS. Otherwise, I would have been totally lost.
@@ -20,10 +20,10 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
     <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="330px">
 </div>
 
-<div align="center" style="color: #808080;">
+<span align="center" style="color: gray">
     It could be confusing if you are new to this area
-</div>
-
+</span>
+<br>
 
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
 
@@ -31,10 +31,10 @@ I ran into so many problems with configuring services. Sometimes it is caused by
     <img src="./images/error-AWS.png" alt="error-AWS" width="330px" height="200px">
 </div>
 
-<div align="center" style="color: #808080;">
+<div align="center" style="color: gray">
     I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced
 </div>
-
+<br>
 
 Then I found Defang (www.defang.io), and it was like someone flipped a switch. Suddenly, all that complicated stuff became way easier. All I needed to do is to install Defang, build a compose.yaml file to describe my application, and run a single command - defang compose up. And Defang even has a Gen-AI assistant to help you write the code and compose file for your application. Defang automatically does all the heavy-lifting behind the scenes - configuring all the necessary services in a secure and optimal way, and automatically building and deploying my application components. No more late nights trying to figure out AWS docs or stressing about getting everything right. Deploying my Django Restaurant Homepage went from being my biggest worry to one of the smoothest parts of my project.
 
@@ -43,10 +43,10 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
     <img src="./images/defang-compose-up.png" alt="defang-compose-up">
 </div>
 
-<div align="center" style="color: #808080;">
+<div align="center" style="color: gray">
     with just a single command in the CLI
 </div>
-
+<br>
 
 With Defang, I could chill a bit and actually enjoy working on my project, focusing on the cool parts without getting bogged down by all the technical stuff. It made cloud deployment feel doable and fun, even for someone like me who was pretty much a beginner. Give it a try yourself - go to www.defang.io to get started.
 
@@ -55,10 +55,10 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
     <img src="./images/sample-result.png" alt="sample-result" width="330px" height="330px">
 </div>
 
-<div align="center" style="color: #808080;">
+<div align="center" style="color: gray">
    It is deployed to the internet!
 </div>
-
+<br>
 
 Try it yourself!
 Github link:[link to sample case](https://github.com/HongchenY/Sample-Restaurant-Homepage)
