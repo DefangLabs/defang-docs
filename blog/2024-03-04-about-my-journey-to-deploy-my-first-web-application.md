@@ -10,14 +10,24 @@ Starting my project, honestly, it felt like I was hitting a brick wall. Diving i
 
 It was overwhelming when all these unfamiliar concepts came at me at once. I searched them up on the internet and went straight to a top-rated YouTube tutorial. I spent an hour and a half going through the whole video series.Those tutorials, as helpful as they were, couldn't fully prepare me for the hands-on challenges of real-life implementation. It's one thing to follow along with a guide when everything goes right; it's another to adapt when things don't quite match up to the tutorial’s scenarios.
 
+
 <div align="center">
     <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="330px">
 </div>
 
+<div align="center" style="color: gray">
+    It could be confusing if you are new to this area
+</div>
+
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
+
 
 <div align="center">
     <img src="./images/error-AWS.png" alt="error-AWS" width="330px" height="200px">
+</div>
+
+<div align="center" style="color: gray">
+    I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced
 </div>
 
 Then I found Defang (www.defang.io), and it was like someone flipped a switch. Suddenly, all that complicated stuff became way easier. All I needed to do is to install Defang, build a compose.yaml file to describe my application, and run a single command - defang compose up. And Defang even has a Gen-AI assistant to help you write the code and compose file for your application. Defang automatically does all the heavy-lifting behind the scenes - configuring all the necessary services in a secure and optimal way, and automatically building and deploying my application components. No more late nights trying to figure out AWS docs or stressing about getting everything right. Deploying my Django Restaurant Homepage went from being my biggest worry to one of the smoothest parts of my project.
@@ -27,10 +37,20 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
     <img src="./images/defang-compose-up.png" alt="defang-compose-up">
 </div>
 
+<div align="center" style="color: gray">
+    with just a single command in the CLI
+</div>
+
+
 With Defang, I could chill a bit and actually enjoy working on my project, focusing on the cool parts without getting bogged down by all the technical stuff. It made cloud deployment feel doable and fun, even for someone like me who was pretty much a beginner. Give it a try yourself - go to www.defang.io to get started.
 
+
 <div align="center">
-    <img src="./images/sample-result.png" alt="sample-result" width="300px" height="300px>
+    <img src="./images/sample-result.png" alt="sample-result" width="330px" height="330px">
+</div>
+
+<div align="center" style="color: gray">
+   It is deployed to the internet!
 </div>
 
 Try it yourself!
