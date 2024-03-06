@@ -3,9 +3,10 @@ slug: about-my-journey-to-deploy-my-first-web-application
 title: About my Journey to Deploy my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
-<div align="center" style="color: gray;">
+<div align="center" style="color: #808080;">
     <em>About the author: Hongchen Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
 </div>
+
 
 
 As a student at University of British Columbia, new to the area of web development, I needed to develop and deploy a web application as a course project. It was already a huge challenge to complete the coding part. I could not believe that an even bigger challenge awaited. Picking the right platform and services is tough to start with. Do you know that AWS offers 200 different services? Lucky for me my professors’ instructed us to use ECS. Otherwise, I would have been totally lost.
@@ -19,9 +20,10 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
     <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="330px">
 </div>
 
-<div align="center" style="color: gray;">
+<div align="center" style="color: #808080;">
     It could be confusing if you are new to this area
 </div>
+
 
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
 
@@ -29,7 +31,7 @@ I ran into so many problems with configuring services. Sometimes it is caused by
     <img src="./images/error-AWS.png" alt="error-AWS" width="330px" height="200px">
 </div>
 
-<div align="center" style="color: gray;">
+<div align="center" style="color: #808080;">
     I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced
 </div>
 
@@ -41,7 +43,7 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
     <img src="./images/defang-compose-up.png" alt="defang-compose-up">
 </div>
 
-<div align="center" style="color: gray;">
+<div align="center" style="color: #808080;">
     with just a single command in the CLI
 </div>
 
@@ -53,7 +55,7 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
     <img src="./images/sample-result.png" alt="sample-result" width="330px" height="330px">
 </div>
 
-<div align="center" style="color: gray;">
+<div align="center" style="color: #808080;">
    It is deployed to the internet!
 </div>
 
