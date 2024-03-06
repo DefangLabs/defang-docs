@@ -8,11 +8,17 @@ For web developers, it is often tedious and hard to make your web applications a
 
 **Using AWS ECS for Web Deployment**
 Deploying a Django application via AWS ECS involves a series of detailed steps: setting up ECS clusters, creating task definitions, configuring services, managing container registries like ECR, and handling load balancers and DNS settings through services like Route 53. This process demands a deep understanding of AWS services and a significant time investment, easily extending into hours or days, especially for developers new to the platform.
-![AWS ECS](./images/AWS-ECS.png "AWS-ECS")
+
+<div align="center">
+    <img src="./images/AWS-ECS.png" alt="AWS-ECS" width="150px">
+</div>
+
 For the restaurant homepage application to be specific, you have to set up the configuration to enable autoscaling: if the restaurant owner does not want to spend too much on web services; you will have to set the maximum capacity based on your forecast to the traffic. To name a few other chores you need to consider: you have to manually push your container image, you have to be careful with clusters and task definitions, you might have to make modifications to the settings according certain customer demands, and etc. 
 
 **The Defang Approach**
-![The Defang Approach](./images/defangApproach.png "The Defang Approach")
+<div align="center">
+    <img src="./images/defangApproach.png" alt="the Defang Approach" width="150px">
+</div>
 But with Defang, it is as easy as it looks
 
 Defang radically simplifies this process, reducing what was once a daunting task to a straightforward, 20-minute setup. Here's how:
