@@ -3,9 +3,9 @@ slug: about-my-journey-to-deploy-my-first-web-application
 title: About my Journey to Deploy my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
-<span align="center" style="color: gray;">
+<div align="center" style="color: gray;">
     <em>About the author: Hongchen Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
-</span>
+</div>
 <br>
 
 
@@ -20,9 +20,9 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
     <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="330px">
 </div>
 
-<span align="center" style="color: gray">
+<div align="center" style="color: gray">
     It could be confusing if you are new to this area
-</span>
+</div>
 <br>
 
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
