@@ -4,7 +4,6 @@ title: About my Journey to Deploy my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
 
-![How AWS looks](./images/how-AWS-looks.png "How AWS Looks")
 As a student at University of British Columbia, new to the area of web development, I needed to develop and deploy a web application as a course project. It was already a huge challenge to complete the coding part. I could not believe that an even bigger challenge awaited. Picking the right platform and services is tough to start with. Do you know that AWS offers 200 different services? Lucky for me my professors’ instructed us to use ECS. Otherwise, I would have been totally lost.
 
 Starting my project, honestly, it felt like I was hitting a brick wall. Diving into AWS with little to no clue was tough. Terms like "ECS clusters," "task definitions," and "IAM roles" were flying over my head. I was scared of messing something up, especially when it came to setting up things like ECR and load balancers.
@@ -25,13 +24,13 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
 
 
 <div align="center">
-    <img src="./defang-compose-up.png" alt="defang-compose-up">
+    <img src="./images/defang-compose-up.png" alt="defang-compose-up">
 </div>
 
 With Defang, I could chill a bit and actually enjoy working on my project, focusing on the cool parts without getting bogged down by all the technical stuff. It made cloud deployment feel doable and fun, even for someone like me who was pretty much a beginner. Give it a try yourself - go to www.defang.io to get started.
 
 <div align="center">
-    <img src="./sample-result.png" alt="sample-result" width="300px" height="300px>
+    <img src="./images/sample-result.png" alt="sample-result" width="300px" height="300px>
 </div>
 
 Try it yourself!
