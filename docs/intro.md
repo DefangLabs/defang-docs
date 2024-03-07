@@ -26,7 +26,7 @@ Defang provides a streamlined experience to develop, deploy, observe, and update
 - Support for [pre-built Docker containers](./tutorials/deploy-container-using-the-cli.mdx), from public or private image registries
 - Ability to express your project configuration using a [Docker Compose YAML](./concepts/compose.md) file
 - Ability to manage encrypted [secrets](./concepts/secrets.md) and [configuration](./concepts/configuration.md)
-- Pre-configured environments with built-in [security](./concepts/security.md), [networking](./concepts/networking.md), and [observability](./concepts/observability.md)
+- Pre-configured environments with built-in [security](./concepts/security.md), [networking](./concepts/networking.mdx), and [observability](./concepts/observability.md)
 - [One-command deployments](./getting-started/installing.md)
 - Support for [GPUs](./concepts/resources.md)
 - Support for Infra-as-Code via the [Defang Pulumi provider](./concepts/pulumi.md)
