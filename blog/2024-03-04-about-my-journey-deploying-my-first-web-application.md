@@ -17,7 +17,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 
 
 <div align="center">
-    <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="550px" height="400px">
+    <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="550px">
 </div>
 
 <div align="center" style="color: gray">
@@ -25,10 +25,10 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 </div>
 <br>
 
-I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
+I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy my project. It was indeed extremely frustrating.
 
 <div align="center">
-    <img src="./images/error-AWS.png" alt="error-AWS" width="550px" height="350px">
+    <img src="./images/error-AWS.png" alt="error-AWS" width="550px">
 </div>
 
 <div align="center" style="color: gray">
@@ -52,7 +52,7 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
 
 
 <div align="center">
-    <img src="./images/sample-result.png" alt="sample-result" width="550px" height="400px">
+    <img src="./images/sample-result.png" alt="sample-result" width="550px">
 </div>
 
 <div align="center" style="color: gray">
