@@ -7,7 +7,7 @@ sidebar_position: 100
 # AI
 
 
-Defang includes an AI-driven assistant that translates natural language prompts to an outline for your project that you can then refine. The AI assistant is available through the [Defang CLI](./getting-started/installing.md).
+Defang includes an AI-driven assistant that translates natural language prompts to an outline for your project that you can then refine. The AI assistant is available through the [Defang CLI](../getting-started/installing.md).
 
 :::info
 The AI assistant is currently in beta and only supports a limited set of prompts. We plan to expand the capabilities of the AI assistant in the future.
