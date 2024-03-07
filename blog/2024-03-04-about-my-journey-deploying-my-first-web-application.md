@@ -21,7 +21,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 </div>
 
 <div align="center" style="color: gray">
-    It could be confusing if you are new to this area
+   <em>It could be confusing if you are new to this area</em>
 </div>
 <br>
 
@@ -32,7 +32,7 @@ I ran into so many problems with configuring services. Sometimes it is caused by
 </div>
 
 <div align="center" style="color: gray">
-    I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced
+    <em>I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced</em>
 </div>
 <br>
 
@@ -44,7 +44,7 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
 </div>
 
 <div align="center" style="color: gray">
-    with just a single command in the CLI
+    <em>with just a single command in the CLI</em>
 </div>
 <br>
 
@@ -56,7 +56,7 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
 </div>
 
 <div align="center" style="color: gray">
-   It is deployed to the internet! (arorschach is my username)
+   <em>It is deployed to the internet! (arorschach is my username)</em>
 </div>
 <br>
 
