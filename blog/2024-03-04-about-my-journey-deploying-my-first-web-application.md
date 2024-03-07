@@ -28,7 +28,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
 
 <div align="center">
-    <img src="./images/error-AWS.png" alt="error-AWS" width="550px" height="360px">
+    <img src="./images/error-AWS.png" alt="error-AWS" width="550px" height="350px">
 </div>
 
 <div align="center" style="color: gray">
@@ -62,6 +62,6 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
 
 Try it yourself!
 
-Sample Case to be deployed:[Restaurant Homepage](https://github.com/HongchenY/Sample-Restaurant-Homepage)
+Sample Case to be deployed: [Restaurant Homepage](https://github.com/HongchenY/Sample-Restaurant-Homepage)
 
 Defang's Github Page: [Defang](http://github.com.defang-io/defang)
