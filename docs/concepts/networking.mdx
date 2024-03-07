@@ -10,60 +10,6 @@ import TabItem from '@theme/TabItem';
 
 Defang configures Security Groups, deploys applications to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required.
 
-## Public Communication
-
-To make your service accessible from the public internet, you can expose ports in your service definition. In a [`compose.yaml`](./compose.md) file, you can use the `ports` section of your service definition. In a [Pulumi program](./pulumi.md), you can use the `ports` property of your service definition.
-
-
-### Sample Configuration
-
-<Tabs>
-  <TabItem value="compose" label="Compose" default>
-```yaml
-services:
-    # [...]
-    serviceName:
-        ports:
-        - mode: ingress
-          target: 3000	
-          protocol: http
-```
-  </TabItem>
-  <TabItem value="pulumi" label="Pulumi">
-```typescript
-const service = new defang.DefangService("serviceName", {
-    // [...]
-    ports: [{
-        target: 3000,
-        mode: "ingress",
-        protocol: "http",
-    }],
-});
-```
-  </TabItem>
-</Tabs>
-
-### Domains
-
-Currently, Defang provides a Defang-hosted domain for your service when you deploy it. This domain is based on your username and service name. We do not currently support custom domains, though we are working on it.
-
-<Tabs>
-  <TabItem value="playground" label="Playground" default>
-If you have a publicly accessible service, you will automatically receive a domain to access it. If you're deploying to the [Defang Playground](./defang-playground.md), your domain will be:
-
-```
-https://<username>-<service-name>--<port>.defang.dev
-```
-  </TabItem>
-  <TabItem value="byoc" label="BYOC">
-If you're using [Defang BYOC](./defang-byoc.md), your domain will be:
-
-```
-https://<service-name>--<port>.username.defang.app
-```
-  </TabItem>
-</Tabs>
-
 ## Internal Communication
 
 You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition, but set the `mode` to `host` instead of `ingress` to allow other services to communicate with it through the internal network.
@@ -96,7 +42,7 @@ const service = new defang.DefangService("service1", {
   </TabItem>
 </Tabs>
 
-### Internal Domains
+### Internal DNS
 
 Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
 
