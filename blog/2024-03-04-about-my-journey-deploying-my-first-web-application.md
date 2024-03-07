@@ -3,7 +3,7 @@ slug: about-my-journey-deploying-my-first-web-application
 title: About my Journey Deploying my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
-<div align="center" style="color: gray">
+<div align="center">
     <em>About the author: Aaron Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
 </div>
 <br/>
@@ -19,7 +19,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
     <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="550px"/>
 </div>
 
-<div align="center" style="color: gray">
+<div align="center">
    <em>It could be confusing if you are new to this area</em>
 </div>
 <br/>
@@ -30,7 +30,7 @@ I ran into so many problems with configuring services. Sometimes it is caused by
     <img src="./images/error-AWS.png" alt="error-AWS" width="550px"/>
 </div>
 
-<div align="center" style="color: gray">
+<div align="center">
     <em>I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced</em>
 </div>
 <br/>
@@ -42,7 +42,7 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
     <img src="./images/defang-compose-up.png" alt="defang-compose-up" width="550px"/>
 </div>
 
-<div align="center" style="color: gray">
+<div align="center">
     <em>with just a single command in the CLI</em>
 </div>
 <br/>
@@ -54,7 +54,7 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
     <img src="./images/sample-result.png" alt="sample-result" width="550px"/>
 </div>
 
-<div align="center" style="color: gray">
+<div align="center">
    <em>It is deployed to the internet! (arorschach is my username)</em>
 </div>
 <br/>
