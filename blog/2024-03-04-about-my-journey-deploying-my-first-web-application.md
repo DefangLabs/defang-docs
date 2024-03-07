@@ -56,12 +56,12 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
 </div>
 
 <div align="center" style="color: gray">
-   It is deployed to the internet!
+   It is deployed to the internet! (arorschach is my username)
 </div>
 <br>
 
 Try it yourself!
 
-Sample Case to be deployed: [Restaurant Homepage](https://github.com/HongchenY/Sample-Restaurant-Homepage)
+Sample Case: [Restaurant Homepage](https://github.com/HongchenY/Sample-Restaurant-Homepage)
 
 Defang's Github Page: [Defang](http://github.com.defang-io/defang)
