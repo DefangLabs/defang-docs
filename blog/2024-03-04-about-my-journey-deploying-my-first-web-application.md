@@ -1,10 +1,10 @@
 ---
 slug: about-my-journey-to-deploy-my-first-web-application
-title: About my Journey to Deploy my First Web Application
+title: About my Journey Deploying my First Web Application
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 ---
-<div align="center" style="color: gray;">
-    <em>About the author: Hongchen Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
+<div align="center" style="color: gray">
+    <em>About the author: Aaron Yu is currently an intern at Defang Software Lab with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em>
 </div>
 <br>
 
@@ -17,7 +17,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 
 
 <div align="center">
-    <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="330px">
+    <img src="./images/how-AWS-looks.png" alt="how-Defang-looks" width="550px" height="400px">
 </div>
 
 <div align="center" style="color: gray">
@@ -28,7 +28,7 @@ It was overwhelming when all these unfamiliar concepts came at me at once. I sea
 I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy. It was indeed extremely frustrating.
 
 <div align="center">
-    <img src="./images/error-AWS.png" alt="error-AWS" width="330px" height="200px">
+    <img src="./images/error-AWS.png" alt="error-AWS" width="550px" height="400px">
 </div>
 
 <div align="center" style="color: gray">
@@ -40,7 +40,7 @@ Then I found Defang (www.defang.io), and it was like someone flipped a switch. S
 
 
 <div align="center">
-    <img src="./images/defang-compose-up.png" alt="defang-compose-up">
+    <img src="./images/defang-compose-up.png" alt="defang-compose-up" width="550px">
 </div>
 
 <div align="center" style="color: gray">
@@ -52,7 +52,7 @@ With Defang, I could chill a bit and actually enjoy working on my project, focus
 
 
 <div align="center">
-    <img src="./images/sample-result.png" alt="sample-result" width="330px" height="330px">
+    <img src="./images/sample-result.png" alt="sample-result" width="550px" height="330px">
 </div>
 
 <div align="center" style="color: gray">
