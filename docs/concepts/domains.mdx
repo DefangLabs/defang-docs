@@ -1,0 +1,109 @@
+---
+title: Domains    
+description: Defang helps you provision SSL certificates and expose your services to the internet.
+sidebar_position: 280
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Domains
+
+Defang helps you provision SSL certificates and expose your services to the internet. You can expose your services using Defang-hosted domains or bring your own custom domain with [Defang BYOC](./defang-byoc.md). This page explains how to configure your services to be accessible from the public internet. 
+
+## Defang-hosted Domains
+
+To make your service accessible from the public internet with Defang-hosted domains (under `defang.app`), you simply expose ports in your service definition. 
+
+### Structure
+
+Defang-hosted domains use a structure that is based on your username and service name. 
+
+<Tabs>
+  <TabItem value="playground" label="Playground" default>
+If you have a publicly accessible service, you will automatically receive a domain to access it. If you're deploying to the [Defang Playground](./defang-playground.md), your domain will be structured as follows:
+
+```
+https://<username>-<service-name>--<port>.defang.dev
+```
+  </TabItem>
+  <TabItem value="byoc" label="BYOC">
+If you're using [Defang BYOC](./defang-byoc.md), your domain will be:
+
+```
+https://<service-name>--<port>.username.defang.app
+```
+  </TabItem>
+</Tabs>
+
+### Sample Configuration
+
+<Tabs>
+  <TabItem value="compose" label="Compose" default>
+```yaml
+services:
+    # [...]
+    serviceName:
+        ports:
+        // highlight-start
+        - mode: ingress
+          target: 3000	
+          protocol: http
+        // highlight-end
+```
+  </TabItem>
+  <TabItem value="pulumi" label="Pulumi">
+:::warning
+As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md).
+:::
+```typescript
+const service = new defang.DefangService("serviceName", {
+    // [...]
+    ports: [{
+        target: 3000,
+        mode: "ingress",
+        protocol: "http",
+    }],
+});
+```
+  </TabItem>
+</Tabs>
+
+
+## Bring Your Own Domain
+
+If you are using [Defang BYOC](./defang-byoc.md), you can bring your own custom domain to use with your services. 
+
+There are two main limitations to keep in mind when using Defang BYOC:
+  1. You can only use one domain per service.
+  2. Currently you must host your domain's DNS with the [provider](./defang-byoc.md) you are using.
+      * [AWS documentation on public hosted zones](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)
+
+:::tip NS Records
+If you want to use your existing DNS provider for other aspects of your system, you can do so and just point a subdomain to your [provider's](./defang-byoc.md) nameservers using NS records.
+:::
+
+### Sample Configuration
+
+<Tabs>
+  <TabItem value="compose" label="Compose" default>
+```yaml
+services:
+    # [...]
+    serviceName:
+        // highlight-next-line
+        domainname: example.com
+        ports:
+        // highlight-start
+        - mode: ingress
+          target: 3000	
+          protocol: http
+        // highlight-end
+```
+  </TabItem>
+  <TabItem value="pulumi" label="Pulumi">
+:::warning
+As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md) and the [Defang Playground](./defang-playground.md) does not support bringing your own domain, since it is not for production use.
+:::
+  </TabItem>
+</Tabs>
+
