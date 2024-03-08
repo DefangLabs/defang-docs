@@ -75,7 +75,8 @@ If you are using [Defang BYOC](./defang-byoc.md), you can bring your own custom 
 
 There are two main limitations to keep in mind when using Defang BYOC:
   1. You can only use one domain per service.
-  2. You must host your domain's DNS with the [provider](./defang-byoc.md) you are using.
+  2. Currently you must host your domain's DNS with the [provider](./defang-byoc.md) you are using.
+      * [AWS documentation on public hosted zones](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html)
 
 :::tip NS Records
 If you want to use your existing DNS provider for other aspects of your system, you can do so and just point a subdomain to your [provider's](./defang-byoc.md) nameservers using NS records.
