@@ -1,0 +1,14 @@
+name: CLI Autodoc
+
+on:
+  repository_dispatch:
+    types: [cli-autodoc]
+
+jobs:
+  test-deploy:
+    name: CLI Autodoc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo the event payload
+        run: | 
+          echo "Event payload: $GITHUB_EVENT_PATH"

@@ -1,6 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
+  repository_dispatch:
+    types: [cli-autodoc]
   push:
     branches:
       - main
@@ -23,6 +25,26 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Checkout defang-io/defang
+        uses: actions/checkout@v3
+        with:
+          repository: defang-io/defang
+          path: defang
+    
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.20
+    
+      - name: Generate CLI docs
+        run: go run main.go ./tmp
+        working-directory: defang/src/cmd/gendocs
+    
+      - name: Copy CLI docs to current repository
+        run: cp -r ../defang/src/cmd/gendocs/tmp/* ./docs/cli
+        working-directory: current-repo
+
       - name: Build website
         run: npm run build
 
@@ -42,3 +64,5 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           cname: docs.defang.io
+
+      
