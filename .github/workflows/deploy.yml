@@ -26,11 +26,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Checkout defang-io/defang
+        uses: actions/checkout@v3
+        with:
+          repository: defang-io/defang
+          path: defang
+    
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.20
+    
       - name: Generate CLI docs
-        run: |
-          bash <(curl -s https://raw.githubusercontent.com/defang-io/defang/main/src/bin/install.sh)
-          defang gendocs ./tmp
-          mv ./tmp/* ./docs/cli
+        run: go run main.go ./tmp
+        working-directory: defang/src/cmd/gendocs
+    
+      - name: Copy CLI docs to current repository
+        run: cp -r ../defang/src/cmd/gendocs/tmp/* ./docs/cli
+        working-directory: current-repo
 
       - name: Build website
         run: npm run build
