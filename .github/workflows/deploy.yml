@@ -31,6 +31,7 @@ jobs:
         with:
           repository: defang-io/defang
           path: defang
+          ref: cli-autodoc
     
       - name: Set up Go
         uses: actions/setup-go@v2
@@ -44,6 +45,9 @@ jobs:
       - name: Copy CLI docs to current repository
         run: cp -r ../defang/src/cmd/gendocs/tmp/* ./docs/cli
         working-directory: current-repo
+
+      - name: Prep CLI docs
+        run: npm run prep-cli-docs
 
       - name: Build website
         run: npm run build
