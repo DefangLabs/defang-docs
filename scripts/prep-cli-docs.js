@@ -5,13 +5,13 @@ const matter = require('gray-matter');
 const directoryPath = path.join(__dirname, '../docs/cli');
 
 // Rename files
-fs.readdirSync(directoryPath).forEach(file => {
-    if (path.extname(file) === '.md') {
-        const oldPath = path.join(directoryPath, file);
-        const newPath = path.join(directoryPath, file.replace(/_/g, '-'));
-        fs.renameSync(oldPath, newPath);
-    }
-});
+// fs.readdirSync(directoryPath).forEach(file => {
+//     if (path.extname(file) === '.md') {
+//         const oldPath = path.join(directoryPath, file);
+//         const newPath = path.join(directoryPath, file.replace(/_/g, '-'));
+//         fs.renameSync(oldPath, newPath);
+//     }
+// });
 
 // Add frontmatter and update links
 fs.readdirSync(directoryPath).forEach(file => {
@@ -26,9 +26,9 @@ fs.readdirSync(directoryPath).forEach(file => {
         }
 
         // Replace links
-        fileContent = fileContent.replace(/\(([^)]*\.md)\)/g, (match, p1) => {
-            return `(${p1.replace(/_/g, '-')})`;
-        });
+        // fileContent = fileContent.replace(/\(([^)]*\.md)\)/g, (match, p1) => {
+        //     return `(${p1.replace(/_/g, '-')})`;
+        // });
 
         const angleBracketRegex = /<\(([^)]*)\)/g;
 
