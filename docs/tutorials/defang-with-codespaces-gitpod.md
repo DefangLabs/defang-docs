@@ -47,7 +47,7 @@ In the repository, we have a yaml file indicating that we are using a pre-built 
 
 
 ### Step 3: Lauch VS Code from GitPod
-Navigate to your gitpod, and execute `defang ls` to ensure that Defang.
+Navigate to your gitpod, and execute `defang ls` to ensure that Defang is properly hooked.
 Open VS Code from GitPod, you will likely need to have the GitPod VS Code extension installed.
 
 
