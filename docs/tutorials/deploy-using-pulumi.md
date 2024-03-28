@@ -5,6 +5,8 @@ sidebar_position: 400
 
 # Deploy using Pulumi
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A4uiP5FIgg0?si=BHZLOxN4noJ56f7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Installing Dependencies
 
 Make sure to install the [Pulumi CLI](https://www.pulumi.com/docs/install/) and the [Defang CLI](../getting-started/installing.md).
