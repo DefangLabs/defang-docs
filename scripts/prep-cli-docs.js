@@ -20,9 +20,13 @@ fs.readdirSync(directoryPath).forEach(file => {
         let fileContent = fs.readFileSync(filePath, 'utf-8');
         const frontMatter = matter(fileContent);
 
+        const title = path.basename(file, '.md').replace(/_/g, ' ');
+
+        // replace the first instance of the title
+        fileContent = fileContent.replace(`## ${title}\n\n`, '');
+
         if (!frontMatter.data.title) {
-            const title = path.basename(file, '.md').replace(/-/g, ' ');
-            fileContent = `---\ntitle: ${title}\n---\n${fileContent}`;
+            fileContent = `---\ntitle: ${title}\n---\n\n${fileContent}`;
         }
 
         // Replace links
