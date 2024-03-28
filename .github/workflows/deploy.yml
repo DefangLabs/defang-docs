@@ -17,6 +17,16 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
+      - name: Only deploy on repository_dispatch if version starts with 'v'
+        run: |
+          if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            if [[ "${{ github.event.client_payload.version }}" != v* ]]; then
+              echo "Version does not start with 'v'. Stopping workflow."
+              exit 1
+            fi
+          fi
+        shell: bash
+        
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -31,7 +41,7 @@ jobs:
         with:
           repository: defang-io/defang
           path: defang
-          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'main' }}
+          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'cli-autodoc' }}
     
       - name: Set up Go
         uses: actions/setup-go@v2
