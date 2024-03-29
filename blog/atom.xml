@@ -8,7 +8,7 @@
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/https://www.google.com/s2/favicons?domain=defang.io</icon>
     <entry>
-        <title type="html"><![CDATA[Deploy a go-powered slackbot with Defang]]></title>
+        <title type="html"><![CDATA[Deploy a Go-powered slackbot with Defang]]></title>
         <id>https://docs.defang.io/blog/slackbot-sample</id>
         <link href="https://docs.defang.io/blog/slackbot-sample"/>
         <updated>2024-03-28T00:00:00.000Z</updated>

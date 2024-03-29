@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Deploy a go-powered slackbot with Defang]]></title>
+            <title><![CDATA[Deploy a Go-powered slackbot with Defang]]></title>
             <link>https://docs.defang.io/blog/slackbot-sample</link>
             <guid>https://docs.defang.io/blog/slackbot-sample</guid>
             <pubDate>Thu, 28 Mar 2024 00:00:00 GMT</pubDate>
