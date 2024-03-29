@@ -1,5 +1,5 @@
 ---
-title: Defang with Codespaces and Gitpod
+title: Using Codespaces and Gitpod
 sidebar_position: 700
 ---
 

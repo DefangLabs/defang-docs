@@ -1,0 +1,172 @@
+---
+title: Deploy a GPU-powered application
+sidebar_position: 500
+---
+
+# Deploy a GPU-powered application with Defang
+
+This tutorial guides you to create and deploy a GPU-powered application on AWS using Defang and Mistral. We will walk you through the whole deployment process based on this [Deploying Mistral with vLLM](https://github.com/defang-io/defang/tree/main/samples/other/vllm) sample.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kynFa2zU7hQ?si=qdV0xa6vkhMFJ6qv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Prerequisites
+
+### AWS Account with GPU Access
+
+For any of this to work, you'll need to have access to GPU instances in your AWS account. To do that you'll need to go to the "[Service Quotas](https://console.aws.amazon.com/servicequotas/home)" console in your AWS account. From there you can request access to spot GPU instances. You'll need to request 8 or more because the value is per vCPU and the smallest GPU instance has 8 vCPUs. The instance types you're requesting are "All G and VT spot instances". 
+
+:::warning Timing
+This process can take a few days for AWS to approve.
+:::
+
+![Service Quotas console screenshot](/img/gpu-tutorial/quotas.png)
+
+### HuggingFace Token
+
+This sample requires a HugoingFace token to download the model. You can get a token by signing up at [HuggingFace](https://huggingface.co/join) and then going to [your settings](https://huggingface.co/settings/tokens) to get your token.
+
+## Step 1: Clone the sample project
+
+You'll need to clone [this sample](https://github.com/defang-io/defang/tree/main/samples/other/vllm) to go through this tutorial.
+
+## Step 2: Check your [Defang BYOC](../concepts/defang-byoc.md) settings
+
+* Make sure you [install the latest version of the Defang CLI](../getting-started/installing.md)
+* Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI makes use of AWS environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`, so make sure the correct values are set for those.
+
+If you use the AWS CLI, you can verify that your are authenticated against AWS using the following command (note that the AWS CLI itself is not required to use the defang cli in BYOC mode):
+```bash
+aws sts get-caller-identity
+```
+
+
+## Step 2: Prepare your Environment
+* Log into your Defang account
+```bash
+defang login
+```
+
+* Set the HuggingFace token using the `defang secrets` command
+```bash
+defang secrets set --name HF_TOKEN
+```
+
+[Defang Secrets](../concepts/secrets.md) stores your sensitive information such as API keys, passwords, and other credentials for you. 
+
+
+## Step 3: Explore the Compose File
+
+The `compose.yml` file is where you define your services and their configurations. 
+
+### The Mistral Service
+
+In there you'll see the configuration we're using to deploy the Mistral model. We've highlighted some of the key aspects.
+
+```yaml
+services:
+    mistral:
+        // highlight-next-line
+        image: ghcr.io/mistralai/mistral-src/vllm:latest
+        ports:
+            - mode: host
+            - target: 8000
+        // highlight-next-line
+        command: ["--host","0.0.0.0","--model","TheBloke/Mistral-7B-Instruct-v0.2-AWQ","--quantization","awq","--dtype","auto","--tensor-parallel-size","1","--gpu-memory-utilization",".95","--max-model-len","8000"]
+        deploy:
+            resources:
+                reservations:
+                    cpus: '2.0'
+                    memory: 8192M
+                    devices:
+                    // highlight-next-line
+                        - capabilities: ["gpu"]
+            healthcheck:
+                test: ["CMD","curl","http://localhost:8000/v1/models"]
+                interval: 5m
+                timeout: 30s
+                retries: 10
+              // highlight-start
+            secrets:
+                - HF_TOKEN
+            // highlight-end
+secrets:
+    // highlight-start
+    HF_TOKEN:
+        external: true
+    // highlight-end
+```
+
+**Let's break it down.**
+
+We start with the latest vLLM docker image provided by [Mistral AI](https://docs.mistral.ai/self-deployment/vllm/).
+
+```yaml
+mistral:
+    image: ghcr.io/mistralai/mistral-src/vllm:latest
+```
+
+We specify that we require a GPU to run our application.
+
+```yaml
+deploy:
+    resources:
+        reservations:
+            cpus: '2.0'
+            memory: 8192M
+            devices:
+                - capabilities: ["gpu"]
+```
+
+The Mistral model will be downloaded from HuggingFace. We need to have a HuggingFace Token to enable the installation, so we specify that we need to get the `HF_TOKEN` from our secrets.
+
+```yaml
+secrets:
+    - HF_TOKEN
+```
+
+The `HF_TOKEN` is set as an external secret, which means that the secret is not stored in the compose file but is fetched from the Defang encrypted secrets store.
+
+```yaml
+secrets:
+    HF_TOKEN:
+        external: true
+```
+### The UI Service
+
+In this sample we also provide a simple UI to interact with the endpoint created by vLLM. The UI service is a Next.js application that runs on port 3000. 
+
+:::tip Networking
+You can see here how Defang's [networking](../concepts//networking.mdx) works. The `mistral` service is available at `http://mistral:8000`, exactly as it would be in a local `docker-compose` environment.
+:::
+
+```yaml
+  ui:
+    restart: unless-stopped
+    build:
+      context: ui
+      dockerfile: Dockerfile
+    ports:
+      - mode: ingress
+        target: 3000
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD","wget","--spider","http://localhost:3000"]
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    environment:
+      // highlight-next-line
+      - OPENAI_BASE_URL=http://mistral:8000/v1/
+```
+
+
+## Step 4: Deploy to Your Own AWS Account with Defang
+
+Run the following command to deploy your service:
+
+```bash
+defang compose up
+```
