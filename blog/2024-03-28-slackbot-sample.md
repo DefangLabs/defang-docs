@@ -7,10 +7,6 @@ author: Raphaël Titsworth-Morin
 
 Hey folks! Today, I'm going to share one of our code samples that will show you how to deploy a simple Slack bot. If you're looking to connect a cloud service to Slack to publish status updates, or something else like that, this should help you get started. We'll walk through a step-by-step process of writing a Go program using the [github.com/slack-go/slack](github.com/slack-go/slack) library to interact with the Slack API and easily deploy it using Defang.
 
-:::tip
-This guide is based off the sample code [over here](https://github.com/defang-io/defang/tree/main/samples/golang/slackbot). You'll want to use that as a starting point.
-:::
-
 ## Prerequisites
 
 Before we dive into the details, let's make sure you have everything you need to get started:
@@ -28,6 +24,13 @@ Before we dive into the details, let's make sure you have everything you need to
 
 5. **Invite the Bot to a Channel:** To enable your Slackbot, invite it to the desired channel using the `@<botname>` command. In the screenshot below, my bot's name actually starts with the word invite, but if your bot is called `mycoolbot` you would invite it with `@mycoolbot`. This ensures your Slackbot has the required permissions to interact with the channel.
 ![screenshot of the slack chat UI showing me inviting my bot](/img/slackbot-sample/invite.png)
+
+6. **Clone the Sample Code:** Clone the Defang repository and navigate to the `samples/golang/slackbot` directory. This directory contains the sample code for the Slackbot.
+
+```bash
+git clone https://github.com/defang-io/defang
+cd defang/samples/golang/slackbot
+```
 
 ## Deployment Steps
 
