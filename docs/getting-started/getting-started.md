@@ -12,6 +12,14 @@ description: Get started with Defang.
 
 First, you'll need to install the Defang CLI. The CLI is the primary way to interact with Defang. It allows you to create, deploy, and manage your services. You can find the [different installation methods here](./installing.md).
 
+:::tip Using `npx` to get started faster
+If you don't want to install the CLI, you can use `npx` to run the CLI without installing it globally. Wherever you see `defang` in the documentation, you can replace it with `npx defang`. For example:
+
+```bash
+npx defang
+```
+:::
+
 ### Authenticate with Defang
 
 To do pretty much anything with Defang, you'll need to authenticate with the platform. You can do this by running the following command:
