@@ -41,7 +41,7 @@ jobs:
         with:
           repository: defang-io/defang
           path: defang
-          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'cli-autodoc' }}
+          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'main' }}
     
       - name: Set up Go
         uses: actions/setup-go@v2

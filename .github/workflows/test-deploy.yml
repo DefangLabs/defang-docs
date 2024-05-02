@@ -20,12 +20,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        - name: Checkout defang-io/defang
+
+      - name: Checkout defang-io/defang
         uses: actions/checkout@v3
         with:
           repository: defang-io/defang
           path: defang
-          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'cli-autodoc' }}
+          ref: main
     
       - name: Set up Go
         uses: actions/setup-go@v2
@@ -44,6 +45,6 @@ jobs:
 
       - name: Prep Samples
         run: npm run prep-samples
-        
+
       - name: Test build website
         run: npm run build
