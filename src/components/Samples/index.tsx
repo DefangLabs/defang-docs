@@ -1,6 +1,8 @@
-import { ReactNode, useDeferredValue, useMemo, useRef, useState } from 'react';
-import { Box, List, ListItem, ListItemButton, ListItemText, Stack, TextField } from '@mui/material';
-import Fuse, { FuseResult } from 'fuse.js'
+import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, List, ListItemButton, ListItemText, Stack, TextField } from '@mui/material';
+import Fuse, { FuseResult } from 'fuse.js';
+import { Fragment, ReactNode, useDeferredValue, useMemo, useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { capitalCase } from 'change-case';
 
 
 interface Sample {
@@ -13,6 +15,14 @@ interface SamplesProps {
     samples: Sample[];
 }
 
+const categoryColors = {
+    python: '#FFFFE0',
+    nodejs: '#90EE90',
+    golang: '#ADD8E6',
+    ruby: '#FF7F7F',
+    other: 'lightgray',
+};
+
 function highlightMatches(text: string, matches: FuseResult<Sample>['matches']) {
     let lastIndex = 0;
     const [match] = matches;
@@ -24,7 +34,13 @@ function highlightMatches(text: string, matches: FuseResult<Sample>['matches']) 
         lastIndex = end + 1;
     }
     parts.push(text.slice(lastIndex));
-    return parts;
+    return (
+        <>
+            {parts.map((part, i) => <Fragment key={`${part}${i}`}>
+                {part}
+            </Fragment>)}
+        </>
+    );
 }
 
 /**
@@ -47,93 +63,160 @@ function getHighlightedTextWithContext(text: string, matches: FuseResult<Sample>
         parts.push(text.slice(lastIndex, Math.min(lastIndex + 5, text.length)));
         parts.push('...');
     }
-    return parts;
+    return (
+        <>
+            {parts.map((part, i) => <Fragment key={`${part}${i}`}>
+                {part}
+            </Fragment>)}
+        </>
+    );
 }
 
 
+
+
 export default function Samples({ samples }: SamplesProps) {
+    const titled = samples.map((sample) => ({
+        ...sample,
+        displayName: capitalCase(sample.name),
+    }));
+    type TitledSample = typeof titled[0];
     const [filter, setFilter] = useState("");
-    const fuse = useRef(new Fuse(samples, {
-        keys: ['name', 'category', 'readme'],
+    const [selectedSample, setSelectedSample] = useState<TitledSample | null>(null);
+
+    const fuse = useRef(new Fuse(titled, {
+        keys: ['displayName', 'category', 'readme'],
         includeMatches: true,
-        threshold: 0.7,
+        isCaseSensitive: false,
+        threshold: 0.25,
     })).current;
     const deferredFilter = useDeferredValue(filter);
-    const results = useMemo((): FuseResult<Sample>[] => {
+    const results = useMemo((): FuseResult<TitledSample>[] => {
         if (!deferredFilter) {
-            return samples.map((item, i) => ({
+            return titled.map((item, i) => ({
                 item,
                 score: 0,
                 refIndex: i,
                 matches: [],
             }));
         }
-        return fuse.search(deferredFilter);
+        return fuse.search({
+            $and: deferredFilter.split(/\s+/).map((word) => ({
+                $or: [
+                    { displayName: word },
+                    { category: word },
+                    { readme: word },
+                ],
+            })),
+        });
     }, [deferredFilter]);
 
     return (
-        <Stack>
-            <Box>
-                <TextField
-                    label="Search samples"
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                    variant='filled'
-                />
-            </Box>
-            <List>
-                {results
-                    .map((result) => {
-                        const sample = result.item;
-                        const {
-                            matches
-                        } = result;
-
-                        let name: ReactNode = sample.name;
-                        const nameMatched = matches.find((match) => match.key === 'name');
-
-                        let category: ReactNode = sample.category;
-                        const categoryMatched = matches.find((match) => match.key === 'category');
-
-                        let readme: ReactNode = "";
-                        const readmeMatched = matches.find((match) => match.key === 'readme');
-
-                        if (nameMatched) {
-                            name = highlightMatches(sample.name, [nameMatched]);
-                        }
-                        if (categoryMatched) {
-                            category = highlightMatches(sample.category, [categoryMatched]);
-                        }
-                        if (readmeMatched) {
-                            readme = getHighlightedTextWithContext(sample.readme, [readmeMatched]);
-                        }
-
-                        return (
-                            <ListItemButton
-                                key={`${sample.category}-${sample.name}`}
+        <>
+            <Dialog open={!!selectedSample} onClose={() => setSelectedSample(null)} fullWidth maxWidth="md" scroll='paper' PaperProps={{
+                sx: {
+                    maxHeight: 'calc(100vh - 100px)',
+                }
+            }}>
+                {selectedSample && (
+                    <>
+                        <DialogTitle>
+                            {selectedSample.displayName}
+                            <Chip
+                                label={selectedSample.category}
+                                size='small'
                                 sx={{
-                                    borderBottom: 1,
-                                    borderColor: 'divider',
+                                    backgroundColor: categoryColors[selectedSample.category] || categoryColors['other'],
+                                    ml: 1,
                                 }}
-                            >
-                                <ListItemText
-                                    primary={name}
-                                    secondary={(
-                                        <>
-                                            {category}
-                                            {readmeMatched && (
-                                                <>
-                                                    <br />
-                                                    {readme}
-                                                </>
-                                            )}
-                                        </>
-                                    )}
-                                />
-                            </ListItemButton>
-                        );
-                    })}
-            </List>
-        </Stack>
+                            />
+                        </DialogTitle>
+                        <DialogContent>
+                            <ReactMarkdown>{selectedSample.readme}</ReactMarkdown>
+                        </DialogContent>
+                        <DialogActions>
+                            <Stack direction="row" justifyContent="flex-end">
+                                <Button sx={{
+                                    "&:hover": {
+                                        "color": "#FFF",
+                                    }
+                                }} variant="contained" href={`https://github.com/defang-io/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`}>
+                                    Open
+                                </Button>
+                            </Stack>
+                        </DialogActions>
+                    </>
+                )}
+            </Dialog>
+            <Stack>
+                <Box>
+                    <TextField
+                        label="Search samples"
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                        variant='filled'
+                    />
+                </Box>
+                <List
+                    sx={{
+                        display: { xs: 'block', sm: 'grid' },
+                        gridTemplateColumns: { sm: 'repeat(2, 1fr)' },
+                    }}
+                >
+                    {results
+                        .map((result) => {
+                            const sample = result.item;
+                            const {
+                                matches
+                            } = result;
+
+                            let displayName: ReactNode = sample.displayName;
+                            const displayNameMatched = matches.find((match) => match.key === 'displayName');
+
+                            let category: ReactNode = sample.category;
+                            const categoryMatched = matches.find((match) => match.key === 'category');
+
+                            let readme: ReactNode = "";
+                            const readmeMatched = matches.find((match) => match.key === 'readme');
+
+                            if (displayNameMatched) {
+                                displayName = highlightMatches(sample.name, [displayNameMatched]);
+                            }
+                            if (categoryMatched) {
+                                category = highlightMatches(sample.category, [categoryMatched]);
+                            }
+                            if (readmeMatched) {
+                                readme = getHighlightedTextWithContext(sample.readme, [readmeMatched]);
+                            }
+
+                            return (
+                                <ListItemButton
+                                    key={`${sample.category}-${sample.name}`}
+                                    sx={{
+                                        borderBottom: 1,
+                                        borderColor: 'divider',
+                                    }}
+                                    onClick={() => setSelectedSample(sample)}
+                                >
+                                    <ListItemText
+                                        primary={displayName}
+                                        secondary={(
+                                            <>
+                                                <Chip component={"span"} label={category} size='small' sx={{ backgroundColor: categoryColors[sample.category] || categoryColors['other'] }} />
+                                                {readmeMatched && (
+                                                    <>
+                                                        <br />
+                                                        {readme}
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                    />
+                                </ListItemButton>
+                            );
+                        })}
+                </List>
+            </Stack>
+        </>
     );
 }

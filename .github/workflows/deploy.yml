@@ -59,7 +59,7 @@ jobs:
         run: npm run prep-cli-docs
 
       - name: Prep Samples
-        run: # TODO: Build samples
+        run: npm run prep-samples
 
       - name: Build website
         run: npm run build
