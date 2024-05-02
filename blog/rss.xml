@@ -4,10 +4,48 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Thu, 28 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[May 2024 Product Update]]></title>
+            <link>https://docs.defang.io/blog/may-2024-product-update</link>
+            <guid>https://docs.defang.io/blog/may-2024-product-update</guid>
+            <pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:]]></description>
+            <content:encoded><![CDATA[<p>Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="npx-defang">npx defang<a href="https://docs.defang.io/blog/may-2024-product-update#npx-defang" class="hash-link" aria-label="Direct link to npx defang" title="Direct link to npx defang">​</a></h2>
+<p>We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally. Just run:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx defang</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This will download the latest version of the Defang CLI and run it for you. No need to worry about installing or updating the CLI manually!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coming-soon-bring-your-own-domain-with-lets-encrypt">(coming soon) Bring Your Own Domain with Let's Encrypt<a href="https://docs.defang.io/blog/may-2024-product-update#coming-soon-bring-your-own-domain-with-lets-encrypt" class="hash-link" aria-label="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt" title="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt">​</a></h2>
+<p>Previously you could bring your own domain with <a href="https://docs.defang.io/docs/concepts/defang-byoc">Defang BYOC</a>... but you had to host the DNS records with AWS Route 53 in the AWS account you were deploying to. Now you can point domains hosted anywhere to your Defang deployment and we'll take care of the rest. We'll help generate a Let's Encrypt certificate for your domain and automatically renew it for you.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-support">Windows Support<a href="https://docs.defang.io/blog/may-2024-product-update#windows-support" class="hash-link" aria-label="Direct link to Windows Support" title="Direct link to Windows Support">​</a></h2>
+<p>Some of you use Defang from a Windows PC and previously a few features didn't work correctly on Windows. Some stuff we've fixed:</p>
+<ul>
+<li>ansi color codes in logs</li>
+<li>handle ctrl-c when tailing logs</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improved-cli">Improved CLI<a href="https://docs.defang.io/blog/may-2024-product-update#improved-cli" class="hash-link" aria-label="Direct link to Improved CLI" title="Direct link to Improved CLI">​</a></h2>
+<p>We've made a variety of small tweaks and improvements to the CLI which should make things a little bit cleaner and more stable.</p>
+<ul>
+<li>log messages have been made more clear</li>
+<li>adding more progress information during compose up</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-reliability">Stability and Reliability<a href="https://docs.defang.io/blog/may-2024-product-update#stability-and-reliability" class="hash-link" aria-label="Direct link to Stability and Reliability" title="Direct link to Stability and Reliability">​</a></h2>
+<p>Defang is still in Beta and we know we've got to be rock solid by the time we release V1, so we've been working hard to improve the stability and reliability of the Defang architecture. We've been battle-testing different technologies to see how they hold up and have mad a few changes that should make things even better:</p>
+<ul>
+<li>capacity improvements in build queues</li>
+<li>improvements in log availability</li>
+</ul>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>AWS ECS</category>
+            <category>defang compose up</category>
+            <category>Slack API</category>
+        </item>
         <item>
             <title><![CDATA[Deploy a Go-powered slackbot with Defang]]></title>
             <link>https://docs.defang.io/blog/slackbot-sample</link>
