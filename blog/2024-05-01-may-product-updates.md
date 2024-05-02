@@ -36,5 +36,5 @@ We've made a variety of small tweaks and improvements to the CLI which should ma
 ## Stability and Reliability
 
 Defang is still in Beta and we know we've got to be rock solid by the time we release V1, so we've been working hard to improve the stability and reliability of the Defang architecture. We've been battle-testing different technologies to see how they hold up and have mad a few changes that should make things even better:
-* improvements in build queues
+* capacity improvements in build queues
 * improvements in log availability
