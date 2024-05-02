@@ -20,5 +20,30 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        - name: Checkout defang-io/defang
+        uses: actions/checkout@v3
+        with:
+          repository: defang-io/defang
+          path: defang
+          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'cli-autodoc' }}
+    
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: "1.20"
+    
+      - name: Generate CLI docs
+        run: go run main.go ./tmp
+        working-directory: defang/src/cmd/gendocs
+    
+      - name: Copy CLI docs to current repository
+        run: cp -r ./defang/src/cmd/gendocs/tmp/* ./docs/cli
+
+      - name: Prep CLI docs
+        run: npm run prep-cli-docs
+
+      - name: Prep Samples
+        run: npm run prep-samples
+        
       - name: Test build website
         run: npm run build
