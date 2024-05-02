@@ -3,6 +3,8 @@ import Fuse, { FuseResult } from 'fuse.js';
 import { Fragment, ReactNode, useDeferredValue, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { capitalCase } from 'change-case';
+import CodeBlock from '@theme/CodeBlock';
+import ExternalLink from '@theme/Icon/ExternalLink'
 
 
 interface Sample {
@@ -120,30 +122,47 @@ export default function Samples({ samples }: SamplesProps) {
             }}>
                 {selectedSample && (
                     <>
-                        <DialogTitle>
-                            {selectedSample.displayName}
-                            <Chip
-                                label={selectedSample.category}
-                                size='small'
-                                sx={{
-                                    backgroundColor: categoryColors[selectedSample.category] || categoryColors['other'],
-                                    ml: 1,
-                                }}
-                            />
+                        <DialogTitle component="div" display="flex">
+                            <Box>
+                                <Box fontWeight="bold" component="span">
+                                    {selectedSample.displayName}
+                                </Box>
+                                <Chip
+                                    label={selectedSample.category}
+                                    size='small'
+                                    sx={{
+                                        backgroundColor: categoryColors[selectedSample.category] || categoryColors['other'],
+                                        ml: 1,
+                                    }}
+                                />
+                            </Box>
+                            <Box sx={{ flexGrow: 1 }} />
+                            <Button sx={{
+                                "&:hover": {
+                                    // "color": "#FFF",
+                                },
+                                flexShrink: 0,
+                            }} size='small' variant="text" href={`https://github.com/defang-io/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`} target='_blank'>
+                                Open Sample
+                                <ExternalLink />
+                            </Button>
                         </DialogTitle>
-                        <DialogContent>
-                            <ReactMarkdown>{selectedSample.readme}</ReactMarkdown>
+                        <DialogContent sx={{ borderTop: '1px solid grey', borderBottom: '1px solid grey' }}>
+                            <Box sx={{ py: 4 }}>
+                                <ReactMarkdown>{selectedSample.readme}</ReactMarkdown>
+                            </Box>
                         </DialogContent>
                         <DialogActions>
-                            <Stack direction="row" justifyContent="flex-end">
-                                <Button sx={{
-                                    "&:hover": {
-                                        "color": "#FFF",
-                                    }
-                                }} variant="contained" href={`https://github.com/defang-io/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`}>
-                                    Open
-                                </Button>
-                            </Stack>
+                            {/* <Stack direction="row" justifyContent="center" px={1} spacing={2}> */}
+                            <Box sx={{ flexGrow: 1, overflow: 'auto', '& .theme-code-block': { mb: 0 } }}>
+                                <small>
+                                    Clone and open the sample in your terminal
+                                </small>
+                                <CodeBlock language="bash">
+                                    {`git clone https://github.com/defang-io/defang && cp -r defang/samples/${selectedSample.category}/${selectedSample.name} ./${selectedSample.name} && cd ${selectedSample.name}`}
+                                </CodeBlock>
+                            </Box>
+                            {/* </Stack> */}
                         </DialogActions>
                     </>
                 )}
