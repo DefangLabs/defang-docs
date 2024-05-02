@@ -28,6 +28,7 @@ directories.forEach((category) => {
             category,
             readme,
         });
+        console.log(`@@ Added ${category}/${sample}`);
     });
 });
 
