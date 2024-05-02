@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   repository_dispatch:
-    types: [cli-autodoc]
+    types: [cli-autodoc, sample-update]
   push:
     branches:
       - main
@@ -57,6 +57,9 @@ jobs:
 
       - name: Prep CLI docs
         run: npm run prep-cli-docs
+
+      - name: Prep Samples
+        run: # TODO: Build samples
 
       - name: Build website
         run: npm run build

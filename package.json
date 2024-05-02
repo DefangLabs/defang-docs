@@ -13,7 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "prep-cli-docs": "node scripts/prep-cli-docs.js"
+    "prep-cli-docs": "node scripts/prep-cli-docs.js",
+    "prep-samples": "node scripts/prep-samples.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.0.0",
@@ -24,6 +25,7 @@
     "@mui/material": "^5.14.14",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^3.2.0",
+    "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.2.0",
