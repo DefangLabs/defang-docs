@@ -132,7 +132,7 @@ secrets:
 ```
 
 ### "unsupported secret …: not marked external:true"
-- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not marked `external:true`. Defang only supports external secrets, managed by the `defang secret` command. To silence the warning, mark the secret as `external:true` in the top-level `secrets` section:
+- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not marked `external:true`. Defang only supports external secrets, managed by the `defang config` command. To silence the warning, mark the secret as `external:true` in the top-level `secrets` section:
 ```
 …
 secrets:

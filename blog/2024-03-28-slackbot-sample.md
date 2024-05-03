@@ -13,7 +13,7 @@ Before we dive into the details, let's make sure you have everything you need to
 
 1.  **Install Defang CLI:** Simplify your deployment process by installing the Defang CLI tool. Follow the instructions [here](https://docs.defang.io/docs/getting-started/installing) to get it up and running quickly.
 
-2.  **Slack API Token:** Create a Slack App at https://api.slack.com/apps, granting it the necessary permissions, including the bot `chat:write` scope. 
+2.  **Slack API Token:** Create a Slack App at https://api.slack.com/apps, granting it the necessary permissions, including the bot `chat:write` scope.
 ![screenshot of the slack admin UI showing the bot scopes](/img/slackbot-sample/scopes.png)
 
 3. **Install the app in your workspace:** You'll need to install the app in your workspace for it to work. Click the "Install to Workspace" button in the Slack admin UI to do this. Mine says "Reinstall" because I've already installed it.
@@ -36,12 +36,12 @@ cd defang/samples/golang/slackbot
 
 Now that we have everything set up, let's dive into the deployment process. Follow these steps to deploy your Slackbot effortlessly:
 
-1.  **Set Up Secrets:** Prioritize security by configuring environment variables as secrets. Use the Defang CLI's `defang secret set` command to set the `SLACK_TOKEN` and `SLACK_CHANNEL_ID` secrets. 
+1.  **Set Up Secrets:** Prioritize security by configuring environment variables as secrets. Use the Defang CLI's `defang config set` command to set the `SLACK_TOKEN` and `SLACK_CHANNEL_ID` secrets.
     Replace `your_slack_token` and `your_slack_channel_id` with the respective values:
 
     ```bash
-    defang secret set --name SLACK_TOKEN --value your_slack_token
-    defang secret set --name SLACK_CHANNEL_ID --value your_slack_channel_id
+    defang config set --name SLACK_TOKEN --value your_slack_token
+    defang config set --name SLACK_CHANNEL_ID --value your_slack_channel_id
     ```
 
 2.  **Deploy the Slackbot:**  Use the Defang CLI's `defang compose up` command to deploy.

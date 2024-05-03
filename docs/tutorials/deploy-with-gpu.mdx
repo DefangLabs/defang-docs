@@ -13,7 +13,7 @@ This tutorial guides you to create and deploy a GPU-powered application on AWS u
 
 ### AWS Account with GPU Access
 
-For any of this to work, you'll need to have access to GPU instances in your AWS account. To do that you'll need to go to the "[Service Quotas](https://console.aws.amazon.com/servicequotas/home)" console in your AWS account. From there you can request access to spot GPU instances. You'll need to request 8 or more because the value is per vCPU and the smallest GPU instance has 8 vCPUs. The instance types you're requesting are "All G and VT spot instances". 
+For any of this to work, you'll need to have access to GPU instances in your AWS account. To do that you'll need to go to the "[Service Quotas](https://console.aws.amazon.com/servicequotas/home)" console in your AWS account. From there you can request access to spot GPU instances. You'll need to request 8 or more because the value is per vCPU and the smallest GPU instance has 8 vCPUs. The instance types you're requesting are "All G and VT spot instances".
 
 :::warning Timing
 This process can take a few days for AWS to approve.
@@ -46,17 +46,17 @@ aws sts get-caller-identity
 defang login
 ```
 
-* Set the HuggingFace token using the `defang secrets` command
+* Set the HuggingFace token using the `defang config` command
 ```bash
-defang secrets set --name HF_TOKEN
+defang config set --name HF_TOKEN
 ```
 
-[Defang Secrets](../concepts/secrets.md) stores your sensitive information such as API keys, passwords, and other credentials for you. 
+[Defang Secrets](../concepts/secrets.md) stores your sensitive information such as API keys, passwords, and other credentials for you.
 
 
 ## Step 3: Explore the Compose File
 
-The `compose.yml` file is where you define your services and their configurations. 
+The `compose.yml` file is where you define your services and their configurations.
 
 ### The Mistral Service
 
@@ -133,7 +133,7 @@ secrets:
 ```
 ### The UI Service
 
-In this sample we also provide a simple UI to interact with the endpoint created by vLLM. The UI service is a Next.js application that runs on port 3000. 
+In this sample we also provide a simple UI to interact with the endpoint created by vLLM. The UI service is a Next.js application that runs on port 3000.
 
 :::tip Networking
 You can see here how Defang's [networking](../concepts//networking.mdx) works. The `mistral` service is available at `http://mistral:8000`, exactly as it would be in a local `docker-compose` environment.

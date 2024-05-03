@@ -23,7 +23,7 @@ One thing to keep in mind is that, at the time of this writing, Defang identifie
 If you have a service that depends on a secret like an api key, you can set that [secret](./secrets.md) using the CLI:
 
 ```
-defang secret set --name MY_API_KEY
+defang config set --name MY_API_KEY
 ```
 
 and then connect it to the service by specifying it in the `compose.yaml`:
