@@ -51,7 +51,7 @@ defang login
 defang config set --name HF_TOKEN
 ```
 
-[Defang Secrets](../concepts/secrets.md) stores your sensitive information such as API keys, passwords, and other credentials for you.
+[Configuration](../concepts/configuration.md) stores your sensitive information such as API keys, passwords, and other credentials for you.
 
 
 ## Step 3: Explore the Compose File
@@ -85,15 +85,10 @@ services:
                 interval: 5m
                 timeout: 30s
                 retries: 10
-              // highlight-start
-            secrets:
-                - HF_TOKEN
+            // highlight-start
+            environment:
+              - HF_TOKEN
             // highlight-end
-secrets:
-    // highlight-start
-    HF_TOKEN:
-        external: true
-    // highlight-end
 ```
 
 **Let's break it down.**
@@ -117,20 +112,15 @@ deploy:
                 - capabilities: ["gpu"]
 ```
 
-The Mistral model will be downloaded from HuggingFace. We need to have a HuggingFace Token to enable the installation, so we specify that we need to get the `HF_TOKEN` from our secrets.
+The Mistral model will be downloaded from HuggingFace. We need to have a HuggingFace Token to enable the installation, so we specify that we need to get the `HF_TOKEN` configuration value from Defang.
+
+Specifying the `HF_TOKEN` in the `environment` section of the service in the `compose.yml` file tells Defang to fetch the value from the encrypted configuration store.
 
 ```yaml
-secrets:
+environment:
     - HF_TOKEN
 ```
 
-The `HF_TOKEN` is set as an external secret, which means that the secret is not stored in the compose file but is fetched from the Defang encrypted secrets store.
-
-```yaml
-secrets:
-    HF_TOKEN:
-        external: true
-```
 ### The UI Service
 
 In this sample we also provide a simple UI to interact with the endpoint created by vLLM. The UI service is a Next.js application that runs on port 3000.
