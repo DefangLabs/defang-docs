@@ -40,5 +40,5 @@ secrets:
 ```
 
 :::info Configuration & Secrets
-Read more about configuration in the [configuration page](./configuration.md) and about secrets in the [secrets page](./secrets.md).
+Read more about configuration in the [configuration page](./configuration.md) and about secrets in the [secrets page](./configuration.md).
 :::
