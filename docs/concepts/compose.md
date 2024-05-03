@@ -20,7 +20,7 @@ One thing to keep in mind is that, at the time of this writing, Defang identifie
 
 ## Configuration
 
-If you have a service that depends on a secret like an api key, you can set that [secret](./secrets.md) using the CLI:
+If you have a service that depends on a secret like an api key, you can set that [secret](./configuration.md) using the CLI:
 
 ```
 defang config set --name MY_API_KEY
