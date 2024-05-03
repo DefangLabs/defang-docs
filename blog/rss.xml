@@ -44,7 +44,6 @@
             <category>BYOC</category>
             <category>AWS ECS</category>
             <category>defang compose up</category>
-            <category>Slack API</category>
         </item>
         <item>
             <title><![CDATA[Deploy a Go-powered slackbot with Defang]]></title>
