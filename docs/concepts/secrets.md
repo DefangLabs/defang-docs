@@ -1,6 +1,6 @@
 ---
-title: Secrets
-description: Secrets are a way to securely store sensitive information such as API keys, passwords, and other credentials.
+title: Sensitive Config
+description: Config is a way to securely store sensitive information such as API keys, passwords, and other credentials.
 sidebar_position: 250
 ---
 
@@ -8,7 +8,17 @@ sidebar_position: 250
 
 The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials.
 
-You can use secrets by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
+You can use sensitive config by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
+
+```ts
+services:
+  service1:
+    image: image1:latest
+    environment:
+      - API_KEY
+```
+
+Use the `defang config` command of the Defang CLI to manage the values.
 
 ## Connecting Services
 
