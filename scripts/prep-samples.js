@@ -32,11 +32,13 @@ directories.forEach((category) => {
     });
 });
 
-const stringified = JSON.stringify(jsonArray);
+const stringified = JSON.stringify(jsonArray, null, 2);
+
+fs.writeFileSync(path.join(__dirname, '..', 'samples.json'), stringified);
 
 // we're going to open up the ../docs/samples.md file and replce [] with the stringified JSON
 
 const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
 let samplesMdContents = fs.readFileSync(samplesMd, 'utf8');
-samplesMdContents = samplesMdContents.replace('[]', stringified);
+samplesMdContents += `<Samples samples={${stringified}} />`;
 fs.writeFileSync(samplesMd, samplesMdContents);
