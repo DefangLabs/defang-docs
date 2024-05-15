@@ -42,3 +42,6 @@ const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
 let samplesMdContents = fs.readFileSync(samplesMd, 'utf8');
 samplesMdContents += `<Samples samples={${stringified}} />`;
 fs.writeFileSync(samplesMd, samplesMdContents);
+
+// save the json to the samples.json file in static
+fs.writeFileSync(path.join(__dirname, '..', 'static', 'samples.json'), stringified);
