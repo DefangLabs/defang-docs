@@ -13,7 +13,7 @@ Defang includes an AI-driven assistant that translates natural language prompts 
 The AI assistant is currently in beta and only supports a limited set of prompts. We plan to expand the capabilities of the AI assistant in the future.
 :::
 
-We are working on expanding the range of supported prompts and improving the accuracy of the AI assistant. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/defang-io/defang/issues/new).
+We are working on expanding the range of supported prompts and improving the accuracy of the AI assistant. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
 
 ## Example Prompts
 

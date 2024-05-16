@@ -9,7 +9,7 @@ sidebar_position: 225
 Defang allows you to configure your application using environment variables. You can set environment variables in your [`compose.yaml` file](./compose.md), or in your [Pulumi program](./pulumi.md). Using Pulumi gives you the advantage of being able to manage your environment variables across different environments using Pulumi stacks.
 
 :::tip Sample
-You can find a sample of how to set environment variables with Pulumi [here](https://github.com/defang-io/defang/tree/main/samples/nodejs/remix-aiven-postgres).
+You can find a sample of how to set environment variables with Pulumi [here](https://github.com/DefangLabs/defang/tree/main/samples/nodejs/remix-aiven-postgres).
 :::
 
 # Sensitive Config aka Secrets
@@ -33,7 +33,7 @@ Use the `defang config` command of the Defang CLI to manage the values.
 If you have created a service before a secret you can connect it by running the `defang compose start` command if using the [`defang compose` workflow](./compose.md). If you are using the [Pulumi-based workflow](./pulumi.md) you will need to redeploy using Pulumi.
 
 :::tip Sample
-You can find a sample of how to set sensitive config values [here](https://github.com/defang-io/defang/tree/main/samples/nodejs/ChatGPT%20API).
+You can find a sample of how to set sensitive config values [here](https://github.com/DefangLabs/defang/tree/main/samples/nodejs/ChatGPT%20API).
 :::
 
 ## Providers

@@ -12,7 +12,7 @@ This tutorial will guide you to set up Defang in both Codespaces and Gitpod.
 ## Getting Started with Github Codespaces and Defang
 
 ### Step 1: Clone the Defang Codespace Project
-Start by cloning the [Defang Github-Codespace](https://github.com/defang-io/github-codespace) repo and pushing it to your own account. This repository is configured with a Codespace that has Defang pre-installed.
+Start by cloning the [Defang Github-Codespace](https://github.com/DefangLabs/github-codespace) repo and pushing it to your own account. This repository is configured with a Codespace that has Defang pre-installed.
 
 
 ### Step 2: Create a Codespace
@@ -43,7 +43,7 @@ Now that you're logged in, you can use Defang commands. You can test that everyt
 ## Getting Started with GitPod Workspace with Defang
 
 ### Step 1: Clone the Defang GitPod Workspace Project
-Start by cloning the [Defang Gitpod-Workspace](https://github.com/defang-io/gitpod-workspace) repo and pushing it to your own GitHub, GitLab, or BitBucket account. This repository includes a Workspace configuration that pre-installs Defang.
+Start by cloning the [Defang Gitpod-Workspace](https://github.com/DefangLabs/gitpod-workspace) repo and pushing it to your own GitHub, GitLab, or BitBucket account. This repository includes a Workspace configuration that pre-installs Defang.
 
 
 ### Step 2: Initialize GitPod Workspace

@@ -23,7 +23,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'defang-io', // Usually your GitHub org/user name.
+  organizationName: 'DefangLabs', // Usually your GitHub org/user name.
   projectName: 'defang-docs', // Usually your repo name.
   trailingSlash: false,
 
@@ -45,7 +45,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/defang-io/defang-docs/tree/main/',
+            'https://github.com/DefangLabs/defang-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -74,7 +74,7 @@ const config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/defang-io/defang',
+          href: 'https://github.com/DefangLabs/defang',
           label: 'GitHub',
           position: 'right',
         },
@@ -118,7 +118,7 @@ const config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/defang-io',
+              href: 'https://github.com/DefangLabs',
             },
           ],
         },

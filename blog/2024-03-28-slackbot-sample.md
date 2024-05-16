@@ -28,7 +28,7 @@ Before we dive into the details, let's make sure you have everything you need to
 6. **Clone the Sample Code:** Clone the Defang repository and navigate to the `samples/golang/slackbot` directory. This directory contains the sample code for the Slackbot.
 
 ```bash
-git clone https://github.com/defang-io/defang
+git clone https://github.com/DefangLabs/defang
 cd defang/samples/golang/slackbot
 ```
 

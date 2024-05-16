@@ -142,7 +142,7 @@ export default function Samples({ samples }: SamplesProps) {
                                     // "color": "#FFF",
                                 },
                                 flexShrink: 0,
-                            }} size='small' variant="text" href={`https://github.com/defang-io/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`} target='_blank'>
+                            }} size='small' variant="text" href={`https://github.com/DefangLabs/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`} target='_blank'>
                                 Open Sample
                                 <ExternalLink />
                             </Button>
@@ -159,7 +159,7 @@ export default function Samples({ samples }: SamplesProps) {
                                     Clone and open the sample in your terminal
                                 </small>
                                 <CodeBlock language="bash">
-                                    {`git clone https://github.com/defang-io/defang dtmp && cp -r defang/samples/${selectedSample.category}/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
+                                    {`git clone https://github.com/DefangLabs/defang dtmp && cp -r defang/samples/${selectedSample.category}/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
                                 </CodeBlock>
                             </Box>
                             {/* </Stack> */}
