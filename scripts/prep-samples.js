@@ -54,4 +54,4 @@ const stringified = JSON.stringify(jsonArray, null, 2);
 // fs.writeFileSync(samplesMd, samplesMdContents);
 
 // save the json to the samples.json file in static
-fs.writeFileSync(path.join(__dirname, '..', 'static', 'samples.json'), stringified);
+fs.writeFileSync(path.join(__dirname, '..', 'static', 'samples-v2.json'), stringified);

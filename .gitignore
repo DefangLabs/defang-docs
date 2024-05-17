@@ -21,4 +21,4 @@ yarn-error.log*
 
 defang
 samples
-/static/samples.json
+/static/samples-v2.json

@@ -98,7 +98,7 @@ export default function Samples() {
 
     useEffect(() => {
         const fetchSamples = async () => {
-            const response = await fetch('/samples.json');
+            const response = await fetch('/samples-v2.json');
             const samples = await response.json();
 
             fuse.setCollection(samples);
