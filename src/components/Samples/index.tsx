@@ -178,7 +178,7 @@ export default function Samples() {
                                     Clone and open the sample in your terminal
                                 </small>
                                 <CodeBlock language="bash">
-                                    {`git clone https://github.com/DefangLabs/samples dtmp && cp -r defang/samples/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
+                                    {`git clone https://github.com/DefangLabs/samples dtmp && cp -r dtmp/samples/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
                                 </CodeBlock>
                             </Box>
                             {/* </Stack> */}
