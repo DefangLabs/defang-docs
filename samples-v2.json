@@ -178,6 +178,22 @@
     ]
   },
   {
+    "name": "huginn",
+    "category": "",
+    "readme": "# Huginn\n\nHuginn is a system for building agents that perform automated tasks for you online. Huginn's Agents can monitor the web, respond to events, and act on your behalf. They propagate events along a directed graph. It's like a customizable IFTTT or Zapier on your own server, ensuring data privacy.\n\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/defang-io/defang)\n2. Have a managed database service configured and have the connection details ready. Neon postgres is a good free option.\n3. (optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).\n\n## Local\n\nFor development, we use a Postgres container. The Postgres container is defined in the `compose.dev.yml` file. The Huginn container is defined in the `compose.yml` file, with some overrides in the `compose.dev.yml` file so it can correctly connect to the local database container. \n\nTo start the local environment, run `docker compose -f ./compose.yml -f ./compose.dev.yml up`. This will start the Postgres container and the Huginn container. Huginn will be available at `http://localhost:3000` with the username `admin` and password `password`. \n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Add your database connection details using `defang config` by typing `defang config set <CONFIG_VAL>` where `<CONFIG_VAL>` is the each of the following `DATABASE_NAME`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `DATABASE_HOST`. For example `defang config set DATABASE_NAME` and pasting your database name. \n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n---\n\nTitle: Huginn\n\nShort Description: A system for building agents that perform automated tasks for you online\n\nTags: huginn, agents, automation\n\nLanguages: \n",
+    "directoryName": "huginn",
+    "title": "Huginn",
+    "shortDescription": "A system for building agents that perform automated tasks for you online",
+    "tags": [
+      "huginn",
+      "agents",
+      "automation"
+    ],
+    "languages": [
+      ""
+    ]
+  },
+  {
     "name": "imgproxy",
     "category": "",
     "readme": "# ImgProxy\n\nImgProxy is a fast and secure standalone server for resizing and converting remote images. It's can be deployed using their official Docker image, as documented [here](https://docs.imgproxy.net/installation#docker).\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: ImgProxy\n\nShort Description: A fast and secure standalone server for resizing and converting remote images\n\nTags: imgproxy, images, server\n\nLanguages: \n",
