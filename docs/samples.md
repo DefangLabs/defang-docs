@@ -12,3 +12,4 @@ Check out our sample projects here to get some inspiration and get a sense of ho
 
 import Samples from "../src/components/Samples";
 
+<Samples />

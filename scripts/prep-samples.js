@@ -1,47 +1,57 @@
 const fs = require('fs');
 const path = require('path');
 
-const samplesDir = path.join(__dirname, '..', 'defang', 'samples');
+const samplesDir = path.join(__dirname, '..', 'samples', 'samples');
 
 // categories are directories in the current directory (i.e. we're running in samples/ and we might have a samples/ruby/ directory)
 const directories = fs.readdirSync(samplesDir).filter(file => fs.statSync(path.join(samplesDir, file)).isDirectory());
 
 let jsonArray = [];
 
-directories.forEach((category) => {
-    // in each category, we have a series of subdirectories that are the actual samples (which contain full programs, including a README.md)
-    // we're going to loop through those directories and create a JSON object for each one
-    const samples = fs.readdirSync(path.join(samplesDir, category))
-        .filter(file => fs.statSync(path.join(samplesDir, category, file)).isDirectory());
-    samples.forEach((sample) => {
-        const name = sample;
+directories.forEach((sample) => {
+    const directoryName = sample;
+    let readme;
+    try {
+        readme = fs.readFileSync(path.join(samplesDir, sample, 'README.md'), 'utf8');
+    } catch (error) {
+        readme = `# ${sample}`;
+    }
 
-        let readme;
-        try {
-            readme = fs.readFileSync(path.join(samplesDir, category, sample, 'README.md'), 'utf8');
-        } catch (error) {
-            readme = `# ${sample}`;
-        }
+    // The readme should contain lines that start with the following:
+    // Title: 
+    // Short Description: 
+    // Tags: 
+    // Languages: 
+    // 
+    // We want to extract the title, short description, tags, and languages from the readme. Tags and languages are comma separated lists.
+    const title = readme.match(/Title: (.*)/)[1];
+    const shortDescription = readme.match(/Short Description: (.*)/)[1];
+    const tags = readme.match(/Tags: (.*)/)[1].split(',').map(tag => tag.trim());
+    const languages = readme.match(/Languages: (.*)/)[1].split(',').map(language => language.trim());
 
-        jsonArray.push({
-            name,
-            category,
-            readme,
-        });
-        console.log(`@@ Added ${category}/${sample}`);
+    jsonArray.push({
+        name: directoryName,
+        category: languages?.[0],
+        readme,
+        directoryName,
+        title,
+        shortDescription,
+        tags,
+        languages,
     });
+    console.log(`@@ Added ${sample}`);
 });
 
 const stringified = JSON.stringify(jsonArray, null, 2);
 
-fs.writeFileSync(path.join(__dirname, '..', 'samples.json'), stringified);
+// fs.writeFileSync(path.join(__dirname, '..', 'samples.json'), stringified);
 
 // we're going to open up the ../docs/samples.md file and replce [] with the stringified JSON
 
-const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
-let samplesMdContents = fs.readFileSync(samplesMd, 'utf8');
-samplesMdContents += `<Samples samples={${stringified}} />`;
-fs.writeFileSync(samplesMd, samplesMdContents);
+// const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
+// let samplesMdContents = fs.readFileSync(samplesMd, 'utf8');
+// samplesMdContents += `<Samples samples={${stringified}} />`;
+// fs.writeFileSync(samplesMd, samplesMdContents);
 
 // save the json to the samples.json file in static
 fs.writeFileSync(path.join(__dirname, '..', 'static', 'samples.json'), stringified);

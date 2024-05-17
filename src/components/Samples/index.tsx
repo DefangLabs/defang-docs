@@ -1,6 +1,6 @@
 import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, List, ListItemButton, ListItemText, Stack, TextField } from '@mui/material';
 import Fuse, { FuseResult } from 'fuse.js';
-import { Fragment, ReactNode, useDeferredValue, useMemo, useRef, useState } from 'react';
+import { Fragment, ReactNode, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { capitalCase } from 'change-case';
 import CodeBlock from '@theme/CodeBlock';
@@ -11,6 +11,10 @@ interface Sample {
     name: string;
     category: string;
     readme: string;
+    title?: string;
+    shortDescription?: string;
+    languages?: string[];
+    tags?: string[];
 }
 
 interface SamplesProps {
@@ -20,7 +24,9 @@ interface SamplesProps {
 const categoryColors = {
     python: '#FFFFE0',
     nodejs: '#90EE90',
-    golang: '#ADD8E6',
+    golang: '#b8e4f3',
+    go: '#b8e4f3',
+    sql: '#ebaef4',
     ruby: '#FF7F7F',
     other: 'lightgray',
 };
@@ -77,25 +83,36 @@ function getHighlightedTextWithContext(text: string, matches: FuseResult<Sample>
 
 
 
-export default function Samples({ samples }: SamplesProps) {
-    const titled = samples.map((sample) => ({
-        ...sample,
-        displayName: capitalCase(sample.name),
-    }));
-    type TitledSample = typeof titled[0];
+export default function Samples() {
+    const [samples, setSamples] = useState<Sample[]>([]);
     const [filter, setFilter] = useState("");
-    const [selectedSample, setSelectedSample] = useState<TitledSample | null>(null);
+    const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
+    const [loading, setLoading] = useState(true);
 
-    const fuse = useRef(new Fuse(titled, {
-        keys: ['displayName', 'category', 'readme'],
+    const fuse = useRef(new Fuse(samples, {
+        keys: ['title', 'category', 'shortDescription', 'tags', 'languages'],
         includeMatches: true,
         isCaseSensitive: false,
-        threshold: 0.25,
+        threshold: 0.3,
     })).current;
+
+    useEffect(() => {
+        const fetchSamples = async () => {
+            const response = await fetch('/samples.json');
+            const samples = await response.json();
+
+            fuse.setCollection(samples);
+
+            setSamples(samples);
+            setLoading(false);
+        };
+        fetchSamples();
+    }, []);
+
     const deferredFilter = useDeferredValue(filter);
-    const results = useMemo((): FuseResult<TitledSample>[] => {
+    const results = useMemo((): FuseResult<Sample>[] => {
         if (!deferredFilter) {
-            return titled.map((item, i) => ({
+            return samples.map((item, i) => ({
                 item,
                 score: 0,
                 refIndex: i,
@@ -105,13 +122,15 @@ export default function Samples({ samples }: SamplesProps) {
         return fuse.search({
             $and: deferredFilter.split(/\s+/).map((word) => ({
                 $or: [
-                    { displayName: word },
+                    { title: word },
                     { category: word },
-                    { readme: word },
+                    { shortDescription: word },
+                    { tags: word },
+                    { languages: word },
                 ],
             })),
         });
-    }, [deferredFilter]);
+    }, [deferredFilter, samples]);
 
     return (
         <>
@@ -125,7 +144,7 @@ export default function Samples({ samples }: SamplesProps) {
                         <DialogTitle component="div" display="flex">
                             <Box>
                                 <Box fontWeight="bold" component="span">
-                                    {selectedSample.displayName}
+                                    {selectedSample.title}
                                 </Box>
                                 <Chip
                                     label={selectedSample.category}
@@ -159,7 +178,7 @@ export default function Samples({ samples }: SamplesProps) {
                                     Clone and open the sample in your terminal
                                 </small>
                                 <CodeBlock language="bash">
-                                    {`git clone https://github.com/DefangLabs/defang dtmp && cp -r defang/samples/${selectedSample.category}/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
+                                    {`git clone https://github.com/DefangLabs/samples dtmp && cp -r defang/samples/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
                                 </CodeBlock>
                             </Box>
                             {/* </Stack> */}
@@ -175,6 +194,11 @@ export default function Samples({ samples }: SamplesProps) {
                         onChange={(e) => setFilter(e.target.value)}
                         variant='filled'
                     />
+                    {loading && (
+                        <p>
+                            Loading samples...
+                        </p>
+                    )}
                 </Box>
                 <List
                     sx={{
@@ -189,23 +213,26 @@ export default function Samples({ samples }: SamplesProps) {
                                 matches
                             } = result;
 
-                            let displayName: ReactNode = sample.displayName;
-                            const displayNameMatched = matches.find((match) => match.key === 'displayName');
+                            let title: ReactNode = sample.title;
+                            const titleMatched = matches.find((match) => match.key === 'title');
 
                             let category: ReactNode = sample.category;
                             const categoryMatched = matches.find((match) => match.key === 'category');
 
-                            let readme: ReactNode = "";
-                            const readmeMatched = matches.find((match) => match.key === 'readme');
+                            let shortDescription: ReactNode = sample.shortDescription.slice(0, 80);
+                            if(sample.shortDescription.length > 80) {
+                                shortDescription += '...';
+                            }
+                            const shortDescriptionMatched = matches.find((match) => match.key === 'shortDescription');
 
-                            if (displayNameMatched) {
-                                displayName = highlightMatches(sample.name, [displayNameMatched]);
+                            if (titleMatched) {
+                                title = highlightMatches(sample.title, [titleMatched]);
                             }
                             if (categoryMatched) {
                                 category = highlightMatches(sample.category, [categoryMatched]);
                             }
-                            if (readmeMatched) {
-                                readme = getHighlightedTextWithContext(sample.readme, [readmeMatched]);
+                            if (shortDescriptionMatched) {
+                                shortDescription = getHighlightedTextWithContext(sample.shortDescription, [shortDescriptionMatched]);
                             }
 
                             return (
@@ -218,14 +245,14 @@ export default function Samples({ samples }: SamplesProps) {
                                     onClick={() => setSelectedSample(sample)}
                                 >
                                     <ListItemText
-                                        primary={displayName}
+                                        primary={title}
                                         secondary={(
                                             <>
-                                                <Chip component={"span"} label={category} size='small' sx={{ backgroundColor: categoryColors[sample.category] || categoryColors['other'] }} />
-                                                {readmeMatched && (
+                                                {category && <Chip component={"span"} label={category} size='small' sx={{ backgroundColor: categoryColors[sample.category] || categoryColors['other'] }} />}
+                                                {true && (
                                                     <>
                                                         <br />
-                                                        {readme}
+                                                        {shortDescription}
                                                     </>
                                                 )}
                                             </>
