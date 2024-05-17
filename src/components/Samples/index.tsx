@@ -1,10 +1,9 @@
-import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, List, ListItemButton, ListItemText, Stack, TextField } from '@mui/material';
+import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, List, ListItemButton, ListItemText, Stack, TextField } from '@mui/material';
+import CodeBlock from '@theme/CodeBlock';
+import ExternalLink from '@theme/Icon/ExternalLink';
 import Fuse, { FuseResult } from 'fuse.js';
 import { Fragment, ReactNode, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { capitalCase } from 'change-case';
-import CodeBlock from '@theme/CodeBlock';
-import ExternalLink from '@theme/Icon/ExternalLink'
 
 
 interface Sample {
@@ -24,6 +23,7 @@ interface SamplesProps {
 const categoryColors = {
     python: '#FFFFE0',
     nodejs: '#90EE90',
+    typescript: '#cabbff',
     golang: '#b8e4f3',
     go: '#b8e4f3',
     sql: '#ebaef4',
@@ -146,14 +146,18 @@ export default function Samples() {
                                 <Box fontWeight="bold" component="span">
                                     {selectedSample.title}
                                 </Box>
-                                <Chip
-                                    label={selectedSample.category}
-                                    size='small'
-                                    sx={{
-                                        backgroundColor: categoryColors[selectedSample.category] || categoryColors['other'],
-                                        ml: 1,
-                                    }}
-                                />
+                                {(selectedSample.languages?.length ?? 0) > 0 && (
+                                    selectedSample.languages?.map((language) => (
+                                        <Chip
+                                            label={language}
+                                            size='small'
+                                            sx={{
+                                                backgroundColor: categoryColors[language] || categoryColors['other'],
+                                                ml: 1,
+                                            }}
+                                        />
+                                    ))
+                                )}
                             </Box>
                             <Box sx={{ flexGrow: 1 }} />
                             <Button sx={{
@@ -178,7 +182,7 @@ export default function Samples() {
                                     Clone and open the sample in your terminal
                                 </small>
                                 <CodeBlock language="bash">
-                                    {`git clone https://github.com/DefangLabs/samples dtmp && cp -r dtmp/samples/${selectedSample.name} "./${selectedSample.name}" && rm -r ./dtmp && cd "${selectedSample.name}"`}
+                                    {`git clone https://github.com/DefangLabs/samples dtmp && mv "dtmp/samples/${selectedSample.name}" "./${selectedSample.name}" && rm -rf ./dtmp && cd "./${selectedSample.name}"`}
                                 </CodeBlock>
                             </Box>
                             {/* </Stack> */}
@@ -220,7 +224,7 @@ export default function Samples() {
                             const categoryMatched = matches.find((match) => match.key === 'category');
 
                             let shortDescription: ReactNode = sample.shortDescription.slice(0, 80);
-                            if(sample.shortDescription.length > 80) {
+                            if (sample.shortDescription.length > 80) {
                                 shortDescription += '...';
                             }
                             const shortDescriptionMatched = matches.find((match) => match.key === 'shortDescription');
