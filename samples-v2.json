@@ -434,6 +434,23 @@
     ]
   },
   {
+    "name": "phoenix-postgres",
+    "category": "elixir",
+    "readme": "# Phoenix + Postgres\n\nDefang is the easiest way to deploy containerized apps like this Phoenix + Postgres sample to AWS. This is a sample Phoenix application that uses a PostgreSQL database. The sample doesn't add anything to the database, but is based off of the default Phoenix getting started instructions which add a postgres database to the application.\n\n## Prerequisites\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. Have a managed database service configured and have the connection string ready.\n3. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up\n```\n\nThis will run Phoenix in development mode. If you need to run any commands in the container, after you have run the command above and started the container, you can run the command in a new terminal:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml exec phoenix bash\n```\n\n## Deploying\n1. Open the terminal and type `defang login`\n2. Provide values for `SECRET_KEY_BASE` and `DATABASE_URL`\n    - `SECRET_KEY_BASE` is a secret key used by Phoenix to sign cookies and other things. You can generate one by running `docker compose -f compose.yaml -f compose.dev.yaml run --rm phoenix mix phx.gen.secret`\n    - `DATABASE_URL` is the connection string for your PostgreSQL database. It should look something like `ecto://username:password@hostname/dbname`\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n---\n\nTitle: Phoenix + Postgres\n\nShort Description: A sample Phoenix application that uses a PostgreSQL database.\n\nTags: phoenix, postgres, database, elixir\n\nLanguages: elixir\n",
+    "directoryName": "phoenix-postgres",
+    "title": "Phoenix + Postgres",
+    "shortDescription": "A sample Phoenix application that uses a PostgreSQL database.",
+    "tags": [
+      "phoenix",
+      "postgres",
+      "database",
+      "elixir"
+    ],
+    "languages": [
+      "elixir"
+    ]
+  },
+  {
     "name": "pulumi",
     "category": "nodejs",
     "readme": "# Pulumi \n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example\n\nTags: pulumi, node.js, http, server\n\nLanguages: nodejs, typescript",
