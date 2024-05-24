@@ -165,7 +165,7 @@ export default function Samples() {
                                     // "color": "#FFF",
                                 },
                                 flexShrink: 0,
-                            }} size='small' variant="text" href={`https://github.com/DefangLabs/defang/tree/main/samples/${selectedSample.category}/${selectedSample.name}`} target='_blank'>
+                            }} size='small' variant="text" href={`https://github.com/DefangLabs/samples/tree/main/samples/${selectedSample.name}`} target='_blank'>
                                 Open Sample
                                 <ExternalLink />
                             </Button>
