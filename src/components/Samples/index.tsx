@@ -179,10 +179,10 @@ export default function Samples() {
                             {/* <Stack direction="row" justifyContent="center" px={1} spacing={2}> */}
                             <Box sx={{ flexGrow: 1, overflow: 'auto', '& .theme-code-block': { mb: 0 } }}>
                                 <small>
-                                    Clone and open the sample in your terminal
+                                    Use this sample (<b><a href="https://docs.defang.io/docs/getting-started/installing" target="_blank">requires Defang CLI v0.5.21 or later</a></b>)
                                 </small>
                                 <CodeBlock language="bash">
-                                    {`git clone https://github.com/DefangLabs/samples dtmp && mv "dtmp/samples/${selectedSample.name}" "./${selectedSample.name}" && rm -rf ./dtmp && cd "./${selectedSample.name}"`}
+                                    {`defang generate ${selectedSample.name}`}
                                 </CodeBlock>
                             </Box>
                             {/* </Stack> */}
