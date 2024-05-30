@@ -262,10 +262,10 @@
   {
     "name": "nextjs",
     "category": "nodejs",
-    "readme": "# Next.js × Defang\n\nA basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app with a Dockerfile and compose.yaml\n\nTags: next.js, react, docker, aws\n\nLanguages: nodejs, typescript",
+    "readme": "# Next.js × Defang\n\nA basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app ready to deploy to Defang.\n\nTags: next.js, react, docker, aws\n\nLanguages: nodejs, typescript",
     "directoryName": "nextjs",
     "title": "Next.js",
-    "shortDescription": "A basic Next.js app with a Dockerfile and compose.yaml",
+    "shortDescription": "A basic Next.js app ready to deploy to Defang.",
     "tags": [
       "next.js",
       "react",
