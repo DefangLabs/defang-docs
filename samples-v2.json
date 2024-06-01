@@ -48,6 +48,22 @@
     ]
   },
   {
+    "name": "elysia",
+    "category": "typescript",
+    "readme": "# Elysia × Bun × Defang\n\nA basic [Elysia](https://elysiajs.com/) app running on [Bun](https://bun.sh/) with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n\n## Deploying\n\n1. Run `defang login` if you are not yet logged in.\n4. Run `defang compose up`.\n5. Your app will be running within a few minutes.\n\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n\n---\n\nTitle: Elysia × Bun × Defang\n\nShort Description: A basic Elysia app running on Bun with Defang.\n\nTags: bun, elysia, typescript\n\nLanguages: typescript",
+    "directoryName": "elysia",
+    "title": "Elysia × Bun × Defang",
+    "shortDescription": "A basic Elysia app running on Bun with Defang.",
+    "tags": [
+      "bun",
+      "elysia",
+      "typescript"
+    ],
+    "languages": [
+      "typescript"
+    ]
+  },
+  {
     "name": "fastapi",
     "category": "Python",
     "readme": "# FastAPI\n\nThis sample project demonstrates how to deploy FastAPI with Defang. \n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nTo run your FastAPI app locally, you'll need to have Docker installed on your machine. You can then run:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up\n```\n\nThat will start your FastAPI app on `http://localhost:8000` with hot reloading enabled.\n\n---\n\nTitle: FastAPI\n\nShort Description: A sample project demonstrating how to deploy FastAPI with Defang\n\nTags: FastAPI, OpenAPI\n\nLanguages: Python, FastAPI\n",
