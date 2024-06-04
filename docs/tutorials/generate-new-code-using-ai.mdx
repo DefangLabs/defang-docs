@@ -8,31 +8,35 @@ sidebar_position: 50
 Defang supports generating new project outlines using integration with an AI model. Using this feature, you can describe what you would like the service to do and the CLI will then generate a project outline with all the files required to make it work.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/afglsBYieuc?si=GCvHhBu3H9ktMDHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Step 1 - Create a new folder for the project
-```text
-mkdir service1
-cd service1
-```
-
-## Step 2 - Use the CLI generate command
+## Step 1 - Use the CLI generate command
 
 ```text
-defang login
 defang generate
 
-? Choose the language you'd like to use:  [Use arrows to move, type to filter]
+? Choose the language you'd like to use:  [Use arrows to move, type to filter, ? for more help]
 > Nodejs
   Golang
   Python
 
-? Please describe the service you'd like to build:
+? Choose a sample service:
+Generate with AI
+
+? Please describe the service you'd like to build: [? for help] 
 A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: { "status": "OK" }. The /echo endpoint will echo back all request parameters in the response.
+
+? What folder would you like to create the service in? [? for help] (service1)
+project1
 ```
 
 This will generate the different files required to start your project based on your prompt and the language selected.
 
-
 ## Step 3 - Review the Code
+
+Change into the new project folder:
+```shell
+cd project1
+```
+
 You can open the files in a code editor to review or make changes as needed before deploying the service.
 
 ## Step 4 - Build and Deploy
