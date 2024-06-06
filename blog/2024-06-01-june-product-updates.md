@@ -1,4 +1,3 @@
-
 ---
 slug: june-2024-product-update
 title: June 2024 Product Update
