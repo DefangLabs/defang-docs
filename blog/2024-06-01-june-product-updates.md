@@ -17,7 +17,7 @@ We’re excited to announce that ACME support is now available for Bring Your Ow
 
 ## Managed Redis
 
-Redis is such a versatile that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition. 
+Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition. 
 
 ## Upgraded Kaniko
 
