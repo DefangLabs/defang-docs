@@ -19,8 +19,11 @@ jobs:
     steps:
       - name: Only deploy on repository_dispatch if version starts with 'v'
         run: |
-          echo "Event name: ${{ github.event.client_payload }}"
-          if [[ "${{ github.event_name }}" == "repository_dispatch" && "${{ github.event.client_payload.type }}" == "cli-autodoc" ]]; then
+          echo "Event name: ${{ github.event_name }}"
+          echo "Type: ${{ github.event.action }}"
+          echo "Version: ${{ github.event.client_payload.version }}"
+          if [[ "${{ github.event_name }}" == "repository_dispatch" && "${{ github.event.action }}" == "cli-autodoc" ]]; then
+            echo "Version: ${{ github.event.client_payload.version }}"
             if [[ "${{ github.event.client_payload.version }}" != v* ]]; then
               echo "Version does not start with 'v'. Stopping workflow."
               exit 1
