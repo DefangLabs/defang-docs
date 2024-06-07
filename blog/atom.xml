@@ -2,11 +2,59 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2024-05-01T00:00:00.000Z</updated>
+    <updated>2024-06-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/https://www.google.com/s2/favicons?domain=defang.io</icon>
+    <entry>
+        <title type="html"><![CDATA[June 2024 Product Update]]></title>
+        <id>https://docs.defang.io/blog/june-2024-product-update</id>
+        <link href="https://docs.defang.io/blog/june-2024-product-update"/>
+        <updated>2024-06-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hey folks! We’re back with another exciting update about Defang. Our team has been working hard to bring you new features and improvements so you can get deploying faster. Here’s a rundown of what we’ve been up to this month:]]></summary>
+        <content type="html"><![CDATA[<p>Hey folks! We’re back with another exciting update about Defang. Our team has been working hard to bring you new features and improvements so you can get deploying faster. Here’s a rundown of what we’ve been up to this month:</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="samples-samples-samples">Samples, samples, samples!<a href="https://docs.defang.io/blog/june-2024-product-update#samples-samples-samples" class="hash-link" aria-label="Direct link to Samples, samples, samples!" title="Direct link to Samples, samples, samples!">​</a></h2>
+<p>We've been cranking out samples like there's no tomorrow. We've published samples to get you up and running with FastAPI, Elysia, Angular, React, Svelte, Sveltekit, Sails.js, Phoenix, and more. You can filter through them on the <a href="https://defang.io/#deploy" target="_blank" rel="noopener noreferrer">Defang homepage</a>. Check out our video about all the <a href="https://www.youtube.com/watch?v=8wIU_af-sX8" target="_blank" rel="noopener noreferrer">new samples and functionality</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="start-from-a-sample-in-seconds">Start from a sample in seconds<a href="https://docs.defang.io/blog/june-2024-product-update#start-from-a-sample-in-seconds" class="hash-link" aria-label="Direct link to Start from a sample in seconds" title="Direct link to Start from a sample in seconds">​</a></h3>
+<p>With all this work we've been putting into samples, we realized it would be pretty awesome if you could clone a sample faster. So we updated the CLI. Now, if you run <code>defang generate</code> you'll be able to filter through the samples and choose one. You can also filter through the samples on the <a href="https://defang.io/#deploy" target="_blank" rel="noopener noreferrer">Defang homepage</a> and clone any of them with a simple command like <code>defang new sveltekit</code>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sample-templates">Sample templates<a href="https://docs.defang.io/blog/june-2024-product-update#sample-templates" class="hash-link" aria-label="Direct link to Sample templates" title="Direct link to Sample templates">​</a></h3>
+<p>If you look through our <a href="https://github.com/DefangLabs" target="_blank" rel="noopener noreferrer">GitHub organization</a>, you'll start seeing loads of repos with the structure <code>sample-&lt;sample_name&gt;-template</code>. If you open them, you can create a new repo by clicking this button:</p>
+<p><img loading="lazy" src="https://github.com/DefangLabs/defang-docs/assets/910895/97d33d90-43b9-499a-b139-e114b701adcb" alt="screenshot of github UI pointing towards template button" class="img_ev3q"></p>
+<p>Not only will that create a new repo based on the sample in your account, but if you've used Defang before (and accepted the Terms and Conditions) it will automatically deploy it to the playground so you can start playing with Defang immediately.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="acme-for-byod">ACME for BYOD<a href="https://docs.defang.io/blog/june-2024-product-update#acme-for-byod" class="hash-link" aria-label="Direct link to ACME for BYOD" title="Direct link to ACME for BYOD">​</a></h2>
+<p>We’re excited to announce that ACME support is now available for Bring Your Own Domain (BYOD) in both Bring Your Own Cloud (BYOC) and Playground. This means you can easily add Let's Encrypt certificates to your custom domains, regardless of where your DNS is hosted. Defang will handle the certificate generation and automatic renewal for you. Nice and easy.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="warnings-for-stateful-services">Warnings for Stateful Services<a href="https://docs.defang.io/blog/june-2024-product-update#warnings-for-stateful-services" class="hash-link" aria-label="Direct link to Warnings for Stateful Services" title="Direct link to Warnings for Stateful Services">​</a></h2>
+<p>To help you avoid potential pitfalls, we’ve added warnings against deploying stateful services with Defang, since you shouldn't actually be deploying anything stateful with Defang. For example, we'll warn you if you try to deploy services with images like <code>postgres:&lt;version&gt;</code>, <code>redis:&lt;version&gt;</code>, <code>minio:&lt;version&gt;</code>, etc.</p>
+<p>In the near future we will be offering ways to run some stateful services using cloud providers' managed offerings. For example Redis, Postgres, and S3. Speaking of which...</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-redis">Managed Redis!<a href="https://docs.defang.io/blog/june-2024-product-update#managed-redis" class="hash-link" aria-label="Direct link to Managed Redis!" title="Direct link to Managed Redis!">​</a></h2>
+<p>Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your <code>compose.yaml</code> file and indicate that you want it managed by your cloud provider using <code>x-defang-redis: true</code> in your service definition.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="load-testing">Load Testing<a href="https://docs.defang.io/blog/june-2024-product-update#load-testing" class="hash-link" aria-label="Direct link to Load Testing" title="Direct link to Load Testing">​</a></h2>
+<p>To make sure Defang is ready for loads of new users, we've been doing a lot of load testing. This is going to help us identify and address potential bottlenecks so we can make sure that Defang scales efficiently and handles all you new users smoothly.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="upgraded-kaniko">Upgraded Kaniko<a href="https://docs.defang.io/blog/june-2024-product-update#upgraded-kaniko" class="hash-link" aria-label="Direct link to Upgraded Kaniko" title="Direct link to Upgraded Kaniko">​</a></h2>
+<p>We’ve upgraded our Kaniko integration to version 1.23.0 to improve your container build experience. The new version comes with several bug fixes that enhance stability and performance. This means faster and more reliable builds for your applications.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="upcoming-features">Upcoming Features<a href="https://docs.defang.io/blog/june-2024-product-update#upcoming-features" class="hash-link" aria-label="Direct link to Upcoming Features" title="Direct link to Upcoming Features">​</a></h2>
+<p>We’re not stopping here! Here’s a sneak peek at what’s coming soon:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="managed-postgres">Managed Postgres<a href="https://docs.defang.io/blog/june-2024-product-update#managed-postgres" class="hash-link" aria-label="Direct link to Managed Postgres" title="Direct link to Managed Postgres">​</a></h3>
+<p>Building on the momentum of Managed Redis, we’re introducing Managed Postgres. Soon you’ll be able to easily integrate a managed Postgres database into your deployment!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="byoc-ecs-lifecycle-events">BYOC ECS Lifecycle Events<a href="https://docs.defang.io/blog/june-2024-product-update#byoc-ecs-lifecycle-events" class="hash-link" aria-label="Direct link to BYOC ECS Lifecycle Events" title="Direct link to BYOC ECS Lifecycle Events">​</a></h3>
+<p>Defang runs your services with ECS, and we're working on making it clearer what's happening under the hood.</p>
+<hr>
+<p>Stay tuned for more updates and improvements. As always, we appreciate your feedback and are committed to making Defang the easiest way to deploy your applications to the cloud. Go deploy something awesome! 🚀</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="NoDevOps" term="NoDevOps"/>
+        <category label="BYOC" term="BYOC"/>
+        <category label="Playground" term="Playground"/>
+        <category label="Load Testing" term="Load Testing"/>
+        <category label="ACME" term="ACME"/>
+        <category label="Managed Redis" term="Managed Redis"/>
+        <category label="Kaniko" term="Kaniko"/>
+        <category label="Postgres" term="Postgres"/>
+        <category label="ECS" term="ECS"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[May 2024 Product Update]]></title>
         <id>https://docs.defang.io/blog/may-2024-product-update</id>

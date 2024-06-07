@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[2780],{6256:s=>{s.exports=JSON.parse('{"label":"Load Testing","permalink":"/blog/tags/load-testing","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
