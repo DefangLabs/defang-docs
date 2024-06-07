@@ -15,17 +15,19 @@ To make sure Defang is ready for loads of new users, we've been doing a lot of l
 
 We’re excited to announce that ACME support is now available for Bring Your Own Domain (BYOD) in both Bring Your Own Cloud (BYOC) and Playground. This means you can easily add Let's Encrypt certificates to your custom domains, regardless of where your DNS is hosted. Defang will handle the certificate generation and automatic renewal for you. Nice and easy.
 
-## Managed Redis
-
-Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition. 
-
 ## Upgraded Kaniko
 
-We’ve upgraded our Kaniko integration to improve your container build experience. The new version comes with several bug fixes that enhance stability and performance. This means faster and more reliable builds for your applications.
+We’ve upgraded our Kaniko integration to version 1.23.0 to improve your container build experience. The new version comes with several bug fixes that enhance stability and performance. This means faster and more reliable builds for your applications.
 
 ## Warnings for Stateful Services
 
-To help you avoid potential pitfalls, we’ve added warnings against deploying stateful services with Defang, since you shouldn't actually be deploying anything stateful with Defang.
+To help you avoid potential pitfalls, we’ve added warnings against deploying stateful services with Defang, since you shouldn't actually be deploying anything stateful with Defang. For example, we'll warn you if you try to deploy services with images like `postgres:<version>`, `redis:<version>`, `minio:<version>`, etc. 
+
+In the near future we will be offering ways to run some stateful services using cloud providers' managed offerings. For example Redis, Postgres, and S3. Speaking of which...
+
+## Managed Redis
+
+Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition. 
 
 ## Upcoming Features
 
