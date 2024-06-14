@@ -554,6 +554,27 @@
     ]
   },
   {
+    "name": "pulumi-remix-postgres",
+    "category": "nodejs",
+    "readme": "# Pulumi & Remix & Postgres\n\nIn this example, we run a Remix application connected to a Postgres database using Prisma as an ORM. When we deploy our service to [Defang](https://defang.io/), we also deploy a Postgres service and database using [Aiven](https://aiven.io/) so we can run our full application in the cloud.\n\n## Running Locally\n\nTo run this example locally, you'll need to have a Postgres database. You can run one locally with Docker:\n\n```\ndocker run -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres\n```\n\nCreate a `.env` file with the following:\n\n```\nDATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\"\n```\n\nThen run `npm install` and `npm run dev` in the `remix` directory to start the application.\n\n## Deploying to Defang\n\nFirst, `cd` into the `pulumi` directory and make sure you're logged into Defang with `defang login` and into Pulumi with `pulumi login`.\n\nNext, head to your Aiven account and create an api token, then run the following command to store it in your Pulumi stack config:\n\n```\npulumi config set --secret aiven:apiToken <YourToken>\n```\n\nYou'll also need to make sure you have an Aiven organization with a billing method attached to a billing group. Get the organization id and the billing group id and add them to your config with the following commands:\n\n```\npulumi config set --secret aivenOrganizationId <OrgId>\npulumi config set --secret aivenBillingGroupId <BillingGroupId>\n```\n\nNow, run `pulumi up` to deploy your application to Defang and Aiven! Head to the [portal](https://portal.defang.dev) to check on status, or run `defang services`.\n\n---\n\nTitle: Pulumi & Remix & Postgres\n\nShort Description: A full stack example using Remix, Prisma, and Aiven\n\nTags: full stack, remix, prisma, aiven, postgres, pulumi\n\nLanguages: nodejs, sql, typescript\n",
+    "directoryName": "pulumi-remix-postgres",
+    "title": "Pulumi & Remix & Postgres",
+    "shortDescription": "A full stack example using Remix, Prisma, and Aiven",
+    "tags": [
+      "full stack",
+      "remix",
+      "prisma",
+      "aiven",
+      "postgres",
+      "pulumi"
+    ],
+    "languages": [
+      "nodejs",
+      "sql",
+      "typescript"
+    ]
+  },
+  {
     "name": "python-form",
     "category": "python",
     "readme": "# Flask & Form Submission\n\nThis Flask application provides a basic example of handling form submissions. It displays an HTML form where users can input their first name. Upon submission, the application greets the user by name on a new page. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask & Form Submission\n\nShort Description: A Flask application that provides a basic example of handling form submissions\n\nTags: flask, form, python\n\nLanguages: python\n",
@@ -664,27 +685,6 @@
     ],
     "languages": [
       "ruby"
-    ]
-  },
-  {
-    "name": "remix-aiven-postgres",
-    "category": "nodejs",
-    "readme": "# Defang & Pulumi\n\nIn this example, we run a Remix application connected to a Postgres database using Prisma as an ORM. When we deploy our service to [Defang](https://defang.io/), we also deploy a Postgres service and database using [Aiven](https://aiven.io/) so we can run our full application in the cloud.\n\n## Running Locally\n\nTo run this example locally, you'll need to have a Postgres database. You can run one locally with Docker:\n\n```\ndocker run -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres\n```\n\nCreate a `.env` file with the following:\n\n```\nDATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\"\n```\n\nThen run `npm install` and `npm run dev` in the `remix` directory to start the application.\n\n## Deploying to Defang\n\nFirst, `cd` into the `pulumi` directory and make sure you're logged into Defang with `defang login` and into Pulumi with `pulumi login`.\n\nNext, head to your Aiven account and create an api token, then run the following command to store it in your Pulumi stack config:\n\n```\npulumi config set --secret aiven:apiToken <YourToken>\n```\n\nYou'll also need to make sure you have an Aiven organization with a billing method attached to a billing group. Get the organization id and the billing group id and add them to your config with the following commands:\n\n```\npulumi config set --secret aivenOrganizationId <OrgId>\npulumi config set --secret aivenBillingGroupId <BillingGroupId>\n```\n\nNow, run `pulumi up` to deploy your application to Defang and Aiven! Head to the [portal](https://portal.defang.dev) to check on status, or run `defang services`.\n\n---\n\nTitle: Full Stack Defang & Pulumi Example w/ Remix & Postgres\n\nShort Description: A full stack example using Remix, Prisma, and Aiven\n\nTags: full stack, remix, prisma, aiven, postgres, pulumi\n\nLanguages: nodejs, sql, typescript\n",
-    "directoryName": "remix-aiven-postgres",
-    "title": "Full Stack Defang & Pulumi Example w/ Remix & Postgres",
-    "shortDescription": "A full stack example using Remix, Prisma, and Aiven",
-    "tags": [
-      "full stack",
-      "remix",
-      "prisma",
-      "aiven",
-      "postgres",
-      "pulumi"
-    ],
-    "languages": [
-      "nodejs",
-      "sql",
-      "typescript"
     ]
   },
   {
