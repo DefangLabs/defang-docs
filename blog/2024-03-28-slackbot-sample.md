@@ -36,7 +36,7 @@ cd defang/samples/golang/slackbot
 
 Now that we have everything set up, let's dive into the deployment process. Follow these steps to deploy your Slackbot effortlessly:
 
-1.  **Set Up Secrets:** Prioritize security by configuring environment variables as secrets. Use the Defang CLI's `defang config set` command to set the `SLACK_TOKEN` and `SLACK_CHANNEL_ID` secrets.
+1.  **Set Up Secrets:** Prioritize security by configuring environment variables as sensitive config. Use the Defang CLI's `defang config set` command to set the `SLACK_TOKEN` and `SLACK_CHANNEL_ID` configs.
     Replace `your_slack_token` and `your_slack_channel_id` with the respective values:
 
     ```bash
