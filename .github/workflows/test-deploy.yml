@@ -28,6 +28,13 @@ jobs:
           path: defang
           ref: main
 
+      - name: Checkout DefangLabs/samples
+        uses: actions/checkout@v3
+        with:
+          repository: DefangLabs/samples
+          path: samples
+          ref: main
+
       - name: Set up Go
         uses: actions/setup-go@v2
         with:

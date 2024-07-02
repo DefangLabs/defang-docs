@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const YAML = require('yaml');
 
 const samplesDir = path.join(__dirname, '..', 'samples', 'samples');
 
@@ -29,7 +30,36 @@ directories.forEach((sample) => {
     const tags = readme.match(/Tags: (.*)/)[1].split(',').map(tag => tag.trim());
     const languages = readme.match(/Languages: (.*)/)[1].split(',').map(language => language.trim());
 
-    jsonArray.push({
+    let configs = [];
+    try {
+        composeFile = fs.readFileSync(path.join(samplesDir, sample, 'compose.yaml'), 'utf8');
+        compose = YAML.parse(composeFile);
+
+        for (var name in compose.services) {
+            service = compose.services[name]
+            if (Array.isArray(service.environment)) {
+                service.environment.forEach(env => {
+                    if (!env.includes("=")) {
+                        configs.push(env);
+                    }
+                });
+            } else {
+                for (var name in service.environment) {
+                    value = service.environment[name];
+                    if (value === null || value === undefined || value === "") {
+                        configs.push(name);
+                    }
+                }
+            }
+        }
+    } catch (error) {
+        // Ignore if the sample doesn't have a compose file
+        if (error.code != 'ENOENT') {
+            console.log(`failed to parese compose for configs for sample`, sample, error);
+        }
+    }
+
+    const sampleSummary = {
         name: directoryName,
         category: languages?.[0],
         readme,
@@ -38,7 +68,12 @@ directories.forEach((sample) => {
         shortDescription,
         tags,
         languages,
-    });
+    };
+    if (configs.length > 0) {
+        sampleSummary.configs = configs;
+    }
+    jsonArray.push(sampleSummary);
+
     console.log(`@@ Added ${sample}`);
 });
 
