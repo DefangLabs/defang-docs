@@ -8,11 +8,11 @@ description: How to install Defang.
 
 Defang doesn't require installing anything in your cloud, but you will need to install the [open source](https://github.com/DefangLabs/defang) Defang command line interface (CLI) to interact with your Defang resources and account.
 
-We offer a few different ways to install the Defang CLI. You can use Homebrew, a bash script, or download the binary directly.
+We offer a few different ways to install the Defang CLI. You can use Homebrew, a bash script, Winget, or download the binary directly.
 
 ## Using Homebrew
 
-You can easily install the Defang CLI using [Homebrew](https://brew.sh/). Just run the following command in your terminal:
+You can easily install the Defang CLI using [Homebrew](https://brew.sh/). Run the following command in your terminal:
 
 ```bash
 brew install DefangLabs/defang/defang
@@ -20,13 +20,21 @@ brew install DefangLabs/defang/defang
 
 ## Using a Bash Script
 
-You can install the Defang CLI using a bash script. Just run the following command in your terminal:
+You can install the Defang CLI using a bash script. Run the following command in your terminal:
 
 ```bash
-. <(curl -Ls https://s.defang.io/install.sh)
+. <(curl -Ls s.defang.io/install)
 ```
 
 The script will try to download the appropriate binary for your operating system and architecture, add it to `~/.local/bin`, and add `~/.local/bin` to your `PATH` if it's not already there, with your permission. If you do not provide permission it will print an appropriate instruction for you to follow to add it manually. You can also customize the installation directory by setting the `INSTALL_DIR` environment variable before running the script.
+
+## Using Winget
+
+On Windows, you can install the Defang CLI using `winget`. Run the following command in your terminal:
+
+```powershell
+winget install defang
+```
 
 ## Direct Download
 
