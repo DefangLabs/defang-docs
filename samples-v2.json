@@ -796,6 +796,10 @@
     "languages": [
       "sql",
       "nodejs"
+    ],
+    "configs": [
+      "DATABASE_URL",
+      "SESSION_SECRET"
     ]
   },
   {
