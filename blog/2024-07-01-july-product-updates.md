@@ -16,17 +16,9 @@ For our Windows users out there, we've made some changes to make your Defang exp
 
 Deploying your apps from Windows just got a little bit nicer.
 
-## Managed Redis is Here
+## Managed Redis Updates
 
-We first introduced this last month, but we were just starting to roll it out. Since then we've improved the experience and make it dead simple to use: simply add this to your redis service definition in `compose.yaml`:
-
-```yaml
-x-defang-redis: true
-```
-
-Defang will take care of provisioning a fully AWS-managed Redis instance for you, so you can stay focused on your application.
-
-We also added a sample that showcases the power of managed Redis: [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template). It demonstrates how you can use BullMQ and BullBoard with a managed Redis instance to create a powerful job queue system so you can easily build robust, scalable applications in AWS with Defang.
+We first introduced this last month, but we've since rolled it out to everyone. We also added a sample that showcases the power of managed Redis: [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template). It demonstrates how you can use BullMQ and BullBoard with a managed Redis instance to create a powerful job queue system so you can easily build robust, scalable applications in AWS with Defang.
 
 ## Compose Profiles & Updated Samples
 
