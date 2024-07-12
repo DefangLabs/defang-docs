@@ -4,10 +4,65 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Sat, 01 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[July 2024 Product Update]]></title>
+            <link>https://docs.defang.io/blog/july-2024-product-update</link>
+            <guid>https://docs.defang.io/blog/july-2024-product-update</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.]]></description>
+            <content:encoded><![CDATA[<p>Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-experience-improvements">Windows Experience Improvements<a href="https://docs.defang.io/blog/july-2024-product-update#windows-experience-improvements" class="hash-link" aria-label="Direct link to Windows Experience Improvements" title="Direct link to Windows Experience Improvements">​</a></h2>
+<p>For our Windows users out there, we've made some changes to make your Defang experience even smoother:</p>
+<ul>
+<li>You can now install Defang using <code>winget</code>, the Windows Package Manager, for a streamlined setup</li>
+<li>We've introduced a signed binary for added security and peace of mind</li>
+</ul>
+<p>Deploying your apps from Windows just got a little bit nicer.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="one-click-deploy">One-click Deploy<a href="https://docs.defang.io/blog/july-2024-product-update#one-click-deploy" class="hash-link" aria-label="Direct link to One-click Deploy" title="Direct link to One-click Deploy">​</a></h2>
+<p>We've added a new feature that will make it even easier to get started with Defang. We've created a flow where each sample provides a button that allows you to immediately deploy a template with a GitHub action which will automatically deploy the sample to the Defang Playground. That means you can easily make changes by committing them to your brand new repo, and everything automatically updates in the Playground. It's a great way to get started with Defang and start experimenting with your own projects.</p>
+<p>Try it now <a href="https://portal.defang.dev/sample" target="_blank" rel="noopener noreferrer">from our portal</a>!</p>
+<p><img loading="lazy" alt="screenshot of 1-click deploy UI in portal" src="https://docs.defang.io/assets/images/1-click-deploy-59a918debb5a9dcbcecd2c7b4dd3c26d.png" width="1200" height="744" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-redis-updates">Managed Redis Updates<a href="https://docs.defang.io/blog/july-2024-product-update#managed-redis-updates" class="hash-link" aria-label="Direct link to Managed Redis Updates" title="Direct link to Managed Redis Updates">​</a></h2>
+<p>We first introduced this last month, but we've since rolled it out to everyone. We also added a sample that showcases the power of managed Redis: <a href="https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template" target="_blank" rel="noopener noreferrer">BullMQ with Redis</a>. It demonstrates how you can use BullMQ and BullBoard with a managed Redis instance to create a powerful job queue system so you can easily build robust, scalable applications in AWS with Defang.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="updated-samples">Updated Samples<a href="https://docs.defang.io/blog/july-2024-product-update#updated-samples" class="hash-link" aria-label="Direct link to Updated Samples" title="Direct link to Updated Samples">​</a></h2>
+<p>We've updated our sample projects to showcase how to use them with Defang, including:</p>
+<ul>
+<li><a href="https://github.com/DefangSamples/sample-csharp-dotnet-template" target="_blank" rel="noopener noreferrer">ASP.NET Core</a></li>
+<li><a href="https://github.com/DefangSamples/sample-feathersjs-template" target="_blank" rel="noopener noreferrer">Feathers.js</a></li>
+<li><a href="https://github.com/DefangSamples/sample-langchain-template" target="_blank" rel="noopener noreferrer">Flask &amp; LangChain</a></li>
+<li><a href="https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template" target="_blank" rel="noopener noreferrer">BullMQ with Redis</a></li>
+</ul>
+<p>Check them out if you're looking for some inspiration or a starting point for your own projects.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cli-updates">CLI Updates<a href="https://docs.defang.io/blog/july-2024-product-update#cli-updates" class="hash-link" aria-label="Direct link to CLI Updates" title="Direct link to CLI Updates">​</a></h2>
+<p>We're always looking for ways to enhance the CLI experience. Here's what's new:</p>
+<ul>
+<li><code>npx defang</code> automatically checks to always have the latest version of the CLI</li>
+<li>The output during <code>defang compose up</code> has been streamlined to focus on the most important information</li>
+<li><code>defang tail</code> now supports listening to specific services, making it easier to troubleshoot issues</li>
+<li>We've improved hints and error messages to better guide you when something goes wrong</li>
+<li>The CLI now has improved color support for light theme terminals, making it easier on the eyes</li>
+</ul>
+<p>It's the small refinements that can make a big difference in your workflow.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="other-updates">Other Updates<a href="https://docs.defang.io/blog/july-2024-product-update#other-updates" class="hash-link" aria-label="Direct link to Other Updates" title="Direct link to Other Updates">​</a></h2>
+<p>Here are a few more things that didn't quite fit with the rest:</p>
+<ul>
+<li>Visibility into ECS deployment events in BYOC tail logs</li>
+<li>Improvements to ACME certificate generation</li>
+</ul>
+<p>Keep an eye out for these updates in the near future.</p>
+<hr>
+<p>As always, we'd love your help shaping the future of Defang, so let us know what you'd like to see next. Happy deploying! 🚀</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>Windows</category>
+            <category>Managed Redis</category>
+            <category>CLI</category>
+        </item>
         <item>
             <title><![CDATA[June 2024 Product Update]]></title>
             <link>https://docs.defang.io/blog/june-2024-product-update</link>
