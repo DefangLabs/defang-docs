@@ -16,15 +16,21 @@ For our Windows users out there, we've made some changes to make your Defang exp
 
 Deploying your apps from Windows just got a little bit nicer.
 
+## One-click Deploy
+
+We've added a new feature that will make it even easier to get started with Defang. We've created a flow where each sample provides a button that allows you to immediately deploy a template with a GitHub action which will automatically deploy the sample to the Defang Playground. That means you can easily make changes by committing them to your brand new repo, and everything automatically updates in the Playground. It's a great way to get started with Defang and start experimenting with your own projects.
+
+Try it now [from our portal](https://portal.defang.dev/sample)!
+
+![screenshot of 1-click deploy UI in portal](/img/july-update/1-click-deploy.png)
+
 ## Managed Redis Updates
 
 We first introduced this last month, but we've since rolled it out to everyone. We also added a sample that showcases the power of managed Redis: [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template). It demonstrates how you can use BullMQ and BullBoard with a managed Redis instance to create a powerful job queue system so you can easily build robust, scalable applications in AWS with Defang.
 
-## Compose Profiles & Updated Samples
+## Updated Samples
 
-We've added a new "defang" profile for `compose.yaml` that's specifically for Defang-related services and configuration. This should help keep your Defang settings organized and separate from your application configuration.
-
-We've also updated our sample projects to showcase how to use them with Defang, including:
+We've updated our sample projects to showcase how to use them with Defang, including:
 
 * [ASP.NET Core](https://github.com/DefangSamples/sample-csharp-dotnet-template)
 * [Feathers.js](https://github.com/DefangSamples/sample-feathersjs-template)
@@ -50,7 +56,6 @@ It's the small refinements that can make a big difference in your workflow.
 Here are a few more things that didn't quite fit with the rest:
 
 * Visibility into ECS deployment events in BYOC tail logs
-* Portal enhancements including sample project search and 1-click deploy
 * Improvements to ACME certificate generation
 
 Keep an eye out for these updates in the near future.
