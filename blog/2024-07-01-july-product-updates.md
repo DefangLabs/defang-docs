@@ -26,6 +26,9 @@ We've added a new "defang" profile for `compose.yaml` that's specifically for De
 
 We've also updated our sample projects to showcase how to use them with Defang, including:
 
+* [ASP.NET Core](https://github.com/DefangSamples/sample-csharp-dotnet-template)
+* [Feathers.js](https://github.com/DefangSamples/sample-feathersjs-template)
+* [Flask & LangChain](https://github.com/DefangSamples/sample-langchain-template)
 * [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template)
 
 Check them out if you're looking for some inspiration or a starting point for your own projects.
