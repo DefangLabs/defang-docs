@@ -126,6 +126,21 @@
     ]
   },
   {
+    "name": "feathersjs",
+    "category": "javascript",
+    "readme": "# FeathersJS Application with Defang\n\nThis sample project demonstrates how to deploy a FeathersJS application on to AWS using Defang. We also demonstrate how to run the application in both development and production environments using Docker Compose.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang) (for Defang deployment)\n2. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n3. (Optional - for local development) [Node.js](https://nodejs.org/en/download/)\n\n### Local Development\n\nFor development, we use Docker to containerize the FeathersJS application. The Docker Compose configuration is defined in the `compose.dev.yaml` file.\n\nTo start the development environment, run:\n\n```sh\ndocker compose -f compose.dev.yaml up --build\n```\n\n# Deploying\n\n1. Open the terminal and type defang login\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: FeathersJS\n\nShort Description: A sample project demonstrating how to deploy a FeathersJS application using Defang. The application displays \"DefangxFeathersjs\" on the webpage.\n\nTags: Feathersjs & nodejs\n\nLanguages: javascript, nodejs\n",
+    "directoryName": "feathersjs",
+    "title": "FeathersJS",
+    "shortDescription": "A sample project demonstrating how to deploy a FeathersJS application using Defang. The application displays \"DefangxFeathersjs\" on the webpage.",
+    "tags": [
+      "Feathersjs & nodejs"
+    ],
+    "languages": [
+      "javascript",
+      "nodejs"
+    ]
+  },
+  {
     "name": "flask",
     "category": "python",
     "readme": "# Flask\n\nThis is a sample of a basic Flask TODO app. The items are stored in memory and are lost when the server is restarted, but it should give you a basic idea of how to get started with Flask on Defang. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n### NOTE:\n\nThis sample is a simple Flask app that demonstrates how to create a TODO app using Flask. The items are stored in memory and are lost when the server is restarted. This sample is intended to provide a basic understanding of how to get started with Flask on Defang. **it is not intended for production use**. If you need something production ready, you should use a managed database like Postgres or MySQL.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) to ignore files that are not needed in the Docker image or will be generated during the build process.\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A basic Flask todo app.\n\nTags: flask, python\n\nLanguages: python\n",
