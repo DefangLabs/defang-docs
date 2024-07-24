@@ -11,6 +11,7 @@ let jsonArray = [];
 
 directories.forEach((sample) => {
     const directoryName = sample;
+    console.log(`@@ Adding ${sample}`);
     let readme;
     try {
         readme = fs.readFileSync(path.join(samplesDir, sample, 'README.md'), 'utf8');
