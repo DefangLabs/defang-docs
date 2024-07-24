@@ -1,25 +1,26 @@
 [
   {
     "name": "angular-express",
-    "category": "TypeScript",
-    "readme": "# Angular & Node.js\n\nThis project demonstrates both client-side component rendering and hydration with Angular, as well as server-side rendering with Node.js and Socket.IO for real-time communication. It also includes Docker configurations for easy deployment.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Angular and Node.js using Defang. The Docker setup ensures the app can be easily built and deployed.\n\n## Essential Setup Files\n\n1. Download [Defang CLI](https://github.com/defang-io/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/defang-io/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) make sure you have properly authenticated your AWS account\n3. [Node.js](https://nodejs.org/en/download/package-manager/)\n4. [Angular CLI](https://angular.io/cli)\n\n## A Step-by-Step Guide for deployment\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n## Development\n\nFor development, we use two local containers, one for the frontend Angular service and one for the backend service in Express. It also uses Caddy as a web server for serving static files. To run the sample locally after cloning the repository, you can run on Docker by doing:\n\n1. `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: Angular & Node.js\n\nShort Description: A full-stack application using Angular for the frontend and Node.js with Socket.IO for the backend, containerized with Docker.\n\nTags: Angular, Node.js, Socket.IO\n\nLanguages: TypeScript, JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Angular & Node.js\n\nThis project demonstrates both client-side component rendering and hydration with Angular, as well as server-side rendering with Node.js and Socket.IO for real-time communication. It also includes Docker configurations for easy deployment.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Angular and Node.js using Defang. The Docker setup ensures the app can be easily built and deployed.\n\n## Essential Setup Files\n\n1. Download [Defang CLI](https://github.com/defang-io/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/defang-io/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) make sure you have properly authenticated your AWS account\n3. [Node.js](https://nodejs.org/en/download/package-manager/)\n4. [Angular CLI](https://angular.io/cli)\n\n## A Step-by-Step Guide for deployment\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n## Development\n\nFor development, we use two local containers, one for the frontend Angular service and one for the backend service in Express. It also uses Caddy as a web server for serving static files. To run the sample locally after cloning the repository, you can run on Docker by doing:\n\n1. `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: Angular & Node.js\n\nShort Description: A full-stack application using Angular for the frontend and Node.js with Socket.IO for the backend, containerized with Docker.\n\nTags: Angular, Node.js, Socket.IO, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "angular-express",
     "title": "Angular & Node.js",
     "shortDescription": "A full-stack application using Angular for the frontend and Node.js with Socket.IO for the backend, containerized with Docker.",
     "tags": [
       "Angular",
       "Node.js",
-      "Socket.IO"
-    ],
-    "languages": [
+      "Socket.IO",
       "TypeScript",
       "JavaScript"
+    ],
+    "languages": [
+      "nodejs"
     ]
   },
   {
     "name": "bullmq-bullboard-redis",
-    "category": "JavaScript",
-    "readme": "# BullMQ & BullBoard & Redis\n\nThis sample project demonstrates how to deploy a BullMQ message queue on top of managed Redis with a queue processor and a dashboard to monitor the queue.\n\nOnce your app is up and running you can go to the `/board` route for the `board` service to see the Bull Board dashboard and use the username `admin` and the password you set to log in (see [Deploying](#deploying)).\n\nTo add a job to the queue, you can go to the `/add` route of the `api` service. This will use some default values so you can test things out. You can also see an example of a post request in the [sample http request](./api/add.test.http) file.\n\nThe `worker` service is the queue processor that will process the jobs added to the queue. You can see in the `compose.yaml` file that the `worker` service is set to scale to 2 instances. This means that there will be 2 workers processing jobs from the queue. You can set this to your desired number of workers, but we wanted to show how you can increase the number of workers to handle more jobs.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Run `defang config set BOARD_PASSWORD` to set the password for the BullBoard dashboard.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: BullMQ & BullBoard & Redis\n\nShort Description: A sample project with BullMQ, BullBoard, and Redis.\n\nTags: BullMQ, BullBoard, Redis, Express, Node.js, Message Queue\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# BullMQ & BullBoard & Redis\n\nThis sample project demonstrates how to deploy a BullMQ message queue on top of managed Redis with a queue processor and a dashboard to monitor the queue.\n\nOnce your app is up and running you can go to the `/board` route for the `board` service to see the Bull Board dashboard and use the username `admin` and the password you set to log in (see [Deploying](#deploying)).\n\nTo add a job to the queue, you can go to the `/add` route of the `api` service. This will use some default values so you can test things out. You can also see an example of a post request in the [sample http request](./api/add.test.http) file.\n\nThe `worker` service is the queue processor that will process the jobs added to the queue. You can see in the `compose.yaml` file that the `worker` service is set to scale to 2 instances. This means that there will be 2 workers processing jobs from the queue. You can set this to your desired number of workers, but we wanted to show how you can increase the number of workers to handle more jobs.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Run `defang config set BOARD_PASSWORD` to set the password for the BullBoard dashboard.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: BullMQ & BullBoard & Redis\n\nShort Description: A sample project with BullMQ, BullBoard, and Redis.\n\nTags: BullMQ, BullBoard, Redis, Express, Node.js, Message Queue, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "bullmq-bullboard-redis",
     "title": "BullMQ & BullBoard & Redis",
     "shortDescription": "A sample project with BullMQ, BullBoard, and Redis.",
@@ -29,10 +30,11 @@
       "Redis",
       "Express",
       "Node.js",
-      "Message Queue"
+      "Message Queue",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ],
     "configs": [
       "BOARD_PASSWORD",
@@ -60,70 +62,74 @@
   },
   {
     "name": "django",
-    "category": "Python",
-    "readme": "# Django\n\nThis is a simple example of how to run Django on Defang. It is a simple Todo app that uses SQLite as the database.\n\n### NOTE\n\nThis sample is a simple Django app that uses SQLite as the database, which will be reset every time you deploy. **It is not production-ready**. For production use cases, you should check out the Django + Postgres sample.\n\nThe app includes a management command which is run on startup to create a superuser with the username `admin` and password `admin`. This means you can login to the admin interface at `/admin/` and see the Django admin interface without any additional steps. The `example_app` is already registered and the `Todo` model is already set up to be managed in the admin interface.\n\nThe Dockerfile and compose files are already set up for you and are ready to be deployed. Serving is done using [Gunicorn](https://gunicorn.org/) and uses [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) for static files. The `CSRF_TRUSTED_ORIGINS` setting is configured to allow the app to run on a `defang.dev` subdomain.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. (optional) If you are using Defang BYOC, make sure to update the `CSRF_TRUSTED_ORIGINS` setting in the `settings.py` file to include an appropriate domain.\n2. Open the terminal and type `defang login`\n3. Type `defang compose up` in the CLI\n4. Now your application will be launched\n\n---\n\nTitle: Django\n\nShort Description: A simple Django app that uses SQLite as the database\n\nTags: Django, SQLite\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Django\n\nThis is a simple example of how to run Django on Defang. It is a simple Todo app that uses SQLite as the database.\n\n### NOTE\n\nThis sample is a simple Django app that uses SQLite as the database, which will be reset every time you deploy. **It is not production-ready**. For production use cases, you should check out the Django + Postgres sample.\n\nThe app includes a management command which is run on startup to create a superuser with the username `admin` and password `admin`. This means you can login to the admin interface at `/admin/` and see the Django admin interface without any additional steps. The `example_app` is already registered and the `Todo` model is already set up to be managed in the admin interface.\n\nThe Dockerfile and compose files are already set up for you and are ready to be deployed. Serving is done using [Gunicorn](https://gunicorn.org/) and uses [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) for static files. The `CSRF_TRUSTED_ORIGINS` setting is configured to allow the app to run on a `defang.dev` subdomain.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. (optional) If you are using Defang BYOC, make sure to update the `CSRF_TRUSTED_ORIGINS` setting in the `settings.py` file to include an appropriate domain.\n2. Open the terminal and type `defang login`\n3. Type `defang compose up` in the CLI\n4. Now your application will be launched\n\n---\n\nTitle: Django\n\nShort Description: A simple Django app that uses SQLite as the database\n\nTags: Django, SQLite, Python\n\nLanguages: python\n",
     "directoryName": "django",
     "title": "Django",
     "shortDescription": "A simple Django app that uses SQLite as the database",
     "tags": [
       "Django",
-      "SQLite"
+      "SQLite",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "django-postgres",
-    "category": "Python",
-    "readme": "# Django & Postgres\n\nThis template is a customer relationship management list project developed using Python Django framework, offering a starting point to help you quickly build your customer management system. We use PostgreSQL as the database. We have prepared all the essential files for deployment. By spending less than 10 minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live to the world!\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Django. However, it deploys postgres as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. If you stick to Rail's default SQLite database, your stored data will be lost on every deployment, and in some other situations. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Django & PostgreSQL\n\nShort Description: A customer relationship management list project developed using the Python Django framework, offering a starting point to help you quickly build your customer management system.\n\nTags: Django, PostgreSQL\n\nLanguages: Python, SQL\n",
+    "category": "python",
+    "readme": "# Django & Postgres\n\nThis template is a customer relationship management list project developed using Python Django framework, offering a starting point to help you quickly build your customer management system. We use PostgreSQL as the database. We have prepared all the essential files for deployment. By spending less than 10 minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live to the world!\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Django. However, it deploys postgres as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. If you stick to Rail's default SQLite database, your stored data will be lost on every deployment, and in some other situations. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Django & PostgreSQL\n\nShort Description: A customer relationship management list project developed using the Python Django framework, offering a starting point to help you quickly build your customer management system.\n\nTags: Django, PostgreSQL, Python, SQL\n\nLanguages: python\n",
     "directoryName": "django-postgres",
     "title": "Django & PostgreSQL",
     "shortDescription": "A customer relationship management list project developed using the Python Django framework, offering a starting point to help you quickly build your customer management system.",
     "tags": [
       "Django",
-      "PostgreSQL"
-    ],
-    "languages": [
+      "PostgreSQL",
       "Python",
       "SQL"
+    ],
+    "languages": [
+      "python"
     ]
   },
   {
     "name": "elysia",
-    "category": "TypeScript",
-    "readme": "# Elysia & Bun\n\nA basic [Elysia](https://elysiajs.com/) app running on [Bun](https://bun.sh/) with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Run `defang login` if you are not yet logged in.\n2. Run `defang compose up`.\n3. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: Elysia & Bun\n\nShort Description: A basic Elysia app running on Bun with Defang.\n\nTags: Bun, Elysia, TypeScript\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Elysia & Bun\n\nA basic [Elysia](https://elysiajs.com/) app running on [Bun](https://bun.sh/) with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Run `defang login` if you are not yet logged in.\n2. Run `defang compose up`.\n3. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: Elysia & Bun\n\nShort Description: A basic Elysia app running on Bun with Defang.\n\nTags: Bun, Elysia, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "elysia",
     "title": "Elysia & Bun",
     "shortDescription": "A basic Elysia app running on Bun with Defang.",
     "tags": [
       "Bun",
       "Elysia",
-      "TypeScript"
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "fastapi",
-    "category": "Python",
-    "readme": "# FastAPI\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nTo run your FastAPI app locally, you'll need to have Docker installed on your machine. You can then run:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up\n```\n\nThat will start your FastAPI app on `http://localhost:8000` with hot reloading enabled.\n\n---\n\nTitle: FastAPI\n\nShort Description: A sample project demonstrating how to deploy FastAPI with Defang\n\nTags: FastAPI, OpenAPI\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# FastAPI\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nTo run your FastAPI app locally, you'll need to have Docker installed on your machine. You can then run:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up\n```\n\nThat will start your FastAPI app on `http://localhost:8000` with hot reloading enabled.\n\n---\n\nTitle: FastAPI\n\nShort Description: A sample project demonstrating how to deploy FastAPI with Defang\n\nTags: FastAPI, OpenAPI, Python\n\nLanguages: python\n",
     "directoryName": "fastapi",
     "title": "FastAPI",
     "shortDescription": "A sample project demonstrating how to deploy FastAPI with Defang",
     "tags": [
       "FastAPI",
-      "OpenAPI"
+      "OpenAPI",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "fastapi-postgres",
-    "category": "Python",
-    "readme": "# FastAPI\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: FastAPI & PostgreSQL\n\nShort Description: A sample project with FastAPI and PostgreSQL\n\nTags: FastAPI, PostgreSQL, Python, SQL\n\nLanguages: Python, SQL\n",
+    "category": "python",
+    "readme": "# FastAPI\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Local Development\n\n1. Run `docker compose -f compose.dev.yaml up`\n\n---\n\nTitle: FastAPI & PostgreSQL\n\nShort Description: A sample project with FastAPI and PostgreSQL\n\nTags: FastAPI, PostgreSQL, Python, SQL\n\nLanguages: python\n",
     "directoryName": "fastapi-postgres",
     "title": "FastAPI & PostgreSQL",
     "shortDescription": "A sample project with FastAPI and PostgreSQL",
@@ -134,8 +140,7 @@
       "SQL"
     ],
     "languages": [
-      "Python",
-      "SQL"
+      "python"
     ],
     "configs": [
       "DATABASE_URL"
@@ -143,24 +148,24 @@
   },
   {
     "name": "feathersjs",
-    "category": "JavaScript",
-    "readme": "# FeathersJS Application with Defang\n\nThis sample project demonstrates how to deploy a FeathersJS application on to AWS using Defang. We also demonstrate how to run the application in both development and production environments using Docker Compose.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang) (for Defang deployment)\n2. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n3. (Optional - for local development) [Node.js](https://nodejs.org/en/download/)\n\n### Local Development\n\nFor development, we use Docker to containerize the FeathersJS application. The Docker Compose configuration is defined in the `compose.dev.yaml` file.\n\nTo start the development environment, run:\n\n```sh\ndocker compose -f compose.dev.yaml up --build\n```\n\n# Deploying\n\n1. Open the terminal and type defang login\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: Feathers.js\n\nShort Description: A sample project demonstrating how to deploy a Feathers.js application using Defang. The application displays \"DefangxFeathersjs\" on the webpage.\n\nTags: Feathers.js, Node.js\n\nLanguages: JavaScript, Node.js\n",
+    "category": "nodejs",
+    "readme": "# FeathersJS Application with Defang\n\nThis sample project demonstrates how to deploy a FeathersJS application on to AWS using Defang. We also demonstrate how to run the application in both development and production environments using Docker Compose.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang) (for Defang deployment)\n2. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n3. (Optional - for local development) [Node.js](https://nodejs.org/en/download/)\n\n### Local Development\n\nFor development, we use Docker to containerize the FeathersJS application. The Docker Compose configuration is defined in the `compose.dev.yaml` file.\n\nTo start the development environment, run:\n\n```sh\ndocker compose -f compose.dev.yaml up --build\n```\n\n# Deploying\n\n1. Open the terminal and type defang login\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: Feathers.js\n\nShort Description: A sample project demonstrating how to deploy a Feathers.js application using Defang. The application displays \"DefangxFeathersjs\" on the webpage.\n\nTags: Feathers.js, Node.js, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "feathersjs",
     "title": "Feathers.js",
     "shortDescription": "A sample project demonstrating how to deploy a Feathers.js application using Defang. The application displays \"DefangxFeathersjs\" on the webpage.",
     "tags": [
       "Feathers.js",
-      "Node.js"
+      "Node.js",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript",
-      "Node.js"
+      "nodejs"
     ]
   },
   {
     "name": "flask",
-    "category": "Python",
-    "readme": "# Flask\n\nThis is a sample of a basic Flask TODO app. The items are stored in memory and are lost when the server is restarted, but it should give you a basic idea of how to get started with Flask on Defang. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n### NOTE:\n\nThis sample is a simple Flask app that demonstrates how to create a TODO app using Flask. The items are stored in memory and are lost when the server is restarted. This sample is intended to provide a basic understanding of how to get started with Flask on Defang. **it is not intended for production use**. If you need something production ready, you should use a managed database like Postgres or MySQL.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) to ignore files that are not needed in the Docker image or will be generated during the build process.\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A basic Flask todo app.\n\nTags: Flask, Python\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Flask\n\nThis is a sample of a basic Flask TODO app. The items are stored in memory and are lost when the server is restarted, but it should give you a basic idea of how to get started with Flask on Defang. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n### NOTE:\n\nThis sample is a simple Flask app that demonstrates how to create a TODO app using Flask. The items are stored in memory and are lost when the server is restarted. This sample is intended to provide a basic understanding of how to get started with Flask on Defang. **it is not intended for production use**. If you need something production ready, you should use a managed database like Postgres or MySQL.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) to ignore files that are not needed in the Docker image or will be generated during the build process.\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A basic Flask todo app.\n\nTags: Flask, Python\n\nLanguages: python\n",
     "directoryName": "flask",
     "title": "Flask",
     "shortDescription": "A basic Flask todo app.",
@@ -169,13 +174,13 @@
       "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "golang-http",
-    "category": "Go",
-    "readme": "# Go HTTP Server\n\nA very simple example of a Go service that listens on a port and returns information about the request.\n\n---\n\nTitle: Go http Server\n\nShort Description: A simple Go application that echoes back the request.\n\nTags: Go, http\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "# Go HTTP Server\n\nA very simple example of a Go service that listens on a port and returns information about the request.\n\n---\n\nTitle: Go http Server\n\nShort Description: A simple Go application that echoes back the request.\n\nTags: Go, http\n\nLanguages: golang\n",
     "directoryName": "golang-http",
     "title": "Go http Server",
     "shortDescription": "A simple Go application that echoes back the request.",
@@ -184,13 +189,13 @@
       "http"
     ],
     "languages": [
-      "Go"
+      "golang"
     ]
   },
   {
     "name": "golang-http-form",
-    "category": "Go",
-    "readme": "# Go HTTP Form\n\nThis Go application demonstrates a simple form submission using the standard net/http library. Users can input their first name into a form, and upon submission, they will be greeted personally by the application.\n\n## Features\n\n1. Simple form to submit a user's first name.\n2. Personalized greeting displayed in response to the form submission\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go http Form\n\nShort Description: A simple Go application that demonstrates form submission using the net/http library.\n\nTags: Go, http\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "# Go HTTP Form\n\nThis Go application demonstrates a simple form submission using the standard net/http library. Users can input their first name into a form, and upon submission, they will be greeted personally by the application.\n\n## Features\n\n1. Simple form to submit a user's first name.\n2. Personalized greeting displayed in response to the form submission\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go http Form\n\nShort Description: A simple Go application that demonstrates form submission using the net/http library.\n\nTags: Go, http\n\nLanguages: golang\n",
     "directoryName": "golang-http-form",
     "title": "Go http Form",
     "shortDescription": "A simple Go application that demonstrates form submission using the net/http library.",
@@ -199,13 +204,13 @@
       "http"
     ],
     "languages": [
-      "Go"
+      "golang"
     ]
   },
   {
     "name": "golang-mongodb-atlas",
-    "category": "Go",
-    "readme": "# Go & MongoDB Atlas\n\n## Overview\n\nThis sample is is a web-based task manager designed to help users manage their tasks efficiently. It allows users to add, delete, and view tasks in a simple and intuitive interface. This application is ideal for anyone looking to enhance their productivity by keeping track of their daily activities. There is a go.mod file that includes dependencies for the Dockerfile to install\n\n## Features\n\nCreate Tasks: Users can add new tasks with descriptions.\nDelete Tasks: Users can remove tasks when they are completed or no longer needed.\nView Tasks: Users can view a list of their current tasks.\n\n## Technology\n\nBackend: The application is built with Go (Golang), utilizing the powerful net/http standard library for handling HTTP requests and responses.\nDatabase: MongoDB is used for storing tasks. It is a NoSQL database that offers high performance, high availability, and easy scalability.\nFrontend: Basic HTML and JavaScript are used for the frontend to interact with the backend via API calls.\nEnvironment: Designed to run in containerized environments using Docker, which ensures consistency across different development and production environments.\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set all environment variables up\n3. There is a environment variable named MONGO_URI for the MONGODB connection string, in the compose file, be sure to put your mongodb URI, i.e.\n   mongodb+srv://<username>:<pwd>@host\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go & MongoDB Atlas\n\nShort Description: A simple Go application that manages tasks with MongoDB Atlas\n\nTags: Go, MongoDB, Atlas, Task manager\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "# Go & MongoDB Atlas\n\n## Overview\n\nThis sample is is a web-based task manager designed to help users manage their tasks efficiently. It allows users to add, delete, and view tasks in a simple and intuitive interface. This application is ideal for anyone looking to enhance their productivity by keeping track of their daily activities. There is a go.mod file that includes dependencies for the Dockerfile to install\n\n## Features\n\nCreate Tasks: Users can add new tasks with descriptions.\nDelete Tasks: Users can remove tasks when they are completed or no longer needed.\nView Tasks: Users can view a list of their current tasks.\n\n## Technology\n\nBackend: The application is built with Go (Golang), utilizing the powerful net/http standard library for handling HTTP requests and responses.\nDatabase: MongoDB is used for storing tasks. It is a NoSQL database that offers high performance, high availability, and easy scalability.\nFrontend: Basic HTML and JavaScript are used for the frontend to interact with the backend via API calls.\nEnvironment: Designed to run in containerized environments using Docker, which ensures consistency across different development and production environments.\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set all environment variables up\n3. There is a environment variable named MONGO_URI for the MONGODB connection string, in the compose file, be sure to put your mongodb URI, i.e.\n   mongodb+srv://<username>:<pwd>@host\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go & MongoDB Atlas\n\nShort Description: A simple Go application that manages tasks with MongoDB Atlas\n\nTags: Go, MongoDB, Atlas, Task manager\n\nLanguages: golang\n",
     "directoryName": "golang-mongodb-atlas",
     "title": "Go & MongoDB Atlas",
     "shortDescription": "A simple Go application that manages tasks with MongoDB Atlas",
@@ -216,13 +221,13 @@
       "Task manager"
     ],
     "languages": [
-      "Go"
+      "golang"
     ]
   },
   {
     "name": "golang-openai",
-    "category": "Go",
-    "readme": "## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Go & OpenAI\n\nShort Description: A simple Go application that interacts with the OpenAI API.\n\nTags: Go, OpenAI, ChatGPT\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Go & OpenAI\n\nShort Description: A simple Go application that interacts with the OpenAI API.\n\nTags: Go, OpenAI, ChatGPT\n\nLanguages: golang\n",
     "directoryName": "golang-openai",
     "title": "Go & OpenAI",
     "shortDescription": "A simple Go application that interacts with the OpenAI API.",
@@ -232,7 +237,7 @@
       "ChatGPT"
     ],
     "languages": [
-      "Go"
+      "golang"
     ],
     "configs": [
       "OPENAI_KEY"
@@ -240,8 +245,8 @@
   },
   {
     "name": "golang-rest-api",
-    "category": "Go",
-    "readme": "# Go & REST API\n\nThis is a simple HTTP server written in Go that serves two endpoints: / and /rates. The / endpoint responds with a JSON object containing the status, while the /rates endpoint fetches data from the Fiscal Data Treasury API and returns the response to the client.\n\n---\n\nTitle: Go & REST API\n\nShort Description: A simple Go application that fetches fiscal data from an API.\n\nTags: Go, http, Fiscal data, REST API\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "# Go & REST API\n\nThis is a simple HTTP server written in Go that serves two endpoints: / and /rates. The / endpoint responds with a JSON object containing the status, while the /rates endpoint fetches data from the Fiscal Data Treasury API and returns the response to the client.\n\n---\n\nTitle: Go & REST API\n\nShort Description: A simple Go application that fetches fiscal data from an API.\n\nTags: Go, http, Fiscal data, REST API\n\nLanguages: golang\n",
     "directoryName": "golang-rest-api",
     "title": "Go & REST API",
     "shortDescription": "A simple Go application that fetches fiscal data from an API.",
@@ -252,13 +257,13 @@
       "REST API"
     ],
     "languages": [
-      "Go"
+      "golang"
     ]
   },
   {
     "name": "golang-s3",
-    "category": "Go",
-    "readme": "## Setup\n\nThis sample requires an API key to access AWS S3. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Go & S3\n\nShort Description: A simple Go application that uploads and downloads files from AWS S3.\n\nTags: Go, S3, AWS\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "## Setup\n\nThis sample requires an API key to access AWS S3. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Go & S3\n\nShort Description: A simple Go application that uploads and downloads files from AWS S3.\n\nTags: Go, S3, AWS\n\nLanguages: golang\n",
     "directoryName": "golang-s3",
     "title": "Go & S3",
     "shortDescription": "A simple Go application that uploads and downloads files from AWS S3.",
@@ -268,7 +273,7 @@
       "AWS"
     ],
     "languages": [
-      "Go"
+      "golang"
     ],
     "configs": [
       "AWS_ACCESS_KEY",
@@ -277,8 +282,8 @@
   },
   {
     "name": "golang-slackbot",
-    "category": "Go",
-    "readme": "# Go & Slack API\n\nThis is a simple slackbot that takes a request and posts the message from the body to a slack channel.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n### Slack API Token\n\nYou'll need to head to https://api.slack.com/apps to create a Slack App.\n\nMake sure to:\n\n- Give it the bot `chat:write` scope\n- Install the app to your workspace\n- Copy the Bot User OAuth Access Token\n- Invite your bot to the channel you want it to post to using the `@botname` command in the channel (this will allow you to invite it)\n\n## Configure\n\nBefore deploying the Slackbot, you need to set up some config values. These config values are environment variables that the Slackbot needs to function correctly. The values are:\n\n- `SLACK_TOKEN`: This is the token you copied previously for the Slack API.\n- `SLACK_CHANNEL_ID`: This is the ID of the Slack channel where the bot will post messages.\n\nYou can set these config parameters using the `defang config set` command. Here's how:\n\n```sh\ndefang config set --name SLACK_TOKEN --value your_slack_token\ndefang config set --name SLACK_CHANNEL_ID --value your_slack_channel_id\n```\n\n## Deploy\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang playground.\n\n```sh\ndefang compose up\n```\n\n## Usage\n\nOnce the Slackbot is deployed, you can send a POST request to the `/` endpoint with a JSON body containing the message you want to post to the Slack channel. Here's an example:\n\n```sh\ncurl 'https://raphaeltm-bot--8080.prod1.defang.dev/' \\\n  -H 'content-type: application/json' \\\n  --data-raw $'{\"message\":\"This is your bot speaking. We\\'ll be landing in 10 minutes. Please fasten your seatbelts.\"}'\n```\n\n---\n\nTitle: Go & Slack API\n\nShort Description: A simple Slackbot that posts messages to a Slack channel.\n\nTags: Go, Slack, Bot\n\nLanguages: Go\n",
+    "category": "golang",
+    "readme": "# Go & Slack API\n\nThis is a simple slackbot that takes a request and posts the message from the body to a slack channel.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n### Slack API Token\n\nYou'll need to head to https://api.slack.com/apps to create a Slack App.\n\nMake sure to:\n\n- Give it the bot `chat:write` scope\n- Install the app to your workspace\n- Copy the Bot User OAuth Access Token\n- Invite your bot to the channel you want it to post to using the `@botname` command in the channel (this will allow you to invite it)\n\n## Configure\n\nBefore deploying the Slackbot, you need to set up some config values. These config values are environment variables that the Slackbot needs to function correctly. The values are:\n\n- `SLACK_TOKEN`: This is the token you copied previously for the Slack API.\n- `SLACK_CHANNEL_ID`: This is the ID of the Slack channel where the bot will post messages.\n\nYou can set these config parameters using the `defang config set` command. Here's how:\n\n```sh\ndefang config set --name SLACK_TOKEN --value your_slack_token\ndefang config set --name SLACK_CHANNEL_ID --value your_slack_channel_id\n```\n\n## Deploy\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang playground.\n\n```sh\ndefang compose up\n```\n\n## Usage\n\nOnce the Slackbot is deployed, you can send a POST request to the `/` endpoint with a JSON body containing the message you want to post to the Slack channel. Here's an example:\n\n```sh\ncurl 'https://raphaeltm-bot--8080.prod1.defang.dev/' \\\n  -H 'content-type: application/json' \\\n  --data-raw $'{\"message\":\"This is your bot speaking. We\\'ll be landing in 10 minutes. Please fasten your seatbelts.\"}'\n```\n\n---\n\nTitle: Go & Slack API\n\nShort Description: A simple Slackbot that posts messages to a Slack channel.\n\nTags: Go, Slack, Bot\n\nLanguages: golang\n",
     "directoryName": "golang-slackbot",
     "title": "Go & Slack API",
     "shortDescription": "A simple Slackbot that posts messages to a Slack channel.",
@@ -288,7 +293,7 @@
       "Bot"
     ],
     "languages": [
-      "Go"
+      "golang"
     ],
     "configs": [
       "SLACK_TOKEN",
@@ -357,18 +362,19 @@
   },
   {
     "name": "langchain",
-    "category": "Python",
-    "readme": "# Langchain & flask\n\nThis sample is an endpoint that tells programming jokes and shows how to deploy a flask app that uses Langchain on to AWS via Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Set the environment variable `OPENAI_API_KEY` by typing `defang config set OPENAI_API_KEY`.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, first clone the project and navigate to its directory. After such, please run the command\n\n```\ndocker compose up --build\n```\n\nThis will start a Docker container with the flask app which will display the result of the langchain prompt.\n\n---\n\nTitle: Flask & LangChain\n\nShort Description: A sample project demonstrating how to deploy LangChain with Flask on Defang.\n\nTags: LangChain, Flask, AI\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Langchain & flask\n\nThis sample is an endpoint that tells programming jokes and shows how to deploy a flask app that uses Langchain on to AWS via Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Set the environment variable `OPENAI_API_KEY` by typing `defang config set OPENAI_API_KEY`.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, first clone the project and navigate to its directory. After such, please run the command\n\n```\ndocker compose up --build\n```\n\nThis will start a Docker container with the flask app which will display the result of the langchain prompt.\n\n---\n\nTitle: Flask & LangChain\n\nShort Description: A sample project demonstrating how to deploy LangChain with Flask on Defang.\n\nTags: LangChain, Flask, AI, Python\n\nLanguages: python\n",
     "directoryName": "langchain",
     "title": "Flask & LangChain",
     "shortDescription": "A sample project demonstrating how to deploy LangChain with Flask on Defang.",
     "tags": [
       "LangChain",
       "Flask",
-      "AI"
+      "AI",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ],
     "configs": [
       "OPENAI_API_KEY"
@@ -400,8 +406,8 @@
   },
   {
     "name": "nextjs",
-    "category": "TypeScript",
-    "readme": "# Next.js\n\nA basic Next.js app with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app.\n\nTags: Next.js, React, Docker, AWS, Node.js\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Next.js\n\nA basic Next.js app with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app.\n\nTags: Next.js, React, Docker, AWS, Node.js, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nextjs",
     "title": "Next.js",
     "shortDescription": "A basic Next.js app.",
@@ -410,16 +416,18 @@
       "React",
       "Docker",
       "AWS",
-      "Node.js"
+      "Node.js",
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "nextjs-blog",
-    "category": "TypeScript",
-    "readme": "# Next.js Blog\n\nThis template is a starter project developed using Next.js designed to make it easy to launch a blog. It offers an excellent starting point to help you publish your content by simply modifying the MDX files included in `_posts` directory. We have prepared all the necessary files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Edit your content in the `_posts` directory\n2. Open the terminal and type `defang login`\n3. Type `defang compose up` in the CLI\n4. Now your application will be launched\n\n---\n\nTitle: Next.js Blog\n\nShort Description: A starter project developed using Next.js designed to make it easy to launch a blog.\n\nTags: Next.js, Blog, Node.js, React, MDX\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Next.js Blog\n\nThis template is a starter project developed using Next.js designed to make it easy to launch a blog. It offers an excellent starting point to help you publish your content by simply modifying the MDX files included in `_posts` directory. We have prepared all the necessary files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Edit your content in the `_posts` directory\n2. Open the terminal and type `defang login`\n3. Type `defang compose up` in the CLI\n4. Now your application will be launched\n\n---\n\nTitle: Next.js Blog\n\nShort Description: A starter project developed using Next.js designed to make it easy to launch a blog.\n\nTags: Next.js, Blog, Node.js, React, MDX, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nextjs-blog",
     "title": "Next.js Blog",
     "shortDescription": "A starter project developed using Next.js designed to make it easy to launch a blog.",
@@ -428,16 +436,18 @@
       "Blog",
       "Node.js",
       "React",
-      "MDX"
+      "MDX",
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "nextjs-boilerplate",
-    "category": "TypeScript",
-    "readme": "# Next.js Boilerplate\n\nThis template is a boilerplate project developed using Next.js, offering a starting point to help you quickly build your website. We have prepared all the necessary files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Next.js Boilerplate\n\nShort Description: A boilerplate project developed using Next.js, offering a starting point to help you quickly build your website.\n\nTags: Next.js, React, Boilerplate, Website, Node.js\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Next.js Boilerplate\n\nThis template is a boilerplate project developed using Next.js, offering a starting point to help you quickly build your website. We have prepared all the necessary files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Next.js Boilerplate\n\nShort Description: A boilerplate project developed using Next.js, offering a starting point to help you quickly build your website.\n\nTags: Next.js, React, Boilerplate, Website, Node.js, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nextjs-boilerplate",
     "title": "Next.js Boilerplate",
     "shortDescription": "A boilerplate project developed using Next.js, offering a starting point to help you quickly build your website.",
@@ -446,16 +456,18 @@
       "React",
       "Boilerplate",
       "Website",
-      "Node.js"
+      "Node.js",
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "nextjs-documentation",
-    "category": "JavaScript",
-    "readme": "# Nextra\n\nThis template is a documentation starter project developed using Nextra, designed to streamline the creation of your documentation and quickly build a digital knowledgebase. You can add content easily by simply adding markdown files. This code-free solution requires no adjustments to the basic structure. We have prepared all the essential files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Nextra\n\nShort Description: A documentation starter project developed using Nextra designed to streamline the creation of your documentation.\n\nTags: Next.js, Documentation, Nextra, Knowledgebase, Node.js\n\nLanguages: JavaScript, TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Nextra\n\nThis template is a documentation starter project developed using Nextra, designed to streamline the creation of your documentation and quickly build a digital knowledgebase. You can add content easily by simply adding markdown files. This code-free solution requires no adjustments to the basic structure. We have prepared all the essential files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Nextra\n\nShort Description: A documentation starter project developed using Nextra designed to streamline the creation of your documentation.\n\nTags: Next.js, Documentation, Nextra, Knowledgebase, Node.js, JavaScript, TypeScript\n\nLanguages: nodejs\n",
     "directoryName": "nextjs-documentation",
     "title": "Nextra",
     "shortDescription": "A documentation starter project developed using Nextra designed to streamline the creation of your documentation.",
@@ -464,17 +476,18 @@
       "Documentation",
       "Nextra",
       "Knowledgebase",
-      "Node.js"
-    ],
-    "languages": [
+      "Node.js",
       "JavaScript",
       "TypeScript"
+    ],
+    "languages": [
+      "nodejs"
     ]
   },
   {
     "name": "nextjs-github-actions",
-    "category": "TypeScript",
-    "readme": "# Next.js & GitHub Actions\n\nA basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with [Defang](https://defang.io) with GitHub Actions configured for CI/CD.\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js & GitHub Actions\n\nShort Description: A basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with Defang, with GitHub Actions configured for CI/CD.\n\nTags: Next.js, React, Docker, GitHub Actions, Node.js\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Next.js & GitHub Actions\n\nA basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with [Defang](https://defang.io) with GitHub Actions configured for CI/CD.\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js & GitHub Actions\n\nShort Description: A basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with Defang, with GitHub Actions configured for CI/CD.\n\nTags: Next.js, React, Docker, GitHub Actions, Node.js, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nextjs-github-actions",
     "title": "Next.js & GitHub Actions",
     "shortDescription": "A basic Next.js app with a Dockerfile and docker-compose ready to deploy to AWS with Defang, with GitHub Actions configured for CI/CD.",
@@ -483,32 +496,35 @@
       "React",
       "Docker",
       "GitHub Actions",
-      "Node.js"
+      "Node.js",
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-chatroom",
-    "category": "JavaScript",
-    "readme": "# Node.js & SocketIO\n\nThis is a minimal chat application that shows how to use Socket.IO with Node.js with minimal code deployed with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js & SocketIO\n\nShort Description: A minimal chat application that shows how to use Socket.IO with Node.js.\n\nTags: Node.js, Chat, Socket.IO\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js & SocketIO\n\nThis is a minimal chat application that shows how to use Socket.IO with Node.js with minimal code deployed with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js & SocketIO\n\nShort Description: A minimal chat application that shows how to use Socket.IO with Node.js.\n\nTags: Node.js, Chat, Socket.IO, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-chatroom",
     "title": "Node.js & SocketIO",
     "shortDescription": "A minimal chat application that shows how to use Socket.IO with Node.js.",
     "tags": [
       "Node.js",
       "Chat",
-      "Socket.IO"
+      "Socket.IO",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-express",
-    "category": "JavaScript",
-    "readme": "# Node.js & Express\n\nThis Node.js application, built with Express.js, is designed to inspect and display detailed information about incoming HTTP requests. It supports all HTTP methods and provides insights into the request path, method, headers, query parameters, and body. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js & Express\n\nShort Description: A Node.js application that inspects and displays detailed information about incoming http requests.\n\nTags: Node.js, Express, http, Request, Inspector\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js & Express\n\nThis Node.js application, built with Express.js, is designed to inspect and display detailed information about incoming HTTP requests. It supports all HTTP methods and provides insights into the request path, method, headers, query parameters, and body. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js & Express\n\nShort Description: A Node.js application that inspects and displays detailed information about incoming http requests.\n\nTags: Node.js, Express, http, Request, Inspector, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-express",
     "title": "Node.js & Express",
     "shortDescription": "A Node.js application that inspects and displays detailed information about incoming http requests.",
@@ -517,32 +533,34 @@
       "Express",
       "http",
       "Request",
-      "Inspector"
+      "Inspector",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-form",
-    "category": "JavaScript",
-    "readme": "# Node.js Express Form\n\nThis is a basic Node.js application using the Express framework to demonstrate handling a form submission. The application serves an HTML form where users can input their first name and then greets them personally upon submission. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js Express Form\n\nShort Description: A Node.js application that handles form submissions using the Express framework.\n\nTags: Node.js, Express, http\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js Express Form\n\nThis is a basic Node.js application using the Express framework to demonstrate handling a form submission. The application serves an HTML form where users can input their first name and then greets them personally upon submission. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js Express Form\n\nShort Description: A Node.js application that handles form submissions using the Express framework.\n\nTags: Node.js, Express, http, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-form",
     "title": "Node.js Express Form",
     "shortDescription": "A Node.js application that handles form submissions using the Express framework.",
     "tags": [
       "Node.js",
       "Express",
-      "http"
+      "http",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-http",
-    "category": "JavaScript",
-    "readme": "# Node.js HTTP Server\n\nThis example shows how to build a minimal Node.js application using the [Node.js](https://nodejs.org/) runtime.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js HTTP Server\n\nShort Description: A simple Node.js application that creates an http server.\n\nTags: Node.js, http, Server\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js HTTP Server\n\nThis example shows how to build a minimal Node.js application using the [Node.js](https://nodejs.org/) runtime.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js HTTP Server\n\nShort Description: A simple Node.js application that creates an http server.\n\nTags: Node.js, http, Server\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-http",
     "title": "Node.js HTTP Server",
     "shortDescription": "A simple Node.js application that creates an http server.",
@@ -552,23 +570,24 @@
       "Server"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-openai",
-    "category": "JavaScript",
-    "readme": "# Node.js & OpenAI\n\n## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\n\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: text/plain\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Node.js & OpenAI\n\nShort Description: A simple Node.js application that interacts with the OpenAI API.\n\nTags: Node.js, OpenAI, API\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js & OpenAI\n\n## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\n\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: text/plain\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Node.js & OpenAI\n\nShort Description: A simple Node.js application that interacts with the OpenAI API.\n\nTags: Node.js, OpenAI, API, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-openai",
     "title": "Node.js & OpenAI",
     "shortDescription": "A simple Node.js application that interacts with the OpenAI API.",
     "tags": [
       "Node.js",
       "OpenAI",
-      "API"
+      "API",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ],
     "configs": [
       "OPENAI_KEY"
@@ -576,8 +595,8 @@
   },
   {
     "name": "nodejs-react-postgres",
-    "category": "JavaScript",
-    "readme": "# React & Node.js & PostgreSQL\n\nThis sample project demonstrates how to deploy a full-stack application using React for the frontend, Node.js for the backend, and PostgreSQL for the database. The project uses Docker to containerize the services, making it easy to run in both development and production environments.\n\nIn this sample, we have set up the essential files you need to deploy in production using [Neon](https://neon.tech/) to host your database. We use a connection string to connect Neon to your code. By replacing the pre-configured connection string at .env and at the compose file to yours, you will be ready to deploy this sample with Neon.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/defang-io/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Development\n\nTo start the development environment, run `docker compose -f ./compose.yaml -f ./compose.dev.yaml up`. This will start the Postgres container, the React container, and the NodeJS container. The development container (compose.dev.yaml) will override the production container (compose.yaml).\n\nOr run without using Docker by doing the following:\n\n1. run npm install to install the nodejs dependencies in both the `client` directory and the `server` directory\n2. create or modify the .env file in both the `client` directory and the `server` directory with localhost, or create a .env.local to override the .env file.\n3. run npm start\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Add your connection string as a defang config value by typing `defang config set DATABASE_URL` and pasting your connection string (which should be in the format `postgres://username:password@host:port/dbname`)\n3. Update your `compose.yaml` file to replace `<YOUR_USERNAME>` with your username (which you can get by running `defang whoami`. \"Tenant\" is your username.)\n4. Type `defang compose up` in the CLI.\n5. Your app will be running within a few minutes.\n\n---\n\nTitle: React & Node.js & PostgreSQL\n\nShort Description: A full-stack to-do list application.\n\nTags: React, Node.js, Full-stack, PostgreSQL\n\nLanguages: JavaScript, SQL\n",
+    "category": "nodejs",
+    "readme": "# React & Node.js & PostgreSQL\n\nThis sample project demonstrates how to deploy a full-stack application using React for the frontend, Node.js for the backend, and PostgreSQL for the database. The project uses Docker to containerize the services, making it easy to run in both development and production environments.\n\nIn this sample, we have set up the essential files you need to deploy in production using [Neon](https://neon.tech/) to host your database. We use a connection string to connect Neon to your code. By replacing the pre-configured connection string at .env and at the compose file to yours, you will be ready to deploy this sample with Neon.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/defang-io/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Development\n\nTo start the development environment, run `docker compose -f ./compose.yaml -f ./compose.dev.yaml up`. This will start the Postgres container, the React container, and the NodeJS container. The development container (compose.dev.yaml) will override the production container (compose.yaml).\n\nOr run without using Docker by doing the following:\n\n1. run npm install to install the nodejs dependencies in both the `client` directory and the `server` directory\n2. create or modify the .env file in both the `client` directory and the `server` directory with localhost, or create a .env.local to override the .env file.\n3. run npm start\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Add your connection string as a defang config value by typing `defang config set DATABASE_URL` and pasting your connection string (which should be in the format `postgres://username:password@host:port/dbname`)\n3. Update your `compose.yaml` file to replace `<YOUR_USERNAME>` with your username (which you can get by running `defang whoami`. \"Tenant\" is your username.)\n4. Type `defang compose up` in the CLI.\n5. Your app will be running within a few minutes.\n\n---\n\nTitle: React & Node.js & PostgreSQL\n\nShort Description: A full-stack to-do list application.\n\nTags: React, Node.js, Full-stack, PostgreSQL, JavaScript, SQL\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-react-postgres",
     "title": "React & Node.js & PostgreSQL",
     "shortDescription": "A full-stack to-do list application.",
@@ -585,11 +604,12 @@
       "React",
       "Node.js",
       "Full-stack",
-      "PostgreSQL"
-    ],
-    "languages": [
+      "PostgreSQL",
       "JavaScript",
       "SQL"
+    ],
+    "languages": [
+      "nodejs"
     ],
     "configs": [
       "DATABASE_URL"
@@ -597,33 +617,35 @@
   },
   {
     "name": "nodejs-rest-api",
-    "category": "JavaScript",
-    "readme": "# Node.js & REST API\n\nThis is a simple Node.js application that uses Express.js to create a REST API. It has two endpoints: one that returns a status message, and another that fetches and returns average interest rates data from the U.S. Department of the Treasury's Fiscal Data API.\n\n---\n\nTitle: Node.js & REST API\n\nShort Description: A simple Node.js application that creates a REST API and fetches data from the U.S. Department of the Treasury's Fiscal Data API.\n\nTags: Node.js, REST API\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Node.js & REST API\n\nThis is a simple Node.js application that uses Express.js to create a REST API. It has two endpoints: one that returns a status message, and another that fetches and returns average interest rates data from the U.S. Department of the Treasury's Fiscal Data API.\n\n---\n\nTitle: Node.js & REST API\n\nShort Description: A simple Node.js application that creates a REST API and fetches data from the U.S. Department of the Treasury's Fiscal Data API.\n\nTags: Node.js, REST API, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-rest-api",
     "title": "Node.js & REST API",
     "shortDescription": "A simple Node.js application that creates a REST API and fetches data from the U.S. Department of the Treasury's Fiscal Data API.",
     "tags": [
       "Node.js",
-      "REST API"
+      "REST API",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "nodejs-s3",
-    "category": "JavaScript",
-    "readme": "## Setup\n\nThis sample requires an API key to access AWS S3. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Node.js & S3\n\nShort Description: A simple Node.js application that uploads and downloads files from AWS S3.\n\nTags: Node.js, S3, AWS\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "## Setup\n\nThis sample requires an API key to access AWS S3. The name of the config value is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Node.js & S3\n\nShort Description: A simple Node.js application that uploads and downloads files from AWS S3.\n\nTags: Node.js, S3, AWS, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-s3",
     "title": "Node.js & S3",
     "shortDescription": "A simple Node.js application that uploads and downloads files from AWS S3.",
     "tags": [
       "Node.js",
       "S3",
-      "AWS"
+      "AWS",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ],
     "configs": [
       "AWS_ACCESS_KEY",
@@ -653,8 +675,8 @@
   },
   {
     "name": "pulumi",
-    "category": "Node.js",
-    "readme": "# Pulumi\n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example\n\nTags: pulumi, Node.js, http, server\n\nLanguages: Node.js, TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Pulumi\n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example\n\nTags: pulumi, Node.js, http, server, TypeScript\n\nLanguages: nodejs\n",
     "directoryName": "pulumi",
     "title": "Pulumi",
     "shortDescription": "A basic Pulumi example",
@@ -662,17 +684,17 @@
       "pulumi",
       "Node.js",
       "http",
-      "server"
+      "server",
+      "TypeScript"
     ],
     "languages": [
-      "Node.js",
-      "TypeScript"
+      "nodejs"
     ]
   },
   {
     "name": "pulumi-remix-postgres",
-    "category": "TypeScript",
-    "readme": "# Pulumi & Remix & Postgres\n\nIn this example, we run a Remix application connected to a Postgres database using Prisma as an ORM. When we deploy our service to [Defang](https://defang.io/), we also deploy a Postgres service and database using [Aiven](https://aiven.io/) so we can run our full application in the cloud.\n\n## Running Locally\n\nTo run this example locally, you'll need to have a Postgres database. You can run one locally with Docker:\n\n```\ndocker run -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres\n```\n\nCreate a `.env` file with the following:\n\n```\nDATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\"\n```\n\nThen run `npm install` and `npm run dev` in the `remix` directory to start the application.\n\n## Deploying to Defang\n\nFirst, `cd` into the `pulumi` directory and make sure you're logged into Defang with `defang login` and into Pulumi with `pulumi login`.\n\nNext, head to your Aiven account and create an api token, then run the following command to store it in your Pulumi stack config:\n\n```\npulumi config set --secret aiven:apiToken <YourToken>\n```\n\nYou'll also need to make sure you have an Aiven organization with a billing method attached to a billing group. Get the organization id and the billing group id and add them to your config with the following commands:\n\n```\npulumi config set --secret aivenOrganizationId <OrgId>\npulumi config set --secret aivenBillingGroupId <BillingGroupId>\n```\n\nNow, run `pulumi up` to deploy your application to Defang and Aiven! Head to the [portal](https://portal.defang.dev) to check on status, or run `defang services`.\n\n---\n\nTitle: Pulumi & Remix & PostgreSQL\n\nShort Description: A full-stack example using Remix, Prisma, and Aiven.\n\nTags: Full stack, Remix, Prisma, Aiven, PostgreSQL, Pulumi, Node.js\n\nLanguages: TypeScript, SQL\n",
+    "category": "nodejs",
+    "readme": "# Pulumi & Remix & Postgres\n\nIn this example, we run a Remix application connected to a Postgres database using Prisma as an ORM. When we deploy our service to [Defang](https://defang.io/), we also deploy a Postgres service and database using [Aiven](https://aiven.io/) so we can run our full application in the cloud.\n\n## Running Locally\n\nTo run this example locally, you'll need to have a Postgres database. You can run one locally with Docker:\n\n```\ndocker run -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres\n```\n\nCreate a `.env` file with the following:\n\n```\nDATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\"\n```\n\nThen run `npm install` and `npm run dev` in the `remix` directory to start the application.\n\n## Deploying to Defang\n\nFirst, `cd` into the `pulumi` directory and make sure you're logged into Defang with `defang login` and into Pulumi with `pulumi login`.\n\nNext, head to your Aiven account and create an api token, then run the following command to store it in your Pulumi stack config:\n\n```\npulumi config set --secret aiven:apiToken <YourToken>\n```\n\nYou'll also need to make sure you have an Aiven organization with a billing method attached to a billing group. Get the organization id and the billing group id and add them to your config with the following commands:\n\n```\npulumi config set --secret aivenOrganizationId <OrgId>\npulumi config set --secret aivenBillingGroupId <BillingGroupId>\n```\n\nNow, run `pulumi up` to deploy your application to Defang and Aiven! Head to the [portal](https://portal.defang.dev) to check on status, or run `defang services`.\n\n---\n\nTitle: Pulumi & Remix & PostgreSQL\n\nShort Description: A full-stack example using Remix, Prisma, and Aiven.\n\nTags: Full stack, Remix, Prisma, Aiven, PostgreSQL, Pulumi, Node.js, TypeScript, SQL\n\nLanguages: nodejs\n",
     "directoryName": "pulumi-remix-postgres",
     "title": "Pulumi & Remix & PostgreSQL",
     "shortDescription": "A full-stack example using Remix, Prisma, and Aiven.",
@@ -683,38 +705,34 @@
       "Aiven",
       "PostgreSQL",
       "Pulumi",
-      "Node.js"
-    ],
-    "languages": [
+      "Node.js",
       "TypeScript",
       "SQL"
+    ],
+    "languages": [
+      "nodejs"
     ]
   },
   {
     "name": "python-form",
-    "category": "TypeScript",
-    "readme": "# Flask & Form Submission\n\nThis Flask application provides a basic example of handling form submissions. It displays an HTML form where users can input their first name. Upon submission, the application greets the user by name on a new page. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Pulumi & Remix & PostgreSQL\n\nShort Description: A full-stack example using Remix, Prisma, and Aiven.\n\nTags: Full stack, Remix, Prisma, Aiven, PostgreSQL, Pulumi, Node.js\n\nLanguages: TypeScript, SQL\n",
+    "category": "python",
+    "readme": "# Flask & Form Submission\n\nThis Flask application provides a basic example of handling form submissions. It displays an HTML form where users can input their first name. Upon submission, the application greets the user by name on a new page. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Python & Form\n\nShort Description: A short python example for form submission in flask.\n\nTags: Python, Flask, form\n\nLanguages: python\n",
     "directoryName": "python-form",
-    "title": "Pulumi & Remix & PostgreSQL",
-    "shortDescription": "A full-stack example using Remix, Prisma, and Aiven.",
+    "title": "Python & Form",
+    "shortDescription": "A short python example for form submission in flask.",
     "tags": [
-      "Full stack",
-      "Remix",
-      "Prisma",
-      "Aiven",
-      "PostgreSQL",
-      "Pulumi",
-      "Node.js"
+      "Python",
+      "Flask",
+      "form"
     ],
     "languages": [
-      "TypeScript",
-      "SQL"
+      "python"
     ]
   },
   {
     "name": "python-implicit-gpu",
-    "category": "Python",
-    "readme": "# Python & Implicit & GPU\n\nThis Music Recommendation API provides artist recommendations based on collaborative filtering using the Alternating Least Squares (ALS) algorithm from the implicit library. The dataset utilized is from Last.fm. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip. It demonstrates how to use a GPU with Python and the implicit library with Defang.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Python & Implicit & GPU\n\nShort Description: A Music Recommendation API that provides artist recommendations based on collaborative filtering using the ALS algorithm from the Implicit library, leveraging a GPU.\n\nTags: Music, Recommendation, API, Collaborative Filtering, Implicit, GPU\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Python & Implicit & GPU\n\nThis Music Recommendation API provides artist recommendations based on collaborative filtering using the Alternating Least Squares (ALS) algorithm from the implicit library. The dataset utilized is from Last.fm. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip. It demonstrates how to use a GPU with Python and the implicit library with Defang.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Python & Implicit & GPU\n\nShort Description: A Music Recommendation API that provides artist recommendations based on collaborative filtering using the ALS algorithm from the Implicit library, leveraging a GPU.\n\nTags: Music, Recommendation, API, Collaborative Filtering, Implicit, GPU, Python\n\nLanguages: python\n",
     "directoryName": "python-implicit-gpu",
     "title": "Python & Implicit & GPU",
     "shortDescription": "A Music Recommendation API that provides artist recommendations based on collaborative filtering using the ALS algorithm from the Implicit library, leveraging a GPU.",
@@ -724,31 +742,33 @@
       "API",
       "Collaborative Filtering",
       "Implicit",
-      "GPU"
+      "GPU",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "python-minimal",
-    "category": "Python",
-    "readme": "# Flask Request Inspector API\n\nThis Flask application is designed to inspect and return detailed information about HTTP requests. It supports both GET and POST methods, providing insights into the request path, method, headers, query parameters, and body. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\n1. Support both GET and POST HTTP methods\n2. Detailed information about the request, including path, method, headers, query parameters, and body.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A Flask application that inspects and returns detailed information about http requests.\n\nTags: Flask, http\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Flask Request Inspector API\n\nThis Flask application is designed to inspect and return detailed information about HTTP requests. It supports both GET and POST methods, providing insights into the request path, method, headers, query parameters, and body. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\n1. Support both GET and POST HTTP methods\n2. Detailed information about the request, including path, method, headers, query parameters, and body.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A Flask application that inspects and returns detailed information about http requests.\n\nTags: Flask, http, Python\n\nLanguages: python\n",
     "directoryName": "python-minimal",
     "title": "Flask",
     "shortDescription": "A Flask application that inspects and returns detailed information about http requests.",
     "tags": [
       "Flask",
-      "http"
+      "http",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "python-openai",
-    "category": "Python",
-    "readme": "# Python & Flask & OpenAI\n\n## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file. To provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Python & Flask & OpenAI\n\nShort Description: An app that demonstrates how to use the OpenAI API with Python and Flask.\n\nTags: Python, Flask, OpenAI, AI\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Python & Flask & OpenAI\n\n## Setup\n\nThis sample requires an API key to access the OpenAI API. The name of the config value is referenced in the compose.yaml file. To provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name OPENAI_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\n```\necho \"Hello\" | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\nor\n\n```\ncat prompt.txt | curl -H \"Content-Type: application/text\" -d @- https://xxxxxxxx/prompt\n```\n\n---\n\nTitle: Python & Flask & OpenAI\n\nShort Description: An app that demonstrates how to use the OpenAI API with Python and Flask.\n\nTags: Python, Flask, OpenAI, AI, Python\n\nLanguages: python\n",
     "directoryName": "python-openai",
     "title": "Python & Flask & OpenAI",
     "shortDescription": "An app that demonstrates how to use the OpenAI API with Python and Flask.",
@@ -756,10 +776,11 @@
       "Python",
       "Flask",
       "OpenAI",
-      "AI"
+      "AI",
+      "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ],
     "configs": [
       "OPENAI_KEY"
@@ -767,8 +788,8 @@
   },
   {
     "name": "python-rest-api",
-    "category": "Python",
-    "readme": "# Python & REST API\n\nThis Flask application fetches average interest rates from the Fiscal Data Treasury API. It provides endpoints to check the status of the API and to retrieve the latest average interest rates. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\nEndpoint to check API status.\nEndpoint to fetch average interest rates from the Fiscal Data Treasury API.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). This is optional\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Python & REST API\n\nShort Description: A Flask application that fetches average interest rates from the Fiscal Data Treasury API.\n\nTags: Flask, REST API, Python\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Python & REST API\n\nThis Flask application fetches average interest rates from the Fiscal Data Treasury API. It provides endpoints to check the status of the API and to retrieve the latest average interest rates. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\nEndpoint to check API status.\nEndpoint to fetch average interest rates from the Fiscal Data Treasury API.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). This is optional\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Python & REST API\n\nShort Description: A Flask application that fetches average interest rates from the Fiscal Data Treasury API.\n\nTags: Flask, REST API, Python\n\nLanguages: python\n",
     "directoryName": "python-rest-api",
     "title": "Python & REST API",
     "shortDescription": "A Flask application that fetches average interest rates from the Fiscal Data Treasury API.",
@@ -778,13 +799,13 @@
       "Python"
     ],
     "languages": [
-      "Python"
+      "python"
     ]
   },
   {
     "name": "python-s3",
-    "category": "Python",
-    "readme": "# Python & Flask & AWS S3\n\nThis sample requires an API key to access AWS S3. The name of the config values is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Python & Flask & AWS S3\n\nShort Description: An app that demonstrates how to upload and download files from AWS S3 using Python and Flask.\n\nTags: Python, Flask, AWS S3\n\nLanguages: Python\n",
+    "category": "python",
+    "readme": "# Python & Flask & AWS S3\n\nThis sample requires an API key to access AWS S3. The name of the config values is referenced in the compose.yaml file.\nTo provide a value for it, you can use the Defang CLI like this:\n\n```\ndefang config set --name AWS_ACCESS_KEY\ndefang config set --name AWS_SECRET_KEY\n```\n\nand then enter the value when prompted.\n\n## Testing\n\ncurl -X POST -H 'Content-Type: application/json' -d '{ \"first_name\" : \"jane\", \"last_name\" : \"doe\" }' https://xxxxxx/upload\ncurl https://xxxxxx/download\n\n---\n\nTitle: Python & Flask & AWS S3\n\nShort Description: An app that demonstrates how to upload and download files from AWS S3 using Python and Flask.\n\nTags: Python, Flask, AWS S3\n\nLanguages: python\n",
     "directoryName": "python-s3",
     "title": "Python & Flask & AWS S3",
     "shortDescription": "An app that demonstrates how to upload and download files from AWS S3 using Python and Flask.",
@@ -794,7 +815,7 @@
       "AWS S3"
     ],
     "languages": [
-      "Python"
+      "python"
     ],
     "configs": [
       "AWS_ACCESS_KEY",
@@ -818,8 +839,8 @@
   },
   {
     "name": "sailsjs",
-    "category": "JavaScript",
-    "readme": "# Sailsjs\n\nThis sample demosntrates how to deploy a very basic Sailsjs sample with Defang. The sample simply outputs hello world on the webpage.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml document. To run the sample locally after cloning the respository, you can run on docker by using the following command:\n\n1. docker compose -f compose.dev.yaml up --build\n\n---\n\nTitle: Sails.js\n\nShort Description: A short hello world application demonstrating how to deploy Sails.js onto Defang.\n\nTags: Sails.js, Node.js\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Sailsjs\n\nThis sample demosntrates how to deploy a very basic Sailsjs sample with Defang. The sample simply outputs hello world on the webpage.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml document. To run the sample locally after cloning the respository, you can run on docker by using the following command:\n\n1. docker compose -f compose.dev.yaml up --build\n\n---\n\nTitle: Sails.js\n\nShort Description: A short hello world application demonstrating how to deploy Sails.js onto Defang.\n\nTags: Sails.js, Node.js\n\nLanguages: nodejs\n",
     "directoryName": "sailsjs",
     "title": "Sails.js",
     "shortDescription": "A short hello world application demonstrating how to deploy Sails.js onto Defang.",
@@ -828,23 +849,24 @@
       "Node.js"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "sailsjs-postgres",
-    "category": "SQL",
-    "readme": "# Sailsjs & Postgres\n\nThis sample project demonstrates how to deploy\n\nSailsjs with Defang and connect it to a Postgres database. Furthermore, we emonstrate how to run a local Postgres container during development vs a managed postgres service (Neon). For a quick database set up please go to [Neon](https://neon.tech/) and follow set up instructions. The sample starts with a no tasks in the database and allows us to add tasks on the fly. It sets wide open permissions on the tables as well so you can start querying or mutating the data right away.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n4. (Optional) [Neon CLI] (https://neon.tech/docs/reference/neon-cli)\n\n## Deploying production\n\n1. Open the terminal and type `defang login`\n2. Add your connection string for the third party postgres database in the DATABASE_URL part of the compose.yaml section\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, we use a Postgres container. The Postgres container is defined in the `compose.dev.yaml` file. The Neon postgres container is defined in the `compose.yaml` file, with some overrides in the `compose.dev.yaml` file so it correctly connects to the development database container. To start your own, please have the env variables, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, and `SESSION_SECRET` ready.\n\nTo start the development environment, run:\n\n```\ndocker compose -f compose.dev.yaml up --build\n```\n\n---\n\nTitle: Sails.js & PostgreSQL\n\nShort Description: A sample project demonstrating how to deploy a project with PostgreSQL and Sails.js.\n\nTags: PostgreSQL, Sails.js\n\nLanguages: SQL, JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Sailsjs & Postgres\n\nThis sample project demonstrates how to deploy\n\nSailsjs with Defang and connect it to a Postgres database. Furthermore, we emonstrate how to run a local Postgres container during development vs a managed postgres service (Neon). For a quick database set up please go to [Neon](https://neon.tech/) and follow set up instructions. The sample starts with a no tasks in the database and allows us to add tasks on the fly. It sets wide open permissions on the tables as well so you can start querying or mutating the data right away.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n4. (Optional) [Neon CLI] (https://neon.tech/docs/reference/neon-cli)\n\n## Deploying production\n\n1. Open the terminal and type `defang login`\n2. Add your connection string for the third party postgres database in the DATABASE_URL part of the compose.yaml section\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, we use a Postgres container. The Postgres container is defined in the `compose.dev.yaml` file. The Neon postgres container is defined in the `compose.yaml` file, with some overrides in the `compose.dev.yaml` file so it correctly connects to the development database container. To start your own, please have the env variables, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, and `SESSION_SECRET` ready.\n\nTo start the development environment, run:\n\n```\ndocker compose -f compose.dev.yaml up --build\n```\n\n---\n\nTitle: Sails.js & PostgreSQL\n\nShort Description: A sample project demonstrating how to deploy a project with PostgreSQL and Sails.js.\n\nTags: PostgreSQL, Sails.js, SQL, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "sailsjs-postgres",
     "title": "Sails.js & PostgreSQL",
     "shortDescription": "A sample project demonstrating how to deploy a project with PostgreSQL and Sails.js.",
     "tags": [
       "PostgreSQL",
-      "Sails.js"
-    ],
-    "languages": [
+      "Sails.js",
       "SQL",
       "JavaScript"
+    ],
+    "languages": [
+      "nodejs"
     ],
     "configs": [
       "DATABASE_URL",
@@ -853,8 +875,8 @@
   },
   {
     "name": "svelte-mysql",
-    "category": "JavaScript",
-    "readme": "# Svelte & Node.js & MySQL\n\nThis sample project demonstrates how to deploy a full-stack application using Svelte for the frontend, Node.js for the backend, and MySQL for the database. The project uses Docker to containerize the services, making it easy to run in both development and production environments.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Svelte and NodeJS. However, it deploys mysql db as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Prerequisite\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) make sure you have properly\n3. [Docker CLI] (https://docs.docker.com/engine/install/)\n4. [NodeJS] (https://nodejs.org/en/download/package-manager)\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml file and the server.js file where we create a pool of connections. To run the sample locally after clonging the respository, you can run on docker by doing _docker compose up --build_ or run without using Docker by doing the following:\n\n1. run npm install to install the nodejs dependencies\n2. create an .env file on the svelte directory specifying the appropriate environment variables.\n3. run npm start\n\n### Editing the database/permissions etc.\n\nIf you want to edit the database, such that you can deploy them to production, you should [install the mySQL CLI](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html) and mySQL workbench to gain access to a GUI so that you can make your changes to the database. After running defang compose up these changes will be reflected.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: Svelte & Node.js & MySQL\n\nShort Description: A full-stack application using Svelte for the frontend, Node.js for the backend, and MySQL for the database.\n\nTags: Svelte, Node.js, MySQL, Full-stack\n\nLanguages: JavaScript, TypeScript, SQL\n",
+    "category": "nodejs",
+    "readme": "# Svelte & Node.js & MySQL\n\nThis sample project demonstrates how to deploy a full-stack application using Svelte for the frontend, Node.js for the backend, and MySQL for the database. The project uses Docker to containerize the services, making it easy to run in both development and production environments.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Svelte and NodeJS. However, it deploys mysql db as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Prerequisite\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) make sure you have properly\n3. [Docker CLI] (https://docs.docker.com/engine/install/)\n4. [NodeJS] (https://nodejs.org/en/download/package-manager)\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml file and the server.js file where we create a pool of connections. To run the sample locally after clonging the respository, you can run on docker by doing _docker compose up --build_ or run without using Docker by doing the following:\n\n1. run npm install to install the nodejs dependencies\n2. create an .env file on the svelte directory specifying the appropriate environment variables.\n3. run npm start\n\n### Editing the database/permissions etc.\n\nIf you want to edit the database, such that you can deploy them to production, you should [install the mySQL CLI](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html) and mySQL workbench to gain access to a GUI so that you can make your changes to the database. After running defang compose up these changes will be reflected.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: Svelte & Node.js & MySQL\n\nShort Description: A full-stack application using Svelte for the frontend, Node.js for the backend, and MySQL for the database.\n\nTags: Svelte, Node.js, MySQL, Full-stack, JavaScript, TypeScript, SQL\n\nLanguages: nodejs\n",
     "directoryName": "svelte-mysql",
     "title": "Svelte & Node.js & MySQL",
     "shortDescription": "A full-stack application using Svelte for the frontend, Node.js for the backend, and MySQL for the database.",
@@ -862,18 +884,19 @@
       "Svelte",
       "Node.js",
       "MySQL",
-      "Full-stack"
-    ],
-    "languages": [
+      "Full-stack",
       "JavaScript",
       "TypeScript",
       "SQL"
+    ],
+    "languages": [
+      "nodejs"
     ]
   },
   {
     "name": "sveltekit",
-    "category": "TypeScript",
-    "readme": "# Sveltekit\n\nThis sample shows how to get a minimal SvelteKit app up and running with Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. Have a managed database service configured and have the connection string ready.\n3. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n4. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo develop this app, you can run the sveltekit commands as you normally would on your local machine in the sveltekit directory. If you plan on adding other services, you might want to run it with docker compose. We have provided a `compose.dev.yaml` file and a `dev.Dockefile` to help you get started. Just run `docker compose -f compose.dev.yaml up` to start your Sveltekit app in dev mode in a container.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: SvelteKit\n\nShort Description: A minimal SvelteKit app running on Defang.\n\nTags: SvelteKit, TypeScript, JavaScript, Svelte, Node.js, Frontend\n\nLanguages: TypeScript, JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Sveltekit\n\nThis sample shows how to get a minimal SvelteKit app up and running with Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. Have a managed database service configured and have the connection string ready.\n3. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n4. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo develop this app, you can run the sveltekit commands as you normally would on your local machine in the sveltekit directory. If you plan on adding other services, you might want to run it with docker compose. We have provided a `compose.dev.yaml` file and a `dev.Dockefile` to help you get started. Just run `docker compose -f compose.dev.yaml up` to start your Sveltekit app in dev mode in a container.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: SvelteKit\n\nShort Description: A minimal SvelteKit app running on Defang.\n\nTags: SvelteKit, TypeScript, JavaScript, Svelte, Node.js, Frontend, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "sveltekit",
     "title": "SvelteKit",
     "shortDescription": "A minimal SvelteKit app running on Defang.",
@@ -883,17 +906,18 @@
       "JavaScript",
       "Svelte",
       "Node.js",
-      "Frontend"
-    ],
-    "languages": [
+      "Frontend",
       "TypeScript",
       "JavaScript"
+    ],
+    "languages": [
+      "nodejs"
     ]
   },
   {
     "name": "sveltekit-mongodb",
-    "category": "JavaScript",
-    "readme": "# Sveltekit & MongoDB\n\nThis is a project that demonstrate both client side component rendering and hydration as well as serverside rendering with external API route configuration. Furthermore, there is also a mongodb connection (not hosted on the atlas) to cache the queried results.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Sveltekit. However, it deploys mongodb as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Prerequisite\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) make sure you have properly\n3. [Docker CLI] (https://docs.docker.com/engine/install/)\n\n4. [NodeJS] (https://nodejs.org/en/download/package-manager)\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml and /src/routes/api/songs/+server.js file and the server.js file where we create a pool of connections. To run the sample locally after clonging the respository, you can run on docker by doing\n\n1.  docker compose up --build\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: SvelteKit & MongoDB\n\nShort Description: A full-stack application using SvelteKit for the frontend and MongoDB for the database.\n\nTags: SvelteKit, MongoDB, Full-stack, Node.js\n\nLanguages: JavaScript\n",
+    "category": "nodejs",
+    "readme": "# Sveltekit & MongoDB\n\nThis is a project that demonstrate both client side component rendering and hydration as well as serverside rendering with external API route configuration. Furthermore, there is also a mongodb connection (not hosted on the atlas) to cache the queried results.\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Sveltekit. However, it deploys mongodb as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC] (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated your AWS account.\n3. (optional for local development) [Docker CLI] (https://docs.docker.com/engine/install/)\n\n## Prerequisite\n\n1. Download [Defang CLI] (https://github.com/DefangLabs/defang)\n2. (optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) make sure you have properly\n3. [Docker CLI] (https://docs.docker.com/engine/install/)\n\n4. [NodeJS] (https://nodejs.org/en/download/package-manager)\n\n## Development\n\nFor development, we use a local container. This can be seen in the compose.yaml and /src/routes/api/songs/+server.js file and the server.js file where we create a pool of connections. To run the sample locally after clonging the respository, you can run on docker by doing\n\n1.  docker compose up --build\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: SvelteKit & MongoDB\n\nShort Description: A full-stack application using SvelteKit for the frontend and MongoDB for the database.\n\nTags: SvelteKit, MongoDB, Full-stack, Node.js, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "sveltekit-mongodb",
     "title": "SvelteKit & MongoDB",
     "shortDescription": "A full-stack application using SvelteKit for the frontend and MongoDB for the database.",
@@ -901,16 +925,17 @@
       "SvelteKit",
       "MongoDB",
       "Full-stack",
-      "Node.js"
+      "Node.js",
+      "JavaScript"
     ],
     "languages": [
-      "JavaScript"
+      "nodejs"
     ]
   },
   {
     "name": "vllm",
-    "category": "TypeScript",
-    "readme": "# Mistral & vLLM\n\nThis guide demonstrates how to deploy Mistral using vLLM. You'll need a Hugging Face token to begin.\n\n## Prerequisites\n\n- Hugging Face token\n\n## Steps\n\n1. **Set the Hugging Face Token**\n\n   First, set the Hugging Face token using the `defang config` command.\n\n   ```bash\n   defang config set --name HF_TOKEN\n   ```\n\n2. **Launch with Defang Compose**\n\n   Run the following command to start the services:\n\n   ```bash\n   defang compose up\n   ```\n\n   The provided `compose.yaml` file includes the Mistral service. It's configured to run on an AWS instance with GPU support. The file also includes a UI service built with Next.js, utilizing Vercel's AI SDK.\n\n   > **OpenAI SDK:** We use the OpenAI sdk, but set the `baseURL` to our Mistral endpoint.\n\n   > **Note:** The API route does not use a system prompt, as the Mistral model we're deploying currently does not support this feature. To get around this we inject a couple messages at the front of the conversation providing the context (see the `ui/src/app/api/chat/route.ts` file). Other than that, the integration with the OpenAI SDK should be structured as expected.\n\n   > **Changing the content:** The content for the bot is set in the `ui/src/app/api/chat/route.ts` file. You can edit the prompt in there to change the behaviour. You'll notice that it also pulls from `ui/src/app/docs.md` to provide content for the bot to use. You can edit this file to change its \"knowledge\".\n\n## Configuration\n\n- The Docker Compose file is ready to deploy Mistral and the UI service.\n- The UI uses Next.js and Vercel's AI SDK for seamless integration.\n\nBy following these steps, you should be able to deploy Mistral along with a custom UI on AWS, using GPU capabilities for enhanced performance.\n\n---\n\nTitle: Mistral & vLLM\n\nShort Description: Deploy Mistral with a custom UI using vLLM\n\nTags: Mistral, vLLM, AI, Nextjs, GPU, Node.js\n\nLanguages: TypeScript\n",
+    "category": "nodejs",
+    "readme": "# Mistral & vLLM\n\nThis guide demonstrates how to deploy Mistral using vLLM. You'll need a Hugging Face token to begin.\n\n## Prerequisites\n\n- Hugging Face token\n\n## Steps\n\n1. **Set the Hugging Face Token**\n\n   First, set the Hugging Face token using the `defang config` command.\n\n   ```bash\n   defang config set --name HF_TOKEN\n   ```\n\n2. **Launch with Defang Compose**\n\n   Run the following command to start the services:\n\n   ```bash\n   defang compose up\n   ```\n\n   The provided `compose.yaml` file includes the Mistral service. It's configured to run on an AWS instance with GPU support. The file also includes a UI service built with Next.js, utilizing Vercel's AI SDK.\n\n   > **OpenAI SDK:** We use the OpenAI sdk, but set the `baseURL` to our Mistral endpoint.\n\n   > **Note:** The API route does not use a system prompt, as the Mistral model we're deploying currently does not support this feature. To get around this we inject a couple messages at the front of the conversation providing the context (see the `ui/src/app/api/chat/route.ts` file). Other than that, the integration with the OpenAI SDK should be structured as expected.\n\n   > **Changing the content:** The content for the bot is set in the `ui/src/app/api/chat/route.ts` file. You can edit the prompt in there to change the behaviour. You'll notice that it also pulls from `ui/src/app/docs.md` to provide content for the bot to use. You can edit this file to change its \"knowledge\".\n\n## Configuration\n\n- The Docker Compose file is ready to deploy Mistral and the UI service.\n- The UI uses Next.js and Vercel's AI SDK for seamless integration.\n\nBy following these steps, you should be able to deploy Mistral along with a custom UI on AWS, using GPU capabilities for enhanced performance.\n\n---\n\nTitle: Mistral & vLLM\n\nShort Description: Deploy Mistral with a custom UI using vLLM\n\nTags: Mistral, vLLM, AI, Nextjs, GPU, Node.js, TypeScript, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "vllm",
     "title": "Mistral & vLLM",
     "shortDescription": "Deploy Mistral with a custom UI using vLLM",
@@ -920,10 +945,12 @@
       "AI",
       "Nextjs",
       "GPU",
-      "Node.js"
+      "Node.js",
+      "TypeScript",
+      "JavaScript"
     ],
     "languages": [
-      "TypeScript"
+      "nodejs"
     ],
     "configs": [
       "HF_TOKEN"
