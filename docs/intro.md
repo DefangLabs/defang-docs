@@ -21,7 +21,8 @@ Defang provides a streamlined experience to develop, deploy, observe, and update
 
 - Support for [various types of applications](./use-cases/use-cases.md): Web services and APIs, mobile app backends, ML services, hosting LLMs, etc.
 - Support for your programming [language of choice](./samples.md): Node.js, Python, Golang, or anything else you can package in a Dockerfile.
-- Built-in [AI assistant](./concepts/ai.md) to go from natural language prompt to an outline project
+- Built-in AI assistant to go [from natural language prompt to an outline project](./concepts/generate.md)
+- Built-in AI assistant to help you [debug your cloud applications](./concepts/debug.md)
 - Automated [Dockerfile builds](./concepts/deployments.md)
 - Support for [pre-built Docker containers](./tutorials/deploy-container-using-the-cli.mdx), from public or private image registries
 - Ability to express your project configuration using a [Docker Compose YAML](./concepts/compose.md) file
