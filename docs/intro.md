@@ -7,7 +7,7 @@ description: Overview of Defang, a radically simpler way to build, deploy, and o
 
 ### What is Defang?
 
-Defang is a radically simpler way for developers to build, deploy their apps to the cloud. Defang enables you to easily author cloud application in any language, build and deploy to the cloud with a single command, and iterate quickly.
+Defang is a radically simpler way for developers to develop, deploy, and debug their cloud applications. Defang enables you to easily author cloud application in any language, build and deploy to the cloud with a single command, and iterate quickly with AI-assisted tooling.
 
 - The [Defang CLI](./getting-started/installing.md) includes an AI-driven assistant that translates natural language prompts to an outline for your project that you can then refine.
 - Defang can automatically build and deploy your project with a single command.
