@@ -4,12 +4,42 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Mon, 01 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
             <title><![CDATA[July 2024 Product Update]]></title>
+            <link>https://docs.defang.io/blog/2024-07-31-product-update</link>
+            <guid>https://docs.defang.io/blog/2024-07-31-product-update</guid>
+            <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Defang Compose Update]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-2aab6b0201bf44543b055debddc43e40.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>Hey folks! We can’t believe a month has gone by already, time flies when you’re having fun! We continued to make progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug cloud applications. In July, we spent time on a couple of key areas:</p>
+<ol>
+<li>
+<p>As our user-base grows, we wanted to make sure we’re able to scale our <a href="https://docs.defang.io/docs/concepts/defang-playground" target="_blank" rel="noopener noreferrer">Playground</a> environment to be able to handle the load. This involved being able to shard the workload across multiple ALBs and being able to dynamically move some workloads  across shards where possible. With these changes, we are now able handle a large number of concurrent users comfortably. The only noticeable change in behavior you would see is that Defang will now ask you to “<code>compose down</code>” your previous project before you are able to deploy a new project on Playground.</p>
+</li>
+<li>
+<p>The major news this month was the introduction of our “<code>debug</code>” functionality. The motivation for this feature was that while the Defang experience is amazing when everything goes smoothly, we saw users (including our own interns who are helping write all those <a href="https://docs.defang.io/docs/samples" target="_blank" rel="noopener noreferrer">samples</a>) struggle when they hit an error. The underlying reason for the error could come from a variety of sources: an error in the developer’s application (including in their Dockerfile or Compose file), an issue in the way Defang is processing the application, or an issue in the underlying cloud platform (currently, AWS). To the developer, it is often not obvious what the issue is or how to fix it. That got us thinking how we could make this debugging experience “radically simpler” and thus the idea for <code>defang debug</code> was born.</p>
+<p>Now (with CLI v0.5.37 if your application encounters an error that leads to a failed deployment, a failed health-check, or a run-time error, Defang will automatically detect the issue. It will then offer to help you debug it by running the <code>defang debug</code>  command. If you choose to proceed, Defang will apply an LLM model to try to determine the precise cause of the error, with the context of your application source, logs, error code etc. And it will try to come up with one or more actionable insights on how to fix the error. For an example, see the case below:</p>
+<p>Behind the scenes, Defang is having a conversation on your behalf with the LLM to narrow down to the cause of the error.  We would love for you to try the <code>debug</code> feature and give us your feedback so we can improve it further. One future improvement already on our list is the ability to, with user consent, automatically apply a chosen fix and re-try. We are also looking for way to improve the range of failures we are able to diagnose successfully.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="townhall">Townhall<a href="https://docs.defang.io/blog/2024-07-31-product-update#townhall" class="hash-link" aria-label="Direct link to Townhall" title="Direct link to Townhall">​</a></h2>
+<p>If you're excited about what's coming next and want to hear more about our vision for the future, join us for our Townhall on August 21st. We'll be sharing more about our roadmap and what we're working on next. We'll also be making sure to take time to answer any questions you have, hear your feedback, and learn more about what you want from Defang!</p>
+<p><strong><a href="https://lu.ma/rlj13eq5" target="_blank" rel="noopener noreferrer">Register here</a></strong></p>
+<hr>
+<p>We’re excited to keep improving Defang to make it the easiest way for you to Develop, Deploy, and Debug cloud application. Stay tuned for more updates next month.</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>CLI</category>
+            <category>AI</category>
+            <category>Debugging</category>
+        </item>
+        <item>
+            <title><![CDATA[June 2024 Product Update]]></title>
             <link>https://docs.defang.io/blog/july-2024-product-update</link>
             <guid>https://docs.defang.io/blog/july-2024-product-update</guid>
             <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
@@ -64,7 +94,7 @@
             <category>CLI</category>
         </item>
         <item>
-            <title><![CDATA[June 2024 Product Update]]></title>
+            <title><![CDATA[May 2024 Product Update]]></title>
             <link>https://docs.defang.io/blog/june-2024-product-update</link>
             <guid>https://docs.defang.io/blog/june-2024-product-update</guid>
             <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
@@ -109,7 +139,7 @@
             <category>ECS</category>
         </item>
         <item>
-            <title><![CDATA[May 2024 Product Update]]></title>
+            <title><![CDATA[April 2024 Product Update]]></title>
             <link>https://docs.defang.io/blog/may-2024-product-update</link>
             <guid>https://docs.defang.io/blog/may-2024-product-update</guid>
             <pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate>
