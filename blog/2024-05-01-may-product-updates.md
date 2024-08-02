@@ -1,6 +1,6 @@
 ---
 slug: may-2024-product-update
-title: May 2024 Product Update
+title: April 2024 Product Update
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
 author: Defang Team
 ---
