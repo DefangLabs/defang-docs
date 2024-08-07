@@ -6,7 +6,7 @@ sidebar_position: 200
 
 # Projects
 
-A _project_ refers to a cohesive collection of services, networks, and volumes which are defined and managed using a `compose.yml` file. These are the components of your cloud application.
+A _project_ refers to a cohesive collection of services, networks, and volumes which are defined and managed using a `compose.yaml` file. These are the components of your cloud application.
 
 ## Project Names
 
