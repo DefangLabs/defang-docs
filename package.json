@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prebuild": "./scripts/prebuild.sh",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -12,9 +13,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
-    "prep-cli-docs": "node scripts/prep-cli-docs.js",
-    "prep-samples": "node scripts/prep-samples.js"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@docusaurus/core": "3.0.0",
