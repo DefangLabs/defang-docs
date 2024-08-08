@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const YAML = require('yaml');
 
-const samplesDir = path.join(__dirname, '..', '..', 'samples', 'samples');
+const samplesDir = process.argv[2];
 
 // categories are directories in the current directory (i.e. we're running in samples/ and we might have a samples/ruby/ directory)
 const directories = fs.readdirSync(samplesDir).filter(file => fs.statSync(path.join(samplesDir, file)).isDirectory());
