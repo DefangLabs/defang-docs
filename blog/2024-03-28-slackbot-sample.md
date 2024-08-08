@@ -5,7 +5,7 @@ tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up, Slack API]
 author: Raphaël Titsworth-Morin
 ---
 
-Hey folks! Today, I'm going to share one of our code samples that will show you how to deploy a simple Slack bot. If you're looking to connect a cloud service to Slack to publish status updates, or something else like that, this should help you get started. We'll walk through a step-by-step process of writing a Go program using the [github.com/slack-go/slack](github.com/slack-go/slack) library to interact with the Slack API and easily deploy it using Defang.
+Hey folks! Today, I'm going to share one of our code samples that will show you how to deploy a simple Slack bot. If you're looking to connect a cloud service to Slack to publish status updates, or something else like that, this should help you get started. We'll walk through a step-by-step process of writing a Go program using the [github.com/slack-go/slack](https://github.com/slack-go/slack) library to interact with the Slack API and easily deploy it using Defang.
 
 ## Prerequisites
 
@@ -57,4 +57,3 @@ curl 'https://raphaeltm-bot--8080.prod1.defang.dev/' \
 
 ## Takeaways
 Congratulations! You've successfully deployed a Slackbot using Defang. If you deployed this as an internal service, you could use it to send status updates, alerts, or other important messages to your team. The possibilities are endless!
-
