@@ -28,3 +28,23 @@
   --ifm-color-primary-lightest: #d4e7f5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.docs-doc-id-chat h1 {
+  display: none;
+} 
+
+.docs-doc-id-chat .breadcrumbs {
+  display: none;
+}
+
+.docs-doc-id-chat main > .container {
+  padding: 0px !important;
+}
+
+.docs-doc-id-chat article > nav {
+  display: none !important;
+}
+
+.docs-doc-id-chat main > .container > .row > .col {
+  max-width: 100% !important;
+}
