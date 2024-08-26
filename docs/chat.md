@@ -6,7 +6,7 @@ className: "no-title-page"
 ---
 
 <iframe 
-    src="https://chrisyhjiang-rag-chatbot--5000.prod1a.defang.dev" 
+    src="https://rag-chatbot.docs-chatbot.chrisyhjiang.defang.app/" 
     style={{ 
         width: "100%", // Assuming the sidebar width is 250px
         height: "100vh", 
