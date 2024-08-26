@@ -24,7 +24,7 @@ When you deploy a service to Defang Playground, it will be assigned a domain und
 
 ### Max Resources
 
-* Services: 5
+* Services: 4
 * CPUs: 2
 * Memory: 8GB
 * Replicas: 2
