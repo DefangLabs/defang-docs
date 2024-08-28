@@ -48,3 +48,11 @@
 .docs-doc-id-chat main > .container > .row > .col {
   max-width: 100% !important;
 }
+
+.docs-doc-id-chat main nav.pagination-nav {
+  display: none !important;
+}
+
+.docs-doc-id-chat main article footer {
+  display: none !important;
+}
