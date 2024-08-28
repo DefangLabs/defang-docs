@@ -18,10 +18,16 @@ Defang does run the Defang build service to build your container images, which t
 ## AWS
 
 :::info
-Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
+The Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
 :::
 
 Please read the [AWS Provider](../providers/aws.md) documentation for more details about how the AWS provider works and how to get started.
+
+## DigitalOcean
+
+:::info
+The Private Beta of the Defang BYOC DigitalOcean Provider will be released in September 2024. Its development is tracked [here](https://github.com/DefangLabs/defang/pull/594).
+:::
 
 ## Azure
 

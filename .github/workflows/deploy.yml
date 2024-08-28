@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    environment: github-pages
     permissions:
       # This is required to allow the GH actions bot to commit to the `gh-pages` branch
       contents: write
