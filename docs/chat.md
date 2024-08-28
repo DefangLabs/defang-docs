@@ -9,7 +9,8 @@ className: "no-title-page"
     src="https://rag-chatbot.docs-chatbot.chrisyhjiang.defang.app/" 
     style={{ 
         width: "100%", // Assuming the sidebar width is 250px
-        height: "100vh", 
+        height: "calc(100vh - 60px)", // Assuming the header height is 60px
+        minHeight: "600px",
         border: "none",
         marginLeft: "0px",
         marginRight: "0px",
