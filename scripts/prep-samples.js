@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const YAML = require('yaml');
 
-const samplesDir = path.join(__dirname, '..', 'samples', 'samples');
+const samplesDir = process.argv[2];
 
 // categories are directories in the current directory (i.e. we're running in samples/ and we might have a samples/ruby/ directory)
 const directories = fs.readdirSync(samplesDir).filter(file => fs.statSync(path.join(samplesDir, file)).isDirectory());
@@ -11,6 +11,7 @@ let jsonArray = [];
 
 directories.forEach((sample) => {
     const directoryName = sample;
+    console.log(`@@ Adding ${sample}`);
     let readme;
     try {
         readme = fs.readFileSync(path.join(samplesDir, sample, 'README.md'), 'utf8');
@@ -19,11 +20,11 @@ directories.forEach((sample) => {
     }
 
     // The readme should contain lines that start with the following:
-    // Title: 
-    // Short Description: 
-    // Tags: 
-    // Languages: 
-    // 
+    // Title:
+    // Short Description:
+    // Tags:
+    // Languages:
+    //
     // We want to extract the title, short description, tags, and languages from the readme. Tags and languages are comma separated lists.
     const title = readme.match(/Title: (.*)/)[1];
     const shortDescription = readme.match(/Short Description: (.*)/)[1];

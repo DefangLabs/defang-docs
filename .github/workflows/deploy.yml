@@ -59,18 +59,8 @@ jobs:
         with:
           go-version: "1.21"
 
-      - name: Generate CLI docs
-        run: go run main.go ./tmp
-        working-directory: defang/src/cmd/gendocs
-
-      - name: Copy CLI docs to current repository
-        run: cp -r ./defang/src/cmd/gendocs/tmp/* ./docs/cli
-
-      - name: Prep CLI docs
-        run: npm run prep-cli-docs
-
-      - name: Prep Samples
-        run: npm run prep-samples
+      - name: Pre-build
+        run: npm run prebuild
 
       - name: Build website
         run: npm run build
@@ -93,3 +83,12 @@ jobs:
           cname: docs.defang.io
 
 
+      - name: Notify Slack of Action Failures
+        uses: ravsamhq/notify-slack-action@2.5.0
+        if: ${{ always() && github.ref_name == 'main' }}
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "{workflow} is failing"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFIER_WEBHOOK_URL }}

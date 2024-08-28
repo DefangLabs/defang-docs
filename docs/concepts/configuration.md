@@ -14,7 +14,12 @@ You can find a sample of how to set environment variables with Pulumi [here](htt
 
 # Sensitive Config aka Secrets
 
-The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials.
+The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials. To do so just run:
+
+```bash
+# Set a configuration value called API_KEY
+defang config set API_KEY
+```
 
 You can use sensitive config by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
 

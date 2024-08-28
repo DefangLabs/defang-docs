@@ -1,6 +1,6 @@
 ---
 slug: july-2024-product-update
-title: July 2024 Product Update 
+title: June 2024 Product Update 
 tags: [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI]
 author: Defang Team
 ---

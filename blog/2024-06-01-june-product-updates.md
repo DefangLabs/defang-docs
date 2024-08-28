@@ -1,6 +1,6 @@
 ---
 slug: june-2024-product-update
-title: June 2024 Product Update
+title: May 2024 Product Update
 tags: [Cloud, NoDevOps, BYOC, Playground, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS]
 author: Defang Team
 ---

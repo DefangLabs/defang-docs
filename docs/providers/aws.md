@@ -1,7 +1,7 @@
 ---
 title: AWS
 description: Defang allows you to easily create and manage full, scalable applications with AWS.
-sidebar_position: 000
+sidebar_position: 010
 ---
 
 # AWS
@@ -43,3 +43,7 @@ To deploy your services, the Defang CLI packages your code and uploads it to an 
 ### Runtime
 
 The provider runs your workloads using ECS using Fargate. It provisions a VPC with public and private subnets, and deploys your services to the private subnets. It then provisions an Application Load Balancer (ALB) and routes traffic to your services.
+
+### Managed Redis
+
+When using [Managed Redis](../concepts/managed-storage.md#managed-redis), the Defang CLI provisions an ElastiCache Redis cluster in your account.
