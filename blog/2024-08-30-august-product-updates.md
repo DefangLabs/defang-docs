@@ -19,7 +19,7 @@ import { Button } from '@mui/material';
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-Wow - what a month of Aug it has been! We made some big strides of progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug _portable_ cloud applications.
+Wow - what a month of August it has been! We made some big strides of progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug _portable_ cloud applications.
 
 ## Ask Defang
 
@@ -29,7 +29,7 @@ Check it out [here](/docs/ask) or head to [ask.defang.io](https://ask.defang.io)
 
 ## Enhanced Platform Symmetry
 
-We've been hard at work improving the symmetry between our Playground and BYOC environments as well as `docker compose up` vs `defang compose up` to provide a more seamless experience. You can now use multiple compose files and in BYOC the CLI will subcribe to events to monitor service health during deployments.
+We've been hard at work improving the symmetry between our Playground and BYOC environments as well as `docker compose up` vs `defang compose up` to provide a more seamless experience. You can now use multiple compose files and in BYOC the CLI will subscribe to events to monitor service health during deployments.
 
 ## AI Features and Debugging Improvements
 
