@@ -43,7 +43,7 @@ We've been working on several AI-driven enhancements to make your development pr
 
 This month, we hosted an in-person [workshop](https://www.linkedin.com/feed/update/urn:li:activity:7233915052083310595/) to get more developers acquainted with Defang and simplify their cloud app journey. You can view the presentation [here](https://s.defang.io/cloudjam2024). We also held the first-ever DevTools Vancouver [meetup](https://www.linkedin.com/posts/defanglabs_devtoolsmeetup-activity-7234599713751060483-zQsg?utm_source=share&utm_medium=member_desktop), bringing together local DevTool founders, engineers, and enthusiasts.
 
-Looking ahead, we’re excited to collaborate with MLH, Hack the North, LangaraHacks, and more in September. If you'd like to attend any of these events, be sure to [sign up](#)!
+Looking ahead, we’re excited to collaborate with [MLH](https://mlh.io/), [Hack the North](https://hackthenorth.com/), [LangaraHacks](https://lhacks.langaracs.ca/), and more in September. If you'd like to attend any of these events, be sure to sign up!
 
 ---
 
@@ -53,7 +53,7 @@ Looking ahead, we’re excited to collaborate with MLH, Hack the North, LangaraH
 
 Mark your calendars! If you’re eager to learn more about what’s coming next, join us for our Townhall on September 25th. We’ll be sharing our future roadmap, answering your questions, and gathering your feedback.
 
-<Button href="https://lu.ma/rlj13eq5" variant="contained" size="large" target="_blank">
+<Button href="https://lu.ma/9d8irae8" variant="contained" size="large" target="_blank">
 Register here!
 </Button>
 
