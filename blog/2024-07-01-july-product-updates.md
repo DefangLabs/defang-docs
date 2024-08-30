@@ -1,9 +1,11 @@
 ---
 slug: july-2024-product-update
-title: June 2024 Product Update 
-tags: [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI]
+title: June 2024 Defang Compose Update
+tags: [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI, Defang Compose Update]
 author: Defang Team
 ---
+
+![Defang Compose Update](/img/defang-compose-update.webp)
 
 Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.
 

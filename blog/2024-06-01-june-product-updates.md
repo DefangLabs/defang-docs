@@ -1,9 +1,11 @@
 ---
 slug: june-2024-product-update
-title: May 2024 Product Update
-tags: [Cloud, NoDevOps, BYOC, Playground, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS]
+title: May 2024 Defang Compose Update
+tags: [Cloud, NoDevOps, BYOC, Playground, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS, Defang Compose Update]
 author: Defang Team
 ---
+
+![Defang Compose Update](/img/defang-compose-update.webp)
 
 Hey folks! We’re back with another exciting update about Defang. Our team has been working hard to bring you new features and improvements so you can get deploying faster. Here’s a rundown of what we’ve been up to this month:
 

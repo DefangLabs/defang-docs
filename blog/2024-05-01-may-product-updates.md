@@ -1,9 +1,11 @@
 ---
 slug: may-2024-product-update
-title: April 2024 Product Update
-tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up]
+title: April 2024 Defang Compose Update
+tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up, Defang Compose Update]
 author: Defang Team
 ---
+
+![Defang Compose Update](/img/defang-compose-update.webp)
 
 Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:
 
