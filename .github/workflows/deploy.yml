@@ -87,7 +87,7 @@ jobs:
       # Notify docs chatbot of new docs with curl command
       - name: Notify docs chatbot of new docs
         run: |
-          curl -X POST https://chatbot-url.com/trigger-rebuild?token=${{ secrets.CHATBOT_TOKEN }}
+          curl -X POST https://ask.defang.io/trigger-rebuild?token=${{ secrets.CHATBOT_TOKEN }}
 
 
       - name: Notify Slack of Action Failures
