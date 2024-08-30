@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-31-product-update
-title: July 2024 Product Update 
-tags: [Cloud, NoDevOps, BYOC, CLI, AI, Debugging]
+title: July 2024 Defang Compose Update
+tags: [Cloud, NoDevOps, BYOC, CLI, AI, Debugging, Defang Compose Update]
 author: Defang Team
 ---
 
