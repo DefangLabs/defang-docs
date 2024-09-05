@@ -23,12 +23,23 @@ defang config set API_KEY
 
 You can use sensitive config by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
 
-```ts
+```yaml
 services:
   service1:
     image: image1:latest
     environment:
       - API_KEY
+```
+
+You can also use this syntax:
+
+
+```yaml
+services:
+  service1:
+    image: image1:latest
+    environment:
+      API_KEY:
 ```
 
 Use the `defang config` command of the Defang CLI to manage the values.

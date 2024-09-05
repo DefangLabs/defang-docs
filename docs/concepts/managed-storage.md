@@ -19,7 +19,7 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 To use managed Redis, in your `compose.yaml` file, use the `x-defang-redis` extension to define your Redis service. Adding the annotation will tell Defang to provision a managed instance, rather than running Redis as a service. Here's an example:
 
 ```yaml
-  redisx:
+  cache:
     image: redis:6.2
     x-defang-redis: true
     restart: unless-stopped
@@ -30,11 +30,40 @@ To use managed Redis, in your `compose.yaml` file, use the `x-defang-redis` exte
 
 ## Managed Postgres
 
-:::info
-As of July 22, 2024, managed Postgres is in development.
-:::
-
 Postgres, or PostgreSQL, is an advanced open-source relational database system known for its robustness, extensibility, and compliance with SQL standards, making it a popular choice for complex applications requiring reliable data integrity and sophisticated querying capabilities.
+
+### How to use Managed Postgres
+
+To use managed Postgres, in your `compose.yaml` file, use the `x-defang-postgres` extension to define your Postgres service. Adding the annotation will tell Defang to provision a managed instance, rather than running Postgres as a service.
+
+#### Configuration
+
+When using managed Postgres, you must set a password for the database using `defang config set POSTGRES_PASSWORD`. If you do not provide the password, the deployment will fail. You can can assign the password in the service's environment variables as described in the [config section](./configuration.md).
+
+You can also optionally set the following, using `defang config set`:
+
+* `POSTGRES_USER`: The user for the managed Postgres instance. The default is `postgres`.
+* `POSTGRES_DB`: The database name for the managed Postgres instance. The default is `postgres`.
+
+#### Connecting to Managed Postgres
+
+You can connect to the managed Postgres instance using the `POSTGRES_HOST`, `POSTGRES_USER`, and `POSTGRES_PASSWORD` environment variables.
+
+#### Example
+
+```yaml
+  database:
+    image: postgres:13
+    x-defang-postgres: true
+    restart: unless-stopped
+    ports:
+      - mode: host
+        target: 5432
+    environment:
+      // highlight-start
+      POSTGRES_PASSWORD:
+      // highlight-end
+```
 
 ## Managed Object Storage
 
