@@ -1015,5 +1015,23 @@
     "configs": [
       "HF_TOKEN"
     ]
+  },
+  {
+    "name": "vuejs",
+    "category": "javascript",
+    "readme": "# Vue.js\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-vuejs-template%26template_owner%3DDefangSamples)\n\nThis sample shows how to get a minimal Vue.js app up and running with Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command (make sure you've got `npm` and [Node.js](https://nodejs.org/en) installed):\n\n```bash\nnpm run dev\n```\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n---\n\nTitle: Vue.js\n\nShort Description: A minimal Vue.js app running on Defang.\n\nTags: Vue.js, Vite, Node.js, Frontend, JavaScript\n\nLanguages: javascript\n\n",
+    "directoryName": "vuejs",
+    "title": "Vue.js",
+    "shortDescription": "A minimal Vue.js app running on Defang.",
+    "tags": [
+      "Vue.js",
+      "Vite",
+      "Node.js",
+      "Frontend",
+      "JavaScript"
+    ],
+    "languages": [
+      "javascript"
+    ]
   }
 ]
