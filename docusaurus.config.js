@@ -65,6 +65,7 @@ const config = {
       logo: {
         alt: 'Defang Logo',
         src: '/img/defang-logo.svg',
+        href: 'https://defang.io/',
       },
       items: [
         {
