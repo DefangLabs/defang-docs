@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[8202],{14:s=>{s.exports=JSON.parse('{"label":"AWS ECS","permalink":"/blog/tags/aws-ecs","allTagsPath":"/blog/tags","count":4,"unlisted":false}')}}]);

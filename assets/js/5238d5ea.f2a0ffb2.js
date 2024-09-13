@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[3069],{5068:a=>{a.exports=JSON.parse('{"label":"Managed Redis","permalink":"/blog/tags/managed-redis","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
