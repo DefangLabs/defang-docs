@@ -12,7 +12,7 @@ You might be familiar with `docker-compose.yml` files, now known as the [Compose
 
 You can define your [services](./services.md) using a `compose.yaml` file in the root of your project, or use the [`defang generate` command](../tutorials/generate-new-code-using-ai.mdx) to generate one (along with other resources). This file is used to define your application's services and how they run. You can edit this file to add more services or change the configuration of existing services.
 
-When you run `defang up`, Defang will read your `compose.yaml` file and [deploy](./deployments.md) the services named in that file to the cloud.
+When you run `defang compose up`, Defang will read your `compose.yaml` file and [deploy](./deployments.md) the services named in that file to the cloud.
 
 ## Service Name Resolution
 
