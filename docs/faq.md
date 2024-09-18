@@ -147,7 +147,7 @@ secrets:
 
 ### "invalid healthcheck: ingress ports require an HTTP healthcheck on `localhost`.
 
-- This message is displayed when `defang compose up` tries to deploy a service with an "ingress" port, if the service does not have a `healthcheck` which mentions `localhost`. Defang routes a load balancer to your service's ingress ports, and the loadbalancer needs to be able to check the health of the service. Two solve this issue, ask yourself these two questions:
+- This message is displayed when `defang compose up` tries to deploy a service with an "ingress" port, if the service does not have a `healthcheck` which mentions `localhost`. Defang routes a load balancer to your service's ingress ports, and the loadbalancer needs to be able to check the health of the service. To solve this issue, ask yourself these two questions:
 
 1. Should my service be public? It's common to declare your container's ports using the Compose file "shorthand" syntax (`1234:1234`). This syntax can be understood as `[HOST:]CONTAINER`. If your service is not intended to be public, you do not need to declare a HOST port. For example:
 
@@ -166,7 +166,7 @@ secrets:
        test: ["CMD", "curl", "-f", "http://localhost:1234/health"]
     ```
 
-    This healthcheck is not valid:
+    This healthcheck is not valid for `ingress` ports:
 
     ```yaml
      healthcheck:
