@@ -47,21 +47,21 @@ Defang supports various ways of creating and deploying services to the cloud. Th
 By default, all the output (stdout and stderr) from your app is logged. You can view these logs in real-time. You can view logs for all your services, one service, or even one specific deployment of a service.
 
 - From the CLI:
-    
+
     ```tsx
     defang tail --name service1
     ```
-    
+
 - From the Defang Portal:
-    
-    [https://portal.defang.dev/](https://portal.defang.dev/) 
+
+    [https://portal.defang.dev/](https://portal.defang.dev/)
 
 
 :::info
 * To learn more about observability in Defang, check out the [observability page](../concepts/observability.md).
 * Note that the Defang Portal only displays services deployed to Defang Playground.
 :::
-    
+
 
 ### Update Services
 
@@ -70,4 +70,3 @@ To update your app (for example, updating the base image of your container, or m
 :::info
 If you are using [compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
 :::
-
