@@ -14,11 +14,17 @@ Why should you use Defang with AWS? Defang allows you to easily create and manag
 
 ## Getting Started
 
-Getting started with the Defang BYOC AWS Provider is easy. First, make sure you [install the latest version of the Defang CLI](../../getting-started#authenticate-with-defang). Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI will automatically check for environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. If they are set, the CLI will automatically use the Defang BYOC AWS Provider using the appropriate credentials. If you have credentials in the `~/.aws/credentials` file, but nothing configured in environment variables, you can use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider.
+Getting started with the Defang BYOC AWS Provider is easy. Make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 
 :::tip
 If you have the aws CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
 :::
+
+Use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider.
+
+```bash
+$ defang up --provider=aws
+```
 
 :::warning
 The Defang CLI does not depend on the AWS CLI. It uses the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/) to interact with your AWS account. In most cases, if you can run the `aws sts get-caller-identity` from the tip above, you should be good to go. However, due to a difference between the AWS CLI and the AWS SDK for Go, there is at least one case where they behave differently: if you are using `aws sso login` and have clashing profiles in your `.aws/config` and `.aws/credentials` files, the AWS CLI will prioritize SSO profiles and caches over regular profiles, but the AWS SDK for Go will prioritize the credentials file, and it may fail.
