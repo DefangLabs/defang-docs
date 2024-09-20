@@ -53,6 +53,6 @@ We offer a few different ways to install the Defang CLI. You can use a bash scri
   <TabItem value="direct" label="Direct Download">
     **Direct Download**
 
-    You can find the latest version of the Defang CLI on the [releases page](https://github.com/DefangLabs/defang/releases). Just download the appropriate binary for your operating system and architecture, and put it somewhere in your `PATH`.
+    You can find the latest version of the Defang CLI on the [latest release page](https://github.com/DefangLabs/defang/releases/latest). Just download the appropriate binary for your operating system and architecture, and put it somewhere in your `PATH`.
   </TabItem>
 </Tabs>
