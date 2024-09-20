@@ -75,7 +75,7 @@ You can also bring your own domain to a Defang project. This allows you to use y
 
 ### BYOC or Defang Playground
 
-If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, you will need to follow this flow:
+If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you will need to follow this flow:
 
 1. Add the `domainname` to your service definition.
 2. Run `defang compose up` to deploy your project.
@@ -83,7 +83,7 @@ If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's
 
 ### BYOC
 
-If you are using [Defang BYOC](./defang-byoc.md) and the DNS for your domain is hosted with your cloud provider (i.e. a Hosted Zone in Route 53, if you're using AWS), all you need to do is specify the `domainname` in your service definition, as in the example below.
+If you are using [Defang BYOC](./defang-byoc.md) *and the DNS for your domain is hosted with your cloud provider* (i.e. a Hosted Zone in Route 53, if you're using AWS), all you need to do is specify the `domainname` in your service definition, as in the example below.
 
 :::warning
 For the time being, you can only use one domain per service.

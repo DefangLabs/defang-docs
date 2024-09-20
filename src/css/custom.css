@@ -78,3 +78,10 @@
 a.MuiButtonBase-root:hover {
   color: white !important;
 }
+
+/* Tentative change to address dark mode text on Samples page.
+To go further, consider looking at implementing MUI custom themes. 
+*/
+.MuiTypography-root, .MuiFormLabel-root, .MuiInputBase-input {
+  color: var(--ifm-font-color-base) !important;
+}
