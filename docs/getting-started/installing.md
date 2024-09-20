@@ -43,6 +43,13 @@ We offer a few different ways to install the Defang CLI. You can use a bash scri
     winget install defang
     ```
   </TabItem>
+  <TabItem value="nix" label="Nix">
+    **Using Nix**
+
+    ```bash
+    nix profile install github:DefangLabs/defang#defang-bin --refresh
+    ```
+  </TabItem>
   <TabItem value="direct" label="Direct Download">
     **Direct Download**
 
