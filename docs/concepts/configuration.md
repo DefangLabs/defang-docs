@@ -56,4 +56,4 @@ You can find a sample of how to set sensitive config values [here](https://githu
 
 Here are the different ways sensitive config values are stored depending on the provider you are using:
 
-    * [AWS](../providers/aws.md#secrets)
+    * [AWS](../providers/aws/aws.md#secrets)
