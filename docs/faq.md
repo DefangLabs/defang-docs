@@ -140,11 +140,6 @@ secrets:
     external: true
 ```
 
-## Errors
-
-### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
-- This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
-
 ### "invalid healthcheck: ingress ports require an HTTP healthcheck on `localhost`.
 
 - This message is displayed when `defang compose up` tries to deploy a service with an "ingress" port, if the service does not have a `healthcheck` which mentions `localhost`. Defang routes a load balancer to your service's ingress ports, and the loadbalancer needs to be able to check the health of the service. To solve this issue, ask yourself these two questions:
@@ -172,3 +167,9 @@ secrets:
      healthcheck:
        test: ["CMD", "./my-healthcheck"]
     ```
+
+
+## Errors
+
+### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
+- This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
