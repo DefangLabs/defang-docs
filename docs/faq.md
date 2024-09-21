@@ -113,32 +113,15 @@ services:
 - This message is displayed when you run `defang compose up` and the Compose file declares a `build` with a `context` that contains more than 10 files. Ensure the context refers to the correct folder. Defang will use the `context` as is, but you may experience slow build times. If you want to speed up the build, you should reduce the number of files in the `context`.
 
 ### "AWS provider was selected, but AWS environment variables are not set"
-- This message is displayed when you run `defang compose up` with the `--provider=aws` but none of the AWS environment variables were not set. If you proceed, the deployment might fail.
+- This message is displayed when you run `defang compose up` with the `--provider=aws` but none of the AWS environment variables were set. If you proceed, the deployment might fail, unless you have defined defined `default` credentials in the AWS configuration files or are running on an AWS instance.
 
 ### "Using Defang provider, but AWS environment variables were detected"
 - This message is displayed when you run `defang compose up` with the `--provider=defang` but AWS environment variables were detected. The AWS environment variables will be ignored.
 
-### "secret … is not defined in the top-level secrets section"
-- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not defined in the top-level `secrets` section. To silence the warning, define the secret in the top-level `secrets` section:
-```
-services:
-  service1:
-    …
-    secrets:
-      - my_secret
-secrets:
-  my_secret:
-    external: true
-```
+## Errors
 
-### "unsupported secret …: not marked external:true"
-- This message is displayed when you run `defang compose up` and the Compose file declares a `secret` that is not marked `external:true`. Defang only supports external secrets, managed by the `defang config` command. To silence the warning, mark the secret as `external:true` in the top-level `secrets` section:
-```
-…
-secrets:
-  my_secret:
-    external: true
-```
+### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
+- This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
 
 ### "invalid healthcheck: ingress ports require an HTTP healthcheck on `localhost`.
 
@@ -167,9 +150,3 @@ secrets:
      healthcheck:
        test: ["CMD", "./my-healthcheck"]
     ```
-
-
-## Errors
-
-### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
-- This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
