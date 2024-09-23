@@ -1,7 +1,7 @@
 ---
 title: Azure
 description: Defang will allow you to easily create and manage full, scalable applications with Azure.
-sidebar_position: 100
+sidebar_position: 4000
 ---
 
 # Azure
