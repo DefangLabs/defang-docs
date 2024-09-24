@@ -4,69 +4,109 @@ title: Getting Started
 description: Get started with Defang.
 ---
 
-
 # Getting Started
 
 
-### Install the CLI
+## Install the CLI
 
 First, you'll need to install the Defang CLI. The CLI is the primary way to interact with Defang. It allows you to create, deploy, and manage your services. You can find the [different installation methods here](./installing.md).
 
-### Authenticate with Defang
+## Generate a project
 
-To do pretty much anything with Defang, you'll need to authenticate with the platform. You can do this by running the following command:
+```
+$ defang generate nodejs-http
+```
 
-```bash
-defang login
+You should see the following prompt:
+```
+? What folder would you like to create the project in?
+```
+Type in the name of the folder you'd like to use for your new project and press ENTER.
+
+I'll type `"welcome-to-defang"`. Now, you'll see the following output:
+
+```
+? What folder would you like to create the project in? welcome-to-defang
+ * Fetching sample from the Defang repository...
+ * Writing files to disk...
+   - .github/
+   - .github/workflows/
+   - .github/workflows/deploy.yaml
+   - README.md
+   - app/
+   - app/Dockerfile
+   - app/main.js
+   - compose.yaml
+ * Code generated successfully in folder welcome-to-defang
+
+Check the files in your favorite editor.
+To deploy the service, do `cd welcome-to-defang` and
+
+  defang compose up
+```
+
+Now, navigate to the folder you just created:
+
+```
+$ cd welcome-to-defang
+```
+
+You can open the folder in your favorite editor and see the files that were generated for you:
+* The `app` folder contains the code for your service.
+* The `Dockerfile` is used to build the container image for your service.
+* The `compose.yaml` file is used to define the services you want to deploy.
+
+## Deploy to the playground
+
+Go back to your shell and type the following:
+
+```
+$ defang up
+```
+
+If you have not used defang before, you'll be prompted to log in.
+
+```
+ ! Please log in to continue.
+Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press ENTER to open browser)
 ```
 
 :::info
-To learn more about how authentication works in defang, check out the [authenticating page](./authenticating.md).
+To learn more about how authentication works in defang, check out the [authenticating page](/docs/getting-started/authenticating).
 :::
 
-### Agree to the terms of service
+When I do this, I see the following output:
 
-Before you can deploy code you should read and agree to our the terms of service. You can do this by running:
-
-```bash
-defang terms
+```
+ * Uploading build context for app
+ * Deploying service app
+ * Monitor your services' status in the defang portal
+   - https://portal.defang.dev/service/app
+ * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
+ * Press V to toggle verbose mode
+2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
+2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
+2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
+ * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
+   - https://jordanstephens-app--3000.prod1.defang.dev
+ * Done.
 ```
 
-### Build and Deploy Services
+Now we can go to [https://portal.defang.dev/service/app](https://portal.defang.dev/service/app) to see our service listed in the defang portal.
+
+![screenshot of the defang portal](/img/getting-started-portal.png)
+
+## Next Steps
+
+Congratulations! You've successfully deployed your first service with Defang. Now, where do you go from here?
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more detail:
 
-1. [Deploy an outline using AI](../tutorials/generate-new-code-using-ai.mdx)
-2. [Build and deploy your code](../tutorials/deploy-code-compose.mdx)
-3. [Deploy existing containers](../tutorials/deploy-container-using-the-cli.mdx)
-4. [Deploy using Pulumi](../tutorials/deploy-using-pulumi.mdx)
+1. [Update the code and redeploy](/docs/getting-started/build-and-deploy)
+2. [Monitor your services](/docs/getting-started/monitor)
+3. [Deploy an outline using AI](/docs/tutorials/generate-new-code-using-ai)
+4. [Build and deploy your code](/docs/tutorials/deploy-code-compose)
+5. [Deploy existing containers](/docs/tutorials/deploy-container-using-the-cli)
+6. [Deploy using Pulumi](/docs/tutorials/deploy-using-pulumi)
 
-
-### Monitor Services
-
-By default, all the output (stdout and stderr) from your app is logged. You can view these logs in real-time. You can view logs for all your services, one service, or even one specific deployment of a service.
-
-- From the CLI:
-
-    ```tsx
-    defang tail --name service1
-    ```
-
-- From the Defang Portal:
-
-    [https://portal.defang.dev/](https://portal.defang.dev/)
-
-
-:::info
-* To learn more about observability in Defang, check out the [observability page](../concepts/observability.md).
-* Note that the Defang Portal only displays services deployed to Defang Playground.
-:::
-
-
-### Update Services
-
-To update your app (for example, updating the base image of your container, or making changes to your code) you can run the `defang compose up` command and it will build and deploy a new version with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
-
-:::info
-If you are using [compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
-:::
+Choose the direction that seems the most interesting. If you have any questions, join the [Defang Discord](https://discord.gg/defang) and we'll be happy to help you out.
