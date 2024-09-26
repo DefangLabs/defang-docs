@@ -150,3 +150,14 @@ services:
      healthcheck:
        test: ["CMD", "./my-healthcheck"]
     ```
+
+### The build aborted with an out-of-memory error
+You can increase the memory available to the build process by adding a field `shm_size` to the `build` section in your `compose.yaml` file:
+
+```yaml
+services:
+  service1:
+    build:
+      context: .
+      shm_size: 16g
+```
