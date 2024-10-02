@@ -15,6 +15,18 @@ Defang does not install or run any Defang or third party services at runtime.
 Defang does run the Defang build service to build your container images, which terminates after every build.
 :::
 
+### Configuration
+
+The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
+
+```bash
+# Supported provider values: auto, aws
+# Default is auto, which deploys to the Defang Playground
+$ defang up --provider=aws
+# or
+$ export DEFANG_PROVIDER=aws
+```
+
 ## AWS
 
 :::info

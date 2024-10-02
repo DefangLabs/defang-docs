@@ -20,10 +20,12 @@ Getting started with the Defang BYOC AWS Provider is easy. Make sure you have pr
 If you have the aws CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
 :::
 
-Use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider.
+Use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider or set the `DEFANG_PROVIDER` environment variable to `aws`.
 
 ```bash
 $ defang up --provider=aws
+# or
+$ export DEFANG_PROVIDER=aws
 ```
 
 :::warning
