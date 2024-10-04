@@ -14,6 +14,7 @@ Postgres, or PostgreSQL, is an advanced open-source relational database system k
 | --- | --- |
 | [Playground](/docs/providers/playground) | ❌ |
 | [AWS](/docs/providers/aws/aws.md#managed-postgres) | ✅ |
+| [DigitalOcean](/docs/providers/digital-ocean/digital-ocean.md) | ❌ |
 
 ## How to use Managed Postgres
 
@@ -44,7 +45,7 @@ You can connect to the managed Postgres instance using the name of your service 
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
       // highlight-start
-      # Note: by leaving the value empty, Defang will use the 
+      # Note: by leaving the value empty, Defang will use the
       # value set using `defang config set POSTGRES_PASSWORD`
       POSTGRES_PASSWORD:
       // highlight-end
@@ -57,7 +58,7 @@ You can connect to the managed Postgres instance using the name of your service 
         target: 5432
     environment:
       // highlight-start
-      # Note: by leaving the value empty, Defang will use the 
+      # Note: by leaving the value empty, Defang will use the
       # value set using `defang config set POSTGRES_PASSWORD`
       POSTGRES_PASSWORD:
       // highlight-end

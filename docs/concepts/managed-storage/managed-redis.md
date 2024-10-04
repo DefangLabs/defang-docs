@@ -6,7 +6,7 @@ sidebar_position: 2000
 
 # Managed Redis
 
-Redis is an in-memory data structure store widely used for caching, real-time analytics, and session management due to its high performance, low latency, and support for various data types. Defang can help you provision a managed Redis instance. 
+Redis is an in-memory data structure store widely used for caching, real-time analytics, and session management due to its high performance, low latency, and support for various data types. Defang can help you provision a managed Redis instance.
 
 ## Current Support
 
@@ -14,6 +14,7 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 | --- | --- |
 | [Playground](/docs/providers/playground.md#managed-redis) | ❌ |
 | [AWS](/docs/providers/aws/aws.md#managed-redis) | ✅ |
+| [DigitalOcean](/docs/providers/digital-ocean/digital-ocean.md) | ❌ |
 
 ## How to use Managed Redis
 
