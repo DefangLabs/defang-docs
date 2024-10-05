@@ -38,6 +38,10 @@ A simple next.js app that serves a static page
 A simple api with a single route built on express
 ```
 
+```
+An HTTP GET endpoint that returns an HTML with a random meme from the imgflip API
+```
+
 **An example of a more complex prompt**
 
 ```

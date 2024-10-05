@@ -15,13 +15,31 @@ Defang does not install or run any Defang or third party services at runtime.
 Defang does run the Defang build service to build your container images, which terminates after every build.
 :::
 
+### Configuration
+
+The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
+
+```bash
+# Supported provider values: auto, aws
+# Default is auto, which deploys to the Defang Playground
+$ defang up --provider=aws
+# or
+$ export DEFANG_PROVIDER=aws
+```
+
 ## AWS
 
 :::info
-Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
+The Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
 :::
 
-Please read the [AWS Provider](../providers/aws.md) documentation for more details about how the AWS provider works and how to get started.
+Please read the [AWS Provider](../providers/aws/aws.md) documentation for more details about how the AWS provider works and how to get started.
+
+## DigitalOcean
+
+:::info
+The Private Beta of the Defang BYOC DigitalOcean Provider will be released in September 2024. Its development is tracked [here](https://github.com/DefangLabs/defang/pull/594).
+:::
 
 ## Azure
 

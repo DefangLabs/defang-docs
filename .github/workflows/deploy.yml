@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    environment: github-pages
     permissions:
       # This is required to allow the GH actions bot to commit to the `gh-pages` branch
       contents: write
@@ -81,6 +82,12 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           cname: docs.defang.io
+
+      
+      # Notify docs chatbot of new docs with curl command
+      - name: Notify docs chatbot of new docs
+        run: |
+          curl -X POST https://ask.defang.io/trigger-rebuild?token=${{ secrets.CHATBOT_TOKEN }}
 
 
       - name: Notify Slack of Action Failures

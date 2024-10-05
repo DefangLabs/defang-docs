@@ -22,9 +22,9 @@ Defang creates roles for your services to use, and attaches policies to those ro
 
 Defang configures Security Groups, deploys applictions to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required. 
 
-## TLS
+## SSL
 
-Defang automates the process of obtaining and renewing TLS certificates for your services using AWS Certificate Manager.
+Defang automates the process of obtaining and renewing SSL certificates for your services using AWS Certificate Manager.
 
 ## Secrets
 

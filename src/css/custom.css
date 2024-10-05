@@ -4,6 +4,15 @@
  * work well for content-centric websites.
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;1,600&display=swap');
+
+ h1, h2, h3, h4, h5, h6, #__docusaurus_skipToContent_fallback > div > div > aside > nav > div, #__docusaurus > nav > div.navbar__inner > div:nth-child(1) > a {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+ }
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #056ebc;
@@ -27,4 +36,52 @@
   --ifm-color-primary-lighter: #a9cfec;
   --ifm-color-primary-lightest: #d4e7f5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.docs-doc-id-ask h1 {
+  display: none;
+} 
+
+.docs-doc-id-ask .breadcrumbs {
+  display: none;
+}
+
+.docs-doc-id-ask main > .container {
+  padding: 0px !important;
+}
+
+.docs-doc-id-ask article > nav {
+  display: none !important;
+}
+
+.docs-doc-id-ask main > .container > .row > .col {
+  max-width: 100% !important;
+}
+
+.docs-doc-id-ask main nav.pagination-nav {
+  display: none !important;
+}
+
+.docs-doc-id-ask main article footer {
+  display: none !important;
+}
+
+.blog-post-page main img {
+  border-radius: 50px;
+  box-shadow: 0px 10px 20px -5px rgba(0,0,0,0.25);
+}
+
+.MuiButtonBase-root p {
+  margin: 0px;
+}
+
+a.MuiButtonBase-root:hover {
+  color: white !important;
+}
+
+/* Tentative change to address dark mode text on Samples page.
+To go further, consider looking at implementing MUI custom themes. 
+*/
+.MuiTypography-root, .MuiFormLabel-root, .MuiInputBase-input {
+  color: var(--ifm-font-color-base) !important;
 }
