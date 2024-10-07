@@ -44,6 +44,24 @@ services:
 
 Use the `defang config` command of the Defang CLI to manage the values.
 
+## Interpolation
+
+Environment variables are set within the *environment* section of a service in a `compose.yaml` file. Any variables declared here will become available within the service container.
+
+Variables can be set by assigning a literal value, a reference to a configuration value, or a mix of literal and variable references. Variable references are declared using either **\$\{variable_name\}** or **$variable_name** forms. It is recommended to use the bracketed form. By interpolating over variable references within a string we can construct complex strings. Interpolation may be particularly useful when constructing connection strings to other services.
+
+```
+service:
+    environment:
+        - USER_PASSWORD // configuration variable
+        - USER_NAME     // configuration variable
+        - CONNECT=dbservice:${USER_NAME}:${USER_PASSWORD}@example.com:9876
+```
+In the example above, if we assume the value of the configuration variable ***USER_PASSWORD*** is *password* then the value assigned to ***CONNECT*** will resolve to *dbservice:alice:password@example.com:9876*
+
+
+During `defang compose up` all variable references will be replaced with the actual value and made available in the container. If any referenced variable is not found the `defang compose up` command will be canceled.
+
 ## Connecting Services
 
 If you have created a service before a secret you can connect it by running the `defang compose start` command if using the [`defang compose` workflow](./compose.md). If you are using the [Pulumi-based workflow](./pulumi.md) you will need to redeploy using Pulumi.
@@ -57,3 +75,5 @@ You can find a sample of how to set sensitive config values [here](https://githu
 Here are the different ways sensitive config values are stored depending on the provider you are using:
 
     * [AWS](../providers/aws/aws.md#secrets)
+
+
