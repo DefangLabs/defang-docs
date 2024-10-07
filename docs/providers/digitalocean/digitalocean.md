@@ -4,7 +4,7 @@ description: Defang allows you to easily create and manage full, scalable applic
 sidebar_position: 010
 ---
 
-# Digital Ocean
+# DigitalOcean
 
 :::info
 This feature is available for Public Preview as of October 2024. This page will be updated when it is GA.
