@@ -22,11 +22,13 @@ To use managed Postgres, in your `compose.yaml` file, use the `x-defang-postgres
 
 ### Required Configuration
 
-When using managed Postgres, you **must** set a password for the database using `defang config set POSTGRES_PASSWORD`. If you do not provide the password, the deployment will fail. You can can assign the password in the service's environment variables (to learn more about how this works, read about [configuration](../configuration.md)).
+When using managed Postgres, you **must** set a password for the database using `defang config set POSTGRES_PASSWORD`. If you do not provide the password, the deployment will fail. 
+
+- `POSTGRES_PASSWORD`: You can can assign the password in the service's environment variables. To learn more about how this works, read about [configuration](../configuration.md).
 
 ### Optional Configuration
 
-You can also set the following environment variables to configure the managed Postgres instance:
+You can also set the following optional environment variables to configure the managed Postgres instance:
 
 - `POSTGRES_USER`: The user for the managed Postgres instance. The default is `postgres`.
 - `POSTGRES_DB`: The database name for the managed Postgres instance. The default is `postgres`.
@@ -51,11 +53,10 @@ You can connect to the managed Postgres instance using the name of your service 
       // highlight-end
       # Note: you can create a connection string by using interpolation,
       # reference config variables by using ${<config name>}
-      CONNECTURL: postgresql://${POSTGRES_PASSWORD}@database:5432/postgres
+      CONNECTURL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
   database:
     image: postgres:15
     x-defang-postgres: true
-    restart: unless-stopped
     ports:
       - mode: host
         target: 5432
