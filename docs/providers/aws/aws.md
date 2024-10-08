@@ -14,7 +14,7 @@ Why should you use Defang with AWS? Defang allows you to easily create and manag
 
 ## Getting Started
 
-Getting started with the Defang BYOC AWS Provider is easy. Make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
+Getting started with the Defang BYOC AWS Provider is easy. The first step is to [authenticate your shell](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) with AWS as an admin user. The authenticated user should be an IAM admin because Defang will need permission to create resources and IAM roles in your account.
 
 :::tip
 If you have the aws CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
@@ -63,3 +63,85 @@ When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md
 ### Managed Redis
 
 When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+
+### Managed Resources
+
+Defang will create and manage the following resources in your AWS account as part of its bootstrap procedure:
+
+```
+* aws:cloudwatch/logGroup:LogGroup                                 ecs
+* aws:s3/bucket:Bucket                                             alb-logs
+* aws:ecr/pullThroughCacheRule:PullThroughCacheRule                ecr-public
+* aws:iam/role:Role                                                ecs-agent-profile
+* aws:s3/bucketPolicy:BucketPolicy                                 alb-logs-policy
+* aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock           alb-logs-block
+* awsx:ec2:Vpc                                                     shared-vpc
+* └─ aws:ec2/vpc:Vpc                                               shared-vpc
+*    ├─ aws:ec2/internetGateway:InternetGateway                    shared-vpc
+*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-3
+*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-3
+*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-3
+*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-3
+*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-1
+*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-1
+*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-1
+*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-1
+*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-2
+*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-2
+*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-2
+*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-2
+*    ├─ aws:ec2/vpcEndpoint:VpcEndpoint                            com.amazonaws.us-west-2.s3
+*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-public-1
+*    │  ├─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-1
+*    │  │  ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-1
+*    │  │  └─ aws:ec2/route:Route                                  shared-vpc-public-1
+*    │  ├─ aws:ec2/eip:Eip                                         shared-vpc-1
+*    │  └─ aws:ec2/natGateway:NatGateway                           shared-vpc-1
+*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-public-2
+*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-2
+*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-2
+*    │     └─ aws:ec2/route:Route                                  shared-vpc-public-2
+*    └─ aws:ec2/subnet:Subnet                                      shared-vpc-public-3
+*       └─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-3
+*          ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-3
+*          └─ aws:ec2/route:Route                                  shared-vpc-public-3
+* aws:iam/role:Role                                                ecs-task-role
+* aws:ec2/networkAcl:NetworkAcl                                    shared-nacl
+* aws:ec2/securityGroup:SecurityGroup                              sg443
+```
+
+Then, defang will manage the following resources for each project you deploy:
+
+```
+* awsx:ecr:Repository                                              project1/kaniko-build
+* ├─ aws:ecr/repository:Repository                                 project1/kaniko-build
+* └─ aws:ecr/lifecyclePolicy:LifecyclePolicy                       project1/kaniko-build
+* aws:acm/certificate:Certificate                                  *.project1.tenant1.defang.app
+* awsx:ecr:Repository                                              project1/kaniko-build/cache
+* ├─ aws:ecr/repository:Repository                                 project1/kaniko-build/cache
+* └─ aws:ecr/lifecyclePolicy:LifecyclePolicy                       project1/kaniko-build/cache
+* aws:iam/instanceProfile:InstanceProfile                          ecs-agent-profile
+* aws:iam/role:Role                                                ecs-task-execution-role
+* aws:cloudwatch/eventRule:EventRule                               project1-ecs-lifecycle-rule
+* aws:cloudwatch/eventTarget:EventTarget                           project1-ecs-event-cw-target
+* aws:route53/record:Record                                        validation-project1.tenant1.defang.app
+* aws:acm/certificateValidation:CertificateValidation              *.project1.tenant1.defang.appValidation
+* aws:ec2/vpcDhcpOptionsAssociation:VpcDhcpOptionsAssociation      dhcp-options-association
+* defang-mvp:shared/ecs/defang:Defang                              defang
+* ├─ defang-mvp:shared/ecs/kaniko:Kaniko                           kaniko
+* │  ├─ aws:cloudwatch/logGroup:LogGroup                           builds
+* │  ├─ aws:iam/role:Role                                          kaniko-task-role
+* │  ├─ aws:ecs/taskDefinition:TaskDefinition                      kanikoTaskDefArm64
+* │  └─ aws:ecs/taskDefinition:TaskDefinition                      kanikoTaskDefAmd64
+* ├─ aws:s3/bucket:Bucket                                          defang-build
+* ├─ aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock        defang-build-block
+* ├─ aws:ecs/cluster:Cluster                                       cluster
+* └─ aws:ecs/clusterCapacityProviders:ClusterCapacityProviders     cluster-capacity-providers
+* defang-mvp:cd/tenant_stack:TenantStack                           bootstrap
+* ├─ defang-mvp:shared/fargate_service:FargateService              project1_app
+* │  └─ aws:ec2/securityGroup:SecurityGroup                        project1_app-sg
+* ├─ defang-mvp:shared/ecs/kaniko_image:KanikoImage                app-image
+* └─ aws:ec2/securityGroup:SecurityGroup                           bootstrap
+* aws:ec2/vpcDhcpOptions:VpcDhcpOptions                            dhcp-options
+* aws:cloudwatch/logGroup:LogGroup                                 logs
+```
