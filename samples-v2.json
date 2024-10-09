@@ -113,10 +113,10 @@
   {
     "name": "fastapi",
     "category": "python",
-    "readme": "# FastAPI\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-fastapi-template%26template_owner%3DDefangSamples)\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nTo run your FastAPI app locally, you'll need to have Docker installed on your machine. You can then run:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up --build\n```\n\nThat will start your FastAPI app on `http://localhost:8000` with hot reloading enabled.\n\n---\n\nTitle: FastAPI\n\nShort Description: A sample project demonstrating how to deploy FastAPI with Defang\n\nTags: FastAPI, OpenAPI, Python\n\nLanguages: python\n",
+    "readme": "# FastAPI\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-fastapi-template%26template_owner%3DDefangSamples)\n\nThis sample project demonstrates how to deploy FastAPI with Defang.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI.\n3. Your app will be running within a few minutes.\n\n## Development\n\nTo run your FastAPI app locally, you'll need to have Docker installed on your machine. You can then run:\n\n```bash\ndocker compose -f compose.yaml -f compose.dev.yaml up --build\n```\n\nThat will start your FastAPI app on `http://localhost:8000` with hot reloading enabled.\n\n---\n\nTitle: FastAPI\n\nShort Description: A sample project demonstrating how to deploy FastAPI with Defang.\n\nTags: FastAPI, OpenAPI, Python\n\nLanguages: python\n",
     "directoryName": "fastapi",
     "title": "FastAPI",
-    "shortDescription": "A sample project demonstrating how to deploy FastAPI with Defang",
+    "shortDescription": "A sample project demonstrating how to deploy FastAPI with Defang.",
     "tags": [
       "FastAPI",
       "OpenAPI",
@@ -180,13 +180,13 @@
   {
     "name": "golang-http",
     "category": "golang",
-    "readme": "# Go HTTP Server\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-template%26template_owner%3DDefangSamples)\n\nA very simple example of a Go service that listens on a port and returns information about the request.\n\n---\n\nTitle: Go http Server\n\nShort Description: A simple Go application that echoes back the request.\n\nTags: Go, http\n\nLanguages: golang\n",
+    "readme": "# Go HTTP Server\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-template%26template_owner%3DDefangSamples)\n\nA very simple example of a Go service that listens on a port and returns information about the request.\n\n---\n\nTitle: Go HTTP Server\n\nShort Description: A simple Go application that echoes back the request.\n\nTags: Go, HTTP\n\nLanguages: golang\n",
     "directoryName": "golang-http",
-    "title": "Go http Server",
+    "title": "Go HTTP Server",
     "shortDescription": "A simple Go application that echoes back the request.",
     "tags": [
       "Go",
-      "http"
+      "HTTP"
     ],
     "languages": [
       "golang"
@@ -195,13 +195,13 @@
   {
     "name": "golang-http-form",
     "category": "golang",
-    "readme": "# Go HTTP Form\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-form-template%26template_owner%3DDefangSamples)\n\nThis Go application demonstrates a simple form submission using the standard net/http library. Users can input their first name into a form, and upon submission, they will be greeted personally by the application.\n\n## Features\n\n1. Simple form to submit a user's first name.\n2. Personalized greeting displayed in response to the form submission\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go http Form\n\nShort Description: A simple Go application that demonstrates form submission using the net/http library.\n\nTags: Go, http\n\nLanguages: golang\n",
+    "readme": "# Go HTTP Form\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-form-template%26template_owner%3DDefangSamples)\n\nThis Go application demonstrates a simple form submission using the standard net/http library. Users can input their first name into a form, and upon submission, they will be greeted personally by the application.\n\n## Features\n\n1. Simple form to submit a user's first name.\n2. Personalized greeting displayed in response to the form submission\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Go HTTP Form\n\nShort Description: A simple Go application that demonstrates form submission using the net/http library.\n\nTags: Go, HTTP\n\nLanguages: golang\n",
     "directoryName": "golang-http-form",
-    "title": "Go http Form",
+    "title": "Go HTTP Form",
     "shortDescription": "A simple Go application that demonstrates form submission using the net/http library.",
     "tags": [
       "Go",
-      "http"
+      "HTTP"
     ],
     "languages": [
       "golang"
@@ -561,14 +561,14 @@
   {
     "name": "nodejs-express",
     "category": "nodejs",
-    "readme": "# Node.js & Express\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-express-template%26template_owner%3DDefangSamples)\n\nThis Node.js application, built with Express.js, is designed to inspect and display detailed information about incoming HTTP requests. It supports all HTTP methods and provides insights into the request path, method, headers, query parameters, and body. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js & Express\n\nShort Description: A Node.js application that inspects and displays detailed information about incoming http requests.\n\nTags: Node.js, Express, http, Request, Inspector, JavaScript\n\nLanguages: nodejs\n",
+    "readme": "# Node.js & Express\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-express-template%26template_owner%3DDefangSamples)\n\nThis Node.js application, built with Express.js, is designed to inspect and display detailed information about incoming HTTP requests. It supports all HTTP methods and provides insights into the request path, method, headers, query parameters, and body. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js & Express\n\nShort Description: A Node.js application that inspects and displays detailed information about incoming HTTP requests.\n\nTags: Node.js, Express, HTTP, Request, Inspector, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-express",
     "title": "Node.js & Express",
-    "shortDescription": "A Node.js application that inspects and displays detailed information about incoming http requests.",
+    "shortDescription": "A Node.js application that inspects and displays detailed information about incoming HTTP requests.",
     "tags": [
       "Node.js",
       "Express",
-      "http",
+      "HTTP",
       "Request",
       "Inspector",
       "JavaScript"
@@ -580,14 +580,14 @@
   {
     "name": "nodejs-form",
     "category": "nodejs",
-    "readme": "# Node.js Express Form\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-form-template%26template_owner%3DDefangSamples)\n\nThis is a basic Node.js application using the Express framework to demonstrate handling a form submission. The application serves an HTML form where users can input their first name and then greets them personally upon submission. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js Express Form\n\nShort Description: A Node.js application that handles form submissions using the Express framework.\n\nTags: Node.js, Express, http, JavaScript\n\nLanguages: nodejs\n",
+    "readme": "# Node.js Express Form\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-form-template%26template_owner%3DDefangSamples)\n\nThis is a basic Node.js application using the Express framework to demonstrate handling a form submission. The application serves an HTML form where users can input their first name and then greets them personally upon submission. Note alongside your project, you should also include a package.json file that includes the relevant metadata such as package dependencies, scripts, project verrsions so that the Dockerfile can install necessary dependencies.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Node.js Express Form\n\nShort Description: A Node.js application that handles form submissions using the Express framework.\n\nTags: Node.js, Express, HTTP, JavaScript\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-form",
     "title": "Node.js Express Form",
     "shortDescription": "A Node.js application that handles form submissions using the Express framework.",
     "tags": [
       "Node.js",
       "Express",
-      "http",
+      "HTTP",
       "JavaScript"
     ],
     "languages": [
@@ -597,13 +597,13 @@
   {
     "name": "nodejs-http",
     "category": "nodejs",
-    "readme": "# Node.js HTTP Server\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-http-template%26template_owner%3DDefangSamples)\n\nThis example shows how to build a minimal Node.js application using the [Node.js](https://nodejs.org/) runtime.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js HTTP Server\n\nShort Description: A simple Node.js application that creates an http server.\n\nTags: Node.js, http, Server\n\nLanguages: nodejs\n",
+    "readme": "# Node.js HTTP Server\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nodejs-http-template%26template_owner%3DDefangSamples)\n\nThis example shows how to build a minimal Node.js application using the [Node.js](https://nodejs.org/) runtime.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\n## Build and run the application\n\nIf you have environment variables configured for your [own cloud account](https://docs.defang.io/docs/concepts/defang-byoc), this will deploy the application to your cloud account, otherwise it will deploy to the Defang cloud.\n\n```sh\ndefang compose up\n```\n\n---\n\nTitle: Node.js HTTP Server\n\nShort Description: A simple Node.js application that creates an HTTP server.\n\nTags: Node.js, HTTP, Server\n\nLanguages: nodejs\n",
     "directoryName": "nodejs-http",
     "title": "Node.js HTTP Server",
-    "shortDescription": "A simple Node.js application that creates an http server.",
+    "shortDescription": "A simple Node.js application that creates an HTTP server.",
     "tags": [
       "Node.js",
-      "http",
+      "HTTP",
       "Server"
     ],
     "languages": [
@@ -734,14 +734,14 @@
   {
     "name": "pulumi",
     "category": "nodejs",
-    "readme": "# Pulumi\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-pulumi-template%26template_owner%3DDefangSamples)\n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example.\n\nTags: Pulumi, Node.js, http, Server, TypeScript\n\nLanguages: nodejs\n",
+    "readme": "# Pulumi\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-pulumi-template%26template_owner%3DDefangSamples)\n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example.\n\nTags: Pulumi, Node.js, HTTP, Server, TypeScript\n\nLanguages: nodejs\n",
     "directoryName": "pulumi",
     "title": "Pulumi",
     "shortDescription": "A basic Pulumi example.",
     "tags": [
       "Pulumi",
       "Node.js",
-      "http",
+      "HTTP",
       "Server",
       "TypeScript"
     ],
@@ -810,13 +810,13 @@
   {
     "name": "python-minimal",
     "category": "python",
-    "readme": "# Flask Request Inspector API\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-python-minimal-template%26template_owner%3DDefangSamples)\n\nThis Flask application is designed to inspect and return detailed information about HTTP requests. It supports both GET and POST methods, providing insights into the request path, method, headers, query parameters, and body. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\n1. Support both GET and POST HTTP methods\n2. Detailed information about the request, including path, method, headers, query parameters, and body.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A Flask application that inspects and returns detailed information about http requests.\n\nTags: Flask, http, Python\n\nLanguages: python\n",
+    "readme": "# Flask Request Inspector API\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-python-minimal-template%26template_owner%3DDefangSamples)\n\nThis Flask application is designed to inspect and return detailed information about HTTP requests. It supports both GET and POST methods, providing insights into the request path, method, headers, query parameters, and body. Note that alognside your .py file, include a requirements.txt so that the Dockerfile can install the necessary packages with pip.\n\n## Features\n\n1. Support both GET and POST HTTP methods\n2. Detailed information about the request, including path, method, headers, query parameters, and body.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).\n2. A [compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications (this is how Defang identifies services to be deployed). (compose.yaml file)\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account (optional)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Your app should be up and running with Defang in minutes!\n\n---\n\nTitle: Flask\n\nShort Description: A Flask application that inspects and returns detailed information about HTTP requests.\n\nTags: Flask, HTTP, Python\n\nLanguages: python\n",
     "directoryName": "python-minimal",
     "title": "Flask",
-    "shortDescription": "A Flask application that inspects and returns detailed information about http requests.",
+    "shortDescription": "A Flask application that inspects and returns detailed information about HTTP requests.",
     "tags": [
       "Flask",
-      "http",
+      "HTTP",
       "Python"
     ],
     "languages": [
