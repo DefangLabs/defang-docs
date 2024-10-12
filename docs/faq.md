@@ -151,7 +151,8 @@ services:
        test: ["CMD", "./my-healthcheck"]
     ```
 
-### The build aborted with an out-of-memory error
+### The build aborted with OutOfMemoryError: Container killed due to memory usage
+
 The image build might fail if the build process uses too much memory. The first thing to try is to limit the size of your project by excluding unnecessary files: the easiest way is to create a `.dockerignore` file that excludes irrelevatn files. Note that Defang will use a default `.dockerignore` file if you don't have one, but that default might not work for some projects and it's always better to make a `.dockerignore` file specific to your project.
 
 If that doesn't work, you can try to increase the memory available to the build process by adding a field `shm_size` to the `build` section in your `compose.yaml` file:
