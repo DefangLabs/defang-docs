@@ -396,7 +396,7 @@
   {
     "name": "langchain",
     "category": "python",
-    "readme": "# Langchain & flask\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-langchain-template%26template_owner%3DDefangSamples)\n\nThis sample is an endpoint that tells programming jokes and shows how to deploy a flask app that uses Langchain on to AWS via Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Set the environment variable `OPENAI_API_KEY` by typing `defang config set OPENAI_API_KEY`.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, first clone the project and navigate to its directory. After such, please run the command\n\n```\ndocker compose up --build\n```\n\nThis will start a Docker container with the flask app which will display the result of the langchain prompt.\n\n---\n\nTitle: Flask & LangChain\n\nShort Description: A sample project demonstrating how to deploy LangChain with Flask on Defang.\n\nTags: LangChain, Flask, AI, Python\n\nLanguages: python\n",
+    "readme": "# Langchain & flask\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-langchain-template%26template_owner%3DDefangSamples)\n\nThis sample is an endpoint that tells programming jokes and shows how to deploy a flask app that uses Langchain on to AWS via Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Set the environment variable `OPENAI_KEY` by typing `defang config set OPENAI_KEY`.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, first clone the project and navigate to its directory. After such, please run the command\n\n```\ndocker compose up --build\n```\n\nThis will start a Docker container with the flask app which will display the result of the langchain prompt.\n\n---\n\nTitle: Flask & LangChain\n\nShort Description: A sample project demonstrating how to deploy LangChain with Flask on Defang.\n\nTags: LangChain, Flask, AI, Python\n\nLanguages: python\n",
     "directoryName": "langchain",
     "title": "Flask & LangChain",
     "shortDescription": "A sample project demonstrating how to deploy LangChain with Flask on Defang.",
@@ -410,7 +410,7 @@
       "python"
     ],
     "configs": [
-      "OPENAI_API_KEY"
+      "OPENAI_KEY"
     ]
   },
   {
