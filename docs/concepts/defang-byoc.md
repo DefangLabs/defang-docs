@@ -38,8 +38,11 @@ Please read the [AWS Provider](../providers/aws/aws.md) documentation for more d
 ## DigitalOcean
 
 :::info
-The Private Beta of the Defang BYOC DigitalOcean Provider will be released in September 2024. Its development is tracked [here](https://github.com/DefangLabs/defang/pull/594).
+
+The Public Preview of the v1 Defang BYOC DigitalOcean Provider as of October 1 2024.
 :::
+
+Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.md) documentation for more details about how the DigitalOcean provider works and how to get started.
 
 ## Azure
 
