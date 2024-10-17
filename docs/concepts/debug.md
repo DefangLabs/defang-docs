@@ -17,9 +17,9 @@ The AI debugging assistant is currently in preview and is currently limited in i
 When you deploy a service to the [Defang Playground](./defang-playground.md), the Defang CLI will wait for the service's status to switch to healthy. If the service fails to deploy, the AI debugger will kick in. It will analyze the logs and files in your project to identify the issue and provide you with a suggested fix.
 
 :::warning
-The AI debugger currently only works in Playground.
+The AI debugger currently only works in Playground. We plan to expand this to BYOC providers in the near future.
 :::
 
 :::info
-The AI debugger only kicks in when the service fails to deploy. At the moment, we do not offer any way to trigger the AI debugger manually.
+The AI debugger only kicks in when the service fails to deploy. This could be because of a build failure, healthchecks failing, or a variety of other issues. At the moment, we do not offer any way to trigger the AI debugger manually.
 :::
