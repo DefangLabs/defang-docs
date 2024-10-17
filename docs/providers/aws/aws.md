@@ -14,7 +14,7 @@ Why should you use Defang with AWS? Defang allows you to easily create and manag
 
 ## Getting Started
 
-Getting started with the Defang BYOC AWS Provider is easy. Make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
+Getting started with the Defang BYOC AWS Provider is easy. The first step is to [authenticate your shell](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) with AWS as an admin user. The authenticated user should be an IAM admin because Defang will need permission to create resources and IAM roles in your account.
 
 :::tip
 If you have the aws CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
@@ -63,3 +63,56 @@ When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md
 ### Managed Redis
 
 When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+
+### Managed Resources
+
+Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
+
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| s3/Bucket | defang-cd-bucket-cbpbzz8hzm7  |
+| ecs/ClusterCapacityProviderAssociations | defang-cd-Cluster-pqFhjwuklvm |
+| ecs/Cluster | defang-cd-ClusterpJqFhjwuklvm  |
+| iam/Role | defang-cd-ExeutionRole-XE7RbQDfeEwx  |
+| ec2/InternetGateway | igw-05bd7adc92541ec3  |
+| ec2/VPCGatewayAttachment | IGW|vpc-0cbca64f13435695 |
+| logs/LogGroup | defang-cd-Logroup-6LSZet3tFnEy  |
+| ecr/PullThroughCacheRule | defang-cd-ecrpublic |
+| ec2/Route | rtb-08f3f5afc9e6c8c8|0.0.0.0/0 |
+| ec2/RouteTable | rtb-08f3f5ffc9e6c8c8 |
+| ec2/VPCEndpoint | vpce-02175d8d4f47d0c9  |
+| ec2/SecurityGroup | sg-032b839c63e70e49  |
+| ec2/Subnet | subnet-086bead399ddc8a0  |
+| ec2/SubnetRouteTableAssociation | rtbassoc-02e200d45e7227fe |
+| ecs/TaskDefinition | arn:aws:ecsus-west-2:381492210770:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
+| iam/Role | defang-cd-askRole-gsEeDPd6sPQY  |
+| ec2/VPC | vpc-0cbca64f13435695  |
+
+Then, for each project you deploy, defang will create and manage the following resources:
+
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| ecr/Repository | project1/kaniko-build |
+| ecr/LifecyclePolicy | project1/kaniko-build |
+| acm/Certificate | *.project1.tenant1.defang.app |
+| ecr/Repository | project1/kaniko-build/cache |
+| ecr/LifecyclePolicy | project1/kaniko-build/cache |
+| iam/InstanceProfile | ecs-agent-profile |
+| iam/Role | ecs-task-execution-role |
+| cloudwatch/EventRule | project1-ecs-lifecycle-rule |
+| cloudwatch/EventTarget | project1-ecs-event-cw-target |
+| route53/Record | validation-project1.tenant1.defang.app |
+| acm/CertificateValidation | *.project1.tenant1.defang.appValidation |
+| ec2/VpcDhcpOptionsAssociation | dhcp-options-association |
+| cloudwatch/LogGroup | builds |
+| iam/Role | kaniko-task-role |
+| ecs/TaskDefinition | kanikoTaskDefArm64 |
+| ecs/TaskDefinition | kanikoTaskDefAmd64 |
+| s3/Bucket | defang-build |
+| s3/BucketPublicAccessBlock | defang-build-block |
+| ecs/Cluster | cluster |
+| ecs/ClusterCapacityProviders | cluster-capacity-providers |
+| ec2/SecurityGroup | project1_app-sg |
+| ec2/SecurityGroup | bootstrap |
+| ec2/VpcDhcpOptions | dhcp-options |
+| cloudwatch/LogGroup | logs |
