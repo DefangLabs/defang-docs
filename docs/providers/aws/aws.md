@@ -66,82 +66,53 @@ When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the
 
 ### Managed Resources
 
-Defang will create and manage the following resources in your AWS account as part of its bootstrap procedure:
+Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
 
-```
-* aws:cloudwatch/logGroup:LogGroup                                 ecs
-* aws:s3/bucket:Bucket                                             alb-logs
-* aws:ecr/pullThroughCacheRule:PullThroughCacheRule                ecr-public
-* aws:iam/role:Role                                                ecs-agent-profile
-* aws:s3/bucketPolicy:BucketPolicy                                 alb-logs-policy
-* aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock           alb-logs-block
-* awsx:ec2:Vpc                                                     shared-vpc
-* └─ aws:ec2/vpc:Vpc                                               shared-vpc
-*    ├─ aws:ec2/internetGateway:InternetGateway                    shared-vpc
-*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-3
-*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-3
-*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-3
-*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-3
-*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-1
-*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-1
-*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-1
-*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-1
-*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-private-2
-*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-private-2
-*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-private-2
-*    │     └─ aws:ec2/route:Route                                  shared-vpc-private-2
-*    ├─ aws:ec2/vpcEndpoint:VpcEndpoint                            com.amazonaws.us-west-2.s3
-*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-public-1
-*    │  ├─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-1
-*    │  │  ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-1
-*    │  │  └─ aws:ec2/route:Route                                  shared-vpc-public-1
-*    │  ├─ aws:ec2/eip:Eip                                         shared-vpc-1
-*    │  └─ aws:ec2/natGateway:NatGateway                           shared-vpc-1
-*    ├─ aws:ec2/subnet:Subnet                                      shared-vpc-public-2
-*    │  └─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-2
-*    │     ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-2
-*    │     └─ aws:ec2/route:Route                                  shared-vpc-public-2
-*    └─ aws:ec2/subnet:Subnet                                      shared-vpc-public-3
-*       └─ aws:ec2/routeTable:RouteTable                           shared-vpc-public-3
-*          ├─ aws:ec2/routeTableAssociation:RouteTableAssociation  shared-vpc-public-3
-*          └─ aws:ec2/route:Route                                  shared-vpc-public-3
-* aws:iam/role:Role                                                ecs-task-role
-* aws:ec2/networkAcl:NetworkAcl                                    shared-nacl
-* aws:ec2/securityGroup:SecurityGroup                              sg443
-```
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| s3/Bucket | defang-cd-bucket-cbpbzz8hzm7  |
+| ecs/ClusterCapacityProviderAssociations | defang-cd-Cluster-pqFhjwuklvm |
+| ecs/Cluster | defang-cd-ClusterpJqFhjwuklvm  |
+| iam/Role | defang-cd-ExeutionRole-XE7RbQDfeEwx  |
+| ec2/InternetGateway | igw-05bd7adc92541ec3  |
+| ec2/VPCGatewayAttachment | IGW|vpc-0cbca64f13435695 |
+| logs/LogGroup | defang-cd-Logroup-6LSZet3tFnEy  |
+| ecr/PullThroughCacheRule | defang-cd-ecrpublic |
+| ec2/Route | rtb-08f3f5afc9e6c8c8|0.0.0.0/0 |
+| ec2/RouteTable | rtb-08f3f5ffc9e6c8c8 |
+| ec2/VPCEndpoint | vpce-02175d8d4f47d0c9  |
+| ec2/SecurityGroup | sg-032b839c63e70e49  |
+| ec2/Subnet | subnet-086bead399ddc8a0  |
+| ec2/SubnetRouteTableAssociation | rtbassoc-02e200d45e7227fe |
+| ecs/TaskDefinition | arn:aws:ecsus-west-2:381492210770:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
+| iam/Role | defang-cd-askRole-gsEeDPd6sPQY  |
+| ec2/VPC | vpc-0cbca64f13435695  |
 
-Then, defang will manage the following resources for each project you deploy:
+Then, for each project you deploy, defang will create and manage the following resources:
 
-```
-* awsx:ecr:Repository                                              project1/kaniko-build
-* ├─ aws:ecr/repository:Repository                                 project1/kaniko-build
-* └─ aws:ecr/lifecyclePolicy:LifecyclePolicy                       project1/kaniko-build
-* aws:acm/certificate:Certificate                                  *.project1.tenant1.defang.app
-* awsx:ecr:Repository                                              project1/kaniko-build/cache
-* ├─ aws:ecr/repository:Repository                                 project1/kaniko-build/cache
-* └─ aws:ecr/lifecyclePolicy:LifecyclePolicy                       project1/kaniko-build/cache
-* aws:iam/instanceProfile:InstanceProfile                          ecs-agent-profile
-* aws:iam/role:Role                                                ecs-task-execution-role
-* aws:cloudwatch/eventRule:EventRule                               project1-ecs-lifecycle-rule
-* aws:cloudwatch/eventTarget:EventTarget                           project1-ecs-event-cw-target
-* aws:route53/record:Record                                        validation-project1.tenant1.defang.app
-* aws:acm/certificateValidation:CertificateValidation              *.project1.tenant1.defang.appValidation
-* aws:ec2/vpcDhcpOptionsAssociation:VpcDhcpOptionsAssociation      dhcp-options-association
-* defang-mvp:shared/ecs/defang:Defang                              defang
-* ├─ defang-mvp:shared/ecs/kaniko:Kaniko                           kaniko
-* │  ├─ aws:cloudwatch/logGroup:LogGroup                           builds
-* │  ├─ aws:iam/role:Role                                          kaniko-task-role
-* │  ├─ aws:ecs/taskDefinition:TaskDefinition                      kanikoTaskDefArm64
-* │  └─ aws:ecs/taskDefinition:TaskDefinition                      kanikoTaskDefAmd64
-* ├─ aws:s3/bucket:Bucket                                          defang-build
-* ├─ aws:s3/bucketPublicAccessBlock:BucketPublicAccessBlock        defang-build-block
-* ├─ aws:ecs/cluster:Cluster                                       cluster
-* └─ aws:ecs/clusterCapacityProviders:ClusterCapacityProviders     cluster-capacity-providers
-* defang-mvp:cd/tenant_stack:TenantStack                           bootstrap
-* ├─ defang-mvp:shared/fargate_service:FargateService              project1_app
-* │  └─ aws:ec2/securityGroup:SecurityGroup                        project1_app-sg
-* ├─ defang-mvp:shared/ecs/kaniko_image:KanikoImage                app-image
-* └─ aws:ec2/securityGroup:SecurityGroup                           bootstrap
-* aws:ec2/vpcDhcpOptions:VpcDhcpOptions                            dhcp-options
-* aws:cloudwatch/logGroup:LogGroup                                 logs
-```
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| ecr/Repository | project1/kaniko-build |
+| ecr/LifecyclePolicy | project1/kaniko-build |
+| acm/Certificate | *.project1.tenant1.defang.app |
+| ecr/Repository | project1/kaniko-build/cache |
+| ecr/LifecyclePolicy | project1/kaniko-build/cache |
+| iam/InstanceProfile | ecs-agent-profile |
+| iam/Role | ecs-task-execution-role |
+| cloudwatch/EventRule | project1-ecs-lifecycle-rule |
+| cloudwatch/EventTarget | project1-ecs-event-cw-target |
+| route53/Record | validation-project1.tenant1.defang.app |
+| acm/CertificateValidation | *.project1.tenant1.defang.appValidation |
+| ec2/VpcDhcpOptionsAssociation | dhcp-options-association |
+| cloudwatch/LogGroup | builds |
+| iam/Role | kaniko-task-role |
+| ecs/TaskDefinition | kanikoTaskDefArm64 |
+| ecs/TaskDefinition | kanikoTaskDefAmd64 |
+| s3/Bucket | defang-build |
+| s3/BucketPublicAccessBlock | defang-build-block |
+| ecs/Cluster | cluster |
+| ecs/ClusterCapacityProviders | cluster-capacity-providers |
+| ec2/SecurityGroup | project1_app-sg |
+| ec2/SecurityGroup | bootstrap |
+| ec2/VpcDhcpOptions | dhcp-options |
+| cloudwatch/LogGroup | logs |
