@@ -29,6 +29,10 @@ $ export DEFANG_PROVIDER=aws
 ```
 
 :::warning
+Because Defang creates roles, you need to have the appropriate permissions to create roles in your cloud provider account, typically the `AdministratorAccess` policy in AWS.
+:::
+
+:::tip
 The Defang CLI does not depend on the AWS CLI. It uses the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/) to interact with your AWS account. In most cases, if you can run the `aws sts get-caller-identity` from the tip above, you should be good to go. However, due to a difference between the AWS CLI and the AWS SDK for Go, there is at least one case where they behave differently: if you are using `aws sso login` and have clashing profiles in your `.aws/config` and `.aws/credentials` files, the AWS CLI will prioritize SSO profiles and caches over regular profiles, but the AWS SDK for Go will prioritize the credentials file, and it may fail.
 :::
 
