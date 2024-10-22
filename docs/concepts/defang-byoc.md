@@ -20,11 +20,11 @@ Defang does run the Defang build service to build your container images, which t
 The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
 
 ```bash
-# Supported provider values: auto, aws
-# Default is auto, which deploys to the Defang Playground
+# Supported provider values: auto, aws, defang, digitalocean
+# Default is auto, which deploys to the Defang Playground but warns if it detects cloud credentials
 $ defang up --provider=aws
 # or
-$ export DEFANG_PROVIDER=aws
+$ export DEFANG_PROVIDER=digitalocean
 ```
 
 ## AWS
@@ -44,14 +44,14 @@ The Public Preview of the v1 Defang BYOC DigitalOcean Provider as of October 1 2
 
 Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.md) documentation for more details about how the DigitalOcean provider works and how to get started.
 
-## Azure
-
-:::info
-We will be working on Azure support in the future. If you are interested in Azure support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/57).
-:::
-
 ## GCP
 
 :::info
 We will be working on GCP support in the future. If you are interested in GCP support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/58).
+:::
+
+## Azure
+
+:::info
+We will be working on Azure support in the future. If you are interested in Azure support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/57).
 :::
