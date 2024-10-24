@@ -53,7 +53,7 @@ You can connect to the managed Postgres instance using the name of your service 
       // highlight-end
       # Note: you can create a connection string by using interpolation,
       # reference config variables by using ${<config name>}
-      CONNECTURL: postgresql://postgres:${POSTGRES_PASSWORD}@database:5432/postgres
+      CONNECTURL: postgresql://postgres:${POSTGRES_PASSWORD}@database:5432/postgres?sslmode=require
   database:
     image: postgres:15
     x-defang-postgres: true
