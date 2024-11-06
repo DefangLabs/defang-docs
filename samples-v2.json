@@ -76,6 +76,29 @@
     ]
   },
   {
+    "name": "django-channels-redis-postgres",
+    "category": "Python",
+    "readme": "# Django Channels & Redis & Postgres\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-django-channels-redis-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to get Django Channels up and running with Redis and Postgres both managed by Defang. It demonstrates how to do this with a simple chat application.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up\n```\n\nThis will start the Django server, Redis, and Postgres and mounts your Django app so you get live reloading. You can access the Django server at `http://localhost:8000`.\n\n## Configuration\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration). Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `SECRET_KEY`\nThe secret key for your Django application. You can generate a new one by running `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`. A default, insecure key is used if this is not set, but you should set it for a production deployment.\n\n### `POSTGRES_PASSWORD`\nThe password for your Postgres database. You need to set this before deploying for the first time.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Use the [`defang config`](https://docs.defang.io/docs/concepts/compose#configuration) command to setup environment variables.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n---\n\nTitle: Django Channels & Redis & Postgres\n\nShort Description: A basic configuration of Django Channels with Redis and Postgres demonstrating a simple chat application.\n\nTags: Django, Channels, Redis, Postgres, Chat, Application\n\nLanguages: Python\n",
+    "directoryName": "django-channels-redis-postgres",
+    "title": "Django Channels & Redis & Postgres",
+    "shortDescription": "A basic configuration of Django Channels with Redis and Postgres demonstrating a simple chat application.",
+    "tags": [
+      "Django",
+      "Channels",
+      "Redis",
+      "Postgres",
+      "Chat",
+      "Application"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "configs": [
+      "SECRET_KEY",
+      "POSTGRES_PASSWORD"
+    ]
+  },
+  {
     "name": "django-postgres",
     "category": "python",
     "readme": "# Django & Postgres\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-django-postgres-template%26template_owner%3DDefangSamples)\n\nThis template is a customer relationship management list project developed using Python Django framework, offering a starting point to help you quickly build your customer management system. We use PostgreSQL as the database. We have prepared all the essential files for deployment. By spending less than 10 minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live to the world!\n\n## NOTE\n\nThis sample showcases how you could deploy a full-stack application with Defang and Django. However, it deploys postgres as a defang service. Defang [services](https://12factor.net/processes) are ephemeral and should not be used to run stateful workloads in production as they will be reset on every deployment. For production use cases you should use a managed database like RDS, Aiven, or others. If you stick to Rail's default SQLite database, your stored data will be lost on every deployment, and in some other situations. In the future, Defang will help you provision and connect to managed databases.\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide for Deployment\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Django & PostgreSQL\n\nShort Description: A customer relationship management list project developed using the Python Django framework, offering a starting point to help you quickly build your customer management system.\n\nTags: Django, PostgreSQL, Python, SQL\n\nLanguages: python\n",
