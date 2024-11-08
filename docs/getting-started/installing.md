@@ -10,14 +10,14 @@ import TabItem from '@theme/TabItem';
 
 Defang doesn't require installing anything in your cloud, but you will need to install the [open source](https://github.com/DefangLabs/defang) Defang command line interface (CLI) to interact with your Defang resources and account.
 
-We offer a few different ways to install the Defang CLI. You can use a bash script, Homebrew, Winget, or you can download the binary directly.
+We offer a few different ways to install the Defang CLI. You can use a shell script, Homebrew, Winget, or you can download the binary directly.
 
 
 <Tabs>
-  <TabItem value="bash" label="Bash">
-    **Using a Bash Script**
+  <TabItem value="bash" label="Shell">
+    **Using a shell script**
 
-    You can install the Defang CLI using a bash script. Run the following command in your terminal:
+    You can install the Defang CLI using a shell script. Run the following command in your terminal:
 
     ```bash
     . <(curl -Ls s.defang.io/install)
