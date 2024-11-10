@@ -8,7 +8,9 @@ The Defang Playground is a free tier that allows you to experiment with Defang. 
 
 This page highlights architectural considerations when deploying to the Playground and any differences you might encounter when deploying to the Playground versus deploying to your own cloud account.
 
-:::info The Playground allows only 1 deployed project at a time. Use the CLI `defang down` to tear down a project before deploying a new one. :::
+:::info
+The Playground allows only 1 deployed project at a time. Use the CLI `defang down` to tear down a project before deploying a new one.
+:::
 
 ## Overview
 
