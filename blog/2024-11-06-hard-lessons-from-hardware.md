@@ -54,10 +54,10 @@ Here’s the Flask server on the cloud, accessed with a deployment link:
 After two whole months, I finally completed my journey from [start](https://github.com/commit111/defang-arduino-static) to [finish](https://github.com/commit111/defang-arduino-wifi)! This project was an insightful dive into the world of embedded systems, internet networking, and cloud deployment. 
 
 Before I let you go, here are the hard lessons from hardware, from yours truly:
-Learning what not to do can be equally as important.
-Some problems are not as unique as you think. 
-One way to achieve a goal is by modifying it. 
-Choose the simpler way if it is offered.
-That’s where Defang comes in.
+1. Learning what not to do can be equally as important.
+2. Some problems are not as unique as you think. 
+3. One way to achieve a goal is by modifying it. 
+4. Choose the simpler way if it is offered.
+5. That’s where Defang comes in.
 
 Want to try deploying to the cloud yourself? You can try it out [here](https://defang.io/#samples). Keep on composing up! 💪 
