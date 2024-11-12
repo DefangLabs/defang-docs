@@ -1,10 +1,13 @@
 ---
-slug: blog-post
-title: "Hard Lessons From Hardware: My Story of Embedded Systems With Defang"
+slug: hard-lessons-from-hardware-blog
+title: "Hard Lessons From Hardware"
 tags: [Cloud, NoDevOps, Embedded Systems, Hardware, Wifi, Arduino, Defang]
+author: Linda Lee
 ---
 
 *About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware  at work.* 
+
+## My Story of Embedded Systems with Defang
 
 Have you ever looked at a touch screen fridge and wondered how it works? Back in my day (not very long ago), a fridge was just a fridge. No fancy built-in interface, no images displayed, and no wifi. But times have changed, and I’ve learned a lot about embedded systems, thanks to Defang! 
 
