@@ -5,7 +5,7 @@ tags: [Cloud, NoDevOps, Embedded Systems, Hardware, Wifi, Arduino, Defang]
 author: Linda Lee
 ---
 
-*About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware  at work.* 
+*About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware at work.* 
 
 ## My Story of Embedded Systems with Defang
 
@@ -15,7 +15,7 @@ Have you ever looked at a touch screen fridge and wondered how it works? Back in
 
 From my background, I was more into the web development and software side of things. Buffer flushing? Serial monitors? ESP32-S3? These were unheard of. Then one day at Defang, I was suggested to work on a project with a [SenseCAP Indicator](https://wiki.seeedstudio.com/Sensor/SenseCAP/SenseCAP_Indicator/Get_started_with_SenseCAP_Indicator/), a small programmable touch screen device. Everyone wished me good luck when I started. That’s how I knew it wasn’t going to be an easy ride. But here I am, and I’m glad I did it. 
 
-What is embedded systems/programming? It’s combining hardware with software to perform a function, such as to interact with the physical world or access cloud services. A common starting point for beginners is an Arduino board, which is what the SenseCAP Indicator has for its hardware. My goal was to make a UI display for this device, then send its input to a computer, and get that data into the cloud.
+What is embedded systems/programming? It’s combining hardware with software to perform a function, such as interacting with the physical world or accessing cloud services. A common starting point for beginners is an Arduino board, which is what the SenseCAP Indicator has for its hardware. My goal was to make a UI display for this device, and then send its input to a computer, and get that data into the cloud.
 
 ![hand_typing](/img/hardware-story/hand_typing.png)
 
