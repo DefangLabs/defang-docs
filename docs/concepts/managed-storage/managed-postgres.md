@@ -68,21 +68,3 @@ You can connect to the managed Postgres instance using the name of your service 
       // highlight-end
 
 ```
-
-### Major Version Updating of Engine
-
-To update the database engine you can simply update the image to a later version in your compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
-
-Please note the upgrading will occur immediately and may result in the database being unavailable for some time.
-
-```
-database:
-  image: postgres:15
-```
-
-to
-
-```
-database:
-  image: postgres:16
-```
