@@ -4,10 +4,67 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Tue, 12 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 13 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[October 2024 Defang Compose Update]]></title>
+            <link>https://docs.defang.io/blog/2024-11-13-product-update</link>
+            <guid>https://docs.defang.io/blog/2024-11-13-product-update</guid>
+            <pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Defang Compose Update]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-2aab6b0201bf44543b055debddc43e40.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>Hi everyone,</p>
+<p>We are a little late getting our monthly update out this time, but we did ship a number of important updates in October that we would like to inform you about. And more is coming… stay tuned for that!</p>
+<ol>
+<li>
+<p><strong>New CLI version 0.6.5</strong>: this was a big release with a number of improvements and bug fixes. You can find details in the release notes <a href="https://github.com/DefangLabs/defang/releases/tag/v0.6.5" target="_blank" rel="noopener noreferrer">here</a>, but to highlight a few:</p>
+<ul>
+<li><code>defang --provider aws</code>&nbsp;shows improved error message if unauthenticated</li>
+<li>Added <code>--wait</code> and <code>--wait-timeout</code> flags</li>
+<li>Improved&nbsp;<code>generate</code>&nbsp;menu: all samples shown (previously these were restricted by language), and we moved the "Generate with AI" option to now be shown in the search filter.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI Debug for BYOC</strong>: AI Debug feature is incredibly useful in helping users find and fix issues when something goes wrong. Our initial version only worked on Playground, but now we have extended this to BYOC environments. We hope this makes it even easier for you to deploy your apps to AWS, DigitalOcean, etc.</p>
+</li>
+<li>
+<p>A range of other <strong>improvements</strong>, including</p>
+<ul>
+<li>Network <code>aliases</code>&nbsp;support</li>
+<li>GDPR Delete Me: You can now delete your Defang account from the Defang Portal</li>
+<li>30min time-out for the <a href="https://docs.defang.io/docs/concepts/deployments" target="_blank" rel="noopener noreferrer">deployments</a> to avoid runaway tasks in your account</li>
+<li>Allow Postgres major version upgrade, e.g. changing the image from<code>postgres:14</code> to <code>postgres:16</code> in your Compose file (Currently, we only support this in <code>--mode development</code>, we will explore ways to support in other modes in the future.)</li>
+<li>More feedback logs when containers exit, e.g. failing health-checks</li>
+<li>Fixes for multiple BYOD <a href="https://docs.defang.io/docs/concepts/domains" target="_blank" rel="noopener noreferrer">domains</a> in a single account</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-adoption">Events and Adoption<a href="https://docs.defang.io/blog/2024-11-13-product-update#events-and-adoption" class="hash-link" aria-label="Direct link to Events and Adoption" title="Direct link to Events and Adoption">​</a></h2>
+<p>In October, the Defang team was actively involved in a range of exciting events. We participated in <a href="https://ghw.mlh.io/events/cloud" target="_blank" rel="noopener noreferrer">MLH Cloud Week</a>, <a href="https://stormhacks.com/" target="_blank" rel="noopener noreferrer">StormHacks</a>, and hosted a DevTools Vancouver <a href="https://lu.ma/devtools2" target="_blank" rel="noopener noreferrer">meetup</a>, bringing together local DevTool founders, engineers, and enthusiasts. It was inspiring to see Defang in action, helping these hackers build their amazing projects.</p>
+<p><img loading="lazy" alt="DevToolsMeetup" src="https://docs.defang.io/assets/images/devtools-meetup-14f062c9f1ab3aeb3938a5ed2392a0ff.jpg" width="3000" height="2057" class="img_ev3q"></p>
+<p>When we shipped our Public Beta earlier in 2024, we had a goal to reach <strong>1000 users</strong> by end of year. <strong>We are pleased to announce that we have already reached this milestone a couple of months in advance!</strong> We are excited to see the momentum behind the product and how our users are using Defang for developing and deploying a variety of different applications. Thank you for your support!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-road-ahead">The Road Ahead<a href="https://docs.defang.io/blog/2024-11-13-product-update#the-road-ahead" class="hash-link" aria-label="Direct link to The Road Ahead" title="Direct link to The Road Ahead">​</a></h2>
+<p>The team is now heads-down dotting the i’s and crossing the t’s so we can release Defang V1 before end of year. This will enable customers to use Defang for production workloads. We look forward to sharing more in our next monthly update.</p>
+<hr>
+<img src="https://docs.defang.io/img/october-update/coffee-chat.png" alt="CoffeeChat" style="width:300px">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="defang-coffee-chat-">Defang Coffee Chat ☕<a href="https://docs.defang.io/blog/2024-11-13-product-update#defang-coffee-chat-" class="hash-link" aria-label="Direct link to Defang Coffee Chat ☕" title="Direct link to Defang Coffee Chat ☕">​</a></h2>
+<p>If you're excited about what's coming next and want to hear more about our vision for the future, join us for our Coffee Chat on November 27th. We'll be sharing more about our roadmap and what we're working on next.</p>
+<style data-emotion="css s4g7hi">.css-s4g7hi{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.9375rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:8px 22px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#fff;background-color:#1976d2;box-shadow:0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);}.css-s4g7hi:hover{-webkit-text-decoration:none;text-decoration:none;background-color:#1565c0;box-shadow:0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);}@media (hover: none){.css-s4g7hi:hover{background-color:#1976d2;}}.css-s4g7hi:active{box-shadow:0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);}.css-s4g7hi.Mui-focusVisible{box-shadow:0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);}.css-s4g7hi.Mui-disabled{color:rgba(0, 0, 0, 0.26);box-shadow:none;background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css 110xwq5">.css-110xwq5{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.9375rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:8px 22px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#fff;background-color:#1976d2;box-shadow:0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);}.css-110xwq5::-moz-focus-inner{border-style:none;}.css-110xwq5.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-110xwq5{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-110xwq5:hover{-webkit-text-decoration:none;text-decoration:none;background-color:#1565c0;box-shadow:0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);}@media (hover: none){.css-110xwq5:hover{background-color:#1976d2;}}.css-110xwq5:active{box-shadow:0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);}.css-110xwq5.Mui-focusVisible{box-shadow:0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);}.css-110xwq5.Mui-disabled{color:rgba(0, 0, 0, 0.26);box-shadow:none;background-color:rgba(0, 0, 0, 0.12);}</style><a class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-110xwq5" tabindex="0" href="https://lu.ma/4n54sy2v" target="_blank"><p>Register here!</p></a>
+<hr>
+<p>As always, we appreciate your feedback and are committed to making Defang the easiest way to develop, deploy, and debug your cloud applications. Go build something awesome! 🚀</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>Postgres</category>
+            <category>Digital Ocean</category>
+            <category>AWS</category>
+            <category>CLI</category>
+            <category>AI</category>
+            <category>Debugging</category>
+            <category>Defang Compose Update</category>
+        </item>
         <item>
             <title><![CDATA[Hard Lessons From Hardware]]></title>
             <link>https://docs.defang.io/blog/hard-lessons-from-hardware</link>
