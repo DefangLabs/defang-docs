@@ -49,4 +49,18 @@ When we shipped our Public Beta earlier in 2024, we had a goal to reach **1000 u
 
 The team is now heads-down dotting the i’s and crossing the t’s so we can release Defang V1 before end of year. This will enable customers to use Defang for production workloads. We look forward to sharing more in our next monthly update.
 
+---
+
+<img src="/img/october-update/coffee-chat.png" alt="CoffeeChat" style={{ width: 300 }} />
+
+## Defang Coffee Chat ☕
+
+If you're excited about what's coming next and want to hear more about our vision for the future, join us for our Coffee Chat on November 27th. We'll be sharing more about our roadmap and what we're working on next.
+
+<Button href="https://lu.ma/4n54sy2v" variant="contained" size="large" target="_blank">
+Register here!
+</Button>
+
+---
+
 As always, we appreciate your feedback and are committed to making Defang the easiest way to develop, deploy, and debug your cloud applications. Go build something awesome! 🚀
