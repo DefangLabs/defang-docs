@@ -4,10 +4,57 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Mon, 30 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Hard Lessons From Hardware]]></title>
+            <link>https://docs.defang.io/blog/hard-lessons-from-hardware</link>
+            <guid>https://docs.defang.io/blog/hard-lessons-from-hardware</guid>
+            <pubDate>Tue, 12 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware at work.]]></description>
+            <content:encoded><![CDATA[<p><em>About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware at work.</em></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="my-story-of-embedded-systems-with-defang">My Story of Embedded Systems With Defang<a href="https://docs.defang.io/blog/hard-lessons-from-hardware#my-story-of-embedded-systems-with-defang" class="hash-link" aria-label="Direct link to My Story of Embedded Systems With Defang" title="Direct link to My Story of Embedded Systems With Defang">​</a></h2>
+<p>Have you ever looked at a touch screen fridge and wondered how it works? Back in my day (not very long ago), a fridge was just a fridge. No fancy built-in interface, no images displayed, and no wifi. But times have changed, and I’ve learned a lot about embedded systems, thanks to Defang!</p>
+<p><img loading="lazy" alt="smart_fridge" src="https://docs.defang.io/assets/images/smart_fridge-edd1c954979c53c87af5496734f6432d.png" width="2174" height="1088" class="img_ev3q"></p>
+<p>From my background, I was more into the web development and software side of things. Buffer flushing? Serial monitors? ESP32-S3? These were unheard of. Then one day at Defang, I was suggested to work on a project with a <a href="https://wiki.seeedstudio.com/Sensor/SenseCAP/SenseCAP_Indicator/Get_started_with_SenseCAP_Indicator/" target="_blank" rel="noopener noreferrer">SenseCAP Indicator</a>, a small programmable touch screen device. Everyone wished me good luck when I started. That’s how I knew it wasn’t going to be an easy ride. But here I am, and I’m glad I did it.</p>
+<p>What is embedded systems/programming? It’s combining hardware with software to perform a function, such as interacting with the physical world or accessing cloud services. A common starting point for beginners is an Arduino board, which is what the SenseCAP Indicator has for its hardware. My goal was to make a UI display for this device, and then send its input to a computer, and get that data into the cloud.</p>
+<p><img loading="lazy" alt="hand_typing" src="https://docs.defang.io/assets/images/hand_typing-7402e91c8cbc80ac075a0e2ca9d05400.png" width="1792" height="1024" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-beginning">The Beginning<a href="https://docs.defang.io/blog/hard-lessons-from-hardware#the-beginning" class="hash-link" aria-label="Direct link to The Beginning" title="Direct link to The Beginning">​</a></h2>
+<p>My journey kicked off with installing the <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener noreferrer">Arduino IDE</a> on my computer. It took me two hours—far longer than I expected—because the software versions I kept trying were not the right ones. Little did I know that I would encounter this issue many times later, such as when downloading <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html" target="_blank" rel="noopener noreferrer">ESP-IDF</a>, a tool for firmware flashing. Figuring out what not to install had become a highly coveted skill.</p>
+<p>The next part was writing software to display images and text. This was slightly less of a problem thanks to forums of users who had done the exact same thing several years ago. One tool I used was <a href="https://squareline.io/" target="_blank" rel="noopener noreferrer">Squareline Studio</a>, a UX/UI design tool for embedded devices. With a bit of trial and error, I got a simple static program displayed onto the device. Not half bad looking either. Here’s what it looked like:</p>
+<p><img loading="lazy" alt="ui_static" src="https://docs.defang.io/assets/images/ui_static-ae5b0e53d9326cde7c791097602d41c4.png" width="1254" height="494" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-middle">The Middle<a href="https://docs.defang.io/blog/hard-lessons-from-hardware#the-middle" class="hash-link" aria-label="Direct link to The Middle" title="Direct link to The Middle">​</a></h2>
+<p>Now came the networking part. Over wifi, I set up a Flask (Python) server on my computer to receive network pings from the SenseCAP Indicator. I used a library called <a href="https://github.com/arduino-libraries/ArduinoHttpClient" target="_blank" rel="noopener noreferrer">ArduinoHTTPClient</a>. At first, I wanted to ping the server each time a user touched the screen. Then came driver problems, platform incompatibilities, deprecated libraries…</p>
+<p>… After weeks of limited progress due to resurfacing issues, I decided to adjust my goal to send pings on a schedule of every 5 seconds, rather than relying on user input. I changed the UI to be more colorful, and for good reason. Now, each network ping appears with a message on the screen. Can you look closely to see what it says?</p>
+<p><img loading="lazy" alt="ui_wifi" src="https://docs.defang.io/assets/images/ui_wifi-5afeb2362053def85c5ba2156f636704.png" width="1250" height="444" class="img_ev3q"></p>
+<p>This is what the Flask server looked like on my computer as it got pinged:</p>
+<p><img loading="lazy" alt="local_server" src="https://docs.defang.io/assets/images/local_server-63ca5d9144e5f6c0f8cd1a9d4465a864.png" width="1737" height="853" class="img_ev3q"></p>
+<p>Hooray! Once everything was working, It was time to deploy my Flask code as a cloud service so I could access it from any computer, not just my own. Deployment usually takes several hours due to configuring a ton of cloud provider settings. But I ain’t got time for that. Instead, I used Defang to deploy it within minutes, which took care of all that for me. Saved me a lot of time and tears.</p>
+<p>Here’s the Flask deployment on Defang’s portal view:</p>
+<p><img loading="lazy" alt="portal_view" src="https://docs.defang.io/assets/images/portal_view-525f3c5a44f13a228c33ca3af3041025.png" width="2138" height="989" class="img_ev3q"></p>
+<p>Here’s the Flask server on the cloud, accessed with a deployment link:</p>
+<p><img loading="lazy" alt="deployed_server" src="https://docs.defang.io/assets/images/deployed_server-37f7d73c595477db369f5ce1b8d64271.png" width="1722" height="836" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-end">The End<a href="https://docs.defang.io/blog/hard-lessons-from-hardware#the-end" class="hash-link" aria-label="Direct link to The End" title="Direct link to The End">​</a></h2>
+<p>After two whole months, I finally completed my journey from <a href="https://github.com/commit111/defang-arduino-static" target="_blank" rel="noopener noreferrer">start</a> to <a href="https://github.com/commit111/defang-arduino-wifi" target="_blank" rel="noopener noreferrer">finish</a>! This project was an insightful dive into the world of embedded systems, internet networking, and cloud deployment.</p>
+<p>Before I let you go, here are the hard lessons from hardware, from yours truly:</p>
+<ol>
+<li>Learning what not to do can be equally as important.</li>
+<li>Some problems are not as unique as you think.</li>
+<li>One way to achieve a goal is by modifying it.</li>
+<li>Choose the simpler way if it is offered.</li>
+<li>That’s where Defang comes in.</li>
+</ol>
+<p>Want to try deploying to the cloud yourself? You can try it out <a href="https://defang.io/#samples" target="_blank" rel="noopener noreferrer">here</a>. Keep on composing up! 💪</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>Embedded Systems</category>
+            <category>Hardware</category>
+            <category>Wifi</category>
+            <category>Arduino</category>
+            <category>Defang</category>
+        </item>
         <item>
             <title><![CDATA[September 2024 Defang Compose Update]]></title>
             <link>https://docs.defang.io/blog/2024-09-30-product-update</link>
