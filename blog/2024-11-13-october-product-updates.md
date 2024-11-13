@@ -43,6 +43,8 @@ We are a little late getting our monthly update out this time, but we did ship a
 
 In October, the Defang team was actively involved in a range of exciting events. We participated in [MLH Cloud Week](https://ghw.mlh.io/events/cloud), [StormHacks](https://stormhacks.com/), and hosted a DevTools Vancouver [meetup](https://lu.ma/devtools2), bringing together local DevTool founders, engineers, and enthusiasts. It was inspiring to see Defang in action, helping these hackers build their amazing projects.
 
+![DevToolsMeetup](/img/october-update/devtools-meetup.jpg)
+
 When we shipped our Public Beta earlier in 2024, we had a goal to reach **1000 users** by end of year. **We are pleased to announce that we have already reached this milestone a couple of months in advance!** We are excited to see the momentum behind the product and how our users are using Defang for developing and deploying a variety of different applications. Thank you for your support!
 
 ## The Road Ahead
