@@ -20,7 +20,7 @@ We offer a few different ways to install the Defang CLI. You can use a shell scr
     You can install the Defang CLI using a shell script. Run the following command in your terminal:
 
     ```bash
-    eval "$( curl -Ls https://s.defang.io/install)"
+    eval "$(curl -Ls https://s.defang.io/install)"
     ```
 
     The script will try to download the appropriate binary for your operating system and architecture, add it to `~/.local/bin`, and add `~/.local/bin` to your `PATH` if it's not already there, with your permission. If you do not provide permission it will print an appropriate instruction for you to follow to add it manually. You can also customize the installation directory by setting the `INSTALL_DIR` environment variable before running the script.
