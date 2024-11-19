@@ -14,6 +14,43 @@ Defang configures Security Groups, deploys applications to a private subnet and 
 This page is about internal networking only. If you want to configure your services to be accessible from the public internet, check the [domains page](./domains.mdx).
 :::
 
+## Public Services
+
+If you want a service to have a public IP address, use the `public` network:
+
+```yaml
+services:
+  web:
+    networks:
+      public: # Defang will assign a public IP address
+```
+
+## Private Services
+
+If you want a service to not be accessible from the public internet, use the `private` network:
+
+```yaml
+services:
+  db:
+    networks:
+      private: # Defang will not assign a public IP address
+```
+
+The service's hostname will be the same as the service's name.
+
+## Hostname Aliases
+
+By using network aliases, a service can be made available at multiple hostnames.
+
+```yaml
+services:
+  web:
+    networks:
+      public:
+        aliases:
+        - app
+```
+
 ## Internal Communication
 
 You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition, but set the `mode` to `host` instead of `ingress` to allow other services to communicate with it through the internal network.
