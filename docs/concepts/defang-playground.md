@@ -27,5 +27,5 @@ When you deploy a service to Defang Playground, it will be assigned a domain und
 * Projects: 1
 * Services: 4
 * CPUs: 2
-* Memory: 8GB
-* Replicas: 2
+* Memory: 1GiB
+* Replicas: 1
