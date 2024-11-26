@@ -1,5 +1,5 @@
 ---
-sidebar_position: 100
+sidebar_position: 400
 title: Use Cases
 description: Use cases for Defang.
 ---
