@@ -4,6 +4,7 @@ title: Overview
 description: Overview of Defang, a radically simpler way to build, deploy, and optimize production-ready cloud apps.
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/afglsBYieuc?si=iKgUX4ejz7AixxqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### What is Defang?
 
@@ -31,4 +32,3 @@ Defang provides a streamlined experience to develop, deploy, observe, and update
 - [One-command deployments](./getting-started/installing.md)
 - Support for [GPUs](./concepts/resources.md)
 - Support for Infra-as-Code via the [Defang Pulumi provider](./concepts/pulumi.md)
-
