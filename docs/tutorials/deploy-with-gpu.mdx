@@ -5,7 +5,7 @@ sidebar_position: 500
 
 # Deploy a GPU-Powered Application With Defang
 
-This tutorial guides you to create and deploy a GPU-powered application on AWS using Defang and Mistral. We will walk you through the whole deployment process based on this [Deploying Mistral with vLLM](https://github.com/DefangLabs/defang/tree/main/samples/other/vllm) sample.
+This tutorial guides you to create and deploy a GPU-powered application on AWS using Defang and Mistral. We will walk you through the whole deployment process based on this [Deploying Mistral with vLLM](https://github.com/DefangLabs/samples/tree/main/samples/vllm) sample.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kynFa2zU7hQ?si=qdV0xa6vkhMFJ6qv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -25,11 +25,11 @@ This process can take a few days for AWS to approve.
 
 This sample requires a HugoingFace token to download the model. You can get a token by signing up at [HuggingFace](https://huggingface.co/join) and then going to [your settings](https://huggingface.co/settings/tokens) to get your token.
 
-## Step 1: Clone the sample project
+## Step 1 - Clone the sample project
 
-You'll need to clone [this sample](https://github.com/DefangLabs/defang/tree/main/samples/other/vllm) to go through this tutorial.
+You'll need to clone [this sample](https://github.com/DefangLabs/samples/tree/main/samples/vllm) to go through this tutorial.
 
-## Step 2: Check your [Defang BYOC](../concepts/defang-byoc.md) settings
+## Step 2 - Check your [Defang BYOC](../concepts/defang-byoc.md) settings
 
 * Make sure you [install the latest version of the Defang CLI](../getting-started/installing.md)
 * Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI makes use of AWS environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`, so make sure the correct values are set for those.
@@ -40,7 +40,7 @@ aws sts get-caller-identity
 ```
 
 
-## Step 2: Prepare your Environment
+## Step 3 - Prepare your Environment
 * Log into your Defang account
 ```bash
 defang login
@@ -54,7 +54,7 @@ defang config set --name HF_TOKEN
 [Configuration](../concepts/configuration.md) stores your sensitive information such as API keys, passwords, and other credentials for you.
 
 
-## Step 3: Explore the Compose File
+## Step 4 - Explore the Compose File
 
 The `compose.yml` file is where you define your services and their configurations.
 
@@ -153,10 +153,10 @@ You can see here how Defang's [networking](../concepts//networking.mdx) works. T
 ```
 
 
-## Step 4: Deploy to Your Own AWS Account with Defang
+## Step 5 - Deploy to Your Own AWS Account with Defang
 
 Run the following command to deploy your service:
 
 ```bash
-defang compose up
+defang compose up --provider=aws
 ```
