@@ -63,8 +63,6 @@ description: Frequently asked questions about Defang.
     3. In the 'Allow applications downloaded from:' section, you should see a message about Defang being blocked. Click 'Open Anyway'.
     4. Alternatively, select the option "App Store and identified developers" to allow all applications from the App Store and identified developers to run.
 
-### Does Defang Support
-
 ## Warnings
 
 ### "The folder is not empty. Files may be overwritten."
