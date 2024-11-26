@@ -102,11 +102,11 @@ Congratulations! You've successfully deployed your first service with Defang. No
 
 Defang supports various ways of creating and deploying services to the cloud. The following tutorials dive into each one in more detail:
 
+1. [Deploy to your own cloud](/docs/tutorials/deploy-to-your-cloud)
 1. [Update the code and redeploy](/docs/getting-started/build-and-deploy)
-2. [Monitor your services](/docs/getting-started/monitor)
-3. [Deploy an outline using AI](/docs/tutorials/generate-new-code-using-ai)
-4. [Build and deploy your code](/docs/tutorials/deploy-code-compose)
-5. [Deploy existing containers](/docs/tutorials/deploy-container-using-the-cli)
-6. [Deploy using Pulumi](/docs/tutorials/deploy-using-pulumi)
+1. [Monitor your services](/docs/getting-started/monitor)
+1. [Deploy an outline using AI](/docs/tutorials/generate-new-code-using-ai)
+1. [Deploy existing containers](/docs/tutorials/deploy-container-using-the-cli)
+1. [Deploy using Pulumi](/docs/tutorials/deploy-using-pulumi)
 
 Choose the direction that seems the most interesting. If you have any questions, join the [Defang Discord](https://discord.gg/defang) and we'll be happy to help you out.

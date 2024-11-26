@@ -13,9 +13,21 @@ This feature is available for Public Preview as of October 2024. This page will 
 Why should you use Defang with DigitalOcean? Defang allows you to easily create and manage full, scalable applications with DigitalOcean. Defang aims to make it easier to deploy your services to the cloud. DigitalOcean is one of the most popular cloud providers in the world and with Defang, you dont have to waste your time understanding the complexities and challenges of the DigitalOcean platform. Let Defang do it for you and spend more time working on whats important to you!
 
 ## Getting Started
-To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](../getting-started#authenticate-with-defang). Next make sure you have signed up for a [DigitalOcean account](https://try.digitalocean.com/freetrialoffer/).  
 
-After signing up for your account, be sure to setup your [personal access token](https://docs.digitalocean.com/reference/api/create-personal-access-token/) as well as your [Spaces access key](https://docs.digitalocean.com/products/spaces/how-to/manage-access/).  Next, save these values as environment variables with the names `DIGITALOCEAN_TOKEN`, `SPACES_ACCESS_KEY_ID`, and `SPACES_SECRET_ACCESS_KEY`. 
+### Install Defang
+
+To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](../getting-started#authenticate-with-defang).
+
+### Sign up for DigitalOcean
+Next make sure you have signed up for a [DigitalOcean account](https://try.digitalocean.com/freetrialoffer/).
+
+### Authenticate with DigitalOcean
+After signing up for your account, be sure to setup your [personal access token](https://docs.digitalocean.com/reference/api/create-personal-access-token/). Defang will need to find this value in your shell as the `DIGITALOCEAN_TOKEN` environment variable.
+
+### Authenticate with DigitalOcean Spaces
+You will also need a [Digital Ocean Spaces access key](https://docs.digitalocean.com/products/spaces/how-to/manage-access/). Defang will need to find this value in your shell as the `SPACES_ACCESS_KEY_ID`, and `SPACES_SECRET_ACCESS_KEY` environment variables.
+
+### Configure your shell environment
 
 ```bash
 export DIGITALOCEAN_TOKEN=<your-token>
@@ -23,7 +35,11 @@ export SPACES_ACCESS_KEY_ID=<your-key-id>
 export SPACES_SECRET_ACCESS_KEY=<your-key>
 ```
 
-The Defang CLI will automatically check if they are set before running. Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider.
+The Defang CLI will automatically check if these envinonment variables are set before running.
+
+### Deploy your project to DigitalOcean
+
+Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider.
 
 ```bash
 $ defang up --provider=digitalocean
@@ -33,7 +49,7 @@ $ export DEFANG_PROVIDER=digitalocean
 
 ## Region
 
-The Defang BYOC DigitalOcean Provider will use the region specified in the `REGION` environment variable. For a list of regions available in DigitalOcean, see the [region documentation](https://docs.digitalocean.com/platform/regional-availability/#app-platform-availability). 
+The Defang BYOC DigitalOcean Provider will use the region specified in the `REGION` environment variable. For a list of regions available in DigitalOcean, see the [region documentation](https://docs.digitalocean.com/platform/regional-availability/#app-platform-availability).
 
 ## Architecture
 
@@ -45,7 +61,7 @@ To deploy your services, the Defang CLI packages your code and uploads it to a [
 
 ### Runtime
 
-The Provider runs your workloads using the [DigitalOcean App Platform](https://docs.digitalocean.com/products/app-platform/). 
+The Provider runs your workloads using the [DigitalOcean App Platform](https://docs.digitalocean.com/products/app-platform/).
 
 ### Secrets
 
