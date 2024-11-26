@@ -15,22 +15,20 @@ This tutorial will show you how to deploy your services to your own AWS account 
 * [The Defang CLI](/docs/getting-started/installing)
 * [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
 
-## Deploy your project to AWS
-
-1. Navigate to the directory where your project is located:
+## Step 1 - Navigate to your project directory
+Head to the folder where your project is located.
 ```bash
 $ cd path/to/your/project
 ```
 
-2. Authenticate Defang to use your AWS Account
+## Step 2 - Authenticate Defang to use your AWS Account
 
-Defang will look for your AWS credentials in your shell environment.
-
-Defang will expect to find one of the following credential sets:
+There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html). 
+Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
 * the `AWS_PROFILE` environment variable
 * or, the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables
 
-3. Deploy
+## Step 3 - Deploy
 
 Invoke the `defang up` CLI command with the `--provider=aws` flag or set the `DEFANG_PROVIDER=aws` environment variable.
 
@@ -40,7 +38,7 @@ For example:
 $ defang up --provider=aws
 ```
 
-4. Inspect your deployment
+## Step 4 - Inspect your deployment
 
 Defang will provision resources in your AWS account and deploy your services. You can inspect the resources created in your AWS dashboard.
 

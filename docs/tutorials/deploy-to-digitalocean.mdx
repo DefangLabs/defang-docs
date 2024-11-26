@@ -16,22 +16,18 @@ This tutorial will show you how to deploy your services to your own Digital Ocea
 * [Digital Ocean Account Credentials](/docs/providers/digitalocean#getting-started)
 * [Digital Ocean Spaces Access Keys](/docs/providers/digitalocean#getting-started)
 
-## Deploy your project to Digital Ocean
-
-1. Navigate to the directory where your project is located:
+## Step 1 - Navigate to your project directory
 ```bash
 $ cd path/to/your/project
 ```
 
-2. Authenticate Defang to use your Digital Ocean Account
+## Step 2 - Authenticate Defang to use your Digital Ocean Account
 
-Defang will look for your Digital Ocean credentials in your shell environment.
-
-Defang will expect to find the following credentials:
+Defang will look for your Digital Ocean credentials in your shell environment and expect to find the following credentials:
 * the `DIGITALOCEAN_TOKEN` environment variable
 * and, the `SPACES_ACCESS_KEY_ID` and `SPACES_SECRET_ACCESS_KEY` environment variables
 
-3. Deploy
+## Step 3 - Deploy
 
 Invoke the `defang up` CLI command with the `--provider=do` flag or set the `DEFANG_PROVIDER=do` environment variable.
 
@@ -41,7 +37,7 @@ For example:
 $ defang up --provider=do
 ```
 
-4. Inspect your deployment
+## Step 4 - Inspect your deployment
 
 Defang will provision resources in your Digital Ocean account and deploy your services. You can inspect the resources created in your Digital Ocean dashboard.
 
