@@ -17,7 +17,7 @@ Why should you use Defang with AWS? Defang allows you to easily create and manag
 Getting started with the Defang BYOC AWS Provider is easy. The first step is to [authenticate your shell](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) with AWS as an admin user. The authenticated user should be an IAM admin because Defang will need permission to create resources and IAM roles in your account.
 
 :::tip
-If you have the aws CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
+If you have the AWS CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
 :::
 
 Use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider or set the `DEFANG_PROVIDER` environment variable to `aws`.

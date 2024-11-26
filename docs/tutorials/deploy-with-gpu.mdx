@@ -34,11 +34,9 @@ You'll need to clone [this sample](https://github.com/DefangLabs/samples/tree/ma
 * Make sure you [install the latest version of the Defang CLI](../getting-started/installing.md)
 * Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI makes use of AWS environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`, so make sure the correct values are set for those.
 
-If you use the AWS CLI, you can verify that your are authenticated against AWS using the following command (note that the AWS CLI itself is not required to use the defang cli in BYOC mode):
-```bash
-aws sts get-caller-identity
-```
-
+:::tip
+If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
+:::
 
 ## Step 3 - Prepare your Environment
 * Log into your Defang account

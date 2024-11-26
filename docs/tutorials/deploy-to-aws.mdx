@@ -28,6 +28,10 @@ Once you've done that, Defang will look for your AWS credentials in your shell e
 * the `AWS_PROFILE` environment variable
 * or, the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables
 
+:::tip
+If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
+:::
+
 ## Step 3 - Deploy
 
 Invoke the `defang up` CLI command with the `--provider=aws` flag or set the `DEFANG_PROVIDER=aws` environment variable.
