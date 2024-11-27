@@ -10,7 +10,7 @@ Defang can be used for a wide variety of use cases, generally in line with the [
 
 ## Web Services and APIs
 
-Defang can be used to deploy web services and APIs. You can use any programming language you like, and you can use the built-in AI assistant to help you get started.
+Defang can be used to deploy web services and APIs. You can use any programming language you like, and you can use the built-in AI agent to help you get started.
 
 Defang is a great choice for stateless web services and APIs because it takes care of all the heavy lifting such as configuring [networking](../concepts/networking.mdx), [security](../concepts/security.md), and [observability](../concepts/observability.md), and will give you a nice, [horizontally scalable](https://12factor.net/concurrency) deployment.
 
