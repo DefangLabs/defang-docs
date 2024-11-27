@@ -25,7 +25,7 @@ Next make sure you have signed up for a [DigitalOcean account](https://try.digit
 After signing up for your account, be sure to setup your [personal access token](https://docs.digitalocean.com/reference/api/create-personal-access-token/). Defang will need to find this value in your shell as the `DIGITALOCEAN_TOKEN` environment variable.
 
 ### Authenticate with DigitalOcean Spaces
-You will also need a [Digital Ocean Spaces access key](https://docs.digitalocean.com/products/spaces/how-to/manage-access/). Defang will need to find this value in your shell as the `SPACES_ACCESS_KEY_ID`, and `SPACES_SECRET_ACCESS_KEY` environment variables.
+You will also need a [DigitalOcean Spaces access key](https://docs.digitalocean.com/products/spaces/how-to/manage-access/). Defang will need to find this value in your shell as the `SPACES_ACCESS_KEY_ID`, and `SPACES_SECRET_ACCESS_KEY` environment variables.
 
 ### Configure your shell environment
 

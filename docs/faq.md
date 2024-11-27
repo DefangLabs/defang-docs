@@ -53,7 +53,7 @@ description: Frequently asked questions about Defang.
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](./concepts/defang-byoc#aws) and [Digital Ocean](./concepts/defang-byoc#digitalocean), we plan to support other clouds in future releases, such [GCP](./providers/gcp.md) and [Azure](./providers/azure.md).
+- While we currently support [AWS](./concepts/defang-byoc#aws) and [DigitalOcean](./concepts/defang-byoc#digitalocean), we plan to support other clouds in future releases, such [GCP](./providers/gcp.md) and [Azure](./providers/azure.md).
 
 ### I'm having trouble running the binary on my Mac. What should I do?
 
