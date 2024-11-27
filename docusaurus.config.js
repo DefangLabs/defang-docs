@@ -101,8 +101,8 @@ const config = {
               href: 'https://www.linkedin.com/company/defang/',
             },
             {
-              label: 'Slack',
-              href: 'https://join.slack.com/share/enQtNTQxMTM2ODU2MTAxNS1jYjc0ZDc1NjAyZDQ1NDIxYzFiZDIzMDU4Y2Y0ZWI0OWZiMGM0NGEzMDdlY2YzMzViYjkwZGMzNTcwOTYwYzE2',
+              label: 'Discord',
+              href: 'https://s.defang.io/discord',
             },
             {
               label: 'Twitter',
