@@ -21,7 +21,7 @@ description: Frequently asked questions about Defang.
 
 ### Can I access AWS storage services such as S3 or database services such as RDS? How?
 
-- Yes, you can access AWS services in your own AWS account as you normally would when you are [deploying to AWS with Defang](./providers/aws). In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](./concepts/defang-byoc.md).
+- Yes, you can access AWS services in the AWS Dashboard as you normally would when you are [deploying to your AWS account](./providers/aws) using Defang. In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](./concepts/defang-byoc.md).
 
 ### Can I run production apps with Defang?
 
