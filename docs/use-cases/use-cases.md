@@ -34,4 +34,6 @@ Some applications are designed to run in stateful environments. For example, a C
 
 ## Data Stores
 
-Defang is not a good fit for data stores like databases, caches, and message queues. These types of services are designed to be long-lived and to store data. Defang is primarily designed for stateless workloads, and it's not a good fit for stateful workloads: if a container is replaced, all the data in it is lost. You could probably coerce a data store to work in a stateless environment with certain replication strategies, but it's not a good fit.
+Defang now offers paid tier support for managed services for databases and caches, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis). While Defang is primarily designed for stateless workloads, it can now support stateful workloads (persistent data storage) if used with one of the mentioned managed services above. 
+
+Please be aware that if you choose not to use a managed service, there is a risk that any data stored in a container may be lost if the container is replaced.
