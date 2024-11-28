@@ -1,5 +1,5 @@
 ---
-sidebar_position: 100
+sidebar_position: 400
 title: Use Cases
 description: Use cases for Defang.
 ---
@@ -10,7 +10,7 @@ Defang can be used for a wide variety of use cases, generally in line with the [
 
 ## Web Services and APIs
 
-Defang can be used to deploy web services and APIs. You can use any programming language you like, and you can use the built-in AI assistant to help you get started.
+Defang can be used to deploy web services and APIs. You can use any programming language you like, and you can use the built-in AI agent to help you get started.
 
 Defang is a great choice for stateless web services and APIs because it takes care of all the heavy lifting such as configuring [networking](../concepts/networking.mdx), [security](../concepts/security.md), and [observability](../concepts/observability.md), and will give you a nice, [horizontally scalable](https://12factor.net/concurrency) deployment.
 
@@ -26,7 +26,7 @@ LLMs (Large Language Models) are a type of AI model that can be used for a wide 
 
 # Anti-patterns
 
-While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns. Here are some examples:
+While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns. 
 
 ## Stateful Services
 
@@ -34,4 +34,10 @@ Some applications are designed to run in stateful environments. For example, a C
 
 ## Data Stores
 
-Defang is not a good fit for data stores like databases, caches, and message queues. These types of services are designed to be long-lived and to store data. Defang is primarily designed for stateless workloads, and it's not a good fit for stateful workloads: if a container is replaced, all the data in it is lost. You could probably coerce a data store to work in a stateless environment with certain replication strategies, but it's not a good fit.
+Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for data stores. However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss. 
+
+:::info 
+To better serve our users, we will be introducing additional managed storage options, such as [Object Storage](concepts/managed-storage/managed-object-storage), in the near future. 
+:::
+
+Please be aware that if you choose not to use a Defang-supported [managed storage](./concepts/managed-storage) option, there is a risk that any data stored in a container may be lost if the container is replaced.

@@ -38,6 +38,9 @@ You can also set the following optional environment variables to configure the m
 You can connect to the managed Postgres instance using the name of your service as the hostname, `POSTGRES_USER`, `POSTGRES_DB`, and `POSTGRES_PASSWORD` environment variables.
 
 ### Example
+:::info 
+For a smoother experience with Defang, we recommend using Postgres 14 for your container images. This version provides easier access and improved usability.
+:::
 
 ```yaml
   app:
@@ -55,7 +58,7 @@ You can connect to the managed Postgres instance using the name of your service 
       # reference config variables by using ${<config name>}
       CONNECTURL: postgresql://postgres:${POSTGRES_PASSWORD}@database:5432/postgres?sslmode=require
   database:
-    image: postgres:15
+    image: postgres:14
     x-defang-postgres: true
     ports:
       - mode: host
@@ -69,6 +72,7 @@ You can connect to the managed Postgres instance using the name of your service 
 
 ```
 
+<!-- 
 ### Major Version Updating of Engine
 
 To update the database engine you can simply update the image to a later version in your compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
@@ -85,4 +89,4 @@ to
 ```
 database:
   image: postgres:16
-```
+``` -->
