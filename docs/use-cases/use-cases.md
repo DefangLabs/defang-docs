@@ -26,7 +26,7 @@ LLMs (Large Language Models) are a type of AI model that can be used for a wide 
 
 # Anti-patterns
 
-While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns. Here are some examples:
+While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns. 
 
 ## Stateful Services
 
@@ -34,10 +34,11 @@ Some applications are designed to run in stateful environments. For example, a C
 
 ## Data Stores
 
-While Defang is primarily designed for stateless workloads, Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis). 
+Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for data stores.
+However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss. 
 
-:::warning
-Using unsupported data stores (e.g., ElasticSearch) with Defang is strongly discouraged. Doing so may result in permanent data loss. Stick to Defang's managed services like [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for reliable data persistence.
+:::info 
+To better serve our users, we will be introducing additional [managed storage](./concepts/managed-storage) options in the near future. 
 :::
 
 Please be aware that if you choose not to use a Defang-supported managed service, there is a risk that any data stored in a container may be lost if the container is replaced.
