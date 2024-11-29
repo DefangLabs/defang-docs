@@ -7,5 +7,7 @@ sidebar_position: 3000
 # GCP
 
 :::info
-GCP support is coming soon to Defang! 
+Google Cloud Platform (GCP) support is coming soon to Defang. Stay tuned for updates! 
 :::
+
+This page will be updated soon. In the meantime, you can learn more about other cloud [providers](/docs/category/providers/).

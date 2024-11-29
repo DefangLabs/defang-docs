@@ -3,7 +3,7 @@
   "position": 500,
   "link": {
     "type": "generated-index",
-    "description": "Documentation of all the CLI commands"
+    "description": "Documentation of the Defang CLI (command line interface) commands."
   }
 }
 
