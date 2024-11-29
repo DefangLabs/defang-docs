@@ -1,10 +1,10 @@
 ---
-sidebar_position: 400
+sidebar_position: 300
 title: Use Cases
-description: Use cases for Defang.
+description: Use cases for Defang
 ---
 
-# Use Cases
+# Defang Use Cases
 
 Defang can be used for a wide variety of use cases, generally in line with the [12 Factor architecture](https://12factor.net/). In this section we'll document some examples. At the end of this section we will also cover use cases that are not supported by Defang.
 
@@ -26,7 +26,7 @@ LLMs (Large Language Models) are a type of AI model that can be used for a wide 
 
 # Anti-patterns
 
-While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns. 
+While Defang is great for a wide variety of use cases, there are some use cases that are not a good fit for Defang. Generally, the use-cases that are Defang anti-patterns are the same as the ones that are [12 Factor](https://12factor.net/) anti-patterns.
 
 ## Stateful Services
 
@@ -34,10 +34,10 @@ Some applications are designed to run in stateful environments. For example, a C
 
 ## Data Stores
 
-Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for data stores. However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss. 
+Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for data stores. However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss.
 
-:::info 
-To better serve our users, we will be introducing additional managed storage options, such as [Object Storage](concepts/managed-storage/managed-object-storage), in the near future. 
+:::info
+To better serve our users, we will be introducing additional managed storage options, such as [Object Storage](concepts/managed-storage/managed-object-storage), in the near future.
 :::
 
 Please be aware that if you choose not to use a Defang-supported [managed storage](./concepts/managed-storage) option, there is a risk that any data stored in a container may be lost if the container is replaced.
