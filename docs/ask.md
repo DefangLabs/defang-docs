@@ -1,6 +1,6 @@
 ---
 title: "Ask Defang"
-description: This is a chatbot that is trained on defang documentation and designed to answer questions
+description: This is a chatbot that is trained on Defang documentation and designed to answer questions
 sidebar_position: 900
 className: "no-title-page"
 ---

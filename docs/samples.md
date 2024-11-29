@@ -8,7 +8,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 # Samples
 
-Check out our sample projects here to get some inspiration and get a sense of how defang works.
+Check out our sample projects here to get some inspiration and get a sense of how Defang works.
 
 import Samples from "../src/components/Samples";
 

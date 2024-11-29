@@ -41,7 +41,7 @@ description: Frequently asked questions about Defang.
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as defang will not provision multiple replicas to save cost.
+- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost.
 
 ### Can I deploy multiple services at once?
 
@@ -161,7 +161,7 @@ services:
     -       - "1234:1234"
     +       - "1234"
     ```
-2. Does my healthcheck include the string `localhost`? It is very common to define a healthcheck by using `curl` or `wget` to make a request to `localhost`. So common, in fact, that defang will look for the string `localhost` in your healthcheck definition. For example, this healthcheck is valid:
+2. Does my healthcheck include the string `localhost`? It is very common to define a healthcheck by using `curl` or `wget` to make a request to `localhost`. So common, in fact, that Defang will look for the string `localhost` in your healthcheck definition. For example, this healthcheck is valid:
 
     ```yaml
      healthcheck:

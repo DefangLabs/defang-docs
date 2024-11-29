@@ -1,6 +1,6 @@
 ---
 title: Portal
-description: You can log into the Defang portal to view the state of your defang services.
+description: You can log into the Defang portal to view the state of your Defang services.
 sidebar_position: 700
 ---
 
