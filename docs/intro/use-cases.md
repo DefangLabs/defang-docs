@@ -34,10 +34,10 @@ Some applications are designed to run in stateful environments. For example, a C
 
 ## Data Stores
 
-Defang now offers support for stateful workloads through our [managed storage](./concepts/managed-storage) options, including [Postgres](./concepts/managed-storage/managed-postgres) and [Redis](./concepts/managed-storage/managed-redis) for data stores. However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss.
+Defang now offers support for stateful workloads through our [managed storage](/docs/concepts/managed-storage) options, including [Postgres](/docs/concepts/managed-storage/managed-postgres) and [Redis](/docs/concepts/managed-storage/managed-redis) for data stores. However, we do not recommend using unsupported data stores with Defang, as this may lead to permanent data loss.
 
 :::info
-To better serve our users, we will be introducing additional managed storage options, such as [Object Storage](concepts/managed-storage/managed-object-storage), in the near future.
+To better serve our users, we will be introducing additional managed storage options, such as [Object Storage](/docs/concepts/managed-storage/managed-object-storage), in the near future.
 :::
 
-Please be aware that if you choose not to use a Defang-supported [managed storage](./concepts/managed-storage) option, there is a risk that any data stored in a container may be lost if the container is replaced.
+Please be aware that if you choose not to use a Defang-supported [managed storage](/docs/concepts/managed-storage) option, there is a risk that any data stored in a container may be lost if the container is replaced.
