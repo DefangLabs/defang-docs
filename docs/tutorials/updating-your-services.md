@@ -1,0 +1,13 @@
+---
+sidebar_position: 500
+title: Updating Your Services
+description: How to update services deployed with Defang
+---
+
+# How To Update Your Services With Defang
+
+To update your app (for example, updating the base image of your container, or making changes to your code) you can run the `defang compose up` command and it will build and deploy a new version with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
+
+:::info
+If you are using [compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
+:::
