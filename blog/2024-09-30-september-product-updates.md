@@ -7,7 +7,7 @@ tags:
     NoDevOps,
     BYOC,
     Postgres,
-    Digital Ocean,
+    DigitalOcean,
     CLI,
     AI,
     Debugging,
