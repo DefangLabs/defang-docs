@@ -11,7 +11,7 @@ This tutorial will show you how to deploy your services to your own AWS account 
 ## Pre-requisites
 * [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
 * [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/getting-started/authenticating)
+* [A Defang Account](/docs/concepts/authentication)
 * [The Defang CLI](/docs/getting-started/installing)
 * [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
 
@@ -23,7 +23,7 @@ $ cd path/to/your/project
 
 ## Step 2 - Authenticate Defang to use your AWS Account
 
-There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html). 
+There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
 Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
 * the `AWS_PROFILE` environment variable
 * or, the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables

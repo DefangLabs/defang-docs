@@ -72,7 +72,7 @@ Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press EN
 ```
 
 :::info
-To learn more about how authentication works in defang, check out the [authenticating page](/docs/getting-started/authenticating).
+To learn more about how authentication works in defang, check out the [authenticating page](/docs/concepts/authentication).
 :::
 
 When you do this, you should see something similar to the output below:

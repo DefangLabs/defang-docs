@@ -1,10 +1,10 @@
 ---
 sidebar_position: 200
-title: Authenticating
-description: Authenticate with Defang.
+title: Authentication
+description: Authenticating with Defang.
 ---
 
-# Authenticating
+# Authenticating with Defang
 
 To do pretty much anything with Defang, you'll need to authenticate with the platform. You can do this by running the following command:
 
