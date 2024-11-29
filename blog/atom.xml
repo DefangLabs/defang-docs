@@ -60,7 +60,7 @@
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
         <category label="Postgres" term="Postgres"/>
-        <category label="Digital Ocean" term="Digital Ocean"/>
+        <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="AWS" term="AWS"/>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
@@ -157,7 +157,7 @@
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
         <category label="Postgres" term="Postgres"/>
-        <category label="Digital Ocean" term="Digital Ocean"/>
+        <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
         <category label="Debugging" term="Debugging"/>
@@ -193,7 +193,7 @@
 <p>We're working on a number of new features to make Defang even better. Here are some of the most exciting ones:</p>
 <ul>
 <li><strong>Managed Postgres</strong>: We're working on getting Defang to provision managed Postgres services for you, so you can easily store and query data in your applications.</li>
-<li><strong>Digital Ocean BYOC</strong>: We're working on adding Digital Ocean BYOC to give you even more choice over where you deploy your applications.</li>
+<li><strong>DigitalOcean BYOC</strong>: We're working on adding DigitalOcean BYOC to give you even more choice over where you deploy your applications.</li>
 </ul>
 <hr>
 <p>We’re excited to keep enhancing Defang to make it the easiest way for you to Develop, Deploy, and Debug cloud applications. Stay tuned for more updates next month! 🚀</p>]]></content>
@@ -203,7 +203,7 @@
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
-        <category label="Digital Ocean" term="Digital Ocean"/>
+        <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
         <category label="Debugging" term="Debugging"/>
