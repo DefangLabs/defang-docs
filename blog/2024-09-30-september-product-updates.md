@@ -49,7 +49,8 @@ Also in Sep, Defang was included in the [Google for Startups Accelerator Canada.
 
 ## Defang Coffee Chat
 
-Mark your calendars! If you’re eager to learn more about what’s coming next, join us for our Defang Coffee Chat on Oct 23rd. We’ll be sharing our future roadmap, answering your questions, and gathering your feedback.
+Mark your calendars! If you’re eager to learn more about what’s coming next, join us for our Defang Coffee Chat on Oct 23rd 2024.
+We’ll be sharing our future roadmap, answering your questions, and gathering your feedback.
 
 <Button href="https://lu.ma/hlnq84xq" variant="contained" size="large" target="_blank">
 Register here!
