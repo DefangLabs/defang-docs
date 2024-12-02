@@ -15,7 +15,7 @@ Here are the meanings of common [warning](#warnings) and [error](#errors) messag
 - This message is displayed when you run `defang compose up` and the Compose file references an environment variable that is not set. If you proceed, the environment variable will be empty in the container. If you want to set the environment variable, you should set it in the environment where you run `defang compose up`.
 
 ### "Unsupported platform"
-- This message is displayed when you run `defang compose up` and the Compose file references a platform that is not supported by Defang. Defang Beta only supports Linux operating systems.
+- This message is displayed when you run `defang compose up` and the Compose file references a platform that is not supported by Defang.
 
 ### "not logged in"
 - This message is displayed when you run `defang compose config` but you are not logged in. The displayed configuration will be incomplete. If you want to see the complete configuration, you should log in first using `defang login`.
