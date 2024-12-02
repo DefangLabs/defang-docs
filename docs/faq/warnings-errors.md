@@ -4,7 +4,7 @@ title: Common Error Messages
 description: Common warnings and error messages, and their meanings.
 ---
 
-Here are meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI. 
+Here are the meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI. 
 
 ## Warnings
 
