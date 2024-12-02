@@ -12,7 +12,7 @@ Ever since we shipped our Private Beta in the summer of 2023, we have been worki
 
 And so, today with our Public Beta, we are addressing this request. With today’s release of [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang **and** deploy applications to your own AWS account! Our Private Beta experience is still available as [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground) for you to quickly and easily prototype applications and deploy them to our hosted environment.
 
-You can learn more about Defang [here](https://docs.defang.io/docs/intro). Also check out our [tutorials](https://docs.defang.io/docs/category/tutorials), [samples](https://docs.defang.io/docs/samples), and [FAQ](https://docs.defang.io/docs/faq) to know more.
+You can learn more about Defang [here](https://docs.defang.io/docs/intro). Also check out our [tutorials](https://docs.defang.io/docs/category/tutorials), [samples](https://docs.defang.io/docs/samples), and [FAQ](https://docs.defang.io/docs/category/faq) to know more.
 
 **Try the Public Beta!**
 

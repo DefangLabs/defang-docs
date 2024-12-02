@@ -69,5 +69,5 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
     4. Alternatively, select the option "App Store and identified developers" to allow all applications from the App Store and identified developers to run.
 
 ### I'm getting a warning/error. What does it mean?
-- See the Common Warnings and Errors page.
+- See the [Common Error Messages](./warnings-errors.md) page.
 
