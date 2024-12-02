@@ -6,10 +6,6 @@ sidebar_position: 000
 
 # AWS
 
-:::info
-Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
-:::
-
 Why should you use Defang with AWS? Defang allows you to easily create and manage full, scalable applications with AWS. Defang aims to make it easier to deploy your services to the cloud. Don't waste your time learning the ins and outs of AWS, deciding which of the 200+ services to use, and then writing the infrastructure code to deploy your services, and making sure they are properly secured. Defang does all of that for you.
 
 ## Getting Started
