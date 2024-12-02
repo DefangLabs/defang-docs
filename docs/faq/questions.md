@@ -58,6 +58,17 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 - Defang does not currently support service dependencies. All services will be deployed simultaneously. Defang will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode.
 
+## Feature Comparisons
+
+### Is Defang a run-time platform?
+- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](../category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
+
+### What is the difference between Defang and platforms such as Vercel, fly.io, and Railway?
+- Defang is a tool that helps you get your application deployed to a [cloud provider](../category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](../concepts/defang-playground), but it is meant to be used as a testing environment only. 
+
+### What is the difference between Defang and tools such as SST?
+- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](../category/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
+
 ## Troubleshooting
 
 ### I'm having trouble running the binary on my Mac. What should I do?
