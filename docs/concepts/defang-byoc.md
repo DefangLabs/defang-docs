@@ -29,10 +29,6 @@ $ export DEFANG_PROVIDER=digitalocean
 
 ## AWS
 
-:::info
-The Public Beta of the v1 Defang BYOC AWS Provider is released as of Feb 1 2024.
-:::
-
 Please read the [AWS Provider](../providers/aws/aws.md) documentation for more details about how the AWS provider works and how to get started.
 
 ## DigitalOcean
