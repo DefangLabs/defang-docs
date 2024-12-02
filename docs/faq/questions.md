@@ -8,6 +8,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 # Frequently Asked Questions (FAQ)
 
 ## Deployment and Infrastructure
+
 ### Which cloud/region is the app being deployed to?
 
 - In the [Defang Playground](../concepts/defang-playground.md), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](../concepts/defang-byoc.md) model, the region is determined by your [Defang BYOC Provider](/docs/category/providers) settings.
@@ -80,5 +81,6 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
     4. Alternatively, select the option "App Store and identified developers" to allow all applications from the App Store and identified developers to run.
 
 ### I'm getting a warning/error. What does it mean?
+
 - Please see the [Common Error Messages](./warnings-errors.md) page.
 
