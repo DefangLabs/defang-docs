@@ -13,9 +13,8 @@ The Defang GCP provider is available for Public Preview as of December 2024. Thi
 Defang enables you to effortlessly create and manage full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities and challenges of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
 
 ## Getting Started
-To get started with the Defang BYOC GCP Provider, first [install the latest version of the Defang CLI](../getting-started#authenticate-with-defang). Next make sure you have signed up for a [Google Cloud Platform](https://cloud.google.com/).
 
-After signing up for your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project), make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project) and note down the project ID and set it as environment variable `GCP_PROJECT_ID`.
+After signing in to your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project), make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project) and note down the project ID and set it as environment variable `GCP_PROJECT_ID`.
 
 ```bash
 export GCP_PROJECT_ID=<your-project-id>
