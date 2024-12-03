@@ -4,9 +4,9 @@ title: Authentication
 description: Authenticating with Defang.
 ---
 
-# Authenticating with Defang
+# Authentication
 
-To do pretty much anything with Defang, you'll need to authenticate with the platform. You can do this by running the following command:
+To do pretty much anything with Defang, you'll need to authenticate with the system. You can do this by running the following command:
 
 ```bash
 defang login
