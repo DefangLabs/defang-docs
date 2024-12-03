@@ -74,4 +74,4 @@ The following features are still in development for DigitalOcean:
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
 - [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)
 
-Stayed tuned for future updates!
+Stay tuned for future updates!

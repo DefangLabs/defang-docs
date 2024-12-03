@@ -43,8 +43,9 @@ Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.m
 ## GCP
 
 :::info
-We will be working on GCP support in the future. If you are interested in GCP support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/58).
+Google Cloud Platform (GCP) support is coming soon to Defang. Stay tuned for updates! 
 :::
+Please check out the [GCP Provider](../providers/gcp/) page for more details. 
 
 ## Azure
 

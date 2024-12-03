@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Generate
 
-Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](../getting-started/installing.md).
+Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](../getting-started#install-the-defang-cli.md).
 
 :::info
 The AI agent is currently in preview and only supports a limited set of prompts, varying in complexity. We plan to expand the capabilities of the AI agent in the future.

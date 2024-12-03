@@ -179,7 +179,7 @@ export default function Samples() {
                             {/* <Stack direction="row" justifyContent="center" px={1} spacing={2}> */}
                             <Box sx={{ flexGrow: 1, overflow: 'auto', '& .theme-code-block': { mb: 0 } }}>
                                 <small>
-                                    Use this sample (<b><a href="https://docs.defang.io/docs/getting-started/installing" target="_blank">requires Defang CLI v0.5.21 or later</a></b>)
+                                    Use this sample (<b><a href="https://docs.defang.io/docs/getting-started#install-the-defang-cli" target="_blank">requires Defang CLI v0.5.21 or later</a></b>)
                                 </small>
                                 <CodeBlock language="bash">
                                     {`defang generate ${selectedSample.name}`}

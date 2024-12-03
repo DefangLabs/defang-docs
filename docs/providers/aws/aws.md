@@ -88,7 +88,7 @@ Defang will create and manage the following resources in your AWS account from i
 | iam/Role | defang-cd-askRole-gsEeDPd6sPQY  |
 | ec2/VPC | vpc-0cbca64f13435695  |
 
-Then, for each project you deploy, defang will create and manage the following resources:
+Then, for each project you deploy, Defang will create and manage the following resources:
 
 | Resource Type | Example Resource Name |
 |---------------|------------------------|
