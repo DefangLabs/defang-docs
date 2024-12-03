@@ -10,7 +10,7 @@ sidebar_position: 3000
 The Defang GCP provider is available for Public Preview as of December 2024.
 :::
 
-Defang enables you to effortlessly create and manage full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities and challenges of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
+Defang enables you to effortlessly develop and deploy full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
 
 ## Getting Started
 
