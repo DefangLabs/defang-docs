@@ -6,7 +6,7 @@ tags:
     Cloud,
     NoDevOps,
     BYOC,
-    Digital Ocean,
+    DigitalOcean,
     CLI,
     AI,
     Debugging,
@@ -64,7 +64,7 @@ Register here!
 We're working on a number of new features to make Defang even better. Here are some of the most exciting ones:
 
 - **Managed Postgres**: We're working on getting Defang to provision managed Postgres services for you, so you can easily store and query data in your applications.
-- **Digital Ocean BYOC**: We're working on adding Digital Ocean BYOC to give you even more choice over where you deploy your applications.
+- **DigitalOcean BYOC**: We're working on adding DigitalOcean BYOC to give you even more choice over where you deploy your applications.
 
 ---
 

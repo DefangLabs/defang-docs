@@ -1,0 +1,48 @@
+---
+title: Deploy to DigitalOcean
+description: Defang allows you deploy to your own DigitalOcean account.
+sidebar_position: 11
+---
+
+# Deploying to DigitalOcean With Defang
+
+This tutorial will show you how to deploy your services to your own DigitalOcean account using Defang.
+
+## Pre-requisites
+* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
+* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+* [A Defang Account](/docs/getting-started/authenticating)
+* [The Defang CLI](/docs/getting-started/installing)
+* [DigitalOcean Account Credentials](/docs/providers/digitalocean#getting-started)
+* [DigitalOcean Spaces Access Keys](/docs/providers/digitalocean#getting-started)
+
+## Step 1 - Navigate to your project directory
+
+Head to the folder where your project is located.
+```bash
+$ cd path/to/your/project
+```
+
+## Step 2 - Authenticate Defang to use your DigitalOcean Account
+
+Defang will look for your DigitalOcean credentials in your shell environment and expect to find the following credentials:
+* the `DIGITALOCEAN_TOKEN` environment variable
+* and, the `SPACES_ACCESS_KEY_ID` and `SPACES_SECRET_ACCESS_KEY` environment variables
+
+## Step 3 - Deploy
+
+Invoke the `defang up` CLI command with the `--provider=do` flag or set the `DEFANG_PROVIDER=do` environment variable.
+
+For example:
+
+```bash
+$ defang up --provider=do
+```
+
+## Step 4 - Inspect your deployment
+
+Defang will provision resources in your DigitalOcean account and deploy your services. You can inspect the resources created in your DigitalOcean dashboard.
+
+***
+
+For a deeper discussion of the Defang DigitalOcean Architecture, see our [DigitalOcean Provider docs](/docs/providers/digitalocean).

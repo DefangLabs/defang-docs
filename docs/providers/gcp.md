@@ -7,5 +7,5 @@ sidebar_position: 3000
 # GCP
 
 :::info
-We will be working on GCP support in the future. If you are interested in GCP support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/58).
+GCP support is coming soon to Defang! 
 :::

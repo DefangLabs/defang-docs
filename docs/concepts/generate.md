@@ -6,17 +6,17 @@ sidebar_position: 100
 
 # Generate
 
-Defang includes an AI-driven assistant that translates natural language prompts to an outline for your project that you can then refine. The AI assistant is available through the [Defang CLI](../getting-started/installing.md).
+Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](../getting-started/installing.md).
 
 :::info
-The AI assistant is currently in preview and only supports a limited set of prompts, varying in complexity. We plan to expand the capabilities of the AI assistant in the future.
+The AI agent is currently in preview and only supports a limited set of prompts, varying in complexity. We plan to expand the capabilities of the AI agent in the future.
 :::
 
-We are working on expanding the range of supported prompts and improving the accuracy of the AI assistant. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
+We are working on expanding the range of supported prompts and improving the accuracy of the AI agent. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
 
 ## Example Prompts
 
-Here are some example prompts that the AI assistant can help you with:
+Here are some example prompts that the AI agent can help you with:
 
 ```
 A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: { "status": "OK" }. The /echo endpoint will echo back all request parameters in the response.
