@@ -1,19 +1,21 @@
 ---
-title: Deploy an outline using AI
+title: Generate Project Outlines With AI
 sidebar_position: 50
 ---
 
-# Deploy an Outline of a Project Using AI
+# Generate Project Outlines With AI
 
-Defang supports generating new project outlines using integration with an AI model. Using this feature, you can describe what you would like the service to do and the CLI will then generate a project outline with all the files required to make it work.
+Defang supports generating an outline of a project using an AI agent. 
+With this feature, you can describe what you would like the service to do and the [CLI](/docs/getting-started#install-the-defang-cli) will then [generate](/docs/concepts/generate) a project outline with all the files required to make it deployable with Defang.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/afglsBYieuc?si=GCvHhBu3H9ktMDHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+Let's take a look below on how to use Defang's AI agent to [generate](/docs/concepts/generate) an outline, and then deploy that project to the cloud using Defang. 
 
-In this tutorial we'll use the following prompt:
+In this tutorial we'll use the following prompt to describe the service:
 
-A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: `{ "status": "OK" }`. The /echo endpoint will echo back all request parameters in the response.
+"A basic service with 2 REST endpoints. The default endpoint will be for health check and should return a JSON object like this: `{ "status": "OK" }`. The /echo endpoint will echo back all request parameters in the response."
 
-## Step 1 - Use the CLI generate command
+## Step 1 - Use the `defang generate` command in the CLI 
 ```text
 defang generate
 
@@ -32,7 +34,7 @@ A basic service with 2 REST endpoints. The default endpoint will be for health c
 project1
 ```
 
-This will generate the different files required to start your project based on your prompt and the language selected.
+This will [generate](/docs/concepts/generate) the different files required to start your project based on your prompt and the language selected.
 
 ## Step 2 - Review the Code
 
