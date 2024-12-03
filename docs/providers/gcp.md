@@ -32,7 +32,7 @@ The Defang CLI will automatically check if they are set before running. Once you
 ```bash
 $ defang up --provider=gcp
 # or
-$ export DEFANG_PROVIDER=gcp
+$ DEFANG_PROVIDER=gcp defang up
 ```
 
 ## Location
