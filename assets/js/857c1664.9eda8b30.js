@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[6964],{9091:s=>{s.exports=JSON.parse('{"label":"BYOC","permalink":"/blog/tags/byoc","allTagsPath":"/blog/tags","count":12,"unlisted":false}')}}]);
