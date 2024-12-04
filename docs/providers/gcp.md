@@ -57,7 +57,7 @@ The GCP provider does not currently support storing sensitive config values.
 
 ### Future Improvements
 
-THe following features are in active development for GCP:
+The following features are in active development for GCP:
 - [Configuration and management of secrets](/docs/concepts//configuration.md)
 - [Networking and Load Balancing](/docs/concepts//networking.mdx)
 - [Custom Domains](/docs/concepts//domains.mdx)
