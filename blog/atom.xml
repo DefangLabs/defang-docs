@@ -9,13 +9,13 @@
     <icon>https://docs.defang.io/https://www.google.com/s2/favicons?domain=defang.io</icon>
     <entry>
         <title type="html"><![CDATA[🚀 Defang V1: Launch Week is Here!]]></title>
-        <id>https://docs.defang.io/blog/2024-12-04-product-update</id>
-        <link href="https://docs.defang.io/blog/2024-12-04-product-update"/>
+        <id>https://docs.defang.io/blog/2024-12-04-launch-week</id>
+        <link href="https://docs.defang.io/blog/2024-12-04-launch-week"/>
         <updated>2024-12-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Defang Compose Update]]></summary>
         <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/launch-week-59757562719c8b5daadc52cf8280bf66.png" width="1200" height="630" class="img_ev3q"></p>
 <p>At <strong>Defang</strong>, we’re enabling developers go from <strong>idea to code to deployment 10x faster</strong>.  We’re thrilled to announce that <strong>Defang V1</strong> is officially launching during our action-packed <strong>Launch Week</strong>, running from <strong>December 4–10, 2024</strong>! This marks a major milestone as we officially release the tools and features developers have been waiting for.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-new-in-v1"><strong>What’s New in V1?</strong><a href="https://docs.defang.io/blog/2024-12-04-product-update#whats-new-in-v1" class="hash-link" aria-label="Direct link to whats-new-in-v1" title="Direct link to whats-new-in-v1">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-new-in-v1"><strong>What’s New in V1?</strong><a href="https://docs.defang.io/blog/2024-12-04-launch-week#whats-new-in-v1" class="hash-link" aria-label="Direct link to whats-new-in-v1" title="Direct link to whats-new-in-v1">​</a></h2>
 <p><strong>Defang is a powerful tool that lets you easily develop, deploy, and debug production-ready cloud applications</strong>. With Defang V1, we continue to deliver on our vision to make <strong>cloud development effortlessly simple and portable, with the ability to develop once and deploy anywhere</strong>.&nbsp;Here’s what’s included in this milestone release:</p>
 <ul>
 <li><strong>Production-Ready Support for AWS</strong></li>
@@ -31,7 +31,7 @@
 <p>Developers using <a href="https://docs.defang.io/docs/providers/digitalocean" target="_blank" rel="noopener noreferrer">DigitalOcean</a> can explore our Preview features, with further enhancements and production support coming soon.</p>
 <p><strong>Defang Product Tiers and Introductory Pricing 🛠️</strong></p>
 <p>As we move into V1, we are also rolling out our differentiated product tiers, along with our special introductory pricing. Fear not, we will always have a free tier for hobbyists - conveniently called the Hobby tier. We now also provide Personal, Pro, and Enterprise tiers for customers with more advanced requirements. Check out what is included in each <a href="https://defang.io/pricing/" target="_blank" rel="noopener noreferrer">here</a>. And as always, the Defang CLI is and remains <a href="https://github.com/DefangLabs" target="_blank" rel="noopener noreferrer">open-source</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch-week-activities"><strong>Launch Week Activities</strong><a href="https://docs.defang.io/blog/2024-12-04-product-update#launch-week-activities" class="hash-link" aria-label="Direct link to launch-week-activities" title="Direct link to launch-week-activities">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch-week-activities"><strong>Launch Week Activities</strong><a href="https://docs.defang.io/blog/2024-12-04-launch-week#launch-week-activities" class="hash-link" aria-label="Direct link to launch-week-activities" title="Direct link to launch-week-activities">​</a></h2>
 <p>We’ve lined up an exciting week of activities to showcase the power of <strong>Defang</strong> and bring together our growing community:</p>
 <ul>
 <li><strong>December 4: Vancouver CDW x AWS re<!-- -->:Invent<!-- --> WatchParty</strong></li>
@@ -54,7 +54,7 @@
 <li><strong>December 10: Product Hunt Launch</strong></li>
 </ul>
 <p>Be part of our Product Hunt debut and show your support as we reach the broader tech community.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="join-the-celebration-"><strong>Join the Celebration 🎉</strong><a href="https://docs.defang.io/blog/2024-12-04-product-update#join-the-celebration-" class="hash-link" aria-label="Direct link to join-the-celebration-" title="Direct link to join-the-celebration-">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="join-the-celebration-"><strong>Join the Celebration 🎉</strong><a href="https://docs.defang.io/blog/2024-12-04-launch-week#join-the-celebration-" class="hash-link" aria-label="Direct link to join-the-celebration-" title="Direct link to join-the-celebration-">​</a></h2>
 <p>This launch week is not just about us. It is about <strong>you</strong>, our community. Here is how you can get involved:</p>
 <ol>
 <li>
@@ -74,9 +74,11 @@
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
-        <category label="Postgres" term="Postgres"/>
-        <category label="DigitalOcean" term="DigitalOcean"/>
+        <category label="V1" term="V1"/>
+        <category label="Launch Week" term="Launch Week"/>
+        <category label="GCP" term="GCP"/>
         <category label="AWS" term="AWS"/>
+        <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
         <category label="Debugging" term="Debugging"/>
