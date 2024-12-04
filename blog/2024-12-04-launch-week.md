@@ -17,6 +17,7 @@ tags:
     Defang Compose Update,
   ]
 author: Defang Team
+image: https://docs.defang.io/img/november-update/launch-week.png
 ---
 import { Button } from '@mui/material';
 
