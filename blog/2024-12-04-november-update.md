@@ -1,14 +1,16 @@
 ---
-slug: 2024-12-04-product-update
+slug: 2024-12-04-launch-week
 title: "🚀 Defang V1: Launch Week is Here!"
 tags:
   [
     Cloud,
     NoDevOps,
     BYOC,
-    Postgres,
-    DigitalOcean,
+    V1,
+    Launch Week,
+    GCP,
     AWS,
+    DigitalOcean,
     CLI,
     AI,
     Debugging,
