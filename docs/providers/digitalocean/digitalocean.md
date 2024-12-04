@@ -42,7 +42,7 @@ The Defang CLI will automatically check if these envinonment variables are set b
 Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider.
 
 ```bash
-$ defang up --provider=digitalocean
+$ defang compose up --provider=digitalocean
 # or
 $ export DEFANG_PROVIDER=digitalocean
 ```

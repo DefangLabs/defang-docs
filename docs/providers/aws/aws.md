@@ -19,7 +19,7 @@ If you have the AWS CLI installed, you should be able to successfully run `aws s
 Use the `--provider=aws` flag to tell the Defang CLI to use the AWS Provider or set the `DEFANG_PROVIDER` environment variable to `aws`.
 
 ```bash
-$ defang up --provider=aws
+$ defang compose up --provider=aws
 # or
 $ export DEFANG_PROVIDER=aws
 ```

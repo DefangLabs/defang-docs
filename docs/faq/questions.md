@@ -33,15 +33,15 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I run production apps with Defang?
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](../concepts/defang-byoc.md).
+- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](../concepts/defang-byoc.md).
 
 ### Does Defang support blue/green deployments?
 
-- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `production` deployment mode. `defang up --mode=production`.
+- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `production` deployment mode. `defang compose up --mode=production`.
 
 ### Does Defang support rolling deployments?
 
-- Yes! Defang supports rolling updates with the `production` deployment mode. `defang up --mode=production`.
+- Yes! Defang supports rolling updates with the `production` deployment mode. `defang compose up --mode=production`.
 
 ### Can I cancel a deployment once it has started?
 
@@ -65,7 +65,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 - No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](../category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
 
 ### What is the difference between Defang and platforms such as Vercel, fly.io, and Railway?
-- Defang is a tool that helps you get your application deployed to a [cloud provider](../category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](../concepts/defang-playground), but it is meant to be used as a testing environment only. 
+- Defang is a tool that helps you get your application deployed to a [cloud provider](../category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](../concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and tools such as SST?
 - Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](../category/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
@@ -83,4 +83,3 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 ### I'm getting a warning/error. What does it mean?
 
 - Please see the [Common Error Messages](./warnings-errors.md) page.
-
