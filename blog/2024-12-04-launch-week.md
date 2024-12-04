@@ -27,7 +27,7 @@ import { Button } from '@mui/material';
 
 At **Defang**, we’re enabling developers go from **idea to code to deployment 10x faster**.  We’re thrilled to announce that **Defang V1** is officially launching during our action-packed **Launch Week**, running from **December 4–10, 2024**! This marks a major milestone as we officially release the tools and features developers have been waiting for.
 
-## **What’s New in V1?**
+## **What’s New in Defang CLI V1?**
 
 **Defang is a powerful tool that lets you easily develop, deploy, and debug production-ready cloud applications**. With Defang V1, we continue to deliver on our vision to make **cloud development effortlessly simple and portable, with the ability to develop once and deploy anywhere**. Here’s what’s included in this milestone release:
 
