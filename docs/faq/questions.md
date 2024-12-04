@@ -11,11 +11,11 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Which cloud/region is the app being deployed to?
 
-- In the [Defang Playground](../concepts/defang-playground.md), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](../concepts/defang-byoc.md) model, the region is determined by your [Defang BYOC Provider](/docs/category/providers) settings.
+- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your [Defang BYOC Provider](/docs/category/providers) settings.
 
 ### Can I bring my own AWS or other cloud account?
 
-- Yes! Defang makes it easy to deploy your application to your own cloud account. Please check out the [Defang BYOC](../concepts/defang-byoc.md) documentation for more information.
+- Yes! Defang makes it easy to deploy your application to your own cloud account. Please check out the [Defang BYOC](/docs/concepts/defang-byoc) documentation for more information.
 
 ### On AWS, can I deploy to services such as EC2, EKS, or Lambda?
 
@@ -23,17 +23,17 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I access AWS storage services such as S3 or database services such as RDS? How?
 
-- Yes! You can access AWS services in the AWS Dashboard as you normally would when you are [deploying to your AWS account](../providers/aws) using Defang. In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](../concepts/defang-byoc.md).
+- Yes! You can access AWS services in the AWS Dashboard as you normally would when you are [deploying to your AWS account](/docs/providers/aws) using Defang. In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](/docs/concepts/defang-byoc).
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](../concepts/defang-byoc#aws) for production and [DigitalOcean](../concepts/defang-byoc#digitalocean) in preview, we plan to support other clouds in future releases, such as [GCP](../providers/gcp.md) and [Azure](../providers/azure.md).
+- While we currently support [AWS](/docs/providers/aws) for production and [DigitalOcean](/docs/providers/digitalocean) in preview, we plan to support other clouds in future releases, such as [GCP](/docs/providers/gcp) and [Azure](/docs/providers/azure).
 
 ## Deployment Process
 
 ### Can I run production apps with Defang?
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](../concepts/defang-byoc.md).
+- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc).
 
 ### Does Defang support blue/green deployments?
 
@@ -62,13 +62,13 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 ## Feature Comparisons
 
 ### Is Defang a run-time platform?
-- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](../category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
+- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
 
 ### What is the difference between Defang and platforms such as Vercel, fly.io, and Railway?
-- Defang is a tool that helps you get your application deployed to a [cloud provider](../category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](../concepts/defang-playground), but it is meant to be used as a testing environment only.
+- Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and tools such as SST?
-- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](../category/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
+- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/category/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
 
 ## Troubleshooting
 
@@ -82,4 +82,4 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### I'm getting a warning/error. What does it mean?
 
-- Please see the [Common Error Messages](./warnings-errors.md) page.
+- Please see the [Common Error Messages](/docs/faq/warnings-errors) page.
