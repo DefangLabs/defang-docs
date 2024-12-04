@@ -33,15 +33,15 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I run production apps with Defang?
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc).
+- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information on that.
 
 ### Does Defang support blue/green deployments?
 
-- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `production` deployment mode. `defang compose up --mode=production`.
+- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Does Defang support rolling deployments?
 
-- Yes! Defang supports rolling updates with the `production` deployment mode. `defang compose up --mode=production`.
+- Yes! Defang supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I cancel a deployment once it has started?
 
@@ -49,7 +49,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost.
+- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I deploy multiple services at once?
 
@@ -57,12 +57,12 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I deploy a service that depends on another service?
 
-- Defang does not currently support service dependencies. All services will be deployed simultaneously. Defang will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode.
+- Defang does not currently support service dependencies. All services will be deployed simultaneously. Defang will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ## Feature Comparisons
 
 ### Is Defang a run-time platform?
-- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
+- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and platforms such as Vercel, fly.io, and Railway?
 - Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
