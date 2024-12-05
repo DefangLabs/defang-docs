@@ -32,7 +32,7 @@ cache:
 
 ## Final Snapshots
 
-When a project is deployed to a production environment any managed redis instances are automatically
+When a project is deployed with the `production` [deployment mode](/docs/concepts/deployment-modes) any managed redis instances are automatically
 configured to create a snapshot of the datastore before deletion. The snapshot will be named with the following format
 
 `
