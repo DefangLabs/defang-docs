@@ -75,9 +75,10 @@ const config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/DefangLabs/',
-          label: 'GitHub',
+          href: '/docs/getting-started',
+          label: 'Get Started',
           position: 'right',
+          className: "navbar__item-get_started"
         },
       ],
     },
