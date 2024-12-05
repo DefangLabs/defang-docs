@@ -16,7 +16,7 @@ Eventually, billing and payment information will be associated with your account
 
 ## Creating an Account
 
-To create an account, simply login to Defang and accept the [terms of service](https://defang.io/terms-service.html) using the [CLI](/docs/concepts/authentication.md).
+To create an account, login to Defang and accept the [terms of service](https://defang.io/terms-service.html) using the [CLI](/docs/concepts/authentication.md).
 
 At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other authentication providers in the future.
 
