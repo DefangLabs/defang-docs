@@ -4,7 +4,7 @@ description: Defang allows you to easily create and manage full, scalable applic
 sidebar_position: 000
 ---
 
-# AWS
+# Amazon Web Services (AWS)
 
 Why should you use Defang with AWS? Defang allows you to easily create and manage full, scalable applications with AWS. Defang aims to make it easier to deploy your services to the cloud. Don't waste your time learning the ins and outs of AWS, deciding which of the 200+ services to use, and then writing the infrastructure code to deploy your services, and making sure they are properly secured. Defang does all of that for you.
 
