@@ -27,7 +27,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp) and [DigitalOcean](/docs/providers/digitalocean) are in preview with [Defang V1](blog/2024-12-04-launch-week). We plan to support other clouds, such as [Azure](/docs/providers/azure), in future releases.
+- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp) and [DigitalOcean](/docs/providers/digitalocean) are in preview with [Defang V1](/blog/2024-12-04-launch-week). We plan to support other clouds, such as [Azure](/docs/providers/azure), in future releases.
 
 ## Deployment Process
 
