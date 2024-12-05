@@ -4,7 +4,7 @@ description: Defang provides three deployment modes which allow you to balance c
 sidebar_position: 501
 ---
 
-# Defang Deployment Modes
+# Deployment Modes
 
 Defang provides three deployment modes: development, staging, and production. These modes allow you to balance cost and resiliency according to your needs.
 
