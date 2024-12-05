@@ -72,7 +72,17 @@ For a smoother experience with Defang, we recommend using Postgres 14 for your c
 
 ```
 
-<!--
+## Final Snapshots
+
+When a project is deployed to a production environment any managed postgres instances are automatically configured to create a snapshot of the database before deletion. The snapshot will be named with the following format
+
+`
+<project-name>-<service>-postgres-<id>-final-snapshot
+`
+
+The AWS Console can be used to restore a snapshop into a new instance of postgres.
+
+<!-- 
 ### Major Version Updating of Engine
 
 To update the database engine you can update the image to a later version in your compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
