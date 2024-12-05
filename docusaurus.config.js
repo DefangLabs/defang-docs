@@ -78,7 +78,7 @@ const config = {
           href: '/docs/getting-started',
           label: 'Get Started',
           position: 'right',
-          className: "navbar__item-get_started"
+          className: 'navbar__item-get_started'
         },
       ],
     },
