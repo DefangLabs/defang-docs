@@ -21,7 +21,7 @@
 <ul>
 <li><strong>Production-Ready Support for AWS</strong></li>
 </ul>
-<p>Seamlessly deploy and scale with confidence on <a href="https://docs.defang.io/docs/providers/aws" target="_blank" rel="noopener noreferrer">AWS</a>. Defang is now <a href="https://aws.amazon.com/premiumsupport/business-support-well-architected/" target="_blank" rel="noopener noreferrer">WAFR</a>-compliant, assuring that your deployments confirm to all the best-practices for AWS deployments. Defang is now officially part of the <a href="https://aws.amazon.com/partners/" target="_blank" rel="noopener noreferrer">AWS Partner Network</a>.</p>
+<p>Seamlessly deploy and scale with confidence on <a href="https://docs.defang.io/docs/providers/aws" target="_blank" rel="noopener noreferrer">AWS</a>. Defang is now <a href="https://aws.amazon.com/premiumsupport/business-support-well-architected/" target="_blank" rel="noopener noreferrer">WAFR</a>-compliant, assuring that your deployments conform to all the best-practices for AWS deployments. Defang is now officially part of the <a href="https://aws.amazon.com/partners/" target="_blank" rel="noopener noreferrer">AWS Partner Network</a>.</p>
 <ul>
 <li><strong>New - Google Cloud Platform (<a href="https://docs.defang.io/docs/providers/gcp" target="_blank" rel="noopener noreferrer">GCP</a>) in Preview</strong></li>
 </ul>
@@ -35,7 +35,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch-week-activities"><strong>Launch Week Activities</strong><a href="https://docs.defang.io/blog/2024-12-04-launch-week#launch-week-activities" class="hash-link" aria-label="Direct link to launch-week-activities" title="Direct link to launch-week-activities">​</a></h2>
 <p>We’ve lined up an exciting week of activities to showcase the power of <strong>Defang</strong> and bring together our growing community:</p>
 <ul>
-<li><strong>December 4: Vancouver CDW x AWS re<!-- -->:Invent<!-- --> WatchParty</strong></li>
+<li><strong>December 4: Vancouver CDW x AWS re<!-- -->:Invent<!-- --> Watch Party</strong></li>
 </ul>
 <p>Join us at the Vancouver <a href="https://lu.ma/1r0zsw76" target="_blank" rel="noopener noreferrer">CDW x AWS re<!-- -->:Invent<!-- --> Watch Party</a>, where we will have a booth showcasing Defang’s capabilities and AWS integration. Stop by to learn more about Defang and see a live demo from the Defang dev team.</p>
 <ul>
