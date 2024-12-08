@@ -5,25 +5,33 @@ sidebar_position: 400
 
 # Deploy Using Pulumi
 
+:::warning
+At the time of writing, the Defang Pulumi Provider only works with [Defang Playground](../concepts/defang-playground.md). We are working on [BYOC](../concepts/defang-byoc.md) support.
+:::
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A4uiP5FIgg0?si=BHZLOxN4noJ56f7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Installing Dependencies
+This tutorial will show you how to deploy minio with Pulumi using the Defang Provider.
 
-Make sure to install the [Pulumi CLI](https://www.pulumi.com/docs/install/) and the [Defang CLI](../getting-started#install-the-defang-cli.md).
+## Pre-requisites
 
-Make sure you are logged into the [Defang CLI](/docs/concepts/authentication.md). Don't worry about the Pulumi CLI for now.
+* [A Defang Account](/docs/concepts/authentication)
+* [Pulumi CLI](https://www.pulumi.com/docs/install)
+* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+* [The Defang Pulumi Provider](/docs/concepts/pulumi#install-the-defang-pulumi-provider)
 
-## Project Directory Setup
+## Authenticate With Defang
 
-Create a new directory for your project and navigate to it.
+Make sure you are logged into  [Defang CLI](/docs/concepts/authentication.md). Don't worry about the Pulumi CLI for now.
 
-```bash
-mkdir project && cd project
-```
+## Configure the Pulumi Backend
 
-If you're familiar with Pulumi and/or are already logged in with the Pulumi CLI, you can skip the next step.
+Navigate to your project directly. (If you don't have a project yet, try one of our [samples](https://defang.io/#samples))
 
-If you are new to Pulumi and/or don't have an account, you can "login" to the filesystem by running the following command:
+
+Pulumi uses the `pulumi login` command to select a backend. In this tutorial, we will use the Local Filesystem backend for simplicity. When you are ready to deploy to production, you will probably want to look into other [Pulumi backend options](https://www.pulumi.com/docs/iac/concepts/state-and-backends).
+
+Run the following command to "login" to the filesystem backend in the local directory.
 
 ```bash
 pulumi login file://./
@@ -31,7 +39,7 @@ pulumi login file://./
 
 This will make the Pulumi CLI store the state of your infrastructure in the current directory.
 
-## Initialize the Project
+## Initialize the Pulumi Project
 
 Run the following command to set your encryption passphrase for this terminal session:
 
@@ -53,17 +61,9 @@ Run the following command to add to the `.gitignore` file:
 echo ".pulumi" >> .gitignore
 ```
 
-## Install the Defang Provider
+## Write Your Pulumi Code
 
-Run the following command to install the Defang provider:
-
-```bash
-npm install @defang-io/pulumi-defang
-```
-
-## Write the Pulumi Code
-
-Your `index.ts` file should look like this:
+Create an `index.ts` file to contain your Pulumi code. This code will describe our services, our service's dependencies, and our service's configuration.
 
 ```typescript
 import * as defang from '@defang-io/pulumi-defang/lib';
@@ -109,11 +109,7 @@ export const service = new defang.DefangService('minio', {
 
 ## Deploy to Defang
 
-:::warning
-At the time of writing, the Defang Pulumi Provider only works with [Defang Playground](../concepts/defang-playground.md). We are working on [BYOC](../concepts/defang-byoc.md) support.
-:::
-
-Run the following command to deploy your service:
+Now we're ready to deploy to Defang with Pulumi! Run the following command to deploy your service:
 
 ```bash
 pulumi up --stack=dev
@@ -144,3 +140,7 @@ To clean up the deployment, run the following command:
 ```bash
 pulumi destroy --stack=dev
 ```
+
+## More Info
+
+See the [Pulumi concept docs](/docs/concepts/pulumi) for more information about the Defang Pulumi Provider.
