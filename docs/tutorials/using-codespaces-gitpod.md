@@ -5,9 +5,9 @@ sidebar_position: 700
 
 # Using Codespaces and GitPod
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/71pmCfLdxTg?si=Q9YIESYEUNTBFBIy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 This tutorial will guide you to set up Defang in both Codespaces and Gitpod.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/71pmCfLdxTg?si=Q9YIESYEUNTBFBIy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Getting Started with Github Codespaces and Defang
 
@@ -48,7 +48,7 @@ Start by cloning the [Defang Gitpod-Workspace](https://github.com/DefangLabs/git
 
 ### Step 2 - Initialize GitPod Workspace
 Navigate `https://gitpod.io/#<your-repo-url>` to create your new workspace.
-In the repository, we have a yaml file indicating that we are using a pre-built dockerfile which installs Defang CLI for you.
+In the repository, we have a yaml file indicating that we are using a pre-built Dockerfile which installs Defang CLI for you.
 
 
 ### Step 3 - Lauch VS Code from GitPod
