@@ -52,6 +52,10 @@ To deploy your services, the Defang CLI packages your code and uploads it to an 
 
 The provider runs your workloads using ECS using Fargate. It provisions a VPC with public and private subnets, and deploys your services to the private subnets. It then provisions an Application Load Balancer (ALB) and routes traffic to your services.
 
+### Service Discovery
+
+Defang uses a Route53 private hosted zone for service discovery. Each (private) services in the Compose file will get a CNAME or A record which resolves to the services AWS domain name or IP, respectively. To update the A records for the dynamically assigned IP addresses, Defang will add a [Route53 sidecar](https://github.com/DefangLabs/route53-sidecar) alongside your container.
+
 ## Managed Storage
 
 Defang can help you provision [managed storage](/docs/concepts/managed-storage/managed-storage.md) services. The following managed storage services are supported on AWS:
