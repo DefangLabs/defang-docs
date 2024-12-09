@@ -54,7 +54,7 @@ The provider runs your workloads using ECS using Fargate. It provisions a VPC wi
 
 ### Service Discovery
 
-Defang uses a Route53 private hosted zone for service discovery. Each (private) services in the Compose file will get a CNAME or A record which resolves to the services AWS domain name or IP, respectively. To update the A records for the dynamically assigned IP addresses, Defang will add a [Route53 sidecar](https://github.com/DefangLabs/route53-sidecar) alongside your container.
+Defang uses a Route53 private hosted zone for service discovery. Each (private) service in the Compose file will get a CNAME or A record which resolves to the service's AWS domain name or IP, respectively. To update the A records for the dynamically assigned IP addresses, Defang will add a [Route53 sidecar](https://github.com/DefangLabs/route53-sidecar) alongside your container.
 
 ## Managed Storage
 
