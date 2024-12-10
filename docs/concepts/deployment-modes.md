@@ -17,7 +17,7 @@ Defang provides three deployment modes: development, staging, and production. Th
 | Feature | Development | Staging | Production |
 |-|-|-|-|
 | Build Resources | Builds will be run with 2x vCPUs | Builds will be run with 2x vCPUs | Builds will be run with 4x vCPUs |
-| Databases | Defang will provision resources optimized for burstable memory | | Defang will provision resources optimized for production |
+| Databases | Defang will provision resources optimized for burstable memory | | Defang will provision resources optimized for production. On deprovisioning a managed redis or postgres store a final snapshot of the store is created. AWS Console may be used to restore the data to a new instance of the data store. |
 | Static Resources | | | Defang will provision a CDN |
 | Deployment | Previous deployments will be spun down before new deployments are spun up. | | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least the original number of replicas. |
 | Logging | Logs retained for 1 day to save costs. | | Logs retained for 30 days for compliance. |
