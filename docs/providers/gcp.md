@@ -7,7 +7,7 @@ sidebar_position: 3000
 # Google Cloud Platform (GCP)
 
 :::info
-The Defang GCP provider is available for Public Preview as of December 2024.
+The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 
 Defang enables you to effortlessly develop and deploy full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
@@ -20,7 +20,7 @@ After signing in to your GCP account, select an existing project or [create a ne
 export GCP_PROJECT_ID=<your-project-id>
 ```
 
-Next step is to [authenticate your local environment with GCP](https://cloud.google.com/docs/authentication). Our preferred method is to setup [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc) with the Google Cloud CLI. Once the [Google Cloud CLI is installed](https://cloud.google.com/sdk/docs/install), run the following command to authenticate:
+Next step is to [authenticate your local environment with GCP](https://cloud.google.com/docs/authentication). Our preferred method is to set up [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc) with the Google Cloud CLI. Once the [Google Cloud CLI is installed](https://cloud.google.com/sdk/docs/install), run the following command to authenticate:
 
 ```bash
 gcloud init

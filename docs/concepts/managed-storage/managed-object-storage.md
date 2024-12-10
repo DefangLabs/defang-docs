@@ -16,6 +16,7 @@ Managed Object Storage, like AWS S3, is a service that allows you to store and r
 
 | Provider | Managed Object Storage |
 | --- | --- |
-| [Playground](/docs/providers/playground.md) | ❌ |
-| [AWS](/docs/providers/aws/aws.md) | ❌ |
-| [DigitalOcean](/docs/providers/digitalocean/digitalocean.md) | ❌ |
+| [Playground](/docs/providers/playground#managed-services) | ❌ |
+| [AWS](/docs/providers/aws#managed-storage) | ❌ |
+| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
+| [GCP](/docs/providers/gcp#future-improvements) | ❌ |
