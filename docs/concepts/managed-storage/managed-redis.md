@@ -12,9 +12,10 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 
 | Provider | Managed Redis |
 | --- | --- |
-| [Playground](/docs/providers/playground.md#managed-redis) | ❌ |
-| [AWS](/docs/providers/aws/aws.md#managed-redis) | ✅ |
-| [DigitalOcean](/docs/providers/digitalocean/digitalocean.md) | ❌ |
+| [Playground](/docs/providers/playground#managed-services) | ❌ |
+| [AWS](/docs/providers/aws#managed-storage) | ✅ |
+| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
+| [GCP](/docs/providers/gcp#future-improvements) | ❌ |
 
 ## How to use Managed Redis
 
