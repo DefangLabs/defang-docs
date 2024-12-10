@@ -85,7 +85,7 @@ The AWS Console can be used to restore a snapshop into a new instance of postgre
 <!-- 
 ### Major Version Updating of Engine
 
-To update the database engine you can update the image to a later version in your compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
+To update the database engine you can update the image to a later version in your Compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
 
 Please note the upgrading will occur immediately and may result in the database being unavailable for some time.
 

@@ -10,7 +10,7 @@ To update your app (for example, updating the base image of your container, or m
 
 ## Deploying New Services or Removing Existing Services
 
-If you are using [compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
+If you are using [Compose files](../concepts/compose.md) to define your services, you can add/remove services, make changes to code, etc. When you run `defang compose up`, the update will be diffed against the current state and any necessary changes will be applied to make the current state match the desired state.
 
 ## Deployment Modes
 
