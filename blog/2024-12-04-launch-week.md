@@ -33,7 +33,7 @@ At **Defang**, we’re enabling developers go from **idea to code to deployment 
 
 - **Production-Ready Support for AWS**
 
-Seamlessly deploy and scale with confidence on [AWS](https://docs.defang.io/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments confirm to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/). 
+Seamlessly deploy and scale with confidence on [AWS](https://docs.defang.io/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments conform to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/). 
 
 - **New - Google Cloud Platform ([GCP](https://docs.defang.io/docs/providers/gcp)) in Preview**
 
@@ -51,7 +51,7 @@ As we move into V1, we are also rolling out our differentiated product tiers, al
 
 We’ve lined up an exciting week of activities to showcase the power of **Defang** and bring together our growing community:
 
-- **December 4: Vancouver CDW x AWS re:Invent WatchParty**
+- **December 4: Vancouver CDW x AWS re:Invent Watch Party**
 
 Join us at the Vancouver [CDW x AWS re:Invent Watch Party](https://lu.ma/1r0zsw76), where we will have a booth showcasing Defang’s capabilities and AWS integration. Stop by to learn more about Defang and see a live demo from the Defang dev team. 
 

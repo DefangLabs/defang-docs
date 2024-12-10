@@ -27,12 +27,12 @@ gcloud init
 gcloud auth application-default login
 ```
 
-The Defang CLI will automatically check if `GCP_PROJECT_ID` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` to your command to tell the Defang CLI to use the GCP provider.
+The Defang CLI will automatically check if `GCP_PROJECT_ID` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` flag to your command to tell the Defang CLI to use the GCP provider, or set the `DEFANG_PROVIDER` environment variable to `gcp`.
 
 ```bash
-$ defang up --provider=gcp
+$ defang compose up --provider=gcp
 # or
-$ DEFANG_PROVIDER=gcp defang up
+$ export DEFANG_PROVIDER=gcp
 ```
 
 ## Location

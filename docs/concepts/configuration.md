@@ -14,7 +14,7 @@ You can find a sample of how to set environment variables with Pulumi [here](htt
 
 # Sensitive Config aka Secrets
 
-The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials. To do so just run:
+The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials. To do so, run:
 
 ```bash
 # Set a configuration value called API_KEY
