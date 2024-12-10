@@ -89,8 +89,10 @@ To go further, consider looking at implementing MUI custom themes.
 .navbar__item-get_started {
   color: white;
   border-radius: 1rem;
-  background-size: 200% 200%;
-  background: linear-gradient(311deg,rgba(63,178,175,.67),rgba(80,54,163,.67) 53%);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(131deg,rgba(80,54,163,.67),rgba(63,178,175,.67) 50%, rgba(80,54,163,.67));
   margin-right: 1rem;
   display: inline-block;
   font-size: smaller;
@@ -98,5 +100,16 @@ To go further, consider looking at implementing MUI custom themes.
 
 .navbar__item-get_started:hover {
   color: white;
-  background: linear-gradient(311deg,rgba(63,178,175,.67),rgba(80,54,163,.67) 53%);
+  background-position: 200% 0;
+  animation: shimmer 0.25s ease-in forwards;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
 }

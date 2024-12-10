@@ -22,7 +22,7 @@ To use managed Postgres, in your `compose.yaml` file, use the `x-defang-postgres
 
 ### Required Configuration
 
-When using managed Postgres, you **must** set a password for the database using `defang config set POSTGRES_PASSWORD`. If you do not provide the password, the deployment will fail. 
+When using managed Postgres, you **must** set a password for the database using `defang config set POSTGRES_PASSWORD`. If you do not provide the password, the deployment will fail.
 
 - `POSTGRES_PASSWORD`: You can can assign the password in the service's environment variables. To learn more about how this works, read about [configuration](../configuration.md).
 
@@ -38,7 +38,7 @@ You can also set the following optional environment variables to configure the m
 You can connect to the managed Postgres instance using the name of your service as the hostname, `POSTGRES_USER`, `POSTGRES_DB`, and `POSTGRES_PASSWORD` environment variables.
 
 ### Example
-:::info 
+:::info
 For a smoother experience with Defang, we recommend using Postgres 14 for your container images. This version provides easier access and improved usability.
 :::
 
@@ -85,7 +85,7 @@ The AWS Console can be used to restore a snapshop into a new instance of postgre
 <!-- 
 ### Major Version Updating of Engine
 
-To update the database engine you can simply update the image to a later version in your Compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
+To update the database engine you can update the image to a later version in your Compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
 
 Please note the upgrading will occur immediately and may result in the database being unavailable for some time.
 

@@ -39,8 +39,7 @@ The Defang CLI will automatically check if these envinonment variables are set b
 
 ### Deploy your project to DigitalOcean
 
-Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider.
-
+Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider or set the `DEFANG_PROVIDER` environment variable to `digitalocean`.
 ```bash
 $ defang compose up --provider=digitalocean
 # or
