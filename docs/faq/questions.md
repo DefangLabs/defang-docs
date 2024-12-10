@@ -11,7 +11,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Which cloud/region is the app being deployed to?
 
-- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your [Defang BYOC Provider](/docs/category/providers) settings.
+- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your Defang BYOC [Provider](/docs/category/providers) settings.
 
 ### Can I bring my own AWS or other cloud account?
 
@@ -33,11 +33,11 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I run production apps with Defang?
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information on that.
+- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Does Defang support blue/green deployments?
 
-- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang does not currently support blue/green deployments, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Does Defang support rolling deployments?
 
