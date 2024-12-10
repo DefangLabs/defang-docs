@@ -5,7 +5,7 @@ sidebar_position: 500
 
 # Deploy a GPU-Powered Application to AWS
 
-This tutorial guides you to create and deploy a GPU-powered application on AWS using Defang and Mistral. We will walk you through the whole deployment process based on this [Deploying Mistral with vLLM](https://github.com/DefangLabs/samples/tree/main/samples/vllm) sample.
+This tutorial guides you to create and deploy a GPU-powered application on AWS using Defang and Mistral. We will walk you through the whole deployment process based on the [Mistral & vLLM](https://github.com/DefangLabs/samples/tree/main/samples/vllm) sample.
 
 :::info
 Note that GPU deployments are not permitted on the Defang Playground. You must [upgrade to a paid account](https://defang.io/pricing/) and [deploy to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).
@@ -31,11 +31,11 @@ This process can take a few days for AWS to approve.
 
 ### HuggingFace Token
 
-This sample requires a HugoingFace token to download the model. You can get a token by signing up at [HuggingFace](https://huggingface.co/join) and then going to [your settings](https://huggingface.co/settings/tokens) to get your token.
+This sample requires a HuggingFace token to download the model. You can get a token by signing up at [HuggingFace](https://huggingface.co/join) and then going to [your settings](https://huggingface.co/settings/tokens) to get your token.
 
 ## Step 1 - Clone the sample project
 
-You'll need to clone [this sample](https://github.com/DefangLabs/samples/tree/main/samples/vllm) to go through this tutorial.
+You'll need to clone the [Mistral & vLLM](https://github.com/DefangLabs/samples/tree/main/samples/vllm) sample to go through this tutorial.
 
 ## Step 2 - Check your [Defang BYOC](../concepts/defang-byoc.md) settings
 
@@ -99,7 +99,7 @@ services:
 
 **Let's break it down.**
 
-We start with the latest vLLM docker image provided by [Mistral AI](https://docs.mistral.ai/self-deployment/vllm/).
+We start with the latest vLLM Docker image provided by [Mistral AI](https://docs.mistral.ai/self-deployment/vllm/).
 
 ```yaml
 mistral:
