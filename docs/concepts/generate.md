@@ -10,7 +10,7 @@ Defang includes an AI-driven agent that translates natural language prompts to a
 
 We are working on expanding the range of supported prompts and improving the accuracy of the AI agent. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
 
-:::tip
+:::info
 This page is about Defang's AI-driven `generate` tool. We also have another AI tool for [debugging](/docs/concepts/debug). Don't get confused between the two!
 :::
 
