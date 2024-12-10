@@ -20,7 +20,7 @@ After signing in to your GCP account, select an existing project or [create a ne
 export GCP_PROJECT_ID=<your-project-id>
 ```
 
-Next step is to [authenticate your local environment with GCP](https://cloud.google.com/docs/authentication). Our preferred method is to setup [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc) with the Google Cloud CLI. Once the [Google Cloud CLI is installed](https://cloud.google.com/sdk/docs/install), run the following command to authenticate:
+Next step is to [authenticate your local environment with GCP](https://cloud.google.com/docs/authentication). Our preferred method is to set up [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc) with the Google Cloud CLI. Once the [Google Cloud CLI is installed](https://cloud.google.com/sdk/docs/install), run the following command to authenticate:
 
 ```bash
 gcloud init

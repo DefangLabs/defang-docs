@@ -45,5 +45,5 @@ An HTTP GET endpoint that returns an HTML with a random meme from the imgflip AP
 **An example of a more complex prompt**
 
 ```
-A service that uses bullmq and redis. The compose file should also include a redis service. The code should setup a queue. It should also expose three endpoints with express: one to add a job to the queue, another to check how many tasks are in the queue, and a last one that runs on / which is just a healthcheck. The code should also include a worker that processes the queue by logging what's in each task. Use environment variables to configure the redis connection. No password.
+A service that uses bullmq and redis. The compose file should also include a redis service. The code should set up a queue. It should also expose three endpoints with express: one to add a job to the queue, another to check how many tasks are in the queue, and a last one that runs on / which is just a healthcheck. The code should also include a worker that processes the queue by logging what's in each task. Use environment variables to configure the redis connection. No password.
 ```
