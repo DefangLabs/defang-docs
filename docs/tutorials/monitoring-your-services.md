@@ -6,6 +6,8 @@ description: How to monitor services deployed with Defang
 
 # Monitoring Your Services
 
+This page will show you how to monitor your service status and logs in Defang.
+
 ## Status
 
 When deploying to Playground, you can monitor your service status from the [Defang Portal](https://portal.defang.dev).
