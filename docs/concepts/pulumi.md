@@ -15,7 +15,7 @@ Pulumi support is currently only available for Defang Playground. We are working
 
 [Pulumi](https://www.pulumi.com) is a modern infrastructure-as-code toolkit that allows developers to use a programming language like Typescript to provision and manage cloud resources.
 
-Defang providers a Pulumi [_Provider_](https://www.pulumi.com/docs/iac/concepts/resources/providers/) written in Typescript which can be used to deploy Defang services alongside other pulumi-managed infrastructure.
+Defang provides a Pulumi [_Provider_](https://www.pulumi.com/docs/iac/concepts/resources/providers/) written in Typescript which can be used to deploy Defang services alongside other Pulumi-managed infrastructure.
 
 ## Install the Defang Pulumi Provider
 
@@ -47,9 +47,9 @@ yarn add @defang-io/pulumi-defang
 
 ## When to Use the Defang Pulumi Provider
 
-The Defang Pulumi Provider supports developer's with more complex requirements than a [Compose File](/docs/concepts/compose) will support.
+The Defang Pulumi Provider is a good option for developers with more complex requirements than those supported by a [Compose File](/docs/concepts/compose).
 
-One reason to use the Defang Pulumi provider is if wish to integrate your services with other cloud resources. This is particularly true if you need to configure your services dynamically as other cloud resources are being provisioned.
+One reason to use the Defang Pulumi provider is if you wish to integrate your services with other cloud resources. This is particularly true if you need to configure your services dynamically as other cloud resources are being provisioned.
 
 Another reason would be if you want to deploy your services alongside cloud-specific resources, like a DynamoDB table, or an S3 bucket.
 
