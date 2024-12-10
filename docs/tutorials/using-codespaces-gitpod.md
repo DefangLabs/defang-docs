@@ -3,7 +3,7 @@ title: Using Codespaces and Gitpod
 sidebar_position: 700
 ---
 
-# Using Codespaces and GitPod
+# Using Codespaces and Gitpod
 
 This tutorial will guide you to set up Defang in both GitHub Codespaces and Gitpod.
 
@@ -40,23 +40,23 @@ Although it may initially refuse to connect on your localhost, going back will s
 Now that you're logged in, you can use Defang commands. You can test that everything is working properly by running `defang ls` to list your running services.
 
 
-## Using GitPod With Defang
+## Using Gitpod With Defang
 
-### Step 1 - Clone the Defang GitPod Workspace Project
+### Step 1 - Clone the Defang Gitpod Workspace Project
 Start by cloning the [Defang Gitpod-Workspace](https://github.com/DefangLabs/gitpod-workspace) repo and pushing it to your own GitHub, GitLab, or BitBucket account. This repository includes a Workspace configuration that pre-installs Defang.
 
 
-### Step 2 - Initialize GitPod Workspace
+### Step 2 - Initialize a Gitpod Workspace
 Navigate `https://gitpod.io/#<your-repo-url>` to create your new workspace.
-In the repository, we have a yaml file indicating that we are using a pre-built Dockerfile which installs Defang CLI for you.
+In the repository, we have a YAML file indicating that we are using a pre-built Dockerfile which installs Defang CLI for you.
 
 
-### Step 3 - Lauch VS Code from GitPod
-Open VS Code from GitPod, you will likely need to have the GitPod VS Code extension installed.
+### Step 3 - Lauch VS Code from Gitpod
+Open VS Code from Gitpod, you will likely need to have the Gitpod VS Code extension installed.
 
 ![Open in vs code desktop button screenshot](/img/codespace-tutorial/gitpod-desktop.png)
 
-![Screenshot of GitPod extension](/img/codespace-tutorial/gitpod-ext.png)
+![Screenshot of Gitpod extension](/img/codespace-tutorial/gitpod-ext.png)
 
 
 ### Step 4 - Run Defang Login
