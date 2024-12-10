@@ -8,11 +8,11 @@ sidebar_position: 100
 
 Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](../getting-started#install-the-defang-cli.md).
 
-:::info
-The AI agent is currently in preview and only supports a limited set of prompts, varying in complexity. We plan to expand the capabilities of the AI agent in the future.
-:::
-
 We are working on expanding the range of supported prompts and improving the accuracy of the AI agent. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
+
+:::tip
+This page is about Defang's AI-driven `generate` tool. We also have another AI tool for [debugging](/docs/concepts/debug). Don't get confused between the two!
+:::
 
 ## Example Prompts
 

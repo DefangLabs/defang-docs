@@ -8,8 +8,8 @@ sidebar_position: 650
 
 Defang includes an AI-driven tool in the CLI (command-line interface) to help you debug your cloud applications. The AI agent will use your service logs as well as the files in your project to help you identify and resolve issues.
 
-:::info
-We plan to expand the capabilities of the AI agent in the future. 
+:::tip
+Defang has another AI-driven tool called [`generate`](/docs/concepts/generate).
 :::
 
 ## How It Works
@@ -27,7 +27,6 @@ Here is a typical workflow in the [Defang CLI](/docs/getting-started) that will 
 :::tip
 The AI debugger will not change your files. Instead, it will show you a suggestion, and it is up to you if you want to use it in your code.
 :::
-
 
 The AI debugger only kicks in when any service in a project fails to deploy. This could be because of a build failure, healthchecks failing, or a variety of other issues. 
 
