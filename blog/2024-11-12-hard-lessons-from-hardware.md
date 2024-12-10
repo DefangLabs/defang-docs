@@ -41,7 +41,7 @@ This is what the Flask server looked like on my computer as it got pinged:
 
 Hooray! Once everything was working, It was time to deploy my Flask code as a cloud service so I could access it from any computer, not just my own. Deployment usually takes several hours due to configuring a ton of cloud provider settings. But I ain’t got time for that. Instead, I used Defang to deploy it within minutes, which took care of all that for me. Saved me a lot of time and tears.
 
-Here’s the Flask deployment on Defang’s portal view: 
+Here’s the Flask deployment on Defang’s Portal view: 
 
 ![portal_view](/img/hardware-story/portal_view.png)
 
