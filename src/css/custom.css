@@ -40,7 +40,7 @@
 
 .docs-doc-id-ask h1 {
   display: none;
-} 
+}
 
 .docs-doc-id-ask .breadcrumbs {
   display: none;
@@ -80,13 +80,43 @@ a.MuiButtonBase-root:hover {
 }
 
 /* Tentative change to address dark mode text on Samples page.
-To go further, consider looking at implementing MUI custom themes. 
+To go further, consider looking at implementing MUI custom themes.
 */
 .MuiTypography-root, .MuiFormLabel-root, .MuiInputBase-input {
   color: var(--ifm-font-color-base) !important;
 }
 
+<<<<<<< HEAD
 img.unstyled {
   border-radius: 0px !important;
   box-shadow: none !important;
 }
+=======
+.navbar__item-get_started {
+  color: white;
+  border-radius: 1rem;
+  background-size: 200% 100%;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(131deg,rgba(80,54,163,.67),rgba(63,178,175,.67) 50%, rgba(80,54,163,.67));
+  margin-right: 1rem;
+  display: inline-block;
+  font-size: smaller;
+}
+
+.navbar__item-get_started:hover {
+  color: white;
+  background-position: 200% 0;
+  animation: shimmer 0.25s ease-in forwards;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
+}
+>>>>>>> 6e5f2d2c0e261db6d498b31ec2e609100e66ac74

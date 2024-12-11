@@ -27,13 +27,13 @@ import { Button } from '@mui/material';
 
 At **Defang**, we’re enabling developers go from **idea to code to deployment 10x faster**.  We’re thrilled to announce that **Defang V1** is officially launching during our action-packed **Launch Week**, running from **December 4–10, 2024**! This marks a major milestone as we officially release the tools and features developers have been waiting for.
 
-## **What’s New in V1?**
+## **What’s New in Defang CLI V1?**
 
 **Defang is a powerful tool that lets you easily develop, deploy, and debug production-ready cloud applications**. With Defang V1, we continue to deliver on our vision to make **cloud development effortlessly simple and portable, with the ability to develop once and deploy anywhere**. Here’s what’s included in this milestone release:
 
 - **Production-Ready Support for AWS**
 
-Seamlessly deploy and scale with confidence on [AWS](https://docs.defang.io/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments confirm to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/). 
+Seamlessly deploy and scale with confidence on [AWS](https://docs.defang.io/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments conform to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/). 
 
 - **New - Google Cloud Platform ([GCP](https://docs.defang.io/docs/providers/gcp)) in Preview**
 
@@ -51,7 +51,7 @@ As we move into V1, we are also rolling out our differentiated product tiers, al
 
 We’ve lined up an exciting week of activities to showcase the power of **Defang** and bring together our growing community:
 
-- **December 4: Vancouver CDW x AWS re:Invent WatchParty**
+- **December 4: Vancouver CDW x AWS re:Invent Watch Party**
 
 Join us at the Vancouver [CDW x AWS re:Invent Watch Party](https://lu.ma/1r0zsw76), where we will have a booth showcasing Defang’s capabilities and AWS integration. Stop by to learn more about Defang and see a live demo from the Defang dev team. 
 

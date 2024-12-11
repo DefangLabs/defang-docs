@@ -75,9 +75,10 @@ const config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/DefangLabs/',
-          label: 'GitHub',
+          href: '/docs/getting-started',
+          label: 'Get Started',
           position: 'right',
+          className: 'navbar__item-get_started'
         },
       ],
     },
@@ -85,28 +86,23 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Sections',
           items: [
             {
-              label: 'Defang Docs',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/defang/',
+              label: 'Tutorials',
+              to: '/docs/category/tutorials',
             },
             {
-              label: 'Discord',
-              href: 'https://s.defang.io/discord',
+              label: 'Providers',
+              to: '/docs/category/providers',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/DefangLabs',
+              label: 'CLI Reference',
+              to: '/docs/category/cli',
+            },
+            {
+              label: 'Concepts',
+              to: '/docs/category/concepts',
             },
           ],
         },
@@ -118,9 +114,38 @@ const config = {
               to: '/blog',
             },
             {
+              label: 'Ask Defang',
+              href: '/docs/ask',
+            },
+            {
+              label: 'Samples',
+              href: 'https://defang.io/#samples',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/DefangLabs',
             },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Discord',
+              href: 'https://s.defang.io/discord',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/DefangLabs',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/defang/',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://www.youtube.com/@DefangLabs',
+            }
           ],
         },
       ],
@@ -135,5 +160,3 @@ const config = {
 };
 
 module.exports = config;
-
-

@@ -47,7 +47,7 @@ Now that we have everything set up, let's dive into the deployment process. Foll
 2.  **Deploy the Slackbot:**  Use the Defang CLI's `defang compose up` command to deploy.
 
 ## Usage
-With your Slackbot up and running, let's explore how to make the most of it. Simply send a POST request to the `/` endpoint with a JSON body containing the message you want to post to the Slack channel. Popular tools like cURL or Postman can help you send the request:
+With your Slackbot up and running, let's explore how to make the most of it. Let's send a POST request to the `/` endpoint with a JSON body containing the message you want to post to the Slack channel. Popular tools like cURL or Postman can help you send the request:
 
 ```bash
 curl 'https://raphaeltm-bot--8080.prod1.defang.dev/' \
