@@ -86,12 +86,11 @@ To go further, consider looking at implementing MUI custom themes.
   color: var(--ifm-font-color-base) !important;
 }
 
-<<<<<<< HEAD
 img.unstyled {
   border-radius: 0px !important;
   box-shadow: none !important;
 }
-=======
+
 .navbar__item-get_started {
   color: white;
   border-radius: 1rem;
@@ -119,4 +118,3 @@ img.unstyled {
     background-position: 200% 0;
   }
 }
->>>>>>> 6e5f2d2c0e261db6d498b31ec2e609100e66ac74
