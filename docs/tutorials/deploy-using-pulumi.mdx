@@ -20,11 +20,11 @@ This tutorial will show you how to deploy Minio with Pulumi using the Defang Pro
 * [The Defang CLI](/docs/getting-started#install-the-defang-cli)
 * [The Defang Pulumi Provider](/docs/concepts/pulumi#install-the-defang-pulumi-provider)
 
-## Authenticate With Defang
+## Step 1 - Authenticate With Defang
 
 Make sure you are logged into the [Defang CLI](/docs/concepts/authentication.md). Don't worry about the Pulumi CLI for now.
 
-## Configure the Pulumi Backend
+## Step 2 - Configure the Pulumi Backend
 
 Navigate to your project directly. (If you don't have a project yet, try one of our [samples](https://defang.io/#samples))
 
@@ -39,7 +39,7 @@ pulumi login file://./
 
 This will make the Pulumi CLI store the state of your infrastructure in the current directory.
 
-## Initialize the Pulumi Project
+## Step 3 - Initialize the Pulumi Project
 
 Run the following command to set your encryption passphrase for this terminal session:
 
@@ -61,7 +61,7 @@ Run the following command to add to the `.gitignore` file:
 echo ".pulumi" >> .gitignore
 ```
 
-## Write Your Pulumi Code
+## Step 4 - Write Your Pulumi Code
 
 Create an `index.ts` file to contain your Pulumi code. This code will describe our services, our service's dependencies, and our service's configuration.
 
@@ -107,7 +107,7 @@ export const service = new defang.DefangService('minio', {
 });
 ```
 
-## Deploy to Defang
+## Step 5 - Deploy to Defang
 
 Now we're ready to deploy to Defang with Pulumi! Run the following command to deploy your service:
 
@@ -115,7 +115,7 @@ Now we're ready to deploy to Defang with Pulumi! Run the following command to de
 pulumi up --stack=dev
 ```
 
-## Monitor the Deployment
+## Step 6 - Monitor the Deployment
 
 You can monitor the deployment by running the following command:
 
@@ -123,7 +123,7 @@ You can monitor the deployment by running the following command:
 defang tail --name minio
 ```
 
-## Logging Into Minio
+### Logging Into Minio
 
 The [Defang Playground](../concepts/defang-playground.md) will give you a domain, which you can obtain by running the following command:
 
@@ -133,7 +133,7 @@ defang ls | grep 'minio.*9001'
 
 If you navigate to the domain in your browser, you will be prompted to log in. Use the username `minio` and the password `minio123`.
 
-## Clean Up
+### Clean Up
 
 To clean up the deployment, run the following command:
 
@@ -141,6 +141,6 @@ To clean up the deployment, run the following command:
 pulumi destroy --stack=dev
 ```
 
-## More Info
+---
 
 See the [Pulumi concept docs](/docs/concepts/pulumi) for more information about the Defang Pulumi Provider.
