@@ -43,6 +43,10 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 - Yes! Defang supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
+### Does Defang support auto-scaling?
+
+- No. Defang does not currently support auto-scaling. However, you can manually scale your services by changing the number of replicas in your `compose.yaml` file and running `defang compose up`.
+
 ### Can I cancel a deployment once it has started?
 
 - No. Once a deployment has started, it cannot be canceled. However, you can always deploy a new version of your app which will replace the current deployment.
