@@ -6,7 +6,7 @@ description: How to update services deployed with Defang
 
 # Updating Your Services
 
-This page will show you how to update your services in Defang.
+This tutorial will show you how to update your services in Defang.
 
 ## Updating a Service
 

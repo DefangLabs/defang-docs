@@ -6,7 +6,7 @@ description: How to monitor services deployed with Defang
 
 # Monitoring Your Services
 
-This page will show you how to monitor your service status and logs in Defang.
+This tutorial will show you how to monitor your service status and logs in Defang.
 
 ## Status
 
@@ -18,7 +18,7 @@ When deploying to your own cloud, the primary way to monitor your services is th
 
 When deploying to Playground, your service's logs may be viewed in the [Defang Portal](https://portal.defang.dev).
 
-By default when deploying, including to your own cloud, all output (stdout and stderr) from your app is logged and accessible via the [Defang CLI](/docs/getting-started#install-the-defang-cli). You can view these logs in real-time or for a time in the past. You can view logs for all your services, one service, or even one specific deployment of a service. 
+By default when deploying, including to your own cloud, all output (stdout and stderr) from your app is logged and accessible via the [Defang CLI](/docs/getting-started#install-the-defang-cli). You can view these logs in real-time or for a time in the past. You can view logs for all your services, one service, or even one specific deployment of a service.
 
 ### Tailing Live Logs For All Services
 

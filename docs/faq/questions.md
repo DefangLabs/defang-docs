@@ -45,7 +45,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Does Defang support auto-scaling?
 
-- No. Defang does not currently support auto-scaling. However, you can manually scale your services by changing the number of replicas in your `compose.yaml` file and running `defang compose up`.
+- No. Defang does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial, to see how you can scale your services manually with Defang.
 
 ### Can I cancel a deployment once it has started?
 
@@ -53,7 +53,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I deploy multiple services at once?
 
