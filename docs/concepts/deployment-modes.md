@@ -19,7 +19,7 @@ Defang provides three deployment modes: development, staging, and production. Th
 | Build Resources | Builds will be run with 2x vCPUs | Builds will be run with 2x vCPUs | Builds will be run with 4x vCPUs |
 | Databases | Defang will provision resources optimized for burstable memory | | Defang will provision resources optimized for production |
 | Static Resources | | | Defang will provision a CDN |
-| Deployment | Previous deployments will be spun down before new deployments are spun up. | | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least the original number of replicas. |
+| Deployment | Previous deployments will be spun down before new deployments are spun up. | | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least [the original number of replicas](/docs/tutorials/scaling-your-services). |
 | Logging | Logs retained for 1 day to save costs. | | Logs retained for 30 days for compliance. |
 | Networking | | | Defang will provision a NAT gateway. |
 | DNS | Defang will provision shorter TTLs | | Defang will provision longer TTLs |

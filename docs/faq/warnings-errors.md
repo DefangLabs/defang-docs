@@ -4,7 +4,7 @@ title: Common Error Messages
 description: Common warnings and error messages, and their meanings.
 ---
 
-Here are the meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI. 
+Here are the meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI.
 
 ## Warnings
 
@@ -122,12 +122,4 @@ services:
 
 The image build might fail if the build process uses too much memory. The first thing to try is to limit the size of your project by excluding unnecessary files: the easiest way is to create a `.dockerignore` file that excludes irrelevatn files. Note that Defang will use a default `.dockerignore` file if you don't have one, but that default might not work for some projects and it's always better to make a `.dockerignore` file specific to your project.
 
-If that doesn't work, you can try to increase the memory available to the build process by adding a field `shm_size` to the `build` section in your `compose.yaml` file:
-
-```yaml
-services:
-  service1:
-    build:
-      context: .
-      shm_size: 16g
-```
+If that doesn't work, see our [Resources](/docs/concepts/resources#build-time-resources) documentation for more information on how to configure the memory requirements and disk space requirements for your image builds.
