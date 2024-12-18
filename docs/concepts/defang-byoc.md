@@ -35,7 +35,7 @@ Please read the [AWS Provider](../providers/aws/aws.md) documentation for more d
 
 :::info
 
-The Public Preview of the v1 Defang BYOC DigitalOcean Provider as of October 1 2024.
+The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
 :::
 
 Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.md) documentation for more details about how the DigitalOcean provider works and how to get started.
@@ -43,7 +43,7 @@ Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.m
 ## GCP
 
 :::info
-Google Cloud Platform (GCP) support is coming soon to Defang. Stay tuned for updates!
+The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 Please check out the [GCP Provider](../providers/gcp/) page for more details.
 

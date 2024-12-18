@@ -10,7 +10,7 @@ sidebar_position: 010
 The Defang DigitalOcean Provider is available for Public Preview as of October 2024. 
 :::
 
-Why should you use Defang with DigitalOcean? Defang allows you to easily create and manage full, scalable applications with DigitalOcean. Defang aims to make it easier to deploy your services to the cloud. DigitalOcean is one of the most popular cloud providers in the world and with Defang, you don't have to waste your time understanding the complexities and challenges of the DigitalOcean platform. Let Defang do it for you and spend more time working on what's important to you!
+Why should you use Defang with DigitalOcean? Defang allows you to easily create and manage full, scalable applications with DigitalOcean. Defang aims to make it easier to deploy your services to the cloud. DigitalOcean is one of the most popular cloud providers in the world and with Defang, you can bypass the complexities of the DigitalOcean platform. Let Defang do it for you and spend more time working on what's important to you!
 
 ## Getting Started
 
