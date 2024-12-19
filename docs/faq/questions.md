@@ -45,7 +45,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Does Defang support auto-scaling?
 
-- No. Defang does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial, to see how you can scale your services manually with Defang.
+- No. Defang does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to see how you can scale your services manually with Defang.
 
 ### Can I cancel a deployment once it has started?
 
