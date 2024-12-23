@@ -19,6 +19,9 @@ defang config set API_KEY
 
 You can use sensitive config by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
 
+Either one of list notation or map notation is acceptable for defining your environment variable(s). See below for an example of each.
+
+#### With List Notation
 ```yaml
 services:
   service1:
@@ -27,9 +30,7 @@ services:
       - API_KEY
 ```
 
-You can also use this syntax:
-
-
+#### With Map Notation
 ```yaml
 services:
   service1:
