@@ -8,7 +8,7 @@ sidebar_position: 225
 
 Defang allows you to configure your application using environment variables. You can set environment variables in your [`compose.yaml` file](./compose.md), or in your [Pulumi program](#using-config-with-pulumi).
 
-# Sensitive Config (aka Secrets)
+# Sensitive Config Values
 
 The Defang CLI allows you to securely store sensitive information such as API keys, passwords, and other credentials. To do so, run:
 
@@ -46,7 +46,7 @@ You can find a sample of how to set sensitive config values [here](https://githu
 
 ## Interpolation
 
-Environment variables are set within the *environment* section of a service in a `compose.yaml` file. Any variables declared here will become available within the service container.
+Environment variables are set within the `environment` section of a service in a `compose.yaml` file. Any variables declared here will become available within the service container.
 
 Variables can be set by assigning a literal value, a reference to a configuration value, or a mix of literal and variable references. Variable references are declared using either **\$\{variable_name\}** or **$variable_name** forms. It is recommended to use the bracketed form. By interpolating over variable references within a string we can construct complex strings. Interpolation may be particularly useful when constructing connection strings to other services.
 
@@ -81,5 +81,6 @@ Here are the different ways sensitive config values are stored depending on the 
     * [DigitalOcean](../providers/digitalocean#secrets)
     * [GCP](../providers/gcp#secrets)
 
-
-
+:::info
+Please note that while Defang supports setting sensitive config, it does not support the [`secrets`](https://docs.docker.com/reference/compose-file/secrets/) top-level element as seen in the Compose specification. Please see our [Compose Support](/docs/concepts/compose-support) page for more details.
+:::
