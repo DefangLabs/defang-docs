@@ -83,5 +83,5 @@ Here are the different ways sensitive config values are stored depending on the 
     * [GCP](../providers/gcp#secrets)
 
 :::info
-Please note that while Defang supports setting sensitive config, it does not support the [`secrets`](https://docs.docker.com/reference/compose-file/secrets/) top-level element as seen in the Compose specification. Please see our [Compose Support](/docs/concepts/compose-support) page for more details.
+Please note that while Defang supports setting sensitive config, it does not support the [`secrets`](https://docs.docker.com/reference/compose-file/secrets/) top-level element as seen in the Compose specification. Please see our [Compose](/docs/concepts/compose) page for more details.
 :::
