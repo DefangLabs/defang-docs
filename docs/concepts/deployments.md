@@ -10,14 +10,22 @@ When you deploy using Defang, whether it's with `defang compose up` with a [Comp
 
 ## Deploying Updates
 
-When you run a deployment to update one or more [services](/docs/concepts/services), Defang will also make sure to get your new services up and running before deprovisioning any old services so you don't have to worry about downtime.
+When you run a deployment to update one or more [services](/docs/concepts/services), Defang will build new images for your services, and provision new resources to replace your existing services.
+
+### Zero Downtime Deployments
+
+Defang can deploy your services using different [modes](/docs/concepts/deployment-modes). When using the `production` mode, Defang will make sure the new replacement services are healthy before deprovisioning your existing services.
+
+By default, using the `development` mode, Defang will deprovision your existing services before provisioning replacements. This helps reduce costs.
 
 :::info
 In [Defang BYOC](./defang-byoc.md), Defang uses your cloud provider account to build and store your images. In [Defang Playground](./defang-playground.md), we build and store your images for you.
 :::
 
-Note that we offer different [deployment modes](/docs/concepts/deployment-modes): development, staging, and production. You can switch the modes using the CLI. 
 
+### Deployment Modes
+
+As mentioned above, Defang offers different [deployment modes](/docs/concepts/deployment-modes): `development`, `staging`, and `production`. You can switch the modes using the `--mode` CLI flag.
 :::warning
 Workloads with GPUs do not support zero downtime deployments. If you have a workload with a GPU, you will experience downtime during updates.
 :::
