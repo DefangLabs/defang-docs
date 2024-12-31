@@ -6,32 +6,26 @@ sidebar_position: 100
 
 # Accounts
 
-In this section, we'll be talking about a couple different topics related to accounts in Defang. First we'll cover authentication and how to create an account, and then we'll talk about how resources are organized within a cloud environment using your account info.
+Below, we will cover account creation with Defang, and how resources are organized within a cloud environment using your account info.
 
-:::tip Why do I need an account?
-Defang requires an account so we can organize your resources and provide you with a way to manage them. We also use your account to authenticate you when you interact with [Defang Playground](./defang-playground.md) and the [Defang Portal](./portal.md).
-
-Eventually, billing and payment information will be associated with your account.
-:::
+Defang requires an account so we can organize your resources and provide you with a way to manage them. We also use your account to authenticate you when you interact with [Defang Playground](./defang-playground.md) and the [Defang Portal](./portal.md). Billing and payment information is also associated with your account.
 
 ## Creating an Account
 
-To create an account, login to Defang and accept the [terms of service](https://defang.io/terms-service.html) using the [CLI](/docs/concepts/authentication.md).
+To create an account, log in to Defang and accept the [Terms of Service](https://defang.io/policies/terms-service/) using the [CLI](/docs/concepts/authentication.md).
 
-At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other authentication providers in the future.
+At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other [authentication](/docs/concepts/authentication.md) providers in the future. 
+
+:::tip
+Keep in mind that your Defang account is separate from your [cloud provider account](./defang-byoc.md). You will need to authenticate with your cloud provider account separately to deploy services to your own cloud account.
+:::
 
 ## Structure
 
-Your GitHub username will be used as your Defang username and your Defang username is used to group all your services and to generate domains for your services with the following structure:
+Your GitHub username will be used as your Defang username. Your Defang username is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
 
 ```
 <username>-<servicename>--<port>.prod1.defang.dev
 ```
 
-:::warning
-Keep in mind that your Defang account is separate from your [cloud provider account](./defang-byoc.md). You will need to authenticate with your cloud provider account separately to deploy services to your own cloud account.
-:::
-
-:::info
-We plan to introduce a more robust system for managing accounts, permissions, service groups, etc. in the future.
-:::
+For more about domain structures, see our [Domains](/docs/concepts/domains#structure) page.

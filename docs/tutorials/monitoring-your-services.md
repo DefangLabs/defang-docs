@@ -47,6 +47,6 @@ $ defang logs --type=build
 All of the above flags can be combined to get the exact logs you need. See the CLI reference for [`defang tail`](/docs/cli/defang_tail) for more information.
 
 :::info
-* To learn more about observability in Defang, check out the [observability page](../concepts/observability.md).
+* To learn more about observability in Defang, check out the [Observability page](../concepts/observability.md).
 * Note that the Defang Portal only displays services deployed to Defang Playground.
 :::

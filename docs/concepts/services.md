@@ -10,14 +10,14 @@ Defang allows you deploy services defined as containers. You can define your ser
 
 `<username>-<service-name>`
 
-You can learn more about accounts and usernames in the [accounts page](./accounts.md).
+You can learn more about accounts and usernames in the [Accounts page](./accounts.md).
 
-:::tip Service Names
+:::tip
 Service names are defined in your Compose file or your Pulumi program.
 :::
 
-You can learn more about about how to define [services with Compose files here](./compose.md) and [services with Pulumi here](./pulumi.md). You can learn more about how services are deployed in the [deployment page](./deployments.md).
+Defang manages the deployment process for services. You can learn more about how services are deployed in the [Deployment page](./deployments.md).
 
 :::info
-While this is the current state of the Defang model, we plan to add support for other types of services in the future, including serverless functions.
+We plan to add support for other types of services in the future, including serverless functions.
 :::

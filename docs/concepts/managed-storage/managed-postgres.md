@@ -6,7 +6,7 @@ sidebar_position: 1000
 
 # Managed Postgres
 
-Postgres, or PostgreSQL, is an advanced open-source relational database system known for its robustness, extensibility, and compliance with SQL standards, making it a popular choice for complex applications requiring reliable data integrity and sophisticated querying capabilities.
+Postgres, or PostgreSQL, is a powerful open-source relational database system known for its robustness, extensibility, and compliance with SQL standards, making it ideal for complex applications requiring reliable data integrity and advanced querying. Defang can help you provision a managed Postgres instance.
 
 ## Current Support
 
@@ -75,13 +75,13 @@ For a smoother experience with Defang, we recommend using Postgres 14 for your c
 
 ## Final Snapshots
 
-When a project is deployed to a production environment any managed postgres instances are automatically configured to create a snapshot of the database before deletion. The snapshot will be named with the following format
+When a project is deployed to a [production environment](/docs/concepts/deployment-modes), any managed Postgres instances are automatically configured to create a snapshot of the database before deletion. The snapshot will be named with the following format:
 
 `
 <project-name>-<service>-postgres-<id>-final-snapshot
 `
 
-The AWS Console can be used to restore a snapshop into a new instance of postgres.
+The AWS Console can be used to restore a snapshot into a new instance of Postgres.
 
 <!-- 
 ### Major Version Updating of Engine
