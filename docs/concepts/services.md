@@ -34,7 +34,7 @@ Below is an overview of the possible statuses for a service in Defang.
 | BUILD_RUNNING | The build is running. | 
 | BUILD_STOPPING | The build is stopping. | 
 | BUILD_FAILED | The build failed. | 
-| UPDATE_QUEUED  | An update is being queued. | 
+| UPDATE_QUEUED | An update is being queued. | 
 | SERVICE_DEPLOYMENT_PENDING | The deployment is pending. | 
 | SERVICE_DEPLOYMENT_COMPLETED | The deployment completed. | 
 | SERVICE_DEPLOYMENT_FAILED | The deployment failed. | 
