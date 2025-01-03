@@ -22,8 +22,8 @@ Defang manages the deployment process for services. You can learn more about how
 We plan to add support for other types of services in the future, including serverless functions.
 :::
 
-### Status
-Below is an overview of the possible statuses for a service in Defang. 
+## Status
+An overview of the possible statuses for a service in Defang. 
 
 | Status | Details |
 |-|-|
@@ -37,4 +37,4 @@ Below is an overview of the possible statuses for a service in Defang.
 | UPDATE_QUEUED | The service update has been received and is now in the queue. | 
 | SERVICE_DEPLOYMENT_PENDING | The necessary resources to run your service have been provisioned but the service has not yet been initiated. | 
 | SERVICE_DEPLOYMENT_COMPLETED | Your service has been deployed and is healthy. | 
-| [SERVICE_DEPLOYMENT_FAILED] | Your service could not be deployed. | 
+| SERVICE_DEPLOYMENT_FAILED | Your service could not be deployed. | 
