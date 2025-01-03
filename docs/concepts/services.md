@@ -27,14 +27,14 @@ Below is an overview of the possible statuses for a service in Defang.
 
 | Status | Details |
 |-|-|
-| BUILD_QUEUED | The build is being queued. | 
-| BUILD_PROVISIONING | The build is provisioning. | 
-| BUILD_PENDING | The build is pending. | 
-| BUILD_ACTIVATING | The build is activating. | 
-| BUILD_RUNNING | The build is running. | 
-| BUILD_STOPPING | The build is stopping. | 
-| BUILD_FAILED | The build failed. | 
-| UPDATE_QUEUED | An update is being queued. | 
-| SERVICE_DEPLOYMENT_PENDING | The deployment is pending. | 
-| SERVICE_DEPLOYMENT_COMPLETED | The deployment completed. | 
-| SERVICE_DEPLOYMENT_FAILED | The deployment failed. | 
+| BUILD_QUEUED | The service update has been received and is now in the queue for its image to be built. | 
+| BUILD_PROVISIONING | The container orchestrator is provisioning the necessary resources for building your service's image. | 
+| BUILD_PENDING | The necessary resources to build your service have been provisioned but the build has not yet been initiated. | 
+| BUILD_ACTIVATING | The container orchestrator is pulling the build container's image and creating the build container. | 
+| BUILD_RUNNING | The container which builds your service's image is successfully running. | 
+| BUILD_STOPPING | The container orchestrator has sent a termination signal to the build container and is waiting for the build process to stop. | 
+| BUILD_FAILED | The build container exited with a non-zero status code. | 
+| UPDATE_QUEUED | The service update has been received and is now in the queue. | 
+| SERVICE_DEPLOYMENT_PENDING | The necessary resources to run your service have been provisioned but the service has not yet been initiated. | 
+| SERVICE_DEPLOYMENT_COMPLETED | Your service has been deployed and is healthy. | 
+| [SERVICE_DEPLOYMENT_FAILED] | Your service could not be deployed. | 
