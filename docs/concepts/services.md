@@ -22,7 +22,7 @@ Defang manages the deployment process for services. You can learn more about how
 We plan to add support for other types of services in the future, including serverless functions.
 :::
 
-## Status
+## Service Status
 An overview of the possible statuses for a service in Defang. 
 
 | Status | Details |
