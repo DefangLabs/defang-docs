@@ -23,6 +23,7 @@ We plan to add support for other types of services in the future, including serv
 :::
 
 ## Service Status
+
 An overview of the possible statuses for a service in Defang. 
 
 | Status | Details |
@@ -38,3 +39,7 @@ An overview of the possible statuses for a service in Defang.
 | SERVICE_DEPLOYMENT_PENDING | The necessary resources to run your service have been provisioned but the service has not yet been initiated. | 
 | SERVICE_DEPLOYMENT_COMPLETED | Your service has been deployed and is healthy. | 
 | SERVICE_DEPLOYMENT_FAILED | Your service could not be deployed. | 
+
+:::tip
+You can run the `defang compose ps` command to view a service's status.
+:::
