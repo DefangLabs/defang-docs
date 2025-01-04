@@ -12,13 +12,14 @@ Here is a basic `compose.yaml` file that contains all the required properties fo
 ```yaml
 services:
     service-example:
-        restart: unless-stopped # specify a restart mode
-        image: nginx:latest # specify an image (or a build, as shown below)
+        image: nginx:latest # specify an image (or a build, as shown below — one of the two is required)
         # build: 
         #     context: .
         #     dockerfile: Dockerfile
         ports: 
-            - "8080:80" # specify ports to expose
+            - mode: ingress # specify ports to expose
+              target: 8080
+              published: 80
         
 ```
 
@@ -60,6 +61,20 @@ The command which will be run to start your service. If left out, the command fr
 
 ```yaml
 command: nginx -g 'daemon off;'
+```
+
+### `deploy`
+(Optional)
+
+The runtime constraints or reuqirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
+
+```yaml
+deploy:
+  replicas: 2
+  reservations:
+    memory: 256M
+    cpu: 1
+
 ```
 
 ### `environment`
@@ -104,9 +119,9 @@ Defang ignores `published` ports in production. As such, it is common to make `t
 :::
 
 ### `restart`
-(Required)
+(Optional, but highly recommended)
 
-The restart mode for a container. 
+The restart mode for a container. Defaults to `unless-stopped` unless otherwise specified. 
 
 ```yaml
 restart: unless-stopped
