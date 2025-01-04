@@ -23,6 +23,19 @@ services:
         
 ```
 
+## Compose Top-level Properties
+Here are a list of top-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
+
+### `version`
+(Deprecated)
+
+The version of the Compose file format being used. This feature is no longer supported and will be ignored by Defang.
+
+### `volumes`
+(Unsupported)
+
+The volume mounts for a container, reusable across services. This feature is not currently supported by Defang.
+
 ## Compose Service Properties
 Here are a list of service-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
@@ -121,15 +134,10 @@ The restart mode for a container. Defaults to `unless-stopped` unless otherwise 
 restart: unless-stopped
 ```
 
-### `version`
-(Deprecated)
-
-The version of the Compose file format being used. This feature is no longer supported and will be ignored by Defang.
-
 ### `volumes`
 (Unsupported)
 
-The volume for a container. This feature is not currently supported by Defang.
+The volume mounts for a container, specific to a service. This feature is not currently supported by Defang.
 
 
 ### Configuration
