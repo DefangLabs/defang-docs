@@ -100,6 +100,23 @@ environment:
   MYSQL_ROOT_PASSWORD: example
 ```
 
+### `healthcheck`
+(Optional, but required for healthchecks on services with a published port)
+
+The healthcheck endpoints for the container. Note that `curl` is commonly used for containers with a `slim` based image, and `wget` is used for containers with an `alpine` based image. 
+
+```yaml
+healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+```
+
+or
+
+```yaml
+healthcheck:
+    test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+```
+
 ### `image`
 (Required, unless `build` is defined)
 
