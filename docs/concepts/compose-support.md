@@ -99,19 +99,13 @@ image: nginx:latest
 ### `ports`
 (Optional, but required if you want to access the service from outside the container)
 
-The ports to expose. Can be formatted as `"published:target"`. 
+The ports to expose. Mode should be specified as `ingress`.
 
 ```yaml
 ports:
-  - "8080:80"
-```
-
-Alternatively, you can use this notation:
-```yaml
-ports:
-  - target: 80
+  - mode: ingress
+    target: 80
     published: 8080
-    mode: ingress
 ```
 
 :::info
