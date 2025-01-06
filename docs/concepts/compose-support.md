@@ -11,15 +11,15 @@ Here is a basic `compose.yaml` file that contains all the required properties fo
 
 ```yaml
 services:
-    service-example:
-        image: nginx:latest # specify an image (or a build, as shown below — one of the two is required)
-        # build: 
-        #     context: .
-        #     dockerfile: Dockerfile
-        ports: 
-            - mode: ingress # specify ports to expose
-              target: 8080
-              published: 80
+  service-example:
+    image: nginx:latest # use one of: an image (shown on this line) or a build (shown below)
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
+  ports: 
+    - mode: ingress # specify ports to expose
+      target: 8080
+      published: 80
         
 ```
 
@@ -51,8 +51,6 @@ Note that in your Compose file, you will need a top-level property called `servi
 services:
     service:
         build: ...
-    another-service:
-        build: ...
 ```
 :::
 
@@ -83,11 +81,10 @@ The runtime constraints or reuqirements for how your services will be deployed a
 
 ```yaml
 deploy:
-  replicas: 2
+  replicas: 1
   reservations:
+    cpus: '0.5'
     memory: 256M
-    cpu: 1
-
 ```
 
 ### `environment`
@@ -107,14 +104,14 @@ The healthcheck endpoints for the container. Note that `curl` is commonly used f
 
 ```yaml
 healthcheck:
-    test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+  test: ["CMD", "curl", "-f", "http://localhost:8080/"]
 ```
 
 or
 
 ```yaml
 healthcheck:
-    test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+  test: ["CMD", "wget", "--spider", "http://localhost:3000"]
 ```
 
 ### `image`
