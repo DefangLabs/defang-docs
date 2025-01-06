@@ -77,7 +77,7 @@ command: nginx -g 'daemon off;'
 ### `deploy`
 (Optional)
 
-The runtime constraints or reuqirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
+The runtime constraints or requirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
 
 ```yaml
 deploy:
