@@ -1,6 +1,6 @@
 ---
 title: Compose Support
-description: Defang supports many of the properties of the Compose specification.
+description: Defang supports many properties of the Compose specification.
 sidebar_position: 160
 ---
 
@@ -26,15 +26,35 @@ services:
 ## Compose Top-level Properties
 Here are a list of top-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
+### `services`
+(Required)
+
+The services defined in your application. 
+
+```yaml
+services:
+  service:
+    # add service-level properties here
+```
+
 ### `version`
 (Deprecated)
 
-The version of the Compose file format being used. This feature is no longer supported and will be ignored by Defang.
+The version of the Compose file format being used. This feature is deprecated and will be ignored by Defang.
+
+```yaml
+version: '3' # deprecated
+```
 
 ### `volumes`
 (Unsupported)
 
 The volume mounts for a container, reusable across services. This feature is not currently supported by Defang.
+
+```yaml
+volumes: # unsupported
+  db-data:
+```
 
 ## Compose Service Properties
 Here are a list of service-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
@@ -87,14 +107,30 @@ deploy:
     memory: 256M
 ```
 
+### `depends_on`
+(Unsupported)
+
+The services that need to be started before this service can run. This feature is currently unsupported by Defang, but can be useful in local developments such as Docker. 
+
+```yaml
+depends_on: # unsupported
+  - db
+```
+
 ### `environment`
 (Optional)
 
-The environment variables to set.
+The environment variables to set. For sensitive environment variables, you can set them with a blank or `null` value.  See our page on [Configuration](/docs/concepts/configuration) for more.
 
 ```yaml
 environment:
-  MYSQL_ROOT_PASSWORD: example
+  DATABASE_USER: someuser
+  DATABASE_PASSWORD: # leave blank/null to set config
+```
+The above is called *map notation*. You can also use *list notation* as seen below:
+```yaml
+environment:
+  - DATABASE_PASSWORD
 ```
 
 ### `healthcheck`
@@ -123,6 +159,24 @@ The image to run.
 image: nginx:latest
 ```
 
+### `networks`
+(Optional)
+
+The network configuration. Can be `public`, where Defang will assign a public IP address, or `private`, in which Defang will not. 
+
+```yaml
+networks:
+  public: 
+```
+
+You can also assign an alias for a network by using `aliases`, as seen below:
+```yaml
+networks:
+  public: 
+    aliases:
+      - app
+```
+ 
 ### `ports`
 (Optional, but required if you want to access the service from outside the container)
 
@@ -153,6 +207,10 @@ restart: unless-stopped
 
 The volume mounts for a container, specific to a service. This feature is not currently supported by Defang.
 
+```yaml
+volumes: # unsupported
+  - "./backend:/app"
+```
 
 ### Configuration
 You can define sensitive environment variables/configuration for Defang by writing out the variable name and leaving it in as a blank or `null` value in the Compose file. See our [Configuration](/docs/concepts/configuration) page for more.
