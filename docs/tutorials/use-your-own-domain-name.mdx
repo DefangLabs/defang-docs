@@ -3,7 +3,9 @@ title: How to Use Your Own Domain
 sidebar_position: 600
 ---
 
-# How to Use Your Own Domain with AWS
+# How to Use Your Own Domain With AWS
+
+This tutorial will show you how to set up and use your own domain when deploying to AWS using Defang.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n4RlMpsdTbs?si=_Ru6tobSbi9LT4Q1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -13,7 +15,7 @@ sidebar_position: 600
 * [The Defang CLI](/docs/getting-started#install-the-defang-cli)
 * [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
 
-## Step 1 - Setup a Hosted Zone in AWS Route 53
+## Step 1 - Set up a Hosted Zone in AWS Route 53
 
 :::info
 **If you purchased your domain with AWS, you can skip this step.**
@@ -35,7 +37,7 @@ You'll need to create NS records in your domain registrar that point to the AWS 
 
 
 ## Step 3 - Set up Your Compose File
-In your compose file, specify the domain name you want to use, for example
+In your Compose file, specify the domain name you want to use, for example:
 
 ```yaml
 services:
@@ -56,7 +58,7 @@ Run the following command to deploy your service:
 defang compose up
 ```
 
-This will deploy your service and set up the necessary DNS records in Route 53 as seen in the screenshot below as well as provision SSL certificates. You can now access your service at the domain you specified in your compose file.
+This will deploy your service and set up the necessary DNS records in Route 53 as seen in the screenshot below as well as provision SSL certificates. You can now access your service at the domain you specified in your Compose file.
 
 <img src="/img/domains-tutorial/route53-records.png" alt="Route 53 DNS Records Screenshot" />
 

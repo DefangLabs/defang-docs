@@ -20,10 +20,10 @@ One thing to keep in mind is that, at the time of this writing, Defang identifie
 
 ## Configuration
 
-If you have a service that depends on a secret like an api key, you can set that [secret](./configuration.md) using the CLI:
+If you have a service that depends on a [config value](./configuration.md) (such as an API key), you can set it using the CLI:
 
 ```
-defang config set --name MY_API_KEY
+defang config set MY_API_KEY
 ```
 
 and then connect it to the service by specifying it in the `compose.yaml`:
@@ -31,14 +31,10 @@ and then connect it to the service by specifying it in the `compose.yaml`:
 ```yaml
 services:
   my-service:
-    secrets:
+    environment:
       - MY_API_KEY
-
-secrets:
-  MY_API_KEY:
-    external: true
 ```
 
-:::info Configuration & Secrets
-Read more about configuration in the [configuration page](./configuration.md).
+:::info
+Read more about configuration in the [Configuration page](./configuration.md).
 :::

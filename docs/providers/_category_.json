@@ -3,6 +3,6 @@
   "position": 400,
   "link": {
     "type": "generated-index",
-    "description": "Defang allows you to use your own cloud accounts to deploy your applications. Click on a link below to read documentation about specific providers. If no provider is specified, the Defang CLI will prompt you to select a provider interactively. The selected provider will be stored in the working directory of the project’s compose file and will be applied to all subsequent commands by default. You can also specify a preferred provider in the compose file by using `x-defang-provider` extension at the root level of the compose file.",
+    "description": "Defang allows you to use your own cloud accounts to deploy your applications. Click on a link below to read documentation about specific providers. If no provider is specified, the Defang CLI will prompt you to select a provider interactively. The selected provider will be stored in the working directory of the project’s compose file and will be applied to all subsequent commands by default. You can also specify a preferred provider in the compose file by using `x-defang-provider` extension at the root level of the compose file."
   }
 }

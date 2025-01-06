@@ -1,0 +1,59 @@
+---
+sidebar_position: 550
+title: Scaling Your Services
+description: How to scale services deployed with Defang
+---
+
+# Scaling Your Services
+
+This tutorial will show you how to scale your services with Defang.
+
+There are two primary ways to scale a service. The first way is to increase the resources allocated to a service. For example, giving a service more CPUs or memory. The second way is to deploy multiple instances of a service. This is called scaling with replicas. Defang makes it easy to do both.
+
+The _Compose Specification_, which is used by Defang, includes a [`deploy` section](https://github.com/compose-spec/compose-spec/blob/main/deploy.md) which allows you to configure the deployment configuration for a service. This includes your service's resource requirements and the number of replicas of a service should be deployed.
+
+## Scaling Resource Reservations
+
+In order to scale a service's resource reservations, you will need to update the `deploy` section associated with your service in your application's `compose.yaml` file.
+
+Use the [`resources`](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#resources) section to specify the resource reservation requirements. These are the minimum resources which must be available for the platform to provision your service. You may end up with more resources than you requested, but you will never be allocated less.
+
+For example, if my app needs 2 CPUs and 512MB of memory, I would update the `compose.yaml` file like this:
+
+```yaml
+services:
+  my_service:
+    image: my_app:latest
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: '512M'
+```
+
+The minimum resources which can be reserved:
+
+| Resource | Minimum |
+|----------|---------|
+| CPUs     | 0.5     |
+| Memory   | 512M    |
+
+:::info
+Note that the `memory` field must be specified as a ["byte value string"](https://github.com/compose-spec/compose-spec/blob/main/11-extension.md#specifying-byte-values) using the `{amount}{byte unit}` format. The supported units are `b` (bytes), `k` or `kb` (kilobytes), `m` or `mb` (megabytes) and `g` or `gb` (gigabytes).
+:::
+
+## Scaling with Replicas
+
+In order to scale a service's replica count, you will need to update the `deploy` section associated with your service in your application's `compose.yaml` file.
+
+Use the [`replicas`](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#replicas) section to specify the number of containers which should be running at any given time.
+
+For example, if I want to run 3 instances of my app, I would update the `compose.yaml` file like this:
+
+```yaml
+services:
+  my_service:
+    image: my_app:latest
+    deploy:
+      replicas: 3
+```

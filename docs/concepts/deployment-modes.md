@@ -4,7 +4,7 @@ description: Defang provides three deployment modes which allow you to balance c
 sidebar_position: 501
 ---
 
-# Defang Deployment Modes
+# Deployment Modes
 
 Defang provides three deployment modes: development, staging, and production. These modes allow you to balance cost and resiliency according to your needs.
 
@@ -17,9 +17,12 @@ Defang provides three deployment modes: development, staging, and production. Th
 | Feature | Development | Staging | Production |
 |-|-|-|-|
 | Build Resources | Builds will be run with 2x vCPUs | Builds will be run with 2x vCPUs | Builds will be run with 4x vCPUs |
-| Databases | Defang will provision resources optimized for burstable memory | | Defang will provision resources optimized for production |
-| Static Resources | | | Defang will provision a CDN |
-| Deployment | Previous deployments will be spun down before new deployments are spun up. | | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least the original number of replicas. |
+| Compute | Using spot instances | (like development) | On-demand instances |
+| Databases | Defang will provision resources optimized for burstable memory | (like production) | Defang will provision resources optimized for production |
+| Deployment | Previous deployments will be spun down before new deployments are spun up. | (like production) | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least [the original number of replicas](/docs/tutorials/scaling-your-services). |
 | Logging | Logs retained for 1 day to save costs. | | Logs retained for 30 days for compliance. |
-| Networking | | | Defang will provision a NAT gateway. |
-| DNS | Defang will provision shorter TTLs | | Defang will provision longer TTLs |
+| Networking | | (like production) | Defang will provision a NAT gateway. |
+| Load Balancing | HTTP redirect to HTTPS using `302 Found` | | Termination Protection will be enabled; logs are retained on "down" |
+| DNS | Defang will provision shorter TTLs; zones will be forcefully destroyed | | Defang will provision longer TTLs; records can be overwritten for ZDT |
+| Managed storage | Operations that cause downtime are allowed | | Encryption at rest; Final snapshot created on "down" |
+| Logs | 1 day retention | 7 days retention | 30 days retention |

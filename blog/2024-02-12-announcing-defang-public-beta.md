@@ -16,7 +16,7 @@ You can learn more about Defang [here](https://docs.defang.io/docs/intro). Also 
 
 **Try the Public Beta!**
 
-To try the Public Beta, please go to [defang.io](http://defang.io) and click on [Download](https://github.com/DefangLabs/defang/releases/latest) to download the CLI and [get started](https://docs.defang.io/docs/getting-started). We would love to have you kick the tires and give us your feedback! Once you sign up you’ll receive an invitation to our Slack support channel in email. You are also welcome to file [Github issues here](https://github.com/DefangLabs/defang/issues).
+To try the Public Beta, please go to [defang.io](http://defang.io) and click on [Download](https://github.com/DefangLabs/defang/releases/latest) to download the CLI and [get started](https://docs.defang.io/docs/getting-started). We would love to have you kick the tires and give us your feedback! Once you sign up you’ll receive an invitation to our Slack support channel in email. You are also welcome to file [GitHub issues here](https://github.com/DefangLabs/defang/issues).
 
 **Stay Tuned for More**
 

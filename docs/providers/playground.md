@@ -9,7 +9,7 @@ The Defang Playground is a free tier that allows you to experiment with Defang. 
 This page highlights architectural considerations when deploying to the Playground and any differences you might encounter when deploying to the Playground versus deploying to your own cloud account.
 
 :::info
-The Playground allows only 1 deployed project at a time. Use the CLI `defang down` to tear down a project before deploying a new one.
+The Playground allows only 1 deployed project at a time. Use the CLI `defang down` command to tear down a project before deploying a new one.
 :::
 
 ## Overview
@@ -18,4 +18,4 @@ Overall, the Defang Playground is very similar to deploying to your own cloud ac
 
 ### Managed services
 
-In essence, the Playground does not support any [managed storage](../concepts/managed-storage) services, ie. `x-defang-postgres` and `x-defang-redis` are ignored when deploying to the Playground. You can however run both postgres and redis as regular container services for testing purposes.
+In essence, the Playground does not support any [managed storage](../concepts/managed-storage) services, ie. `x-defang-postgres` and `x-defang-redis` are ignored when deploying to the Playground. You can however run both Postgres and Redis as regular container services for testing purposes.

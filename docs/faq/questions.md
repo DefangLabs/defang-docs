@@ -11,7 +11,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Which cloud/region is the app being deployed to?
 
-- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your [Defang BYOC Provider](/docs/category/providers) settings.
+- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your Defang BYOC [Provider](/docs/category/providers) settings.
 
 ### Can I bring my own AWS or other cloud account?
 
@@ -27,21 +27,25 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp) and [DigitalOcean](/docs/providers/digitalocean) are in preview with [Defang V1](blog/2024-12-04-launch-week). We plan to support other clouds, such as [Azure](/docs/providers/azure), in future releases.
+- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp) and [DigitalOcean](/docs/providers/digitalocean) are in preview with [Defang V1](/blog/2024-12-04-launch-week). We plan to support other clouds, such as [Azure](/docs/providers/azure), in future releases.
 
 ## Deployment Process
 
 ### Can I run production apps with Defang?
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information on that.
+- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Does Defang support blue/green deployments?
 
-- Defang does not currently support Blue/Green deploys, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang does not currently support blue/green deployments, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Does Defang support rolling deployments?
 
 - Yes! Defang supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+
+### Does Defang support auto-scaling?
+
+- No. Defang does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to see how you can scale your services manually with Defang.
 
 ### Can I cancel a deployment once it has started?
 
@@ -49,7 +53,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will provision your app with multiple replicas and will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I deploy multiple services at once?
 

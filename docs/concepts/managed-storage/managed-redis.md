@@ -12,9 +12,10 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 
 | Provider | Managed Redis |
 | --- | --- |
-| [Playground](/docs/providers/playground.md#managed-redis) | ❌ |
-| [AWS](/docs/providers/aws/aws.md#managed-redis) | ✅ |
-| [DigitalOcean](/docs/providers/digitalocean/digitalocean.md) | ❌ |
+| [Playground](/docs/providers/playground#managed-services) | ❌ |
+| [AWS](/docs/providers/aws#managed-storage) | ✅ |
+| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
+| [GCP](/docs/providers/gcp#future-improvements) | ❌ |
 
 ## How to use Managed Redis
 
@@ -29,3 +30,14 @@ cache:
     - mode: host
       target: 6379
 ```
+
+## Final Snapshots
+
+When a project is deployed with the `production` [deployment mode](/docs/concepts/deployment-modes), any managed Redis instances are automatically
+configured to create a snapshot of the datastore before deletion. The snapshot will be named with the following format:
+
+`
+<project-name>-<service>-redis-<id>-final-snapshot
+`
+
+The AWS Console can be used to restore a snapshot into a new instance of Redis.

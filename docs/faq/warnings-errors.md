@@ -4,7 +4,7 @@ title: Common Error Messages
 description: Common warnings and error messages, and their meanings.
 ---
 
-Here are the meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI. 
+Here are the meanings of common [warning](#warnings) and [error](#errors) messages you may encounter in the Defang CLI.
 
 ## Warnings
 
@@ -90,7 +90,7 @@ services:
 ### "Stack:… is in UPDATE_COMPLETE_CLEANUP_IN_PROGRESS state and cannot be updated"
 - This happens if different version of the Defang CLI are used with the same AWS account. Each version one will try to update the CD stack to its version, back and forth. Make sure that all users have the same version of the CLI. Check the CLI version using `defang version`.
 
-### "invalid healthcheck: ingress ports require an HTTP healthcheck on `localhost`.
+### "invalid healthcheck: ingress ports require an HTTP healthcheck on `localhost`."
 
 - This message is displayed when `defang compose up` tries to deploy a service with an "ingress" port, if the service does not have a `healthcheck` which mentions `localhost`. Defang routes a load balancer to your service's ingress ports, and the loadbalancer needs to be able to check the health of the service. To solve this issue, ask yourself these two questions:
 
@@ -104,7 +104,7 @@ services:
     -       - "1234:1234"
     +       - "1234"
     ```
-2. Does my healthcheck include the string `localhost`? It is very common to define a healthcheck by using `curl` or `wget` to make a request to `localhost`. So common, in fact, that defang will look for the string `localhost` in your healthcheck definition. For example, this healthcheck is valid:
+2. Does my healthcheck include the string `localhost`? It is very common to define a healthcheck by using `curl` or `wget` to make a request to `localhost`. So common, in fact, that Defang will look for the string `localhost` in your healthcheck definition. For example, this healthcheck is valid:
 
     ```yaml
      healthcheck:
@@ -118,16 +118,8 @@ services:
        test: ["CMD", "./my-healthcheck"]
     ```
 
-### The build aborted with OutOfMemoryError: Container killed due to memory usage
+### "The build aborted with OutOfMemoryError: Container killed due to memory usage"
 
 The image build might fail if the build process uses too much memory. The first thing to try is to limit the size of your project by excluding unnecessary files: the easiest way is to create a `.dockerignore` file that excludes irrelevatn files. Note that Defang will use a default `.dockerignore` file if you don't have one, but that default might not work for some projects and it's always better to make a `.dockerignore` file specific to your project.
 
-If that doesn't work, you can try to increase the memory available to the build process by adding a field `shm_size` to the `build` section in your `compose.yaml` file:
-
-```yaml
-services:
-  service1:
-    build:
-      context: .
-      shm_size: 16g
-```
+If that doesn't work, see our [Resources](/docs/concepts/resources#build-time-resources) documentation for more information on how to configure the memory requirements and disk space requirements for your image builds.

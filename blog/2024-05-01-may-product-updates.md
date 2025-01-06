@@ -11,7 +11,7 @@ Hey folks! There is a lot going on at Defang and we're excited to share our late
 
 ## npx defang
 
-We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally. Just run:
+We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally by running:
 
 ```bash
 npx defang@latest
