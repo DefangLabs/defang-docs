@@ -40,7 +40,6 @@ OR
 
 - Alternatively, in the AWS console for EC2 Instances dashboard you can turn off Termination Protection for the desired app. 
 
-
 :::info
 For more information on Deployment Modes, see the [Deployment Modes](/docs/concepts/deployment-modes) concept documentation.
 :::
