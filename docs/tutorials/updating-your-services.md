@@ -32,7 +32,14 @@ The default deployment mode is `development`. This is the In this mode, the exis
 
 If you are running in `production` mode, the update will be done with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
 
-To teardown a production app deletion protection must be disabled. This can be done in two ways. Use `defang compose up --mode=staging` to change the app to a non-delete protected mode. `defang compose down` can then be executed after the deployment mode has been changed. Alternatively, in the AWS console for EC2 Instances dashboard you can turn off Termination Protection for the desired app. 
+To teardown a production app Termination Protection must be disabled. This can be done in two ways. 
+
+- Use `defang compose up --mode=staging` to change the app to a non-delete protected mode. `defang compose down` can then be executed after the deployment mode has been changed.
+
+OR
+
+- Alternatively, in the AWS console for EC2 Instances dashboard you can turn off Termination Protection for the desired app. 
+
 
 :::info
 For more information on Deployment Modes, see the [Deployment Modes](/docs/concepts/deployment-modes) concept documentation.
