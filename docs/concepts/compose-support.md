@@ -136,13 +136,13 @@ environment:
 :::
 
 :::info
-After you set sensitive environment variables as blank or `null` values in the `compose.yaml` file, you can securely set their actual value in the Defang CLI. See how Defang handles [Configuration](/docs/concepts/configuration) for more.
+After you set sensitive environment variables as blank or `null` values in the `compose.yaml` file, you can securely set their actual value in the Defang CLI. See our [Configuration page](/docs/concepts/configuration) for more.
 :::
 
 ### `healthcheck`
 (Optional, but required for healthchecks on services with a published port)
 
-The healthcheck endpoints for the container. Note that `curl` is commonly used for containers with a `slim` based image, and `wget` is used for containers with an `alpine` based image. 
+The healthcheck endpoints for the container. Note that `curl` is commonly used for containers with a `slim`-based image, and `wget` is used for containers with an `alpine`-based image. 
 
 ```yaml
 healthcheck:
@@ -153,7 +153,7 @@ or
 
 ```yaml
 healthcheck:
-  test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+  test: ["CMD", "wget", "--spider", "http://localhost:8080/"]
 ```
 
 ### `image`
