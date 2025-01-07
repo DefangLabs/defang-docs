@@ -6,7 +6,7 @@ sidebar_position: 160
 
 # Compose Support
 
-## Required Compose File 
+## Example of a Compose File
 Here is a basic `compose.yaml` file that contains all the required properties for deployment in Defang. 
 
 ```yaml
@@ -40,10 +40,10 @@ services:
 ### `version`
 (Deprecated)
 
-The version of the Compose file format being used. This feature is deprecated and will be ignored by Defang.
+The version of the Compose file format being used. This feature is no longer supported and will be ignored by Defang.
 
 ```yaml
-version: '3' # deprecated
+# version: '3'
 ```
 
 ### `volumes`
@@ -52,11 +52,11 @@ version: '3' # deprecated
 The volume mounts for a container, reusable across services. This feature is not currently supported by Defang.
 
 ```yaml
-volumes: # unsupported
-  db-data:
+# volumes:
+#   db-data:
 ```
 
-## Compose Service Properties
+## Compose Service-level Properties
 Here are a list of service-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
 :::tip
@@ -113,15 +113,14 @@ deploy:
 The services that need to be started before this service can run. This feature is currently unsupported by Defang, but can be useful in local developments such as Docker. 
 
 ```yaml
-depends_on: # unsupported
-  - db
+# depends_on: 
+#   - db
 ```
 
 ### `environment`
 (Optional)
 
-The environment variables to set. For sensitive environment variables, you can set them with a blank or `null` value.  See our page on [Configuration](/docs/concepts/configuration) for more.
-
+The environment variables to set. For sensitive environment variables, you can set them with a blank or `null` value.  
 ```yaml
 environment:
   DATABASE_USER: someuser
@@ -132,6 +131,10 @@ The above is called *map notation*. You can also use *list notation* as seen bel
 environment:
   - DATABASE_PASSWORD
 ```
+
+:::info
+After you set sensitive environment variables as blank or `null` values in the `compose.yaml` file, you can securely set their actual value in the Defang CLI. See how Defang handles [Configuration](/docs/concepts/configuration) for more.
+:::
 
 ### `healthcheck`
 (Optional, but required for healthchecks on services with a published port)
@@ -162,7 +165,7 @@ image: nginx:latest
 ### `networks`
 (Optional)
 
-The network configuration. Can be `public`, where Defang will assign a public IP address, or `private`, in which Defang will not. 
+The network configuration. Can be `public`, where Defang will assign a public IP address, or `private`, in which Defang will not. To avoid warnings, add this to the `networks` top-level property as well. 
 
 ```yaml
 networks:
@@ -208,9 +211,6 @@ restart: unless-stopped
 The volume mounts for a container, specific to a service. This feature is not currently supported by Defang.
 
 ```yaml
-volumes: # unsupported
-  - "./backend:/app"
+# volumes:
+#  - "./backend:/app"
 ```
-
-### Configuration
-You can define sensitive environment variables/configuration for Defang by writing out the variable name and leaving it in as a blank or `null` value in the Compose file. See our [Configuration](/docs/concepts/configuration) page for more.
