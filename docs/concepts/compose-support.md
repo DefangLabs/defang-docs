@@ -126,11 +126,14 @@ environment:
   DATABASE_USER: someuser
   DATABASE_PASSWORD: # leave blank/null to set config
 ```
-The above is called *map notation*. You can also use *list notation* as seen below:
+:::tip
+Alternatively, you can use *list notation* to write your Compose files:
 ```yaml
 environment:
+  - DATABASE_USER=someuser
   - DATABASE_PASSWORD
 ```
+:::
 
 :::info
 After you set sensitive environment variables as blank or `null` values in the `compose.yaml` file, you can securely set their actual value in the Defang CLI. See how Defang handles [Configuration](/docs/concepts/configuration) for more.
