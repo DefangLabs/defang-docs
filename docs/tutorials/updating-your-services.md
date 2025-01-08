@@ -32,6 +32,17 @@ The default deployment mode is `development`. This is the In this mode, the exis
 
 If you are running in `production` mode, the update will be done with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
 
+## Deleting your Application
+
+To delete your app, use `defang compose down` in your compose file working directory, or use the `--project-name` flag.
+
+In some cases, particularly on the AWS platform, additional actions may be required. Specifically load balancers may have Deletion Protection on. To turn this off in the AWS Console for EC2 Load Balancers, follow these steps:
+
+	1.	Select the load balancer corresponding to the app’s name.
+	2.	Go to the Attributes tab.
+	3.	Click the Edit button.
+	4.	Locate Deletion Protection and disable it.
+
 :::info
 For more information on Deployment Modes, see the [Deployment Modes](/docs/concepts/deployment-modes) concept documentation.
 :::
