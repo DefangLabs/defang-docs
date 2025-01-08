@@ -46,6 +46,8 @@ networks:
   public: 
 ```
 
+See our [Networking](/docs/concepts/networking) page for more.
+
 ### `services`
 (Required)
 
