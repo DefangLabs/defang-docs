@@ -16,10 +16,6 @@ You can create a `compose.yaml` file in the root of your project, or use the [`d
 
 When you run `defang compose up`, Defang will read your `compose.yaml` file and [deploy](./deployments.md) the services named in that file to the cloud.
 
-## Service Name Resolution
-
-Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. We plan to provide a more robust system for managing service names in the future.
-
 ## Example of a Compose File
 Here is a basic `compose.yaml` file that contains all the required properties for deployment in Defang. 
 
@@ -61,6 +57,10 @@ services:
     # add service-level properties here
 ```
 
+:::info Service Name Resolution
+Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. We recommend using a different name for each service you define. 
+:::
+
 ### `version`
 (Deprecated)
 
@@ -81,7 +81,7 @@ The volume mounts for a container, reusable across services. This feature is not
 ```
 
 :::warning
-Defang does not support the `secrets` top-level property. Please read our [Configuration](/docs/concepts/configuration) page instead. 
+Defang does not support the `secrets` top-level property. Please read our [Configuration](/docs/concepts/configuration) page for more. 
 :::
 
 ## Compose Service-level Properties
