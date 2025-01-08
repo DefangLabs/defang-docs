@@ -213,7 +213,7 @@ networks:
 ### `ports`
 (Optional, but required if you want to access the service from outside the container)
 
-The ports to expose. Mode should be specified as `ingress`.
+The ports to expose. The default port mode is `ingress`.
 
 ```yaml
 ports:
