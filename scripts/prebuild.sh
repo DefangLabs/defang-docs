@@ -14,7 +14,13 @@ if [ -d "../defang" ]; then
 else
   DEFANG_PATH=$(readlink -f ./defang)
 fi
+if [ -d "../samples" ]; then
+  SAMPLES_PATH=$(readlink -f ../samples)
+else
+  SAMPLES_PATH=$(readlink -f ./samples)
+fi
 
 cd "$DEFANG_PATH/src/cmd/gendocs" && go run main.go "$CLI_DOCS_PATH"
 cd "$CWD"
 node scripts/prep-cli-docs.js
+node scripts/prep-samples.js "$SAMPLES_PATH/samples"
