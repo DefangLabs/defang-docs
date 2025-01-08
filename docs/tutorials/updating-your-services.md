@@ -32,13 +32,12 @@ The default deployment mode is `development`. This is the In this mode, the exis
 
 If you are running in `production` mode, the update will be done with zero downtime. Your current version of the service will keep running and handling traffic while the new version is being built and deployed. Only after the new version passes the health checks and accepts traffic will the older version be stopped.
 
-To teardown a production app Termination Protection must be disabled. This can be done in two ways. 
+To delete a production app, use `defang compose down`. In some cases, particularly on the AWS platform, additional actions to be required. Specifically load balancers may have Detetion Protection on. To turn this off in the AWS Console for EC2 Load Balancers, follow these steps:
 
-- Use `defang compose up --mode=staging` to change the app to a non-delete protected mode. `defang compose down` can then be executed after the deployment mode has been changed.
-
-OR
-
-- Alternatively, in the AWS console for EC2 Instances dashboard you can turn off Termination Protection for the desired app. 
+	1.	Select the load balancer corresponding to the app’s name.
+	2.	Go to the Attributes tab.
+	3.	Click the Edit button.
+	4.	Locate Deletion Protection and disable it.
 
 :::info
 For more information on Deployment Modes, see the [Deployment Modes](/docs/concepts/deployment-modes) concept documentation.
