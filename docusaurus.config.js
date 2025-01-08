@@ -1,15 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const { themes } = require('prism-react-renderer');
+const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
-
-const redirects = [
-  {
-    from: '/docs/samples',
-    to: 'https://defang.io/#samples',
-  },
-];
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
@@ -163,15 +156,7 @@ const config = {
       darkTheme: darkCodeTheme,
     },
   },
-  plugins: [
-    require.resolve('docusaurus-lunr-search'),
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects,
-      },
-    ],
-  ],
+  plugins: [require.resolve('docusaurus-lunr-search')],
 };
 
 module.exports = config;
