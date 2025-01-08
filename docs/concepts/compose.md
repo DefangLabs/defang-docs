@@ -64,7 +64,7 @@ Defang identifies services by the [account username](./accounts.md) and the serv
 ### `version`
 (Deprecated)
 
-The version of the Compose file format being used. This feature is no longer supported and will be ignored by Defang.
+The version of the Compose file format being used. This property is now obsolete, and will be ignored by Defang.
 
 ```yaml
 # version: '3'
@@ -105,7 +105,7 @@ services:
 ### `build`
 (Required, unless `image` is defined)
 
-The build configuration.
+The [build configuration](https://github.com/compose-spec/compose-spec/blob/main/build.md). This property describes how to create an OCI container for this service.
 
 ```yaml
 build:
@@ -125,7 +125,7 @@ command: nginx -g 'daemon off;'
 ### `deploy`
 (Optional)
 
-The runtime constraints or requirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
+The [Deploy Specification](https://github.com/compose-spec/compose-spec/blob/main/deploy.md) describes the runtime constraints and requirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
 
 ```yaml
 deploy:
@@ -138,7 +138,7 @@ deploy:
 ### `depends_on`
 (Unsupported)
 
-The services that need to be started before this service can run. This feature is currently unsupported by Defang, but can be useful in local developments such as Docker. 
+This property describes startup dependencies between services. This feature is currently unsupported by Defang, but can be useful in local developments such as Docker. 
 
 ```yaml
 # depends_on: 
@@ -148,7 +148,7 @@ The services that need to be started before this service can run. This feature i
 ### `environment`
 (Optional)
 
-The environment variables to set. For sensitive environment variables, you can set them with a blank or `null` value.  
+The environment variables to set.
 ```yaml
 environment:
   DATABASE_USER: someuser
@@ -169,11 +169,20 @@ After you set sensitive environment variables as blank or `null` values in the `
 ### `healthcheck`
 (Optional, but required for healthchecks on services with a published port)
 
-The healthcheck endpoints for the container. Note that `curl` is commonly used for containers with a `slim`-based image, and `wget` is used for containers with an `alpine`-based image. 
+[This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#healthcheck) describes a check that will be run to determine whether or not a service's containers are "healthy". It works in the same way, and has the same default values, as the [HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck) set by the service's Docker image. Your Compose file can override the values set in the Dockerfile.
+
+When using Defang, your compose file must have a healthcheck if you want to expose a port—even if your dockerfile already contains one
+
+:::note
+`curl` is commonly used for containers with a `slim`-based image, and `wget` is used for containers with an `alpine`-based image. 
+:::
 
 ```yaml
 healthcheck:
   test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+  interval: 30s
+  timeout: 90s
+  retries: 3
 ```
 
 or
@@ -181,12 +190,15 @@ or
 ```yaml
 healthcheck:
   test: ["CMD", "wget", "--spider", "http://localhost:8080/"]
+  interval: 30s
+  timeout: 90s
+  retries: 3
 ```
 
 ### `image`
 (Required, unless `build` is defined)
 
-The image to run.
+[This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#image) describes the image from which your container should start.
 
 ```yaml
 image: nginx:latest
@@ -209,6 +221,8 @@ networks:
     aliases:
       - app
 ```
+ 
+See our [Networking](/docs/concepts/networking) page for more.
  
 ### `ports`
 (Optional, but required if you want to access the service from outside the container)
