@@ -171,7 +171,7 @@ After you set sensitive environment variables as blank or `null` values in the `
 
 [This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#healthcheck) describes a check that will be run to determine whether or not a service's containers are "healthy". It works in the same way, and has the same default values, as the [HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck) set by the service's Docker image. Your Compose file can override the values set in the Dockerfile.
 
-When using Defang, your compose file must have a healthcheck if you want to expose a port—even if your dockerfile already contains one
+When using Defang, your compose file must have a healthcheck if you want to expose a port—even if your Dockerfile already contains one.
 
 :::note
 `curl` is commonly used for containers with a `slim`-based image, and `wget` is used for containers with an `alpine`-based image. 
