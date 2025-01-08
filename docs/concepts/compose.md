@@ -57,8 +57,8 @@ services:
     # add service-level properties here
 ```
 
-:::info Service Name Resolution
-Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. We recommend using a different name for each service you define. 
+:::info 
+Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. See our [Services](/docs/concepts/services) page for more.
 :::
 
 ### `version`
