@@ -36,3 +36,7 @@ Defang has a tutorial on how you can [monitor your services](/docs/tutorials/mon
 :::info
 If you decide to make a commit later to a repository created from 1-Click Deploy, then the project will automatically get deployed again to Defang Playground.
 :::
+
+### Configuration in 1-Click Deploy
+
+If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you. 
