@@ -6,12 +6,12 @@ description: Use 1-Click Deploy to easily deploy a sample to the Defang Playgrou
 
 # Using 1-Click Deploy
 
-This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample. 
+This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample to the Defang Playground. 
 
-The 1-Click Deploy button is intended to be a quickstart way for new users to deploy to the [Defang Playground](/docs/concepts/defang-playground) with no prior installation needed. 
+The 1-Click Deploy button is intended to be a quickstart way for new users to deploy to the [Defang Playground](/docs/concepts/defang-playground) with no prior installation of the CLI needed. 
 
 :::info
-If this is not your first time, we recommend using the [Defang CLI](/docs/getting-started) to get a full experience of deploying with Defang. 
+To access the full range of features provided by Defang, we recommend using the [Defang CLI](/docs/getting-started).
 :::
 
 ## Step 1 - Choose a Sample
@@ -39,4 +39,4 @@ If you decide to make a commit later to a repository created from 1-Click Deploy
 
 ### Configuration in 1-Click Deploy
 
-If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you. 
+If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub action will automatically deploy those values for you. 
