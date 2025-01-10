@@ -44,6 +44,10 @@ Use the `defang config` command of the Defang CLI to manage the values.
 You can find a sample of how to set sensitive config values [here](https://github.com/DefangLabs/samples/tree/main/samples/nodejs-openai).
 :::
 
+:::info
+Note that if you are using the [1-Click Deploy](/docs/tutorials/using-one-click-deploy) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you.
+:::
+
 ## Interpolation
 
 Environment variables are set within the `environment` section of a service in a `compose.yaml` file. Any variables declared here will become available within the service container.
