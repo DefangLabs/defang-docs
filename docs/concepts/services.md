@@ -41,5 +41,5 @@ An overview of the possible statuses for a service in Defang.
 | SERVICE_DEPLOYMENT_FAILED | Your service could not be deployed. | 
 
 :::tip
-You can run the `defang compose ps` command to view a service's status.
+You can run the `defang compose ps` command to view the status of your services.
 :::
