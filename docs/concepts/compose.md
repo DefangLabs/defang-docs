@@ -154,18 +154,15 @@ The environment variables to set.
 ```yaml
 environment:
   DATABASE_USER: someuser
-  DATABASE_PASSWORD: # leave blank/null to set config
 ```
-
-The above uses *map notation*. Defang also supports using *list notation*:
-```yaml
-environment:
-  - DATABASE_USER=someuser
-  - DATABASE_PASSWORD
-```
-
 :::info
-After you set sensitive environment variables as blank or `null` values in the `compose.yaml` file, you can securely set their actual value in the Defang CLI. See our [Configuration page](/docs/concepts/configuration) for more.
+For sensitive environment variables (or secret values), you should list the variable's name with a blank or `null` value, and then securely set their actual value with `defang config` in the CLI. See our [Configuration page](/docs/concepts/configuration) for more.
+ 
+ For example:
+```yaml
+  - DATABASE_USER=someuser # env var loaded with this literal value
+  - DATABASE_PASSWORD # env var loaded using defang config
+```
 :::
 
 ### `healthcheck`
