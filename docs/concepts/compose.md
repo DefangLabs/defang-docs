@@ -12,7 +12,7 @@ This file format may look familiar to you if you've come across `docker-compose.
 
 ## How It Works
 
-You can create a `compose.yaml` file in the root of your project, or use the [`defang generate`](../tutorials/generate-new-code-using-ai.mdx) command to create one for you (along with other resources). This file is used to define your application's [services](./services.md) and how they run. You can edit this file to add more services or change the configuration of existing services.
+You can create a `compose.yaml` file in the root of your project, or use the [`defang generate`](../tutorials/generate-new-code-using-ai.mdx) command to create one for you (along with other resources). This file is used to define your application's [services](./services.md) and how they run. You can edit this file to add more services or change the configuration of services.
 
 When you run `defang compose up`, Defang will read your `compose.yaml` file and [deploy](./deployments.md) the services named in that file to the cloud.
 
@@ -22,14 +22,14 @@ Here is a basic `compose.yaml` file that contains all the required properties fo
 ```yaml
 services:
   service-example:
-    image: nginx:latest # use one of: an image (shown on this line) or a build (shown below)
+    image: nginx:latest # use one of: image (shown on this line) or build (shown below)
     # build: 
     #   context: .
     #   dockerfile: Dockerfile
   ports: 
     - mode: ingress # specify ports to expose
       target: 8080
-      published: 80
+      published: 8080 # this is useful for running locally
         
 ```
 
@@ -73,7 +73,7 @@ The version of the Compose file format being used. This property is now obsolete
 ```
 
 ### `volumes`
-(Unsupported)
+(Not yet supported)
 
 The volume mounts for a container, reusable across services. This feature is not currently supported by Defang.
 
@@ -138,7 +138,7 @@ deploy:
 ```
 
 ### `depends_on`
-(Unsupported)
+(Not yet supported)
 
 This property describes startup dependencies between services. This feature is currently unsupported by Defang, but can be useful in local developments such as Docker. 
 
@@ -170,10 +170,10 @@ For sensitive environment variables (or secret values), you should list the vari
 
 [This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#healthcheck) describes a check that will be run to determine whether or not a service's containers are "healthy". It works in the same way, and has the same default values, as the [HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck) set by the service's Docker image. Your Compose file can override the values set in the Dockerfile.
 
-When using Defang, your compose file must have a healthcheck if you want to expose a port—even if your Dockerfile already contains one.
+When using Defang, your Compose file must have a healthcheck if you want to expose an `ingress` port—even if your Dockerfile already contains one.
 
 :::note
-`curl` is commonly used for containers with a `slim`-based image, and `wget` is used for containers with an `alpine`-based image. 
+`curl` is commonly used for containers with an Ubuntu-based image, and `wget` is used for containers with an `alpine`-based image. 
 :::
 
 ```yaml
@@ -232,7 +232,7 @@ The ports to expose. The default port mode is `ingress`.
 ports:
   - mode: ingress
     target: 80
-    published: 8080
+    published: 80
 ```
 
 :::info
