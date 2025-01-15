@@ -6,7 +6,15 @@ description: Overview of the Defang platform and how it works in your cloud
 
 # How Defang Works
 
-Defang is a radically simpler way to develop, deploy, and debug applications in your favourite cloud. Defang abstracts away the complexity of cloud infrastructure, providing you with a streamlined experience.
+Defang is a radically simpler way to develop, deploy, and debug applications in your favourite cloud. Defang abstracts away the complexity of cloud infrastructure, providing you with a streamlined experience. Defang works by provisioning a "cd" service and a small set of resources in your cloud account. These services enable Defang to orchestrate deployments for you in your cloud account from the Defang CLI. Here's how it works.
+
+## Bootstrapping
+
+The first time you deploy with Defang, a new `cd` service will be created in your cloud account. This service acts as an intermediary between you and your cloud provider. The Defang CLI will communicate with this service to orchestrate the build and deployment process for your services. We will also create the necessary resources to support the defang system. This includes things like roles, a storage space, an image repository, certificates, etc. The specific resources created depend on the cloud provider. You can learn more about the specifics by visiting our [provider docs](/docs/category/providers).
+
+:::info
+The `cd` service does not run all the time. It is only used when you deploy a new service or update an existing service. Once it has finished deploying your service, it will shut itself down.
+:::
 
 ```mermaid
 
@@ -37,18 +45,18 @@ sdk --> services
 
 ```
 
-## Defang CD
+## Orchestrating Deployments
 
-The first time you deploy with Defang, we will create a new `cd` service in your cloud account. This service acts as an intermediary between you and your cloud provider. The Defang CLI will communicate with this service to orchestrate the build and deployment process for your services.
+The Defang `cd` service acts as an intermediary between you and your cloud provider. This service receives deployment requests from the Defang CLI. Once a request has been received, `cd` orchestrates the process of building application images from your source code, and then continues to provision the necessary resources to deploy your application.
 
 :::info
-This service does not run all the time. It is only used when you deploy a new service or update an existing service. Once it has finished deploying your service, it will shut itself down.
+The `defang` cli will upload your source code to a storage destination within your cloud. Your source code is never processed by our servers.
 :::
 
-## Image Builds
+## Building Images
 
-When you deploy a new service, Defang will build a Docker image from your source code. `cd` will determine if your service's image needs to be rebuilt, and if it does it will start a new container for each build it needs to complete. Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko/actions/workflows/images.yaml) to build your images in a container in your cloud account. The resulting images will be stored in your cloud account's private container registry for future reference. Defang will then deploy this image to your cloud account as a new service.
+When you deploy a new service, Defang will build a Docker image from your source code. `cd` will determine if your service's image needs to be rebuilt, and if it does it will start a new container for each build it needs to complete. Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build your images in a container in your cloud account. The resulting images will be stored in your cloud account's private container registry for future reference. Defang will then deploy this image to your cloud account as a new service.
 
 ## Service Provisioning
 
-Once your service's image has been built, Defang will provision cloud resources for your application's services. Defang uses the cloud provider's SDK to create the necessary resources for your services. This includes creating a new container, setting up networking, and configuring any other resources your service needs.
+Once your services’ images have been built, Defang will provision cloud resources for your application's services. Defang uses the cloud provider's SDK to create the necessary resources for your services. This includes creating a new container, setting up networking, and configuring any other resources your services needs.
