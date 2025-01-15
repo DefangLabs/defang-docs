@@ -8,7 +8,9 @@ sidebar_position: 150
 
 Defang allows you to use `compose.yaml` files to deploy your application to the cloud. 
 The `compose.yaml` file is a simple way to define and run multi-container applications. 
-This file format may look familiar to you if you've come across `docker-compose.yml` files, as both are based on the [Compose specification](https://docs.docker.com/compose/compose-file/). 
+This file format may look familiar to you if you've used [Docker](https://docker.com).
+
+The [Compose Specification](https://github.com/compose-spec/compose-spec/blob/main/spec.md#compose-file) lets you define a platform-agnostic application designed as a set of containers which are configured to run together with shared resources. These applications may be destined for any [OCI](https://opencontainers.org/) Container Runtime. Defang does the heavy lifting to deploy to your favourite cloud platform using this file.
 
 ## How It Works
 
@@ -249,7 +251,7 @@ restart: unless-stopped
 ```
 
 ### `volumes`
-(Unsupported)
+(Not yet supported)
 
 The volume mounts for a container, specific to a service. This feature is not currently supported by Defang.
 
