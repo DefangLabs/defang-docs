@@ -55,8 +55,11 @@ The `defang` cli will upload your source code to a storage destination within yo
 
 ## Building Images
 
-When you deploy a new service, Defang will build a Docker image from your source code. `cd` will determine if your service's image needs to be rebuilt, and if it does it will start a new container for each build it needs to complete. Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build your images in a container in your cloud account. The resulting images will be stored in your cloud account's private container registry for future reference. Defang will then deploy this image to your cloud account as a new service.
+When you deploy a new service, Defang will build a Docker image from your source code. This source code is uploaded by the `defang` cli to a storage destination in your cloud account. The Defang `cd` service will then retrieve it and determine if each of your service's images need to be rebuilt. If rebuilding is necessary, `cd` will start a new container for each build it needs to complete.
+
+Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build your images in a container in your cloud account. The resulting images will be stored in your cloud account's private container registry for future reference.
+
 
 ## Service Provisioning
 
-Once your services’ images have been built, Defang will provision cloud resources for your application's services. Defang uses the cloud provider's SDK to create the necessary resources for your services. This includes creating a new container, setting up networking, and configuring any other resources your services needs.
+After your images have been built, `cd` will provision the necessary resources and deploy these images as new services in your cloud account. Defang uses the cloud provider's SDK to create the necessary resources for your services. This may include creating new containers, setting up networking, and configuring any other resources your services needs, such as storage resources.
