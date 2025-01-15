@@ -10,7 +10,11 @@ Defang is a radically simpler way to develop, deploy, and debug applications in 
 
 ## Bootstrapping
 
-The first time you deploy with Defang, a new `cd` service will be created in your cloud account. This service acts as an intermediary between you and your cloud provider. The Defang CLI will communicate with this service to orchestrate the build and deployment process for your services. We will also create the necessary resources to support the defang system. This includes things like roles, a storage space, an image repository, certificates, etc. The specific resources created depend on the cloud provider. You can learn more about the specifics by visiting our [provider docs](/docs/category/providers).
+The first time you deploy with Defang, a new `cd` service will be created in your cloud account. This service acts as an intermediary between you and your cloud provider. It will set up a grpc endpoint with which the Defang CLI can communicate. When the cli sends a request to trigger a deployment, for example, this service will orchestrate the build and deployment process—interfacing with the cloud APIs on your behalf. We will also create the necessary resources to support the defang system. This includes things like roles, a storage space, an image repository, certificates, etc. The specific resources created depend on the cloud provider.
+
+Our architecture and AWS implementation has passed a ["well-architected"](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) review. We are in the process for obtaining similar qualifications with Digital Ocean and Google Cloud.
+
+You can learn more about the specifics by visiting our [provider docs](/docs/category/providers).
 
 :::info
 The `cd` service does not run all the time. It is only used when you deploy a new service or update an existing service. Once it has finished deploying your service, it will shut itself down.
