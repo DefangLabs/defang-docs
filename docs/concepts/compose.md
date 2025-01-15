@@ -65,15 +65,6 @@ services:
 Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. See our [Services](/docs/concepts/services) page for more.
 :::
 
-### `version`
-(Deprecated)
-
-The version of the Compose file format being used. This property is now obsolete, and will be ignored by Defang.
-
-```yaml
-# version: '3'
-```
-
 ### `volumes`
 (Not yet supported)
 
