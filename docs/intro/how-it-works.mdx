@@ -69,3 +69,5 @@ Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build yo
 ## Service Provisioning
 
 After your images have been built, `cd` will provision the necessary resources and deploy these images as new services in your cloud account. Defang uses the cloud provider's SDK to create the necessary resources for your services. This may include creating new containers, setting up networking, and configuring any other resources your services needs, such as storage resources.
+
+When deploying changes to existing services, the `cd` service will determine the minimum set of changes necessary and add, remove, replace, or update services as necessary.
