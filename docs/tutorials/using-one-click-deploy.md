@@ -17,11 +17,17 @@ To access the full range of features provided by Defang, we recommend using the 
 ## Step 1 - Choose a Sample
 Head to our [list of samples](https://defang.io/#samples) and click a sample you want to deploy. Then, click on the button that says "1-Click Deploy".
 
-Alterntively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's repository. 
+![one-click-deploy-button](/img/use-one-click-tutorial/one-click-deploy-button.png)
+
+:::info
+Alternatively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's GitHub repository. 
+
+![deploy-with-defang-button](/img/use-one-click-tutorial/deploy-with-defang-button.png)
+:::
 
 ## Step 2 - Allow Permissions
 
-After you've clicked, you will be prompted to use GitHub to log in. Once you see a "Create a Repository" page appear, allow the sample repository to get cloned into your GitHub account. 
+After you've clicked, you will be prompted to use GitHub to log in. Once you see a "Create a new repository" page appear, allow the sample repository to get cloned into your GitHub account. 
 
 ## Step 3 - Wait for Deployment to Complete
 
