@@ -12,19 +12,6 @@ This tutorial will show you how to add a custom Defang 1-Click Deploy button to 
 This page focuses on adding 1-Click Deploy to any app that is not from [our list of samples](https://defang.io/#samples). We have a separate tutorial on [how to use 1-Click Deploy](/docs/tutorials/using-one-click-deploy) for Defang's pre-made samples, which is meant for new users. 
 :::
 
-<!-- 
-0. have a project ready, 
-1. get the deploy.yaml action (and set configs as needed)
-2. get the compose.yaml for project and put in root folder
-3. click "template repo" in settings github
-4. get the url (encoded version) of this template repo ready for making a new 1-click deployment instance
-    https://portal.defang.dev/redirect?url=<encoded url>&name=your-project-name
-    this goes thru portal in order for the person deploying to get logged into defang
-    https://www.urlencoder.io/ can use this encoder
-5. paste it into the readme/button 
--->
-
-
 ## Step 1 - Have an App Ready
 
 The button we will be creating in this tutorial will allow any user to deploy your app to their Defang account. If your app is ready to be deployed with Defang (i.e. has a valid `compose.yaml` file), you can skip this step. 
@@ -87,26 +74,26 @@ jobs:
 
 ## Step 3 - Use a Template GitHub Repository
 
-You have the option of using Defang's template repo or your own template GitHub Repo for this step. There is no difference in end result, but it may be easier to use Defang's template repo so that you do not have to create your own.
+You have the option of using Defang's template repo or your own template GitHub repo for this step. There is no difference in end result, but it may be easier to use Defang's template repo so that you do not have to create your own.
 
 ### Option 1 - Use an Existing Template Repo
 
-1. Click the link to [Defang's 1-Click Template Repo](https://github.com/DefangLabs/1-click-template), or open an existing template repo if you have one.  
+1. Click the link to [Defang's 1-Click template repo](https://github.com/DefangLabs/1-click-template), or open an existing template repo if you have one.  
 2. Click the dropdown menu next to the green "Use this template" button near the top right corner, then click "Create a new repository":
 
 ![use-this-template](/img/custom-one-click-tutorial/use-this-template.png)
 
-4. You will be taken to a page similar to the one shown below. Then, enter a name for your repository and click the green "Create repository" button at the bottom.
+3. You will be taken to a page similar to the one shown below. Then, enter a name for your repository and click the green "Create repository" button at the bottom.
 
 ![create-a-new-repo](/img/custom-one-click-tutorial/create-a-new-repo.png)
 
-5. Now that you've created a new repository from a template repo, you can move onto the next step, which is getting the encoded URL.
+4. Now that you've created a new repository from a template repo, you can move onto the next step, which is getting the encoded URL.
 
 ### Option 2 - Manually Set Up a Template Repo
 
 1. Create a new repository on GitHub. 
 2. Go to the repository's "Settings", seen near the right on the top bar. 
-3. Select the "Template Repository" box to turn your repo into a template repo, as seen below:
+3. Select the "Template repository" box to turn your repo into a template repo, as seen below:
 
 ![select-template-repo-box](/img/custom-one-click-tutorial/select-template-repo-box.png)
 
@@ -140,9 +127,7 @@ The finished link should look similar to the one below:
 https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2F<your-github-username>%2F<your-project-here>&name=<your-project-here>
 ```
 
-
 Now you have a link for anyone to deploy your app to Defang, with just 1 click! 
-
 
 ### Examples
 For example, you can add it as a link in a Markdown file:
