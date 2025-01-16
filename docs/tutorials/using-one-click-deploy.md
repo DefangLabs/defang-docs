@@ -1,6 +1,6 @@
 ---
 title: Using 1-Click Deploy
-sidebar_position: 800
+sidebar_position: 300
 description: Use 1-Click Deploy to easily deploy a sample to the Defang Playground. 
 ---
 
