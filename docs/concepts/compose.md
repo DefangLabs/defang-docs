@@ -38,18 +38,6 @@ services:
 ## Compose Top-level Properties
 Here are a list of top-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
-### `networks`
-(Optional)
-
-The networks defined in your application. This is commonly added together with a [service-level `networks`](#networks-1) property. 
-
-```yaml
-networks:
-  public: 
-```
-
-See our [Networking](/docs/concepts/networking) page for more.
-
 ### `services`
 (Required)
 
@@ -62,8 +50,20 @@ services:
 ```
 
 :::info 
-Defang identifies services by the [account username](./accounts.md) and the service name (as defined in the `compose.yaml` file). This means that if you have multiple Defang projects with the same service name, they will conflict with each other. See our [Services](/docs/concepts/services) page for more.
+Defang identifies a service based on your username, project name, and the service name you've defined under the `services` property. See our [Services](/docs/concepts/services) page for more about how Defang resolves service names.
 :::
+
+### `networks`
+(Optional)
+
+The networks defined in your application. This is commonly added together with a [service-level `networks`](#networks-1) property. 
+
+```yaml
+networks:
+  public: 
+```
+
+See our [Networking](/docs/concepts/networking) page for more.
 
 ### `volumes`
 (Not yet supported)
@@ -107,6 +107,31 @@ build:
   context: .
   dockerfile: ./Dockerfile
 ```
+
+### `image`
+(Required, unless `build` is defined)
+
+[This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#image) describes the image from which your container should start.
+
+```yaml
+image: nginx:latest
+```
+
+### `ports`
+(Optional, but required if you want to access the service from outside the container)
+
+The ports to expose. The default port mode is `ingress`.
+
+```yaml
+ports:
+  - mode: ingress
+    target: 80
+    published: 80
+```
+
+:::info
+Defang ignores `published` ports in production. As such, it is common to make `target` and `published` ports the same when using Defang. However, it can be useful to include a `published` port for local development, such as Docker.  
+:::
 
 ### `command`
 (Optional)
@@ -187,15 +212,6 @@ healthcheck:
   retries: 3
 ```
 
-### `image`
-(Required, unless `build` is defined)
-
-[This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#image) describes the image from which your container should start.
-
-```yaml
-image: nginx:latest
-```
-
 ### `networks`
 (Optional)
 
@@ -216,22 +232,6 @@ networks:
  
 See our [Networking](/docs/concepts/networking) page for more.
  
-### `ports`
-(Optional, but required if you want to access the service from outside the container)
-
-The ports to expose. The default port mode is `ingress`.
-
-```yaml
-ports:
-  - mode: ingress
-    target: 80
-    published: 80
-```
-
-:::info
-Defang ignores `published` ports in production. As such, it is common to make `target` and `published` ports the same when using Defang. However, it can be useful to include a `published` port for local development, such as Docker.  
-:::
-
 ### `restart`
 (Optional, but highly recommended)
 
