@@ -4,20 +4,37 @@ description: Defang allows you deploy services, defined as containers, to the cl
 sidebar_position: 200
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Services
 
-Defang allows you deploy services defined as containers. You can define your services using a [Compose file](./compose.md) or a [Pulumi program](./pulumi.md). Services can be exposed to the internet or kept private, and can communicate between themselves using the following conventions for hostnames:
-
-`<username>-<service-name>`
+Defang allows you deploy services defined as containers. You can define your services using a [Compose file](./compose.md) or a [Pulumi program](./pulumi.md). Services can be exposed to the internet or kept private, and can communicate between themselves using certain conventions for hostnames.
 
 ### Service Name Resolution
-As shown above, Defang identifies services by the [account username](./accounts.md) and the service name. 
+
+Defang identifies services by using your [account username](/docs/concepts/accounts), [project name](/docs/concepts/projects), and service name. The port is included in the [domain](/docs/concepts/domains) for the service.
+
 
 :::tip
-Service names are defined in your Compose file or your Pulumi program.
+Service names are defined in your Compose file or in your Pulumi program.
 :::
 
-This means that if you have multiple Defang projects with the same service name, they will conflict with each other. To avoid naming conflicts, we recommend using a different name for each service you define. 
+<Tabs>
+  <TabItem value="playground" label="Playground" default>
+    Domains for services in Playground follow the following pattern:
+    ```
+    <username>-<service-name>--<port>.prod1a.defang.dev
+    ```
+  </TabItem>
+  <TabItem value="byoc" label="BYOC">
+    Domains for services in Defang BYOC follow the following pattern:
+    ```
+    <service-name>--<port>.<project-name>.<username>.defang.app
+    ```
+  </TabItem>
+</Tabs>
+
 
 ### Service Deployment
 Defang manages the deployment process for services. You can learn more about how services are deployed in the [Deployment page](./deployments.md).
