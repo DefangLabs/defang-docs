@@ -48,4 +48,4 @@ https://<username>-<service-name>--<port>.defang.dev
 
 ### Configuration in 1-Click Deploy
 
-If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub Action will automatically deploy those values for you. 
+If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub Action can automatically handle those values for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
