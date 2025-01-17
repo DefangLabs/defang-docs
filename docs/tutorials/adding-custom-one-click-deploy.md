@@ -6,7 +6,7 @@ description: Add a custom 1-Click Deploy link to deploy your own app.
 
 # Adding Custom 1-Click Deploy to Your App
 
-This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground. 1-Click Deploy links point to a special Defang URL. Clicking this link will trigger a deployment of a project to Defang. These links are often placed as buttons in the `README.md` file of your project repository. They are the easiest way to allow anyone to deploy your app. 
+This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground. A 1-Click Deploy link points to a special Defang URL. Clicking this link will trigger a deployment of a project to Defang. The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app. 
 
 :::info
 If you are trying to use 1-Click Deploy with one of our [samples](https://defang.io/samples/), we have a separate tutorial on [how to use 1-Click Deploy](/docs/tutorials/using-one-click-deploy). 
