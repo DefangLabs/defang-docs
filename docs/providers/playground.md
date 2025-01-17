@@ -4,7 +4,7 @@ description: The Defang Playground is a free tier that allows you to experiment 
 sidebar_position: 0000
 ---
 
-The Defang Playground is a free tier that allows you to experiment with Defang. The Playground is a shared environment that should not be used to run production workloads. The Playground is a great way to get started with Defang using "1-click deploy" or to experiment with the Defang CLI.
+The Defang Playground is a free deployment provider that allows you to experiment with Defang. The Playground is a shared environment that should not be used to run production workloads. The Playground is a great way to get started with Defang. You can even use [1-Click Deploy](/docs/tutorials/using-one-click-deploy) to try it out quickly or you can get started with the [Defang CLI](/docs/getting-started).
 
 This page highlights architectural considerations when deploying to the Playground and any differences you might encounter when deploying to the Playground versus deploying to your own cloud account.
 
