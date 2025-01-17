@@ -45,7 +45,7 @@ You can find a sample of how to set sensitive config values [here](https://githu
 :::
 
 :::info
-Note that if you are using the [1-Click Deploy](/docs/tutorials/using-one-click-deploy) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you.
+If you are using the [1-Click Deploy](/docs/tutorials/using-one-click-deploy) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
 :::
 
 ## Interpolation
