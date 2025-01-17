@@ -7,7 +7,7 @@ const darkCodeTheme = themes.dracula;
 const redirects = [
   {
     from: '/docs/samples',
-    to: 'https://defang.io/#samples',
+    to: 'https://defang.io/samples',
   },
 ];
 
@@ -126,7 +126,7 @@ const config = {
             },
             {
               label: 'Samples',
-              href: 'https://defang.io/#samples',
+              href: 'https://defang.io/samples',
             },
             {
               label: 'GitHub',
