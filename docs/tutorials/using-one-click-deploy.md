@@ -33,7 +33,7 @@ After you've clicked, you will be prompted to use GitHub to log in. Once you see
 
 ## Step 3 - Wait for Deployment to Complete
 
-A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. If you wish to, you can see this by going into the "Actions" tab in your GitHub repository. 
+A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository. 
 
 You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](/docs/getting-started).  
 
@@ -48,4 +48,4 @@ https://<username>-<service-name>--<port>.defang.dev
 
 ### Configuration in 1-Click Deploy
 
-If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub Action will automatically deploy those values for you. 
+If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub Action can automatically handle those values for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
