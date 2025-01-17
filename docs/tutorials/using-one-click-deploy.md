@@ -8,7 +8,7 @@ description: Use 1-Click Deploy to easily deploy a sample to the Defang Playgrou
 
 This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample to the Defang Playground. 
 
-The 1-Click Deploy button is intended to be a quickstart way for new users to deploy to the [Defang Playground](/docs/concepts/defang-playground) with no prior installation of the CLI needed. 
+The 1-Click Deploy button is the easiest way for new users to deploy a sample project to the [Defang Playground](/docs/concepts/defang-playground). No CLI installation is required. 
 
 :::info
 To access the full range of features provided by Defang, we recommend using the [Defang CLI](/docs/getting-started).
