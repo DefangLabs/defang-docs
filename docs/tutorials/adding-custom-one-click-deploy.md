@@ -6,7 +6,9 @@ description: Add a custom 1-Click Deploy link to deploy your own app.
 
 # Adding Custom 1-Click Deploy to Your App
 
-This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground. A 1-Click Deploy link points to a special Defang URL. Clicking this link will trigger a deployment of a project to Defang. The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app. 
+This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground. 
+
+A 1-Click Deploy link points to a special Defang URL. Clicking this link will trigger a deployment of a project to Defang. The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy a clone of your app. 
 
 :::info
 If you are trying to use 1-Click Deploy with one of our [samples](https://defang.io/samples/), we have a separate tutorial on [how to use 1-Click Deploy](/docs/tutorials/using-one-click-deploy). 
@@ -18,13 +20,13 @@ If you are trying to use 1-Click Deploy with one of our [samples](https://defang
 
 ## Step 1 - Prepare Your App
 
-You will need a `compose.yaml` file in the root folder of your project to describe the services which will be deployed. Learn more about writing [Compose files](/docs/concepts/compose#example-of-a-compose-file).
+You will need a `compose.yaml` file in the root folder of your project repository to describe the services which will be deployed. Learn more about writing [Compose files](/docs/concepts/compose#example-of-a-compose-file).
 
 ## Step 2 - Copy the GitHub Workflow
  
-In your project, add a new folder named `.github`, then add a folder `workflows` inside it, and copy the entire GitHub Workflow `deploy.yaml` file from [here](https://github.com/DefangLabs/samples/blob/main/starter-sample/.github/workflows/deploy.yaml) into the `workflows` folder. 
+In your project, add a new folder named `.github`, then add a folder named `workflows` inside it, and copy the entire GitHub Workflow `deploy.yaml` file from [here](https://github.com/DefangLabs/samples/blob/main/starter-sample/.github/workflows/deploy.yaml) into the `workflows` folder. 
  
-If your app requires [configuration](/docs/concepts/configuration) (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action). 
+If your app requires configuration (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action). 
 
 You should have a `.yaml` file similar to the one below:
 ```yaml
@@ -70,12 +72,12 @@ https%3A%2F%2Fgithub.com%2F<your-github-username>%2F<your-repo-name>
 You will need to create a 1-Click Deploy link with the following format: `https://portal.defang.dev/redirect?url=` + your encoded URL. This ensures that the user can get [logged in](/docs/concepts/authentication/) to Defang before they get redirected to clone your app for deployment. 
 
 :::tip
-Optionally, you can add `&name=<your-project-here>` to the end of the link if you'd like to suggest a name for the user to use for their deployment.
+Optionally, you can add `&name=<your-suggested-name>` to the end of the link if you'd like to suggest a name for the user to use for their deployment.
 :::
 
 The finished link should look similar to the one below:
 ```
-https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2F<your-github-username>%2F<your-project-here>&name=<your-project-here>
+https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2F<your-github-username>%2F<your-repo-name>&name=<your-suggested-name>
 ```
 
 Now you have a link for anyone to deploy your app to Defang, with just 1 click. 
