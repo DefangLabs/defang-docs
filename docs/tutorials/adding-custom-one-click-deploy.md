@@ -26,7 +26,7 @@ You will need a `compose.yaml` file in the root folder of your project repositor
  
 In your project, add a new folder named `.github`, then add a folder named `workflows` inside it, and copy the entire GitHub Workflow `deploy.yaml` file from [here](https://github.com/DefangLabs/samples/blob/main/starter-sample/.github/workflows/deploy.yaml) into the `workflows` folder. 
  
-If your app requires configuration (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action). 
+If your app requires [configuration](/docs/concepts/configuration) (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values). 
 
 You should have a `.yaml` file similar to the one below:
 ```yaml
