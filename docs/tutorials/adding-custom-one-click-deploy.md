@@ -104,7 +104,7 @@ https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate
 
 Now you have a link for anyone to deploy your app to Defang, with just 1 click. 
 
-## Step 5 - Use the Link
+## Step 6 - Use the Link
 For example, you can add it as a link in a Markdown file:
 ```
 [1-Click Deploy Link](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
