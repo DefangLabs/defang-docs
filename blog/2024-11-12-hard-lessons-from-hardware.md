@@ -60,4 +60,4 @@ Before I let you go, here are the hard lessons from hardware, from yours truly:
 4. Choose the simpler way if it is offered.
 5. That’s where Defang comes in.
 
-Want to try deploying to the cloud yourself? You can try it out [here](https://defang.io/#samples). Keep on composing up! 💪 
+Want to try deploying to the cloud yourself? You can try it out [here](https://defang.io/samples). Keep on composing up! 💪

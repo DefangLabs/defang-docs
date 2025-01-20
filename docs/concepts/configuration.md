@@ -19,6 +19,9 @@ defang config set API_KEY
 
 You can use sensitive config by specifying them in the `environment` section of a service in a `compose.yaml` file without any value, or by specifying an environment key with a `null` value in your Pulumi code.
 
+Either one of list notation or map notation is acceptable for defining your environment variable(s). See below for an example of each.
+
+#### With List Notation
 ```yaml
 services:
   service1:
@@ -27,9 +30,7 @@ services:
       - API_KEY
 ```
 
-You can also use this syntax:
-
-
+#### With Map Notation
 ```yaml
 services:
   service1:
@@ -45,7 +46,7 @@ You can find a sample of how to set sensitive config values [here](https://githu
 :::
 
 :::info
-Note that if you are using the [1-Click Deploy](/docs/tutorials/using-one-click-deploy) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you.
+If you are using the [1-Click Deploy](/docs/tutorials/using-one-click-deploy) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
 :::
 
 ## Interpolation
