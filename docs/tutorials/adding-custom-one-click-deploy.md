@@ -4,6 +4,8 @@ sidebar_position: 800
 description: Add a custom 1-Click Deploy button to deploy your own app. 
 ---
 
+import {OriginalRepoUrl, TemplateUrl, EncodedTemplateUrl, OneClickUrl} from '../../src/components/URLEncoder';
+
 # Adding a Custom 1-Click Deploy
 
 This tutorial will show you how to add a custom Defang 1-Click Deploy button to deploy your own app to Defang Playground. 
@@ -112,6 +114,11 @@ https://github.com/<your-github-username>/<your-project-here>
 ```
 https%3A%2F%2Fgithub.com%2F<your-github-username>%2F<your-project-here>
 ```
+
+<OriginalRepoUrl/>
+<TemplateUrl/>
+<EncodedTemplateUrl/>
+<OneClickUrl/>
 
 ## Step 5 - Create the 1-Click Deploy Link
 
