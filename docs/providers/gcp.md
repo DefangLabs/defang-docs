@@ -10,6 +10,10 @@ sidebar_position: 3000
 The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 
+:::success GCP Free Tier & Credits
+You can use the GCP Free Tier to try out Defang. Learn more about it [here](https://cloud.google.com/free). If you're an elligible startup, you can sign up for credits [here](https://cloud.google.com/developers/startups).
+:::
+
 Defang enables you to effortlessly develop and deploy full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
 
 ## Getting Started
