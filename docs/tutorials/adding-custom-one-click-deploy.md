@@ -10,7 +10,7 @@ import { URLProvider, URLEncode } from "../../src/components/OneClick";
 
 # Adding Custom 1-Click Deploy to Your App
 
-This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground so that other people can easily deploy your app.
+This tutorial will show you how to add a 1-Click Deploy link so other people can easily deploy your app to the Defang Playground and eventually to their own cloud accounts.
 
 The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app. 
 

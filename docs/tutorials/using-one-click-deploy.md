@@ -17,12 +17,14 @@ To access the full range of features provided by Defang, we recommend using the 
 ## Step 1 - Choose a Sample
 Head to our [list of samples](https://defang.io/#samples) and click a sample you want to deploy. Then, click on the button that says "1-Click Deploy".
 
-![one-click-deploy-button](/img/use-one-click-tutorial/one-click-deploy-button.png)
+<img src="/img/use-one-click-tutorial/one-click-deploy-button.png" alt="one-click-deploy-button" width="500"/>
+<br/>
 
 :::info
 Alternatively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's GitHub repository. 
 
-![deploy-with-defang-button](/img/use-one-click-tutorial/deploy-with-defang-button.png)
+<img src="/img/use-one-click-tutorial/deploy-with-defang-button.png" alt="deploy-with-defang-button" width="400"/>
+<br/>
 :::
 
 ## Step 2 - Login
@@ -32,20 +34,24 @@ For 1-click deployments to work, Defang has to have your permission, which you c
 ![login-screen](/img/use-one-click-tutorial/login-screen.png)
 
 
-## Step 2 - Create Your Repo
+## Step 3 - Create Your Repo
 
 Onced logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project. 
 
-![create-repository](/img/use-one-click-tutorial/create-repository.png)
+<img src="/img/use-one-click-tutorial/create-repository.png" alt="create-repository" width="600"/>
+<br/>
 
 
-## Step 3 - Wait for Deployment to Complete
+## Step 4 - Wait for Deployment to Complete
 
 A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository. 
 
 You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](/docs/getting-started).  You can also see deployment progress in the "Actions" tab of your GitHub repository:
 
-![github-actions-tab](/img/use-one-click-tutorial/actions.png)
+<img src="/img/use-one-click-tutorial/actions.png" alt="github-actions-tab" width="400"/>
+
+<br/>
+<br/>
 
 :::tip
 If you decide to make a commit later to a repository created from 1-Click Deploy, then the project will automatically get deployed again to Defang Playground.
