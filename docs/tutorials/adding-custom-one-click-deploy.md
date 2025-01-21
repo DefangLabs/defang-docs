@@ -4,9 +4,13 @@ sidebar_position: 800
 description: Add a custom 1-Click Deploy link to deploy your own app. 
 ---
 
+import { URLProvider, URLEncode } from "../../src/components/OneClick";
+
+<URLProvider>
+
 # Adding Custom 1-Click Deploy to Your App
 
-This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground. 
+This tutorial will show you how to add a 1-Click Deploy link to deploy your app to the Defang Playground so that other people can easily deploy your app.
 
 The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app. 
 
@@ -83,11 +87,15 @@ You will need the encoded version of the URL of the page from the previous step.
 ```
 https://github.com/new?template_name=<your-repo-name>&template_owner=<your-github-username>
 ```
-2. You can go online and paste the URL from the step above into a URL encoder tool of your choice. You should end up with an encoded URL, similar to the one shown below:
+2. You need to URL encode your url for the next step. For example, the url above would be encoded as:
 
 ```
 https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>
 ```
+
+You can just paste your url in here to get the encoded version:
+
+<URLEncode />
 
 ## Step 5 - Create the 1-Click Deploy Link
 
@@ -113,3 +121,5 @@ Or perhaps you can add it to a button with your own styling:
 ```
 [![1-click-deploy-button](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
 ```
+
+</URLProvider>
