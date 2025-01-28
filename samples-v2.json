@@ -506,6 +506,30 @@
     ]
   },
   {
+    "name": "nextjs-claude",
+    "category": "TypeScript",
+    "readme": "# Next.js & Claude\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-claude-template%26template_owner%3DDefangSamples)\n\nThis sample shows a Next.js and Claude application deployed using Defang. It uses Anthropic API for its chatbot functionality.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `ANTHROPIC_API_KEY` \nAn API key for Anthropic AI.\n```bash\ndefang config set ANTHROPIC_API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC \n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Next.js & Claude\n\nShort Description: A fun chatbot created with Next.js and Claude. \n\nTags: Next.js, TypeScript, React, JavaScript, Chatbot, Claude, AI, Anthropic\n\nLanguages: TypeScript\n",
+    "directoryName": "nextjs-claude",
+    "title": "Next.js & Claude",
+    "shortDescription": "A fun chatbot created with Next.js and Claude. ",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "JavaScript",
+      "Chatbot",
+      "Claude",
+      "AI",
+      "Anthropic"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "configs": [
+      "ANTHROPIC_API_KEY"
+    ]
+  },
+  {
     "name": "nextjs-documentation",
     "category": "nodejs",
     "readme": "# Nextra\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-documentation-template%26template_owner%3DDefangSamples)\n\nThis template is a documentation starter project developed using Nextra, designed to streamline the creation of your documentation and quickly build a digital knowledgebase. You can add content easily by simply adding markdown files. This code-free solution requires no adjustments to the basic structure. We have prepared all the essential files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Nextra\n\nShort Description: A documentation starter project developed using Nextra designed to streamline the creation of your documentation.\n\nTags: Next.js, Documentation, Nextra, Knowledgebase, Node.js, JavaScript, TypeScript\n\nLanguages: nodejs\n",
