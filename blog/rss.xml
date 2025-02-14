@@ -4,10 +4,39 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Wed, 11 Dec 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[January 2025 Defang Compose Update]]></title>
+            <link>https://docs.defang.io/blog/2025/02/07/january-product-updates</link>
+            <guid>https://docs.defang.io/blog/2025/02/07/january-product-updates</guid>
+            <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Defang Compose Update]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-2aab6b0201bf44543b055debddc43e40.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>Welcome to 2025! As we had shared in our early <a href="https://docs.defang.io/blog/2024-12-04-launch-week" target="_blank" rel="noopener noreferrer">Dec update</a>, we reached our V1 milestone with support for GCP and DigitalOcean in Preview and production support for AWS. We were very gratified to see the excitement around our launch, with Defang ending 2024 with twice the number of users as our original goal!</p>
+<p>We are excited to build on that momentum going into 2025. And we are off to a great start in Jan, with some key advancements:</p>
+<ol>
+<li><strong>GCP parity with AWS:</strong> We are really excited to announce that our GCP provider is now feature-complete, with support for key features such as <a href="https://docs.defang.io/docs/concepts/managed-storage/managed-postgres" target="_blank" rel="noopener noreferrer">Managed Postgres</a>, <a href="https://docs.defang.io/docs/concepts/managed-storage/managed-redis" target="_blank" rel="noopener noreferrer">Managed Redis</a>, <a href="https://docs.defang.io/docs/concepts/domains#bring-your-own-domain" target="_blank" rel="noopener noreferrer">BYOD</a> (Bring-Your-Own-Domain), <a href="https://docs.defang.io/docs/tutorials/deploy-with-gpu" target="_blank" rel="noopener noreferrer">GPUs</a>, AI-assisted <a href="https://docs.defang.io/docs/concepts/debug" target="_blank" rel="noopener noreferrer">Debugging</a>, and more. Give it a try and let us know your feedback.</li>
+<li><strong>Defang Deployed with Defang:</strong> In 2025, we are doubling our focus on production use-cases where developers are using Defang every day to deploy their production apps. And where better to start than with Defang itself? We had already been using Defang to deploy portions of our infrastructure (such as our web site), but we are super happy to report that now we are using Defang to deploy <strong>all</strong> our services - including our Portal, Playground, the Defang back-end (aka Fabric) and more. We’ll be sharing more about how we did this, and publishing some of the related artifacts, in a blog post soon - stay tuned.</li>
+<li><strong>Campus Advocate Program:</strong> One of our key goals for 2025 is to bring Defang to more students and hobbyists. To do this, we are very excited to launch our <a href="https://defang.io/cap/" target="_blank" rel="noopener noreferrer">Campus Advocate Program</a>, a community of student leaders passionate about cloud technology. Our advocates will build communities, host events, and help peers adopt cloud development with Defang. If you’re a student eager to drive cloud innovation on your campus, we’d love to hear from you - you can <a href="https://s.defang.io/cap?_gl=1*1rx948d*_ga*ODk3NDgzNjU4LjE3MTgxNDc2MjQ.*_ga_QVJVWN44CW*MTczODM2NjYyOC4xMDMuMS4xNzM4MzY4MjI2LjAuMC4w" target="_blank" rel="noopener noreferrer">apply here</a>.</li>
+<li><strong>1-click Deploy instructions:</strong> One of our most popular features is the ability to deploy any of our 50+ samples with <a href="https://docs.defang.io/docs/tutorials/using-one-click-deploy" target="_blank" rel="noopener noreferrer">a single click</a>. We have now published <a href="https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy" target="_blank" rel="noopener noreferrer">instructions</a> showing how you can provide a similar experience for your project or sample. We are curious to see what you deploy with this!</li>
+<li><strong>Model Context Protocol</strong> sample: AI agents are of course the rage nowadays. Recently, Docker published a <a href="https://www.docker.com/blog/the-model-context-protocol-simplifying-building-ai-apps-with-anthropic-claude-desktop-and-docker/" target="_blank" rel="noopener noreferrer">blog</a> showing how you can use Docker to containerize “servers” following Anthropic’s <a href="https://modelcontextprotocol.io/introduction" target="_blank" rel="noopener noreferrer">Model Context Protocol</a>. We have now published a sample that shows you how to easily deploy such containerized servers to the cloud using Defang - <a href="https://github.com/DefangLabs/samples/tree/main/samples/mcp" target="_blank" rel="noopener noreferrer">check it out here</a>.</li>
+</ol>
+<p>So, you can see we have been busy! But that is not all - we have a lot more in the pipeline in the coming months. Stay tuned - it’s going to be an exciting 2025!</p>
+<p>P.S.: <strong>Defang is now on Bluesky!</strong> <a href="https://bsky.app/profile/defanglabs.bsky.social" target="_blank" rel="noopener noreferrer">Follow us</a> to stay connected, get the latest updates, and join the conversation. See you there!</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>Postgres</category>
+            <category>DigitalOcean</category>
+            <category>AWS</category>
+            <category>CLI</category>
+            <category>AI</category>
+            <category>Debugging</category>
+            <category>Defang Compose Update</category>
+        </item>
         <item>
             <title><![CDATA[Defang is live on Product Hunt!]]></title>
             <link>https://docs.defang.io/blog/2024-12-11-product-hunt</link>
