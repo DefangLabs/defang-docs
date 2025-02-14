@@ -15,7 +15,7 @@ Postgres, or PostgreSQL, is a powerful open-source relational database system kn
 | [Playground](/docs/providers/playground#managed-services) | ❌ |
 | [AWS](/docs/providers/aws#managed-storage) | ✅ |
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP](/docs/providers/gcp#future-improvements) | ❌ |
+| [GCP](/docs/providers/gcp#future-improvements) | ✅ |
 
 ## How to use Managed Postgres
 
