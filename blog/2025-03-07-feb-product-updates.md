@@ -6,6 +6,7 @@ tags:
     NoDevOps,
     BYOC,
     Postgres,
+    GCP,
     DigitalOcean,
     AWS,
     CLI,
