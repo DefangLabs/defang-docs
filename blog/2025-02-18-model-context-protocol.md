@@ -1,5 +1,5 @@
 ---
-title: Simplifying Deploying AI Apps to the Cloud using Docker and Model Context Protocol 
+title: Simplifying Deployment of AI Apps to the Cloud using Docker and Model Context Protocol 
 tags:
   [
     Cloud,
