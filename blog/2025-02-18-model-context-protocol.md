@@ -16,7 +16,6 @@ tags:
     Docker
   ]
 author: Defang Team
-draft: true
 ---
 
 Anthropic recently unveiled the [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) (MCP), “a new standard for connecting AI assistants to the systems where data lives”. However, as Docker [pointed out](https://www.docker.com/blog/the-model-context-protocol-simplifying-building-ai-apps-with-anthropic-claude-desktop-and-docker/), “packaging and distributing MCP Servers is very challenging due to complex environment setups across multiple architectures and operating systems”. Docker [helps to solve this problem](https://www.docker.com/blog/the-model-context-protocol-simplifying-building-ai-apps-with-anthropic-claude-desktop-and-docker/) by enabling developers to “encapsulate their development environment into containers, ensuring consistency across all team members’ machines and deployments.” The Docker work includes a list of [reference MCP Servers](https://github.com/modelcontextprotocol/servers) packaged up as containers, which you can deploy locally and test your AI application.
