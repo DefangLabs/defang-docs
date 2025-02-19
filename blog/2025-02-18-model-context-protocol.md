@@ -18,6 +18,8 @@ tags:
 author: Defang Team
 ---
 
+![mcp](/img/mcp/mcp.png)
+
 Anthropic recently unveiled the [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) (MCP), “a new standard for connecting AI assistants to the systems where data lives”. However, as Docker [pointed out](https://www.docker.com/blog/the-model-context-protocol-simplifying-building-ai-apps-with-anthropic-claude-desktop-and-docker/), “packaging and distributing MCP Servers is very challenging due to complex environment setups across multiple architectures and operating systems”. Docker [helps to solve this problem](https://www.docker.com/blog/the-model-context-protocol-simplifying-building-ai-apps-with-anthropic-claude-desktop-and-docker/) by enabling developers to “encapsulate their development environment into containers, ensuring consistency across all team members’ machines and deployments.” The Docker work includes a list of [reference MCP Servers](https://github.com/modelcontextprotocol/servers) packaged up as containers, which you can deploy locally and test your AI application.
 
 However, to put such containerized AI applications into production, you need to be able to not only test locally, but also easily deploy the application to the cloud. This is what Defang enables. In this blog and the accompanying [sample](https://github.com/DefangLabs/samples/tree/main/samples/mcp), we show how to build a sample AI application using one of the reference MCP Servers, run and test it locally using Docker, and when ready, to easily deploy it to the cloud of your choice (AWS, GCP, or DigitalOcean) using Defang.
