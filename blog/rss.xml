@@ -30,6 +30,7 @@
             <category>NoDevOps</category>
             <category>BYOC</category>
             <category>Postgres</category>
+            <category>GCP</category>
             <category>DigitalOcean</category>
             <category>AWS</category>
             <category>CLI</category>

@@ -32,6 +32,7 @@
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
         <category label="Postgres" term="Postgres"/>
+        <category label="GCP" term="GCP"/>
         <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="AWS" term="AWS"/>
         <category label="CLI" term="CLI"/>
