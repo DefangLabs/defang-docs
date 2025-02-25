@@ -29,14 +29,14 @@ Alternatively, you can find the "1-Click Deploy" button located in the `README.m
 
 ## Step 2 - Login
 
-For 1-click deployments to work, Defang has to have your permission, which you can grant by logging in. If you are already logged in, you will be automatically taken to the next step.
+For 1-click deployments to work, Defang must have your permission, which you can grant by logging in. If you are already logged in, you will be automatically taken to the next step.
 
 ![login-screen](/img/use-one-click-tutorial/login-screen.png)
 
 
 ## Step 3 - Create Your Repo
 
-Onced logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project. 
+Once logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project. 
 
 <img src="/img/use-one-click-tutorial/create-repository.png" alt="create-repository" width="600"/>
 <br/>
