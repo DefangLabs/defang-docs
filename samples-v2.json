@@ -576,6 +576,23 @@
     ]
   },
   {
+    "name": "nextjs-cv",
+    "category": "nodejs",
+    "readme": "# Next.js CV\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-cv-template%26template_owner%3DDefangSamples)\n\nThis is a sample of a Next.js CV web application, deployed with Defang. \n\nThe template is based off of the repository https://github.com/BartoszJarocki/cv on GitHub.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Next.js CV\n\nShort Description: A Next.js web app that displays a minimalist CV.\n\nTags: Next.js, React, TypeScript, JavaScript\n\nLanguages: nodejs\n",
+    "directoryName": "nextjs-cv",
+    "title": "Next.js CV",
+    "shortDescription": "A Next.js web app that displays a minimalist CV.",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "languages": [
+      "nodejs"
+    ]
+  },
+  {
     "name": "nextjs-documentation",
     "category": "nodejs",
     "readme": "# Nextra\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-documentation-template%26template_owner%3DDefangSamples)\n\nThis template is a documentation starter project developed using Nextra, designed to streamline the creation of your documentation and quickly build a digital knowledgebase. You can add content easily by simply adding markdown files. This code-free solution requires no adjustments to the basic structure. We have prepared all the essential files for deployment. By spending just a few minutes setting up the environment, as detailed in the prerequisites, and executing the commands in our step-by-step guide, your website will be ready to go live in no time!\n\n## Essential Setup Files\n\n1. A [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) to describe the basic image of your applications.\n2. A [docker-compose file](https://docs.defang.io/docs/concepts/compose) to define and run multi-container Docker applications.\n3. A [.dockerignore](https://docs.docker.com/build/building/context/#dockerignore-files) file to comply with the size limit (10MB).\n\n## Prerequisite\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc), make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n   Plus, make sure that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n\n## A Step-by-Step Guide\n\n1. Open the terminal and type `defang login`\n2. Type `defang compose up` in the CLI\n3. Now your application will be launched\n\n---\n\nTitle: Nextra\n\nShort Description: A documentation starter project developed using Nextra designed to streamline the creation of your documentation.\n\nTags: Next.js, Documentation, Nextra, Knowledgebase, Node.js, JavaScript, TypeScript\n\nLanguages: nodejs\n",
