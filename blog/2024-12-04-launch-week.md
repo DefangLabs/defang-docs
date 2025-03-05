@@ -67,7 +67,7 @@ Join us during [MLH Global Hack Week](https://ghw.mlh.io/schedule) for hands-on 
 
 - **December 7: Cloud Chat**
 
-An IRL event with our team to explore V1 features in depth, answer your questions, and share insights from our journey. Register [here](https://lu.ma/cloudchat) to join. 
+An IRL event with our team to explore V1 features in depth, answer your questions, and share insights from our journey.
 
 - **December 10: Product Hunt Launch**
 

@@ -49,14 +49,6 @@ Looking ahead, we’re excited to collaborate with [MLH](https://mlh.io/), [Hack
 
 <img src="/img/august-update/townhall.png" alt="TownHall" style={{ width: 300 }} />
 
-## Townhall
-
-Mark your calendars! If you’re eager to learn more about what’s coming next, join us for our Townhall on September 25th. We’ll be sharing our future roadmap, answering your questions, and gathering your feedback.
-
-<Button href="https://lu.ma/9d8irae8" variant="contained" size="large" target="_blank">
-Register here!
-</Button>
-
 ---
 
 ## Roadmap
