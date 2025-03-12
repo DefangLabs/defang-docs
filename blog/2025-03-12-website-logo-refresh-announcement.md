@@ -29,7 +29,7 @@ As Defang evolves, so does our message:
 
 ### 2. A Sleek New Logo
 
-We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying any cloud applications.
+We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying any cloud applications to any cloud.
 
 ### 3. A Redesigned Website
 
