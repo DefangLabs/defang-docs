@@ -9,13 +9,13 @@ tags: [announcement, branding, refresh]
 
 # Introducing Defang's New Look: Website & Logo Refresh
 
-Over the last couple of years, as we have building Defang, we've learnt a lot about the key needs of developers in deploying their applications to the cloud - the primacy of a simple developer experience, while at the same time providing a flexible and production-ready solution that can work for seamlessly with all of the popular cloud platform targets.
+Over the last couple of years, as we have building Defang, we've learnt a lot about the key needs of developers in deploying their applications to the cloud - the primacy of a simple developer experience, while at the same time providing a flexible and production-ready solution that can work seamlessly with all of the popular cloud platform targets.
 
 In response, we have been constantly evolving our product functionality to address those needs in the simplest yet most powerful way we can come up with. While certainly there is a long way to go, we have definitely come a long way since we started.
 
 ## Why the Refresh?
 
-As we reflected on our journey, we realized our branding and messaging needed to better reflect Defang's current value. That's why today, we're excited to unveil our brand refresh, our first since the early days of Defang.
+As we reflected on our journey, we realized our branding and messaging needed to better reflect Defang's current value-proposition. That's why today, we're excited to unveil our brand refresh, our first since the early days of Defang.
 
 ## Here's what's new:
 
@@ -29,7 +29,7 @@ As Defang evolves, so does our message:
 
 ### 2. A Sleek New Logo
 
-We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying applications across any cloud platform.
+We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying any cloud applications.
 
 ### 3. A Redesigned Website
 
