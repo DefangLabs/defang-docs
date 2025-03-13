@@ -2,11 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2025-02-18T00:00:00.000Z</updated>
+    <updated>2025-03-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/https://www.google.com/s2/favicons?domain=defang.io</icon>
+    <entry>
+        <title type="html"><![CDATA[Introducing Defang's New Look: Website & Logo Refresh]]></title>
+        <id>https://docs.defang.io/blog/website-logo-refresh-announcement</id>
+        <link href="https://docs.defang.io/blog/website-logo-refresh-announcement"/>
+        <updated>2025-03-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Defang New Look]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang New Look" src="https://docs.defang.io/assets/images/new-look-288cad9fc80338960efb1fc032bf4a1d.png" width="1344" height="892" class="img_ev3q"></p>
+<p>Over the last couple of years, as we have building Defang, we've learnt a lot about the key needs of developers in deploying their applications to the cloud - the primacy of a simple developer experience, while at the same time providing a flexible and production-ready solution that can work seamlessly with all of the popular cloud platform targets.</p>
+<p>In response, we have been constantly evolving our product functionality to address those needs in the simplest yet most powerful way we can come up with. While certainly there is a long way to go, we have definitely come a long way since we started.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-the-refresh">Why the Refresh?<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#why-the-refresh" class="hash-link" aria-label="Direct link to Why the Refresh?" title="Direct link to Why the Refresh?">​</a></h2>
+<p>As we reflected on our journey, we realized our branding and messaging needed to better reflect Defang's current value-proposition. That's why today, we're excited to unveil our brand refresh, our first since the early days of Defang.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="heres-whats-new">Here's what's new:<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#heres-whats-new" class="hash-link" aria-label="Direct link to Here's what's new:" title="Direct link to Here's what's new:">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-refining-our-messaging">1. Refining Our Messaging<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#1-refining-our-messaging" class="hash-link" aria-label="Direct link to 1. Refining Our Messaging" title="Direct link to 1. Refining Our Messaging">​</a></h3>
+<p>As Defang evolves, so does our message:</p>
+<ul>
+<li><strong>Our Promise</strong>: Develop Anything, Deploy Anywhere.</li>
+<li><strong>What We Enable</strong>: Any App, Any Stack, Any Cloud.</li>
+<li><strong>How It Works</strong>: Take your app from Docker Compose to a secure, scalable deployment on your favorite cloud in minutes.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-a-sleek-new-logo">2. A Sleek New Logo<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#2-a-sleek-new-logo" class="hash-link" aria-label="Direct link to 2. A Sleek New Logo" title="Direct link to 2. A Sleek New Logo">​</a></h3>
+<p>We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying any cloud applications to any cloud.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-a-redesigned-website">3. A Redesigned Website<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#3-a-redesigned-website" class="hash-link" aria-label="Direct link to 3. A Redesigned Website" title="Direct link to 3. A Redesigned Website">​</a></h3>
+<p>We've refreshed our website with a sleek, intuitive design and a modern user experience to better showcase Defang's capabilities.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rolling-out-the-refresh">Rolling Out the Refresh<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#rolling-out-the-refresh" class="hash-link" aria-label="Direct link to Rolling Out the Refresh" title="Direct link to Rolling Out the Refresh">​</a></h2>
+<p>Starting today, you'll see these updates across our <a href="https://defang.io/" target="_blank" rel="noopener noreferrer">Defang.io</a> homepage and social media platforms (<a href="https://x.com/DefangLabs" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://www.linkedin.com/company/defanglabs" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a>, <a href="https://bsky.app/profile/defanglabs.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>). In the coming days, we'll extend this refresh across all our digital assets.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="wed-love-your-feedback">We'd Love Your Feedback!<a href="https://docs.defang.io/blog/website-logo-refresh-announcement#wed-love-your-feedback" class="hash-link" aria-label="Direct link to We'd Love Your Feedback!" title="Direct link to We'd Love Your Feedback!">​</a></h2>
+<p>Check out the new look and let us know what you think! And if you haven't, please join us on Discord and follow us on social media.</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="announcement" term="announcement"/>
+        <category label="branding" term="branding"/>
+        <category label="refresh" term="refresh"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Simplifying Deployment of AI Apps to the Cloud using Docker and Model Context Protocol]]></title>
         <id>https://docs.defang.io/blog/2025/02/18/model-context-protocol</id>
