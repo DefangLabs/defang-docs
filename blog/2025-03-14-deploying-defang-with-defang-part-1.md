@@ -5,6 +5,8 @@ author: Defang Team
 tags: [defang-with-defang, deployment, defang-portal]
 ---
 
+![Defang Compose Update](/img/defang-on-defang/part-1/header.png)
+
 Deploying applications is hard. Deploying **complex, multi-service applications** is even harder. When we first built the Defang Portal, we quickly recognized the complexity required to deploy it, even with the early Defang tooling helping us simplify it a lot. But we’ve worked a lot to expand Defang’s capabilities over the last year+ so it could take on more of the work and simplify that process.
 
 This evolution wasn’t just based on our own instincts and what we saw in the Portal—it was informed by listening to developers who have been using Defang, as well as our experience building dozens of sample projects for different frameworks and languages. Each time we build a new sample, we learn more about the different requirements of various types of applications and developers and refine Defang’s feature set accordingly. The Portal became an extension of this learning process, serving as both a proving ground and an opportunity to close any remaining gaps, since it’s one of the most complex things we’ve built with Defang.
