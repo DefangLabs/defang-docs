@@ -7,7 +7,7 @@ tags: [defang-with-defang, deployment, defang-portal]
 
 ![Defang Compose Update](/img/defang-on-defang/part-1/header.png)
 
-Deploying applications is hard. Deploying **complex, multi-service applications** is even harder. When we first built the Defang Portal, we quickly recognized the complexity required to deploy it, even with the early Defang tooling helping us simplify it a lot. But we’ve worked a lot to expand Defang’s capabilities over the last year+ so it could take on more of the work and simplify that process.
+Deploying applications is hard. Deploying complex, multi-service applications is even harder. When we first built the Defang Portal, we quickly recognized the complexity required to deploy it, even with the early Defang tooling helping us simplify it a lot. But we’ve worked a lot to expand Defang’s capabilities over the last year+ so it could take on more of the work and simplify that process.
 
 This evolution wasn’t just based on our own instincts and what we saw in the Portal—it was informed by listening to developers who have been using Defang, as well as our experience building dozens of sample projects for different frameworks and languages. Each time we build a new sample, we learn more about the different requirements of various types of applications and developers and refine Defang’s feature set accordingly. The Portal became an extension of this learning process, serving as both a proving ground and an opportunity to close any remaining gaps, since it’s one of the most complex things we’ve built with Defang.
 
@@ -45,7 +45,7 @@ As a result, we reached a point where we no longer needed custom infrastructure 
 ## **What Changed?**
 
 - **Previously**: GitHub Actions ran infra-as-code scripts to provision databases, manage DNS, and define services *separately from the Docker Compose file we used for local dev*
-- **Now**: Our [Defang GitHub Action](https://github.com/marketplace/actions/defang-deployment-action) targets normal Compose files and deploys everything, using secrets and variables managed in GitHub Actions environments.
+- **Now**: Our [**Defang GitHub Action**](https://github.com/marketplace/actions/defang-deployment-action) targets normal Compose files and deploys everything, using secrets and variables managed in GitHub Actions environments.
 - **Result**: We **eliminated hundreds of lines of Infra-as-Code**, making our deployment leaner and easier to manage and reducing the differences between running the Portal locally and running it in the cloud.
 
 This wasn’t just about reducing complexity—it was also a validation exercise. We knew that Defang had evolved enough to take over much of our deployment, but by going through the transition process ourselves, we could identify and close the remaining gaps and make sure our users could really make use of Defang for complex production-ready apps.
@@ -60,18 +60,18 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 - [**Environment variable interpolation**](https://docs.defang.io/docs/concepts/configuration#interpolation) allows these **SSM-stored config values** to be referenced directly in the Compose file, ensuring the same configuration works in local and cloud environments.
 - **Defang provisions managed Postgres and Redis instances automatically** when using the `x-defang-postgres` and `x-defang-redis` extensions, securely injecting credentials where needed with variable interpolation.
 
-### **Deployment Modes**
+### Deployment Modes
 
-- [**Deployment modes](https://docs.defang.io/docs/concepts/deployment-modes) (`development`, `staging`, `production`)** adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
+- [**Deployment modes**](https://docs.defang.io/docs/concepts/deployment-modes) (`development`, `staging`, `production`) adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
 
 ### **DNS & Certs**
 
-- When we first set up the portal (before we even released the private beta) DNS and certs had to be managed outside the Defang context. Now, [**we can provision certs](https://docs.defang.io/docs/concepts/domains) using ACM or Let’s Encrypt.**
+- When we first set up the portal (before we even released the private beta) DNS and certs had to be managed outside the Defang context. Now, **[we can provision certs using ACM or Let’s Encrypt](https://docs.defang.io/docs/concepts/domains)**.
 
 ### **CI/CD Integration**
 
 - **Previously**: GitHub Actions ran custom infra-as-code scripts.
-- **Now**: The **Defang GitHub Action** installs Defang automatically and runs `defang compose up`, simplifying deployment.
+- **Now**: The [**Defang GitHub Action**](https://github.com/DefangLabs/defang-github-action) installs Defang automatically and runs `defang compose up`, simplifying deployment.
 - **Result**: A streamlined, repeatable CI/CD pipeline.
 
 ---
