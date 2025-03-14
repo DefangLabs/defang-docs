@@ -52,26 +52,6 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 ---
 
-## **Looking Ahead: Scaling Beyond Compose with Pulumi**
-
-We’ve come a long way since we started this journey. What used to be a complicated, infrastructure-heavy deployment is now dramatically simpler. But as any product grows, so does its complexity. The Defang Portal will evolve over time, and we know that certain deployment needs will extend beyond our current Compose-based workflow.
-
-That’s why we’ve been planning ahead.
-
-While Defang’s current iteration expanded what can be deployed with just a Compose file, we recognize that some things won’t fit neatly into this model in the future. Some applications will need to integrate with SaaS providers, deploy across multiple clouds, or require more specialized infrastructure. Instead of forcing these needs into our existing tooling, we’re taking a more flexible approach.
-
-Enter the **Defang Pulumi provider**.
-
-We’re rebuilding our provider from the ground up to extend the power of Docker Compose across cloud platforms, SaaS integrations, and external APIs. With it, developers will be able to:
-
-- Seamlessly integrate infrastructure provisioning into their existing Compose files.
-- Deploy across multiple clouds while maintaining the simplicity of the Defang workflow.
-- Adapt to compliance requirements and other constraints without losing automation benefits.
-
-Our goal is simple: to **preserve the ease of using Compose while removing its traditional limits**. Whether you need a simple monolithic deployment or a complex, multi-cloud setup, Defang will continue to streamline the process and make sure you can deploy applications on your terms.
-
----
-
 ## **How Deployment Works Today**
 
 ### **Config & Secrets Management**
