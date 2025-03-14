@@ -7,13 +7,13 @@ tags: [defang-with-defang, deployment, defang-portal]
 
 Deploying applications is hard. Deploying **complex, multi-service applications** is even harder. When we first built the Defang Portal, we quickly recognized the complexity required to deploy it, even with the early Defang tooling helping us simplify it a lot. But we’ve worked a lot to expand Defang’s capabilities over the last year+ so it could take on more of the work and simplify that process.
 
-This evolution wasn’t just based on our own instincts and what we saw in the Portal—it was informed by listening to developers who have been using Defang, as well as our experience building dozens of sample projects for different frameworks and languages. Each time we build a new sample, we learn more about the different requirements of various types of applications and developers and refine Defang’s feature set accordingly. The Portal became an extension of this learning process, serving as both a proving ground and an opportunity to close any remaining gaps, since it’s one of the most complex things we’ve build with Defang.
+This evolution wasn’t just based on our own instincts and what we saw in the Portal—it was informed by listening to developers who have been using Defang, as well as our experience building dozens of sample projects for different frameworks and languages. Each time we build a new sample, we learn more about the different requirements of various types of applications and developers and refine Defang’s feature set accordingly. The Portal became an extension of this learning process, serving as both a proving ground and an opportunity to close any remaining gaps, since it’s one of the most complex things we’ve built with Defang.
 
 Finally, though, the Defang Portal—an application with six services, including two managed data stores, authentication, and a frontend—is fully deployed using just Docker Compose files and the Defang CLI using GitHub Actions.
 
 ---
 
-### **The Initial Setup: A More Complex Deployment**
+## **The Initial Setup: A More Complex Deployment**
 
 The Portal isn’t a simple static website; it’s a **full-stack application** with the following services:
 
@@ -30,27 +30,47 @@ This worked, but seemed unnecessarily complex, if we had the right tooling…
 
 ---
 
-### **The Transition: Expanding Defang to Reduce Complexity**
+## **The Transition: Expanding Defang to Reduce Complexity**
 
-We’ve made it a priority to expand Defang’s capabilities a lot over the last year so it could take on more of the heavy lifting of a more complex application. Over the past year, we’ve added load of features to handle things like:
+We’ve made it a priority to expand Defang’s capabilities a lot over the last year so it could take on more of the heavy lifting of a more complex application. Over the past year, we’ve added loads of features to handle things like:
 
 - **Provisioning databases**, including managing passwords and other secrets securely
 - **Config interpolation using values stored in AWS SSM**, ensuring the same Compose file works both locally and in the cloud
-- **Provisioning certs and managing dns records** from configuration in the Compose file.
+- **Provisioning certs and managing DNS records** from configuration in the Compose file.
 
 As a result, we reached a point where we no longer needed custom infrastructure definitions for most of our deployment.
 
-### **What Changed?**
+## **What Changed?**
 
-- **Previously**: GitHub Actions ran infra-as-code scripts to provision databases, manage DNS, and define services *separately from the docker compose file we used for local dev*
-- **Now**: Our [Defang Github Action](https://github.com/marketplace/actions/defang-deployment-action) targets normal compose files and deploys everything, using secrets and variables managed in GitHub Actions environments.
-- **Result**: We **eliminated hundreds of lines of Infra-as-Code**, making our deployment leaner and easier to manage and reduced the differences between running the Portal locally and running it in the cloud.
+- **Previously**: GitHub Actions ran infra-as-code scripts to provision databases, manage DNS, and define services *separately from the Docker Compose file we used for local dev*
+- **Now**: Our [Defang GitHub Action](https://github.com/marketplace/actions/defang-deployment-action) targets normal Compose files and deploys everything, using secrets and variables managed in GitHub Actions environments.
+- **Result**: We **eliminated hundreds of lines of Infra-as-Code**, making our deployment leaner and easier to manage and reducing the differences between running the Portal locally and running it in the cloud.
 
 This wasn’t just about reducing complexity—it was also a validation exercise. We knew that Defang had evolved enough to take over much of our deployment, but by going through the transition process ourselves, we could identify and close the remaining gaps and make sure our users could really make use of Defang for complex production-ready apps.
 
 ---
 
-### **How Deployment Works Today**
+## **Looking Ahead: Scaling Beyond Compose with Pulumi**
+
+We’ve come a long way since we started this journey. What used to be a complicated, infrastructure-heavy deployment is now dramatically simpler. But as any product grows, so does its complexity. The Defang Portal will evolve over time, and we know that certain deployment needs will extend beyond our current Compose-based workflow.
+
+That’s why we’ve been planning ahead.
+
+While Defang’s current iteration expanded what can be deployed with just a Compose file, we recognize that some things won’t fit neatly into this model in the future. Some applications will need to integrate with SaaS providers, deploy across multiple clouds, or require more specialized infrastructure. Instead of forcing these needs into our existing tooling, we’re taking a more flexible approach.
+
+Enter the **Defang Pulumi provider**.
+
+We’re rebuilding our provider from the ground up to extend the power of Docker Compose across cloud platforms, SaaS integrations, and external APIs. With it, developers will be able to:
+
+- Seamlessly integrate infrastructure provisioning into their existing Compose files.
+- Deploy across multiple clouds while maintaining the simplicity of the Defang workflow.
+- Adapt to compliance requirements and other constraints without losing automation benefits.
+
+Our goal is simple: to **preserve the ease of using Compose while removing its traditional limits**. Whether you need a simple monolithic deployment or a complex, multi-cloud setup, Defang will continue to streamline the process and make sure you can deploy applications on your terms.
+
+---
+
+## **How Deployment Works Today**
 
 ### **Config & Secrets Management**
 
@@ -64,7 +84,7 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 ### **DNS & Certs**
 
-- When we first setup the portal (before we even released the private beta) dns and certs had to be managed outside the Defang context. Now, [**we can provision certs](https://docs.defang.io/docs/concepts/domains) using ACM or Let’s Encrypt.**
+- When we first set up the portal (before we even released the private beta) DNS and certs had to be managed outside the Defang context. Now, [**we can provision certs](https://docs.defang.io/docs/concepts/domains) using ACM or Let’s Encrypt.**
 
 ### **CI/CD Integration**
 
@@ -74,33 +94,7 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 ---
 
-### **A Flexible Multi-Compose Workflow**
-
-One key part of our setup is how we **organize our Compose files** using the `extends` syntax.
-
-- **A base `compose.yaml` file** defines core services and configurations.
-- **Environment-specific files (`compose.dev.yaml`, `compose.staging.yaml`, etc.)** extend the base file extending each of its services. In the following example, you see how we load a .env.dev file just for the local development compose file `compose.dev.yaml` :
-    
-    ```yaml
-    # compose.dev.yaml
-    services:
-      auth:
-        extends:
-          file: compose.yaml
-          service: auth
-        env_file: .env.dev
-    ```
-    
-- **Shared environment variables** are stored at the **project level**, not per service.
-    - This ensures consistency across environments.
-    - Example: Postgres credentials are stored once and referenced by multiple services which need to connect.
-- **Environment-specific tweaks** (like enabling Hasura’s console in staging) are handled in the corresponding Compose file, making them easy to manage.
-
-This setup allows us to **treat each environment as a simple Compose file** while keeping configurations DRY and maintainable.
-
----
-
-### **The Takeaway: Why This Matters**
+## **The Takeaway: Why This Matters**
 
 By transitioning to **fully Compose-based deployments**, we:
 
