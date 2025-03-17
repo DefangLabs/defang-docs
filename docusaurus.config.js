@@ -20,8 +20,16 @@ const config = {
   ],
   title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  favicon: 'https://www.google.com/s2/favicons?domain=defang.io',
-
+  favicon: '/img/favicon.ico',
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: '/img/tab_icon.svg',
+      },
+    },
+  ],
   // Set the production URL of your site here
   url: 'https://docs.defang.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
