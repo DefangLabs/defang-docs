@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[1723],{9753:s=>{s.exports=JSON.parse('{"label":"Pulumi","permalink":"/blog/tags/pulumi","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

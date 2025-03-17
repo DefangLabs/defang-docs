@@ -2,11 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2025-03-14T00:00:00.000Z</updated>
+    <updated>2025-03-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[February 2025 Defang Compose Update]]></title>
+        <id>https://docs.defang.io/blog/2025/03/15/feb-product-updates</id>
+        <link href="https://docs.defang.io/blog/2025/03/15/feb-product-updates"/>
+        <updated>2025-03-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Defang Compose Update]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>Well, that went by quick! Seems like it was just a couple of weeks ago that we published the Jan update, and it’s already time for the next one. Still, we do have some exciting progress to report in this short month!</p>
+<ol>
+<li><strong>Pulumi Provider:</strong> We are excited to announce a Preview of the <a href="https://github.com/DefangLabs/pulumi-defang/" target="_blank" rel="noopener noreferrer">Defang Pulumi Provider</a>. With the Defang Pulumi Provider, you can leverage all the power of Defang with all of the extensibility of Pulumi. Defang will provision infrastructure to deploy your application straight from your Compose file, while allowing you to connect that deployment with other resources you deploy to your cloud account. The new provider makes it easy to leverage Defang if you’re already using Pulumi, and it also provides an upgrade-path for users who need more configurability than the Compose specification can provide.</li>
+<li><strong>Portal Update:</strong> We are now fully deploying our portal with Defang alone using the <code>defang compose up</code> command. Our original portal architecture was designed before we supported managed storage so we used to use Pulumi to provision and connect external storage. But since we added support in Compose to specify managed storage, we can fully describe our Portal using Compose alone. This has allowed us to rip out hundreds of lines of code and heavily simplify our deployments. To learn more about how we do this, check out our Defang-Deployed-with-Defang (Part 1) <a href="https://docs.defang.io/blog/deploying-defang-with-defang-part-1" target="_blank" rel="noopener noreferrer">blog</a>.</li>
+<li><strong>Open-Auth Contribution:</strong> In the past couple months we have been communicating with the OpenAuth maintainers and contributors via PRs (<a href="https://github.com/toolbeam/openauth/pull/120" target="_blank" rel="noopener noreferrer">#120</a>, <a href="https://github.com/toolbeam/openauth/pull/156" target="_blank" rel="noopener noreferrer">#156</a>) and Issues (<a href="https://github.com/toolbeam/openauth/issues/127" target="_blank" rel="noopener noreferrer">#127</a>) to enable features like local testing with DynamoDB, enabling support for scopes, improving standards alignment, supporting Redis, and more. We are rebuilding our authentication systems around OpenAuth and are excited about the future of the project.</li>
+</ol>
+<p><strong>Events and Social Media</strong></p>
+<p>February was an exciting month for the Defang team as we continued to engage with the developer community and showcase what’s possible with Defang. We sponsored and demo’ed at the <a href="https://lu.ma/devtools3" target="_blank" rel="noopener noreferrer">DevTools Vancouver meetup</a>, as well as sponsored the <a href="https://lu.ma/vandevirl2" target="_blank" rel="noopener noreferrer">Vancouver.dev IRL: Building AI Startups</a> event. Also, at the AWS Startup Innovation Showcase in Vancouver, our CTO <a href="https://www.linkedin.com/in/lionello/" target="_blank" rel="noopener noreferrer">Lio</a>  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7299861024780808193" target="_blank" rel="noopener noreferrer">demonstrated</a> how Defang makes it effortless to deploy secure, scalable, and cost-efficient serverless apps on AWS! And finally, we had a great response to our <a href="https://www.linkedin.com/posts/defanglabs_mcp-docker-anthropic-activity-7298043665883508736-i4dd?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAAQqiEBLsVLYYAzEmBFB9oIl31nQ7kDII0" target="_blank" rel="noopener noreferrer">LinkedIn post</a> on the Model Context Protocol, catching the attention of many observers, including some of our key partners.</p>
+<p>We are eager to see what you deploy with Defang. Join our <a href="http://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a> to ask any questions, see what others are building, and share your own experience with Defang. And stay tuned for more to come in March!</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="DevOps" term="DevOps"/>
+        <category label="Pulumi" term="Pulumi"/>
+        <category label="Compose" term="Compose"/>
+        <category label="OpenAuth" term="OpenAuth"/>
+        <category label="Portal" term="Portal"/>
+        <category label="Events" term="Events"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Deploying Defang with Defang: Part 1]]></title>
         <id>https://docs.defang.io/blog/deploying-defang-with-defang-part-1</id>
