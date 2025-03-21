@@ -95,6 +95,29 @@
     ]
   },
   {
+    "name": "django-celery",
+    "category": "python",
+    "readme": "# Django Celery\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-django-celery-template%26template_owner%3DDefangSamples)\n\nThis is a sample Django application that uses Celery for background tasks. It uses Postgres as the database and Redis as the message broker.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `POSTGRES_PASSWORD`\nThe password for the Postgres database.\n```bash\ndefang config set POSTGRES_PASSWORD\n```\n\n### `SECRET_KEY`\nThe [secret key](https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-SECRET_KEY) for the Django application. \n```bash\ndefang config set SECRET_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Django Celery\n\nShort Description: A Django application that uses Celery for background tasks, Postgres as the database, and Redis as the message broker.\n\nTags: Django, Celery, Postgres, Redis\n\nLanguages: python, sql\n",
+    "directoryName": "django-celery",
+    "title": "Django Celery",
+    "shortDescription": "A Django application that uses Celery for background tasks, Postgres as the database, and Redis as the message broker.",
+    "tags": [
+      "Django",
+      "Celery",
+      "Postgres",
+      "Redis"
+    ],
+    "languages": [
+      "python",
+      "sql"
+    ],
+    "configs": [
+      "SECRET_KEY",
+      "SECRET_KEY",
+      "POSTGRES_PASSWORD"
+    ]
+  },
+  {
     "name": "django-channels-redis-postgres",
     "category": "Python",
     "readme": "# Django Channels & Redis & Postgres\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-django-channels-redis-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to get Django Channels up and running with Redis and Postgres both managed by Defang. It demonstrates how to do this with a simple chat application.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up\n```\n\nThis will start the Django server, Redis, and Postgres and mounts your Django app so you get live reloading. You can access the Django server at `http://localhost:8000`.\n\n## Configuration\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration). Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `SECRET_KEY`\nThe secret key for your Django application. You can generate a new one by running `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`. A default, insecure key is used if this is not set, but you should set it for a production deployment.\n\n### `POSTGRES_PASSWORD`\nThe password for your Postgres database. You need to set this before deploying for the first time.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Use the [`defang config`](https://docs.defang.io/docs/concepts/compose#configuration) command to setup environment variables.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n---\n\nTitle: Django Channels & Redis & Postgres\n\nShort Description: A basic configuration of Django Channels with Redis and Postgres demonstrating a simple chat application.\n\nTags: Django, Channels, Redis, Postgres, Chat, Application\n\nLanguages: Python\n",
