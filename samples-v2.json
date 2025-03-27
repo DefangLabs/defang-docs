@@ -828,6 +828,27 @@
     ]
   },
   {
+    "name": "nounly",
+    "category": "golang",
+    "readme": "# Nounly\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nounly-template%26template_owner%3DDefangSamples)\n\nNounly (also known as Noun.ly) is a URL shortener website built with Go, JavaScript and Redis, and can be deployed with Defang as a sample.\n\nThe URL shortener appends a noun to the end of a Defang-deployed URL to create the new shortened URL. For reference, you can view the real [Noun.ly](https://noun.ly/) website here.\n\n_\"Share the web through words.\"_ - Creator of Nounly\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration):\n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `PROJECT_HONEYPOT_KEY`\n\nA [Project Honey Pot API](https://www.projecthoneypot.org/index.php) key that is used for anti-spamming. It is optional, but please include a non-empty string value.\n\n```bash\ndefang config set PROJECT_HONEYPOT_KEY\n```\n\n### `SHARED_SECRETS`\n\nA JSON object string of shared secrets that are used for API clients. It is optional, and the default value is `{}` if you do not have any shared secrets.\n\n```bash\ndefang config set SHARED_SECRETS\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Nounly\n\nShort Description: A URL shortener website built with Go, JavaScript, and Redis.\n\nTags: Go, JavaScript, Redis, URL shortener\n\nLanguages: golang, javascript\n",
+    "directoryName": "nounly",
+    "title": "Nounly",
+    "shortDescription": "A URL shortener website built with Go, JavaScript, and Redis.",
+    "tags": [
+      "Go",
+      "JavaScript",
+      "Redis",
+      "URL shortener"
+    ],
+    "languages": [
+      "golang",
+      "javascript"
+    ],
+    "configs": [
+      "PROJECT_HONEYPOT_KEY"
+    ]
+  },
+  {
     "name": "ollama",
     "category": "Typescript",
     "readme": "# Ollama\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-ollama-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to deploy [Ollama](https://ollama.com/) with Defang, along with a Next.js frontend using the [AI SDK](https://www.npmjs.com/package/ai) for smooth streaming conversations. By default it runs a very small model (`llama3.2:1b`) which can perform well with just a CPU, but we've included lines that you can uncomment in the compose file to enable GPU support and run a larger model like `gemma:7b`. If you want to deploy to a GPU powered instance, you will need to use your own AWS account with [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the defang playground by opening up your terminal and typing `defang up`.\n\n**Keep in mind that the playground does not support GPU instances.**\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run `defang up` in a terminal that has access to your AWS environment variables.\n\n---\n\nTitle: Ollama\n\nShort Description: Ollama is a tool that lets you easily run large language models.\n\nTags: AI, LLM, ML, Llama, Mistral, Next.js, AI SDK, \n\nLanguages: Typescript\n",
