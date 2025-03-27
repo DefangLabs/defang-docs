@@ -26,10 +26,10 @@ You can expose ports in your service definition to allow other services to commu
 services:
     # [...]
     service1:
-        ports:
+      ports:
         - mode: host
           target: 3000	
-          protocol: http
+          app_protocol: http
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
