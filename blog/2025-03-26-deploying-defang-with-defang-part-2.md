@@ -5,7 +5,7 @@ author: Defang Team
 tags: [defang-with-defang, deployment, defang-website]
 ---
 
-![Defang Compose Update](/img/defang-on-defang/part-1/header.png)
+![Defang Compose Update](/img/defang-on-defang/part-2/header.png)
 
 When we refreshed the Defang brand, we knew our website needed more than just a fresh coat of paint. It needed to become a more dynamic part of our stack. We needed some parts to be more flexible, some parts to be more interactive, and better aligned with how modern apps are organized and deployed. And what better way to take it there than to deploy it with Defang itself?
 
