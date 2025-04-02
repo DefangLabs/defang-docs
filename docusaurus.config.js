@@ -168,6 +168,7 @@ const config = {
       // Existing footer configuration...
     },
     prism: {
+      additionalLanguages: ['diff'],
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },

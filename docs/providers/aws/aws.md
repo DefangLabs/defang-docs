@@ -72,6 +72,12 @@ When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md
 
 When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
 
+### Managed LLMs
+
+Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension. Add this extension to any services which use the Bedrock SDKs.
+
+When using [Managed LLMs](/docs/concepts/managed-llms/managed-language-models.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+
 ### Managed Resources
 
 Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
