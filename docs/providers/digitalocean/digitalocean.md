@@ -7,7 +7,7 @@ sidebar_position: 010
 # DigitalOcean
 
 :::info
-The Defang DigitalOcean Provider is available for Public Preview as of October 2024. 
+The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
 :::
 
 :::success DigitalOcean Credits
@@ -76,5 +76,6 @@ The following features are still in development for DigitalOcean:
 - [Custom Domains](/docs/concepts//domains.mdx)
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
 - [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)
+- [Managed Language Models](/docs/concepts/managed-llms/managed-language-models.md)
 
 Stay tuned for future updates!
