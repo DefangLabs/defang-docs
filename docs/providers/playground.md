@@ -20,6 +20,6 @@ Overall, the Defang Playground is very similar to deploying to your own cloud ac
 
 In essence, the Playground does not support any [managed storage](../concepts/managed-storage) services, ie. `x-defang-postgres` and `x-defang-redis` are ignored when deploying to the Playground. You can however run both Postgres and Redis as regular container services for testing purposes.
 
-### Managed large language models
+### Managed LLMs
 
 Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension when deploying to your own cloud account with BYOC. This extension is not supported in the Defang Playground.

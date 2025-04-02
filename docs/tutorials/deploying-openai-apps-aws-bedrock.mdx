@@ -1,9 +1,9 @@
 ---
-title: Deploying your OpenAI application to AWS and using Bedrock
+title: Deploying your OpenAI application to AWS using Bedrock
 sidebar_position: 50
 ---
 
-# Deploying your OpenAI application to AWS and using Bedrock
+# Deploying your OpenAI application to AWS using Bedrock
 
 Let's assume you have an app which is using one of the OpenAI client libraries and you want to deploy your app to AWS so you can leverage Bedrock. This tutorial will show you how Defang makes it easy.
 
@@ -15,19 +15,16 @@ services:
     build:
         context: .
     ports:
-      - target: 3000
-        published: 3000
-        protocol: tcp
-        mode: ingress
+      - 3000:3000
     environment:
       OPENAI_API_KEY:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
-## Add an llm service to your compose file
+## Add an LLM service to your compose file
 
-The first step is to add a new service to your compose file. The `defangio/openai-access-gateway`. This service provides an OpenAI compatible interface to AWS Bedrock. It's easy to configure, first you need to add it to your compose file:
+The first step is to add a new service to your compose file: the `defangio/openai-access-gateway`. This service provides an OpenAI compatible interface to AWS Bedrock. It's easy to configure, first you need to add it to your compose file:
 
 ```diff
 +  llm:
@@ -36,15 +33,21 @@ The first step is to add a new service to your compose file. The `defangio/opena
 +    ports:
 +      - target: 80
 +        published: 80
-+        protocol: tcp
 +        mode: host
 +    environment:
 +      - OPENAI_API_KEY
-+    healthcheck:
-+      test: ["CMD", "curl", "-f", "http://localhost/health"]
 ```
 
-A few things to note here. First the image is a fork of [aws-samples/bedrock-access-gateway](https://github.com/aws-samples/bedrock-access-gateway), which a few modifications to make it easier to use. The source code is available [here](https://github.com/DefangLabs/openai-access-gateway). Second: the `x-defang-llm` property. Defang uses extensions like this to signal special handling of certain kinds of services. In this case, it signals to Defang that we need to configure the appropriate IAM Roles and Policies to support your application.
+A few things to note here. First the image is a fork of [aws-samples/bedrock-access-gateway](https://github.com/aws-samples/bedrock-access-gateway), with a few modifications to make it easier to use. The source code is available [here](https://github.com/DefangLabs/openai-access-gateway). Second: the `x-defang-llm` property. Defang uses extensions like this to signal special handling of certain kinds of services. In this case, it signals to Defang that we need to configure the appropriate IAM Roles and Policies to support your application.
+
+:::warning
+**Your OpenAI key**
+
+You no longer need to use your original OpenAI API key. We do recommend using _something_ in its place, but feel free to generate a new secret and set it with `defang config set OPENAI_API_KEY --random`.
+
+This is used to authenticate your application service with the openai-access-gateway.
+:::
+
 
 ## Redirecting application traffic
 
@@ -54,30 +57,23 @@ Then you need to configure your application to redirect traffic to the openai-ac
  services:
    app:
      ports:
-       - target: 3000
-         published: 3000
-         protocol: tcp
-         mode: ingress
+       - 3000:3000
      environment:
        OPENAI_API_KEY:
 +      OPENAI_BASE_URL: "http://llm/api/v1"
-+      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
      healthcheck:
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
-You will also need to configure your application to use one of the bedrock models. We recommend configuring an environment variable called `MODEL` like this:
-
 ## Selecting a model
+
+You will also need to configure your application to use one of the bedrock models. We recommend configuring an environment variable called `MODEL` like this:
 
 ```diff
  services:
    app:
      ports:
-       - target: 3000
-         published: 3000
-         protocol: tcp
-         mode: ingress
+       - 3000:3000
      environment:
        OPENAI_API_KEY:
        OPENAI_BASE_URL: "http://llm/api/v1"
@@ -86,13 +82,11 @@ You will also need to configure your application to use one of the bedrock model
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
-## Enabling bedrock model access
+:::warning
+**Enabling bedrock model access**
 
 AWS currently requires access to be manually configured on a per-model basis in each account. See this guide for [how to enable model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html).
-
-## Your OpenAI key
-
-It's worth noting that you no longer need ot use your original OpenAI API key. We do recommend using _something_ in its place, but feel free to generate a new secret and set it with `defang config set OPENAI_API_KEY`.
+:::
 
 ## Complete Example Compose File
 
@@ -102,14 +96,11 @@ services:
     build:
         context: .
     ports:
-      - target: 3000
-        published: 3000
-        protocol: tcp
-        mode: ingress
+      - 3000:3000
     environment:
       OPENAI_API_KEY:
       OPENAI_BASE_URL: "http://llm/api/v1"
-      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
+      MODEL: "us:anthropic.claude-3-sonnet-20240229-v1:0"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
   llm:
@@ -118,11 +109,8 @@ services:
     ports:
       - target: 80
         published: 80
-        protocol: tcp
         mode: host
     environment:
       - OPENAI_API_KEY
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
 
 ```

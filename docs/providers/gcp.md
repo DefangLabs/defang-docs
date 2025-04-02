@@ -59,7 +59,7 @@ The Provider builds and deploys your services using [Google Cloud Run](https://c
 
 The GCP provider does not currently support storing sensitive config values.
 
-### Managed large language models
+### Managed LLMs
 
 Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension. Add this extension to any services which use the Bedrock SDKs.
 
