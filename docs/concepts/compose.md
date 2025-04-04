@@ -214,11 +214,12 @@ or
 ### `networks`
 (Optional)
 
-The network configuration. Can be `public`, where Defang will assign a public IP address, or `private`, in which Defang will not. To avoid warnings, add this to the [top-level `networks`](#networks) property as well.
+The service network configuration. By default, Compose will add services to the `default` network, which has external connectivity.
+You can also add services to private networks. To avoid warnings, you should add them to the [top-level `networks`](#networks) property as well.
 
 ```yaml
     networks:
-      default: # when not specified, services are assigned to the default network
+      default: # when not specified, services are assigned to the "default" network
 ```
 
 You can also assign an alias for a network by using `aliases`, as seen below:
