@@ -16,7 +16,7 @@ This page is about internal networking only. If you want to configure your servi
 
 ## Internal Communication
 
-You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition, but set the `mode` to `host` instead of `ingress` to allow other services to communicate with it through the internal network.
+You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition. Set the `mode` to `host` (instead of the default `ingress`) to be able to connect to the container directly, avoiding the need of a load balancer.
 
 ### Sample Configuration
 
@@ -66,3 +66,35 @@ http://<service-name>:<port>
 ```
   </TabItem>
 </Tabs>
+
+### Networks
+
+The Compose spec has a notion of [networks](https://github.com/compose-spec/compose-spec/blob/main/06-networks.md). By default, each service gets added to the `default` network. Networks in Compose can be flagged as `internal`, but this means they have no connection to the outside world at all (no egress). 
+
+Only services in the `default` network can have public IPs. Services in any other network will be in a private subnet. 
+
+```yaml
+services:
+  frontend:
+    build: ./fe
+    ports:
+      - 80 # load-balanced, ie. mode: ingress
+    networks:
+      default:
+      private:
+
+  backend:
+    build: ./be
+    ports:
+      - mode: host # no load balancer
+        target: 8080
+    networks:
+      private:
+
+networks:
+  default:
+  private:
+    internal: true # no egress
+```
+
+
