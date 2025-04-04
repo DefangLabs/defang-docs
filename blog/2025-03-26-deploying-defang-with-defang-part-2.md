@@ -45,14 +45,14 @@ Some things we had to change:
 ```yaml
     domainname: defang.io
     networks:
-      public:
+      default:
         aliases:
           - www.defang.io
 ```
 
 One other hiccup was that we used to do www to non-www redirects using S3. There are a few ways to switch that up, but for the time being we decided to use Next.js middleware.
 
-Pretty soon after that, the site was up and running in an AWS account—with TLS, DNS, and both the `www` and root domains automatically configured. Pretty straightfoward! 
+Pretty soon after that, the site was up and running in an AWS account—with TLS, DNS, and both the `www` and root domains automatically configured. Pretty straightfoward!
 
 ---
 
