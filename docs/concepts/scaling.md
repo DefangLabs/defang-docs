@@ -50,8 +50,7 @@ Auto-scaling systems typically rely on:
 | AWS            | ✅ Supported         |
 | GCP            | ✅ Supported         |
 | DigitalOcean   | ❌ Not yet supported |
-
-> 💡 We're actively working on support for additional platforms. Let us know which ones you’d like to see next! 
+| Playground     | ❌ Not supported     |
 
 ### Benefits of Auto-Scaling
 
