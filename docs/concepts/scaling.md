@@ -10,6 +10,7 @@ Scaling is the process of adjusting the number of instances (or replicas) of a s
 
 Scaling is a core concept in distributed systems and cloud-native applications. It ensures your system can handle varying workloads without degrading user experience or over-provisioning resources.
 
+
 ## Why Scale?
 
 Scaling enables services to respond effectively under different conditions:
@@ -33,6 +34,23 @@ In most modern deployments, horizontal scaling is preferred because it aligns we
 **Auto-scaling** refers to automatically adjusting the number of service instances based on defined policies or metrics.
 
 Instead of manually adding more instances when traffic increases, an auto-scaling system watches key indicators (like CPU usage) and takes action in real time.
+
+### Example
+
+With Defang a user, with a Pro and higher plan, can enable service level autoscaling by adding a _**x-defang-autoscaling**_ extension to the services which is to be autoscaled.
+
+```yaml
+services:
+  service-example:
+    x-defang-autoscaling: true #enable autoscaling for this service
+    build: 
+       context: .
+       dockerfile: Dockerfile
+    ports: 
+        - mode: ingress
+        target: 8080
+        published: 8080
+```
 
 ### How It Works
 
@@ -63,3 +81,4 @@ Auto-scaling systems typically rely on:
 - Ensure services are **stateless** or use **externalized state** (e.g., databases, caches) for smooth scaling. ([12 Factor App](https://12factor.net/processes))
 - Test services under load to identify scaling bottlenecks.
   
+See Tutorial page [Scaling Tutorial](/docs/tutorials/scaling-your-services)
