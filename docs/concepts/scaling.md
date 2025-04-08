@@ -46,11 +46,11 @@ Auto-scaling systems typically rely on:
 ### Supported Platforms
 
 | Platform        | Auto-Scaling Support |
-|----------------|----------------------|
-| AWS            | ✅ Supported         |
-| GCP            | ✅ Supported         |
-| DigitalOcean   | ❌ Not yet supported |
-| Playground     | ❌ Not supported     |
+|----------------|:----------------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |
 
 ### Benefits of Auto-Scaling
 
