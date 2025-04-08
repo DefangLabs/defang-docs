@@ -27,14 +27,14 @@ services:
     deploy:
       resources:
         reservations:
-          cpus: '2'
-          memory: '512M'
+          cpus: "2"
+          memory: "512M"
 ```
 
 The minimum resources which can be reserved:
 
 | Resource | Minimum |
-|----------|---------|
+| -------- | ------- |
 | CPUs     | 0.5     |
 | Memory   | 512M    |
 
@@ -57,3 +57,37 @@ services:
     deploy:
       replicas: 3
 ```
+
+## Autoscaling Your Services
+
+Autoscaling allows your services to automatically adjust the number of replicas based on CPU usage — helping you scale up during traffic spikes and scale down during quieter periods.
+
+> **Note:** Autoscaling is only available to **Pro** tier users.
+
+### Enabling Autoscaling
+
+To enable autoscaling for a service, add the `x-defang-autoscaling: true` field under the service definition in your `compose.yaml` file.
+
+Example:
+
+```yaml
+services:
+  web:
+    image: myorg/web:latest
+    ports:
+      - 80:80
+    x-defang-autoscaling: true
+```
+
+Once deployed, your services' CPU usage is monitored for how much load it is handling, sustained high loads will result in more replicas being started.
+
+Requirements
+
+- You must be on the Pro plan to use autoscaling.
+- The service must be stateless or able to run in multiple instances.
+- Only CPU metrics are used for scaling decisions.
+
+Best Practices
+
+- Design your services to be horizontally scalable.
+- Use shared or external storage if your service writes data.
