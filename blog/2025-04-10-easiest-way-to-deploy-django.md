@@ -4,6 +4,11 @@ author: Defang Team
 tags: [deployment, django, docker, compose]
 ---
 
+<iframe style={{
+  width: "100%",
+  aspectRatio: 16/9,
+}} src="https://www.youtube.com/embed/edWas0ZIeHI?si=SHD8QYcGLLeuPQ6l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 # Deploying a Django App with Real-time Moderation Using Defang
 
 In this guide, we'll walk through the easiest and fastest way to deploy a full-featured Django application—including real-time chat and background task processing—to the cloud using Defang. You'll see firsthand how simple Defang makes it to deploy apps that require multiple services like web servers, background workers, Redis, and Postgres.
@@ -30,7 +35,7 @@ You can quickly spin up the application locally with:
 docker compose --env-file .env.dev -f compose.dev.yaml up --build
 ```
 
-This replicates your production environment locally, passing environment variables in the same way as we will with Defang's [secure configuration system](https://docs.defang.io/docs/concepts/configuration).
+This runs things with autoreloading so you can iterate on the Django app, all while passing environment variables in the same way as we will with Defang's [secure configuration system](https://docs.defang.io/docs/concepts/configuration) and being ready to deploy to production.
 
 ## Application Features
 
@@ -45,6 +50,11 @@ The worker service runs independently, handling moderation tasks asynchronously.
 
 This decouples resource-intensive tasks from the main API server, ensuring optimal application responsiveness. The demo isn't doing anything very complicated, but you could easily run machine learning models [with access to GPUs](https://docs.defang.io/docs/tutorials/deploy-with-gpu) with Defang if you needed to.
 
+### Django Admin
+
+The Django admin is setup to quickly visualize messages and their moderation status. Access it at `/admin` with your superuser credentials: username `admin` and password `admin` setup by default when you first run or deploy.
+
+
 ## Deploying with Defang
 
 Deploying multi-service applications to cloud providers traditionally involves complex infrastructure setup, including configuring ECS clusters, security groups, networking, and more. Defang simplifies this significantly.
@@ -53,7 +63,7 @@ Deploying multi-service applications to cloud providers traditionally involves c
 
 The Defang Playground lets you quickly preview your deployed app in a managed environment.
 
-#### Secure Configuration
+**Secure Configuration**
 
 Before deploying, securely set encrypted sensitive values:
 
@@ -86,7 +96,8 @@ To deploy directly into your AWS account (or other [supported providers](https:/
 export DEFANG_PROVIDER=AWS
 export AWS_PROFILE=your-profile-name
 ```
-#### Secure Configuration
+
+**Secure Configuration**
 
 Before deploying, securely set encrypted sensitive values in your cloud account:
 
