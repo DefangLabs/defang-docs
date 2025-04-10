@@ -13,6 +13,10 @@ tags: [deployment, django, docker, compose]
 
 In this guide, we'll walk through the easiest and fastest way to deploy a full-featured Django application—including real-time chat and background task processing—to the cloud using Defang. You'll see firsthand how simple Defang makes it to deploy apps that require multiple services like web servers, background workers, Redis, and Postgres.
 
+## Clone the repo
+
+Before we get started, you'll want to clone the repo with the app code, [here](https://github.com/DefangLabs/django-chat-demo).
+
 ## Overview of Our Django Application
 
 We're deploying a real-time chat application that includes automatic moderation powered by a background worker using the Natural Language Toolkit (NLTK). The application structure includes:
@@ -24,7 +28,7 @@ We're deploying a real-time chat application that includes automatic moderation 
 
 ## Running Locally
 
-To run the app locally, we leverage Docker Compose, splitting configurations into two YAML files:
+To run the app locally, we use Docker Compose, splitting configurations into two YAML files:
 
 - `compose.yaml`: Production configuration.
 - `compose.dev.yaml`: Development overrides extending production.
