@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[9487],{5445:s=>{s.exports=JSON.parse('{"label":"Compose","permalink":"/blog/tags/compose","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

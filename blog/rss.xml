@@ -4,10 +4,105 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Wed, 26 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Deploying a Django App with Real-time Moderation Using Defang]]></title>
+            <link>https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django</link>
+            <guid>https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django</guid>
+            <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[<iframe style={{]]></description>
+            <content:encoded><![CDATA[<iframe style="width:100%;aspect-ratio:1.7777777777777777" src="https://www.youtube.com/embed/edWas0ZIeHI?si=SHD8QYcGLLeuPQ6l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>In this guide, we'll walk through the easiest and fastest way to deploy a full-featured Django application—including real-time chat and background task processing—to the cloud using Defang. You'll see firsthand how simple Defang makes it to deploy apps that require multiple services like web servers, background workers, Redis, and Postgres.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="clone-the-repo">Clone the repo<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#clone-the-repo" class="hash-link" aria-label="Direct link to Clone the repo" title="Direct link to Clone the repo">​</a></h2>
+<p>Before we get started, you'll want to clone the repo with the app code, <a href="https://github.com/DefangLabs/django-chat-demo" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview-of-our-django-application">Overview of Our Django Application<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#overview-of-our-django-application" class="hash-link" aria-label="Direct link to Overview of Our Django Application" title="Direct link to Overview of Our Django Application">​</a></h2>
+<p>We're deploying a real-time chat application that includes automatic moderation powered by a background worker using the Natural Language Toolkit (NLTK). The application structure includes:</p>
+<ul>
+<li><strong>Web Service</strong>: Django app with chat functionality using Django Channels for real-time interactions.</li>
+<li><strong>Worker Service</strong>: Background tasks processing messages for profanity and sentiment analysis.</li>
+<li><strong>Postgres Database</strong>: Managed database instance for persistent storage.</li>
+<li><strong>Redis Broker</strong>: Managed Redis instance serving as the broker for Celery tasks and Django Channels.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="running-locally">Running Locally<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#running-locally" class="hash-link" aria-label="Direct link to Running Locally" title="Direct link to Running Locally">​</a></h2>
+<p>To run the app locally, we use Docker Compose, splitting configurations into two YAML files:</p>
+<ul>
+<li><code>compose.yaml</code>: Production configuration.</li>
+<li><code>compose.dev.yaml</code>: Development overrides extending production.</li>
+</ul>
+<p>You can quickly spin up the application locally with:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker compose --env-file .env.dev -f compose.dev.yaml up --build</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This runs things with autoreloading so you can iterate on the Django app, all while passing environment variables in the same way as we will with Defang's <a href="https://docs.defang.io/docs/concepts/configuration" target="_blank" rel="noopener noreferrer">secure configuration system</a> and being ready to deploy to production.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-features">Application Features<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#application-features" class="hash-link" aria-label="Direct link to Application Features" title="Direct link to Application Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-chat">Real-time Chat<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#real-time-chat" class="hash-link" aria-label="Direct link to Real-time Chat" title="Direct link to Real-time Chat">​</a></h3>
+<p>Using Django Channels and Redis, users can engage in real-time conversations within chat rooms.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="background-moderation-tasks">Background Moderation Tasks<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#background-moderation-tasks" class="hash-link" aria-label="Direct link to Background Moderation Tasks" title="Direct link to Background Moderation Tasks">​</a></h3>
+<p>The worker service runs independently, handling moderation tasks asynchronously. It uses NLTK to:</p>
+<ul>
+<li>Check for profanity.</li>
+<li>Perform sentiment analysis.</li>
+<li>Automatically flag negative or inappropriate messages.</li>
+</ul>
+<p>This decouples resource-intensive tasks from the main API server, ensuring optimal application responsiveness. The demo isn't doing anything very complicated, but you could easily run machine learning models <a href="https://docs.defang.io/docs/tutorials/deploy-with-gpu" target="_blank" rel="noopener noreferrer">with access to GPUs</a> with Defang if you needed to.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="django-admin">Django Admin<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#django-admin" class="hash-link" aria-label="Direct link to Django Admin" title="Direct link to Django Admin">​</a></h3>
+<p>The Django admin is setup to quickly visualize messages and their moderation status. Access it at <code>/admin</code> with your superuser credentials: username <code>admin</code> and password <code>admin</code> setup by default when you first run or deploy.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deploying-with-defang">Deploying with Defang<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#deploying-with-defang" class="hash-link" aria-label="Direct link to Deploying with Defang" title="Direct link to Deploying with Defang">​</a></h2>
+<p>Deploying multi-service applications to cloud providers traditionally involves complex infrastructure setup, including configuring ECS clusters, security groups, networking, and more. Defang simplifies this significantly.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deploying-to-defang-playground">Deploying to Defang Playground<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#deploying-to-defang-playground" class="hash-link" aria-label="Direct link to Deploying to Defang Playground" title="Direct link to Deploying to Defang Playground">​</a></h3>
+<p>The Defang Playground lets you quickly preview your deployed app in a managed environment.</p>
+<p><strong>Secure Configuration</strong></p>
+<p>Before deploying, securely set encrypted sensitive values:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang config set DJANGO_SECRET_KEY</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang config set POSTGRES_PASSWORD</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Then run the deployment command:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Defang automatically:</p>
+<ul>
+<li>Builds Docker containers.</li>
+<li>Sets up required services.</li>
+<li>Manages networking and provisioning.</li>
+</ul>
+<p>Once deployed, your app is accessible via a public URL provided by Defang, which you can find in the CLI output or in our portal at <a href="https://portal.defang.io/" target="_blank" rel="noopener noreferrer">https://portal.defang.io</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deploying-to-your-own-cloud">Deploying to Your Own Cloud<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#deploying-to-your-own-cloud" class="hash-link" aria-label="Direct link to Deploying to Your Own Cloud" title="Direct link to Deploying to Your Own Cloud">​</a></h3>
+<p>To deploy directly into your AWS account (or other <a href="https://docs.defang.io/docs/category/providers" target="_blank" rel="noopener noreferrer">supported providers</a>):</p>
+<ol>
+<li>Set your cloud provider:</li>
+</ol>
+<blockquote>
+<p>In my case, I use an AWS Profile, but you should be able to use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank" rel="noopener noreferrer">any methods supported by the AWS CLI</a></p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">export DEFANG_PROVIDER=AWS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">export AWS_PROFILE=your-profile-name</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>Secure Configuration</strong></p>
+<p>Before deploying, securely set encrypted sensitive values in your cloud account:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang config set DJANGO_SECRET_KEY</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang config set POSTGRES_PASSWORD</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="2">
+<li>Deploy:</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Defang handles provisioning managed services (RDS for Postgres, ElastiCache for Redis), container builds, and networking setup. Note: Initial provisioning for managed data stores might take a few minutes.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cloud-deployment-results">Cloud Deployment Results<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#cloud-deployment-results" class="hash-link" aria-label="Direct link to Cloud Deployment Results" title="Direct link to Cloud Deployment Results">​</a></h2>
+<p>Post-deployment, your Django app infrastructure includes (among other things):</p>
+<ul>
+<li><strong>Managed Postgres</strong>: AWS RDS instance.</li>
+<li><strong>Managed Redis</strong>: AWS ElastiCache instance.</li>
+<li><strong>Containers</strong>: ECS services with load balancers and DNS configured.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-use-defang">Why Use Defang?<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#why-use-defang" class="hash-link" aria-label="Direct link to Why Use Defang?" title="Direct link to Why Use Defang?">​</a></h2>
+<p>Defang simplifies complex cloud deployments by:</p>
+<ul>
+<li>Automatically provisioning managed cloud resources.</li>
+<li>Securely handling sensitive configurations.</li>
+<li>Providing seamless container orchestration without manual infrastructure setup.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-yourself">Try It Yourself<a href="https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django#try-it-yourself" class="hash-link" aria-label="Direct link to Try It Yourself" title="Direct link to Try It Yourself">​</a></h2>
+<p>Explore deploying your Django applications effortlessly with Defang. The full source code for this example is available on <a href="https://github.com/DefangLabs/django-chat-demo" target="_blank" rel="noopener noreferrer">GitHub</a>. Feel free to give it a try, and let us know how it goes!</p>
+<p>Happy deploying!</p>]]></content:encoded>
+            <category>deployment</category>
+            <category>django</category>
+            <category>docker</category>
+            <category>compose</category>
+        </item>
         <item>
             <title><![CDATA[Deploying Defang with Defang: Part 2]]></title>
             <link>https://docs.defang.io/blog/deploying-defang-with-defang-part-2</link>
@@ -874,27 +969,6 @@ Replace&nbsp;<code>your_slack_token</code>&nbsp;and&nbsp;<code>your_slack_channe
             <category>BYOC</category>
             <category>AWS ECS</category>
             <category>defang compose up</category>
-        </item>
-        <item>
-            <title><![CDATA[Announcing the Defang Public Beta]]></title>
-            <link>https://docs.defang.io/blog/announcing-defang-public-beta</link>
-            <guid>https://docs.defang.io/blog/announcing-defang-public-beta</guid>
-            <pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Announcing the Defang Public Beta]]></description>
-            <content:encoded><![CDATA[<p><strong>Announcing the Defang Public Beta</strong></p>
-<p><strong>A radically simpler way for developers to create, deploy, and manage cloud applications.</strong></p>
-<p>Ever since we shipped our Private Beta in the summer of 2023, we have been working with early adopters and listening to their feedback. While these early customers loved the ease with which they could create, deploy, and manage a cloud application, they had one big request - to deploy their applications to their own cloud (e.g. AWS) account. This was important to them for a number of reasons - to leverage their cloud credits, to enforce their IAM roles and security settings, to integrate new application components with their existing deployments, and more.</p>
-<p>And so, today with our Public Beta, we are addressing this request. With today’s release of <a href="https://docs.defang.io/docs/concepts/defang-byoc" target="_blank" rel="noopener noreferrer">Defang BYOC</a> (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang <strong>and</strong> deploy applications to your own AWS account! Our Private Beta experience is still available as <a href="https://docs.defang.io/docs/concepts/defang-playground" target="_blank" rel="noopener noreferrer">Defang Playground</a> for you to quickly and easily prototype applications and deploy them to our hosted environment.</p>
-<p>You can learn more about Defang <a href="https://docs.defang.io/docs/intro" target="_blank" rel="noopener noreferrer">here</a>. Also check out our <a href="https://docs.defang.io/docs/category/tutorials" target="_blank" rel="noopener noreferrer">tutorials</a>, <a href="https://defang.io/samples" target="_blank" rel="noopener noreferrer">samples</a>, and <a href="https://docs.defang.io/docs/category/faq" target="_blank" rel="noopener noreferrer">FAQ</a> to know more.</p>
-<p><strong>Try the Public Beta!</strong></p>
-<p>To try the Public Beta, please go to <a href="http://defang.io/" target="_blank" rel="noopener noreferrer">defang.io</a> and click on <a href="https://github.com/DefangLabs/defang/releases/latest" target="_blank" rel="noopener noreferrer">Download</a> to download the CLI and <a href="https://docs.defang.io/docs/getting-started" target="_blank" rel="noopener noreferrer">get started</a>. We would love to have you kick the tires and give us your feedback! Once you sign up you’ll receive an invitation to our Slack support channel in email. You are also welcome to file <a href="https://github.com/DefangLabs/defang/issues" target="_blank" rel="noopener noreferrer">GitHub issues here</a>.</p>
-<p><strong>Stay Tuned for More</strong></p>
-<p>While the Public Beta is an important step forward, we have already heard requests for additional features - from support for additional cloud platforms such as Azure and GCP, to the ability to easily write cloud-agnostic applications while leveraging the best of each cloud platform. We are already working on these items and shall have more to share in the coming months - stay tuned!</p>]]></content:encoded>
-            <category>Cloud</category>
-            <category>GenerativeAI</category>
-            <category>NoDevOps</category>
-            <category>BYOC</category>
-            <category>AWS</category>
         </item>
     </channel>
 </rss>
