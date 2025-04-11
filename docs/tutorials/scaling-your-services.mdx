@@ -66,7 +66,8 @@ Autoscaling allows your services to automatically adjust the number of replicas 
 
 ### Enabling Autoscaling
 
-To enable autoscaling for a service, add the `x-defang-autoscaling: true` extension under the service definition in your `compose.yaml` file.
+To enable autoscaling for a service, add the `x-defang-autoscaling: true` extension under the service definition in your `compose.yaml` file and remove the _**replicas**_ field in your
+_**deploy**_ mapping, if present. Autoscaling is available in staging and production [deployments modes](/docs/concepts/deployments#deployment_modes) only.
 
 Example:
 
@@ -85,9 +86,9 @@ Requirements
 
 - BYOC, your own cloud platform account.
 - You must be on the Pro or higher plan to use autoscaling. ([Defang plans](https://defang.io/#pricing))
+- _**replicas**_ must **NOT** be defined
 - Only staging and production deployment modes supported. ([Deployment modes](/docs/concepts/deployment-modes))
 - The service must be stateless or able to run in multiple instances. ([Scaling](/docs/concepts/scaling))
-- Only CPU metrics are used for scaling decisions.
 
 Best Practices
 
