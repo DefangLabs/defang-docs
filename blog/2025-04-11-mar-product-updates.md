@@ -47,6 +47,6 @@ In March, we had an incredible evening at the AWS Gen AI Loft in San Francisco! 
 
 We also kicked off the [**Defang Campus Advocate Program**](https://defang.io/cap/), bringing together advocates from around the world. After launching the program in February, it was amazing to see the energy and momentum already building on campuses world-wide. Just as one example, check out [this post](https://www.linkedin.com/posts/akash-nath29_defang-backends-defang-activity-7314917342143029250-2_v8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAQqiEBLsVLYYAzEmBFB9oIl31nQ7kDII0) from one of the students who attended a session hosted by our Campus Advocate [**Swapnendu Banerjee**](https://www.linkedin.com/in/swapnendu-banerjee-36ba06219/) and then went on to deploy his project with Defang. This is what we live for!
 
-We wrapped up the month with our monthly Coffee Chat, featuring the latest Defang updates, live demos, and a conversation on vibe coding. Thanks to everyone who joined. The next one is on April 30. **Save your spot [here](https://www.notion.so/Playground-User-Discovery-1628fc22c43080af84dcdd215ee65c6d?pvs=21).**
+We wrapped up the month with our monthly Coffee Chat, featuring the latest Defang updates, live demos, and a conversation on vibe coding. Thanks to everyone who joined. The next one is on April 30. **Save your spot [here](https://lu.ma/r08oz3rl).**
 
 As always, we appreciate your feedback and are committed to making Defang even better. Deploy any app to any cloud with a single command. Go build something awesome!
