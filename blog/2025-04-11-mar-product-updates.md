@@ -19,7 +19,7 @@ author: Defang Team
 draft: true
 ---
 
-![Defang March Update](/img/defang-march-update.webp)
+![Defang Compose Update](/img/defang-compose-update.webp)
 
 Wow - another month has gone by, time flies when you're having fun!
 
