@@ -1,5 +1,6 @@
 ---
-title: "March 2025 Defang Compose Update"
+title: "March 2025 Defang Compose Update
+"
 description: "Monthly product updates from the Defang team - March 2025"
 tags: [
     Cloud,
