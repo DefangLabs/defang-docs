@@ -1,5 +1,5 @@
 ---
-title: Networking    
+title: Networking
 description: Defang helps you safely configure your services' networking.
 sidebar_position: 300
 ---
@@ -8,43 +8,102 @@ import TabItem from '@theme/TabItem';
 
 # Networking
 
-Defang configures Security Groups, deploys applications to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required.
+By default, Defang configures your application's networking and security groups to follow secure best practices.
+We also configure load-balancers and public IP addresses when appropriate. The following sections describe how to configure different network and security group topologies.
 
 :::tip
-This page is about internal networking only. If you want to configure your services to be accessible from the public internet, check the [Domains page](./domains.mdx).
+This page is about complex networking. If you want to configure your services to be accessible from the public internet, check the [Domains page](./domains.mdx).
 :::
 
-## Internal Communication
+## Networks
 
-You can expose ports in your service definition to allow other services to communicate with it. Similar to public communication, you can use the `ports` section of your service definition, but set the `mode` to `host` instead of `ingress` to allow other services to communicate with it through the internal network.
+The Compose spec has a notion of [networks](https://github.com/compose-spec/compose-spec/blob/main/06-networks.md). By default, each service gets added to the `default` network.
+Services in the `default` network can have public IPs. Services in any other network will be in a private subnet.
+These services cannot be reached from outside the network, but they can still make network requests to the public internet.
 
-### Sample Configuration
-
-<Tabs>
-  <TabItem value="compose" label="Compose" default>
 ```yaml
 services:
-    # [...]
-    service1:
-      ports:
-        - mode: host
-          target: 3000	
-          app_protocol: http
+  frontend:
+    build: ./fe
+    ports:
+      - 80 # load-balanced, ie. mode: ingress
+    networks:
+      default:
+      private:
+
+  backend:
+    build: ./be
+    ports:
+      - mode: host # no load balancer
+        target: 8080
+    networks:
+      private:
+
+networks:
+  default:
+  private:
+    internal: true # no egress
 ```
-  </TabItem>
-  <TabItem value="pulumi" label="Pulumi">
-```typescript
-const service = new defang.DefangService("service1", {
-    // [...]
-    ports: [{
-        target: 3000,
-        mode: "host",
-        protocol: "http",
-    }],
-});
+
+### Public Services
+
+By default, services will be in the `default` network. By default these services are not accessible directly, but may be accessed through a public load-balancer, ie. exposed ports default to `mode: ingress`:
+
+```yaml
+services:
+  web:
+    networks:
+      default: # this is the default, so no need to specify
+    ports:
+      - 80:80 # Defang will use a public load-Balancer
 ```
-  </TabItem>
-</Tabs>
+
+If you want a service to have a public IP address, ensure it's in the `default` network (the default) and
+set the port to `mode: host`:
+
+```yaml
+services;
+  web:
+    ports:
+      - target: 80
+        mode: host # Defang will assign a public IP
+```
+
+### Private Services
+If you want a service with exposed ports to not be accessible from the public internet, create a private network:
+
+```yaml
+services:
+  web: # this service can receive public traffic and communicate to private services
+    ports:
+      - 80
+    networks:
+      default:
+      private:
+  db: # this service can only receive traffic from other services in the same network
+    ports:
+      - 1234
+    networks:
+      private:
+networks:
+  private: # any network that's not "default" is considered private
+```
+
+The service's hostname will be the same as the service's name, in this case `db`.
+
+## Hostname Aliases
+
+By using network aliases, a service can be made available at multiple hostnames.
+
+```yaml
+services:
+  web:
+    domainname: example.com
+    networks:
+      default:
+        aliases:
+          - www.example.com # a public alias
+```
 
 ### Internal DNS
 
@@ -57,10 +116,12 @@ Internal communication between services in the Defang Playground follows the fol
 ```
 http://<username>-<service-name>:<port>
 ```
+
+The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
   </TabItem>
   <TabItem value="byoc" label="BYOC">
 Internal communication between services in Defang BYOC follows the following pattern:
-  
+
 ```
 http://<service-name>:<port>
 ```
