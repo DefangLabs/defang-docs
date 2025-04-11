@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[8915],{55441:a=>{a.exports=JSON.parse('{"label":"Autoscaling","permalink":"/blog/tags/autoscaling","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

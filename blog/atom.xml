@@ -2,11 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2025-04-10T00:00:00.000Z</updated>
+    <updated>2025-04-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[March 2025 Defang Compose Update ]]></title>
+        <id>https://docs.defang.io/blog/2025/04/11/mar-product-updates</id>
+        <link href="https://docs.defang.io/blog/2025/04/11/mar-product-updates"/>
+        <updated>2025-04-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Monthly product updates from the Defang team - March 2025]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>Wow - another month has gone by, time flies when you're having fun!</p>
+<p>Let us share some important updates regarding what we achieved at Defang in March:</p>
+<p><strong>Cloud-native Managed LLMs:</strong> One of the coolest features we have released in a bit is <a href="https://docs.defang.io/docs/concepts/managed-llms/managed-language-models" target="_blank" rel="noopener noreferrer">support for Managed LLMs (such as AWS Bedrock) through the <code>x-defang-llm</code> compose service extension</a>. When coupled with the <code>defang/openai-access-gateway</code> service image, Defang offers the easiest way to <a href="https://docs.defang.io/docs/tutorials/deploying-openai-apps-aws-bedrock" target="_blank" rel="noopener noreferrer">migrate your OpenAI-compatible application to cloud-native managed LLMs</a> without making any changes to your code. Support for GCP and DigitalOcean coming soon.</p>
+<p><strong>Defang Pulumi Provider:</strong> Last month, we announced a preview of the <a href="https://github.com/DefangLabs/pulumi-defang" target="_blank" rel="noopener noreferrer">Defang Pulumi Provider</a>, and this month we are excited to announce that V1 is now available in the <a href="https://www.pulumi.com/registry/packages/defang/" target="_blank" rel="noopener noreferrer">Pulumi Registry</a>. As much as we love Docker, we realize there are many real-world apps that have components that (currently) cannot be described completely in a Compose file. With the Defang Pulumi Provider, you can now leverage <a href="https://docs.defang.io/docs/concepts/pulumi#when-to-use-the-defang-pulumi-provider" target="_blank" rel="noopener noreferrer">the declarative simplicity of Defang with the imperative power of Pulumi</a>.</p>
+<p><strong>Production-readiness:</strong> As we onboard more customers, we are fixing many fit-n-finish items:</p>
+<ol>
+<li>
+<p><strong>Autoscaling:</strong> Production apps need the ability to easily scale up and down with load, and so we've added support for autoscaling. By adding the <code>x-defang-autoscaling: true</code> extension to your service definition in Compose.yaml file, you can benefit from automatic scale out to handle large loads and scale in when load is low. Learn more <a href="https://docs.defang.io/docs/tutorials/scaling-your-services" target="_blank" rel="noopener noreferrer">here</a>.</p>
+</li>
+<li>
+<p><strong>New</strong> <a href="https://github.com/DefangLabs/defang/releases" target="_blank" rel="noopener noreferrer">CLI</a><strong>:</strong> We've been busy making the CLI more powerful, secure, and intelligent.
+• Smarter Config Handling: The new --random flag simplifies setup by generating secure, random config values, removing the need for manual secret creation. Separately, automatic detection of sensitive data in Compose files helps prevent accidental leaks by warning you before they are deployed. Together, these features improve security and streamline your workflow.
+• Time-Bound Log Tailing: Need to investigate a specific window? Use tail --until to view logs up to a chosen time—no more scrolling endlessly. Save time from sifting through irrelevant events and focus your investigation.
+• Automatic generation of a .dockerignore file for projects that don't already have one, saving you time and reducing image bloat. By excluding common unnecessary files—like .git, node_modules, or local configs—it helps keep your builds clean, fast, and secure right from the start, without needing manual setup.</p>
+</li>
+<li>
+<p><strong>Networking / Reduce costs:</strong> We have implemented private networks, as mentioned in the official Compose specification. We have also reduced costs by eliminating the need for a pricy NAT Gateway in "development mode" deployments!</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-programs">Events and Programs<a href="https://docs.defang.io/blog/2025/04/11/mar-product-updates#events-and-programs" class="hash-link" aria-label="Direct link to Events and Programs" title="Direct link to Events and Programs">​</a></h3>
+<p>In March, we had an incredible evening at the AWS Gen AI Loft in San Francisco! Our CTO and Co-founder <a href="https://www.linkedin.com/in/lionello/" target="_blank" rel="noopener noreferrer">Lionello Lunesu</a> demoed how Defang makes deploying secure, scalable, production-ready containerized applications on AWS effortless. Check out the demo <a href="https://youtu.be/C0MbB0-6mUk?si=6dEf3gIOmWe7pctK&amp;t=1426" target="_blank" rel="noopener noreferrer">here</a>!</p>
+<p>We also kicked off the <a href="https://defang.io/cap/" target="_blank" rel="noopener noreferrer"><strong>Defang Campus Advocate Program</strong></a>, bringing together advocates from around the world. After launching the program in February, it was amazing to see the energy and momentum already building on campuses world-wide. Just as one example, check out <a href="https://www.linkedin.com/posts/akash-nath29_defang-backends-defang-activity-7314917342143029250-2_v8?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAAQqiEBLsVLYYAzEmBFB9oIl31nQ7kDII0" target="_blank" rel="noopener noreferrer">this post</a> from one of the students who attended a session hosted by our Campus Advocate <a href="https://www.linkedin.com/in/swapnendu-banerjee-36ba06219/" target="_blank" rel="noopener noreferrer"><strong>Swapnendu Banerjee</strong></a> and then went on to deploy his project with Defang. This is what we live for!</p>
+<p>We wrapped up the month with our monthly Coffee Chat, featuring the latest Defang updates, live demos, and a conversation on vibe coding. Thanks to everyone who joined. The next one is on April 30. <strong>Save your spot <a href="https://www.notion.so/Playground-User-Discovery-1628fc22c43080af84dcdd215ee65c6d?pvs=21" target="_blank" rel="noopener noreferrer">here</a>.</strong></p>
+<p>As always, we appreciate your feedback and are committed to making Defang even better. Deploy any app to any cloud with a single command. Go build something awesome!</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="NoDevOps" term="NoDevOps"/>
+        <category label="BYOC" term="BYOC"/>
+        <category label="Postgres" term="Postgres"/>
+        <category label="GCP" term="GCP"/>
+        <category label="DigitalOcean" term="DigitalOcean"/>
+        <category label="AWS" term="AWS"/>
+        <category label="CLI" term="CLI"/>
+        <category label="AI" term="AI"/>
+        <category label="LLMs" term="LLMs"/>
+        <category label="Pulumi" term="Pulumi"/>
+        <category label="Autoscaling" term="Autoscaling"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Deploying a Django App with Real-time Moderation Using Defang]]></title>
         <id>https://docs.defang.io/blog/2025/04/10/easiest-way-to-deploy-django</id>
@@ -987,40 +1034,5 @@ Replace&nbsp;<code>your_slack_token</code>&nbsp;and&nbsp;<code>your_slack_channe
         <category label="developer environments" term="developer environments"/>
         <category label="Cloud IDEs" term="Cloud IDEs"/>
         <category label="CDE" term="CDE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[About my Journey Deploying my First Web Application]]></title>
-        <id>https://docs.defang.io/blog/about-my-journey-deploying-my-first-web-application</id>
-        <link href="https://docs.defang.io/blog/about-my-journey-deploying-my-first-web-application"/>
-        <updated>2024-03-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[About the author: Aaron Yu is currently an intern at Defang Software Labs with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.]]></summary>
-        <content type="html"><![CDATA[<div align="center"><em>About the author: Aaron Yu is currently an intern at Defang Software Labs with a keen interest in the area of web development. He wrote this blog post after trying to deploy an application by himself directly on AWS first, and then using Defang.</em></div>
-<br>
-<p>As a student at University of British Columbia, new to the area of web development, I needed to develop and deploy a web application as a course project. It was already a huge challenge to complete the coding part. I could not believe that an even bigger challenge awaited. Picking the right platform and services is tough to start with. Do you know that AWS offers 200 different services? Lucky for me my professors’ instructed us to use ECS. Otherwise, I would have been totally lost.</p>
-<p>Starting my project, honestly, it felt like I was hitting a brick wall. Diving into AWS with little to no clue was tough. Terms like "ECS clusters," "task definitions," and "IAM roles" were flying over my head. I was scared of messing something up, especially when it came to setting up things like ECR and load balancers.</p>
-<p>It was overwhelming when all these unfamiliar concepts came at me at once. I searched them up on the internet and went straight to a top-rated YouTube tutorial. I spent an hour and a half going through the whole video series. Those tutorials, as helpful as they were, couldn't fully prepare me for the hands-on challenges of real-life implementation. It's one thing to follow along with a guide when everything goes right; it's another to adapt when things don't quite match up to the tutorial’s scenarios.</p>
-<div align="center"><img src="https://docs.defang.io/img/how-AWS-looks.png" alt="Example banner" width="550px"></div>
-<div align="center"><em>It could be confusing if you are new to this area</em></div>
-<br>
-<p>I ran into so many problems with configuring services. Sometimes it is caused by carelessly selecting the wrong options; sometimes it is due to the fact that I have no idea what the buttons mean; sometimes it is just a bug with my code. Those errors triple the time it took to deploy my project. It was indeed extremely frustrating.</p>
-<div align="center"><img src="https://docs.defang.io/img/error-AWS.png" alt="error-AWS" width="550px"></div>
-<div align="center"><em>I have this scary screen when trying to delete the service I created; this is merely one of the many errors I faced</em></div>
-<br>
-<p>Then I found Defang (<a href="http://www.defang.io/" target="_blank" rel="noopener noreferrer">www.defang.io</a>), and it was like someone flipped a switch. Suddenly, all that complicated stuff became way easier. All I needed to do is to install Defang, build a compose.yaml file to describe my application, and run a single command - defang compose up. And Defang even has a Gen-AI assistant to help you write the code and compose file for your application. Defang automatically does all the heavy-lifting behind the scenes - configuring all the necessary services in a secure and optimal way, and automatically building and deploying my application components. No more late nights trying to figure out AWS docs or stressing about getting everything right. Deploying my Django Restaurant Homepage went from being my biggest worry to one of the smoothest parts of my project.</p>
-<div align="center"><img src="https://docs.defang.io/img/defang-compose-up.png" alt="defang-compose-up" width="550px"></div>
-<div align="center"><em>with just a single command in the CLI</em></div>
-<br>
-<p>With Defang, I could chill a bit and actually enjoy working on my project, focusing on the cool parts without getting bogged down by all the technical stuff. It made cloud deployment feel doable and fun, even for someone like me who was pretty much a beginner. Give it a try yourself - go to <a href="http://www.defang.io/" target="_blank" rel="noopener noreferrer">www.defang.io</a> to get started.</p>
-<div align="center"><img src="https://docs.defang.io/img/sample-result.png" alt="sample-result" width="550px"></div>
-<div align="center"><em>It is deployed to the internet! (arorschach is my username)</em></div>
-<br>
-<p>Try it yourself!</p>
-<p>Sample Code: <a href="https://github.com/HongchenY/Sample-Restaurant-Homepage" target="_blank" rel="noopener noreferrer">Restaurant Homepage</a></p>
-<p>Defang Docs: <a href="https://docs.defang.io/docs/intro" target="_blank" rel="noopener noreferrer">Docs</a></p>]]></content>
-        <category label="Cloud" term="Cloud"/>
-        <category label="NoDevOps" term="NoDevOps"/>
-        <category label="BYOC" term="BYOC"/>
-        <category label="AWS ECS" term="AWS ECS"/>
-        <category label="defang compose up" term="defang compose up"/>
     </entry>
 </feed>
