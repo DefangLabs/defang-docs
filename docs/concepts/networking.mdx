@@ -17,9 +17,9 @@ This page is about complex networking. If you want to configure your services to
 
 ## Networks
 
-The Compose spec has a notion of [networks](https://github.com/compose-spec/compose-spec/blob/main/06-networks.md). By default, each service gets added to the `default` network. Networks in Compose can be flagged as `internal`, but this means they have no connection to the outside world at all (no egress).
-
-Only services in the `default` network can have public IPs. Services in any other network will be in a private subnet.
+The Compose spec has a notion of [networks](https://github.com/compose-spec/compose-spec/blob/main/06-networks.md). By default, each service gets added to the `default` network.
+Services in the `default` network can have public IPs. Services in any other network will be in a private subnet.
+These services cannot be reached from outside the network, but they can still make network requests to the public internet.
 
 ```yaml
 services:
