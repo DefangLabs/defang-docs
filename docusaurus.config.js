@@ -182,6 +182,9 @@ const config = {
       },
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
 };
 
 module.exports = config;
