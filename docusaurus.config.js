@@ -13,6 +13,10 @@ const redirects = [
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
+  // npm install --save @docusaurus/theme-mermaid
+  themes: [
+    '@docusaurus/theme-mermaid',
+  ],
   scripts: [
     {
       src: '/analytics.js',
