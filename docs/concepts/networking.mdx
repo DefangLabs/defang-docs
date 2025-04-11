@@ -47,7 +47,7 @@ networks:
 
 ### Public Services
 
-By default, services will be in the `default` network and behind a public load-balancer, ie. exposed ports default to `mode: ingress`:
+By default, services will be in the `default` network. By default these services are not accessible directly, but may be accessed through a public load-balancer, ie. exposed ports default to `mode: ingress`:
 
 ```yaml
 services:
