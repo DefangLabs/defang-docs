@@ -17,7 +17,7 @@ tags: [
     Autoscaling,
 ]
 author: Defang Team
-draft: true
+draft: false
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
