@@ -37,7 +37,11 @@ Instead of manually adding more instances when traffic increases, an auto-scalin
 
 ### Example
 
-With Defang a user, with a Pro and higher plan, can enable service level autoscaling by adding a _**x-defang-autoscaling**_ extension to the service which is to be autoscaled.
+With Defang, users on the Pro plan or higher can enable service-level autoscaling in three steps:
+
+1. Add the _**x-defang-autoscaling : true**_ extension to the service you want to autoscale.
+2. Remove any _**replicas**_ field in the _**deploy**_ mapping (if present).
+3. Deploy using staging or production [mode](/docs/concepts/deployments#deployment-modes). (e.g. ```defang compose up --provider=aws --mode=production```)
 
 ```yaml
 services:
