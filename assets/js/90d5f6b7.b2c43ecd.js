@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[1776],{18173:a=>{a.exports=JSON.parse('{"label":"Hardware","permalink":"/blog/tags/hardware","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
