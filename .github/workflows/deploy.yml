@@ -90,11 +90,9 @@ jobs:
           curl -f -X POST https://ask.defang.io/trigger-rebuild?token=${{ secrets.CHATBOT_TOKEN }}
 
       - name: Notify Slack of Action Failures
-        uses: ravsamhq/notify-slack-action@2.5.0
-        if: ${{ always() && github.ref_name == 'main' }}
-        with:
-          status: ${{ job.status }}
-          notify_when: "failure"
-          notification_title: "{workflow} is failing"
+        if: ${{ failure() && github.ref_name == 'main' }}
+        uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFIER_WEBHOOK_URL }}
+          SLACK_TITLE: Defang Docs deploy workflow failed
+          MSG_MINIMAL: actions url
+          SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFIER_WEBHOOK_URL }}
