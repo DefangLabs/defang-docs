@@ -9,11 +9,13 @@ sidebar-position: 200
 Defang has a [Model Context Protocol (MCP) server](https://github.com/DefangLabs/defang) with built-in tools to allow users to deploy and manage cloud services through a
 supported IDE.
 
+Using this MCP server with an IDE will enable the AI coding agent (e.g. Copilot) to use Defang tools and resources to perform tasks, such as deploying a service to the cloud. This means you can now use Defang with IDE-integrated AI coding agents.
+
 For more detail on MCP architecture, visit the [official MCP documentation](https://modelcontextprotocol.io/introduction).
 
-### What does an MCP server do?
-
-An MCP server integration allows an AI agent to access external tools and resources to perform tasks beyond its usual capabilities (e.g. deploying a service). With Defang's MCP Server, you can deploy and manage your services simply by asking an AI agent within your IDE.
+:::info
+The MCP Server currently supports deployments to [Defang Playground](/docs/providers/playground). We plan to support Defang BYOC in future updates.
+:::
 
 ## Installation
 
@@ -82,7 +84,7 @@ The `login` tool will open a browser to the Portal to authenticate to Defang. On
 The `services` tool displays the details of all your services that are currently deployed with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
 
 :::info
-This page is a guide to the Defang MCP Server detailing its usage, installation, and tools. If you are looking for an example of how you can deploy a MCP project with Defang, please instead refer to our [MCP sample application](https://github.com/DefangLabs/samples/tree/main/samples/mcp).
+This page is a guide to the Defang MCP Server detailing its installation, tools, and usage. If you are looking for an example of how you can deploy a MCP project with Defang, please instead refer to our [MCP sample application](https://github.com/DefangLabs/samples/tree/main/samples/mcp).
 :::
 
 ## Example Prompts
