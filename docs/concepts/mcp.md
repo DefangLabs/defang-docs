@@ -11,46 +11,54 @@ supported IDE.
 
 For more detail on MCP architecture, visit the [official MCP documentation](https://modelcontextprotocol.io/introduction).
 
-### Overview
+### What does an MCP server do?
 
-An MCP server enhances the functionality of AI agents by enabling them to use external resources and tools to create responses or perform tasks (e.g. integrate with Defang). In the case of Defang's MCP Server, you can use deploy and manage your services by asking an AI agent to do so in an IDE.
+An MCP server integration allows an AI agent to access external tools and resources to perform tasks beyond its usual capabilities (e.g. deploying a service). With Defang's MCP Server, you can deploy and manage your services simply by asking an AI agent within your IDE.
 
 ## Installation
 
-To run this server, you will need to install the [Defang CLI](/docs/getting-started). Then, you can run:
+First, install the [Defang CLI](/docs/getting-started). Then, connect the MCP server with your IDE by running the following command in your terminal:
 
 ```bash
-defang mcp --client=<your-ide>
+defang mcp setup --client=<your-ide>
 ```
 
-This sets up the MCP server to connect with your IDE.
+Replace `<your-ide>` with the name of your preferred IDE. See our list of [Supported IDEs](#supported-ides).
+
+After setup, you can start the MCP server with the command:
+
+```bash
+defang mcp serve
+```
+
+Once the server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
 ## Supported IDEs
 
 ### Cursor
 
-```
-defang mcp --client=cursor
+```bash
+defang mcp setup --client=cursor
 ```
 
 ### Windsurf
 
-```
-defang mcp --client=windsurf
+```bash
+defang mcp setup --client=windsurf
 ```
 
 ### VSCode / VSCode Insiders
 
-```
-defang mcp --client=vscode
+```bash
+defang mcp setup --client=vscode
 ```
 
 ### Claude Desktop
 
 (While this is not an IDE in the traditional sense, it can support MCP servers.)
 
-```
-defang mcp --client=claude
+```bash
+defang mcp setup --client=claude
 ```
 
 ## MCP Tools
