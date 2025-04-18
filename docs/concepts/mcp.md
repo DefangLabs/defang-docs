@@ -37,6 +37,10 @@ npx -y defang mcp serve
 
 Once the server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
+![IDE Screenshot](/img/mcp-concept/ide.png)
+
+That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
+
 ## Supported IDEs
 
 ### Cursor
