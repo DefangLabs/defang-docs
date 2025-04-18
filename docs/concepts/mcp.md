@@ -107,10 +107,6 @@ please destroy this project.
 ```
 
 ```
-am I logged in to defang?
-```
-
-```
 what services do I have?
 ```
 
