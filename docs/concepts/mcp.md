@@ -6,8 +6,7 @@ sidebar-position: 200
 
 # Model Context Protocol (MCP)
 
-The Defang [Model Context Protocol (MCP) server](https://github.com/DefangLabs/defang) includes built-in tools to allow users to deploy and manage cloud services through a
-supported IDE.
+The Defang [Model Context Protocol (MCP) server](https://github.com/DefangLabs/defang) includes built-in tools to allow users to deploy and manage cloud services through a supported IDE.
 
 Using this MCP server with an IDE will enable the AI coding agent (e.g. Copilot) to use Defang tools and resources to perform tasks, such as deploying a service to the cloud. This means you can now use Defang with IDE-integrated AI coding agents.
 
@@ -83,7 +82,7 @@ The MCP Server currently supports deployments to [Defang Playground](/docs/provi
 
 ### `services`
 
-The `services` tool displays the details of all your services that are currently deployed with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
+The `services` tool displays the details of all your services that are currently deployed in your project with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
 
 ### `destroy`
 
@@ -95,7 +94,7 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 
 ## Example Prompts
 
-After connecting the Defang MCP Server to your IDE using an installation method, you can type in prompts in your chat to invoke the AI agent to use an MCP tool(s).
+After connecting the Defang MCP Server to your IDE using an installation method, you can type in prompts in your chat to invoke the AI agent to use any MCP tool(s).
 
 For example, you can ask the AI agent:
 
