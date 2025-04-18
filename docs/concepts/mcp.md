@@ -71,6 +71,10 @@ Below are the tools available in the Defang MCP Server.
 
 The `deploy` tool scans your project directory for Dockerfiles and `compose.yaml` files, then deploys the detected service(s) using Defang. You can monitor the deployment process in the Defang Portal.
 
+:::info
+The MCP Server currently supports deployments to [Defang Playground](/docs/providers/playground). We plan to support Defang BYOC in future updates.
+:::
+
 ### `services`
 
 The `services` tool displays the details of all your services that are currently deployed with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
