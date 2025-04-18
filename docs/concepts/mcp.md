@@ -11,6 +11,8 @@ supported IDE.
 
 Using this MCP server with an IDE will enable the AI coding agent (e.g. Copilot) to use Defang tools and resources to perform tasks, such as deploying a service to the cloud. This means you can now use Defang with IDE-integrated AI coding agents.
 
+![Defang MCP Server Diagram](/img/mcp-concept/diagram.png)
+
 For more detail on MCP architecture, visit the [official MCP documentation](https://modelcontextprotocol.io/introduction).
 
 :::info
@@ -19,17 +21,13 @@ The MCP Server currently supports deployments to [Defang Playground](/docs/provi
 
 ## Installation
 
-First, make sure you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
-
-Connect the MCP server with your IDE by running the following command in your terminal:
+First, make sure you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed. Connect the MCP server with your IDE by running the following command in your terminal:
 
 ```bash
 npx -y defang mcp setup --client=<your-ide>
 ```
 
-Replace `<your-ide>` with the name of your preferred IDE. See our list of [Supported IDEs](#supported-ides).
-
-After setup, you can start the MCP server with the command:
+Replace `<your-ide>` with the name of your preferred IDE. See our list of [Supported IDEs](#supported-ides). After setup, you can start the MCP server with the command:
 
 ```bash
 npx -y defang mcp serve
@@ -72,10 +70,6 @@ Below are the tools available in the Defang MCP Server.
 ### `deploy`
 
 The `deploy` tool scans your project directory for Dockerfiles and `compose.yaml` files, then deploys the detected service(s) using Defang. You can monitor the deployment process in the Defang Portal.
-
-:::info
-The MCP Server currently supports deployments to [Defang Playground](/docs/providers/playground). We plan to support Defang BYOC in future updates.
-:::
 
 ### `services`
 
