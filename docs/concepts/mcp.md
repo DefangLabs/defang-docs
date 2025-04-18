@@ -21,7 +21,9 @@ The MCP Server currently supports deployments to [Defang Playground](/docs/provi
 
 ## Installation
 
-First, make sure you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed. Connect the MCP server with your IDE by running the following command in your terminal:
+First, make sure you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed so that you can use `npx` commands.
+
+Connect the MCP server with your IDE by running the following command in your terminal:
 
 ```bash
 npx -y defang mcp setup --client=<your-ide>
