@@ -20,23 +20,25 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 
 ## Installation
 
-First, make sure you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed so that you can use `npx` commands.
+Ensure that you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed, as `npx` commands are required for setup.
+
+:::warning
+At this time, the Defang MCP Server can only be installed using `npx`.
+:::
 
 Connect the Defang MCP Server with your IDE by running the following command in your terminal:
 
 ```bash
-npx -y defang mcp setup --client=<your-ide>
+npx -y defang@latest mcp setup --client=<your-ide>
 ```
 
 Replace `<your-ide>` with the name of your preferred IDE. See our list of [Supported IDEs](#supported-ides). After setup, you can start the MCP Server with the command:
 
 ```bash
-npx -y defang mcp serve
+npx -y defang@latest mcp serve
 ```
 
 Once the MCP Server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
-
-![IDE Screenshot](/img/mcp-concept/ide.png)
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
 
@@ -45,19 +47,19 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 ### Cursor
 
 ```bash
-npx -y defang mcp setup --client=cursor
+npx -y defang@latest mcp setup --client=cursor
 ```
 
 ### Windsurf
 
 ```bash
-npx -y defang mcp setup --client=windsurf
+npx -y defang@latest mcp setup --client=windsurf
 ```
 
 ### VS Code
 
 ```bash
-npx -y defang mcp setup --client=vscode
+npx -y defang@latest mcp setup --client=vscode
 ```
 
 ### Claude Desktop
@@ -65,7 +67,7 @@ npx -y defang mcp setup --client=vscode
 (While this is not an IDE in the traditional sense, it can support MCP servers.)
 
 ```bash
-npx -y defang mcp setup --client=claude
+npx -y defang@latest mcp setup --client=claude
 ```
 
 ## MCP Tools
