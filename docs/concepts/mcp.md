@@ -60,9 +60,8 @@ npx -y defang@latest mcp setup --client=windsurf
 
 ![Windsurf](/img/mcp-concept/windsurf.png)
 
-### VS Code
+### VS Code / VS Code Insiders
 
-This also works for VS Code Insiders.
 
 ```bash
 npx -y defang@latest mcp setup --client=vscode
