@@ -23,7 +23,7 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 Ensure that you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed, as `npx` commands are required for setup.
 
 :::warning
-At this time, the Defang MCP Server can only be installed using `npx`.
+At this time, the Defang MCP Server can only be installed using `npx`. Other methods are not yet supported.
 :::
 
 Connect the Defang MCP Server with your IDE by running the following command in your terminal:
@@ -32,7 +32,7 @@ Connect the Defang MCP Server with your IDE by running the following command in 
 npx -y defang@latest mcp setup --client=<your-ide>
 ```
 
-Replace `<your-ide>` with the name of your preferred IDE. See our list of [Supported IDEs](#supported-ides). After setup, you can start the MCP Server with the command:
+Replace `<your-ide>` with the name of your [preferred IDE](#supported-ides). After setup, you can start the MCP Server with the command:
 
 ```bash
 npx -y defang@latest mcp serve
@@ -50,25 +50,35 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 npx -y defang@latest mcp setup --client=cursor
 ```
 
+![Cursor](/img/mcp-concept/cursor.png)
+
 ### Windsurf
 
 ```bash
 npx -y defang@latest mcp setup --client=windsurf
 ```
 
+![Windsurf](/img/mcp-concept/windsurf.png)
+
 ### VS Code
+
+This also works for VS Code Insiders.
 
 ```bash
 npx -y defang@latest mcp setup --client=vscode
 ```
 
+![VS Code](/img/mcp-concept/vscode.png)
+
 ### Claude Desktop
 
-(While this is not an IDE in the traditional sense, it can support MCP servers.)
+While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
 
 ```bash
 npx -y defang@latest mcp setup --client=claude
 ```
+
+![Claude Desktop](/img/mcp-concept/claude.png)
 
 ## MCP Tools
 
