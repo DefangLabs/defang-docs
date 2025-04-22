@@ -25,18 +25,13 @@ Ensure that you have the [npm package manager](https://docs.npmjs.com/downloadin
 :::warning
 At this time, the Defang MCP Server can only be installed using `npx`. Other methods are not yet supported.
 :::
-
-Connect the Defang MCP Server with your IDE by running the following command in your terminal:
+Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
 
 ```bash
 npx -y defang@latest mcp setup --client=<your-ide>
 ```
 
-Replace `<your-ide>` with the name of your [preferred IDE](#supported-ides). After setup, you can start the MCP Server with the command:
-
-```bash
-npx -y defang@latest mcp serve
-```
+Once the command completes, you may need to restart your IDE for the changes to take effect.
 
 Once the MCP Server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
@@ -46,26 +41,37 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 
 ### Cursor
 
+Setup command:
+
 ```bash
 npx -y defang@latest mcp setup --client=cursor
 ```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![Cursor](/img/mcp-concept/cursor.png)
 
 ### Windsurf
 
+Setup command:
+
 ```bash
 npx -y defang@latest mcp setup --client=windsurf
 ```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![Windsurf](/img/mcp-concept/windsurf.png)
 
 ### VS Code / VS Code Insiders
 
+Setup command:
 
 ```bash
 npx -y defang@latest mcp setup --client=vscode
 ```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![VS Code](/img/mcp-concept/vscode.png)
 
@@ -73,9 +79,13 @@ npx -y defang@latest mcp setup --client=vscode
 
 While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
 
+Setup command:
+
 ```bash
 npx -y defang@latest mcp setup --client=claude
 ```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![Claude Desktop](/img/mcp-concept/claude.png)
 
@@ -126,3 +136,5 @@ deploy this with defang /Users/yourname/Documents/project1
 ```
 do I have a service called project1
 ```
+
+Feel free to try any of these prompts or create your own!
