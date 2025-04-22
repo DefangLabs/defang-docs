@@ -63,7 +63,7 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ![Windsurf](/img/mcp-concept/windsurf.png)
 
-### VS Code / VS Code Insiders
+### VS Code
 
 Setup command:
 
@@ -74,6 +74,18 @@ npx -y defang@latest mcp setup --client=vscode
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![VS Code](/img/mcp-concept/vscode.png)
+
+### VS Code Insiders
+
+Setup command:
+
+```bash
+npx -y defang@latest mcp setup --client=vscode-insiders
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![VS Code](/img/mcp-concept/vscode-insiders.png)
 
 ### Claude Desktop
 
