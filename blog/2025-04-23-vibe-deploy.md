@@ -52,7 +52,7 @@ Defang takes your app, as specified in your docker-compose.yml, and deploys it t
 
 And now with the [Defang MCP Server](https://docs.defang.io/docs/concepts/mcp), you can "vibe deploy" your project right from your favorite IDE! Once you have the Defang MCP Server installed (see instructions [here](https://docs.defang.io/docs/concepts/mcp)), just type in "deploy" (or any variation thereof) in the chat, it's that simple! It is built for hobbyists, vibe coders, fast-moving teams, and AI-powered workflows.
 
-Currently, we support deployment to the Defang Playground only, but we'll be adding deployment to public cloud soon.
+Currently, we support deployment to the Defang [Playground](https://docs.defang.io/docs/concepts/defang-playground) only, but we'll be adding deployment to public cloud soon.
 
 **How it works:**
 
