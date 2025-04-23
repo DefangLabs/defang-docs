@@ -1,6 +1,6 @@
 ---
-title: 'Welcome to the world of "Vibe Deploy": Easily Deploying your Vibe Coding Projects with Defang'
-description: "Learn how to deploy your vibe coding projects with Defang's new MCP Server"
+title: 'Welcome to the world of "Vibe Deploy": Easily Deploying your Vibe Coding Projects to the cloud with Defang'
+description: "Learn how to deploy your vibe coding projects to the cloud with Defang's new MCP Server"
 tags:
   [
     Cloud,
