@@ -13,6 +13,10 @@ const redirects = [
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
+  // npm install --save @docusaurus/theme-mermaid
+  themes: [
+    '@docusaurus/theme-mermaid',
+  ],
   scripts: [
     {
       src: '/analytics.js',
@@ -20,8 +24,16 @@ const config = {
   ],
   title: 'Defang',
   tagline: 'A radically simpler way to build and deploy production-ready cloud apps',
-  favicon: 'https://www.google.com/s2/favicons?domain=defang.io',
-
+  favicon: '/img/favicon.ico',
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: '/img/tab_icon.svg',
+      },
+    },
+  ],
   // Set the production URL of your site here
   url: 'https://docs.defang.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -40,6 +52,7 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
+  // @ts-ignore
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -66,7 +79,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: '/img/defang-social-card.png',
+    image: '/img/defang-social-card-2.png',
     navbar: {
       title: 'Defang Home',
       logo: {
@@ -159,6 +172,7 @@ const config = {
       // Existing footer configuration...
     },
     prism: {
+      additionalLanguages: ['diff'],
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
@@ -172,6 +186,9 @@ const config = {
       },
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
 };
 
 module.exports = config;
