@@ -4,10 +4,55 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Fri, 11 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Welcome to the world of "Vibe Deploy": Easily Deploying your Vibe Coding Projects to the Cloud with Defang]]></title>
+            <link>https://docs.defang.io/blog/2025/04/23/vibe-deploy</link>
+            <guid>https://docs.defang.io/blog/2025/04/23/vibe-deploy</guid>
+            <pubDate>Wed, 23 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how to deploy your vibe coding projects to the Cloud with Defang's new MCP Server]]></description>
+            <content:encoded><![CDATA[<p><strong>"I'm building a project, but it's not really coding. I just see stuff, say stuff, run stuff, and copy-paste stuff. And it mostly works."</strong></p>
+<p>– <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener noreferrer">Andrej Karpathy</a></p>
+<p>Welcome to the world of <strong>vibe coding</strong>, an AI-assisted, intuition-driven way of building software. You do not spend hours reading diffs, organizing files, or hunting through documentation. You describe what you want, let the AI take a pass, and keep iterating until it works.</p>
+<p><strong>The Tools of Vibe Coding</strong></p>
+<p>Vibe coding would not exist without a new generation of AI-first tools. Here are some of the platforms powering this new workflow.</p>
+<ul>
+<li><a href="https://cursor.com/" target="_blank" rel="noopener noreferrer">Cursor</a></li>
+<li><a href="https://windsurf.com/" target="_blank" rel="noopener noreferrer">Windsurf</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code /</a> <a href="https://code.visualstudio.com/insiders/" target="_blank" rel="noopener noreferrer">VS Code Insiders</a></li>
+<li><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Claude Desktop</a></li>
+</ul>
+<p>While each has it's own strengths and weaknesses, they all support the basic vibe coding workflow described above.</p>
+<p><strong>Using Defang for "Vibe Deployment"</strong></p>
+<p>Once your app runs locally with these vibe coding tools, the next question is: how do you get it live in the cloud so you can share it with the world?</p>
+<p>That is where <a href="https://defang.io/" target="_blank" rel="noopener noreferrer"><strong>Defang</strong></a> comes in.</p>
+<p>Defang takes your app, as specified in your docker-compose.yml, and deploys it to the public cloud (AWS, GCP, or DigitalOcean) or the Defang Playground with a single command. It is already used by thousands of developers around the world to deploy their projects to the cloud.</p>
+<p><img loading="lazy" alt="Defang Vibe Deploy" src="https://docs.defang.io/assets/images/defang-vibe-deploy-12c5beab10e2bec7c7806db6208b9cbe.png" width="1024" height="1024" class="img_ev3q"></p>
+<p>And now with the <a href="https://docs.defang.io/docs/concepts/mcp" target="_blank" rel="noopener noreferrer">Defang MCP Server</a>, you can "vibe deploy" your project right from your favorite IDE! Once you have the Defang MCP Server installed (see instructions <a href="https://docs.defang.io/docs/concepts/mcp" target="_blank" rel="noopener noreferrer">here</a>), just type in "deploy" (or any variation thereof) in the chat, it's that simple! It is built for hobbyists, vibe coders, fast-moving teams, and AI-powered workflows.</p>
+<p>Currently, we support deployment to the Defang <a href="https://docs.defang.io/docs/concepts/defang-playground" target="_blank" rel="noopener noreferrer">Playground</a> only, but we'll be adding deployment to public cloud soon.</p>
+<p><strong>How it works:</strong></p>
+<p><img loading="lazy" alt="Defang MCP Workflow" src="https://docs.defang.io/assets/images/defang-mcp-workflow-aacbbc52de809b2537842d198a1747ea.png" width="1782" height="828" class="img_ev3q"></p>
+<p>The Defang MCP Server connects your coding editor (like VS Code or Cursor) with Defang's cloud tools, so you can ask your AI assistant to deploy your project just by typing a prompt. While natural language commands are by nature imprecise, the AI in your IDE translates that natural language prompt to a precise Defang command needed to deploy your application to the cloud. And your application also has a formal definition - the compose.yaml file - either something you wrote or the AI generated for you. So, the combination of a formal compose.yaml with a precise Defang command means that the resulting deployment is 100% deterministic and reliable. So the Defang MCP Server gives you the best of both worlds - the ease of use and convenience of natural language interaction with the AI, combined with the predictability and reliability of a deterministic deployment.</p>
+<p>We are so excited to make Defang even more easy to use and accessible now to vibe coders. Give it a try and let us know what you think on our <a href="http://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a>!</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>CLI</category>
+            <category>AI</category>
+            <category>LLMs</category>
+            <category>VibeCoding</category>
+            <category>MCP</category>
+            <category>DevTools</category>
+            <category>Docker</category>
+            <category>Compose</category>
+            <category>Cursor</category>
+            <category>Windsurf</category>
+            <category>VSCode</category>
+            <category>Claude</category>
+        </item>
         <item>
             <title><![CDATA[March 2025 Defang Compose Update ]]></title>
             <link>https://docs.defang.io/blog/2025/04/11/mar-product-updates</link>
@@ -954,30 +999,6 @@ Replace&nbsp;<code>your_slack_token</code>&nbsp;and&nbsp;<code>your_slack_channe
             <category>AWS ECS</category>
             <category>defang compose up</category>
             <category>Slack API</category>
-        </item>
-        <item>
-            <title><![CDATA[Add Defang to your developer environments instantly]]></title>
-            <link>https://docs.defang.io/blog/dev-environments</link>
-            <guid>https://docs.defang.io/blog/dev-environments</guid>
-            <pubDate>Wed, 20 Mar 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Defang is aiming to reduce the barriers to entry to cloud application development. With our tooling, we make it really easy to deploy multi-service containerized applications to your own cloud with a single command.]]></description>
-            <content:encoded><![CDATA[<p>Defang is aiming to reduce the barriers to entry to cloud application development. With our tooling, we make it really easy to deploy multi-service containerized applications <a href="https://docs.defang.io/docs/concepts/defang-byoc" target="_blank" rel="noopener noreferrer">to your own cloud</a> with a single command.</p>
-<p>We want it to be easy for you to try Defang with as little friction as possible, though, so we have done the work so you can easily get started in a GitHub Codespaces environment, a GitPod Workspace, or even a local Dev Container.</p>
-<iframe style="width:100%;aspect-ratio:560/315" src="https://www.youtube.com/embed/71pmCfLdxTg?si=7hRL-4uyTDANLe78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="codespaces">Codespaces<a href="https://docs.defang.io/blog/dev-environments#codespaces" class="hash-link" aria-label="Direct link to Codespaces" title="Direct link to Codespaces">​</a></h2>
-<p>If you want to get started with Codespaces, you can just fork <a href="https://github.com/DefangLabs/github-codespace" target="_blank" rel="noopener noreferrer">this repo</a>. It comes with the Defang CLI pre-installed so you can start playing with it immediately. It's set up using the Defang CLI <a href="https://github.com/DefangLabs/devcontainer-feature/pkgs/container/devcontainer-feature%2Fdefang-cli" target="_blank" rel="noopener noreferrer">Dev Container Feature</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dev-containers">Dev Containers<a href="https://docs.defang.io/blog/dev-environments#dev-containers" class="hash-link" aria-label="Direct link to Dev Containers" title="Direct link to Dev Containers">​</a></h2>
-<p><a href="https://code.visualstudio.com/docs/devcontainers/containers" target="_blank" rel="noopener noreferrer">Dev Containers</a> are a cool way to provision and configure development environments and share that configuration with other people you are working with. It's a spec that is supported by <a href="https://code.visualstudio.com/docs/devcontainers/containers" target="_blank" rel="noopener noreferrer">VS Code</a>, <a href="https://devblogs.microsoft.com/cppblog/dev-containers-for-c-in-visual-studio/" target="_blank" rel="noopener noreferrer">Visual Studio</a>, the JetBrains IDEs like <a href="https://www.jetbrains.com/help/idea/connect-to-devcontainer.html" target="_blank" rel="noopener noreferrer">IntelliJ</a> and <a href="https://www.jetbrains.com/help/pycharm/connect-to-devcontainer.html" target="_blank" rel="noopener noreferrer">PyCharm</a>, <a href="https://devpod.sh/docs/developing-in-workspaces/devcontainer-json" target="_blank" rel="noopener noreferrer">DevPod</a> and others.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gitpod">Gitpod<a href="https://docs.defang.io/blog/dev-environments#gitpod" class="hash-link" aria-label="Direct link to Gitpod" title="Direct link to Gitpod">​</a></h2>
-<p>Gitpod is another Cloud IDE, a bit like GitHub Codespaces. If prefer Gitpod, you can try Defang in a Gitpod environment by using <a href="https://github.com/DefangLabs/gitpod-workspace/tree/main" target="_blank" rel="noopener noreferrer">this repo</a>.</p>]]></content:encoded>
-            <category>Cloud</category>
-            <category>NoDevOps</category>
-            <category>BYOC</category>
-            <category>AWS ECS</category>
-            <category>defang compose up</category>
-            <category>developer environments</category>
-            <category>Cloud IDEs</category>
-            <category>CDE</category>
         </item>
     </channel>
 </rss>

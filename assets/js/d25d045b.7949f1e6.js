@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[8307],{9985:s=>{s.exports=JSON.parse('{"label":"Windsurf","permalink":"/blog/tags/windsurf","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
