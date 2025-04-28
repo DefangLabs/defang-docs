@@ -61,9 +61,7 @@ The GCP provider does not currently support storing sensitive config values.
 
 ### Managed LLMs
 
-Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension. Add this extension to any services which use the Bedrock SDKs.
-
-When using [Managed LLMs](/docs/concepts/managed-llms/managed-language-models.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+Defang offers integration with managed, cloud-native large language model services with the x-defang-llm service extension. Add this extension to any services which use the [Google Vertex AI SDKs](https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-sdk).
 
 ### Future Improvements
 
