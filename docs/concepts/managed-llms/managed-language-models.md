@@ -35,4 +35,4 @@ If you already have an OpenAI-compatible application, Defang makes it easy to de
 | [Playground](/docs/providers/playground#managed-large-language-models) | ❌ |
 | [AWS Bedrock](/docs/providers/aws#managed-large-language-models) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP Vertex](/docs/providers/gcp#managed-large-language-models) | ❌ |
+| [GCP Vertex](/docs/providers/gcp#managed-large-language-models) | ✅ |

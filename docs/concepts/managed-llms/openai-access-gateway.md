@@ -15,6 +15,6 @@ See [our tutorial](/docs/tutorials/deploying-openai-apps-aws-bedrock/) which des
 | Provider | Managed Language Models |
 | --- | --- |
 | [Playground](/docs/providers/playground#managed-services) | ❌ |
-| [AWS Bedrock](/docs/providers/aws#managed-storage) | ✅ |
+| [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP Vertex](/docs/providers/gcp#future-improvements) | ❌ |
+| [GCP Vertex](/docs/providers/gcp#managed-llms) | ✅ |
