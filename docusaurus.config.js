@@ -192,7 +192,7 @@ const config = {
     mermaid: true,
     format: 'mdx',
     mdx1Compat: {
-      comments: false,
+      comments: true,
       admonitions: false,
       headingIds: false
     }
