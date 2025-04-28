@@ -188,6 +188,12 @@ const config = {
   ],
   markdown: {
     mermaid: true,
+    format: 'mdx',
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false
+    }
   },
 };
 
