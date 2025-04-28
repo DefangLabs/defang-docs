@@ -68,6 +68,8 @@ const config = {
             'https://github.com/DefangLabs/defang-docs/tree/main/',
         },
         blog: {
+          blogSidebarCount: 'ALL', // Show all posts in sidebar
+          blogSidebarTitle: 'All Posts', // Custom title
           showReadingTime: true,
           // Remove the editUrl property for the blog section
         },
