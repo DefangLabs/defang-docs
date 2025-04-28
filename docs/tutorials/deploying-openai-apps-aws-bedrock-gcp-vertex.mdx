@@ -30,7 +30,7 @@ services:
 
 You need to add a new service that acts as a proxy between your app and the backend LLM provider (Bedrock or Vertex).
 
-Add **Defang's openai-access-gateway** service:
+Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway)** service:
 
 ```diff
 +  llm:
@@ -42,8 +42,8 @@ Add **Defang's openai-access-gateway** service:
 +        mode: host
 +    environment:
 +      - OPENAI_API_KEY
-+      - GCP_PROJECT_ID
-+      - GCP_REGION
++      - GCP_PROJECT_ID # if using GCP Vertex AI
++      - GCP_REGION # if using GCP Vertex AI, AWS_REGION not necessary for Bedrock
 ```
 
 ### Notes:
@@ -82,7 +82,7 @@ Modify your `app` service to send API calls to the `openai-access-gateway`:
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
-Now, all OpenAI traffic will route through your gateway service.
+Now, all OpenAI traffic will be routed through your gateway service and onto AWS Bedrock or GCP Vertex.
 
 ---
 
@@ -109,9 +109,8 @@ Choose the correct `MODEL` depending on which cloud provider you are using.
 :::info
 **Choosing the Right Model**
 
-- For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`).
-- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`). 
-[See available Vertex models here.](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup)
+- For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`) [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
+- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`) [See available Vertex models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup)
 
 # Complete Example Compose File
 
