@@ -191,7 +191,7 @@ const config = {
   markdown: {
     mermaid: true,
     format: 'mdx',
-    mdx1Compat: { //Values are set to true to enable features for Docusaurus v3+
+    mdx1Compat: { //set to false for Docusaurus v3+ compatibility
       comments: false, 
       admonitions: false,
       headingIds: false
