@@ -82,51 +82,51 @@ When using [Managed LLMs](/docs/concepts/managed-llms/managed-language-models.md
 
 Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
 
-| Resource Type                           | Example Resource Name                                                                     |
-| --------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------- |
-| s3/Bucket                               | defang-cd-bucket-cbpbzz8hzm7                                                              |
-| ecs/ClusterCapacityProviderAssociations | defang-cd-Cluster-pqFhjwuklvm                                                             |
-| ecs/Cluster                             | defang-cd-ClusterpJqFhjwuklvm                                                             |
-| iam/Role                                | defang-cd-ExeutionRole-XE7RbQDfeEwx                                                       |
-| ec2/InternetGateway                     | igw-05bd7adc92541ec3                                                                      |
-| ec2/VPCGatewayAttachment                | IGW                                                                                       | vpc-0cbca64f13435695 |
-| logs/LogGroup                           | defang-cd-Logroup-6LSZet3tFnEy                                                            |
-| ecr/PullThroughCacheRule                | defang-cd-ecrpublic                                                                       |
-| ec2/Route                               | rtb-08f3f5afc9e6c8c8                                                                      | 0.0.0.0/0            |
-| ec2/RouteTable                          | rtb-08f3f5ffc9e6c8c8                                                                      |
-| ec2/VPCEndpoint                         | vpce-02175d8d4f47d0c9                                                                     |
-| ec2/SecurityGroup                       | sg-032b839c63e70e49                                                                       |
-| ec2/Subnet                              | subnet-086bead399ddc8a0                                                                   |
-| ec2/SubnetRouteTableAssociation         | rtbassoc-02e200d45e7227fe                                                                 |
-| ecs/TaskDefinition                      | arn:aws:ecsus-west-2:381492210770:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
-| iam/Role                                | defang-cd-askRole-gsEeDPd6sPQY                                                            |
-| ec2/VPC                                 | vpc-0cbca64f13435695                                                                      |
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| s3/Bucket | defang-cd-bucket-cbpbzz8hzm7  |
+| ecs/ClusterCapacityProviderAssociations | defang-cd-Cluster-pqFhjwuklvm |
+| ecs/Cluster | defang-cd-ClusterpJqFhjwuklvm  |
+| iam/Role | defang-cd-ExeutionRole-XE7RbQDfeEwx  |
+| ec2/InternetGateway | igw-05bd7adc92541ec3  |
+| ec2/VPCGatewayAttachment | IGW|vpc-0cbca64f13435695 |
+| logs/LogGroup | defang-cd-Logroup-6LSZet3tFnEy  |
+| ecr/PullThroughCacheRule | defang-cd-ecrpublic |
+| ec2/Route | rtb-08f3f5afc9e6c8c8|0.0.0.0/0 |
+| ec2/RouteTable | rtb-08f3f5ffc9e6c8c8 |
+| ec2/VPCEndpoint | vpce-02175d8d4f47d0c9  |
+| ec2/SecurityGroup | sg-032b839c63e70e49  |
+| ec2/Subnet | subnet-086bead399ddc8a0  |
+| ec2/SubnetRouteTableAssociation | rtbassoc-02e200d45e7227fe |
+| ecs/TaskDefinition | arn:aws:ecsus-west-2:381492210770:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
+| iam/Role | defang-cd-askRole-gsEeDPd6sPQY  |
+| ec2/VPC | vpc-0cbca64f13435695  |
 
 Then, for each project you deploy, Defang will create and manage the following resources:
 
-| Resource Type                 | Example Resource Name                    |
-| ----------------------------- | ---------------------------------------- |
-| ecr/Repository                | project1/kaniko-build                    |
-| ecr/LifecyclePolicy           | project1/kaniko-build                    |
-| acm/Certificate               | \*.project1.tenant1.defang.app           |
-| ecr/Repository                | project1/kaniko-build/cache              |
-| ecr/LifecyclePolicy           | project1/kaniko-build/cache              |
-| iam/InstanceProfile           | ecs-agent-profile                        |
-| iam/Role                      | ecs-task-execution-role                  |
-| cloudwatch/EventRule          | project1-ecs-lifecycle-rule              |
-| cloudwatch/EventTarget        | project1-ecs-event-cw-target             |
-| route53/Record                | validation-project1.tenant1.defang.app   |
-| acm/CertificateValidation     | \*.project1.tenant1.defang.appValidation |
-| ec2/VpcDhcpOptionsAssociation | dhcp-options-association                 |
-| cloudwatch/LogGroup           | builds                                   |
-| iam/Role                      | kaniko-task-role                         |
-| ecs/TaskDefinition            | kanikoTaskDefArm64                       |
-| ecs/TaskDefinition            | kanikoTaskDefAmd64                       |
-| s3/Bucket                     | defang-build                             |
-| s3/BucketPublicAccessBlock    | defang-build-block                       |
-| ecs/Cluster                   | cluster                                  |
-| ecs/ClusterCapacityProviders  | cluster-capacity-providers               |
-| ec2/SecurityGroup             | project1_app-sg                          |
-| ec2/SecurityGroup             | bootstrap                                |
-| ec2/VpcDhcpOptions            | dhcp-options                             |
-| cloudwatch/LogGroup           | logs                                     |
+| Resource Type | Example Resource Name |
+|---------------|------------------------|
+| ecr/Repository | project1/kaniko-build |
+| ecr/LifecyclePolicy | project1/kaniko-build |
+| acm/Certificate | *.project1.tenant1.defang.app |
+| ecr/Repository | project1/kaniko-build/cache |
+| ecr/LifecyclePolicy | project1/kaniko-build/cache |
+| iam/InstanceProfile | ecs-agent-profile |
+| iam/Role | ecs-task-execution-role |
+| cloudwatch/EventRule | project1-ecs-lifecycle-rule |
+| cloudwatch/EventTarget | project1-ecs-event-cw-target |
+| route53/Record | validation-project1.tenant1.defang.app |
+| acm/CertificateValidation | *.project1.tenant1.defang.appValidation |
+| ec2/VpcDhcpOptionsAssociation | dhcp-options-association |
+| cloudwatch/LogGroup | builds |
+| iam/Role | kaniko-task-role |
+| ecs/TaskDefinition | kanikoTaskDefArm64 |
+| ecs/TaskDefinition | kanikoTaskDefAmd64 |
+| s3/Bucket | defang-build |
+| s3/BucketPublicAccessBlock | defang-build-block |
+| ecs/Cluster | cluster |
+| ecs/ClusterCapacityProviders | cluster-capacity-providers |
+| ec2/SecurityGroup | project1_app-sg |
+| ec2/SecurityGroup | bootstrap |
+| ec2/VpcDhcpOptions | dhcp-options |
+| cloudwatch/LogGroup | logs |
