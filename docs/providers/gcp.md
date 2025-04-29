@@ -71,6 +71,6 @@ The following features are in active development for GCP:
 - [Networking and Load Balancing](/docs/concepts//networking.mdx)
 - [Custom Domains](/docs/concepts//domains.mdx)
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
-- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)
+- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx)
 
 Stayed tuned for future updates!

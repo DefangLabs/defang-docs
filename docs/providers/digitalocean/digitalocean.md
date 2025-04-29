@@ -80,7 +80,7 @@ The following features are still in development for DigitalOcean:
 
 - [Custom Domains](/docs/concepts//domains.mdx)
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
-- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)
+- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx)
 - [Managed Language Models](/docs/concepts/managed-llms/managed-language-models.md)
 
 Stay tuned for future updates!
