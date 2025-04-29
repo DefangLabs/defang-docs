@@ -10,7 +10,7 @@ sidebar_position: 010
 The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
 :::
 
-:::success DigitalOcean Credits
+:::tip[DigitalOcean Credits]
 You can get DigitalOcean credits to try out Defang. Learn more about it on their [pricing page](https://www.digitalocean.com/pricing). If you're an elligible startup, you can sign up for credits [here](https://www.digitalocean.com/hatch).
 :::
 
@@ -23,12 +23,15 @@ Why should you use Defang with DigitalOcean? Defang allows you to easily create 
 To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](../getting-started#authenticate-with-defang).
 
 ### Sign up for DigitalOcean
+
 Next, make sure you have signed up for a [DigitalOcean account](https://try.digitalocean.com/freetrialoffer/).
 
 ### Authenticate with DigitalOcean
+
 After signing up for your account, be sure to set up your [personal access token](https://docs.digitalocean.com/reference/api/create-personal-access-token/). Defang will need to find this value in your shell as the `DIGITALOCEAN_TOKEN` environment variable.
 
 ### Authenticate with DigitalOcean Spaces
+
 You will also need a [DigitalOcean Spaces access key](https://docs.digitalocean.com/products/spaces/how-to/manage-access/). Defang will need to find this value in your shell as the `SPACES_ACCESS_KEY_ID`, and `SPACES_SECRET_ACCESS_KEY` environment variables.
 
 ### Configure your shell environment
@@ -44,6 +47,7 @@ The Defang CLI will automatically check if these envinonment variables are set b
 ### Deploy your project to DigitalOcean
 
 Once you are ready to go, add the `--provider=digitalocean` to your command to tell the Defang CLI to use the DigitalOcean provider or set the `DEFANG_PROVIDER` environment variable to `digitalocean`.
+
 ```bash
 $ defang compose up --provider=digitalocean
 # or
@@ -73,6 +77,7 @@ Defang allows you to configure your services with [sensitive config values](http
 ### Future Improvements
 
 The following features are still in development for DigitalOcean:
+
 - [Custom Domains](/docs/concepts//domains.mdx)
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
 - [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)

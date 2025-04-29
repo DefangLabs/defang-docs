@@ -19,7 +19,7 @@ services:
       replicas: 3
       resources:
         reservations:
-          cpus: '1.0'
+          cpus: "1.0"
           memory: 2048M
           devices:
             - capabilities: ["gpu"]
@@ -32,17 +32,17 @@ const service = new defang.DefangService("gpu-service", {
   deploy: {
     replicas: 3,
     resources: {
-        reservations: {
-            cpu: 1.0,
-            memory: 2048,
-            devices: [{capabilities: ['gpu']}]
-        }
-    }
-  }
+      reservations: {
+        cpu: 1.0,
+        memory: 2048,
+        devices: [{ capabilities: ["gpu"] }],
+      },
+    },
+  },
 });
 ```
 
-:::info GPUs
+:::info[GPUs]
 If you require access to GPUs, you can specify this in the `deploy.resources.reservations.devices[0].capabilities` section of your service as in the examples above. You can learn more about this in the [Docker-Compose documentation](https://docs.docker.com/compose/gpu-support/). This is the only supported value in the `deploy.resources.reservations.devices` section.
 :::
 
@@ -68,7 +68,7 @@ Defang uses `shm_size` to configure both the memory and disk space available to 
 The default `shm_size` values for each platform are as follows. More or less may be specified.
 
 | Platform      | `shm_size` Minimum |
-|---------------|--------------------|
+| ------------- | ------------------ |
 | AWS           | 16G                |
 | Digital Ocean | 8G                 |
 | GCP           | 16G                |

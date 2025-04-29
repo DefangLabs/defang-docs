@@ -8,7 +8,7 @@ sidebar_position: 000
 
 Why should you use Defang with AWS? Defang allows you to easily create and manage full, scalable applications with AWS. Defang aims to make it easier to deploy your services to the cloud. Don't waste your time learning the ins and outs of AWS, deciding which of the 200+ services to use, and then writing the infrastructure code to deploy your services, and making sure they are properly secured. Defang does all of that for you.
 
-:::success AWS Free Tier & Credits
+:::tip[AWS Free Tier & Credits]
 You can use the AWS Free Tier to try out Defang. Learn more about it [here](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all). If you're an elligible startup, you can sign up for credits [here](https://aws.amazon.com/startups/sign-up?referrer_url_path=%2Fstartups).
 :::
 

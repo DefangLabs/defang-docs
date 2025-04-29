@@ -10,7 +10,7 @@ sidebar_position: 3000
 The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 
-:::success GCP Free Tier & Credits
+:::tip[GCP Free Tier & Credits]
 You can use the GCP Free Tier to try out Defang. Learn more about it [here](https://cloud.google.com/free). If you're an elligible startup, you can sign up for credits [here](https://cloud.google.com/developers/startups).
 :::
 
@@ -66,6 +66,7 @@ Defang offers integration with managed, cloud-native large language model servic
 ### Future Improvements
 
 The following features are in active development for GCP:
+
 - [Configuration and management of secrets](/docs/concepts//configuration.md)
 - [Networking and Load Balancing](/docs/concepts//networking.mdx)
 - [Custom Domains](/docs/concepts//domains.mdx)

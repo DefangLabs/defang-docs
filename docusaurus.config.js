@@ -192,9 +192,9 @@ const config = {
     mermaid: true,
     format: 'mdx',
     mdx1Compat: { //Values are set to true to enable features for Docusaurus v3+
-      comments: true, 
-      admonitions: true,
-      headingIds: true
+      comments: false, 
+      admonitions: false,
+      headingIds: false
     }
   },
 };

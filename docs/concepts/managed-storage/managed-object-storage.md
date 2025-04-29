@@ -6,7 +6,7 @@ sidebar_position: 3000
 
 # Managed Object Storage
 
-:::info Not Yet Supported
+:::info[Not Yet Supported]
 As of September 2024, Defang does not yet support managed Object Storage, but it is on our roadmap. If you are interested in Object Storage support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/688).
 :::
 
