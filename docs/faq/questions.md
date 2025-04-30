@@ -68,7 +68,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 ### Is Defang a run-time platform?
 - No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
-### What is the difference between Defang and platforms such as Vercel, fly.io, and Railway?
+### What is the difference between Defang and platforms such as Vercel, fly.io, Railway, Render, or Heroku?
 - Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and tools such as SST?
