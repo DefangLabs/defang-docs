@@ -10,8 +10,8 @@ sidebar_position: 3000
 The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 
-:::success GCP Free Tier & Credits
-You can use the GCP Free Tier to try out Defang. Learn more about it [here](https://cloud.google.com/free). If you're an elligible startup, you can sign up for credits [here](https://cloud.google.com/developers/startups).
+:::tip[GCP Free Tier & Credits]
+You can use the GCP Free Tier to try out Defang. Learn more about it [here](https://cloud.google.com/free). If you're an eligible startup, you can sign up for credits [here](https://cloud.google.com/developers/startups).
 :::
 
 Defang enables you to effortlessly develop and deploy full, scalable applications with GCP. It is designed to simplify deploying your services to the cloud. As one of the leading cloud providers globally, GCP offers powerful tools and resources, and with Defang, you can bypass the complexities of the GCP platform. Let Defang handle the heavy lifting so you can focus on what matters most to you!
@@ -66,10 +66,11 @@ Defang offers integration with managed, cloud-native large language model servic
 ### Future Improvements
 
 The following features are in active development for GCP:
+
 - [Configuration and management of secrets](/docs/concepts//configuration.md)
 - [Networking and Load Balancing](/docs/concepts//networking.mdx)
 - [Custom Domains](/docs/concepts//domains.mdx)
 - [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
-- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.md)
+- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx)
 
 Stayed tuned for future updates!

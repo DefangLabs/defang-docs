@@ -5,7 +5,7 @@ sidebar_position: 500
 
 # Deploy a GPU-Powered Application to AWS
 
-This tutorial will show you how to create and deploy a GPU-powered application on AWS using Defang. 
+This tutorial will show you how to create and deploy a GPU-powered application on AWS using Defang.
 
 We will walk you through the whole deployment process based on the [Mistral & vLLM](https://github.com/DefangLabs/samples/tree/main/samples/vllm) sample.
 
@@ -13,19 +13,28 @@ We will walk you through the whole deployment process based on the [Mistral & vL
 Note that GPU deployments are not permitted on the Defang Playground. You must [upgrade to a paid account](https://defang.io/pricing/) and [deploy to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).
 :::
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kynFa2zU7hQ?si=qdV0xa6vkhMFJ6qv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/kynFa2zU7hQ?si=qdV0xa6vkhMFJ6qv"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ## Prerequisites
 
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
-* [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+- [A Defang Account](/docs/concepts/authentication)
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
 
 ### AWS Account with GPU Access
 
 For any of this to work, you'll need to have access to GPU instances in your AWS account. To do that you'll need to go to the "[Service Quotas](https://console.aws.amazon.com/servicequotas/home)" console in your AWS account. From there you can request access to spot GPU instances. You'll need to request 8 or more because the value is per vCPU and the smallest GPU instance has 8 vCPUs. The instance types you're requesting are "All G and VT spot instances".
 
-:::warning Timing
+:::warning[Timing]
 This process can take a few days for AWS to approve.
 :::
 
@@ -41,26 +50,28 @@ You'll need to clone the [Mistral & vLLM](https://github.com/DefangLabs/samples/
 
 ## Step 2 - Check your [Defang BYOC](../concepts/defang-byoc.md) settings
 
-* Make sure you [install the latest version of the Defang CLI](../getting-started#install-the-defang-cli.md)
-* Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI makes use of AWS environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`, so make sure the correct values are set for those.
+- Make sure you [install the latest version of the Defang CLI](../getting-started#install-the-defang-cli.md)
+- Then, make sure you have properly [authenticated your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). The Defang CLI makes use of AWS environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`, so make sure the correct values are set for those.
 
 :::tip
 If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
 :::
 
 ## Step 3 - Prepare your Environment
-* Log into your Defang account
+
+- Log into your Defang account
+
 ```bash
 defang login
 ```
 
-* Set the HuggingFace token using the `defang config` command
+- Set the HuggingFace token using the `defang config` command
+
 ```bash
 defang config set --name HF_TOKEN
 ```
 
 [Configuration](../concepts/configuration.md) stores your sensitive information such as API keys, passwords, and other credentials for you.
-
 
 ## Step 4 - Explore the Compose File
 
@@ -105,19 +116,19 @@ We start with the latest vLLM Docker image provided by [Mistral AI](https://docs
 
 ```yaml
 mistral:
-    image: ghcr.io/mistralai/mistral-src/vllm:latest
+  image: ghcr.io/mistralai/mistral-src/vllm:latest
 ```
 
 We specify that we require a GPU to run our application.
 
 ```yaml
 deploy:
-    resources:
-        reservations:
+  resources:
+    reservations:
             cpus: '2.0'
-            memory: 8192M
-            devices:
-                - capabilities: ["gpu"]
+      memory: 8192M
+      devices:
+        - capabilities: ["gpu"]
 ```
 
 The Mistral model will be downloaded from HuggingFace. We need to have a HuggingFace Token to enable the installation, so we specify that we need to get the `HF_TOKEN` configuration value from Defang.
@@ -126,40 +137,39 @@ Specifying the `HF_TOKEN` in the `environment` section of the service in the `co
 
 ```yaml
 environment:
-    - HF_TOKEN
+  - HF_TOKEN
 ```
 
 ### The UI Service
 
 In this sample we also provide a simple UI to interact with the endpoint created by vLLM. The UI service is a Next.js application that runs on port 3000.
 
-:::tip Networking
+:::tip
 You can see here how Defang's [networking](../concepts//networking.mdx) works. The `mistral` service is available at `http://mistral:8000`, exactly as it would be in a local `docker-compose` environment.
 :::
 
 ```yaml
-  ui:
-    restart: unless-stopped
-    build:
-      context: ui
-      dockerfile: Dockerfile
-    ports:
-      - mode: ingress
-        target: 3000
-    deploy:
-      resources:
-        reservations:
-          memory: 256M
-    healthcheck:
-      test: ["CMD","wget","--spider","http://localhost:3000"]
-      interval: 10s
-      timeout: 2s
-      retries: 10
+ui:
+  restart: unless-stopped
+  build:
+    context: ui
+    dockerfile: Dockerfile
+  ports:
+    - mode: ingress
+      target: 3000
+  deploy:
+    resources:
+      reservations:
+        memory: 256M
+  healthcheck:
+    test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+    interval: 10s
+    timeout: 2s
+    retries: 10
     environment:
       // highlight-next-line
-      - OPENAI_BASE_URL=http://mistral:8000/v1/
+    - OPENAI_BASE_URL=http://mistral:8000/v1/
 ```
-
 
 ## Step 5 - Deploy to Your Own AWS Account with Defang
 
