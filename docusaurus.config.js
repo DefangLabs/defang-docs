@@ -9,6 +9,10 @@ const redirects = [
     from: '/docs/samples',
     to: 'https://defang.io/samples',
   },
+  {
+    from: '/docs/faq',
+    to: '/docs/faq/warnings-errors',
+  }
 ];
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -192,7 +196,7 @@ const config = {
     mermaid: true,
     format: 'mdx',
     mdx1Compat: { //set to false for Docusaurus v3+ compatibility
-      comments: false, 
+      comments: false,
       admonitions: false,
       headingIds: false
     }
