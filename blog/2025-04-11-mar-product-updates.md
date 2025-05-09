@@ -13,7 +13,6 @@ tags: [
     CLI,
     AI,
     LLMs,
-    Pulumi,
     Autoscaling,
 ]
 author: Defang Team
