@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2025-04-23T00:00:00.000Z</updated>
+    <updated>2025-05-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[April 2025 Defang Compose Update]]></title>
+        <id>https://docs.defang.io/blog/2025-05-09-product-update</id>
+        <link href="https://docs.defang.io/blog/2025-05-09-product-update"/>
+        <updated>2025-05-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Monthly product updates from the Defang team - April 2024]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>April flew by with big momentum at Defang. From deeper investments in the <strong>Model Context Protocol</strong> (MCP), to deploying LLM-based inferencing apps, to live demos of <strong>Vibe Deploying</strong>, we're making it easier than ever to go from idea to cloud.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mcp--vibe-deploying">MCP + Vibe Deploying<a href="https://docs.defang.io/blog/2025-05-09-product-update#mcp--vibe-deploying" class="hash-link" aria-label="Direct link to MCP + Vibe Deploying" title="Direct link to MCP + Vibe Deploying">​</a></h2>
+<p>This month we focused on making cloud deployments as easy as writing a prompt. Our latest Vibe Deploying <a href="https://docs.defang.io/blog?_gl=1*1wbnk1m*_ga*MTM4MTE5ODI4NC4xNzQ0MDU0NDMz*_ga_QVJVWN44CW*czE3NDY3NDQwNDckbzQ3JGcxJHQxNzQ2NzQ0NzUzJGowJGwwJGgw" target="_blank" rel="noopener noreferrer">blog</a> shows how you can launch full-stack apps right from your IDE just by chatting.</p>
+<p>Whether you're working in <strong>Cursor</strong>, <strong>Windsurf</strong>, <strong>VS Code</strong>, or <strong>Claude</strong>, Defang's <strong>MCP</strong> integration lets you deploy to the cloud just as easily as conversing with the AI to generate your app. For more details, check out the docs for the <a href="https://docs.defang.io/docs/concepts/mcp" target="_blank" rel="noopener noreferrer">Defang Model Context Protocol Server</a> – it explains how it works, how to use it, and why it's a game changer for deploying to the cloud. You can also watch our tutorials for <a href="https://youtu.be/Aicqp9QQdwk?si=h891XNIN_f_U2-fX" target="_blank" rel="noopener noreferrer">Cursor</a>, <a href="https://youtu.be/QU4q1eULs1I?si=nmSrXLqHtHRRlCVb" target="_blank" rel="noopener noreferrer">Windsurf</a>, and <a href="https://youtu.be/k8NbeKKzqiI?si=BxDNJOw_zHnL433w" target="_blank" rel="noopener noreferrer">VS Code</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-llms">Managed LLMs<a href="https://docs.defang.io/blog/2025-05-09-product-update#managed-llms" class="hash-link" aria-label="Direct link to Managed LLMs" title="Direct link to Managed LLMs">​</a></h2>
+<p>Last month we shipped the <a href="https://docs.defang.io/docs/concepts/managed-llms/managed-language-models" target="_blank" rel="noopener noreferrer"><code>x-defang-llm</code> compose service extension</a> to easily deploy inferencing apps that use managed LLM services such as AWS Bedrock. This month, we're excited to announce the same support for GCP Vertex AI – give it a try and let us know your feedback!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-programs">Events and Programs<a href="https://docs.defang.io/blog/2025-05-09-product-update#events-and-programs" class="hash-link" aria-label="Direct link to Events and Programs" title="Direct link to Events and Programs">​</a></h2>
+<p>On <a href="https://www.linkedin.com/posts/defanglabs_defang-vibecoding-vancouverdev-activity-7323769706681655296-48OA?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACNoYXgBadWv4CWLbcKhgSGxWjdmu9e5dFI" target="_blank" rel="noopener noreferrer"><strong>April 28</strong></a>, we kicked things off with an epic night of demos, dev energy, and cloud magic at RAG &amp; AI in Action. Our own <strong>Kevin Vo</strong> showed how fast and easy it is to deploy AI apps from Windsurf to the cloud using just the <strong>Defang MCP</strong>. The crowd got a front-row look at how <strong>Vibe Deploying</strong> turns cloud infra into a background detail.</p>
+<p>We finished the month with our signature Defang Coffee Chat, a casual hangout with product updates, live Q&amp;A, and great conversations with our community. Our Campus Advocates also hosted <a href="https://www.linkedin.com/feed/update/urn:li:activity:7319584997319802880/" target="_blank" rel="noopener noreferrer">workshops</a> around the world, bringing Defang to new students and builders.</p>
+<p>We wrapped up the month with our latest Defang Coffee Chat, featuring live demos, product updates, and a solid conversation around vibe deploying. Thanks to everyone who joined.</p>
+<p>The next one is on May 21 at 10 AM PST. Save your spot <a href="https://lu.ma/defang-may" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="looking-ahead">Looking Ahead<a href="https://docs.defang.io/blog/2025-05-09-product-update#looking-ahead" class="hash-link" aria-label="Direct link to Looking Ahead" title="Direct link to Looking Ahead">​</a></h2>
+<p>Here's what's coming in May:</p>
+<ul>
+<li>Web Summit Vancouver – Defang will be a <a href="https://vancouver.websummit.com/appearances/van25/c2ccbb40-9d0f-4fe4-8808-d02de1a15534/defang/" target="_blank" rel="noopener noreferrer">startup sponsor</a>, please come see us on the expo floor.</li>
+<li>More MCP tutorials and dev tools.</li>
+</ul>
+<p>Let's keep building. 🚀</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="NoDevOps" term="NoDevOps"/>
+        <category label="BYOC" term="BYOC"/>
+        <category label="MCP" term="MCP"/>
+        <category label="LLMs" term="LLMs"/>
+        <category label="Vibe Deploying" term="Vibe Deploying"/>
+        <category label="GCP" term="GCP"/>
+        <category label="AWS" term="AWS"/>
+        <category label="Events" term="Events"/>
+        <category label="Defang Compose Update" term="Defang Compose Update"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome to the world of "Vibe Deploy": Easily Deploying your Vibe Coding Projects to the Cloud with Defang]]></title>
         <id>https://docs.defang.io/blog/2025/04/23/vibe-deploy</id>
@@ -99,7 +138,6 @@
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
         <category label="LLMs" term="LLMs"/>
-        <category label="Pulumi" term="Pulumi"/>
         <category label="Autoscaling" term="Autoscaling"/>
     </entry>
     <entry>
@@ -958,105 +996,41 @@ Thank you in advance. Your support means the world.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[April 2024 Defang Compose Update]]></title>
-        <id>https://docs.defang.io/blog/may-2024-product-update</id>
-        <link href="https://docs.defang.io/blog/may-2024-product-update"/>
-        <updated>2024-05-01T00:00:00.000Z</updated>
+        <id>https://docs.defang.io/blog/2024-05-09-product-update</id>
+        <link href="https://docs.defang.io/blog/2024-05-09-product-update"/>
+        <updated>2024-05-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Defang Compose Update]]></summary>
         <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="npx-defang">npx defang<a href="https://docs.defang.io/blog/may-2024-product-update#npx-defang" class="hash-link" aria-label="Direct link to npx defang" title="Direct link to npx defang">​</a></h2>
-<p>We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally by running:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx defang@latest</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>This will download the latest version of the Defang CLI and run it for you. No need to worry about installing or updating the CLI manually!</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coming-soon-bring-your-own-domain-with-lets-encrypt">(coming soon) Bring Your Own Domain with Let's Encrypt<a href="https://docs.defang.io/blog/may-2024-product-update#coming-soon-bring-your-own-domain-with-lets-encrypt" class="hash-link" aria-label="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt" title="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt">​</a></h2>
-<p>Previously you could bring your own domain with <a href="https://docs.defang.io/docs/concepts/defang-byoc">Defang BYOC</a>... but you had to host the DNS records with AWS Route 53 in the AWS account you were deploying to. Now you can point domains hosted anywhere to your Defang deployment and we'll take care of the rest. We'll help generate a Let's Encrypt certificate for your domain and automatically renew it for you.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-support">Windows Support<a href="https://docs.defang.io/blog/may-2024-product-update#windows-support" class="hash-link" aria-label="Direct link to Windows Support" title="Direct link to Windows Support">​</a></h2>
-<p>Some of you use Defang from a Windows PC and previously a few features didn't work correctly on Windows. Some stuff we've fixed:</p>
+<p>April flew by with big momentum at Defang. From deeper investments in the <strong>Model Context Protocol</strong> (MCP), to deploying LLM-based inferencing apps, to live demos of <strong>Vibe Deploying</strong>, we're making it easier than ever to go from idea to cloud.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mcp--vibe-deploying">MCP + Vibe Deploying<a href="https://docs.defang.io/blog/2024-05-09-product-update#mcp--vibe-deploying" class="hash-link" aria-label="Direct link to MCP + Vibe Deploying" title="Direct link to MCP + Vibe Deploying">​</a></h2>
+<p>This month we focused on making cloud deployments as easy as writing a prompt. Our latest Vibe Deploying <a href="https://docs.defang.io/blog?_gl=1*1wbnk1m*_ga*MTM4MTE5ODI4NC4xNzQ0MDU0NDMz*_ga_QVJVWN44CW*czE3NDY3NDQwNDckbzQ3JGcxJHQxNzQ2NzQ0NzUzJGowJGwwJGgw" target="_blank" rel="noopener noreferrer">blog</a> shows how you can launch full-stack apps right from your IDE just by chatting.</p>
+<p>Whether you're working in <strong>Cursor</strong>, <strong>Windsurf</strong>, <strong>VS Code</strong>, or <strong>Claude</strong>, Defang's <strong>MCP</strong> integration lets you deploy to the cloud just as easily as conversing with the AI to generate your app. For more details, check out the docs for the <a href="https://docs.defang.io/docs/concepts/mcp" target="_blank" rel="noopener noreferrer">Defang Model Context Protocol Server</a> – it explains how it works, how to use it, and why it's a game changer for deploying to the cloud. You can also watch our tutorials for <a href="https://youtu.be/Aicqp9QQdwk?si=h891XNIN_f_U2-fX" target="_blank" rel="noopener noreferrer">Cursor</a>, <a href="https://youtu.be/QU4q1eULs1I?si=nmSrXLqHtHRRlCVb" target="_blank" rel="noopener noreferrer">Windsurf</a>, and <a href="https://youtu.be/k8NbeKKzqiI?si=BxDNJOw_zHnL433w" target="_blank" rel="noopener noreferrer">VS Code</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-llms">Managed LLMs<a href="https://docs.defang.io/blog/2024-05-09-product-update#managed-llms" class="hash-link" aria-label="Direct link to Managed LLMs" title="Direct link to Managed LLMs">​</a></h2>
+<p>Last month we shipped the <a href="https://docs.defang.io/docs/concepts/managed-llms/managed-language-models" target="_blank" rel="noopener noreferrer"><code>x-defang-llm</code> compose service extension</a> to easily deploy inferencing apps that use managed LLM services such as AWS Bedrock. This month, we're excited to announce the same support for GCP Vertex AI – give it a try and let us know your feedback!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-programs">Events and Programs<a href="https://docs.defang.io/blog/2024-05-09-product-update#events-and-programs" class="hash-link" aria-label="Direct link to Events and Programs" title="Direct link to Events and Programs">​</a></h2>
+<p>On <a href="https://www.linkedin.com/posts/defanglabs_defang-vibecoding-vancouverdev-activity-7323769706681655296-48OA?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACNoYXgBadWv4CWLbcKhgSGxWjdmu9e5dFI" target="_blank" rel="noopener noreferrer"><strong>April 28</strong></a>, we kicked things off with an epic night of demos, dev energy, and cloud magic at RAG &amp; AI in Action. Our own <strong>Kevin Vo</strong> showed how fast and easy it is to deploy AI apps from Windsurf to the cloud using just the <strong>Defang MCP</strong>. The crowd got a front-row look at how <strong>Vibe Deploying</strong> turns cloud infra into a background detail.</p>
+<p>We finished the month with our signature Defang Coffee Chat, a casual hangout with product updates, live Q&amp;A, and great conversations with our community. Our Campus Advocates also hosted <a href="https://www.linkedin.com/feed/update/urn:li:activity:7319584997319802880/" target="_blank" rel="noopener noreferrer">workshops</a> around the world, bringing Defang to new students and builders.</p>
+<p>We wrapped up the month with our latest Defang Coffee Chat, featuring live demos, product updates, and a solid conversation around vibe deploying. Thanks to everyone who joined.</p>
+<p>The next one is on May 21 at 10 AM PST. Save your spot <a href="https://lu.ma/defang-may" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="looking-ahead">Looking Ahead<a href="https://docs.defang.io/blog/2024-05-09-product-update#looking-ahead" class="hash-link" aria-label="Direct link to Looking Ahead" title="Direct link to Looking Ahead">​</a></h2>
+<p>Here's what's coming in May:</p>
 <ul>
-<li>ansi color codes in logs</li>
-<li>handle ctrl-c when tailing logs</li>
+<li>Web Summit Vancouver – Defang will be a <a href="https://vancouver.websummit.com/appearances/van25/c2ccbb40-9d0f-4fe4-8808-d02de1a15534/defang/" target="_blank" rel="noopener noreferrer">startup sponsor</a>, please come see us on the expo floor.</li>
+<li>More MCP tutorials and dev tools</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improved-cli">Improved CLI<a href="https://docs.defang.io/blog/may-2024-product-update#improved-cli" class="hash-link" aria-label="Direct link to Improved CLI" title="Direct link to Improved CLI">​</a></h2>
-<p>We've made a variety of small tweaks and improvements to the CLI which should make things a little bit cleaner and more stable.</p>
-<ul>
-<li>log messages have been made more clear</li>
-<li>adding more progress information during compose up</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-reliability">Stability and Reliability<a href="https://docs.defang.io/blog/may-2024-product-update#stability-and-reliability" class="hash-link" aria-label="Direct link to Stability and Reliability" title="Direct link to Stability and Reliability">​</a></h2>
-<p>Defang is still in Beta and we know we've got to be rock solid by the time we release V1, so we've been working hard to improve the stability and reliability of the Defang architecture. We've been battle-testing different technologies to see how they hold up and have mad a few changes that should make things even better:</p>
-<ul>
-<li>capacity improvements in build queues</li>
-<li>improvements in log availability</li>
-</ul>]]></content>
+<p>Let's keep building. 🚀</p>]]></content>
         <author>
             <name>Defang Team</name>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
-        <category label="AWS ECS" term="AWS ECS"/>
-        <category label="defang compose up" term="defang compose up"/>
+        <category label="MCP" term="MCP"/>
+        <category label="LLMs" term="LLMs"/>
+        <category label="Vibe Deploying" term="Vibe Deploying"/>
+        <category label="GCP" term="GCP"/>
+        <category label="AWS" term="AWS"/>
+        <category label="Events" term="Events"/>
         <category label="Defang Compose Update" term="Defang Compose Update"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deploy a Go-powered slackbot with Defang]]></title>
-        <id>https://docs.defang.io/blog/slackbot-sample</id>
-        <link href="https://docs.defang.io/blog/slackbot-sample"/>
-        <updated>2024-03-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Hey folks! Today, I'm going to share one of our code samples that will show you how to deploy a simple Slack bot. If you're looking to connect a cloud service to Slack to publish status updates, or something else like that, this should help you get started. We'll walk through a step-by-step process of writing a Go program using the github.com/slack-go/slack library to interact with the Slack API and easily deploy it using Defang.]]></summary>
-        <content type="html"><![CDATA[<p>Hey folks! Today, I'm going to share one of our code samples that will show you how to deploy a simple Slack bot. If you're looking to connect a cloud service to Slack to publish status updates, or something else like that, this should help you get started. We'll walk through a step-by-step process of writing a Go program using the <a href="https://github.com/slack-go/slack" target="_blank" rel="noopener noreferrer">github.com/slack-go/slack</a> library to interact with the Slack API and easily deploy it using Defang.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="https://docs.defang.io/blog/slackbot-sample#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h2>
-<p>Before we dive into the details, let's make sure you have everything you need to get started:</p>
-<ol>
-<li>
-<p><strong>Install Defang CLI:</strong> Simplify your deployment process by installing the Defang CLI tool. Follow the instructions <a href="https://docs.defang.io/docs/getting-started#install-the-defang-cli" target="_blank" rel="noopener noreferrer">here</a> to get it up and running quickly.</p>
-</li>
-<li>
-<p><strong>Slack API Token:</strong> Create a Slack App at <a href="https://api.slack.com/apps" target="_blank" rel="noopener noreferrer">https://api.slack.com/apps</a>, granting it the necessary permissions, including the&nbsp;bot <code>chat:write</code>&nbsp;scope.
-<img loading="lazy" alt="screenshot of the slack admin UI showing the bot scopes" src="https://docs.defang.io/assets/images/scopes-fb7d3e9b342204a7ff3e831b79b684c6.png" width="1420" height="588" class="img_ev3q"></p>
-</li>
-<li>
-<p><strong>Install the app in your workspace:</strong> You'll need to install the app in your workspace for it to work. Click the "Install to Workspace" button in the Slack admin UI to do this. Mine says "Reinstall" because I've already installed it.
-<img loading="lazy" alt="screenshot of the slack admin UI showing the install button" src="https://docs.defang.io/assets/images/install-app-8fa3aa70b101a64027fae596b2d5b1ad.png" width="1432" height="1222" class="img_ev3q"></p>
-</li>
-<li>
-<p><strong>Copy the Bot User OAuth Access Token:</strong> This token will authenticate your Slackbot with the Slack API.
-<img loading="lazy" alt="screenshot of the slack admin UI showing the auth token field" src="https://docs.defang.io/assets/images/token-d9b368f00c44bfb3705fe299988a344e.png" width="1934" height="1428" class="img_ev3q"></p>
-</li>
-<li>
-<p><strong>Invite the Bot to a Channel:</strong> To enable your Slackbot, invite it to the desired channel using the&nbsp;<code>@&lt;botname&gt;</code>&nbsp;command. In the screenshot below, my bot's name actually starts with the word invite, but if your bot is called <code>mycoolbot</code> you would invite it with <code>@mycoolbot</code>. This ensures your Slackbot has the required permissions to interact with the channel.
-<img loading="lazy" alt="screenshot of the slack chat UI showing me inviting my bot" src="https://docs.defang.io/assets/images/invite-271133abfdc52e93f571993808286ea2.png" width="1500" height="324" class="img_ev3q"></p>
-</li>
-<li>
-<p><strong>Clone the Sample Code:</strong> Clone the Defang repository and navigate to the&nbsp;<code>samples/golang/slackbot</code>&nbsp;directory. This directory contains the sample code for the Slackbot.</p>
-</li>
-</ol>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/DefangLabs/defang</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd defang/samples/golang/slackbot</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-steps">Deployment Steps<a href="https://docs.defang.io/blog/slackbot-sample#deployment-steps" class="hash-link" aria-label="Direct link to Deployment Steps" title="Direct link to Deployment Steps">​</a></h2>
-<p>Now that we have everything set up, let's dive into the deployment process. Follow these steps to deploy your Slackbot effortlessly:</p>
-<ol>
-<li>
-<p><strong>Set Up Secrets:</strong> Prioritize security by configuring environment variables as sensitive config. Use the Defang CLI's&nbsp;<code>defang config set</code>&nbsp;command to set the&nbsp;<code>SLACK_TOKEN</code>&nbsp;and <code>SLACK_CHANNEL_ID</code>&nbsp;configs.
-Replace&nbsp;<code>your_slack_token</code>&nbsp;and&nbsp;<code>your_slack_channel_id</code>&nbsp;with the respective values:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang config set --name SLACK_TOKEN --value your_slack_token</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang config set --name SLACK_CHANNEL_ID --value your_slack_channel_id</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-</li>
-<li>
-<p><strong>Deploy the Slackbot:</strong>  Use the Defang CLI's&nbsp;<code>defang compose up</code>&nbsp;command to deploy.</p>
-</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="usage">Usage<a href="https://docs.defang.io/blog/slackbot-sample#usage" class="hash-link" aria-label="Direct link to Usage" title="Direct link to Usage">​</a></h2>
-<p>With your Slackbot up and running, let's explore how to make the most of it. Let's send a POST request to the&nbsp;<code>/</code>&nbsp;endpoint with a JSON body containing the message you want to post to the Slack channel. Popular tools like cURL or Postman can help you send the request:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">curl 'https://raphaeltm-bot--8080.prod1.defang.dev/' \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -H 'content-type: application/json' \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --data-raw $'{"message":"This is your bot speaking. We\'ll be landing in 10 minutes. Please fasten your seatbelts."}'</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="takeaways">Takeaways<a href="https://docs.defang.io/blog/slackbot-sample#takeaways" class="hash-link" aria-label="Direct link to Takeaways" title="Direct link to Takeaways">​</a></h2>
-<p>Congratulations! You've successfully deployed a Slackbot using Defang. If you deployed this as an internal service, you could use it to send status updates, alerts, or other important messages to your team. The possibilities are endless!</p>]]></content>
-        <author>
-            <name>Raphaël Titsworth-Morin</name>
-        </author>
-        <category label="Cloud" term="Cloud"/>
-        <category label="NoDevOps" term="NoDevOps"/>
-        <category label="BYOC" term="BYOC"/>
-        <category label="AWS ECS" term="AWS ECS"/>
-        <category label="defang compose up" term="defang compose up"/>
-        <category label="Slack API" term="Slack API"/>
     </entry>
 </feed>
