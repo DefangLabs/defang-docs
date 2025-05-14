@@ -1,5 +1,5 @@
 ---
-title: Leveraging Managed Language Models with Defang
+title: Using Managed LLMs
 description: Defang makes it easy to leverage cloud-native managed language models.
 sidebar_position: 3000
 ---
@@ -32,7 +32,7 @@ If you already have an OpenAI-compatible application, Defang makes it easy to de
 
 | Provider | Managed Language Models |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-large-language-models) | ❌ |
+| [Playground](/docs/providers/playground#managed-large-language-models) | ✅ |
 | [AWS Bedrock](/docs/providers/aws#managed-large-language-models) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP Vertex AI](/docs/providers/gcp#managed-large-language-models) | ✅ |
