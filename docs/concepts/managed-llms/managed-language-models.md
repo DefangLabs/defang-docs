@@ -8,6 +8,15 @@ sidebar_position: 3000
 
 Each cloud provider offers their own managed Large Language Model services. AWS offers Bedrock, GCP offers Vertex AI, and Digital Ocean offers their GenAI platform. Defang makes it easy to leverage these services in your projects.
 
+## Current Support
+
+| Provider | Managed Language Models |
+| --- | --- |
+| [Playground](/docs/providers/playground#managed-large-language-models) | ✅ |
+| [AWS Bedrock](/docs/providers/aws#managed-large-language-models) | ✅ |
+| [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
+| [GCP Vertex AI](/docs/providers/gcp#managed-large-language-models) | ✅ |
+
 ## Usage
 
 In order to leverage cloud-native managed language models from your Defang services, all you need to do is add the `x-defang-llm` extension to the service config and Defang will configure the approprate roles and permissions for you.
@@ -27,12 +36,3 @@ Assume you have a web service like the following, which uses the cloud native SD
 ## Deploying OpenAI-compatible apps
 
 If you already have an OpenAI-compatible application, Defang makes it easy to deploy on your favourite cloud's managed LLM service. See our [OpenAI Access Gateway](/docs/concepts/managed-llms/openai-access-gateway)
-
-## Current Support
-
-| Provider | Managed Language Models |
-| --- | --- |
-| [Playground](/docs/providers/playground#managed-large-language-models) | ✅ |
-| [AWS Bedrock](/docs/providers/aws#managed-large-language-models) | ✅ |
-| [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP Vertex AI](/docs/providers/gcp#managed-large-language-models) | ✅ |
