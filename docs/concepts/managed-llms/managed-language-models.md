@@ -12,6 +12,10 @@ Each cloud provider offers their own managed Large Language Model services. AWS 
 
 In order to leverage cloud-native managed language models from your Defang services, all you need to do is add the `x-defang-llm` extension to the service config and Defang will configure the approprate roles and permissions for you.
 
+:::tip
+Ensure you have the necessary permissions to access the model you intend to use. For example, if you are using AWS Bedrock, verify that your account has [model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html).
+:::
+
 ## Example
 
 Assume you have a web service like the following, which uses the cloud native SDK, for example:

@@ -106,11 +106,15 @@ You should configure your application to specify the model you want to use.
 
 Choose the correct `MODEL` depending on which cloud provider you are using.
 
+Ensure you have the necessary permissions to access the model you intend to use.
+For example, if you are using AWS Bedrock, verify that your account has [model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html).
+
 :::info
 **Choosing the Right Model**
 
 - For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`) [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
 - For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`) [See available Vertex models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup)
+:::
 
 # Complete Example Compose File
 
@@ -158,4 +162,3 @@ You now have a single app that can:
 - Talk to **AWS Bedrock** or **GCP Vertex AI**
 - Use the same OpenAI-compatible client code
 - Easily switch cloud providers by changing a few environment variables
-
