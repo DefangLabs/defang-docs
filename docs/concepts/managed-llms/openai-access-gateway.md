@@ -9,7 +9,7 @@ sidebar_position: 3000
 Defang makes it easy to deploy on your favourite cloud's managed LLM service with our [OpenAI Access Gateway](https://github.com/DefangLabs/openai-access-gateway). This service sits between your application and the cloud service and acts as a compatibility layer.
 It handles incoming OpenAI requests, translates those requests to the appropriate cloud-native API, handles the native response, and re-constructs an OpenAI-compatible response.
 
-See [our tutorial](/docs/tutorials/deploying-openai-apps-aws-bedrock-gcp-vertex/) which describes how to configure the OpenAI Access Gateway for your application
+See [our tutorial](/docs/tutorials/deploying-openai-apps) which describes how to configure the OpenAI Access Gateway for your application
 
 ## Docker Provider Services
 
