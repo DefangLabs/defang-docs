@@ -9,7 +9,7 @@ sidebar_position: 3000
 Defang makes it easy to deploy on your favourite cloud's managed LLM service with our [OpenAI Access Gateway](https://github.com/DefangLabs/openai-access-gateway). This service sits between your application and the cloud service and acts as a compatibility layer.
 It handles incoming OpenAI requests, translates those requests to the appropriate cloud-native API, handles the native response, and re-constructs an OpenAI-compatible response.
 
-See [our tutorial](/docs/tutorials/deploy-openai-apps) which describes how to configure the OpenAI Access Gateway for your application
+See [our tutorial](/docs/tutorials/deploy-openai-apps) which describes how to configure the OpenAI Access Gateway for your application.
 
 ## Docker Provider Services
 
@@ -37,7 +37,7 @@ The `x-defang-llm` extension is used to configure the appropriate roles and perm
 
 ## Model Mapping
 
-Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway) on AWS and GCP. This takes a model with a Docker naming convention (e.g. ai/lama3.3) and maps it to the closest matching model name on the target platform. If no such match can be found it can fallback onto a known existing model (e.g. ai/mistral). These environment variables are USE_MODEL_MAPPING (default to true) and FALLBACK_MODEL (no default), respectively.
+Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway) on AWS and GCP. This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to the closest matching model name on the target platform. If no such match can be found it can fallback onto a known existing model (e.g. `ai/mistral`). These environment variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
 
 ## Current Support
 

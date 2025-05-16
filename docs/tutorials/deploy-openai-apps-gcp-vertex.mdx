@@ -28,7 +28,7 @@ services:
 
 ## Add an LLM Service to Your Compose File
 
-You need to add a new service that acts as a proxy between your app and the backend LLM provider (Vertex).
+You need to add a new service that acts as a proxy between your app and the backend LLM provider (Vertex AI).
 
 Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway)** service:
 
@@ -112,11 +112,11 @@ To do this, you can check your [AWS Bedrock model access](https://docs.aws.amazo
 :::info
 **Choosing the Right Model**
 
-- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`) [See available Vertex models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup)
+- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`). [See available Vertex AI models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
 :::
 
-Alternatively, Defang supports model mapping through the openai-access-gateway. This takes a model with a Docker naming convention (e.g. ai/lama3.3) and maps it to
-the closest matching one on the target platform. If no such match can be found it can fallback onto a known existing model (e.g. ai/mistral). These environment
+Alternatively, Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to
+the closest matching one on the target platform. If no such match can be found, it can fallback onto a known existing model (e.g. `ai/mistral`). These environment
 variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
 
 
