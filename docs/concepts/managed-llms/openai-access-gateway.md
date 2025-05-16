@@ -37,7 +37,7 @@ The `x-defang-llm` extension is used to configure the appropriate roles and perm
 
 ## Model Mapping
 
-Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway) on AWS and GCP. This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to the closest matching model name on the target platform. If no such match can be found it can fallback onto a known existing model (e.g. `ai/mistral`).
+Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway) on AWS and GCP. This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to the closest matching model name on the target platform. If no such match can be found, it can fallback onto a known existing model (e.g. `ai/mistral`).
 
 This can be configured through the following environment variables:
 * `USE_MODEL_MAPPING` (default to true) - configures whether or not model mapping should be enabled.
