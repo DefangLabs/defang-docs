@@ -117,7 +117,7 @@ To do this, you can check your [AWS Bedrock model access](https://docs.aws.amazo
 
 Alternatively, Defang supports model mapping through the openai-access-gateway. This takes a model with a Docker naming convention (e.g. ai/lama3.3) and maps it to
 the closest matching one on the target platform. If no such match can be found it can fallback onto a known existing model (e.g. ai/mistral). These environment
-variables are USE_MODEL_MAPPING (default to true) and FALLBACK_MODEL (no default), respectively.
+variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
 
 
 :::info
@@ -158,7 +158,7 @@ services:
 |--------------------|---------------|
 | `GCP_PROJECT_ID`    | Required      |
 | `REGION`            | Required      |
-| `MODEL`             | Vertex model / Docker model name |
+| `MODEL`             | Vertex model or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
 
 ---
 

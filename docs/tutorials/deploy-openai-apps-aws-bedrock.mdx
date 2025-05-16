@@ -110,11 +110,11 @@ Choose the correct `MODEL` depending on which cloud provider you are using.
 - For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`) [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
 :::
 
-Alternatively, Defang supports model mapping through the openai-access-gateway. This takes a model with a Docker naming convention (e.g. ai/lama3.3) and maps it to
+Alternatively, Defang supports model mapping through the openai-access-gateway. This takes a model with a Docker naming convention (e.g. `ai/lama3.3`) and maps it to
 the closest equilavent on the target platform. If no such match can be found a fallback can be defined to use a known existing model (e.g. ai/mistral). These environment
 variables are USE_MODEL_MAPPING (default to true) and FALLBACK_MODEL (no default), respectively.
 
-
+  
 :::info
 # Complete Example Compose File
 
@@ -151,13 +151,13 @@ services:
 | Variable           | AWS Bedrock |
 |--------------------|-------------|
 | `REGION`            | Required|
-| `MODEL`             | Bedrock model ID / Docker model name |
+| `MODEL`             | Bedrock model ID or Docker model name, for example `meta.llama3-3-70b-instruct-v1:0` or `ai/lama3.3` |
 
 ---
 
 You now have a single app that can:
 
-- Talk to **GCP Vertex AI**
+- Talk to **AWS Bedrock**
 - Use the same OpenAI-compatible client code
 - Easily switch cloud providers by changing a few environment variables
 :::
