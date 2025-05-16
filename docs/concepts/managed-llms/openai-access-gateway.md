@@ -11,7 +11,7 @@ It handles incoming OpenAI requests, translates those requests to the appropriat
 
 See [our tutorial](/docs/tutorials/deploy-openai-apps) which describes how to configure the OpenAI Access Gateway for your application.
 
-## Docker Provider Services
+## Docker Model Provider Services
 
 As of Docker Compose v2.35 and Docker Desktop v4.41, Compose introduces a new service type called `provider` that allows you to declare platform capabilities required by your application.
 For AI models, you use the `model` type to declare model dependencies. This will expose an OpenAI compatible API for your service. Check the [Docker Model Runner documentation](https://docs.docker.com/compose/how-tos/model-runner/) for more details.
