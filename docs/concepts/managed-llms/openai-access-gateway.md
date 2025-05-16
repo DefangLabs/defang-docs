@@ -9,9 +9,9 @@ sidebar_position: 3000
 Defang makes it easy to deploy on your favourite cloud's managed LLM service with our [OpenAI Access Gateway](https://github.com/DefangLabs/openai-access-gateway). This service sits between your application and the cloud service and acts as a compatibility layer.
 It handles incoming OpenAI requests, translates those requests to the appropriate cloud-native API, handles the native response, and re-constructs an OpenAI-compatible response.
 
-See [our tutorial](/docs/tutorials/deploying-openai-apps-aws-bedrock-gcp-vertex/) which describes how to configure the OpenAI Access Gateway for your application
+See [our tutorial](/docs/tutorials/deploy-openai-apps) which describes how to configure the OpenAI Access Gateway for your application.
 
-## Docker Provider Services
+## Docker Model Provider Services
 
 As of Docker Compose v2.35 and Docker Desktop v4.41, Compose introduces a new service type called `provider` that allows you to declare platform capabilities required by your application.
 For AI models, you use the `model` type to declare model dependencies. This will expose an OpenAI compatible API for your service. Check the [Docker Model Runner documentation](https://docs.docker.com/compose/how-tos/model-runner/) for more details.
@@ -32,7 +32,16 @@ services:
 ```
 
 Under the hood, when you use the `model` provider, Defang will deploy the **OpenAI Access Gateway** in a private network. This allows you to use the same code for both local development and cloud deployment.
+
 The `x-defang-llm` extension is used to configure the appropriate roles and permissions for your service. See the [Managed Language Models](/docs/concepts/managed-llms/managed-language-models/) page for more details.
+
+## Model Mapping
+
+Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway) on AWS and GCP. This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to the closest matching model name on the target platform. If no such match can be found, it can fallback onto a known existing model (e.g. `ai/mistral`).
+
+This can be configured through the following environment variables:
+* `USE_MODEL_MAPPING` (default to true) - configures whether or not model mapping should be enabled.
+* `FALLBACK_MODEL` (no default) - configure a model which will be used if model mapping fails to find a target model.
 
 ## Current Support
 

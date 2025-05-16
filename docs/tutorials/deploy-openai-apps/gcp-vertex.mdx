@@ -1,0 +1,172 @@
+---
+title: GCP Vertex AI
+sidebar_position: 50
+description: Deploy OpenAI Apps to GCP Vertex AI using Defang.
+---
+import React from 'react';
+import {useColorMode} from '@docusaurus/theme-common';
+
+# Deploy OpenAI Apps to GCP Vertex AI
+
+Let's assume you have an application that uses an OpenAI client library and you want to deploy it to the cloud using **GCP Vertex AI**.
+
+This tutorial shows you how **Defang** makes it easy.
+:::info
+You must [configure GCP Vertex AI model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access) for each model you intend to use in your GCP account.
+:::
+
+Suppose you start with a `compose.yaml` file with one `app` service, like this:
+
+```yaml
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      OPENAI_API_KEY:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+---
+
+## Add an LLM Service to Your Compose File
+
+You can use Vertex AI without changing your `app` code by introducing a new [`defangio/openai-access-gateway`](https://github.com/DefangLabs/openai-access-gateway) service. We'll call the new service `llm`. This new service will act as a proxy between your application and Vertex AI, and will transparently handle converting your OpenAI requests into Vertex AI requests and Vertex AI responses into OpenAI responses. This allows you to use Vertex AI with your existing OpenAI client SDK.
+
+```diff
++  llm:
++    image: defangio/openai-access-gateway
++    x-defang-llm: true
++    ports:
++      - target: 80
++        published: 80
++        mode: host
++    environment:
++      - OPENAI_API_KEY
++      - GCP_PROJECT_ID
++      - REGION
+```
+
+### Notes:
+
+- The container image is based on [aws-samples/bedrock-access-gateway](https://github.com/aws-samples/bedrock-access-gateway), with enhancements.
+- `x-defang-llm: true` signals to **Defang** that this service should be configured to use target platform AI services.
+- New environment variables:
+  - `REGION` is the zone where the services runs (e.g. `us-central1`)
+  - `GCP_PROJECT_ID` is your project to deploy to (e.g. `my-project-456789`)
+
+:::tip
+**OpenAI Key**
+
+You no longer need your original OpenAI API Key.  
+We recommend generating a random secret for authentication with the gateway:
+
+```bash
+defang config set OPENAI_API_KEY --random
+```
+:::
+
+---
+
+## Redirect Application Traffic
+
+Modify your `app` service to send API calls to the `openai-access-gateway`:
+
+```diff
+ services:
+   app:
+     ports:
+       - 3000:3000
+     environment:
+       OPENAI_API_KEY:
++      OPENAI_BASE_URL: "http://llm/api/v1"
+     healthcheck:
+       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+Now, all OpenAI traffic will be routed through your gateway service and onto GCP Vertex AI.
+
+---
+
+## Selecting a Model
+
+You should configure your application to specify the model you want to use.
+
+```diff
+ services:
+   app:
+     ports:
+       - 3000:3000
+     environment:
+       OPENAI_API_KEY:
+       OPENAI_BASE_URL: "http://llm/api/v1"
++      MODEL: "google/gemini-2.5-pro-preview-03-25" # for Vertex AI
+     healthcheck:
+       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+Choose the correct `MODEL` depending on which cloud provider you are using.
+
+Ensure you have the necessary permissions to access the model you intend to use. 
+To do this, you can check your [AWS Bedrock model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html) or [GCP Vertex AI model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access).
+
+:::info
+**Choosing the Right Model**
+
+- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`). [See available Vertex AI models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
+:::
+
+Alternatively, Defang supports [model mapping](/docs/concepts/managed-llms/openai-access-gateway/#model-mapping) through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to
+the closest matching one on the target platform. If no such match can be found, it can fallback onto a known existing model (e.g. `ai/mistral`). These environment
+variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
+
+
+## Complete Example Compose File
+
+```yaml
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      OPENAI_API_KEY:
+      OPENAI_BASE_URL: "http://llm/api/v1"
+      MODEL: "google/gemini-2.5-pro-preview-03-25"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+
+  llm:
+    image: defangio/openai-access-gateway
+    x-defang-llm: true
+    ports:
+      - target: 80
+        published: 80
+        mode: host
+    environment:
+      - OPENAI_API_KEY
+      - GCP_PROJECT_ID
+      - REGION
+```
+
+---
+
+## Environment Variable Matrix
+
+| Variable           | GCP Vertex AI |
+|--------------------|---------------|
+| `GCP_PROJECT_ID`    | Required      |
+| `REGION`            | Required      |
+| `MODEL`             | Vertex model ID or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
+
+---
+
+You now have a single app that can:
+
+- Talk to **GCP Vertex AI**
+- Use the same OpenAI-compatible client code
+- Easily switch between models or cloud providers by changing a few environment variables
