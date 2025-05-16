@@ -1,11 +1,11 @@
 ---
-title: Deploy OpenAI Apps to AWS Bedrock or GCP Vertex AI
+title: Deploying your OpenAI Application to AWS Bedrock
 sidebar_position: 50
 ---
 
-# Deploy OpenAI Apps to AWS Bedrock or GCP Vertex AI
+# Deploying Your OpenAI Application to AWS Bedrock
 
-Let's assume you have an application that uses an OpenAI client library and you want to deploy it to the cloud, either on **AWS Bedrock** or **GCP Vertex AI**.
+Let's assume you have an app that uses an OpenAI client library and you want to deploy it to the cloud on **AWS Bedrock**.  
 
 This tutorial shows you how **Defang** makes it easy.
 
@@ -28,7 +28,7 @@ services:
 
 ## Add an LLM Service to Your Compose File
 
-You need to add a new service that acts as a proxy between your app and the backend LLM provider (Bedrock or Vertex).
+You need to add a new service that acts as a proxy between your app and the backend LLM provider (Bedrock).
 
 Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway)** service:
 
@@ -42,8 +42,7 @@ Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-acce
 +        mode: host
 +    environment:
 +      - OPENAI_API_KEY
-+      - GCP_PROJECT_ID # if using GCP Vertex AI
-+      - GCP_REGION # if using GCP Vertex AI, AWS_REGION not necessary for Bedrock
++      - REGION
 ```
 
 ### Notes:
@@ -51,7 +50,7 @@ Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-acce
 - The container image is based on [aws-samples/bedrock-access-gateway](https://github.com/aws-samples/bedrock-access-gateway), with enhancements.
 - `x-defang-llm: true` signals to **Defang** that this service should be configured to use target platform AI services.
 - New environment variables:
-  - `GCP_PROJECT_ID` and `GCP_REGION` are needed if using **Vertex AI**. (e.g.` GCP_PROJECT_ID` = my-project-456789 and `GCP_REGION` = us-central1)
+  - `REGION` is the zone where the services runs (for AWS this is the equvilent of AWS_REGION)
 
 :::tip
 **OpenAI Key**
@@ -82,7 +81,7 @@ Modify your `app` service to send API calls to the `openai-access-gateway`:
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
-Now, all OpenAI traffic will be routed through your gateway service and onto AWS Bedrock or GCP Vertex.
+Now, all OpenAI traffic will be routed through your gateway service and onto AWS Bedrock.
 
 ---
 
@@ -98,24 +97,25 @@ You should configure your application to specify the model you want to use.
      environment:
        OPENAI_API_KEY:
        OPENAI_BASE_URL: "http://llm/api/v1"
-+      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0" # for Bedrock
-+      # MODEL: "google/gemini-2.5-pro-preview-03-25" # for Vertex AI
++      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
      healthcheck:
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
 
 Choose the correct `MODEL` depending on which cloud provider you are using.
 
-Ensure you have the necessary permissions to access the model you intend to use. 
-To do this, you can check your [AWS Bedrock model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html) or [GCP Vertex AI model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access).
-
 :::info
 **Choosing the Right Model**
 
 - For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`) [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
-- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`) [See available Vertex models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
 :::
 
+Alternatively, Defang supports model mapping through the openai-access-gateway. This takes a model with a Docker naming convention (e.g. ai/lama3.3) and maps it to
+the closest equilavent on the target platform. If no such match can be found a fallback can be defined to use a known existing model (e.g. ai/mistral). These environment
+variables are USE_MODEL_MAPPING (default to true) and FALLBACK_MODEL (no default), respectively.
+
+
+:::info
 # Complete Example Compose File
 
 ```yaml
@@ -128,7 +128,7 @@ services:
     environment:
       OPENAI_API_KEY:
       OPENAI_BASE_URL: "http://llm/api/v1"
-      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0" # or your Vertex AI model path
+      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 
@@ -141,24 +141,24 @@ services:
         mode: host
     environment:
       - OPENAI_API_KEY
-      - GCP_PROJECT_ID     # required if using Vertex AI
-      - GCP_REGION         # required if using Vertex AI
+      - REGION
 ```
 
 ---
 
 # Environment Variable Matrix
 
-| Variable           | AWS Bedrock | GCP Vertex AI |
-|--------------------|-------------|---------------|
-| `GCP_PROJECT_ID`    | _(not used)_| Required      |
-| `GCP_REGION`        | _(not used)_| Required      |
-| `MODEL`             | Bedrock model ID | Vertex model path |
+| Variable           | AWS Bedrock |
+|--------------------|-------------|
+| `REGION`            | Required|
+| `MODEL`             | Bedrock model ID / Docker model name |
 
 ---
 
 You now have a single app that can:
 
-- Talk to **AWS Bedrock** or **GCP Vertex AI**
+- Talk to **GCP Vertex AI**
 - Use the same OpenAI-compatible client code
 - Easily switch cloud providers by changing a few environment variables
+:::
+
