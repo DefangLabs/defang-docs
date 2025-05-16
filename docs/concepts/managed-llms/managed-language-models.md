@@ -42,3 +42,7 @@ Assume you have a web service like the following, which uses the cloud native SD
 ## Deploying OpenAI-compatible apps
 
 If you already have an OpenAI-compatible application, Defang makes it easy to deploy on your favourite cloud's managed LLM service. See our [OpenAI Access Gateway](/docs/concepts/managed-llms/openai-access-gateway).
+
+:::tip
+Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm) that uses the OpenAI Access Gateway, and a [*Managed LLM with Docker Model Provider sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm-provider) that uses a Docker Model Provider.
+:::
