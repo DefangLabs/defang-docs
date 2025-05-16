@@ -1,7 +1,9 @@
 ---
-title: Deploy OpenAI Apps to AWS Bedrock
+title: AWS Bedrock
 sidebar_position: 50
 ---
+import React from 'react';
+import {useColorMode} from '@docusaurus/theme-common';
 
 # Deploy OpenAI Apps to AWS Bedrock
 
@@ -9,7 +11,7 @@ Let's assume you have an app that uses an OpenAI client library and you want to 
 
 This tutorial shows you how **Defang** makes it easy.
 
-Suppose you start with a compose file like this:
+Suppose you start with a Compose file like this:
 
 ```yaml
 services:
@@ -107,16 +109,15 @@ Choose the correct `MODEL` depending on which cloud provider you are using.
 :::info
 **Choosing the Right Model**
 
-- For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`) [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
+- For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`). [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
 :::
 
 Alternatively, Defang supports model mapping through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to
 the closest equivalent on the target platform. If no such match can be found ,a fallback can be defined to use a known existing model (e.g. `ai/mistral`). These environment
 variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
 
-  
-:::info
-# Complete Example Compose File
+
+## Complete Example Compose File
 
 ```yaml
 services:
@@ -146,7 +147,7 @@ services:
 
 ---
 
-# Environment Variable Matrix
+## Environment Variable Matrix
 
 | Variable           | AWS Bedrock |
 |--------------------|-------------|
@@ -160,5 +161,3 @@ You now have a single app that can:
 - Talk to **AWS Bedrock**
 - Use the same OpenAI-compatible client code
 - Easily switch cloud providers by changing a few environment variables
-:::
-

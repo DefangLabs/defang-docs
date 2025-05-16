@@ -1,7 +1,9 @@
 ---
-title: Deploy OpenAI Apps to GCP Vertex AI
+title: GCP Vertex AI
 sidebar_position: 50
 ---
+import React from 'react';
+import {useColorMode} from '@docusaurus/theme-common';
 
 # Deploy OpenAI Apps to GCP Vertex AI
 
@@ -9,7 +11,7 @@ Let's assume you have an application that uses an OpenAI client library and you 
 
 This tutorial shows you how **Defang** makes it easy.
 
-Suppose you start with a compose file like this:
+Suppose you start with a Compose file like this:
 
 ```yaml
 services:
@@ -120,8 +122,7 @@ the closest matching one on the target platform. If no such match can be found, 
 variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
 
 
-:::info
-# Complete Example Compose File
+## Complete Example Compose File
 
 ```yaml
 services:
@@ -152,13 +153,13 @@ services:
 
 ---
 
-# Environment Variable Matrix
+## Environment Variable Matrix
 
 | Variable           | GCP Vertex AI |
 |--------------------|---------------|
 | `GCP_PROJECT_ID`    | Required      |
 | `REGION`            | Required      |
-| `MODEL`             | Vertex model or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
+| `MODEL`             | Vertex model ID or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
 
 ---
 
@@ -167,5 +168,3 @@ You now have a single app that can:
 - Talk to **GCP Vertex AI**
 - Use the same OpenAI-compatible client code
 - Easily switch cloud providers by changing a few environment variables
-:::
-
