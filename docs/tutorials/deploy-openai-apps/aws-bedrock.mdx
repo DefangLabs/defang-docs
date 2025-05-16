@@ -11,8 +11,11 @@ import {useColorMode} from '@docusaurus/theme-common';
 Let's assume you have an app that uses an OpenAI client library and you want to deploy it to the cloud on **AWS Bedrock**.  
 
 This tutorial shows you how **Defang** makes it easy.
+:::info
+You must [configure AWS Bedrock model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html) for each model you intend to use in your AWS account.
+:::
 
-Suppose you start with a Compose file like this:
+Suppose you start with a `compose.yaml` file with one `app` service, like this:
 
 ```yaml
 services:
@@ -31,9 +34,7 @@ services:
 
 ## Add an LLM Service to Your Compose File
 
-You need to add a new service that acts as a proxy between your app and the backend LLM provider (Bedrock).
-
-Add **Defang's [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway)** service:
+You can use AWS Bedrock without changing your `app` code by introducing a new [`defangio/openai-access-gateway`](https://github.com/DefangLabs/openai-access-gateway) service. We'll call the new service `llm`. This new service will act as a proxy between your application and AWS Bedrock, and will transparently handle converting your OpenAI requests into AWS Bedrock requests and Bedrock responses into OpenAI responses. This allows you to use AWS Bedrock with your existing OpenAI client SDK.
 
 ```diff
 +  llm:
@@ -161,4 +162,4 @@ You now have a single app that can:
 
 - Talk to **AWS Bedrock**
 - Use the same OpenAI-compatible client code
-- Easily switch cloud providers by changing a few environment variables
+- Easily switch between models or cloud providers by changing a few environment variables
