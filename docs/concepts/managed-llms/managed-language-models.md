@@ -46,3 +46,8 @@ If you already have an OpenAI-compatible application, Defang makes it easy to de
 :::tip
 Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm) that uses the OpenAI Access Gateway, and a [*Managed LLM with Docker Model Provider sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm-provider) that uses a Docker Model Provider.
 :::
+
+
+## Managed LLM on Playground
+If you are using the Managed LLM feature on [Defang Playground](/docs/concepts.defang-playground), please note that your `MODEL` (model ID) will be limited to `anthropic.claude-3-haiku-20240307-v1:0`.
+To access a full range of models, consider using [Defang BYOC](/docs/concepts/defang-byoc).
