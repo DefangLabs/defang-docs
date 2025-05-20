@@ -49,5 +49,5 @@ Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/m
 
 
 ## Managed LLM on Playground
-If you are using the Managed LLM feature on [Defang Playground](/docs/concepts.defang-playground), please note that your `MODEL` (model ID) will be limited to `us.amazon.nova-micro-v1:0`.
+If you are using the Managed LLM feature on [Defang Playground](/docs/concepts.defang-playground), please note that your `MODEL` (model ID) will be limited to a default model chosen by Defang.
 To access a full range of models, consider using [Defang BYOC](/docs/concepts/defang-byoc).
