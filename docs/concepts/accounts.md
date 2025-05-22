@@ -14,7 +14,11 @@ Defang requires an account so we can organize your resources and provide you wit
 
 To create an account, log in to Defang and accept the [Terms of Service](https://defang.io/policies/terms-service/) using the [CLI](/docs/concepts/authentication.md).
 
-At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other [authentication](/docs/concepts/authentication.md) providers in the future. 
+```
+$ defang login
+```
+
+At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other [authentication](/docs/concepts/authentication.md) providers in the future.
 
 :::tip
 Keep in mind that your Defang account is separate from your [cloud provider account](./defang-byoc.md). You will need to authenticate with your cloud provider account separately to deploy services to your own cloud account.
