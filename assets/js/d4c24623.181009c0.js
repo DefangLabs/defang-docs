@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[3055],{85929:e=>{e.exports=JSON.parse('{"label":"Defang Compose Update","permalink":"/blog/tags/defang-compose-update","allTagsPath":"/blog/tags","count":11,"unlisted":false}')}}]);

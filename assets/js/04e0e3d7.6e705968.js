@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[3331],{74823:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/no-dev-ops/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":19,"previousPage":"/blog/tags/no-dev-ops","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
