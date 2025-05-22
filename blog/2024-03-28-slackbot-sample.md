@@ -1,5 +1,4 @@
 ---
-slug: slackbot-sample
 title: Deploy a Go-powered slackbot with Defang
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up, Slack API]
 author: Raphaël Titsworth-Morin

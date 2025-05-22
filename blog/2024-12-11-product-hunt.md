@@ -1,5 +1,4 @@
 ---
-slug: 2024-12-11-product-hunt
 title: "Defang is live on Product Hunt!"
 tags:
   [

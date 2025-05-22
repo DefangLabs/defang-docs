@@ -1,7 +1,6 @@
 ---
 title: "April 2025 Defang Compose Update"
 description: "Monthly product updates from the Defang team - April 2024"
-slug: 2025-05-09-product-update
 tags:
   [
     Cloud,

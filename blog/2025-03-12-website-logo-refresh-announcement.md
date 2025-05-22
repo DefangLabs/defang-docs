@@ -1,5 +1,4 @@
 ---
-slug: website-logo-refresh-announcement
 title: "Introducing Defang's New Look: Website & Logo Refresh"
 author: Defang Team
 tags: [announcement, branding, refresh]

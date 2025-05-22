@@ -1,5 +1,4 @@
 ---
-slug: 2024-12-04-launch-week
 title: "🚀 Defang V1: Launch Week is Here!"
 tags:
   [

@@ -1,5 +1,4 @@
 ---
-slug: announcing-defang-public-beta
 title: Announcing the Defang Public Beta
 tags: [Cloud, GenerativeAI, NoDevOps, BYOC, AWS]
 ---

@@ -12,7 +12,26 @@ const redirects = [
   {
     from: '/docs/faq',
     to: '/docs/faq/warnings-errors',
-  }
+  },
+  // Blog slugs to filename redirects
+  { from: '/blog/announcement', to: '/blog/2023/06/29/Announcing-the-Private-Beta-for-the-DOP' },
+  { from: '/blog/announcing-defang-public-beta', to: '/blog/2024/02/12/announcing-defang-public-beta' },
+  { from: '/blog/about-my-journey-deploying-my-first-web-application', to: '/blog/2024/03/04/about-my-journey-deploying-my-first-web-application' },
+  { from: '/blog/dev-environments', to: '/blog/2024/03/20/dev-environments' },
+  { from: '/blog/slackbot-sample', to: '/blog/2024/03/28/slackbot-sample' },
+  { from: '/blog/june-2024-product-update', to: '/blog/2024/06/01/june-product-updates' },
+  { from: '/blog/july-2024-product-update', to: '/blog/2024/07/01/july-product-updates' },
+  { from: '/blog/may-2024-product-update', to: '/blog/2024/05/01/may-product-updates' },
+  { from: '/blog/2024-07-31-product-update', to: '/blog/2024/07/31/july-product-updates-2' },
+  { from: '/blog/2024-08-31-product-update', to: '/blog/2024/08/30/august-product-updates' },
+  { from: '/blog/2024-09-30-product-update', to: '/blog/2024/09/30/september-product-updates' },
+  { from: '/blog/hard-lessons-from-hardware', to: '/blog/2024/11/12/hard-lessons-from-hardware' },
+  { from: '/blog/2024-11-13-product-update', to: '/blog/2024/11/13/october-product-updates' },
+  { from: '/blog/2024-12-04-launch-week', to: '/blog/2024/12/04/launch-week' },
+  { from: '/blog/2025-03-14-deploying-defang-with-defang-part-1', to: '/blog/2025/03/14/deploying-defang-with-defang-part-1' },
+  { from: '/blog/deploying-defang-with-defang-part-2', to: '/blog/2025/03/26/deploying-defang-with-defang-part-2' },
+  { from: '/blog/website-logo-refresh-announcement', to: '/blog/2025/03/12/website-logo-refresh-announcement' },
+  { from: '/blog/2025-05-09-product-update', to: '/blog/2025/05/09/april-product-updates' },
 ];
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */

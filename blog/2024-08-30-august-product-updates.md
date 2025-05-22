@@ -1,5 +1,4 @@
 ---
-slug: 2024-08-31-product-update
 title: August 2024 Defang Compose Update
 tags:
   [

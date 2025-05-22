@@ -1,5 +1,4 @@
 ---
-slug: announcement
 title: "Announcing the Private Beta for the Defang Opinionated Platform"
 tags: [Cloud, GenerativeAI, NoDevOps]
 ---

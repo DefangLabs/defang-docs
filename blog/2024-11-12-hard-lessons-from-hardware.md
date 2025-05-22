@@ -1,5 +1,4 @@
 ---
-slug: hard-lessons-from-hardware
 title: "Hard Lessons From Hardware"
 tags: [Cloud, NoDevOps, Embedded Systems, Hardware, Wifi, Arduino, Defang]
 author: Linda Lee

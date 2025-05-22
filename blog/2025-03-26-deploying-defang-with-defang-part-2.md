@@ -1,5 +1,4 @@
 ---
-slug: deploying-defang-with-defang-part-2
 title: "Deploying Defang with Defang: Part 2"
 author: Defang Team
 tags: [defang-with-defang, deployment, defang-website]
