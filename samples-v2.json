@@ -57,8 +57,6 @@
     ],
     "configs": [
       "BOARD_PASSWORD",
-      "QUEUE",
-      "QUEUE",
       "QUEUE"
     ]
   },
@@ -113,7 +111,6 @@
     ],
     "configs": [
       "SECRET_KEY",
-      "SECRET_KEY",
       "POSTGRES_PASSWORD"
     ]
   },
@@ -136,8 +133,8 @@
       "Python"
     ],
     "configs": [
-      "SECRET_KEY",
-      "POSTGRES_PASSWORD"
+      "POSTGRES_PASSWORD",
+      "SECRET_KEY"
     ]
   },
   {
@@ -157,7 +154,6 @@
       "python"
     ],
     "configs": [
-      "POSTGRES_PASSWORD",
       "POSTGRES_PASSWORD",
       "SECRET_KEY",
       "ALLOWED_HOSTS"
@@ -689,7 +685,6 @@
       "JavaScript"
     ],
     "configs": [
-      "POSTGRES_PASSWORD",
       "POSTGRES_PASSWORD"
     ]
   },
@@ -1091,7 +1086,6 @@
       "Ruby"
     ],
     "configs": [
-      "POSTGRES_PASSWORD",
       "POSTGRES_PASSWORD"
     ]
   },
