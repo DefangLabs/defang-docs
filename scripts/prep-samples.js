@@ -4,6 +4,14 @@ const YAML = require('yaml');
 
 const samplesDir = process.argv[2];
 
+// Inspired by https://github.com/compose-spec/compose-go/blob/main/template/template.go
+const interpolationRegex =
+  /(?<!\$)\$(?:{([_a-z][_a-z0-9]*)}|([_a-z][_a-z0-9]*))/gi; // [1] = ${var}, [2] = $var
+
+function interpolatedVars(str) {
+    return Array.from(str.matchAll(interpolationRegex), (match) => match[1] || match[2]);
+}
+
 // categories are directories in the current directory (i.e. we're running in samples/ and we might have a samples/ruby/ directory)
 const directories = fs.readdirSync(samplesDir).filter(file => fs.statSync(path.join(samplesDir, file)).isDirectory());
 
@@ -31,7 +39,7 @@ directories.forEach((sample) => {
     const tags = readme.match(/Tags: (.*)/)[1].split(',').map(tag => tag.trim());
     const languages = readme.match(/Languages: (.*)/)[1].split(',').map(language => language.trim());
 
-    let configs = [];
+    let configs = new Set();
     try {
         composeFile = fs.readFileSync(path.join(samplesDir, sample, 'compose.yaml'), 'utf8');
         compose = YAML.parse(composeFile);
@@ -41,14 +49,22 @@ directories.forEach((sample) => {
             if (Array.isArray(service.environment)) {
                 service.environment.forEach(env => {
                     if (!env.includes("=")) {
-                        configs.push(env);
+                        configs.add(env);
                     }
+                    interpolatedVars(env).forEach(v => {
+                        configs.add(v);
+                    });
                 });
             } else {
                 for (var name in service.environment) {
                     value = service.environment[name];
                     if (value === null || value === undefined || value === "") {
-                        configs.push(name);
+                        configs.add(name);
+                    }
+                    if (typeof value === 'string') {
+                        interpolatedVars(value).forEach(v => {
+                            configs.add(v);
+                        });
                     }
                 }
             }
@@ -56,7 +72,7 @@ directories.forEach((sample) => {
     } catch (error) {
         // Ignore if the sample doesn't have a compose file
         if (error.code != 'ENOENT') {
-            console.log(`failed to parese compose for configs for sample`, sample, error);
+            console.log(`failed to parse compose for configs for sample`, sample, error);
         }
     }
 
@@ -70,8 +86,8 @@ directories.forEach((sample) => {
         tags,
         languages,
     };
-    if (configs.length > 0) {
-        sampleSummary.configs = configs;
+    if (configs.size > 0) {
+        sampleSummary.configs = Array.from(configs);
     }
     jsonArray.push(sampleSummary);
 
