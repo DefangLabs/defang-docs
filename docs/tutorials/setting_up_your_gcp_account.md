@@ -12,7 +12,12 @@ description: Follow these steps to set up your Google Cloud Platform (GCP) accou
 
 ### Step 1: Create Your GCP Account
 
-Start by creating a Google Cloud account using the [GCP account creation flow](https://cloud.google.com/).
+Start by creating a Google Cloud account using the [GCP account creation flow](https://cloud.google.com/). If you already have an account skip to the next step.
+
+<figure>
+  <img src="/img/setting-up-your-gcp-account/google-sign-up.png" alt="Google GCP sign up page" style={{ width: 300 }} />
+  <figcaption>Google GCP sign up page</figcaption>
+</figure>
 
 ---
 
@@ -39,7 +44,7 @@ Take note of your **Project ID** — you’ll need it later when setting the `GC
 
 <figure>
   <img src="/img/setting-up-your-gcp-account/new-project.png" alt="GCP project creation dialog" style={{ width: 300 }} />
-  <figcaption><strong>Create a new project in the dialog</strong></figcaption>
+  <figcaption>Create a new project in the dialog</figcaption>
 </figure>
 
 ---
@@ -53,15 +58,15 @@ Billing accounts let Google allocate costs to specific entities or users. You’
 
 <figure>
   <img src="/img/setting-up-your-gcp-account/billing-menu-option.png" alt="Billing option in GCP menu" style={{ width: 300 }} />
-  <figcaption><strong>Billing menu option</strong></figcaption>
+  <figcaption>Billing menu option</figcaption>
 </figure>
 
-3. In the billing side panel, select **Manage billing accounts**, then click **Create account**.
-4. Follow the steps to create a billing account. A credit card is required.
+1. In the billing side panel, select **Manage billing accounts**, then click **Create account**.
+2. Follow the steps to create a billing account. A credit card is required.
 
 <figure>
   <img src="/img/setting-up-your-gcp-account/create-billing-account.png" alt="Create billing account page" style={{ width: 300 }} />
-  <figcaption><strong>Billing management page</strong></figcaption>
+  <figcaption>Billing management page</figcaption>
 </figure>
 
 ---
@@ -76,14 +81,14 @@ Once your project and billing account are created, link them together:
 
 <figure>
   <img src="/img/setting-up-your-gcp-account/link-billing-account.png" alt="Link billing account dialog" style={{ width: 300 }} />
-  <figcaption><strong>Link billing account dialog</strong></figcaption>
+  <figcaption>Link billing account dialog</figcaption>
 </figure>
 
-4. Choose the billing account to link.
+1. Choose the billing account to link.
 
 <figure>
   <img src="/img/setting-up-your-gcp-account/link-billing-select-account-dialog.png" alt="Billing account selection dialog" style={{ width: 300 }} />
-  <figcaption><strong>Select a billing account to link</strong></figcaption>
+  <figcaption>Select a billing account to link</figcaption>
 </figure>
 
 ---
