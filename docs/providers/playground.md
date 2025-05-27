@@ -22,4 +22,4 @@ In essence, the Playground does not support any [managed storage](../concepts/ma
 
 ### Managed LLMs
 
-Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension when deploying to your own cloud account with BYOC. This extension is not supported in the Defang Playground.
+Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension when deploying to your own cloud account with BYOC. This extension is supported in the Defang Playground with one caveat: your MODEL (model ID) will be limited to a default model chosen by Defang.
