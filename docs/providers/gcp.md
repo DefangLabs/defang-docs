@@ -59,6 +59,18 @@ The Provider builds and deploys your services using [Google Cloud Run](https://c
 
 The GCP provider does not currently support storing sensitive config values.
 
+## Managed Storage
+
+Defang can help you provision [managed storage](/docs/concepts/managed-storage/managed-storage.md) services. The following managed storage services are supported on GCP:
+
+### Managed Postgres
+
+When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions an Cloud SQL instance in your account.
+
+### Managed Redis
+
+When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an Memorystore for Redis cluster in your account.
+
 ### Managed LLMs
 
 Defang offers integration with managed, cloud-native large language model services with the x-defang-llm service extension. Add this extension to any services which use the [Google Vertex AI SDKs](https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-sdk).
