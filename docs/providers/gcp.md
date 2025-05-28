@@ -65,11 +65,11 @@ Defang can help you provision [managed storage](/docs/concepts/managed-storage/m
 
 ### Managed Postgres
 
-When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions an Cloud SQL instance in your account.
+When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions a Cloud SQL instance in your account.
 
 ### Managed Redis
 
-When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an Memorystore for Redis cluster in your account.
+When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions a Memorystore for Redis cluster in your account.
 
 ### Managed LLMs
 
