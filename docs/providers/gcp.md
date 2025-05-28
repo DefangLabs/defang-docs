@@ -31,7 +31,7 @@ gcloud init
 gcloud auth application-default login
 ```
 
-The Defang CLI will automatically check if `GCP_PROJECT_ID` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` flag to your command to tell the Defang CLI to use the GCP provider, or set the `DEFANG_PROVIDER` environment variable to `gcp`.
+The Defang CLI will automatically check if `GCP_PROJECT_ID` OR `CLOUDSDK_CORE_PROJECT` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` flag to your command to tell the Defang CLI to use the GCP provider, or set the `DEFANG_PROVIDER` environment variable to `gcp`.
 
 ```bash
 $ defang compose up --provider=gcp
@@ -59,6 +59,18 @@ The Provider builds and deploys your services using [Google Cloud Run](https://c
 
 The GCP provider does not currently support storing sensitive config values.
 
+## Managed Storage
+
+Defang can help you provision [managed storage](/docs/concepts/managed-storage/managed-storage.md) services. The following managed storage services are supported on GCP:
+
+### Managed Postgres
+
+When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions a Cloud SQL instance in your account.
+
+### Managed Redis
+
+When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions a Memorystore for Redis cluster in your account.
+
 ### Managed LLMs
 
 Defang offers integration with managed, cloud-native large language model services with the x-defang-llm service extension. Add this extension to any services which use the [Google Vertex AI SDKs](https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-sdk).
@@ -66,11 +78,6 @@ Defang offers integration with managed, cloud-native large language model servic
 ### Future Improvements
 
 The following features are in active development for GCP:
-
-- [Configuration and management of secrets](/docs/concepts//configuration.md)
-- [Networking and Load Balancing](/docs/concepts//networking.mdx)
-- [Custom Domains](/docs/concepts//domains.mdx)
-- [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
-- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx)
+- [Managed Object Storage](/docs/concepts//managed-storage/managed-object-storage.md)
 
 Stayed tuned for future updates!
