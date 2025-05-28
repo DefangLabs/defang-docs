@@ -31,7 +31,7 @@ gcloud init
 gcloud auth application-default login
 ```
 
-The Defang CLI will automatically check if `GCP_PROJECT_ID` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` flag to your command to tell the Defang CLI to use the GCP provider, or set the `DEFANG_PROVIDER` environment variable to `gcp`.
+The Defang CLI will automatically check if `GCP_PROJECT_ID` OR `CLOUDSDK_CORE_PROJECT` environment variable is set and correctly authenticated with GCP before running. Once you are ready to go, add the `--provider=gcp` flag to your command to tell the Defang CLI to use the GCP provider, or set the `DEFANG_PROVIDER` environment variable to `gcp`.
 
 ```bash
 $ defang compose up --provider=gcp
@@ -66,11 +66,6 @@ Defang offers integration with managed, cloud-native large language model servic
 ### Future Improvements
 
 The following features are in active development for GCP:
-
-- [Configuration and management of secrets](/docs/concepts//configuration.md)
-- [Networking and Load Balancing](/docs/concepts//networking.mdx)
-- [Custom Domains](/docs/concepts//domains.mdx)
-- [Managed Redis](/docs/concepts//managed-storage/managed-redis.md)
-- [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx)
+- [Managed Object Storage](/docs/concepts//managed-storage/managed-object-storage.md)
 
 Stayed tuned for future updates!
