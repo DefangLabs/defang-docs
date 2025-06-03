@@ -78,6 +78,10 @@ Defang offers integration with managed, cloud-native large language model servic
 
 When using [Managed LLMs](/docs/concepts/managed-llms/managed-language-models.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
 
+### Managed MongoDB
+
+Defang will provision a DocumentDB instance for services that use the `x-defang-mongodb` service extension. This allows you to use MongoDB as a managed service, rather than running it as a container.
+
 ### Managed Resources
 
 Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
