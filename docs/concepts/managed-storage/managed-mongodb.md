@@ -7,7 +7,7 @@ sidebar_position: 3000
 # Managed MongoDB
 
 :::info
-This feature was introduced in Defang v1.2.0 released on June 3, 2025.
+This feature was introduced in Defang v1.2.0 released on June 3, 2025. [Upgrade to the latest version](https://docs.defang.io/docs/cli/defang_upgrade)
 :::
 
 Managed MongoDB is a service that allows you to store and retrieve large amounts of data in a document-oriented format. MongoDB is ideal for storing unstructured data like JSON documents, making it a popular choice for modern applications.
@@ -16,7 +16,7 @@ Managed MongoDB is a service that allows you to store and retrieve large amounts
 
 | Provider | Managed MongoDB |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ❌ |
+| [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
 | [AWS](/docs/providers/aws#managed-storage) | ✅ |
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP](/docs/providers/gcp#future-improvements) | ❌ |
