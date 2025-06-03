@@ -15,7 +15,7 @@ Postgres, or PostgreSQL, is a powerful open-source relational database system kn
 | [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
 | [AWS](/docs/providers/aws#managed-storage) | ✅ RDS Postgres |
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
-| [GCP](/docs/providers/gcp#future-improvements) | ✅ Cloud SQL Postgres |
+| [GCP](/docs/providers/gcp#managed-storage) | ✅ Cloud SQL Postgres |
 
 ## How to use Managed Postgres
 
@@ -82,7 +82,7 @@ When a project is deployed to a [production environment](/docs/concepts/deployme
 <project-name>-<service>-postgres-<id>-final-snapshot
 `
 
-The AWS Console can be used to restore a snapshot into a new instance of Postgres.
+The AWS Console can be used to restore a snapshot into a new instance of Postgres. This feature is not yet supported in GCP.
 
 {/*
 ### Major Version Updating of Engine
