@@ -85,14 +85,14 @@ Here are a list of service-level properties of the [Compose specification](https
 Service-level means inside your `service`. A service-level property called `build` would look like:
 ```yaml
 service:
-  build: ...
+  build: …
 ```
 
 Note that in your Compose file, you will need a top-level property called `services` to contain all of your services. For example:
 ```yaml
 services:
   service:
-    build: ...
+    build: …
 ```
 :::
 
