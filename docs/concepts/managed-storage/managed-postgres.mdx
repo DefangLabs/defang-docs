@@ -12,10 +12,10 @@ Postgres, or PostgreSQL, is a powerful open-source relational database system kn
 
 | Provider | Managed Postgres |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ❌ |
-| [AWS](/docs/providers/aws#managed-storage) | ✅ |
-| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP](/docs/providers/gcp#managed-storage) | ✅ |
+| [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
+| [AWS](/docs/providers/aws#managed-storage) | ✅ RDS Postgres |
+| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
+| [GCP](/docs/providers/gcp#managed-storage) | ✅ Cloud SQL Postgres |
 
 ## How to use Managed Postgres
 
@@ -84,7 +84,7 @@ When a project is deployed to a [production environment](/docs/concepts/deployme
 
 The AWS Console can be used to restore a snapshot into a new instance of Postgres. This feature is not yet supported in GCP.
 
-{/* 
+{/*
 ### Major Version Updating of Engine
 
 To update the database engine you can update the image to a later version in your Compose file and apply it via ```defang compose up --provider=aws```. In the example below, we change from Postgres 15 to 16.
@@ -101,5 +101,5 @@ to
 ```
 database:
   image: postgres:16
-``` 
+```
  */}
