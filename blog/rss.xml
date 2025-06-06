@@ -4,10 +4,61 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Fri, 09 May 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 Jun 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[May 2025 Defang Compose Update]]></title>
+            <link>https://docs.defang.io/blog/2025-06-06-product-update</link>
+            <guid>https://docs.defang.io/blog/2025-06-06-product-update</guid>
+            <pubDate>Fri, 06 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Monthly product updates from the Defang team - May 2025]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>May was a big month at Defang. We shipped support for managed LLMs in Playground, added MongoDB support on AWS, improved the Defang MCP Server, and dropped new AI samples to make deploying faster than ever.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-managed-llms-in-playground">🚀 Managed LLMs in Playground<a href="https://docs.defang.io/blog/2025-06-06-product-update#-managed-llms-in-playground" class="hash-link" aria-label="Direct link to 🚀 Managed LLMs in Playground" title="Direct link to 🚀 Managed LLMs in Playground">​</a></h2>
+<p>You can now try managed LLMs directly in the Defang Playground.
+Defang makes it easy to use cloud-native language models across providers — and now you can test them instantly in the Playground.</p>
+<ul>
+<li>Managed LLM support</li>
+<li>Playground-ready</li>
+<li>Available in CLI v1.1.22 or higher</li>
+</ul>
+<p>To use managed language models in your own Defang services, just add <code>x-defang-llm: true</code> — Defang will configure the appropriate roles and permissions for you.</p>
+<p>Already built on the OpenAI API? No need to rewrite anything.</p>
+<p>With Defang's OpenAI Access Gateway, you can run your existing apps on Claude, DeepSeek, Mistral, and more — using the same OpenAI format.</p>
+<p><a href="https://docs.defang.io/docs/concepts/managed-llms/managed-language-models" target="_blank" rel="noopener noreferrer">Learn more here.</a></p>
+<p><a href="https://github.com/DefangLabs/samples/tree/main/samples/managed-llm" target="_blank" rel="noopener noreferrer">Try it out here.</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-mongodb-preview-on-aws">📦 MongoDB Preview on AWS<a href="https://docs.defang.io/blog/2025-06-06-product-update#-mongodb-preview-on-aws" class="hash-link" aria-label="Direct link to 📦 MongoDB Preview on AWS" title="Direct link to 📦 MongoDB Preview on AWS">​</a></h2>
+<p>Last month, we added support for MongoDB-compatible workloads on AWS via Amazon DocumentDB.</p>
+<p>Just add this to your <code>compose.yaml</code>:</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">services</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">db</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">x-defang-mongodb</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean important" style="color:#36acaa">true</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Once you add <code>x-defang-mongodb: true</code>, Defang will auto-spin a DocumentDB cluster in your AWS — no setup needed.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-mcp-server-improvements">🛠 MCP Server Improvements<a href="https://docs.defang.io/blog/2025-06-06-product-update#-mcp-server-improvements" class="hash-link" aria-label="Direct link to 🛠 MCP Server Improvements" title="Direct link to 🛠 MCP Server Improvements">​</a></h2>
+<p>We've made the MCP Server and CLI easier to use and deploy:</p>
+<ul>
+<li>Users are now prompted to agree to Terms of Service via the portal login</li>
+<li>MCP Server and CLI are now containerized, enabling faster setup, smoother deployments, and better portability across environments</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-events-and-community">🌎 Events and Community<a href="https://docs.defang.io/blog/2025-06-06-product-update#-events-and-community" class="hash-link" aria-label="Direct link to 🌎 Events and Community" title="Direct link to 🌎 Events and Community">​</a></h2>
+<p>We kicked off the month by sponsoring Vancouver's first <a href="https://www.linkedin.com/feed/update/urn:li:activity:7336086817357606914" target="_blank" rel="noopener noreferrer">Vibe Coding IRL</a> Sprint. Jordan Stephens from Defang ran a hands-on workshop <a href="https://www.linkedin.com/posts/gdgyvr_gdgvancouver-buildwithai2025-vertexai-activity-7334288539473334272-LHBl" target="_blank" rel="noopener noreferrer">on "Ship AI Faster with Vertex AI" with GDG Vancouver</a> (<a href="https://gdg.community.dev/gdg-vancouver/" target="_blank" rel="noopener noreferrer">GDG Vancouver</a>). Around the same time, our CTO and Co-founder Lio joined the <a href="https://www.linkedin.com/posts/jenniferyli_genai-founders-fireside-networking-luma-activity-7330702064706117634-D7Hl" target="_blank" rel="noopener noreferrer">GenAI Founders Fireside panel</a> hosted by <a href="https://ainbc.ai/" target="_blank" rel="noopener noreferrer">AInBC</a> and AWS.</p>
+<p>Big moment for the team — we won the <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333554571568435200" target="_blank" rel="noopener noreferrer">Best Canadian Cloud Award</a> at the Vancouver Cloud Summit. Right after, we hit the expo floor at <a href="https://www.linkedin.com/posts/defanglabs_defang-websummit-websummitvancouver-activity-7333898557185302528-Rvsm" target="_blank" rel="noopener noreferrer">Web Summit Vancouver</a> as part of the BETA startup program and got featured by FoundersBeta as one of the <a href="https://thefounderspress.com/web-summit-vancouver-top-companies-to-watch-in-2025/" target="_blank" rel="noopener noreferrer">Top 16 Startups to Watch</a>.</p>
+<p>Our Campus Advocates also kept the momentum going, hosting <a href="https://www.linkedin.com/feed/update/urn:li:activity:7334554265056636928" target="_blank" rel="noopener noreferrer">Defang events</a> around the world with live demos and workshops.</p>
+<p>Last month's Defang Coffee Chat brought together the community for product updates, live demos, and a great convo on vibe deploying.</p>
+<p>We're back again on June 25 at 10 AM PST. <a href="https://lu.ma/bamhymdq" target="_blank" rel="noopener noreferrer">Save your spot here.</a></p>
+<p>We can't wait to see what you deploy with Defang. <a href="http://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Join our Discord</a> to ask questions, get support, and share your builds.</p>
+<p>More coming in June.</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>MCP</category>
+            <category>LLMs</category>
+            <category>Vibe Deploying</category>
+            <category>GCP</category>
+            <category>AWS</category>
+            <category>Events</category>
+            <category>Defang Compose Update</category>
+        </item>
         <item>
             <title><![CDATA[April 2025 Defang Compose Update]]></title>
             <link>https://docs.defang.io/blog/2025/05/09/april-product-updates</link>
@@ -936,45 +987,6 @@ Thank you in advance. Your support means the world.</p>]]></content:encoded>
             <category>Kaniko</category>
             <category>Postgres</category>
             <category>ECS</category>
-            <category>Defang Compose Update</category>
-        </item>
-        <item>
-            <title><![CDATA[April 2024 Defang Compose Update]]></title>
-            <link>https://docs.defang.io/blog/2024/05/01/may-product-updates</link>
-            <guid>https://docs.defang.io/blog/2024/05/01/may-product-updates</guid>
-            <pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Defang Compose Update]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="npx-defang">npx defang<a href="https://docs.defang.io/blog/2024/05/01/may-product-updates#npx-defang" class="hash-link" aria-label="Direct link to npx defang" title="Direct link to npx defang">​</a></h2>
-<p>We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally by running:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx defang@latest</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>This will download the latest version of the Defang CLI and run it for you. No need to worry about installing or updating the CLI manually!</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coming-soon-bring-your-own-domain-with-lets-encrypt">(coming soon) Bring Your Own Domain with Let's Encrypt<a href="https://docs.defang.io/blog/2024/05/01/may-product-updates#coming-soon-bring-your-own-domain-with-lets-encrypt" class="hash-link" aria-label="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt" title="Direct link to (coming soon) Bring Your Own Domain with Let's Encrypt">​</a></h2>
-<p>Previously you could bring your own domain with <a href="https://docs.defang.io/docs/concepts/defang-byoc">Defang BYOC</a>... but you had to host the DNS records with AWS Route 53 in the AWS account you were deploying to. Now you can point domains hosted anywhere to your Defang deployment and we'll take care of the rest. We'll help generate a Let's Encrypt certificate for your domain and automatically renew it for you.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-support">Windows Support<a href="https://docs.defang.io/blog/2024/05/01/may-product-updates#windows-support" class="hash-link" aria-label="Direct link to Windows Support" title="Direct link to Windows Support">​</a></h2>
-<p>Some of you use Defang from a Windows PC and previously a few features didn't work correctly on Windows. Some stuff we've fixed:</p>
-<ul>
-<li>ansi color codes in logs</li>
-<li>handle ctrl-c when tailing logs</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improved-cli">Improved CLI<a href="https://docs.defang.io/blog/2024/05/01/may-product-updates#improved-cli" class="hash-link" aria-label="Direct link to Improved CLI" title="Direct link to Improved CLI">​</a></h2>
-<p>We've made a variety of small tweaks and improvements to the CLI which should make things a little bit cleaner and more stable.</p>
-<ul>
-<li>log messages have been made more clear</li>
-<li>adding more progress information during compose up</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stability-and-reliability">Stability and Reliability<a href="https://docs.defang.io/blog/2024/05/01/may-product-updates#stability-and-reliability" class="hash-link" aria-label="Direct link to Stability and Reliability" title="Direct link to Stability and Reliability">​</a></h2>
-<p>Defang is still in Beta and we know we've got to be rock solid by the time we release V1, so we've been working hard to improve the stability and reliability of the Defang architecture. We've been battle-testing different technologies to see how they hold up and have mad a few changes that should make things even better:</p>
-<ul>
-<li>capacity improvements in build queues</li>
-<li>improvements in log availability</li>
-</ul>]]></content:encoded>
-            <category>Cloud</category>
-            <category>NoDevOps</category>
-            <category>BYOC</category>
-            <category>AWS ECS</category>
-            <category>defang compose up</category>
             <category>Defang Compose Update</category>
         </item>
     </channel>
