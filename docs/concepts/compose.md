@@ -155,9 +155,9 @@ The [Deploy Specification](https://github.com/compose-spec/compose-spec/blob/mai
 ```
 
 ### `depends_on`
-(Not yet supported)
+(Limited support)
 
-This property describes startup dependencies between services. This feature currently has limited supported by Defang, but can be useful in local development with Docker.
+This property describes startup dependencies between services. This feature currently has limited supported by Defang: dependency on a managed service does not wait for the managed service provisioning to complete.
 
 ```yaml
     # depends_on:
