@@ -50,3 +50,5 @@ And the primary compose file can be deployed to the cloud with
 ```
 defang compose up
 ```
+
+See our [blog post on Dev Containers and Codespaces](/Users/jordan/wk/defang-docs/docs/concepts/local-development.md) for more information on getting set up in those environments.
