@@ -1,6 +1,6 @@
 ---
 title: Local Development
-description:
+description: Deploying a different configuration than you develop with locally
 sidebar-position: 800
 ---
 
