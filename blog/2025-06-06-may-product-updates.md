@@ -37,7 +37,7 @@ Already built on the OpenAI API? No need to rewrite anything.
 
 With Defang's OpenAI Access Gateway, you can run your existing apps on Claude, DeepSeek, Mistral, and more — using the same OpenAI format.
 
-[Learn more here.](https://docs.defang.io/docs/concepts/managed-llms/managed-language-models)
+[Learn more here.](/docs/concepts/managed-llms/managed-language-models)
 
 [Try it out here.](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm)
 

@@ -55,17 +55,17 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 ### **Config & Secrets Management**
 
-- **Sensitive configuration values** (database credentials, API keys) are stored **securely in AWS SSM** using Defang’s [configuration management tooling](https://docs.defang.io/docs/concepts/configuration).
-- [**Environment variable interpolation**](https://docs.defang.io/docs/concepts/configuration#interpolation) allows these **SSM-stored config values** to be referenced directly in the Compose file, ensuring the same configuration works in local and cloud environments.
+- **Sensitive configuration values** (database credentials, API keys) are stored **securely in AWS SSM** using Defang’s [configuration management tooling](/docs/concepts/configuration).
+- [**Environment variable interpolation**](/docs/concepts/configuration#interpolation) allows these **SSM-stored config values** to be referenced directly in the Compose file, ensuring the same configuration works in local and cloud environments.
 - **Defang provisions managed Postgres and Redis instances automatically** when using the `x-defang-postgres` and `x-defang-redis` extensions, securely injecting credentials where needed with variable interpolation.
 
 ### Deployment Modes
 
-- [**Deployment modes**](https://docs.defang.io/docs/concepts/deployment-modes) (`development`, `staging`, `production`) adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
+- [**Deployment modes**](/docs/concepts/deployment-modes) (`affordable`, `balanced`, `high_availability`) adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
 
 ### **DNS & Certs**
 
-- When we first set up the portal (before we even released the private beta) DNS and certs had to be managed outside the Defang context. Now, **[we can provision certs using ACM or Let’s Encrypt](https://docs.defang.io/docs/concepts/domains)**.
+- When we first set up the portal (before we even released the private beta) DNS and certs had to be managed outside the Defang context. Now, **[we can provision certs using ACM or Let’s Encrypt](/docs/concepts/domains)**.
 
 ### **CI/CD Integration**
 
@@ -82,6 +82,6 @@ By transitioning to **fully Compose-based deployments**, we:
 * ✅ **Eliminated hundreds of lines of Infra-as-Code**
 * ✅ **Simplified configuration management** with secure, environment-aware secrets handling
 * ✅ **Streamlined CI/CD** with a lightweight GitHub Actions workflow
-* ✅ **Simplified DNS and cert management** 
+* ✅ **Simplified DNS and cert management**
 
 Every sample project we built, every conversation we had with developers, and every challenge we encountered with the Portal helped us get to this point where we could focus on closing the gaps last few gaps to deploying everything from a Compose file.
