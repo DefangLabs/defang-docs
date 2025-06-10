@@ -61,7 +61,7 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 ### Deployment Modes
 
-- [**Deployment modes**](/docs/concepts/deployment-modes) (`development`, `staging`, `production`) adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
+- [**Deployment modes**](/docs/concepts/deployment-modes) (`affordable`, `balanced`, `high_availability`) adjust infrastructure settings across our dev/staging/prod deployments making sure dev is low cost, and production is secure and resilient.
 
 ### **DNS & Certs**
 
