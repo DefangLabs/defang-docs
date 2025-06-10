@@ -1,5 +1,5 @@
 ---
-title: Simplifying Deployment of AI Apps to the Cloud using Docker and Model Context Protocol 
+title: Simplifying Deployment of AI Apps to the Cloud using Docker and Model Context Protocol
 tags:
   [
     Cloud,
@@ -69,14 +69,14 @@ The MCP Client connects to the [Anthropic API](https://docs.anthropic.com/en/api
 
 **Service 1: Web Server - [Dockerfile](https://github.com/DefangLabs/samples/blob/main/samples/mcp/service-1/Dockerfile)**
 
-The base image for Service 1 is the `node:bookworm-slim` image. We construct the image by copying the server code and setting an entry point command to start the web server. 
+The base image for Service 1 is the `node:bookworm-slim` image. We construct the image by copying the server code and setting an entry point command to start the web server.
 
 **Service 2: MCP Service Configuration - [Dockerfile](https://github.com/DefangLabs/samples/blob/main/samples/mcp/service-2/Dockerfile)**
 
 The base image for Service 2 is the Docker `mcp/time` image. Since both the MCP Client and Server run in a virtual environment, we activate a `venv` command in the Dockerfile for Service 2 and create a `run.sh` shell script that runs the file containing the MCP Client and Server connection code. We then add the shell script as an entry point command for the container.
 
 ### Compose File
-To define Services 1 and 2 as Docker containers, we’ve written a `compose.yaml` file in the root directory, as shown below. 
+To define Services 1 and 2 as Docker containers, we’ve written a `compose.yaml` file in the root directory, as shown below.
 
 ```yaml
 services:
@@ -117,7 +117,7 @@ Now that we’ve defined our application in Docker containers using a `compose.y
 docker compose up --build
 ```
 
-Once the application is started up, it can be easily tested in a local environment. However, to make it easily accessible to others online, we should deploy it to the cloud. Fortunately, deploying the application is a straightforward process using Defang, particularly since the application is [Compose-compatible](https://docs.defang.io/docs/concepts/compose). 
+Once the application is started up, it can be easily tested in a local environment. However, to make it easily accessible to others online, we should deploy it to the cloud. Fortunately, deploying the application is a straightforward process using Defang, particularly since the application is [Compose-compatible](/docs/concepts/compose).
 
 ### Deploying to the Cloud
 
@@ -125,12 +125,12 @@ Let’s go over the structure of the application after cloud deployment.
 
 ![mcp_after](/img/mcp/mcp_after.png)
 
-Here we can see what changes if we deploy to the cloud: 
+Here we can see what changes if we deploy to the cloud:
 
-1. Service 1 and Service 2 are now deployed to the cloud, not on the local machine anymore. 
-2. The only part on the local machine is the browser. 
+1. Service 1 and Service 2 are now deployed to the cloud, not on the local machine anymore.
+2. The only part on the local machine is the browser.
 
-Using the same `compose.yaml` file as shown earlier, we can deploy the containers to the cloud with the [Defang CLI](https://docs.defang.io/docs/getting-started). Once we’ve authenticated and logged in, we can [choose a cloud provider (i.e. AWS, GCP, or DigitalOcean)](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud) and use our own cloud account for deployment. Then, we can set a configuration variable for the Anthropic API key:
+Using the same `compose.yaml` file as shown earlier, we can deploy the containers to the cloud with the [Defang CLI](/docs/getting-started). Once we’ve authenticated and logged in, we can [choose a cloud provider (i.e. AWS, GCP, or DigitalOcean)](/docs/tutorials/deploy-to-your-cloud) and use our own cloud account for deployment. Then, we can set a configuration variable for the Anthropic API key:
 
 ```bash
 defang config set ANTHROPIC_API=<your-api-key-value>
@@ -148,6 +148,6 @@ For our case, anyone can use the chatbot to ask for the exact time or convert ti
 
 ![mcp_time_chatbot](/img/mcp/mcp_time_chatbot.png)
 
-Most importantly, this chatbot application can be adapted to use any of the other Docker reference [MCP Server images](https://hub.docker.com/u/mcp), not just the `mcp/time` server. 
+Most importantly, this chatbot application can be adapted to use any of the other Docker reference [MCP Server images](https://hub.docker.com/u/mcp), not just the `mcp/time` server.
 
 Have fun building and deploying MCP-based containerized applications to the cloud with Defang!

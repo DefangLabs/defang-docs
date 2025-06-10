@@ -32,7 +32,7 @@ We already deploy our other services with Defang using Compose files. In fact, t
 
 Some things we had to change:
 
-**Adding [ports](https://docs.defang.io/docs/concepts/compose#ports) to the Compose file**:
+**Adding [ports](/docs/concepts/compose#ports) to the Compose file**:
 ```yaml
     ports:
       - mode: ingress
@@ -40,7 +40,7 @@ Some things we had to change:
         published: 3000
 ```
 
-**Adding [domain](https://docs.defang.io/docs/concepts/domains) info the Composer file**:
+**Adding [domain](/docs/concepts/domains) info the Composer file**:
 ```yaml
     domainname: defang.io
     networks:

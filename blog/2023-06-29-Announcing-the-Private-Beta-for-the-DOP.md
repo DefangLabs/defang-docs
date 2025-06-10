@@ -11,7 +11,7 @@ We realize that improving on this state of affairs is a long journey. Today, we 
 
 **Try the Private Beta!**
 
-To try the Private Beta, please go to [portal.defang.dev](https://portal.defang.dev) and register. We would love to have you kick the tires and give us your feedback! You can also check out our [documentation](https://docs.defang.io/docs/intro), [samples](https://docs.defang.io/docs/intro), and our [GitHub repository](https://github.com/DefangLabs).
+To try the Private Beta, please go to [portal.defang.dev](https://portal.defang.dev) and register. We would love to have you kick the tires and give us your feedback! You can also check out our [documentation](/docs/intro), [samples](/docs/intro), and our [GitHub repository](https://github.com/DefangLabs).
 
 **Stay Tuned for More**
 

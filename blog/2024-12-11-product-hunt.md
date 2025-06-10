@@ -10,7 +10,7 @@ tags:
     Product Hunt,
   ]
 author: Defang Team
-image: https://docs.defang.io/img/product-hunt/product-hunt.png
+image: /img/product-hunt/product-hunt.png
 ---
 import { Button } from '@mui/material';
 

@@ -39,7 +39,7 @@ You can quickly spin up the application locally with:
 docker compose --env-file .env.dev -f compose.dev.yaml up --build
 ```
 
-This runs things with autoreloading so you can iterate on the Django app, all while passing environment variables in the same way as we will with Defang's [secure configuration system](https://docs.defang.io/docs/concepts/configuration) and being ready to deploy to production.
+This runs things with autoreloading so you can iterate on the Django app, all while passing environment variables in the same way as we will with Defang's [secure configuration system](/docs/concepts/configuration) and being ready to deploy to production.
 
 ## Application Features
 
@@ -52,7 +52,7 @@ The worker service runs independently, handling moderation tasks asynchronously.
 - Perform sentiment analysis.
 - Automatically flag negative or inappropriate messages.
 
-This decouples resource-intensive tasks from the main API server, ensuring optimal application responsiveness. The demo isn't doing anything very complicated, but you could easily run machine learning models [with access to GPUs](https://docs.defang.io/docs/tutorials/deploy-with-gpu) with Defang if you needed to.
+This decouples resource-intensive tasks from the main API server, ensuring optimal application responsiveness. The demo isn't doing anything very complicated, but you could easily run machine learning models [with access to GPUs](/docs/tutorials/deploy-with-gpu) with Defang if you needed to.
 
 ### Django Admin
 
@@ -91,7 +91,7 @@ Once deployed, your app is accessible via a public URL provided by Defang, which
 
 ### Deploying to Your Own Cloud
 
-To deploy directly into your AWS account (or other [supported providers](https://docs.defang.io/docs/category/providers)):
+To deploy directly into your AWS account (or other [supported providers](/docs/category/providers)):
 
 1. Set your cloud provider:
 > In my case, I use an AWS Profile, but you should be able to use [any methods supported by the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)

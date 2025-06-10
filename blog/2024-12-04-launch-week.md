@@ -16,7 +16,7 @@ tags:
     Defang Compose Update,
   ]
 author: Defang Team
-image: https://docs.defang.io/img/november-update/launch-week.png
+image: /img/november-update/launch-week.png
 ---
 import { Button } from '@mui/material';
 
@@ -32,15 +32,15 @@ At **Defang**, we’re enabling developers go from **idea to code to deployment 
 
 - **Production-Ready Support for AWS**
 
-Seamlessly deploy and scale with confidence on [AWS](https://docs.defang.io/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments conform to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/). 
+Seamlessly deploy and scale with confidence on [AWS](/docs/providers/aws). Defang is now [WAFR](https://aws.amazon.com/premiumsupport/business-support-well-architected/)-compliant, assuring that your deployments conform to all the best-practices for AWS deployments. Defang is now officially part of the [AWS Partner Network](https://aws.amazon.com/partners/).
 
-- **New - Google Cloud Platform ([GCP](https://docs.defang.io/docs/providers/gcp)) in Preview**
+- **New - Google Cloud Platform ([GCP](/docs/providers/gcp)) in Preview**
 
 This week, we are excited to unveil support for deployments to GCP, in Preview. Start building and exploring and give us feedback as we work to enhance the experience further and move towards production support. Defang is also now officially part of the [Google Cloud Partner Advantage](https://cloud.google.com/partners?hl=en) program.
 
 - **Support for DigitalOcean in Preview**
 
-Developers using [DigitalOcean](https://docs.defang.io/docs/providers/digitalocean) can explore our Preview features, with further enhancements and production support coming soon.
+Developers using [DigitalOcean](/docs/providers/digitalocean) can explore our Preview features, with further enhancements and production support coming soon.
 
 **Defang Product Tiers and Introductory Pricing 🛠️**
 
@@ -52,7 +52,7 @@ We’ve lined up an exciting week of activities to showcase the power of **Defan
 
 - **December 4: Vancouver CDW x AWS re:Invent Watch Party**
 
-Join us at the Vancouver [CDW x AWS re:Invent Watch Party](https://lu.ma/1r0zsw76), where we will have a booth showcasing Defang’s capabilities and AWS integration. Stop by to learn more about Defang and see a live demo from the Defang dev team. 
+Join us at the Vancouver [CDW x AWS re:Invent Watch Party](https://lu.ma/1r0zsw76), where we will have a booth showcasing Defang’s capabilities and AWS integration. Stop by to learn more about Defang and see a live demo from the Defang dev team.
 
 - **December 5–6: GFSA DemoDay and Git Push to 2025: Devs Social Party**
 
