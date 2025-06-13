@@ -93,6 +93,7 @@ jobs:
         if: ${{ failure() && github.ref_name == 'main' }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_TITLE: Defang Docs deploy workflow failed
           MSG_MINIMAL: actions url
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Defang Docs deploy workflow failed
           SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFIER_WEBHOOK_URL }}
