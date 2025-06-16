@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[9559],{9398:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/cloud","page":1,"postsPerPage":10,"totalPages":3,"totalCount":23,"nextPage":"/blog/tags/cloud/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
