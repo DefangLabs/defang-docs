@@ -61,6 +61,30 @@
     ]
   },
   {
+    "name": "crew-django-redis-postgres",
+    "category": "Python",
+    "readme": "# Crew.ai Django Sample\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-crew-django-redis-postgres-template%26template_owner%3DDefangSamples)\n\nThis sample shows how to use Crew.ai with a Django application. It provides a simple web interface that allows users to input text and receive a summary of the text in real-time using Django Channels with a Redis broker. It uses Celery to handle the Crew.ai tasks in the background with Redis as a broker. It uses Postgres as the database for Django.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f ./compose.local.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `POSTGRES_PASSWORD`     \nThe password for the Postgres database.\n```bash\ndefang config set POSTGRES_PASSWORD\n```\n\n### `SSL_MODE`\n\nThe SSL mode for the Postgres database.\n```bash\ndefang config set SSL_MODE\n```\n\n### `DJANGO_SECRET_KEY`\n\nThe secret key for the Django application.\n```bash\ndefang config set DJANGO_SECRET_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Crew.ai Django Sample\n\nShort Description: A sample application that uses Crew.ai to summarize text in a background task, streamed to the user in real-time.\n\nTags: Django, Celery, Redis, Postgres, AI, ML\n\nLanguages: Python\n",
+    "directoryName": "crew-django-redis-postgres",
+    "title": "Crew.ai Django Sample",
+    "shortDescription": "A sample application that uses Crew.ai to summarize text in a background task, streamed to the user in real-time.",
+    "tags": [
+      "Django",
+      "Celery",
+      "Redis",
+      "Postgres",
+      "AI",
+      "ML"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "configs": [
+      "POSTGRES_PASSWORD",
+      "SSL_MODE",
+      "DJANGO_SECRET_KEY"
+    ]
+  },
+  {
     "name": "csharp-dotnet",
     "category": "C#",
     "readme": "# C# & ASP.NET Core\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-csharp-dotnet-template%26template_owner%3DDefangSamples)\n\nThis sample project is a simple task manager application using ASP.NET Core for the backend and JavaScript for client-side component rendering. \n\nIt showcases how you could deploy a full-stack application with ASP.NET Core and JavaScript using Defang. The Docker setup ensures the app can be easily built and tested during development.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n4. Install [ASP.NET Core](https://dotnet.microsoft.com/download/dotnet-core)\n\n## Development\n\nFor development, we use two local containers, one for the frontend service and one for the backend service in ASP.NET Core. It also uses Caddy as a web server for serving static files.\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: C# & ASP.NET Core\n\nShort Description: A simple task manager application using C# and ASP.NET Core.\n\nTags: ASP.NET Core, JavaScript, C#\n\nLanguages: C#",
