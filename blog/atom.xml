@@ -8,6 +8,58 @@
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[Sample: Starter Kit for RAG + Agents with CrewAI]]></title>
+        <id>https://docs.defang.io/blog/rag-agents-crewai-sample</id>
+        <link href="https://docs.defang.io/blog/rag-agents-crewai-sample"/>
+        <updated>2025-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Going over our sample for RAG + Agents with CrewAI]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-build-a-starter-kit-for-rag--agents">Why Build a Starter Kit for RAG + Agents?<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#why-build-a-starter-kit-for-rag--agents" class="hash-link" aria-label="Direct link to Why Build a Starter Kit for RAG + Agents?" title="Direct link to Why Build a Starter Kit for RAG + Agents?">​</a></h2>
+<p>Let’s be honest: every developer who’s played with LLMs gets that rush of “wow” from the first working demo. But the real headaches show up when you need to stitch LLMs into something production-grade: an app that can pull in real data, coordinate multi-step logic, and more. Suddenly, you’re not just writing single prompts. You’re coordinating between multiple prompts, managing queues, adding vector databases, orchestrating workers, and trying to get things back to the user in real-time. We've found that <a href="https://www.crewai.com/" target="_blank" rel="noopener noreferrer">CrewAI</a> (coordinating prompts, agents, tools) + <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">Django</a> (building an api, managing data), with a bit of <a href="https://docs.celeryproject.org/en/stable/" target="_blank" rel="noopener noreferrer">Celery</a> (orchestrating workers/async tasks), is a really nice set of tools for this. We're also going to use <a href="https://channels.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">Django Channels</a> (real-time updates) to push updates back to the user. And of course, we'll use <a href="https://www.defang.io/" target="_blank" rel="noopener noreferrer">Defang</a> to deploy all that to the cloud.</p>
+<p>If this sounds familiar (or if you're dreading the prospect of dealing with it), you’re the target audience for this sample. Instead of slogging through weeks of configuration and permissions hell, you get a ready-made template that runs on your laptop, then scales—unchanged—to Defang’s Playground, and finally to your own AWS or GCP account. All the gnarly infra is abstracted, so you can focus on getting as much value as possible out of that magical combo of CrewAI and Django.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Just want the sample?</div><div class="admonitionContent_BuS1"><p>You can <a href="https://github.com/DefangSamples/sample-crew-django-redis-postgres-template" target="_blank" rel="noopener noreferrer">find it here</a>.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-demo-in-60-seconds">A Demo in 60 Seconds<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#a-demo-in-60-seconds" class="hash-link" aria-label="Direct link to A Demo in 60 Seconds" title="Direct link to A Demo in 60 Seconds">​</a></h2>
+<p>Imagine you're building a system. It might use multiple LLM calls. It might do complex, branching logic in its prompts. It might need to store embeddings to retrieve things in the future, either to pull them into a prompt, or to return them outright. It might need to store other records that don't have embeddings. Here's a very lightweight version of a system like that, as a starting point:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0YlDcUSfdcc?si=afue_MwrWs2-ZNBV" title="Quick Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-at-a-glance">Architecture at a Glance<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#architecture-at-a-glance" class="hash-link" aria-label="Direct link to Architecture at a Glance" title="Direct link to Architecture at a Glance">​</a></h2>
+<p>Behind the scenes, the workflow is clean and powerful. The browser connects via <a href="https://channels.readthedocs.io/en/latest/deploying.html#http-and-websocket" target="_blank" rel="noopener noreferrer">WebSockets to our app using Django Channels</a>. Heavy work is pushed to a <a href="https://docs.celeryq.dev/en/stable/" target="_blank" rel="noopener noreferrer">Celery worker</a>. That worker generates an <a href="https://en.wikipedia.org/wiki/Embedding_(machine_learning)" target="_blank" rel="noopener noreferrer">embedding</a>, checks <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">Postgres</a> with <a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener noreferrer">pgvector</a> for a match, and either returns the summary or, if there’s no hit, fires up a <a href="https://www.crewai.com/" target="_blank" rel="noopener noreferrer">CrewAI agent</a> to generate one. Every update streams back through <a href="https://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> and Django Channels so users get progress in real time.</p>
+<img src="https://docs.defang.io/img/crew-ai-sample/arch.png" alt="Architecture" style="box-shadow:none;border-radius:0;width:100%;max-width:650px;height:auto">
+<p>Durable state lives in Postgres and Redis. Model services (<a href="https://en.wikipedia.org/wiki/LLM" target="_blank" rel="noopener noreferrer">LLMs</a> and embeddings) are fully swappable, so you can upgrade to different models in the cloud or localize with the <a href="https://docs.docker.com/compose/how-tos/model-runner/" target="_blank" rel="noopener noreferrer">Docker Model Runner</a> without rewriting the full stack.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="under-the-hood-the-services">Under the Hood: The Services<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#under-the-hood-the-services" class="hash-link" aria-label="Direct link to Under the Hood: The Services" title="Direct link to Under the Hood: The Services">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="django--channels">Django + Channels<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#django--channels" class="hash-link" aria-label="Direct link to Django + Channels" title="Direct link to Django + Channels">​</a></h3>
+<p>The Django app is the front door, routing HTTP and WebSocket traffic, serving up the admin, and delivering static content. It’s built on <a href="https://github.com/django/daphne" target="_blank" rel="noopener noreferrer">Daphne</a> and Django Channels, with Redis as the channel layer for real-time group events. Django’s admin is your friend here: to start you can check what summaries exist, but if you start building out your own app, it'll make it a breeze to debug and manage your system.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="postgresql--pgvector">PostgreSQL + pgvector<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#postgresql--pgvector" class="hash-link" aria-label="Direct link to PostgreSQL + pgvector" title="Direct link to PostgreSQL + pgvector">​</a></h3>
+<p>This is where your data lives. Summaries and their 1024-dimension embeddings go here. A simple SQL query checks for close matches by cosine distance, and pgvector’s index keeps search blazing fast. In BYOC (bring-your-own-cloud) mode, flip a single flag and Defang provisions you a production-grade RDS instance.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="redis">Redis<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#redis" class="hash-link" aria-label="Direct link to Redis" title="Direct link to Redis">​</a></h3>
+<p>Redis is doing triple duty: as the message broker and result backend for Celery, and as the channel layer for real-time WebSocket updates. The pub/sub system lets a single worker update all browser tabs listening to the same group. And if you want to scale up, swap a flag and Defang will run managed ElastiCache in production. No code change required.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="celery-worker">Celery Worker<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#celery-worker" class="hash-link" aria-label="Direct link to Celery Worker" title="Direct link to Celery Worker">​</a></h3>
+<p>The Celery worker is where the magic happens. It takes requests off the queue, generates embeddings, checks for similar summaries, and—if necessary—invokes a CrewAI agent to get a new summary. It then persists summaries and pushes progress updates back to the user.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="llm-and-embedding-services">LLM and Embedding Services<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#llm-and-embedding-services" class="hash-link" aria-label="Direct link to LLM and Embedding Services" title="Direct link to LLM and Embedding Services">​</a></h3>
+<p>Thanks to Docker Model Runner, the LLM and embedding services run as containerized, OpenAI-compatible HTTP endpoints. Want to switch to a different model? Change a single line in your compose file. Environment variables like <code>LLM_URL</code> and <code>EMBEDDING_MODEL</code> are injected for you—no secret sharing or hard-coding required.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crewai-workflows">CrewAI Workflows<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#crewai-workflows" class="hash-link" aria-label="Direct link to CrewAI Workflows" title="Direct link to CrewAI Workflows">​</a></h3>
+<p>With CrewAI, your agent logic is declarative and pluggable. This sample keeps it simple—a single summarization agent—but you can add classification, tool-calling, or chain-of-thought logic without rewriting your task runner.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-the-compose-files-work">How the Compose Files Work<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#how-the-compose-files-work" class="hash-link" aria-label="Direct link to How the Compose Files Work" title="Direct link to How the Compose Files Work">​</a></h2>
+<p>In local dev, your <code>compose.local.yaml</code> spins up <a href="https://hub.docker.com/r/ai/gemma3" target="_blank" rel="noopener noreferrer">Gemma</a> and <a href="https://hub.docker.com/r/ai/mxbai-embed-large" target="_blank" rel="noopener noreferrer">Mixedbread</a> models, running fully locally and with no cloud credentials or API keys required. URLs for service-to-service communication are injected at runtime. When you’re ready to deploy, swap in the main <code>compose.yaml</code> which adds Defang’s <code>x-defang-llm</code>, <code>x-defang-redis</code>, and <code>x-defang-postgres</code> flags. Now, Defang maps your Compose intent to real infrastructure—managed model endpoints, Redis, and Postgres—on cloud providers like AWS or GCP. It handles all networking, secrets, and service discovery for you. There’s no YAML rewriting or “dev vs prod” drift.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-three-step-deployment-journey">The Three-Step Deployment Journey<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#the-three-step-deployment-journey" class="hash-link" aria-label="Direct link to The Three-Step Deployment Journey" title="Direct link to The Three-Step Deployment Journey">​</a></h2>
+<p>You can run everything on your laptop with a single <code>docker compose -f ./compose.local.yaml up</code> command—no cloud dependencies, fast iteration, and no risk of cloud charges. When you’re ready for the next step, use <code>defang compose up</code> to push to the Defang Playground. This free hosted sandbox is perfect for trying Defang, demos, or prototyping. It automatically adds TLS to your endpoints and sleeps after a week. For production, use your own AWS or GCP account. <code>DEFANG_PROVIDER=aws defang compose up</code> maps each service to a managed equivalent (ECS, RDS, ElastiCache, Bedrock models), wires up secrets, networking, etc. Your infra. Your data.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="some-best-practices-and-design-choices">Some Best Practices and Design Choices<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#some-best-practices-and-design-choices" class="hash-link" aria-label="Direct link to Some Best Practices and Design Choices" title="Direct link to Some Best Practices and Design Choices">​</a></h2>
+<p>This sample uses vector similarity to try and fetch summaries that are semantically similar to the input. For more robust results, you might want to embed the original input. You can also think about chunking up longer content for finer-grained matches that you can integrate in your CrewAI workflows. Real-time progress via Django Channels beats HTTP polling, especially for LLM tasks that can take a while. The app service is stateless, which means you can scale it horizontally just by adding more containers which is easy to specify in your compose file.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="going-further-extending-the-sample">Going Further: Extending the Sample<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#going-further-extending-the-sample" class="hash-link" aria-label="Direct link to Going Further: Extending the Sample" title="Direct link to Going Further: Extending the Sample">​</a></h2>
+<p>You’re not limited to a single summarization agent. CrewAI makes it trivial to add multi-agent flows (classification, tool use, knowledge retrieval). For big docs, chunk-level embeddings allow granular retrieval. You can wire in tool-calling to connect with external APIs or databases. You can integrate more deeply with Django's ORM and the PGVector tooling that we demo'd in the sample to build more complex agents that actually use RAG.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ready-to-build">Ready to Build?<a href="https://docs.defang.io/blog/rag-agents-crewai-sample#ready-to-build" class="hash-link" aria-label="Direct link to Ready to Build?" title="Direct link to Ready to Build?">​</a></h2>
+<p>With this sample, you’ve got an agent-ready, RAG-ready backend that runs anywhere, with no stacks of YAML or vendor lock-in. Fork it, extend it, productionize it: scale up, add more agents, or swap in different models, or more models!</p>
+<p>Quickstart:</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Local</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">docker compose -f compose.local.yaml up --build</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Playground</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># BYOC</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Setup credentials and then swap &lt;provider&gt; with aws or gcp</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DEFANG_PROVIDER=&lt;provider&gt; defang compose up</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Want more? File an <a href="https://github.com/DefangLabs/samples/issues" target="_blank" rel="noopener noreferrer">issue</a> to request a sample—we'll do everything we can to help you deploy better and faster!</p>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="NoDevOps" term="NoDevOps"/>
+        <category label="Docker Compose" term="Docker Compose"/>
+        <category label="Defang" term="Defang"/>
+        <category label="Sample" term="Sample"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Bridging Local Development and Cloud Deployment]]></title>
         <id>https://docs.defang.io/blog/defang-docker-compose</id>
         <link href="https://docs.defang.io/blog/defang-docker-compose"/>
@@ -967,66 +1019,6 @@ Thank you in advance. Your support means the world.</p>]]></content>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>
         <category label="Debugging" term="Debugging"/>
-        <category label="Defang Compose Update" term="Defang Compose Update"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[June 2024 Defang Compose Update]]></title>
-        <id>https://docs.defang.io/blog/2024/07/01/july-product-updates</id>
-        <link href="https://docs.defang.io/blog/2024/07/01/july-product-updates"/>
-        <updated>2024-07-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Defang Compose Update]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-experience-improvements">Windows Experience Improvements<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#windows-experience-improvements" class="hash-link" aria-label="Direct link to Windows Experience Improvements" title="Direct link to Windows Experience Improvements">​</a></h2>
-<p>For our Windows users out there, we've made some changes to make your Defang experience even smoother:</p>
-<ul>
-<li>You can now install Defang using <code>winget</code>, the Windows Package Manager, for a streamlined setup</li>
-<li>We've introduced a signed binary for added security and peace of mind</li>
-</ul>
-<p>Deploying your apps from Windows just got a little bit nicer.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="one-click-deploy">One-click Deploy<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#one-click-deploy" class="hash-link" aria-label="Direct link to One-click Deploy" title="Direct link to One-click Deploy">​</a></h2>
-<p>We've added a new feature that will make it even easier to get started with Defang. We've created a flow where each sample provides a button that allows you to immediately deploy a template with a GitHub action which will automatically deploy the sample to the Defang Playground. That means you can easily make changes by committing them to your brand new repo, and everything automatically updates in the Playground. It's a great way to get started with Defang and start experimenting with your own projects.</p>
-<p>Try it now <a href="https://portal.defang.dev/sample" target="_blank" rel="noopener noreferrer">from our portal</a>!</p>
-<p><img loading="lazy" alt="screenshot of 1-click deploy UI in portal" src="https://docs.defang.io/assets/images/1-click-deploy-59a918debb5a9dcbcecd2c7b4dd3c26d.png" width="1200" height="744" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-redis-updates">Managed Redis Updates<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#managed-redis-updates" class="hash-link" aria-label="Direct link to Managed Redis Updates" title="Direct link to Managed Redis Updates">​</a></h2>
-<p>We first introduced this last month, but we've since rolled it out to everyone. We also added a sample that showcases the power of managed Redis: <a href="https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template" target="_blank" rel="noopener noreferrer">BullMQ with Redis</a>. It demonstrates how you can use BullMQ and BullBoard with a managed Redis instance to create a powerful job queue system so you can easily build robust, scalable applications in AWS with Defang.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="updated-samples">Updated Samples<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#updated-samples" class="hash-link" aria-label="Direct link to Updated Samples" title="Direct link to Updated Samples">​</a></h2>
-<p>We've updated our sample projects to showcase how to use them with Defang, including:</p>
-<ul>
-<li><a href="https://github.com/DefangSamples/sample-csharp-dotnet-template" target="_blank" rel="noopener noreferrer">ASP.NET Core</a></li>
-<li><a href="https://github.com/DefangSamples/sample-feathersjs-template" target="_blank" rel="noopener noreferrer">Feathers.js</a></li>
-<li><a href="https://github.com/DefangSamples/sample-langchain-template" target="_blank" rel="noopener noreferrer">Flask &amp; LangChain</a></li>
-<li><a href="https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template" target="_blank" rel="noopener noreferrer">BullMQ with Redis</a></li>
-</ul>
-<p>Check them out if you're looking for some inspiration or a starting point for your own projects.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cli-updates">CLI Updates<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#cli-updates" class="hash-link" aria-label="Direct link to CLI Updates" title="Direct link to CLI Updates">​</a></h2>
-<p>We're always looking for ways to enhance the CLI experience. Here's what's new:</p>
-<ul>
-<li><code>npx defang</code> automatically checks to always have the latest version of the CLI</li>
-<li>The output during <code>defang compose up</code> has been streamlined to focus on the most important information</li>
-<li><code>defang tail</code> now supports listening to specific services, making it easier to troubleshoot issues</li>
-<li>We've improved hints and error messages to better guide you when something goes wrong</li>
-<li>The CLI now has improved color support for light theme terminals, making it easier on the eyes</li>
-</ul>
-<p>It's the small refinements that can make a big difference in your workflow.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="other-updates">Other Updates<a href="https://docs.defang.io/blog/2024/07/01/july-product-updates#other-updates" class="hash-link" aria-label="Direct link to Other Updates" title="Direct link to Other Updates">​</a></h2>
-<p>Here are a few more things that didn't quite fit with the rest:</p>
-<ul>
-<li>Visibility into ECS deployment events in BYOC tail logs</li>
-<li>Improvements to ACME certificate generation</li>
-</ul>
-<p>Keep an eye out for these updates in the near future.</p>
-<hr>
-<p>As always, we'd love your help shaping the future of Defang, so let us know what you'd like to see next. Happy deploying! 🚀</p>]]></content>
-        <author>
-            <name>Defang Team</name>
-        </author>
-        <category label="Cloud" term="Cloud"/>
-        <category label="NoDevOps" term="NoDevOps"/>
-        <category label="BYOC" term="BYOC"/>
-        <category label="Windows" term="Windows"/>
-        <category label="Managed Redis" term="Managed Redis"/>
-        <category label="CLI" term="CLI"/>
         <category label="Defang Compose Update" term="Defang Compose Update"/>
     </entry>
 </feed>
