@@ -1,23 +1,7 @@
 # CODEOWNERS file automatically generated based on git history
 # Each entry lists the files or directories owned by the contributor with the highest number of commits.
-/                               136117477+Cyyncy@users.noreply.github.com
-/.github/                       raphael@raphaeltm.com
-/docs/                          llee008844@gmail.com
-/docs/cli/                      raphael@raphaeltm.com
-/docs/concepts/                 llee008844@gmail.com
-/docs/faq/                      llee008844@gmail.com
-/docs/getting-started.mdx       llee008844@gmail.com
-/docs/intro/                    jordan@stephens.io
-/docs/providers/                llee008844@gmail.com
-/docs/tutorials/                llee008844@gmail.com
-/docs/use-cases/                llee008844@gmail.com
-/blog/                          raphael@raphaeltm.com
-/src/                           raphael@raphaeltm.com
-/static/                        raphael@raphaeltm.com
-/scripts/                       raphael@raphaeltm.com
-/docusaurus.config.js           136117477+Cyyncy@users.noreply.github.com
-/babel.config.js                lio+git@lunesu.com
-/sidebars.js                    jordan@stephens.io
-/tsconfig.json                  raphael@raphaeltm.com
-/package.json                   raphael@raphaeltm.com
-/package-lock.json              raphael@raphaeltm.com
+*                               @jordanstephens 
+/.github/                       @raphaeltm 
+/blog/                          @raphaeltm 
+/src/                           @raphaeltm 
+/scripts/                       @raphaeltm 
