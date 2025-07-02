@@ -34,10 +34,16 @@ directories.forEach((sample) => {
     // Languages:
     //
     // We want to extract the title, short description, tags, and languages from the readme. Tags and languages are comma separated lists.
-    const title = readme.match(/Title: (.*)/)[1];
-    const shortDescription = readme.match(/Short Description: (.*)/)[1];
-    const tags = readme.match(/Tags: (.*)/)[1].split(',').map(tag => tag.trim());
-    const languages = readme.match(/Languages: (.*)/)[1].split(',').map(language => language.trim());
+    let title, shortDescription, tags, languages;
+    try {
+        title = readme.match(/Title: (.*)/)[1];
+        shortDescription = readme.match(/Short Description: (.*)/)[1];
+        tags = readme.match(/Tags: (.*)/)[1].split(',').map(tag => tag.trim());
+        languages = readme.match(/Languages: (.*)/)[1].split(',').map(language => language.trim());
+    } catch (error) {
+        console.log(`@@ Failed to parse readme for sample ${sample}`, error);
+        return;
+    }
 
     let configs = new Set();
     try {
