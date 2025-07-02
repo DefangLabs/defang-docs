@@ -138,3 +138,7 @@ img.unstyled {
     background-position: 200% 0;
   }
 }
+
+.menu__list-item.hidden {
+  display: none;
+}

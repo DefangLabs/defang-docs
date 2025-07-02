@@ -3,6 +3,7 @@ const path = require('path');
 const YAML = require('yaml');
 
 const samplesDir = process.argv[2];
+let samplesMdContent = ''
 
 // Inspired by https://github.com/compose-spec/compose-go/blob/main/template/template.go
 const interpolationRegex =
@@ -23,6 +24,12 @@ directories.forEach((sample) => {
     let readme;
     try {
         readme = fs.readFileSync(path.join(samplesDir, sample, 'README.md'), 'utf8');
+        // replace the text after the first `#` with a link to the sample
+        // readme = readme.replace(/^# (.*)/, `# [$1](https://github.com/DefangLabs/samples/tree/main/samples/${sample})`);
+        readme = readme.replace(/^# (.*)/, (match, p1) => {
+            return `# [${p1}](https://github.com/DefangLabs/samples/tree/main/samples/${sample})`;
+        });
+        samplesMdContent += readme + "\n\n";
     } catch (error) {
         readme = `# ${sample}`;
     }
@@ -102,14 +109,30 @@ directories.forEach((sample) => {
 
 const stringified = JSON.stringify(jsonArray, null, 2);
 
-// fs.writeFileSync(path.join(__dirname, '..', 'samples.json'), stringified);
+// exclude any lines which start with '---'
+samplesMdContent = samplesMdContent.replace(/---.*\n/g, '');
+// exclude any lines which include markdown images `![`
+samplesMdContent = samplesMdContent.replace(/^.*!\[.*\]\(.*\).*\n?/gm, '');
 
-// we're going to open up the ../docs/samples.md file and replce [] with the stringified JSON
+// increase the header level of all headers in the markdown content
+samplesMdContent = samplesMdContent.replace(/^(#{1,6})\s/gm, (match) => {
+    const headerLevel = match.length - 1; // number of '#' characters
+    const newHeaderLevel = Math.min(headerLevel + 1, 6);
+    return '#'.repeat(newHeaderLevel) + ' ';
+});
 
-// const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
-// let samplesMdContents = fs.readFileSync(samplesMd, 'utf8');
-// samplesMdContents += `<Samples samples={${stringified}} />`;
-// fs.writeFileSync(samplesMd, samplesMdContents);
+const frontMatter = `---
+sidebar_class_name: hidden
+title: Samples
+description: A collection of sample applications and configurations for Defang Labs.
+---
+`;
+// prefix samplesMdContent with the front matter
+samplesMdContent = frontMatter + "\n\n" + samplesMdContent;
+
+const samplesMd = path.join(__dirname, '..', 'docs', 'samples.md');
+console.log(`@@ Writing samples markdown to ${samplesMd}`);
+fs.writeFileSync(samplesMd, samplesMdContent);
 
 // save the json to the samples.json file in static
 fs.writeFileSync(path.join(__dirname, '..', 'static', 'samples-v2.json'), stringified);
