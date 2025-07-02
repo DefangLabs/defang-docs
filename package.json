@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "prestart": "./scripts/prebuild.sh",
     "start": "docusaurus start",
     "prebuild": "./scripts/prebuild.sh",
     "build": "docusaurus build",
