@@ -27,7 +27,7 @@ June was a big month at Defang. We rolled out powerful features across our CLI, 
 We just launched something we’re really excited about: live AWS cost estimation before you deploy.
 Most devs ship to the cloud without knowing what it’s going to cost and that’s exactly the problem we’re solving. With Defang, you can now go from a local Docker Compose file to fully provisioned AWS infrastructure with live pricing, resource customization, and one-click teardown.
 
-👉 [Check out the docs](https://docs.defang.io)
+👉 [Check out the docs](https://docs.defang.io/docs/tutorials/estimating-aws-deployment-costs)
 
 ## 🧠 CrewAI + Defang Starter Kit
 
@@ -35,7 +35,7 @@ In June, we launched a full-stack starter kit for building real-time RAG and mul
 It’s designed to help you move fast with a production-style setup — including Django, Celery, Channels, Postgres (with pgvector), Redis for live updates, and Dockerized model runners you can easily customize. CrewAI handles the agent workflows, and with Defang, you can deploy the whole thing to the cloud in a single command.
 Whether you’re building a smart Q&A tool or a multi-agent research assistant, this stack gives you everything you need to get started.
 
-👉 [Try it out here](https://github.com/defang-io/crewai-starter-kit)
+👉 [Try it out here](https://github.com/DefangSamples/sample-crew-django-redis-postgres-template)
 
 ## 📊 Deployment Info in Portal
 
@@ -53,7 +53,7 @@ We also released the Defang VS Code Extension, making it even easier to deploy a
 - Built-in tools to manage services
 - Zero config, fast setup
 
-👉 [Try it out here](https://marketplace.visualstudio.com/items?itemName=defang.defang)
+👉 [Try it out here](https://marketplace.visualstudio.com/items?itemName=DefangLabs.defang)
 
 ## 🛠️ Railpacks Progress
 
@@ -67,15 +67,15 @@ You can now try out the Ask Defang chatbot directly within Intercom! This new in
 
 And one more thing: bridging local development and cloud deployment just got easier. Defang now extends Docker Compose directly to AWS, Google Cloud, and DigitalOcean. No new tools, just familiar workflows at cloud scale.
 
-👉 [Read the white paper here](https://defang.io/whitepaper)
+👉 [Read the white paper here](https://defang.io/whitepapers/docker-compose-defang/)
 
 ## Events and Community
 
 In June, we showcased a powerful new demo at AWS events: “What If You Could See AWS Costs Before You Deployed?” Jordan Stephens walked through how to go from Docker Compose to AWS infra with real-time cost estimates and easy teardown, all via Defang.
 
-👉 [Watch the demo here](https://www.youtube.com/watch?v=defang-demo)
+👉 [Watch the demo here](https://www.youtube.com/watch?v=YHmE_6MgcYA)
 
 We can’t wait to see what you deploy with Defang.  
-👉 [Join our Discord](https://discord.gg/defang)
+👉 [Join our Discord](https://discord.gg/9FF5MFAm)
 
 More coming in July.
