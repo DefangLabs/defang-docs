@@ -20,12 +20,12 @@ author: Defang Team
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-June was a big month at Defang. We rolled out powerful features across our CLI, Playground, and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we shipped.
+June was a big month at Defang. We rolled out powerful features across our CLI, Playground, and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we accomplished.
 
 ## 🚀 Live AWS Cost Estimation
 
 We just launched something we’re really excited about: live AWS cost estimation before you deploy.
-Most devs ship to the cloud without knowing what it’s going to cost and that’s exactly the problem we’re solving. With Defang, you can now go from a local Docker Compose file to fully provisioned AWS infrastructure with live pricing, resource customization, and one-click teardown.
+Most devs ship to the cloud without knowing what it’s going to cost and that’s exactly the problem we’re solving. With Defang, you can now estimate the cost of deployment of an Docker Compose application and choose the deployment mode - affordable / balanced / high_availability - that best suits your needs.
 
 👉 [Check out the docs](https://docs.defang.io/docs/tutorials/estimating-aws-deployment-costs)
 
@@ -39,11 +39,11 @@ Whether you’re building a smart Q&A tool or a multi-agent research assistant, 
 
 ## 📊 Deployment Info in Portal
 
-We’ve added active deployment information to Portal. This information shows deployment, etag (id), and provider to help users understand particulars about their deployments. This is the same as the ‘defang deployments’ CLI command.
+We’ve added active deployment information to the Defang Portal. You can now see your currently active deployments across various cloud providers and understand the details of each, while still managing your cloud environments through the provider’s own tools (e.g. the AWS Console).
 
 ## ☁️ Playground Now Runs on AWS + GCP
 
-Internally, we also hit a big milestone: Playground now runs on both AWS and GCP, showing the power of Defang’s multi-cloud infrastructure.
+Internally, we also hit a big milestone: The Defang Playground now runs on both AWS and GCP, showing the power of Defang’s multi-cloud infrastructure. We’ve also enabled load balancing between the two platforms and plan to share a detailed blog post on how it works soon.
 
 ## 🧩 VS Code Extension Released
 
@@ -55,18 +55,13 @@ We also released the Defang VS Code Extension, making it even easier to deploy a
 
 👉 [Try it out here](https://marketplace.visualstudio.com/items?itemName=DefangLabs.defang)
 
-## 🛠️ Railpacks Progress
-
-We also made progress on Railpacks, a new feature designed to make reusable infra patterns easier to deploy. The core PR has been merged, but it’s still going through testing and a few final additions before it’s ready for public release. Stay tuned for more in the next update.
-
 ## 💬 Ask Defang via Intercom
 
-You can now try out the Ask Defang chatbot directly within Intercom! This new integration makes it easier than ever to get instant answers and support while you work.
+You can now try out the Ask Defang chatbot directly within Intercom! This new integration makes it easier than ever to get instant answers and support while you work. Ask Defang itself is deployed using Defang to our own cloud infrastructure.
 
 ## 🐳 Docker x Defang White Paper
 
-And one more thing: bridging local development and cloud deployment just got easier. Defang now extends Docker Compose directly to AWS, Google Cloud, and DigitalOcean. No new tools, just familiar workflows at cloud scale.
-
+And one more thing: bridging local development and cloud deployment just got easier. We’ve published white papers on how Defang extends Docker Compose and GCP workflows to the cloud — using familiar tools at scale. An AWS white paper is coming soon.
 👉 [Read the white paper here](https://defang.io/whitepapers/docker-compose-defang/)
 
 ## Events and Community
