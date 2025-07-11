@@ -63,6 +63,7 @@ You can now try out the Ask Defang chatbot directly within Intercom! This new in
 
 And one more thing: bridging local development and cloud deployment just got easier. We’ve published white papers on how Defang extends Docker Compose and GCP workflows to the cloud — using familiar tools at scale. An AWS white paper is coming soon.
 👉 [Read the white paper here](https://defang.io/whitepapers/docker-compose-defang/)
+👉 [Read the GCP white paper](https://defang.io/whitepapers/gcp-defang/)
 
 ## Events and Community
 
