@@ -4,10 +4,62 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Mon, 16 Jun 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Jul 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[June 2025 Defang Compose Update]]></title>
+            <link>https://docs.defang.io/blog/2025-07-10-product-update</link>
+            <guid>https://docs.defang.io/blog/2025-07-10-product-update</guid>
+            <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Monthly product updates from the Defang team - June 2025]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
+<p>June was a big month at Defang. We rolled out powerful features across our CLI, Playground, and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we accomplished.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-live-aws-cost-estimation">🚀 Live AWS Cost Estimation<a href="https://docs.defang.io/blog/2025-07-10-product-update#-live-aws-cost-estimation" class="hash-link" aria-label="Direct link to 🚀 Live AWS Cost Estimation" title="Direct link to 🚀 Live AWS Cost Estimation">​</a></h2>
+<p>We just launched something we’re really excited about: live AWS cost estimation before you deploy.
+Most devs ship to the cloud without knowing what it’s going to cost and that’s exactly the problem we’re solving. With Defang, you can now estimate the cost of deployment of an Docker Compose application and choose the deployment mode - affordable / balanced / high_availability - that best suits your needs.</p>
+<p>👉 <a href="https://docs.defang.io/docs/tutorials/estimating-aws-deployment-costs" target="_blank" rel="noopener noreferrer">Check out the docs</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-crewai--defang-starter-kit">🧠 CrewAI + Defang Starter Kit<a href="https://docs.defang.io/blog/2025-07-10-product-update#-crewai--defang-starter-kit" class="hash-link" aria-label="Direct link to 🧠 CrewAI + Defang Starter Kit" title="Direct link to 🧠 CrewAI + Defang Starter Kit">​</a></h2>
+<p>In June, we launched a full-stack starter kit for building real-time RAG and multi-agent apps with CrewAI + Defang.
+It’s designed to help you move fast with a production-style setup — including Django, Celery, Channels, Postgres (with pgvector), Redis for live updates, and Dockerized model runners you can easily customize. CrewAI handles the agent workflows, and with Defang, you can deploy the whole thing to the cloud in a single command.
+Whether you’re building a smart Q&amp;A tool or a multi-agent research assistant, this stack gives you everything you need to get started.</p>
+<p>👉 <a href="https://github.com/DefangSamples/sample-crew-django-redis-postgres-template" target="_blank" rel="noopener noreferrer">Try it out here</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-deployment-info-in-portal">📊 Deployment Info in Portal<a href="https://docs.defang.io/blog/2025-07-10-product-update#-deployment-info-in-portal" class="hash-link" aria-label="Direct link to 📊 Deployment Info in Portal" title="Direct link to 📊 Deployment Info in Portal">​</a></h2>
+<p>We’ve added active deployment information to the Defang Portal. You can now see your currently active deployments across various cloud providers and understand the details of each, while still managing your cloud environments through the provider’s own tools (e.g. the AWS Console).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-playground-now-runs-on-aws--gcp">☁️ Playground Now Runs on AWS + GCP<a href="https://docs.defang.io/blog/2025-07-10-product-update#%EF%B8%8F-playground-now-runs-on-aws--gcp" class="hash-link" aria-label="Direct link to ☁️ Playground Now Runs on AWS + GCP" title="Direct link to ☁️ Playground Now Runs on AWS + GCP">​</a></h2>
+<p>Internally, we also hit a big milestone: The Defang Playground now runs on both AWS and GCP, showing the power of Defang’s multi-cloud infrastructure. We’ve also enabled load balancing between the two platforms and plan to share a detailed blog post on how it works soon.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-vs-code-extension-released">🧩 VS Code Extension Released<a href="https://docs.defang.io/blog/2025-07-10-product-update#-vs-code-extension-released" class="hash-link" aria-label="Direct link to 🧩 VS Code Extension Released" title="Direct link to 🧩 VS Code Extension Released">​</a></h2>
+<p>We also released the Defang VS Code Extension, making it even easier to deploy and manage cloud apps right from your editor. No terminal needed.</p>
+<ul>
+<li>One-click deploy</li>
+<li>Built-in tools to manage services</li>
+<li>Zero config, fast setup</li>
+</ul>
+<p>👉 <a href="https://marketplace.visualstudio.com/items?itemName=DefangLabs.defang" target="_blank" rel="noopener noreferrer">Try it out here</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-ask-defang-via-intercom">💬 Ask Defang via Intercom<a href="https://docs.defang.io/blog/2025-07-10-product-update#-ask-defang-via-intercom" class="hash-link" aria-label="Direct link to 💬 Ask Defang via Intercom" title="Direct link to 💬 Ask Defang via Intercom">​</a></h2>
+<p>You can now try out the Ask Defang chatbot directly within Intercom! This new integration makes it easier than ever to get instant answers and support while you work. Ask Defang itself is deployed using Defang to our own cloud infrastructure.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-docker-x-defang-white-paper">🐳 Docker x Defang White Paper<a href="https://docs.defang.io/blog/2025-07-10-product-update#-docker-x-defang-white-paper" class="hash-link" aria-label="Direct link to 🐳 Docker x Defang White Paper" title="Direct link to 🐳 Docker x Defang White Paper">​</a></h2>
+<p>And one more thing: bridging local development and cloud deployment just got easier. We’ve published white papers on how Defang extends Docker Compose and GCP workflows to the cloud — using familiar tools at scale. An AWS white paper is coming soon.
+👉 <a href="https://defang.io/whitepapers/docker-compose-defang/" target="_blank" rel="noopener noreferrer">Read the white paper here</a>
+👉 <a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer">Read the GCP white paper</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-community">Events and Community<a href="https://docs.defang.io/blog/2025-07-10-product-update#events-and-community" class="hash-link" aria-label="Direct link to Events and Community" title="Direct link to Events and Community">​</a></h2>
+<p>In June, we showcased a powerful new demo at AWS events: “What If You Could See AWS Costs Before You Deployed?” Jordan Stephens walked through how to go from Docker Compose to AWS infra with real-time cost estimates and easy teardown, all via Defang.</p>
+<p>👉 <a href="https://www.youtube.com/watch?v=YHmE_6MgcYA" target="_blank" rel="noopener noreferrer">Watch the demo here</a></p>
+<p>We can’t wait to see what you deploy with Defang.<br>
+<!-- -->👉 <a href="https://discord.gg/9FF5MFAm" target="_blank" rel="noopener noreferrer">Join our Discord</a></p>
+<p>More coming in July.</p>]]></content:encoded>
+            <category>Cloud</category>
+            <category>NoDevOps</category>
+            <category>BYOC</category>
+            <category>MCP</category>
+            <category>LLMs</category>
+            <category>Vibe Deploying</category>
+            <category>GCP</category>
+            <category>AWS</category>
+            <category>Events</category>
+            <category>Defang Compose Update</category>
+        </item>
         <item>
             <title><![CDATA[Sample: Starter Kit for RAG + Agents with CrewAI]]></title>
             <link>https://docs.defang.io/blog/rag-agents-crewai-sample</link>
@@ -926,37 +978,6 @@ Thank you in advance. Your support means the world.</p>]]></content:encoded>
             <category>NoDevOps</category>
             <category>BYOC</category>
             <category>DigitalOcean</category>
-            <category>CLI</category>
-            <category>AI</category>
-            <category>Debugging</category>
-            <category>Defang Compose Update</category>
-        </item>
-        <item>
-            <title><![CDATA[July 2024 Defang Compose Update]]></title>
-            <link>https://docs.defang.io/blog/2024/07/31/july-product-updates-2</link>
-            <guid>https://docs.defang.io/blog/2024/07/31/july-product-updates-2</guid>
-            <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Defang Compose Update]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Hey folks! We can’t believe a month has gone by already, time flies when you’re having fun! We continued to make progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug cloud applications. In July, we spent time on a couple of key areas:</p>
-<ol>
-<li>
-<p>As our user-base grows, we wanted to make sure we’re able to scale our <a href="https://docs.defang.io/docs/concepts/defang-playground">Playground</a> environment to be able to handle the load. This involved being able to shard the workload across multiple ALBs and being able to dynamically move some workloads  across shards where possible. With these changes, we are now able handle a large number of concurrent users comfortably. The only noticeable change in behavior you would see is that Defang will now ask you to “<code>compose down</code>” your previous project before you are able to deploy a new project on Playground.</p>
-</li>
-<li>
-<p>The major news this month was the introduction of our “<code>debug</code>” functionality. The motivation for this feature was that while the Defang experience is amazing when everything goes smoothly, we saw users (including our own interns who are helping write all those <a href="https://defang.io/samples" target="_blank" rel="noopener noreferrer">samples</a>) struggle when they hit an error. The underlying reason for the error could come from a variety of sources: an error in the developer’s application (including in their Dockerfile or Compose file), an issue in the way Defang is processing the application, or an issue in the underlying cloud platform (currently, AWS). To the developer, it is often not obvious what the issue is or how to fix it. That got us thinking how we could make this debugging experience “radically simpler” and thus the idea for <code>defang debug</code> was born.</p>
-<p>Now (with CLI v0.5.37 if your application encounters an error that leads to a failed deployment, a failed health-check, or a run-time error, Defang will automatically detect the issue. It will then offer to help you debug it by running the <code>defang debug</code>  command. If you choose to proceed, Defang will apply an LLM model to try to determine the precise cause of the error, with the context of your application source, logs, error code etc. And it will try to come up with one or more actionable insights on how to fix the error. For an example, see the case below:</p>
-<p>Behind the scenes, Defang is having a conversation on your behalf with the LLM to narrow down to the cause of the error.  We would love for you to try the <code>debug</code> feature and give us your feedback so we can improve it further. One future improvement already on our list is the ability to, with user consent, automatically apply a chosen fix and re-try. We are also looking for way to improve the range of failures we are able to diagnose successfully.</p>
-</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="townhall">Townhall<a href="https://docs.defang.io/blog/2024/07/31/july-product-updates-2#townhall" class="hash-link" aria-label="Direct link to Townhall" title="Direct link to Townhall">​</a></h2>
-<p>If you're excited about what's coming next and want to hear more about our vision for the future, join us for our Townhall on August 21st. We'll be sharing more about our roadmap and what we're working on next. We'll also be making sure to take time to answer any questions you have, hear your feedback, and learn more about what you want from Defang!</p>
-<p><strong><a href="https://lu.ma/rlj13eq5" target="_blank" rel="noopener noreferrer">Register here</a></strong></p>
-<hr>
-<p>We’re excited to keep improving Defang to make it the easiest way for you to Develop, Deploy, and Debug cloud application. Stay tuned for more updates next month.</p>]]></content:encoded>
-            <category>Cloud</category>
-            <category>NoDevOps</category>
-            <category>BYOC</category>
             <category>CLI</category>
             <category>AI</category>
             <category>Debugging</category>
