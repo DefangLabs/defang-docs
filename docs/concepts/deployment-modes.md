@@ -24,4 +24,4 @@ Defang provides three deployment modes: `affordable`, `balanced`, and `high_avai
 | Networking | | (like `high_availability`) | Defang will provision a NAT gateway. |
 | Load Balancing | HTTP redirect to HTTPS using `302 Found` | | Termination Protection will be enabled; logs are retained on "down" |
 | DNS | Defang will provision shorter TTLs; zones will be forcefully destroyed | | Defang will provision longer TTLs; records can be overwritten for ZDT |
-| Managed storage | Operations that cause downtime are allowed | | Encryption at rest; Final snapshot created on "down" |
+| Managed Storage | Operations that cause downtime are allowed | | Encryption at rest; Final snapshot created on "down" |
