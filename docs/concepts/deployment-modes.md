@@ -20,7 +20,7 @@ Defang provides three deployment modes: `affordable`, `balanced`, and `high_avai
 | Compute | Using spot instances | (like `affordable`) | On-demand instances |
 | Databases | Defang will provision resources optimized for burstable memory | (like `high_availability`) | Defang will provision resources optimized for production |
 | Deployment | Previous deployments will be spun down before new deployments are spun up. | (like `high_availability`) | Rolling updates will be used to deploy new versions. Defang will gradually replace services while maintaining at least [the original number of replicas](/docs/tutorials/scaling-your-services). |
-| Logs | Logs retained for 1 day to save costs. | Logs retained for 7 days to balance cost and access. | Logs retained for 30 days for compliance. |
+| Logs | 1 day retention | 7 days retention | 30 days retention |
 | Networking | | (like `high_availability`) | Defang will provision a NAT gateway. |
 | Load Balancing | HTTP redirect to HTTPS using `302 Found` | | Termination Protection will be enabled; logs are retained on "down" |
 | DNS | Defang will provision shorter TTLs; zones will be forcefully destroyed | | Defang will provision longer TTLs; records can be overwritten for ZDT |
