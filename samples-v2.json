@@ -594,7 +594,7 @@
   {
     "name": "nextjs",
     "category": "nodejs",
-    "readme": "# [Next.js](https://github.com/DefangLabs/samples/tree/main/samples/nextjs)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-template%26template_owner%3DDefangSamples)\n\nA basic Next.js app with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app.\n\nTags: Next.js, React, Docker, Node.js, TypeScript, JavaScript\n\nLanguages: nodejs\n",
+    "readme": "# [Next.js](https://github.com/DefangLabs/samples/tree/main/samples/nextjs)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-template%26template_owner%3DDefangSamples)\n\nA basic Next.js app with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n## Static Files (Experimental)\n\nThis example supports deployment to AWS as a static site. Static files will be copied to an S3 bucket. In the _affordable_\ndeployment mode (the default), the static files will be served over HTTP from an S3 bucket.\n\n:::info\nNote that some top-level domains (TLDs), such as `.app`, require HSTS, which will disallow browsers from accessing the site over HTTP. If you want to use such a TLD, you must serve the static files over HTTPS by using either the _balanced_ or _high_availability_ deployment mode.\n:::\n\nTo serve the static files over HTTPS, use either the _balanced_ or _high_availability_ deployment mode, which will create a CloudFront distribution in front of the S3 bucket.\n\nTo deploy this project as a static site, run:\n\n```bash\ndefang compose up -f compose.static.yaml --provider=aws --mode=balanced\n```\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app.\n\nTags: Next.js, React, Docker, Node.js, TypeScript, JavaScript, Static\n\nLanguages: nodejs\n",
     "directoryName": "nextjs",
     "title": "Next.js",
     "shortDescription": "A basic Next.js app.",
@@ -604,7 +604,8 @@
       "Docker",
       "Node.js",
       "TypeScript",
-      "JavaScript"
+      "JavaScript",
+      "Static"
     ],
     "languages": [
       "nodejs"
