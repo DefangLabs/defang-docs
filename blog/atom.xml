@@ -2,11 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.defang.io/blog</id>
     <title>Defang Blog</title>
-    <updated>2025-07-10T00:00:00.000Z</updated>
+    <updated>2025-07-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.defang.io/blog"/>
     <subtitle>Defang Blog</subtitle>
     <icon>https://docs.defang.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Simple, Secure, and Scalable GCP Deployments from Docker Compose]]></title>
+        <id>https://docs.defang.io/blog/defang-gcp-compose</id>
+        <link href="https://docs.defang.io/blog/defang-gcp-compose"/>
+        <updated>2025-07-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Announcing our latest whitepaper: How Defang simplifies Google Cloud deployments with Docker Compose]]></summary>
+        <content type="html"><![CDATA[<p><strong>Introducing Our New Whitepaper: Simple, Secure, and Scalable GCP Deployments from Docker Compose</strong></p>
+<p>We’re excited to share our latest whitepaper, <em>Defang + GCP: Simple, Secure, and Scalable Deployments from Docker Compose</em>.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Want to skip the blog?</div><div class="admonitionContent_BuS1"><p><a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer">Read the full whitepaper here.</a></p></div></div>
+<p>Deploying to Google Cloud Platform (GCP) doesn’t have to be complicated. Docker Compose made defining local apps simple, and Defang makes cloud deployments just as easy.</p>
+<p>With Defang, you can:</p>
+<ul>
+<li><strong>Deploy to GCP with a single command.</strong> Go from Compose to Cloud Run, Cloud SQL, and more with just <code>defang compose up --provider=gcp</code>.</li>
+<li><strong>Skip the DevOps overhead.</strong> No need for Terraform, Pulumi, or custom scripts. Defang maps your Compose services to the right GCP resources — compute, storage, networking, and even managed LLMs.</li>
+<li><strong>Enjoy built-in security and scalability.</strong> Defang automates GCP best practices, handling service accounts, secret management, HTTPS, auto-scaling, and more.</li>
+<li><strong>Integrate with your workflow.</strong> Deploy from your terminal, GitHub Actions, or even natural language prompts in VS Code, Cursor, or Windsurf.</li>
+<li><strong>Save costs and avoid surprises.</strong> Choose from affordable, balanced, or high-availability modes with built-in cost estimation coming soon.</li>
+</ul>
+<p>Our whitepaper walks through how Defang integrates with GCP, including how it:</p>
+<p>✅ Builds your containers using Cloud Build<br>
+<!-- -->✅ Manages secure deployments via Cloud Run and managed services<br>
+<!-- -->✅ Supports custom domains, advanced networking, GPUs, LLMs, and more<br>
+<!-- -->✅ Powers CI/CD pipelines with GitHub Actions and Pulumi</p>
+<p>It also highlights how Defang itself deploys real apps like our Ask Defang chatbot using less than 100 lines of Compose on GCP.
+Want to simplify your GCP deployments? Start with Compose, scale with Defang.</p>
+<!-- -->
+<!-- -->
+<div style="margin-top:2rem;margin-bottom:2rem"><a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer" class="button button--primary button--lg">Read the full whitepaper</a></div>]]></content>
+        <author>
+            <name>Defang Team</name>
+        </author>
+        <category label="Google Cloud" term="Google Cloud"/>
+        <category label="GCP" term="GCP"/>
+        <category label="Docker Compose" term="Docker Compose"/>
+        <category label="Cloud Deployment" term="Cloud Deployment"/>
+        <category label="Defang" term="Defang"/>
+        <category label="Whitepaper" term="Whitepaper"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[June 2025 Defang Compose Update]]></title>
         <id>https://docs.defang.io/blog/2025-07-10-product-update</id>
@@ -39,9 +77,9 @@ Whether you’re building a smart Q&amp;A tool or a multi-agent research assista
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-ask-defang-via-intercom">💬 Ask Defang via Intercom<a href="https://docs.defang.io/blog/2025-07-10-product-update#-ask-defang-via-intercom" class="hash-link" aria-label="Direct link to 💬 Ask Defang via Intercom" title="Direct link to 💬 Ask Defang via Intercom">​</a></h2>
 <p>You can now try out the Ask Defang chatbot directly within Intercom! This new integration makes it easier than ever to get instant answers and support while you work. Ask Defang itself is deployed using Defang to our own cloud infrastructure.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-docker-x-defang-white-paper">🐳 Docker x Defang White Paper<a href="https://docs.defang.io/blog/2025-07-10-product-update#-docker-x-defang-white-paper" class="hash-link" aria-label="Direct link to 🐳 Docker x Defang White Paper" title="Direct link to 🐳 Docker x Defang White Paper">​</a></h2>
-<p>And one more thing: bridging local development and cloud deployment just got easier. We’ve published white papers on how Defang extends Docker Compose and GCP workflows to the cloud — using familiar tools at scale. An AWS white paper is coming soon.
-👉 <a href="https://defang.io/whitepapers/docker-compose-defang/" target="_blank" rel="noopener noreferrer">Read the white paper here</a>
-👉 <a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer">Read the GCP white paper</a></p>
+<p>And one more thing: bridging local development and cloud deployment just got easier. We’ve published white papers on how Defang extends Docker Compose and GCP workflows to the cloud — using familiar tools at scale. An AWS white paper is coming soon.</p>
+<p>👉 <a href="https://defang.io/whitepapers/docker-compose-defang/" target="_blank" rel="noopener noreferrer">Read the white paper here</a></p>
+<p>👉 <a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer">Read the GCP white paper</a></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-community">Events and Community<a href="https://docs.defang.io/blog/2025-07-10-product-update#events-and-community" class="hash-link" aria-label="Direct link to Events and Community" title="Direct link to Events and Community">​</a></h2>
 <p>In June, we showcased a powerful new demo at AWS events: “What If You Could See AWS Costs Before You Deployed?” Jordan Stephens walked through how to go from Docker Compose to AWS infra with real-time cost estimates and easy teardown, all via Defang.</p>
 <p>👉 <a href="https://www.youtube.com/watch?v=YHmE_6MgcYA" target="_blank" rel="noopener noreferrer">Watch the demo here</a></p>
@@ -993,49 +1031,6 @@ Thank you in advance. Your support means the world.</p>]]></content>
         <category label="NoDevOps" term="NoDevOps"/>
         <category label="BYOC" term="BYOC"/>
         <category label="Postgres" term="Postgres"/>
-        <category label="DigitalOcean" term="DigitalOcean"/>
-        <category label="CLI" term="CLI"/>
-        <category label="AI" term="AI"/>
-        <category label="Debugging" term="Debugging"/>
-        <category label="Defang Compose Update" term="Defang Compose Update"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[August 2024 Defang Compose Update]]></title>
-        <id>https://docs.defang.io/blog/2024/08/30/august-product-updates</id>
-        <link href="https://docs.defang.io/blog/2024/08/30/august-product-updates"/>
-        <updated>2024-08-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Defang Compose Update]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Wow - what a month of August it has been! We made some big strides of progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug <em>portable</em> cloud applications.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ask-defang">Ask Defang<a href="https://docs.defang.io/blog/2024/08/30/august-product-updates#ask-defang" class="hash-link" aria-label="Direct link to Ask Defang" title="Direct link to Ask Defang">​</a></h2>
-<p>We've just rolled out an initial version of Ask Defang, our AI-driven documentation assistant that can help you navigate the Defang docs and get deploying faster. It's deployed with Defang and using a combination of embeddings run on a GPU-powered service, Defang managed Redis, and OpenAI APIs.</p>
-<p>Check it out <a href="https://docs.defang.io/docs/ask">here</a> or head to <a href="https://ask.defang.io/" target="_blank" rel="noopener noreferrer">ask.defang.io</a> to get started!</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="enhanced-platform-symmetry">Enhanced Platform Symmetry<a href="https://docs.defang.io/blog/2024/08/30/august-product-updates#enhanced-platform-symmetry" class="hash-link" aria-label="Direct link to Enhanced Platform Symmetry" title="Direct link to Enhanced Platform Symmetry">​</a></h2>
-<p>We've been hard at work improving the symmetry between our Playground and BYOC environments as well as <code>docker compose up</code> vs <code>defang compose up</code> to provide a more seamless experience. You can now use multiple compose files and in BYOC the CLI will subscribe to events to monitor service health during deployments.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ai-features-and-debugging-improvements">AI Features and Debugging Improvements<a href="https://docs.defang.io/blog/2024/08/30/august-product-updates#ai-features-and-debugging-improvements" class="hash-link" aria-label="Direct link to AI Features and Debugging Improvements" title="Direct link to AI Features and Debugging Improvements">​</a></h2>
-<p>We've been working on several AI-driven enhancements to make your development process even more efficient. We've addressed key issues, such as file generation failures due to parsing errors and invalid compose files. Also, our Debug Assistant is now more robust, handling context size limits better than before.</p>
-<hr>
-<p><img loading="lazy" alt="Workshop" src="https://docs.defang.io/assets/images/workshop-79369c0a7b7d9cf98de829f7640d1f54.jpg" width="1200" height="800" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="august-events">August Events<a href="https://docs.defang.io/blog/2024/08/30/august-product-updates#august-events" class="hash-link" aria-label="Direct link to August Events" title="Direct link to August Events">​</a></h2>
-<p>This month, we hosted an in-person <a href="https://www.linkedin.com/feed/update/urn:li:activity:7233915052083310595/" target="_blank" rel="noopener noreferrer">workshop</a> to get more developers acquainted with Defang and simplify their cloud app journey. You can view the presentation <a href="https://s.defang.io/cloudjam2024" target="_blank" rel="noopener noreferrer">here</a>. We also held the first-ever DevTools Vancouver <a href="https://www.linkedin.com/posts/defanglabs_devtoolsmeetup-activity-7234599713751060483-zQsg?utm_source=share&amp;utm_medium=member_desktop" target="_blank" rel="noopener noreferrer">meetup</a>, bringing together local DevTool founders, engineers, and enthusiasts.</p>
-<p>Looking ahead, we’re excited to collaborate with <a href="https://mlh.io/" target="_blank" rel="noopener noreferrer">MLH</a>, <a href="https://hackthenorth.com/" target="_blank" rel="noopener noreferrer">Hack the North</a>, <a href="https://lhacks.langaracs.ca/" target="_blank" rel="noopener noreferrer">LangaraHacks</a>, and more in September. If you'd like to attend any of these events, be sure to sign up!</p>
-<hr>
-<img src="https://docs.defang.io/img/august-update/townhall.png" alt="TownHall" style="width:300px">
-<hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="roadmap">Roadmap<a href="https://docs.defang.io/blog/2024/08/30/august-product-updates#roadmap" class="hash-link" aria-label="Direct link to Roadmap" title="Direct link to Roadmap">​</a></h2>
-<p>We're working on a number of new features to make Defang even better. Here are some of the most exciting ones:</p>
-<ul>
-<li><strong>Managed Postgres</strong>: We're working on getting Defang to provision managed Postgres services for you, so you can easily store and query data in your applications.</li>
-<li><strong>DigitalOcean BYOC</strong>: We're working on adding DigitalOcean BYOC to give you even more choice over where you deploy your applications.</li>
-</ul>
-<hr>
-<p>We’re excited to keep enhancing Defang to make it the easiest way for you to Develop, Deploy, and Debug cloud applications. Stay tuned for more updates next month! 🚀</p>]]></content>
-        <author>
-            <name>Defang Team</name>
-        </author>
-        <category label="Cloud" term="Cloud"/>
-        <category label="NoDevOps" term="NoDevOps"/>
-        <category label="BYOC" term="BYOC"/>
         <category label="DigitalOcean" term="DigitalOcean"/>
         <category label="CLI" term="CLI"/>
         <category label="AI" term="AI"/>

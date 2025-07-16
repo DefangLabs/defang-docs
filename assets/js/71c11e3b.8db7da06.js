@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[350],{36136:e=>{e.exports=JSON.parse('{"label":"Docker Compose","permalink":"/blog/tags/docker-compose","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);

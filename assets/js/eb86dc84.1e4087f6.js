@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[575],{84416:e=>{e.exports=JSON.parse('{"label":"Whitepaper","permalink":"/blog/tags/whitepaper","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
