@@ -112,6 +112,10 @@ For help with warnings, check our FAQ at https://s.defang.io/warnings
 
 This estimate will include a line item for the most significant monthly costs associated with your deployment. Each line item will be associated with a compose service if possible. Some resources will be shared between multiple compose services.
 
+:::note
+GCP Cloud Run is billed based on usage, so Cloud Run line items will show as $0.00 in the estimate.
+:::
+
 ## Deploying your project
 
 Now that you have estimated the costs associated with your project. You are ready to deploy to GCP.
