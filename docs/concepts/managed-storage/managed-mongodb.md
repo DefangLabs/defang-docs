@@ -43,13 +43,7 @@ If you do not provide these values, the deployment will fail.
 
 When using managed MongoDB on GCP, you **must** set a `MONGO_INITDB_DATABASE` environment variable with the name of the database to create.
 
-```yaml
-services:
-  db:
-    x-defang-mongodb: true
-    environment:
-      MONGO_INITDB_DATABASE: mydb
-```
+Defang will automatically create a config variable named `<SERVICE_NAME>_URL` that contains the connection string for your MongoDB database. For example, if your service is named `db`, the config variable will be `DB_URL`.
 
 **Important:** GCP will ignore `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` credentials since they are not needed. GCP automatically handles authentication and grants your service access to the MongoDB database.
 
@@ -60,7 +54,7 @@ services:
   app:
     # [...]
     environment:
-      MONGO_URI: mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@db:27017/
+      DB_URL: mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@db:27017/
     depends_on:
       - db
 
