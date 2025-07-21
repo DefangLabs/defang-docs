@@ -61,6 +61,8 @@ services:
   db:
     image: mongo:5
     x-defang-mongodb: true
+    environment:
+      MONGO_INITDB_DATABASE: mydb
 ```
 
 :::warning[Deleting a GCP Firestore MongoDB Database]
