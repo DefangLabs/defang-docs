@@ -51,7 +51,7 @@ services:
       MONGO_INITDB_DATABASE: mydb
 ```
 
-**Important:** Do **NOT** set `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` config variables when using GCP. GCP Firestore handles authentication automatically, and your services will have seamless access to the database without requiring explicit credentials.
+**Important:** GCP will ignore `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` credentials since they are not needed. GCP automatically handles authentication and grants your service access to the MongoDB database.
 
 ### Example
 
