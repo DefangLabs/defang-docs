@@ -69,6 +69,12 @@ services:
     x-defang-mongodb: true
 ```
 
+:::warning[Deleting a GCP Firestore Mongo Database ]
+Please be aware GCP Firestore does not allow deleting of your database when you down your project use `defang compose down`. You must go to the [GCP Cloud Console for Firestore](https://console.cloud.google.com/firestore/databases/) to delete it.
+:::
+
 :::warning[Version]
 AWS DocumentDB is compatible with MongoDB 3.6, 4.0, and 5.0. The `mongo:5` image is compatible with DocumentDB 5.0, so we recommend using this version for your MongoDB service. Deployment will fail for versions higher than 5.
+
+GCP Firestore does now have a configurable version.
 :::
