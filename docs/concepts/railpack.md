@@ -4,8 +4,6 @@ description: Defang will use Railpack to make an OCI-Compliant container image f
 sidebar_position: 500
 ---
 
-
-
 # Railpack
 
 [Railpack](https://railpack.com/) is a tool for building container images from source code with minimal configuration. It is the successor to [Nixpacks](https://nixpacks.com/) and incorporates several lessons learned from running Nixpacks in production at [Railway](https://railway.com/) over the years.
@@ -16,10 +14,10 @@ In Defang deployments, one of the most common points of failure is a missing or 
 
 When you run a Defang Railpack deployment you need 2 components:
 
-A working application
-A valid compose file
+1. A working application
+2. A valid Compose file
 
-Your compose file should not mention a Dockerfile.
+Your Compose file should not mention a Dockerfile.
 
 For example,
 
@@ -48,14 +46,16 @@ If the deployment fails, here are some things you can try.
 
 To allow Railpack to generate a build plan for your project, please structure it to include the following files, or rename existing ones to be compatible.
 
-#### Node
+#### [Node](https://railpack.com/languages/node/)
 
 Your project will be detected as a Node.js application if a `package.json` file exists in the root directory.
 
-Here is an example of a Railpack ready NextJS project.
-Here is an example of a Railpack ready React Vite project.
+Here is an example of:
 
-#### Python
+- A Railpack-ready [React Vite project](https://github.com/DefangLabs/samples/tree/main/samples/react-vite-railpack)
+- A Railpack-ready [NextJS project](https://github.com/DefangLabs/samples/tree/main/samples/nextjs-railpack)
+
+#### [Python](https://railpack.com/languages/python)
 
 Your project will be detected as a Python application if any of these conditions are met:
 
@@ -64,10 +64,12 @@ Your project will be detected as a Python application if any of these conditions
 - A pyproject.toml file exists
 - A Pipfile exists
 
-Here is an example of a Railpack ready Flask project.
-Here is an example of a Railpack ready Django project.
+Here is an example of:
 
-#### Go
+- A Railpack-ready [Django project](https://github.com/DefangLabs/samples/tree/main/samples/django-railpack)
+- A Railpack-ready [Flask project](https://github.com/DefangLabs/samples/tree/main/samples/flask-railpack)
+
+#### [Go](https://railpack.com/languages/golang)
 
 Your project will be detected as a Go application if any of these conditions are met:
 
@@ -75,41 +77,43 @@ Your project will be detected as a Go application if any of these conditions are
 - A go.work file exists in the root directory (Go workspaces)
 - A main.go file exists in the root directory
 
-Here is an example of a Railpack ready Golang project.
+Here is an example of:
 
-#### PHP
+- A Railpack-ready [Golang project](https://github.com/DefangLabs/samples/tree/main/samples/golang-http-form-railpack)
+
+#### [PHP](https://railpack.com/languages/php)
 
 Your project will be detected as a PHP application if any of these conditions are met:
 
 - An index.php file exists in the root directory
 - A composer.json file exists in the root directory
 
-#### Java
+#### [Java](https://railpack.com/languages/java)
 
 Your project will be detected as a Java application if any of these conditions are met:
 
 - A gradlew (Gradle wrapper) file exists in the root directory (to create this, if you don’t have one, run gradle wrapper)
 - A `pom.{xml,atom,clj,groovy,rb,scala,yaml,yml}` file exists in the root directory
 
-#### Ruby
+#### [Ruby](https://railpack.com/languages/ruby)
 
 Your project will be detected as a Ruby application if any of these conditions are met:
 
 - A Gemfile file is present
 
-#### Rust
+#### [Rust](https://railpack.com/languages/rust)
 
 Your project will be detected as a Rust application if any of these conditions are met:
 
 - A Cargo.toml file is present
 
-#### Elixir
+#### [Elixir](https://railpack.com/languages/elixir)
 
 Your project will be detected as a Elixir application if any of these conditions are met:
 
 - A mix.exs file exists in the root directory.
 
-#### Static Sites
+#### [Static Sites](https://railpack.com/languages/staticfile)
 
 Railpack can automatically build and setup a server for static sites that require no build steps. The [Caddy](https://caddyserver.com/) server is used as the underlying web server.
 
@@ -119,3 +123,24 @@ Your project will be automatically detected as a static site if any of these con
 - An index.html file exists in the root directory
 - A public directory exists
 - The `RAILPACK_STATIC_FILE_ROOT` environment variable is set
+
+Static sites are served using the Caddy web server and you need to have the environment variable `PORT` exposed like this in the Compose file to map to the correct port:
+
+```
+services:
+  app:
+    restart: "unless-stopped"
+    build:
+      context: ./app
+    # This is the port you need to add
+    environment:
+      PORT: 5173 # <--- PORT
+    ports:
+      - target: 5173
+        published: 5173
+        mode: ingress
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+```
