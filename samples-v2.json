@@ -184,6 +184,23 @@
     ]
   },
   {
+    "name": "django-railpack",
+    "category": "python",
+    "readme": "# [Django-Railpack](https://github.com/DefangLabs/samples/tree/main/samples/django-railpack)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-django-template%26template_owner%3DDefangSamples)\n\nThis sample is a simple Django to-do app that uses SQLite as the database, which will be reset every time you deploy. **It is not production-ready**. For production use cases, you should check out the Django + Postgres sample.\n\nThe app includes a management command which is run on startup to create a superuser with the username `admin` and password `admin`. This means you can login to the admin interface at `/admin/` and see the Django admin interface without any additional steps. The `example_app` is already registered and the `Todo` model is already set up to be managed in the admin interface.\n\nThe compose files are already set up for you and are ready to be deployed and the image is built by [Railpack](https://railpack.com/). Serving is done using [Gunicorn](https://gunicorn.org/) and uses [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) for static files. The `CSRF_TRUSTED_ORIGINS` setting is configured to allow the app to run on a `defang.dev` subdomain.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration).\n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Make sure to update the `CSRF_TRUSTED_ORIGINS` setting in the `settings.py` file to include an appropriate domain.\n3. Run in a terminal that has access to your AWS environment variables:\n   ```bash\n   defang --provider=aws compose up\n   ```\n\n---\n\nTitle: Django\n\nShort Description: A simple Django app that uses SQLite as the database.\n\nTags: Django, SQLite, Python, Railpack\n\nLanguages: python\n",
+    "directoryName": "django-railpack",
+    "title": "Django",
+    "shortDescription": "A simple Django app that uses SQLite as the database.",
+    "tags": [
+      "Django",
+      "SQLite",
+      "Python",
+      "Railpack"
+    ],
+    "languages": [
+      "python"
+    ]
+  },
+  {
     "name": "elysia",
     "category": "nodejs",
     "readme": "# [Elysia & Bun](https://github.com/DefangLabs/samples/tree/main/samples/elysia)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-elysia-template%26template_owner%3DDefangSamples)\n\nA basic [Elysia](https://elysiajs.com/) app running on [Bun](https://bun.sh/) with a Dockerfile and compose.yaml ready to deploy to AWS with [Defang](https://defang.io).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: Elysia & Bun\n\nShort Description: A basic Elysia app running on Bun with Defang.\n\nTags: Bun, Elysia, TypeScript, JavaScript\n\nLanguages: nodejs\n",
@@ -268,6 +285,22 @@
     ]
   },
   {
+    "name": "flask-railpack",
+    "category": "python",
+    "readme": "# [Flask-Railpack](https://github.com/DefangLabs/samples/tree/main/samples/flask-railpack)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-flask-template%26template_owner%3DDefangSamples)\n\nThis is a basic Flask to-do app that can be deployed with Defang. Note that alongside your `.py` file, include a `requirements.txt` so that the [Railpack](https://railpack.com/) can install the necessary packages with pip.\n\nThis project is intended to provide a basic understanding of how to get started with Flask on Defang. The items are stored in memory and are lost when the server is restarted. **It is not intended for production use**. If you need something production ready, you should use a managed database like Postgres or MySQL.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration).\n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n   ```bash\n   defang --provider=aws compose up\n   ```\n\n---\n\nTitle: Flask\n\nShort Description: A basic Flask to-do app.\n\nTags: Flask, Python, Railpack\n\nLanguages: python\n",
+    "directoryName": "flask-railpack",
+    "title": "Flask",
+    "shortDescription": "A basic Flask to-do app.",
+    "tags": [
+      "Flask",
+      "Python",
+      "Railpack"
+    ],
+    "languages": [
+      "python"
+    ]
+  },
+  {
     "name": "golang-http",
     "category": "golang",
     "readme": "# [Go HTTP Server](https://github.com/DefangLabs/samples/tree/main/samples/golang-http)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-template%26template_owner%3DDefangSamples)\n\nA very simple example of a Go service that listens on a port and returns information about the request.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: Go HTTP Server\n\nShort Description: A simple Go application that echoes back the request.\n\nTags: Go, HTTP\n\nLanguages: golang\n",
@@ -292,6 +325,22 @@
     "tags": [
       "Go",
       "HTTP"
+    ],
+    "languages": [
+      "golang"
+    ]
+  },
+  {
+    "name": "golang-http-form-railpack",
+    "category": "golang",
+    "readme": "# [Golang-Http-Form-Railpack](https://github.com/DefangLabs/samples/tree/main/samples/golang-http-form-railpack)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-golang-http-form-template%26template_owner%3DDefangSamples)\n\nThis Go application demonstrates a simple form submission using the standard net/http library. Users can input their first name into a form, and upon submission, they will be greeted personally by the application.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration).\n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n   ```bash\n   defang --provider=aws compose up\n   ```\n\n---\n\nTitle: Go HTTP Form\n\nShort Description: A simple Go application that demonstrates form submission using the net/http library.\n\nTags: Go, HTTP, Railpack\n\nLanguages: golang\n",
+    "directoryName": "golang-http-form-railpack",
+    "title": "Go HTTP Form",
+    "shortDescription": "A simple Go application that demonstrates form submission using the net/http library.",
+    "tags": [
+      "Go",
+      "HTTP",
+      "Railpack"
     ],
     "languages": [
       "golang"
@@ -714,6 +763,26 @@
     ]
   },
   {
+    "name": "nextjs-railpack",
+    "category": "nodejs",
+    "readme": "# [Next.js-Railpack](https://github.com/DefangLabs/samples/tree/main/samples/nextjs-railpack)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nextjs-template%26template_owner%3DDefangSamples)\n\nA simple Next.js app with a compose.yaml, ready to deploy to AWS using [Defang](https://defang.io). The container image is automatically built by [Railpack](https://railpack.com/).\n\n## Steps\n\n1. [Install Defang](https://docs.defang.io/docs/getting-started/installing)\n2. [Authenticate with Defang](https://docs.defang.io/docs/getting-started/authenticating)\n3. (optional) [Authenticate with AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\n4. Run `defang compose up` in the root of this project\n\n---\n\nTitle: Next.js\n\nShort Description: A basic Next.js app.\n\nTags: Next.js, React, Node.js, TypeScript, JavaScript, Static, Railpack\n\nLanguages: nodejs\n",
+    "directoryName": "nextjs-railpack",
+    "title": "Next.js",
+    "shortDescription": "A basic Next.js app.",
+    "tags": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "Static",
+      "Railpack"
+    ],
+    "languages": [
+      "nodejs"
+    ]
+  },
+  {
     "name": "nocodb",
     "category": "Dockerfile",
     "readme": "# [NocoDB](https://github.com/DefangLabs/samples/tree/main/samples/nocodb)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-nocodb-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to deploy a Nocodb instance with Defang. It's an open source alternative to AirTable, that makes it easy to organize and manage data.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. A Postgres database\n3. S3 bucket and credentials, or S3 compatible alternative\n4. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n5. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration). Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `NC_DB`\n\nPostgres database URL. NocoDB uses an odd, custom format for this. It should look like this: `pg://my.pg.hostname.com:5432?u=postgres&p=password&d=nocodb&ssl=true`. [Neon](https://neon.tech/) has a free tier and is easy to set up.\n\n### `NC_S3_ENDPOINT`\n\nS3 endpoint URL. [Wasabi](https://wasabi.com/) is a simple option for this if you don't already have an S3 bucket or don't have an AWS account you can use.\n\n### `NC_S3_BUCKET_NAME`\n\nName of the S3 bucket.\n\n### `NC_S3_REGION`\n\nRegion of the S3 bucket.\n\n### `NC_S3_ACCESS_KEY`\n\nAccess key for the S3 bucket.\n\n### `NC_S3_ACCESS_SECRET`\n\nAccess secret for the S3 bucket.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Use the deploy the configuration values specified above using the [`defang config set` command](https://docs.defang.io/docs/concepts/configuration).\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, we use a local postgres container and a volume mount for file uploads. To run the app locally, just run:\n\n`docker compose --file compose.dev.yaml up --build`\n\n---\n\nTitle: NocoDB\n\nShort Description: An open source alternative to AirTable.\n\nTags: NocoDB\n\nLanguages: Dockerfile\n",
@@ -1126,6 +1195,24 @@
       "Vite",
       "JavaScript",
       "Frontend"
+    ],
+    "languages": [
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "react-vite-railpack",
+    "category": "JavaScript",
+    "readme": "# [React-Vite-Railpack](https://github.com/DefangLabs/samples/tree/main/samples/react-vite-railpack)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-react-template%26template_owner%3DDefangSamples)\n\nThis sample shows how to get a simple React app up and running with Defang.\nIt includes Vite and ESLint, which are common build tools for React development. The container image is automatically built by [Railpack](https://railpack.com/).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n\n## Development\n\nTo run the application locally, you can use the following command (make sure you've got `npm` and [Node.js](https://nodejs.org/en) installed):\n\n```bash\nnpm install\nnpm run dev\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n   ```bash\n   defang --provider=aws compose up\n   ```\n\n---\n\nTitle: React\n\nShort Description: A minimal React app running on Defang.\n\nTags: React, Vite, JavaScript, Frontend, Railpack\n\nLanguages: JavaScript\n",
+    "directoryName": "react-vite-railpack",
+    "title": "React",
+    "shortDescription": "A minimal React app running on Defang.",
+    "tags": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Frontend",
+      "Railpack"
     ],
     "languages": [
       "JavaScript"
