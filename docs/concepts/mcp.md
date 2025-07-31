@@ -23,13 +23,14 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 Ensure that you have the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) installed.
 :::tip[Recommended Installtion]
 Install the Defang CLI using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
-:::
-
-Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
 
 ```bash
 defang mcp setup --client=<your-ide>
 ```
+
+:::
+
+Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
 
 Once the command completes, you may need to restart your IDE for the changes to take effect.
 
@@ -37,14 +38,11 @@ Once the MCP Server is running, you can access the Defang MCP tools directly thr
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
 
-:::warning
-'npx' is supported but not recommended
+`npx` is supported but not recommended
 
 ```bash
 npx -y defang@latest mcp setup --client=<your-ide>
 ```
-
-:::
 
 ## Supported IDEs
 
