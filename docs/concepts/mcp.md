@@ -21,8 +21,11 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 ## Installation
 
 Ensure that you have the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) installed.
-:::tip[Recommended Installtion]
-Install the Defang CLI using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
+
+Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
+
+:::tip[Recommended Installation]
+Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
 defang mcp setup --client=<your-ide>
@@ -30,15 +33,13 @@ defang mcp setup --client=<your-ide>
 
 :::
 
-Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
-
 Once the command completes, you may need to restart your IDE for the changes to take effect.
 
 Once the MCP Server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
 
-`npx` is supported but not recommended
+Note that `npx` installation is supported, but not recommended.
 
 ```bash
 npx -y defang@latest mcp setup --client=<your-ide>
@@ -104,6 +105,8 @@ defang mcp setup --client=kiro
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
+![Kiro](/img/mcp-concept/kiro.png)
+
 ### Claude Desktop
 
 While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
@@ -140,7 +143,7 @@ Given a project name or directory, the `destroy` tool identifies any services de
 
 ### `estimate`
 
-The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for [cost estimation](/docs/concepts/estimation.md). Currently, the tool supports two providers: `AWS` or `GCP`.
+The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports two providers: `AWS` or `GCP`.
 
 ### `list_configs`
 
@@ -196,6 +199,10 @@ You can list, set and remove Defang configs for a project:
 
 ```
 what defang configs do I have set for this project?
+```
+
+```
+list all the defang configs I have set for this project
 ```
 
 ```
