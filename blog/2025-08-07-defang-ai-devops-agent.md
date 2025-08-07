@@ -1,7 +1,7 @@
 ---
 title: "Defang: Your AI DevOps Agent"
 description: "From Vibe-Coding to Production… Without a DevOps Team"
-slug: 2025-08-07-product-update
+slug: defang-your-ai-devops-agent
 tags: [Cloud, NoDevOps, BYOC, MCP, LLMs, Vibe Deploying, GCP, AWS]
 author: Defang Team
 ---
@@ -14,7 +14,7 @@ Building apps has never been easier. Tools like Cursor, Windsurf, Lovable, V0, a
 
 And with the recently released AWS Kiro, we have now entered a new phase of AI-assisted development called "spec-driven development" where the AI breaks down the app development task even further. You can think of a "PM agent" that goes from prompt to a requirements document, and then an "Architect agent" that goes from the requirements document to a design document, which is then used by "Dev", "Test" and "Docs" agents to generate app code, tests, and documentation respectively. This approach is much more aligned with enterprise use cases and produces higher quality output.
 
-## The hard part isn’t building. It’s shipping
+## The Hard Part Isn’t Building. It’s Shipping.
 
 However, cloud app deployment remains a major challenge! As Andrej Karpathy shared during his [recent YC talk](https://www.youtube.com/watch?v=LCEmiRjPEtQ):
 
