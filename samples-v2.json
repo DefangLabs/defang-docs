@@ -1,5 +1,27 @@
 [
   {
+    "name": "agentic-langgraph",
+    "category": "TypeScript",
+    "readme": "# [Agentic LangGraph](https://github.com/DefangLabs/samples/tree/main/samples/agentic-langgraph)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-agentic-langgraph-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates a LangGraph Agent application deployed with Defang. You can customize the agent's tools as needed. For example, it includes a Tavily Search tool for performing search queries, which requires a `TAVILY_API_KEY` (see [Configuration](#configuration) for setup details).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `TAVILY_API_KEY`\nA Tavily API key for accessing [Tavily Search](https://www.tavily.com/). \n```bash\ndefang config set TAVILY_API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Agentic LangGraph\n\nShort Description: A LangGraph Agent application that can use tools, deployed with Defang. \n\nTags: Agent, LangGraph, LangChain, AI, OpenAI, Tavily\n\nLanguages: TypeScript\n",
+    "directoryName": "agentic-langgraph",
+    "title": "Agentic LangGraph",
+    "shortDescription": "A LangGraph Agent application that can use tools, deployed with Defang. ",
+    "tags": [
+      "Agent",
+      "LangGraph",
+      "LangChain",
+      "AI",
+      "OpenAI",
+      "Tavily"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "configs": [
+      "TAVILY_API_KEY"
+    ]
+  },
+  {
     "name": "angular-express",
     "category": "nodejs",
     "readme": "# [Angular & Node.js](https://github.com/DefangLabs/samples/tree/main/samples/angular-express)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-angular-express-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to deploy a full-stack Angular and Node.js application with Defang. It uses Socket.IO for real-time communication. The Docker setup ensures the app can be easily built and deployed.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n4. Install [Node.js](https://nodejs.org/en/download/package-manager/)\n5. Install [Angular CLI](https://angular.io/cli)\n\n## Development\nFor development, we use two local containers, one for the frontend Angular service and one for the backend service in Express. It also uses Caddy as a web server for serving static files. \n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: Angular & Node.js\n\nShort Description: A full-stack application using Angular for the frontend and Node.js with Socket.IO for the backend, containerized with Docker.\n\nTags: Angular, Node.js, Socket.IO, TypeScript, JavaScript\n\nLanguages: nodejs",
