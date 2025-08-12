@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[1309],{59925:s=>{s.exports=JSON.parse('{"label":"Cost Estimation","permalink":"/blog/tags/cost-estimation","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
