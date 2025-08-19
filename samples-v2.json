@@ -1,5 +1,31 @@
 [
   {
+    "name": "agentic-autogen",
+    "category": "Python",
+    "readme": "# [Agentic Autogen](https://github.com/DefangLabs/samples/tree/main/samples/agentic-autogen)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-agentic-autogen-template%26template_owner%3DDefangSamples)\n\nThis sample shows an agentic Autogen application using Mistral and FastAPI, deployed with Defang. For demonstration purposes, it will require a [Mistral AI](https://mistral.ai/) API key (see [Configuration](#configuration) for more details). However, you are free to modify it to use a different LLM, say the [Defang OpenAI Access Gateway](https://github.com/DefangLabs/openai-access-gateway/) service, as an alternative. Note that the Vite React frontend is served through the FastAPI backend so that they can be treated as one service in production.\n \n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `MISTRAL_API_KEY`\nAn API key to access the [Mistral AI API](https://mistral.ai/).\n```bash\ndefang config set MISTRAL_API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Agentic Autogen\n\nShort Description: An Autogen agent application using Mistral and FastAPI, deployed with Defang.\n\nTags: Agent, Autogen, Mistral, FastAPI, Vite, React, Python, JavaScript, AI\n\nLanguages: Python, JavaScript\n",
+    "directoryName": "agentic-autogen",
+    "title": "Agentic Autogen",
+    "shortDescription": "An Autogen agent application using Mistral and FastAPI, deployed with Defang.",
+    "tags": [
+      "Agent",
+      "Autogen",
+      "Mistral",
+      "FastAPI",
+      "Vite",
+      "React",
+      "Python",
+      "JavaScript",
+      "AI"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript"
+    ],
+    "configs": [
+      "MISTRAL_API_KEY"
+    ]
+  },
+  {
     "name": "agentic-langgraph",
     "category": "TypeScript",
     "readme": "# [Agentic LangGraph](https://github.com/DefangLabs/samples/tree/main/samples/agentic-langgraph)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-agentic-langgraph-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates a LangGraph Agent application deployed with Defang. You can customize the agent's tools as needed. For example, it includes a Tavily Search tool for performing search queries, which requires a `TAVILY_API_KEY` (see [Configuration](#configuration) for setup details).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `TAVILY_API_KEY`\nA Tavily API key for accessing [Tavily Search](https://www.tavily.com/). \n```bash\ndefang config set TAVILY_API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Agentic LangGraph\n\nShort Description: A LangGraph Agent application that can use tools, deployed with Defang. \n\nTags: Agent, LangGraph, LangChain, AI, OpenAI, Tavily\n\nLanguages: TypeScript\n",
