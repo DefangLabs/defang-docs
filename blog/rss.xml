@@ -4,10 +4,72 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Tue, 12 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Deploying Agentic Apps to the Cloud Shouldn’t Be This Hard…]]></title>
+            <link>https://docs.defang.io/blog/agentic-apps</link>
+            <guid>https://docs.defang.io/blog/agentic-apps</guid>
+            <pubDate>Fri, 22 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Agentic apps, cloud-native infrastructure, and how Defang simplifies deployment]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Agentic Apps" src="https://docs.defang.io/assets/images/agentic-apps-e30d665582f96df808f5993994493e98.png" width="2560" height="1440" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deploying-agentic-apps-to-the-cloud-shouldnt-be-this-hard">Deploying Agentic Apps to the Cloud Shouldn’t Be This Hard…<a href="https://docs.defang.io/blog/agentic-apps#deploying-agentic-apps-to-the-cloud-shouldnt-be-this-hard" class="hash-link" aria-label="Direct link to Deploying Agentic Apps to the Cloud Shouldn’t Be This Hard…" title="Direct link to Deploying Agentic Apps to the Cloud Shouldn’t Be This Hard…">​</a></h2>
+<p>Agentic apps are redefining how software is built: multi-agent workflows, persistent memory, tool-using LLMs, and orchestrated autonomy. But deploying them to the cloud is still painful - for example, your agentic app typically needs to provision:</p>
+<ul>
+<li>Managed databases like Postgres or MongoDB</li>
+<li>Fast, scalable caching (hello Redis)</li>
+<li>Containerized compute that scales</li>
+<li>Secure networking and service discovery</li>
+<li>Managed LLMs like AWS Bedrock or GCP Vertex AI</li>
+</ul>
+<p>And for many teams, these apps must run inside the customer’s cloud, where sensitive data lives and compliance rules apply. That means you cannot just spin up your own environment and call it a day. Instead, you are deploying across AWS, GCP, DigitalOcean, or whichever stack your customers demand, each with its own APIs, quirks, and limitations.</p>
+<p>Now you are not just building agents; you are picking the right infrastructure, rewriting IaC templates for every provider, and untangling the edge cases of each cloud.</p>
+<p>The result: weeks of DevOps headaches, lost momentum, and engineers stuck wiring infrastructure instead of shipping agents.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="we-made-it-simple-with-cloud-native-support-for-agentic-apps">We Made it Simple with Cloud Native Support for Agentic Apps<a href="https://docs.defang.io/blog/agentic-apps#we-made-it-simple-with-cloud-native-support-for-agentic-apps" class="hash-link" aria-label="Direct link to We Made it Simple with Cloud Native Support for Agentic Apps" title="Direct link to We Made it Simple with Cloud Native Support for Agentic Apps">​</a></h2>
+<p>That’s where Defang comes in. We make it easy to deploy full-stack agentic apps to your cloud of choice: native, secure, and scalable.
+Defang understands the common ingredients of agentic apps and makes them first-class citizens:</p>
+<ul>
+<li>Compute: Your Dockerized services deploy as cloud-native workloads (e.g. AWS ECS, or GCP Cloud Run)</li>
+<li>Databases: Provision managed Postgres or MongoDB with one config line</li>
+<li>Caching: Add Redis and Defang spins up a managed Redis instance in your cloud</li>
+<li>LLMs: Integrate directly with Bedrock or Vertex AI - even provision an OpenAI gateway for compatibility with OpenAI APIs.</li>
+<li>Secure Defaults: : TLS, secrets, IAM, and service accounts handled out of the box</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="built-for-all-your-favorite-agentic-frameworks">Built for All your Favorite Agentic Frameworks<a href="https://docs.defang.io/blog/agentic-apps#built-for-all-your-favorite-agentic-frameworks" class="hash-link" aria-label="Direct link to Built for All your Favorite Agentic Frameworks" title="Direct link to Built for All your Favorite Agentic Frameworks">​</a></h2>
+<p>Defang works seamlessly with leading agentic frameworks. Try them out with our ready-to-deploy samples:</p>
+<ul>
+<li><a href="https://github.com/DefangLabs/samples/tree/main/samples/agentic-autogen" target="_blank" rel="noopener noreferrer">Autogen</a> - demo featuring Mistral AI + FastAPI, deployable with Defang’s OpenAI Access Gateway.</li>
+<li><a href="https://docs.defang.io/blog/2025/06/16/crew-ai-sample" target="_blank" rel="noopener noreferrer">CrewAI</a> - sample app showing multi-agent orchestration in action.</li>
+<li><a href="https://github.com/DefangLabs/samples/tree/main/samples/agentic-langgraph" target="_blank" rel="noopener noreferrer">LangGraph</a> - workflow sample that defines and controls multi-step agentic graphs with LangChain.</li>
+</ul>
+<p>More framework templates coming soon.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-it-matters">Why It Matters<a href="https://docs.defang.io/blog/agentic-apps#why-it-matters" class="hash-link" aria-label="Direct link to Why It Matters" title="Direct link to Why It Matters">​</a></h2>
+<p>Agentic apps need to be fast, secure, and ready to scale. Defang delivers cloud-native deployments in your environment (AWS, GCP, DO), so you can move from idea to production quickly with consistent behavior across dev, test, and prod.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-developer-journey-simplified">The Developer Journey, Simplified<a href="https://docs.defang.io/blog/agentic-apps#the-developer-journey-simplified" class="hash-link" aria-label="Direct link to The Developer Journey, Simplified" title="Direct link to The Developer Journey, Simplified">​</a></h2>
+<ol>
+<li>Build your agentic app locally using Docker Compose</li>
+<li>Test in Defang's free playground with <code>defang compose up</code></li>
+<li>Deploy to your cloud:</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up --provider=aws  # or gcp, do</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>It just works. No Terraform. No YAML explosion. No vendor lock-in.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-future-of-ai-apps-is-agentic-and-cloud-native">The Future of AI Apps Is Agentic and Cloud-Native<a href="https://docs.defang.io/blog/agentic-apps#the-future-of-ai-apps-is-agentic-and-cloud-native" class="hash-link" aria-label="Direct link to The Future of AI Apps Is Agentic and Cloud-Native" title="Direct link to The Future of AI Apps Is Agentic and Cloud-Native">​</a></h2>
+<p>Agility and scalability should not be a trade-off. With Defang, you get both. Developers focus on agents, tools, and outcomes. Defang takes care of the cloud infrastructure.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-out">Try it out<a href="https://docs.defang.io/blog/agentic-apps#try-it-out" class="hash-link" aria-label="Direct link to Try it out" title="Direct link to Try it out">​</a></h2>
+<p>Explore more samples at <a href="https://docs.defang.io/" target="_blank" rel="noopener noreferrer">docs.defang.io</a>
+Join our community on <a href="https://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a></p>]]></content:encoded>
+            <category>Agentic Apps</category>
+            <category>AI</category>
+            <category>LLMs</category>
+            <category>Cloud</category>
+            <category>AWS</category>
+            <category>GCP</category>
+            <category>DigitalOcean</category>
+            <category>DevOps</category>
+            <category>Deployments</category>
+        </item>
         <item>
             <title><![CDATA[July 2025 Defang Compose Update]]></title>
             <link>https://docs.defang.io/blog/2025-08-12-product-update</link>
@@ -917,60 +979,6 @@ Thank you in advance. Your support means the world.</p>]]></content:encoded>
             <category>GCP</category>
             <category>AWS</category>
             <category>DigitalOcean</category>
-            <category>CLI</category>
-            <category>AI</category>
-            <category>Debugging</category>
-            <category>Defang Compose Update</category>
-        </item>
-        <item>
-            <title><![CDATA[October 2024 Defang Compose Update]]></title>
-            <link>https://docs.defang.io/blog/2024/11/13/october-product-updates</link>
-            <guid>https://docs.defang.io/blog/2024/11/13/october-product-updates</guid>
-            <pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Defang Compose Update]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update" src="https://docs.defang.io/assets/images/defang-compose-update-e4ae8b54fccfc3690b00a6e8b3f46b24.webp" width="1200" height="630" class="img_ev3q"></p>
-<p>Hi everyone,</p>
-<p>We are a little late getting our monthly update out this time, but we did ship a number of important updates in October that we would like to inform you about. And more is coming… stay tuned for that!</p>
-<ol>
-<li>
-<p><strong>New CLI version 0.6.5</strong>: this was a big release with a number of improvements and bug fixes. You can find details in the release notes <a href="https://github.com/DefangLabs/defang/releases/tag/v0.6.5" target="_blank" rel="noopener noreferrer">here</a>, but to highlight a few:</p>
-<ul>
-<li><code>defang --provider aws</code>&nbsp;shows improved error message if unauthenticated</li>
-<li>Added <code>--wait</code> and <code>--wait-timeout</code> flags</li>
-<li>Improved&nbsp;<code>generate</code>&nbsp;menu: all samples shown (previously these were restricted by language), and we moved the "Generate with AI" option to now be shown in the search filter.</li>
-</ul>
-</li>
-<li>
-<p><strong>AI Debug for BYOC</strong>: AI Debug feature is incredibly useful in helping users find and fix issues when something goes wrong. Our initial version only worked on Playground, but now we have extended this to BYOC environments. We hope this makes it even easier for you to deploy your apps to AWS, DigitalOcean, etc.</p>
-</li>
-<li>
-<p>A range of other <strong>improvements</strong>, including</p>
-<ul>
-<li>Network <code>aliases</code>&nbsp;support</li>
-<li>GDPR Delete Me: You can now delete your Defang account from the Defang Portal</li>
-<li>30min time-out for the <a href="https://docs.defang.io/docs/concepts/deployments">deployments</a> to avoid runaway tasks in your account</li>
-<li>Allow Postgres major version upgrade, e.g. changing the image from<code>postgres:14</code> to <code>postgres:16</code> in your Compose file (Currently, we only support this in <code>--mode development</code>, we will explore ways to support in other modes in the future.)</li>
-<li>More feedback logs when containers exit, e.g. failing health-checks</li>
-<li>Fixes for multiple BYOD <a href="https://docs.defang.io/docs/concepts/domains">domains</a> in a single account</li>
-</ul>
-</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events-and-adoption">Events and Adoption<a href="https://docs.defang.io/blog/2024/11/13/october-product-updates#events-and-adoption" class="hash-link" aria-label="Direct link to Events and Adoption" title="Direct link to Events and Adoption">​</a></h2>
-<p>In October, the Defang team was actively involved in a range of exciting events. We participated in <a href="https://ghw.mlh.io/events/cloud" target="_blank" rel="noopener noreferrer">MLH Cloud Week</a>, <a href="https://stormhacks.com/" target="_blank" rel="noopener noreferrer">StormHacks</a>, and hosted a DevTools Vancouver <a href="https://lu.ma/devtools2" target="_blank" rel="noopener noreferrer">meetup</a>, bringing together local DevTool founders, engineers, and enthusiasts. It was inspiring to see Defang in action, helping these hackers build their amazing projects.</p>
-<p><img loading="lazy" alt="DevToolsMeetup" src="https://docs.defang.io/assets/images/devtools-meetup-14f062c9f1ab3aeb3938a5ed2392a0ff.jpg" width="3000" height="2057" class="img_ev3q"></p>
-<p>When we shipped our Public Beta earlier in 2024, we had a goal to reach <strong>1000 users</strong> by end of year. <strong>We are pleased to announce that we have already reached this milestone a couple of months in advance!</strong> We are excited to see the momentum behind the product and how our users are using Defang for developing and deploying a variety of different applications. Thank you for your support!</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-road-ahead">The Road Ahead<a href="https://docs.defang.io/blog/2024/11/13/october-product-updates#the-road-ahead" class="hash-link" aria-label="Direct link to The Road Ahead" title="Direct link to The Road Ahead">​</a></h2>
-<p>The team is now heads-down dotting the i’s and crossing the t’s so we can release Defang V1 before end of year. This will enable customers to use Defang for production workloads. We look forward to sharing more in our next monthly update.</p>
-<hr>
-<img src="https://docs.defang.io/img/october-update/coffee-chat.png" alt="CoffeeChat" style="width:300px">
-<hr>
-<p>As always, we appreciate your feedback and are committed to making Defang the easiest way to develop, deploy, and debug your cloud applications. Go build something awesome! 🚀</p>]]></content:encoded>
-            <category>Cloud</category>
-            <category>NoDevOps</category>
-            <category>BYOC</category>
-            <category>Postgres</category>
-            <category>DigitalOcean</category>
-            <category>AWS</category>
             <category>CLI</category>
             <category>AI</category>
             <category>Debugging</category>
