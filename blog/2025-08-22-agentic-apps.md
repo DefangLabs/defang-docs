@@ -57,7 +57,7 @@ Agentic apps need to be fast, secure, and ready to scale. Defang delivers cloud-
 3. Deploy to your cloud:
 
 ```bash
-defang compose up --provider=aws  # or gcp, do
+defang compose up --provider=aws  # or gcp, digitalocean
 ```
 
 It just works. No Terraform. No YAML explosion. No vendor lock-in.
