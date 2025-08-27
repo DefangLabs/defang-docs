@@ -177,24 +177,7 @@ See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws).
 
 ### Deploying to GCP
 
-If you're deploying to GCP, you'll need to invoke `defang compose up` with your GCP project id in the environment:
-
-```
-GCP_PROJECT_ID=my-project-123 defang compose up --provider gcp
-```
-
-See our full tutorial on [deploying to GCP](/docs/tutorials/deploy-to-gcp).
-
-
-### Deploying to DigitalOcean
-
-If you're deploying to DigitalOcean, you'll need to invoke `defang compose up` with your DigitalOcean project id in the environment:
-
-```
-DIGITALOCEAN_TOKEN=my-token-123 SPACES_ACCESS_KEY_ID=my-access-key-id SPACES_SECRET_ACCESS_KEY=my-access-key-secret  defang compose up --provider digitalocean
-```
-
-See our full tutorial on [deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean).
+GCP support for deployments without Dockerfiles coming soon.
 
 ## Step 3 - Migrating your data
 
