@@ -22,7 +22,7 @@ No, Defang will use [Railpack](https://railpack.com/) to automatically build an 
 
 **Do I need a Docker Compose file?**
 
-No, Defang can automatically generate a compose file for your application.
+Defang does require a Docker Compose file to deploy your application, but you don't need to write one from scratch. Defang will automatically generate one for your Heroku application.
 :::
 
 ## Step 1 - Generating a Docker Compose file
@@ -91,7 +91,7 @@ $ heroku ps -a vast-badlands-production
 === web (Eco): bin/rails server -p ${PORT:-5000} -e $RAILS_ENV (1)
 ```
 
-And a single postgres database:
+And a single PostgreSQL database:
 ```
 heroku addons -a vast-badlands-production
 
@@ -163,7 +163,39 @@ services:
 
 ## Step 2 - Deploying to your cloud account
 
-Now all you need to do is deploy your application to the cloud.
+Now all you need to do is deploy your application to the cloud. 
+
+### Deploying to AWS
+
+If you're deploying to AWS, you'll need to invoke `defang compose up` with your AWS access credentials in the environment:
+
+```
+AWS_REGION=us-west-2 AWS_PROFILE=default defang compose up --provider aws
+```
+
+See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws.mdx).
+
+### Deploying to GCP
+
+If you're deploying to GCP, you'll need to invoke `defang compose up` with your GCP project id in the environment:
+
+```
+GCP_PROJECT_ID=my-project-123 defang compose up --provider gcp
+```
+
+See our full tutorial on [deploying to GCP](/docs/tutorials/deploy-to-gcp.mdx).
+
+
+### Deploying to DigitalOcean
+
+If you're deploying to DigitalOcean, you'll need to invoke `defang compose up` with your DigitalOcean project id in the environment:
+
+```
+DIGITALOCEAN_TOKEN=my-token-123 SPACES_ACCESS_KEY_ID=my-access-key-id SPACES_SECRET_ACCESS_KEY=my-access-key-secret  defang compose up --provider digitalocean
+```
+
+See our full tutorial on [deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean.mdx).
+
 
 * [Deploying to AWS](/docs/tutorials/deploy-to-aws.mdx)
 * [Deploying to GCP](/docs/tutorials/deploy-to-gcp.mdx)
