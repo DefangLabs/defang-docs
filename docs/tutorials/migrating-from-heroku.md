@@ -196,11 +196,6 @@ DIGITALOCEAN_TOKEN=my-token-123 SPACES_ACCESS_KEY_ID=my-access-key-id SPACES_SEC
 
 See our full tutorial on [deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean.mdx).
 
-
-* [Deploying to AWS](/docs/tutorials/deploy-to-aws.mdx)
-* [Deploying to GCP](/docs/tutorials/deploy-to-gcp.mdx)
-* [Deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean.mdx)
-
 ## Step 3 - Migrating your data
 
 :::tip
