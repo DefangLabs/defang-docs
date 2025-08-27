@@ -172,5 +172,5 @@ Now all you need to do is deploy your application to the cloud.
 ## Step 3 - Migrating your data
 
 :::tip
-If you need help with your migration, please reach out to our support team on Discord.
+If you need help with your migration, please reach out to our support team on [Discord](https://s.defang.io/discord).
 :::
