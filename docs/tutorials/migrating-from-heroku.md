@@ -173,7 +173,7 @@ If you're deploying to AWS, you'll need to invoke `defang compose up` with your 
 AWS_REGION=us-west-2 AWS_PROFILE=default defang compose up --provider aws
 ```
 
-See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws.mdx).
+See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws).
 
 ### Deploying to GCP
 
@@ -183,7 +183,7 @@ If you're deploying to GCP, you'll need to invoke `defang compose up` with your 
 GCP_PROJECT_ID=my-project-123 defang compose up --provider gcp
 ```
 
-See our full tutorial on [deploying to GCP](/docs/tutorials/deploy-to-gcp.mdx).
+See our full tutorial on [deploying to GCP](/docs/tutorials/deploy-to-gcp).
 
 
 ### Deploying to DigitalOcean
@@ -194,7 +194,7 @@ If you're deploying to DigitalOcean, you'll need to invoke `defang compose up` w
 DIGITALOCEAN_TOKEN=my-token-123 SPACES_ACCESS_KEY_ID=my-access-key-id SPACES_SECRET_ACCESS_KEY=my-access-key-secret  defang compose up --provider digitalocean
 ```
 
-See our full tutorial on [deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean.mdx).
+See our full tutorial on [deploying to DigitalOcean](/docs/tutorials/deploy-to-digitalocean).
 
 ## Step 3 - Migrating your data
 
