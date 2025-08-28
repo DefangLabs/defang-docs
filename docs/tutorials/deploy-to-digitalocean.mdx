@@ -29,14 +29,20 @@ Defang will look for your DigitalOcean credentials in your shell environment and
 * the `DIGITALOCEAN_TOKEN` environment variable
 * and, the `SPACES_ACCESS_KEY_ID` and `SPACES_SECRET_ACCESS_KEY` environment variables
 
+:::tip
+You can find your DigitalOcean token in the [API section](https://cloud.digitalocean.com/account/api/tokens) and
+your Spaces Access Keys in the [Spaces Object Storage section](https://cloud.digitalocean.com/spaces) 
+in the DigitalOcean Control Panel.
+:::
+
 ## Step 3 - Deploy
 
-Invoke the `defang compose up` CLI command with the `--provider=do` flag or set the `DEFANG_PROVIDER=do` environment variable.
+Invoke the `defang compose up` CLI command with the `--provider=digitalocean` flag or set the `DEFANG_PROVIDER=digitalocean` environment variable.
 
 For example:
 
 ```bash
-$ defang compose up --provider=do
+$ defang compose up --provider=digitalocean
 ```
 
 ## Step 4 - Inspect your deployment
