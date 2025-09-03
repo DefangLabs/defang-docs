@@ -48,6 +48,24 @@
     ]
   },
   {
+    "name": "agentic-strands",
+    "category": "Python",
+    "readme": "# [Agentic Strands](https://github.com/DefangLabs/samples/tree/main/samples/agentic-strands)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-agentic-strands-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates a Strands Agent application, deployed with Defang. This [Strands](https://strandsagents.com/latest/) Agent can use tools, and is compatible with the [Defang OpenAI Access Gateway](https://github.com/DefangLabs/openai-access-gateway/).\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide any [configuration](https://docs.defang.io/docs/concepts/configuration). However, if you ever need to, below is an example of how to do so in Defang:\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Agentic Strands\n\nShort Description: A Strands Agent application, deployed with Defang.\n\nTags: Python, Flask, Strands, AI, Agent\n\nLanguages: Python\n",
+    "directoryName": "agentic-strands",
+    "title": "Agentic Strands",
+    "shortDescription": "A Strands Agent application, deployed with Defang.",
+    "tags": [
+      "Python",
+      "Flask",
+      "Strands",
+      "AI",
+      "Agent"
+    ],
+    "languages": [
+      "Python"
+    ]
+  },
+  {
     "name": "angular-express",
     "category": "nodejs",
     "readme": "# [Angular & Node.js](https://github.com/DefangLabs/samples/tree/main/samples/angular-express)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-angular-express-template%26template_owner%3DDefangSamples)\n\nThis sample demonstrates how to deploy a full-stack Angular and Node.js application with Defang. It uses Socket.IO for real-time communication. The Docker setup ensures the app can be easily built and deployed.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n4. Install [Node.js](https://nodejs.org/en/download/package-manager/)\n5. Install [Angular CLI](https://angular.io/cli)\n\n## Development\nFor development, we use two local containers, one for the frontend Angular service and one for the backend service in Express. It also uses Caddy as a web server for serving static files. \n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will not need to provide [configuration](https://docs.defang.io/docs/concepts/configuration). \n\nIf you wish to provide configuration, see below for an example of setting a configuration for a value named `API_KEY`.\n\n```bash\ndefang config set API_KEY\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: Angular & Node.js\n\nShort Description: A full-stack application using Angular for the frontend and Node.js with Socket.IO for the backend, containerized with Docker.\n\nTags: Angular, Node.js, Socket.IO, TypeScript, JavaScript\n\nLanguages: nodejs",
@@ -1261,6 +1279,21 @@
       "JavaScript",
       "Frontend",
       "Railpack"
+    ],
+    "languages": [
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "redis-js",
+    "category": "JavaScript",
+    "readme": "# [Redis & JavaScript](https://github.com/DefangLabs/samples/tree/main/samples/redis-js)\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-redis-js-template%26template_owner%3DDefangSamples)\n\nThis is a Redis and JavaScript application, deployed with Defang. \n\nNote that Defang supports the use of managed Redis in production deployments. You can enable this feature by adding the `x-defang-redis: true` tag to your Redis service in the `compose.yaml` file. \n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose up --build\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC\n\nIf you want to deploy to your own cloud account, you can [use Defang BYOC](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud).\n\n---\n\nTitle: Redis & JavaScript\n\nShort Description: A Redis and JavaScript application, deployed with Defang.\n\nTags: Redis, JavaScript\n\nLanguages: JavaScript\n",
+    "directoryName": "redis-js",
+    "title": "Redis & JavaScript",
+    "shortDescription": "A Redis and JavaScript application, deployed with Defang.",
+    "tags": [
+      "Redis",
+      "JavaScript"
     ],
     "languages": [
       "JavaScript"
