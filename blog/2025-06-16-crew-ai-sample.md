@@ -1,7 +1,6 @@
 ---
 title: "Sample: Starter Kit for RAG + Agents with CrewAI"
 description: "Going over our sample for RAG + Agents with CrewAI"
-slug: rag-agents-crewai-sample
 tags: [Cloud, NoDevOps, Docker Compose, Defang, Sample]
 author: Defang Team
 ---
@@ -89,4 +88,3 @@ DEFANG_PROVIDER=<provider> defang compose up
 ```
 
 Want more? File an [issue](https://github.com/DefangLabs/samples/issues) to request a sample—we'll do everything we can to help you deploy better and faster!
-

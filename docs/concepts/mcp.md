@@ -20,22 +20,30 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 
 ## Installation
 
-Ensure that you have the [npm package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed, as `npx` commands are required for setup.
+Ensure that you have the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) installed.
 
-:::warning
-At this time, the Defang MCP Server can only be installed using `npx`. Other methods are not yet supported.
-:::
 Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
 
+:::tip[Recommended Installation]
+Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
+
 ```bash
-npx -y defang@latest mcp setup --client=<your-ide>
+defang mcp setup --client=<your-ide>
 ```
+
+:::
 
 Once the command completes, you may need to restart your IDE for the changes to take effect.
 
 Once the MCP Server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
+
+Note that `npx` installation is supported, but not recommended.
+
+```bash
+npx -y defang@latest mcp setup --client=<your-ide>
+```
 
 ## Supported IDEs
 
@@ -44,7 +52,7 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 Setup command:
 
 ```bash
-npx -y defang@latest mcp setup --client=cursor
+defang mcp setup --client=cursor
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
@@ -56,7 +64,7 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-npx -y defang@latest mcp setup --client=windsurf
+defang mcp setup --client=windsurf
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
@@ -68,7 +76,7 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-npx -y defang@latest mcp setup --client=vscode
+defang mcp setup --client=vscode
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
@@ -80,12 +88,24 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-npx -y defang@latest mcp setup --client=vscode-insiders
+defang mcp setup --client=vscode-insiders
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![VS Code](/img/mcp-concept/vscode-insiders.png)
+
+### Kiro
+
+Setup command:
+
+```bash
+defang mcp setup --client=kiro
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Kiro](/img/mcp-concept/kiro.png)
 
 ### Claude Desktop
 
@@ -94,7 +114,7 @@ While this is not an IDE in the traditional sense, it can support MCP servers. F
 Setup command:
 
 ```bash
-npx -y defang@latest mcp setup --client=claude
+defang mcp setup --client=claude
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
@@ -120,6 +140,22 @@ The `services` tool displays the details of all your services that are currently
 ### `destroy`
 
 Given a project name or directory, the `destroy` tool identifies any services deployed with Defang and terminates them. If no services are found, it will display an appropriate message.
+
+### `estimate`
+
+The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports two providers: `AWS` or `GCP`.
+
+### `list_configs`
+
+The `list_configs` tool will [list](/docs/cli/defang_config) all the Defang configs set for your project.
+
+### `set_config`
+
+The `set_config` tool will [set](/docs/tutorials/configure-environment-variables#step-2---set-the-actual-value-in-the-defang-cli) a specific Defang config for your project.
+
+### `remove_config`
+
+The `remove_config` tool will [remove](/docs/tutorials/configure-environment-variables#removing-a-config-value) a specific Defang config for your project.
 
 ## Example Prompts
 
@@ -147,6 +183,34 @@ deploy this with defang /Users/yourname/Documents/project1
 
 ```
 do I have a service called project1
+```
+
+You can estimate the cost of a deployment to a supported cloud provider:
+
+```
+can you estimate balance mode on aws for this project?
+```
+
+```
+can you estimate how much this project will cost on gcp?
+```
+
+You can list, set and remove Defang configs for a project:
+
+```
+what defang configs do I have set for this project?
+```
+
+```
+list all the defang configs I have set for this project
+```
+
+```
+set the defang config DATABASE_URL to example.com
+```
+
+```
+remove the defang config DATABASE_URL
 ```
 
 Feel free to try any of these prompts or create your own!
