@@ -43,6 +43,7 @@ Defang works seamlessly with leading agentic frameworks. Try them out with our r
 - [Autogen](https://github.com/DefangLabs/samples/tree/main/samples/agentic-autogen) - demo featuring Mistral AI + FastAPI, deployable with Defang’s OpenAI Access Gateway.
 - [CrewAI](https://docs.defang.io/blog/2025/06/16/crew-ai-sample) - sample app showing multi-agent orchestration in action.
 - [LangGraph](https://github.com/DefangLabs/samples/tree/main/samples/agentic-langgraph) - workflow sample that defines and controls multi-step agentic graphs with LangChain.
+- [Agentic Strands](https://github.com/DefangSamples/sample-agentic-strands-template/tree/main) - A Strands Agent application.
 
 More framework templates coming soon.
 
