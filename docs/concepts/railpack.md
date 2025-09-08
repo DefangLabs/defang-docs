@@ -144,3 +144,12 @@ services:
         reservations:
           memory: 512M
 ```
+
+## Supported Providers
+
+| Provider       | Railpack Support |
+|----------------|:----------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |

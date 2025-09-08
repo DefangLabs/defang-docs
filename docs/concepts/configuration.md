@@ -89,3 +89,12 @@ Here are the different ways sensitive config values are stored depending on the 
 :::info
 Please note that while Defang supports setting sensitive config, it does not support the [`secrets`](https://docs.docker.com/reference/compose-file/secrets/) top-level element as seen in the Compose specification. Please see our [Compose](/docs/concepts/compose) page for more details.
 :::
+
+## Supported Providers
+
+| Provider       | Config Support |
+|----------------|:--------------:|
+| Playground     |     ✅ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ✅ |
+| GCP            |     ✅ |

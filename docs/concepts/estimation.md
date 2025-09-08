@@ -64,3 +64,12 @@ Now that you have estimated the costs associated with your project. You are read
 defang compose up [--provider aws|gcp|digitalocean] [--mode affordable|balanced|high_availability]
 ```
 
+## Supported Providers
+
+| Provider       | Estimation Support |
+|----------------|:------------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |
+
