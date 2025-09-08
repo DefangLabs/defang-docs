@@ -348,6 +348,24 @@ GCP_PROJECT_ID=my-project-123456 defang compose up --provider gcp
 ```
 </details>
 
+### Deploying to DigitalOcean
+
+If you're deploying to GCP, you'll need to invoke `defang compose up --provider digitalocean` with your DigitalOcean access credentials in the environment:
+
+:::warning
+Some Heroku applications may require some manual adjustments to be deployed to DigitalOcean with Defang.
+Dockerfiles are required for deployments to DigitalOcean, so you may need to create one if your application does not already have one. Support for automatic Dockerfile generation is coming soon with [Railpack](/docs/concepts/railpack.md).
+Defang also does not yet support [one-off jobs](/docs/concepts/one_off_jobs) on DigitalOcean, so you will need to modify your services to run these tasks during initialization.
+:::
+
+```
+export DIGITALOCEAN_TOKEN=your_digitalocean_token
+export SPACES_ACCESS_KEY_ID=your_spaces_access_key_id
+export SPACES_SECRET_ACCESS_KEY=your_spaces_secret_access_key
+$ defang compose up --provider digitalocean
+```
+
+
 ## Step 3 - Migrating your data
 
 :::tip
