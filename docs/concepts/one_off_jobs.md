@@ -1,7 +1,6 @@
 ---
 title: One-off Jobs
 description: Defang enables you to run one-off jobs during your deployment workflow.
-sidebar_position: 280
 ---
 
 # One-off Jobs
