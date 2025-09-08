@@ -9,10 +9,6 @@ Defang enables you to run one-off jobs during your deployment workflow. One-off 
 
 One-off jobs are run a single time, and failure to run a one-off job will cause the entire deployment to fail.
 
-:::info
-Currently, AWS and GCP are supported for one-off jobs. Support for Digital Ocean is coming soon.
-:::
-
 ## When should one-off jobs be used?
 One-off jobs are useful for running commands that need to be executed before your application starts. Common use cases include:
 
