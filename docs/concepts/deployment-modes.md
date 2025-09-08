@@ -1,7 +1,6 @@
 ---
 title: Deployment Modes
 description: Defang provides three deployment modes which allow you to balance cost and resiliency.
-sidebar_position: 501
 ---
 
 # Deployment Modes

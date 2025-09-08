@@ -1,6 +1,5 @@
 ---
 title: Setting Up Your GCP Account
-sidebar_position: 0
 description: Follow these steps to set up your Google Cloud Platform (GCP) account for deploying applications with Defang.
 ---
 

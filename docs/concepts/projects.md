@@ -1,7 +1,6 @@
 ---
 title: Projects
 description: A _project_ refers to a cohesive collection of services which are defined and managed using a `compose.yml` file.
-sidebar_position: 200
 ---
 
 # Projects

@@ -1,6 +1,5 @@
 ---
 title: Using Codespaces and Gitpod
-sidebar_position: 700
 ---
 
 # Using Codespaces and Gitpod

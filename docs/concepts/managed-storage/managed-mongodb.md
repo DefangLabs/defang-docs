@@ -1,7 +1,6 @@
 ---
 title: Managed MongoDB
 description: Defang can help you provision managed MongoDB instances.
-sidebar_position: 3000
 ---
 
 # Managed MongoDB

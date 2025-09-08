@@ -1,5 +1,4 @@
 ---
-sidebar_position: 400
 title: Monitoring Your Services
 description: How to monitor services deployed with Defang
 ---
