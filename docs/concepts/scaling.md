@@ -65,10 +65,10 @@ Auto-scaling systems typically rely on:
   - If average CPU > 85% for 5 minutes → scale up by 2 instances.
 - **Cooldown Periods**: Delays between scaling events to prevent rapid, repeated changes (flapping).
 
-### Supported Platforms
+### Supported Providers
 
-| Platform        | Auto-Scaling Support |
-|----------------|:----------------------:|
+| Provider       | Auto-Scaling Support |
+|----------------|:--------------------:|
 | Playground     |     ❌ |
 | AWS            |     ✅ |
 | DigitalOcean   |     ❌ |
