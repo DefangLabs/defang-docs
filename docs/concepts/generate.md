@@ -1,7 +1,6 @@
 ---
 title: Generate
 description: Defang uses AI to help you generate a starting point for your cloud applications.
-sidebar_position: 100
 ---
 
 # Generate

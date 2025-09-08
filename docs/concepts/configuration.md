@@ -1,7 +1,6 @@
 ---
 title: Configuration
 description: Configuring your Defang application, including sensitive config values like API keys, passwords, and other credentials.
-sidebar_position: 225
 ---
 
 # Configuration
@@ -67,7 +66,7 @@ In the example above, if we assume the value of the configuration variable ***US
 
 During `defang compose up` all variable references will be replaced with the actual value and made available in the container. If any referenced variable is not found the `defang compose up` command will be canceled.
 
-## Using Config with Pulumi 
+## Using Config with Pulumi
 In Defang, using config with [Pulumi](./pulumi.md) gives you the advantage of being able to manage your environment variables across different environments using Pulumi stacks.
 
 :::tip

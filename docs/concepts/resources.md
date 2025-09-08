@@ -1,7 +1,6 @@
 ---
 title: Resources
 description: Customize the resources your Defang services use.
-sidebar_position: 350
 ---
 
 # Run-time Resources

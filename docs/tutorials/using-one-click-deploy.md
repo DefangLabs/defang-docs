@@ -1,14 +1,13 @@
 ---
 title: Using 1-Click Deploy
-sidebar_position: 300
-description: Use 1-Click Deploy to easily deploy a sample to the Defang Playground. 
+description: Use 1-Click Deploy to easily deploy a sample to the Defang Playground.
 ---
 
 # Using 1-Click Deploy
 
-This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample to the Defang Playground. 
+This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample to the Defang Playground.
 
-The 1-Click Deploy button is the easiest way for new users to deploy a sample project to the [Defang Playground](/docs/concepts/defang-playground). No CLI installation is required. 
+The 1-Click Deploy button is the easiest way for new users to deploy a sample project to the [Defang Playground](/docs/concepts/defang-playground). No CLI installation is required.
 
 :::info
 To access the full range of features provided by Defang, we recommend using the [Defang CLI](/docs/getting-started).
@@ -21,7 +20,7 @@ Head to our [list of samples](https://defang.io/#samples) and click a sample you
 <br/>
 
 :::info
-Alternatively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's GitHub repository. 
+Alternatively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's GitHub repository.
 
 <img src="/img/use-one-click-tutorial/deploy-with-defang-button.png" alt="deploy-with-defang-button" width="400"/>
 <br/>
@@ -36,7 +35,7 @@ For 1-click deployments to work, Defang must have your permission, which you can
 
 ## Step 3 - Create Your Repo
 
-Once logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project. 
+Once logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project.
 
 <img src="/img/use-one-click-tutorial/create-repository.png" alt="create-repository" width="600"/>
 <br/>
@@ -44,7 +43,7 @@ Once logged in, you'll be redirected to GitHub. Click the "Create repository but
 
 ## Step 4 - Wait for Deployment to Complete
 
-A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository. 
+A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository.
 
 You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](/docs/getting-started).  You can also see deployment progress in the "Actions" tab of your GitHub repository:
 

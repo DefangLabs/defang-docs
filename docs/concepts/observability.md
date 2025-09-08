@@ -1,7 +1,6 @@
 ---
 title: Observability
 description: Monitor and debug your Defang services with the Defang CLI and Portal.
-sidebar_position: 600
 ---
 
 # Observability
@@ -11,7 +10,7 @@ You can easily monitor and debug your Defang services at build and runtime using
 When you deploy a service using the `defang compose up`, the CLI will automatically start tailing the build and runtime logs for your service. You can also view the logs for your service in the Portal, or by using the `defang tail` command.
 
 :::tip
-Defang has a tutorial on how you can [monitor your services' status and logs](/docs/tutorials/monitoring-your-services). 
+Defang has a tutorial on how you can [monitor your services' status and logs](/docs/tutorials/monitoring-your-services).
 :::
 
 :::warning

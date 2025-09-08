@@ -1,7 +1,6 @@
 ---
 title: Pulumi
 description: Define your Defang services with Pulumi to integrate with other cloud resources.
-sidebar_position: 175
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,7 +1,6 @@
 ---
 title: Using Managed LLMs
 description: Defang makes it easy to leverage cloud-native managed language models.
-sidebar_position: 3000
 ---
 
 # Managed Language Models

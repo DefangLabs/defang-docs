@@ -1,7 +1,6 @@
 ---
 title: Managed Storage
 description: Defang can help you provision managed storage services.
-sidebar_position: 000
 ---
 
 # Managed Storage

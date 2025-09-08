@@ -1,5 +1,4 @@
 ---
-sidebar_position: 100
 description: Deploy your Heroku Applications in your own Cloud Account with Defang
 ---
 
