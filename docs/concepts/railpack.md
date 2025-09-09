@@ -1,7 +1,6 @@
 ---
 title: Railpack
 description: Defang will use Railpack to make an OCI-Compliant container image for your project.
-sidebar_position: 500
 ---
 
 # Railpack
@@ -144,3 +143,12 @@ services:
         reservations:
           memory: 512M
 ```
+
+## Supported Providers
+
+| Provider       | Railpack Support |
+|----------------|:----------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |

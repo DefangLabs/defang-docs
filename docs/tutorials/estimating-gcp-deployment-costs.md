@@ -1,7 +1,6 @@
 ---
 title: Estimating GCP Deployment Costs
 description: Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
-sidebar_position: 281
 ---
 
 # Estimating GCP Deployment Costs

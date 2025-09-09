@@ -1,7 +1,6 @@
 ---
 title: Defang BYOC
 description: Defang allows you deploy services, defined as containers, to your own cloud accounts.
-sidebar_position: 50
 ---
 
 # Defang BYOC

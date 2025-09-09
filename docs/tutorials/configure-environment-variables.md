@@ -1,5 +1,4 @@
 ---
-sidebar_position: 400
 title: Configure Environment Variables
 description: How to configure sensitive environment variables in Defang.
 ---
@@ -15,11 +14,11 @@ This tutorial will show you how to configure sensitive environment variables in 
 * [The Defang CLI](/docs/getting-started#install-the-defang-cli)
 
 ## Step 1 - Go to your `compose.yaml` file
-:::info 
+:::info
 If you are using [Pulumi](/docs/concepts/pulumi) instead of Compose files to define your services, please see [Using Config With Pulumi](/docs/concepts/configuration#using-config-with-pulumi) instead.
 :::
 
-In your Compose file, you can define a sensitive config variable for your service by leaving it as a **blank or `null` value**. Defang will recognize it as a sensitive value. 
+In your Compose file, you can define a sensitive config variable for your service by leaving it as a **blank or `null` value**. Defang will recognize it as a sensitive value.
 
 In the example below, let's define `API_KEY` as an environment variable.
 
@@ -45,7 +44,7 @@ To store the actual (sensitive) value of the variable, open up a terminal and ty
 ```bash
 defang config set API_KEY=actualvalue
 ```
-Remember to replace `API_KEY` with your variable name and `actualvalue` with your actual value. 
+Remember to replace `API_KEY` with your variable name and `actualvalue` with your actual value.
 
 :::tip
 You can view all the config variables you are storing in Defang by doing: `defang config ls`.

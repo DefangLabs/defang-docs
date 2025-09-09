@@ -1,7 +1,6 @@
 ---
 title: Managed Redis
 description: Defang can help you provision managed Redis instances.
-sidebar_position: 2000
 ---
 
 # Managed Redis

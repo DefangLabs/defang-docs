@@ -1,7 +1,6 @@
 ---
 title: Compose
 description: Defang allows you to use the compose.yaml specification to deploy your application to the cloud.
-sidebar_position: 150
 ---
 
 # Compose

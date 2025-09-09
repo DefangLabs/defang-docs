@@ -1,7 +1,6 @@
 ---
-title: Security    
+title: Security
 description: Defang configures your cloud applications and services with security best practices.
-sidebar_position: 275
 ---
 
 # Security
@@ -20,7 +19,7 @@ Defang creates roles for your services to use, and attaches policies to those ro
 
 ## Networking
 
-Defang configures Security Groups, deploys applictions to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required. 
+Defang configures Security Groups, deploys applictions to a private subnet and uses an Application Load Balancer to route traffic to your services from the public internet only when required.
 
 ## SSL
 

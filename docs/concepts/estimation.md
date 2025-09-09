@@ -1,7 +1,6 @@
 ---
 title: Cost Estimation
 description: Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
-sidebar_position: 280
 ---
 
 # Cost Estimation
@@ -63,4 +62,13 @@ Now that you have estimated the costs associated with your project. You are read
 ```
 defang compose up [--provider aws|gcp|digitalocean] [--mode affordable|balanced|high_availability]
 ```
+
+## Supported Providers
+
+| Provider       | Estimation Support |
+|----------------|:------------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |
 

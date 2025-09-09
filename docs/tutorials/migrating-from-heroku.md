@@ -1,5 +1,4 @@
 ---
-sidebar_position: 100
 description: Deploy your Heroku Applications in your own Cloud Account with Defang
 ---
 
@@ -13,7 +12,7 @@ This tutorial will guide you through the process of migrating your Heroku applic
 * [The Heroku CLI (optional, but recommended)](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 * Cloud Account Credentials
   * [AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
-  * [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment) (coming soon)
+  * [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
 :::tip
 **Do I need a Dockerfile?**
@@ -167,7 +166,7 @@ Now all you need to do is deploy your application to the cloud.
 
 ### Deploying to AWS
 
-If you're deploying to AWS, you'll need to invoke `defang compose up` with your AWS access credentials in the environment:
+If you're deploying to AWS, you'll need to invoke `defang compose up --provider aws` with your AWS access credentials in the environment:
 
 <details>
 <summary>
@@ -285,7 +284,86 @@ See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws).
 
 ### Deploying to GCP
 
-GCP support for deployments without Dockerfiles coming soon.
+If you're deploying to GCP, you'll need to invoke `defang compose up --provider gcp` with your GCP access credentials in the environment:
+
+<details>
+<summary>
+Run the following command
+```
+GCP_PROJECT_ID=my-project-123456 defang compose up --provider gcp
+```
+</summary>
+```
+ * Using Google Cloud Platform provider from command line flag
+ ! Defang cannot monitor status of the following managed service(s): [postgres release].
+   To check if the managed service is up, check the status of the service which depends on it.
+ ! service "postgres": missing memory reservation; using provider-specific defaults. Specify deploy.resources.reservations.memory to avoid out-of-memory errors
+ ! service "web": ingress port without healthcheck defaults to GET / HTTP/1.1
+ * Packaging the project files for web at /Users/defang/wk/vast-badlands
+ * Uploading the project files for web
+ * Setting up defang CD in GCP project my-project-123456, this could take a few minutes
+ * Packaging the project files for release at /Users/defang/wk/vast-badlands
+ * Uploading the project files for release
+ * Tailing logs for deployment ID fgdh4ct0hopz ; press Ctrl+C to detach:
+ * Showing only build logs and runtime errors. Press V to toggle verbose mode.
+2025-09-08T10:28:08.634-04:00 cd  ** Update started for stack beta
+2025-09-08T10:28:17.990-04:00 cd  ** Updating service "postgres"
+2025-09-08T10:28:44.773-04:00 cd  ** Building image for "release"...
+2025-09-08T10:28:58.012-04:00 cd  ** Building image for "web"...
+2025-09-08T10:47:02.479-04:00 release I, [2025-09-08T14:47:02.409371 #1]  INFO -- : Migrating to CreateMembers (20240416182733)
+2025-09-08T10:47:02.479-04:00 release == 20240416182733 CreateMembers: migrating ====================================
+2025-09-08T10:47:02.479-04:00 release -- create_table(:members)
+2025-09-08T10:47:02.479-04:00 release    -> 0.0073s
+2025-09-08T10:47:02.479-04:00 release == 20240416182733 CreateMembers: migrated (0.0073s) ===========================
+2025-09-08T10:47:02.479-04:00 release I, [2025-09-08T14:47:02.432075 #1]  INFO -- : Migrating to DeviseCreateUsers (20240417165503)
+2025-09-08T10:47:02.479-04:00 release == 20240417165503 DeviseCreateUsers: migrating ================================
+2025-09-08T10:47:02.479-04:00 release -- create_table(:users)
+2025-09-08T10:47:02.479-04:00 release    -> 0.0080s
+2025-09-08T10:47:02.479-04:00 release -- add_index(:users, :email, {:unique=>true})
+2025-09-08T10:47:02.479-04:00 release    -> 0.0022s
+2025-09-08T10:47:02.479-04:00 release -- add_index(:users, :reset_password_token, {:unique=>true})
+2025-09-08T10:47:02.479-04:00 release    -> 0.0021s
+2025-09-08T10:47:02.479-04:00 release == 20240417165503 DeviseCreateUsers: migrated (0.0124s) =======================
+2025-09-08T10:47:02.479-04:00 release I, [2025-09-08T14:47:02.458370 #1]  INFO -- : Migrating to AddUserIdToMembers (20240417202202)
+2025-09-08T10:47:02.479-04:00 release == 20240417202202 AddUserIdToMembers: migrating ===============================
+2025-09-08T10:47:02.479-04:00 release -- add_column(:members, :user_id, :integer)
+2025-09-08T10:47:02.479-04:00 release    -> 0.0044s
+2025-09-08T10:47:02.479-04:00 release -- add_index(:members, :user_id)
+2025-09-08T10:47:02.479-04:00 release    -> 0.0019s
+2025-09-08T10:47:02.479-04:00 release == 20240417202202 AddUserIdToMembers: migrated (0.0064s) ======================
+2025-09-08T10:48:16.157-04:00 web => Booting Puma
+2025-09-08T10:48:16.157-04:00 web => Rails 7.1.3.2 application starting in production
+2025-09-08T10:48:16.157-04:00 web => Run `bin/rails server --help` for more startup options
+2025-09-08T10:48:18.625-04:00 web [1] Puma starting in cluster mode...
+2025-09-08T10:48:18.625-04:00 web [1] * Puma version: 6.4.2 (ruby 3.3.4-p94) ("The Eagle of Durango")
+2025-09-08T10:48:18.625-04:00 web [1] *  Min threads: 5
+2025-09-08T10:48:18.625-04:00 web [1] *  Max threads: 5
+2025-09-08T10:48:18.625-04:00 web [1] *  Environment: production
+2025-09-08T10:48:18.626-04:00 web [1] *   Master PID: 1
+2025-09-08T10:48:18.626-04:00 web [1] *      Workers: 2
+2025-09-08T10:48:18.626-04:00 web [1] *     Restarts: (✔) hot (✔) phased
+2025-09-08T10:48:18.626-04:00 web [1] * Listening on http://0.0.0.0:5000
+2025-09-08T10:48:18.627-04:00 web [1] Use Ctrl-C to stop
+```
+</details>
+
+### Deploying to DigitalOcean
+
+If you're deploying to GCP, you'll need to invoke `defang compose up --provider digitalocean` with your DigitalOcean access credentials in the environment:
+
+:::warning
+Some Heroku applications may require some manual adjustments to be deployed to DigitalOcean with Defang.
+Dockerfiles are required for deployments to DigitalOcean, so you may need to create one if your application does not already have one. Support for automatic Dockerfile generation is coming soon with [Railpack](/docs/concepts/railpack.md).
+Defang also does not yet support [one-off jobs](/docs/concepts/one_off_jobs) on DigitalOcean, so you will need to modify your services to run these tasks during initialization.
+:::
+
+```
+export DIGITALOCEAN_TOKEN=your_digitalocean_token
+export SPACES_ACCESS_KEY_ID=your_spaces_access_key_id
+export SPACES_SECRET_ACCESS_KEY=your_spaces_secret_access_key
+$ defang compose up --provider digitalocean
+```
+
 
 ## Step 3 - Migrating your data
 

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 200
 title: Authentication
 description: Authenticating with Defang.
 ---

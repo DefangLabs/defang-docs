@@ -1,7 +1,6 @@
 ---
 title: OpenAI Access Gateway
 description: Defang makes it easy to leverage cloud-native managed language models for your OpenAI-compatible application.
-sidebar_position: 3000
 ---
 
 # OpenAI Access Gateway

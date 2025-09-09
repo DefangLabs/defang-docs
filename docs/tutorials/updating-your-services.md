@@ -1,5 +1,4 @@
 ---
-sidebar_position: 500
 title: Updating Your Services
 description: How to update services deployed with Defang
 ---

@@ -1,7 +1,6 @@
 ---
 title: Resources
 description: Customize the resources your Defang services use.
-sidebar_position: 350
 ---
 
 # Run-time Resources
@@ -67,7 +66,7 @@ Defang uses `shm_size` to configure both the memory and disk space available to 
 
 The default `shm_size` values for each platform are as follows. More or less may be specified.
 
-| Platform      | `shm_size` Minimum |
+| Provider      | `shm_size` Minimum |
 | ------------- | ------------------ |
 | AWS           | 16G                |
 | Digital Ocean | 8G                 |
