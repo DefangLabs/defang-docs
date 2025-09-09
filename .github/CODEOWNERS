@@ -1,7 +1,2 @@
 # CODEOWNERS file automatically generated based on git history
-# Each entry lists the files or directories owned by the contributor with the highest number of commits.
-*                               @jordanstephens 
-/.github/                       @raphaeltm 
-/blog/                          @raphaeltm 
-/src/                           @raphaeltm 
-/scripts/                       @raphaeltm 
+*                               @DefangLabs/devs 
