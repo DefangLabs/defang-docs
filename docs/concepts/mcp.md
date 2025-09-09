@@ -114,12 +114,26 @@ While this is not an IDE in the traditional sense, it can support MCP servers. F
 Setup command:
 
 ```bash
-defang mcp setup --client=claude
+defang mcp setup --client=claude-desktop
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
-![Claude Desktop](/img/mcp-concept/claude.png)
+![Claude Desktop](/img/mcp-concept/claude-desktop.png)
+
+### Claude Code
+
+While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
+
+Setup command:
+
+```bash
+defang mcp setup --client=claude-code
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Claude Code](/img/mcp-concept/claude-code.png)
 
 ## MCP Tools
 
