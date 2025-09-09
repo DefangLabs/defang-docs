@@ -148,7 +148,7 @@ services:
 
 | Provider       | Railpack Support |
 |----------------|:----------------:|
-| Playground     |     ❌ |
+| Playground     |     ✅ |
 | AWS            |     ✅ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
