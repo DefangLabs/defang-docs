@@ -33,7 +33,7 @@ We expanded and refined our sample projects for agentic frameworks like CrewAI, 
 
 ## MCP BYOC Prompts
 
-We now support deploying to [AWS](https://docs.defang.io/docs/tutorials/deploy-to-aws) and [GCP](https://docs.defang.io/docs/tutorials/deploy-to-gcp) through the [Defang MCP Server](https://docs.defang.io/docs/concepts/mcp) using prompts in your IDE. This keeps your workflow fast and frictionless, letting you go from code to cloud in seconds without breaking focus. You can stay in the flow with no context switching, spinning up services or scaling workloads simply by chatting in your editor. It means faster iteration, shorter feedback loops, and less time wrestling with terminals or cloud consoles.
+We now support deploying to AWS and GCP through the [Defang MCP Server](http://docs.defang.io/docs/tutorials/deploying-with-the-defang-mcp-server) using prompts in your IDE. This keeps your workflow fast and frictionless, letting you go from code to cloud in seconds without breaking focus. You can stay in the flow with no context switching, spinning up services or scaling workloads simply by chatting in your editor. It means faster iteration, shorter feedback loops, and less time wrestling with terminals or cloud consoles.
 
 :::note
 Requires Defang CLI v2.1.3 or later.
