@@ -7,27 +7,30 @@ description: Defang allows you deploy to your own Google Cloud Platform (GCP) ac
 
 This tutorial will show you how to deploy your services to your own GCP project using Defang.
 
-## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
-* [gcloud CLI](https://cloud.google.com/sdk/docs/install)
-* [GCP Account Credentials](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+## Prerequisites
 
-:::warning["MCP Pre-requisite"]
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [gcloud CLI](https://cloud.google.com/sdk/docs/install)
+- [GCP Application Default Credentials](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md) 
+
+:::warning["MCP prerequisite"]
 If you would like to deploy using [MCP](https://modelcontextprotocol.io/), you like need to setup the [Defang MCP Server](../concepts/mcp.md) with the IDE of your choice.
 :::
 
 ## CLI
 
 ### Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-### Step 2 - Authenticate Defang to use your GCP Account
+### Step 2 - Configure your GCP credentials
 
 After signing in to your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project). Make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project). Then, note down the project ID and set it as environment variable `GCP_PROJECT_ID`.
 
@@ -50,6 +53,7 @@ Defang will provision resources in your GCP account and deploy your services. Yo
 ## MCP
 
 ### Step 1 - Navigate to your project directory with your IDE
+
 Navigate to your project directory and open it in an IDE that has the [Defang MCP Server](../concepts/mcp.md) installed.
 
 :::tip
@@ -57,23 +61,27 @@ If the Defang MCP server doesn’t start automatically, try starting or restarti
 ![VS Code](/img/prompts/start-server.png)
 :::
 
-### Step 2 - Authenticate Defang to use your GCP Account
+### Step 2 - Configure your GCP credentials
 
 After signing in to your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project). Make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project). Then, note down the project ID for the next step.
 
 ### Step 2 - Setting your provider
-In your chat window, type `/mcp.defang.GCP_Setup`  or select the corresponding prompt from your IDE’s options.
+
+In your chat window, type `/defang.GCP_Setup` or select the corresponding prompt from your IDE’s options.
 
 ![Trigger Prompt](/img/prompts/gcp-prompt.png)
 
-The [MCP prompt](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your GCP project ID you created in [Step 2](#step-2---authenticate-defang-to-use-your-gcp-account-1).
+The [MCP argument](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your GCP project ID you created in [Step 2](#step-2---authenticate-defang-to-use-your-gcp-account-1).
+![GCP Project ID](/img/prompts/gcp-project-id.png)
 
 ### Step 3 - Deploy
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the IDE to execute.
 
 ### Step 4 - Inspect your deployment
+
 You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
 
-***
+---
 
 For a deeper discussion of the Defang GCP Architecture, see our [GCP docs](/docs/providers/gcp).

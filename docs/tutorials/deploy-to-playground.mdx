@@ -7,14 +7,14 @@ description: Deploy to the free Defang Playground.
 
 This tutorial will show you how to deploy your project to the free [Defang Playground](/docs/concepts/defang-playground).
 
-## Pre-requisites
+## Prerequisites
 
-- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-- [A Defang Account](/docs/concepts/authentication)
 - [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
 
-:::warning["MCP Pre-requisite"]
+:::warning["MCP prerequisite"]
 If you would like to deploy using [MCP](https://modelcontextprotocol.io/), you like need to setup the [Defang MCP Server](../concepts/mcp.md) with the IDE of your choice.
 :::
 
@@ -79,11 +79,11 @@ If the Defang MCP server doesn’t start automatically, try starting or restarti
 
 ### Step 2 - Setting your provider
 
-In your chat window, type `/mcp.defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
+In your chat window, type `/defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
 
 ![Trigger Prompt](/img/prompts/playground-prompt.png)
 
-There are no arguements to this prompt.
+There are no arguments to this prompt.
 
 ### Step 3 - Deploy
 

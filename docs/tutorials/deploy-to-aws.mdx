@@ -7,31 +7,35 @@ description: Defang allows you deploy to your own Amazon Web Services (AWS) acco
 
 This tutorial will show you how to deploy your services to your own AWS account using Defang.
 
-## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
-* [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+## Prerequisites
 
-:::warning["MCP Pre-requisite"]
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
+
+:::warning["MCP prerequisite"]
 If you would like to deploy using [MCP](https://modelcontextprotocol.io/), you like need to setup the [Defang MCP Server](../concepts/mcp.md) with the IDE of your choice.
 :::
 
 ## CLI
 
 ### Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-### Step 2 - Authenticate Defang to use your AWS Account
+### Step 2 - Configure your AWS credentials
 
-There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
+There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
 Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
-* the `AWS_PROFILE` environment variable
-* or, the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` environment variables
+
+- the `AWS_PROFILE` environment variable, and optionally the `AWS_REGION` environment variable
+- or, the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` environment variables
 
 :::tip
 If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
@@ -56,6 +60,7 @@ Defang will provision resources in your AWS account and deploy your services. Yo
 ## MCP
 
 ### Step 1 - Navigate to your project directory with your IDE
+
 Navigate to your project directory and open it in an IDE that has the [Defang MCP Server](../concepts/mcp.md) installed.
 
 :::tip
@@ -63,22 +68,42 @@ If the Defang MCP server doesn’t start automatically, try starting or restarti
 ![VS Code](/img/prompts/start-server.png)
 :::
 
-### Step 2 - Setting your provider
-In your chat window, type `/mcp.defang.AWS_Setup`  or select the corresponding prompt from your IDE’s options.
+### Step 2 - Configure your AWS credentials
+
+There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
+
+:::tip
+If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
+:::
+
+Once you’ve set up your `AWS_PROFILE` or retrieved your `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`, you’re ready to continue. Open your chat window and type /defang.AWS_Setup, or select the corresponding prompt from your IDE’s options.
 
 ![Trigger Prompt](/img/prompts/aws-prompt.png)
 
 The [MCP prompt](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) accepts two types of credentials:
-* the AWS Profile arguement (skip the rest of the prompts after entering the AWS Profile)
-* or, the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_REGION arguments
+
+1. Method 1 - Using an AWS Profile:
+   The following prompt will have three arguments and only the first argument is required:
+
+   - AWS Credential - REQUIRED : The name of the AWS profile you want to use (e.g., "default" or "my-profile"). ![AWS Profile argument](/img/prompts/aws-profile-arg.png)
+   - AWS_SECRET_ACCESS_KEY - IGNORE : Leave this argument blank and press Enter. ![Ignore AWS Secret Access Key argument](/img/prompts/aws-ignore_secret.png)
+   - AWS_REGION - OPTIONAL : The AWS region where you want to deploy your services (e.g., "us-west-2"). ![AWS Region argument Optional](/img/prompts/aws-optional-region.png)
+
+2. Method 2 - Using Access Keys:
+   The following prompt will have three arguments and all three arguments are required:
+
+   - AWS Credential - REQUIRED : The AWS Access Key ID (e.g., "AKIAIOSFODNN7EXAMPLE"). ![AWS Access Key ID argument](/img/prompts/aws-access-key-arg.png)
+   - AWS_SECRET_ACCESS_KEY - REQUIRED : The AWS Secret Access Key. (e.g., "wJalrXUtnFEMI/K7MDENG/bPExampleSecretKey").![AWS Secret Access Key argument](/img/prompts/aws-secret-key-arg.png)
+   - AWS_REGION - REQUIRED : The AWS region where you want to deploy your services (e.g., "us-west-2"). ![AWS Region argument](/img/prompts/require-aws-region-arg.png)
 
 ### Step 3 - Deploy
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the IDE to execute.
 
 ### Step 4 - Inspect your deployment
-You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your AWS Dashboard.
 
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your AWS Dashboard.
 
-***
+---
 
 For a deeper discussion of the Defang AWS Architecture, including a list of the resources we provision in your account, see our [AWS Provider docs](/docs/providers/aws).
