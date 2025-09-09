@@ -8,18 +8,27 @@ description: Deploy to the free Defang Playground.
 This tutorial will show you how to deploy your project to the free [Defang Playground](/docs/concepts/defang-playground).
 
 ## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
 
-## Step 1 - Navigate to your project directory
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Defang Account](/docs/concepts/authentication)
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+
+:::warning["MCP Pre-requisite"]
+If you would like to deploy using [MCP](https://modelcontextprotocol.io/), you like need to setup the [Defang MCP Server](../concepts/mcp.md) with the IDE of your choice.
+:::
+
+## CLI
+
+### Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-## Step 2 - Deploy
+### Step 2 - Deploy
 
 ```
 $ defang compose up
@@ -52,6 +61,41 @@ When you do this, you should see something similar to the output below:
    - https://jordanstephens-app--3000.prod1.defang.dev
  * Done.
 ```
+
+You can also check on your deployment on the on the [Defang portal](#defang-portal) as well.
+
+---
+
+## MCP
+
+### Step 1 - Navigate to your project directory with your IDE
+
+Navigate to your project directory and open it in an IDE that has the [Defang MCP Server](../concepts/mcp.md) installed.
+
+:::tip
+If the Defang MCP server doesn’t start automatically, try starting or restarting it from your IDE settings.
+![VS Code](/img/prompts/start-server.png)
+:::
+
+### Step 2 - Setting your provider
+
+In your chat window, type `/mcp.defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
+
+![Trigger Prompt](/img/prompts/playground-prompt.png)
+
+There are no arguements to this prompt.
+
+### Step 3 - Deploy
+
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+
+### Step 4 - Inspect your deployment
+
+You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the the project on the [Defang portal](#defang-portal).
+
+---
+
+## Defang Portal
 
 Now we can go to [https://portal.defang.dev/service/app](https://portal.defang.dev/service/app) to see our service listed in the Defang portal.
 
