@@ -57,6 +57,11 @@ You can check the status of your deployment by using the [Defang Services tool](
 
 ## GCP
 
+### Prerequisites
+
+- [gcloud CLI](https://cloud.google.com/sdk/docs/install)
+- [GCP Application Default Credentials](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+
 ### Step 1 - Collect your credentials
 
 After signing in to your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project). Make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project). Then, note down the project ID for the next step.
@@ -67,7 +72,7 @@ In your chat window, type `/defang.GCP_Setup` or select the corresponding prompt
 
 ![Trigger Prompt](/img/prompts/gcp-prompt.png)
 
-The [MCP argument](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your GCP project ID you created in [Step 2](#step-2---authenticate-defang-to-use-your-gcp-account-1).
+The [MCP argument](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your GCP project ID you created in [Step 1](#step-1---collect-your-credentials-1).
 ![GCP Project ID](/img/prompts/gcp-project-id.png)
 
 ### Step 3 - Deploy
@@ -78,3 +83,21 @@ Once the prompt completes without errors, your chat input will be automatically 
 
 You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
 
+## Playground
+
+### Step 1 - Setting your provider
+
+In your chat window, type `/defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
+
+![Trigger Prompt](/img/prompts/playground-prompt.png)
+
+There are no arguments to this prompt.
+
+### Step 2 - Deploy
+
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+
+### Step 3 - Inspect your deployment
+
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the the project on the [Defang portal](https://portal.defang.io/projects).
+![screenshot of the defang portal](/img/getting-started-portal.png)
