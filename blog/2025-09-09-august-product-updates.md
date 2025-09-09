@@ -25,7 +25,7 @@ August was about making migrations smoother and showing how you can already use 
 
 ## Heroku Migration
 
-As more and more teams are moving away from PaaS solutions, looking for more flexibility and more control, we’ve made it easier for teams to move off [Heroku](https://docs.defang.io/docs/tutorials/migrating-from-heroku). Defang now supports deployments without a Dockerfile and Defang will even generate a compose file from your Heroku application. The result is a smoother path to AWS or GCP with more features, lower costs, and no lock-in.
+As more and more teams are moving away from legacy PaaS solutions, looking for more flexibility and more control, we’ve made it easier for teams to move off [Heroku](https://docs.defang.io/docs/tutorials/migrating-from-heroku). Defang now supports deployments without a Dockerfile and Defang will even generate a compose file from your Heroku application. The result is a smoother path to AWS or GCP with more features, lower costs, and no lock-in.
 
 ## Agentic Applications
 
