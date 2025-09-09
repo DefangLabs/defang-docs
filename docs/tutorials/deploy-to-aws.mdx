@@ -5,7 +5,7 @@ description: Defang allows you deploy to your own Amazon Web Services (AWS) acco
 
 # Deploy to Amazon Web Services (AWS)
 
-This tutorial will show you how to deploy your services to your own AWS account using Defang.
+This tutorial will show you how to deploy your services to your own AWS account using Defang with the CLI or MCP.
 
 ## Pre-requisites
 * [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
@@ -14,13 +14,19 @@ This tutorial will show you how to deploy your services to your own AWS account 
 * [The Defang CLI](/docs/getting-started#install-the-defang-cli)
 * [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
 
-## Step 1 - Navigate to your project directory
+:::warning["MCP Pre-requisite"]
+If you would like to deploy using [MCP](https://modelcontextprotocol.io/), you like need to setup the [Defang MCP Server](../concepts/mcp.md) with the IDE of your choice.
+:::
+
+## CLI
+
+### Step 1 - Navigate to your project directory
 Head to the folder where your project is located.
 ```bash
 $ cd path/to/your/project
 ```
 
-## Step 2 - Authenticate Defang to use your AWS Account
+### Step 2 - Authenticate Defang to use your AWS Account
 
 There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
 Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
@@ -31,7 +37,7 @@ Once you've done that, Defang will look for your AWS credentials in your shell e
 If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
 :::
 
-## Step 3 - Deploy
+### Step 3 - Deploy
 
 Invoke the `defang compose up` CLI command with the `--provider=aws` flag or set the `DEFANG_PROVIDER=aws` environment variable.
 
@@ -41,9 +47,37 @@ For example:
 $ defang compose up --provider=aws
 ```
 
-## Step 4 - Inspect your deployment
+### Step 4 - Inspect your deployment
 
 Defang will provision resources in your AWS account and deploy your services. You can inspect the resources created in your AWS Dashboard.
+
+---
+
+## MCP
+
+### Step 1 - Navigate to your project directory with your IDE
+Navigate to your project directory and open it in an IDE that has the [Defang MCP Server](../concepts/mcp.md) installed.
+
+:::tip
+If the Defang MCP server doesn’t start automatically, try starting or restarting it from your IDE settings.
+![VS Code](/img/prompts/start-server.png)
+:::
+
+### Step 2 - Setting your provider
+In your chat window, type `/mcp.defang.AWS_Setup`  or select the corresponding prompt from your IDE’s options.
+
+![Trigger Prompt](/img/prompts/aws-prompt.png)
+
+The [MCP prompt](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) accepts two types of credentials:
+* the AWS Profile arguement (skip the rest of the prompts after entering the AWS Profile)
+* or, the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_REGION arguments
+
+### Step 3 - Deploy
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+
+### Step 4 - Inspect your deployment
+You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your AWS Dashboard.
+
 
 ***
 
