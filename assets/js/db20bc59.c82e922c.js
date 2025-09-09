@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[3488],{69992:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/aws/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":13,"previousPage":"/blog/tags/aws","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

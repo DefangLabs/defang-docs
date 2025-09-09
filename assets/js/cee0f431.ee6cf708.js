@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[2018],{91617:s=>{s.exports=JSON.parse('{"label":"GCP","permalink":"/blog/tags/gcp","allTagsPath":"/blog/tags","count":11,"unlisted":false}')}}]);
