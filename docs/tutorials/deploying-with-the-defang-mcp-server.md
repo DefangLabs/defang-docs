@@ -33,6 +33,10 @@ Open your chat window and type `/defang.AWS_Setup`, or select the corresponding 
 
 The [MCP prompt](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) accepts two types of credentials:
 
+:::note
+Credentials never leave memory and are automatically cleared after you close your IDE.
+:::
+
 1. Method 1 - Using an AWS Profile:
    The following prompt will have three arguments and only the first argument is required:
 
