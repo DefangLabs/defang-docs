@@ -114,24 +114,38 @@ While this is not an IDE in the traditional sense, it can support MCP servers. F
 Setup command:
 
 ```bash
-defang mcp setup --client=claude
+defang mcp setup --client=claude-desktop
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
-![Claude Desktop](/img/mcp-concept/claude.png)
+![Claude Desktop](/img/mcp-concept/claude-desktop.png)
+
+### Claude Code
+
+While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
+
+Setup command:
+
+```bash
+defang mcp setup --client=claude-code
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Claude Code](/img/mcp-concept/claude-code.png)
 
 ## MCP Tools
 
 Below are the tools available in the Defang MCP Server.
 
+:::info[Prerequisite]
+In order to use any of the MCP tools, you must set a provider using one of the [MCP prompts](#mcp-prompts) first.
+:::
+
 ### `deploy`
 
 The `deploy` tool scans your project directory for Dockerfiles and `compose.yaml` files, then deploys the detected service(s) using Defang. You can monitor the deployment process in the Defang Portal.
-
-:::info
-The Defang MCP Server currently supports deployments to [Defang Playground](/docs/providers/playground). We plan to support BYOC in future updates.
-:::
 
 ### `services`
 
@@ -156,6 +170,40 @@ The `set_config` tool will [set](/docs/tutorials/configure-environment-variables
 ### `remove_config`
 
 The `remove_config` tool will [remove](/docs/tutorials/configure-environment-variables#removing-a-config-value) a specific Defang config for your project.
+
+## MCP Prompts
+
+Below are the [prompts](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) available in the Defang MCP Server.
+
+### `defang.AWS_Setup`
+
+The `defang.AWS_Setup` prompt helps you set up your AWS credentials for deploying services to AWS using Defang. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#aws) on how to use this prompt.
+
+:::note
+Credentials never leave memory and are automatically cleared after you close your IDE.
+:::
+
+Arguments:
+
+- AWS Credential - REQUIRED : Will take a profile name if using an AWS profile, or an Access Key ID if using Access Keys.
+- AWS_SECRET_ACCESS_KEY - REQUIRED for Access Keys method: Leave blank if using an AWS profile.
+- AWS_REGION - REQUIRED or OPTIONAL : Required if using Access Keys method, optional if using an AWS profile.
+
+### `defang.GCP_Setup`
+
+The `defang.GCP_Setup` prompt helps you set up your targeted GCP project for deploying services to GCP using Defang. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#gcp) on how to use this prompt.
+
+Arguments:
+
+- GCP Project ID - REQUIRED : The ID of the GCP project you want to use (e.g., "my-gcp-project").
+
+### `defang.Playground_Setup`
+
+The `defang.Playground_Setup` prompt helps you set up Defang Playground as your deployment provider. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#playground) on how to use this prompt.
+
+Arguments:
+
+- No arguments required
 
 ## Example Prompts
 
