@@ -4,10 +4,64 @@
         <title>Defang Blog</title>
         <link>https://docs.defang.io/blog</link>
         <description>Defang Blog</description>
-        <lastBuildDate>Tue, 09 Sep 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 15 Sep 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Deployments in the Agentic Era]]></title>
+            <link>https://docs.defang.io/blog/agentic-era</link>
+            <guid>https://docs.defang.io/blog/agentic-era</guid>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[How agentic applications are reshaping the future of software development and deployment]]></description>
+            <content:encoded><![CDATA[<p>If you want people to adopt your AI product, the deployment story has to be as strong as the features.</p>
+<p>Over the past few decades, the software industry has gone through multiple major transitions. Each one reshaped not only how products are delivered, but also how they are trusted.</p>
+<ul>
+<li>In the <strong>Client-Server Era</strong> (circa 2000)<strong>,</strong> apps like SAP and PeopleSoft were purchased and deployed by the customer in their own "on-prem" environment. The customer was in control, but also took on the operational complexity of everything from procuring and deploying hardware to the system software and the apps themselves.</li>
+<li>In the <strong>SaaS Era</strong> (circa 2010s), apps such as Salesforce and Workday ran in the provider's cloud and were delivered through the browser. While this simplified operations for the customer, it also meant that the customer data was trapped in these applications, with sometimes ambiguous data ownership and usage rules.</li>
+<li>Today, we are entering the <strong>Agentic Era</strong>. Agentic apps promise to deliver an unprecedented productivity boost, but to do so, they need access to the most sensitive business data: conversations, documents, decisions. Customers do not want to transfer such data to an unknown and untrusted external provider's environment. Instead, they expect these products to run inside <em>their</em> cloud accounts (whether it be <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>, <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">GCP</a>, or any other), with <em>their</em> compliance, and under <em>their</em> security controls.</li>
+</ul>
+<p><img loading="lazy" alt="Agentic Era" src="https://docs.defang.io/assets/images/agentic-era-669d9c7ade5c64ff4598341e5855a6e9.jpg" width="2880" height="1620" class="img_ev3q"></p>
+<p>This is not a small adjustment. It is the foundation of how the next generation of software will be trusted and adopted.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-the-agentic-era-changes-the-rules"><strong>Why the Agentic Era Changes the Rules</strong><a href="https://docs.defang.io/blog/agentic-era#why-the-agentic-era-changes-the-rules" class="hash-link" aria-label="Direct link to why-the-agentic-era-changes-the-rules" title="Direct link to why-the-agentic-era-changes-the-rules">​</a></h2>
+<p>AI products are not like SaaS tools. They do not just manage workflows, they ingest and act on the crown jewels of a business. To succeed in this environment, three conditions must hold true:</p>
+<ul>
+<li><strong>Data stays with the customer</strong>: no leaking sensitive content outside their environment.</li>
+<li><strong>Deployments work across clouds</strong>: <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>, <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">GCP</a>, <a href="https://azure.microsoft.com/en-us/" target="_blank" rel="noopener noreferrer">Azure</a>, or wherever the customer operates.</li>
+<li><strong>Security and compliance are built in</strong>: IAM, networking, and policies set up correctly from day one.</li>
+</ul>
+<p>This is not a technical detail. It is the trust layer that determines whether adoption happens at all.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ekais-example"><strong>ekai's Example</strong><a href="https://docs.defang.io/blog/agentic-era#ekais-example" class="hash-link" aria-label="Direct link to ekais-example" title="Direct link to ekais-example">​</a></h2>
+<p><a href="https://yourekai.com/" target="_blank" rel="noopener noreferrer">ekai</a> is an AI digital twin that boosts productivity by capturing meetings, surfacing action items, and acting as a Slack companion. To be trusted, it has to run inside the customer's cloud account.</p>
+<p>ekai needed a single deployment solution that could run on any cloud and deliver a consistent, reliable experience with the same features everywhere. Like many AI builders, they faced the challenge of providing secure, compliant deployments across <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>, <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">GCP</a>, and other environments without spending weeks on custom DevOps for each customer.</p>
+<p>That is where Defang came in.</p>
+<p>With Defang, ekai defines its application once in Docker Compose. Defang turns that definition into a production-ready deployment inside the customer's own cloud account. Compute, storage, networking, IAM roles, security groups, and even managed LLMs are provisioned automatically, following best practices for each cloud.</p>
+<p>What used to take weeks of engineering now happens in hours. More importantly, every deployment is secure, compliant, and customer-owned.</p>
+<blockquote>
+<p>"Defang was the ideal choice for us. We simply describe ekai as a Docker Compose application, and Defang takes care of everything else. From compute and storage to IAM roles and managed LLMs, Defang ensures our deployments are secure, scalable, and cloud-native. That is a huge benefit for us and for our customers."</p>
+</blockquote>
+<p><strong>Ash Tiwari, Founder &amp; CEO, <a href="https://yourekai.com/" target="_blank" rel="noopener noreferrer">ekai</a></strong></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="defang-and-the-agentic-era"><strong>Defang and the Agentic Era</strong><a href="https://docs.defang.io/blog/agentic-era#defang-and-the-agentic-era" class="hash-link" aria-label="Direct link to defang-and-the-agentic-era" title="Direct link to defang-and-the-agentic-era">​</a></h2>
+<p>ekai is not an isolated case. It is a preview of what the Agentic Era demands. As AI products move deeper into mission-critical workflows, deployment will decide adoption.</p>
+<p>Defang exists to make this possible.</p>
+<ul>
+<li>Define your app once, no matter the framework: <a href="https://www.crewai.com/" target="_blank" rel="noopener noreferrer">CrewAI</a>, <a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener noreferrer">LangGraph</a>, <a href="https://microsoft.github.io/autogen/stable//index.html" target="_blank" rel="noopener noreferrer">AutoGen</a>, <a href="https://strandsagents.com/latest/" target="_blank" rel="noopener noreferrer">Strands</a></li>
+<li>Deploy to any cloud in a single step</li>
+<li>Keep customer data inside customer environments</li>
+<li>Align deployments with cloud-native best practices automatically</li>
+</ul>
+<p>Just as SaaS platforms unlocked a decade of cloud adoption, Defang is the foundation for customer-owned AI.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-takeaway"><strong>The Takeaway</strong><a href="https://docs.defang.io/blog/agentic-era#the-takeaway" class="hash-link" aria-label="Direct link to the-takeaway" title="Direct link to the-takeaway">​</a></h2>
+<p>In the Agentic Era, trust is the product. The next wave of AI adoption will be decided not by features, but by where and how products run. Companies that respect data ownership and deliver secure, cloud-native deployments will earn trust and scale. Those that do not will be left behind.</p>
+<p>Defang is the invisible infrastructure making this era possible.</p>]]></content:encoded>
+            <category>Agentic Era</category>
+            <category>AI</category>
+            <category>Software Development</category>
+            <category>Future</category>
+            <category>Automation</category>
+            <category>Cloud</category>
+            <category>DevOps</category>
+        </item>
         <item>
             <title><![CDATA[August 2025 Defang Compose Update]]></title>
             <link>https://docs.defang.io/blog/2025-09-09-product-update</link>
@@ -914,35 +968,6 @@ Defang makes it easy to use cloud-native language models across providers — an
             <category>AI</category>
             <category>Debugging</category>
             <category>Defang Compose Update</category>
-        </item>
-        <item>
-            <title><![CDATA[Defang is live on Product Hunt!]]></title>
-            <link>https://docs.defang.io/blog/2024/12/11/product-hunt</link>
-            <guid>https://docs.defang.io/blog/2024/12/11/product-hunt</guid>
-            <pubDate>Wed, 11 Dec 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Defang Compose Update - Product Hunt]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Defang Compose Update - Product Hunt" src="https://docs.defang.io/assets/images/product-hunt-085d264064de8b05eade396b9854f83a.png" width="1200" height="630" class="img_ev3q"></p>
-<p>The moment is finally here – <strong>Defang V1 is officially LIVE on Product Hunt!</strong> 🎉</p>
-<a href="https://www.producthunt.com/posts/defang?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-defang" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=689929&amp;theme=light" alt="Defang - Go from idea to your favorite cloud in minutes. | Product Hunt" style="width:250px;height:54px;border-radius:0px !important" class="unstyled" width="250" height="54"></a>
-<p>Over the past few months, our team has been working tirelessly to create a tool that transforms how developers develop, deploy, and debug cloud apps. With Defang, you can go from idea to your favorite cloud in minutes. 🚀</p>
-<p>Today, we have the opportunity to showcase Defang to a global audience, and your support could make all the difference!</p>
-<p>If you already have a Product Hunt account, it's super easy.</p>
-<ul>
-<li>✅&nbsp;You can support our product if you like what we have built so far</li>
-<li>✅ You can leave a comment and any feedback you may have (comments are great!)</li>
-<li>✅ You can leave a review</li>
-</ul>
-<p>Product Hunt launches are time sensitive as they last 24 hours, so if you have 30 seconds available right now, it would really mean a lot.</p>
-<p>If you don't already have a Product Hunt account, please don't create one now to upvote (we may get penalized for that).</p>
-<p>Instead, you can like and share our (e.g. LinkedIn, Twitter, Instagram or Facebook) posts
-.
-Thank you in advance. Your support means the world.</p>]]></content:encoded>
-            <category>Cloud</category>
-            <category>BYOC</category>
-            <category>V1</category>
-            <category>Launch Week</category>
-            <category>Defang Compose Update</category>
-            <category>Product Hunt</category>
         </item>
     </channel>
 </rss>
