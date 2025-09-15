@@ -11,7 +11,7 @@ date: 2025-09-15
 
 If you want people to adopt your AI product, the deployment story has to be as strong as the features.
 
-Over the past few decades, the software industry has gone through 3 major eras. Each one reshaped not only how products are delivered, but also how they are trusted.
+Over the past few decades, the software industry has gone through multiple major transitions. Each one reshaped not only how products are delivered, but also how they are trusted.
 
 - In the **Client-Server Era** (circa 2000)**,** apps like SAP and PeopleSoft were purchased and deployed by the customer in their own "on-prem" environment. The customer was in control, but also took on the operational complexity of everything from procuring and deploying hardware to the system software and the apps themselves.
 - In the **SaaS Era** (circa 2010s), apps such as Salesforce and Workday ran in the provider's cloud and were delivered through the browser. While this simplified operations for the customer, it also meant that the customer data was trapped in these applications, with sometimes ambiguous data ownership and usage rules.
