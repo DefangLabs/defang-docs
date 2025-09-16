@@ -1,32 +1,35 @@
 ---
 title: Deploy to AWS
 description: Defang allows you deploy to your own Amazon Web Services (AWS) account.
-sidebar_position: 11
 ---
 
 # Deploy to Amazon Web Services (AWS)
 
 This tutorial will show you how to deploy your services to your own AWS account using Defang.
 
-## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
-* [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+## Prerequisites
+
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
 
 ## Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-## Step 2 - Authenticate Defang to use your AWS Account
+## Step 2 - Configure your AWS credentials
 
-There are many ways to authenticate your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
+There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
 Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
-* the `AWS_PROFILE` environment variable
-* or, the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables
+
+- the `AWS_PROFILE` environment variable, and optionally the `AWS_REGION` environment variable
+- or, the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` environment variables
 
 :::tip
 If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
@@ -42,10 +45,10 @@ For example:
 $ defang compose up --provider=aws
 ```
 
-## Step 4 - Inspect your deployment
+### Step 4 - Inspect your deployment
 
 Defang will provision resources in your AWS account and deploy your services. You can inspect the resources created in your AWS Dashboard.
 
-***
+---
 
 For a deeper discussion of the Defang AWS Architecture, including a list of the resources we provision in your account, see our [AWS Provider docs](/docs/providers/aws).

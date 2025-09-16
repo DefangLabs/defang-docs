@@ -1,28 +1,30 @@
 ---
 title: Deploy to GCP
 description: Defang allows you deploy to your own Google Cloud Platform (GCP) account.
-sidebar_position: 11
 ---
 
 # Deploy to Google Cloud Platform (GCP)
 
 This tutorial will show you how to deploy your services to your own GCP project using Defang.
 
-## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
-* [gcloud CL](https://cloud.google.com/sdk/docs/install)
-* [GCP Account Credentials](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+## Prerequisites
+
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [gcloud CLI](https://cloud.google.com/sdk/docs/install)
+- [GCP Application Default Credentials](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
 
 ## Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-## Step 2 - Authenticate Defang to use your GCP Account
+## Step 2 - Configure your GCP credentials
 
 After signing in to your GCP account, select an existing project or [create a new project](https://developers.google.com/workspace/guides/create-project). Make sure [billing is enabled](https://cloud.google.com/billing/docs/how-to/modify-project). Then, note down the project ID and set it as environment variable `GCP_PROJECT_ID`.
 
@@ -40,6 +42,6 @@ $ defang compose up --provider=gcp
 
 Defang will provision resources in your GCP account and deploy your services. You can inspect the resources created in your [GCP Dashboard](https://console.cloud.google.com/).
 
-***
+---
 
 For a deeper discussion of the Defang GCP Architecture, see our [GCP docs](/docs/providers/gcp).

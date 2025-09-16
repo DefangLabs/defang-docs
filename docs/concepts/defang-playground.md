@@ -1,7 +1,6 @@
 ---
 title: Defang Playground
 description: Defang Playground allows you to get a feel for how Defang works without running production workloads in your own cloud accounts.
-sidebar_position: 00
 ---
 
 # Defang Playground

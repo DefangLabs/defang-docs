@@ -1,7 +1,6 @@
 ---
 title: Estimating AWS Deployment Costs
 description: Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
-sidebar_position: 280
 ---
 
 # Estimating AWS Deployment Costs
@@ -112,7 +111,7 @@ To estimate other modes, use defang estimate --mode=affordable|balanced|high_ava
 For help with warnings, check our FAQ at https://s.defang.io/warnings
 ```
 
-This estimate will include a line item for the most significant monthly costs associated with your deployment. Each line item will be associated with a compose service if possible. Some AWS resources will be shared between multiple compose services.
+This estimate will include a line item for the most significant monthly costs associated with your deployment. Each line item will be associated with a compose service if possible. Some resources will be shared between multiple compose services.
 
 ## Deploying your project
 

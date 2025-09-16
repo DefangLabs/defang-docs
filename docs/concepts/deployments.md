@@ -1,7 +1,6 @@
 ---
 title: Deployment
 description: Defang will build your services in the cloud and manage the deployment process for you.
-sidebar_position: 500
 ---
 
 # Deployment

@@ -1,7 +1,6 @@
 ---
 title: Scaling
 description: Defang can help you handle service irregular loads.
-sidebar_position: 375
 ---
 
 # Scaling
@@ -47,10 +46,10 @@ With Defang, users on the Pro plan or higher can enable service-level autoscalin
 services:
   service-example:
     x-defang-autoscaling: true #enable autoscaling for this service
-    build: 
+    build:
        context: .
        dockerfile: Dockerfile
-    ports: 
+    ports:
         - mode: ingress
         target: 8080
         published: 8080
@@ -65,10 +64,10 @@ Auto-scaling systems typically rely on:
   - If average CPU > 85% for 5 minutes → scale up by 2 instances.
 - **Cooldown Periods**: Delays between scaling events to prevent rapid, repeated changes (flapping).
 
-### Supported Platforms
+### Supported Providers
 
-| Platform        | Auto-Scaling Support |
-|----------------|:----------------------:|
+| Provider       | Auto-Scaling Support |
+|----------------|:--------------------:|
 | Playground     |     ❌ |
 | AWS            |     ✅ |
 | DigitalOcean   |     ❌ |
@@ -84,5 +83,5 @@ Auto-scaling systems typically rely on:
 
 - Ensure services are **stateless** or use **externalized state** (e.g., databases, caches) for smooth scaling. ([12 Factor App](https://12factor.net/processes))
 - Test services under load to identify scaling bottlenecks.
-  
+
 See Tutorial page [Scaling Tutorial](/docs/tutorials/scaling-your-services)

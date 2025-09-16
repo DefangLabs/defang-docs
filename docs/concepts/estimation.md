@@ -1,7 +1,6 @@
 ---
 title: Cost Estimation
 description: Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
-sidebar_position: 280
 ---
 
 # Cost Estimation
@@ -9,17 +8,17 @@ sidebar_position: 280
 Defang enables you to estimate the cost of deploying and running your project without needing to create an account with your cloud provider.
 
 :::info
-Currently, AWS is the only provider supported for cost estimation. Support for GCP and Digital Ocean is coming soon.
+Currently, AWS and GCP are supported for cost estimation. Support for Digital Ocean is coming soon.
 :::
 
 ## Generating an Estimate
 
 Navigate your shell to your application's working directory and run
 ```
-defang estimate [--provider aws] [--mode affordable|balanced|high_availability]
+defang estimate [--provider=aws|gcp] [--mode=affordable|balanced|high_availability]
 ```
 
-Here is an example of the output you would see if you estimated the cost deploying the [django-postgres](https://github.com/DefangLabs/samples/tree/main/samples/django-postgres) sample using the `balanced` [deployment mode](/docs/concepts/deployment-modes).
+Here is an example of the output you would see if you estimated the cost deploying the [django-postgres](https://github.com/DefangLabs/samples/tree/main/samples/django-postgres) to AWS sample using the `balanced` [deployment mode](/docs/concepts/deployment-modes).
 
 ```
 defang estimate --provider=aws --mode=balanced
@@ -63,4 +62,13 @@ Now that you have estimated the costs associated with your project. You are read
 ```
 defang compose up [--provider aws|gcp|digitalocean] [--mode affordable|balanced|high_availability]
 ```
+
+## Supported Providers
+
+| Provider       | Estimation Support |
+|----------------|:------------------:|
+| Playground     |     ❌ |
+| AWS            |     ✅ |
+| DigitalOcean   |     ❌ |
+| GCP            |     ✅ |
 

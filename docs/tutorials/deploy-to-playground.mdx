@@ -1,26 +1,30 @@
 ---
 title: Deploy to Playground
 description: Deploy to the free Defang Playground.
-sidebar_position: 15
 ---
 
 # Deploy to Playground
 
 This tutorial will show you how to deploy your project to the free [Defang Playground](/docs/concepts/defang-playground).
 
-## Pre-requisites
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+## Prerequisites
 
-## Step 1 - Navigate to your project directory
+- [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
+
+## CLI
+
+### Step 1 - Navigate to your project directory
+
 Head to the folder where your project is located.
+
 ```bash
 $ cd path/to/your/project
 ```
 
-## Step 2 - Deploy
+### Step 2 - Deploy
 
 ```
 $ defang compose up
@@ -53,6 +57,12 @@ When you do this, you should see something similar to the output below:
    - https://jordanstephens-app--3000.prod1.defang.dev
  * Done.
 ```
+
+You can also check on your deployment on the on the [Defang portal](#defang-portal) as well.
+
+---
+
+## Defang Portal
 
 Now we can go to [https://portal.defang.dev/service/app](https://portal.defang.dev/service/app) to see our service listed in the Defang portal.
 

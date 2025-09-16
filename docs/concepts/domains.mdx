@@ -1,22 +1,21 @@
 ---
-title: Domains    
+title: Domains
 description: Defang helps you provision SSL certificates and expose your services to the internet.
-sidebar_position: 280
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Domains
 
-Defang helps you provision SSL certificates and expose your services to the internet. You can expose your services using Defang-hosted domains or bring your own custom domain with [Defang BYOC](./defang-byoc.md). This page explains how to configure your services to be accessible from the public internet. 
+Defang helps you provision SSL certificates and expose your services to the internet. You can expose your services using Defang-hosted domains or bring your own custom domain with [Defang BYOC](./defang-byoc.md). This page explains how to configure your services to be accessible from the public internet.
 
 ## Defang-hosted Domains
 
-To make your service accessible from the public internet with Defang-hosted domains (under `defang.app`), you simply expose ports in your service definition. 
+To make your service accessible from the public internet with Defang-hosted domains (under `defang.app`), you simply expose ports in your service definition.
 
 ### Structure
 
-Defang-hosted domains use a structure that is based on your username and service name. 
+Defang-hosted domains use a structure that is based on your username and service name.
 
 <Tabs>
   <TabItem value="playground" label="Playground" default>
@@ -46,7 +45,7 @@ services:
         ports:
         // highlight-start
         - mode: ingress
-          target: 3000	
+          target: 3000
           protocol: http
         // highlight-end
 ```
@@ -103,7 +102,7 @@ services:
         ports:
         // highlight-start
         - mode: ingress
-          target: 3000	
+          target: 3000
           protocol: http
         // highlight-end
 ```

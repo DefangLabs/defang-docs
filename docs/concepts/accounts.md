@@ -1,7 +1,6 @@
 ---
 title: Accounts
 description: How accounts are organized in Defang.
-sidebar_position: 100
 ---
 
 # Accounts

@@ -32,6 +32,9 @@ const redirects = [
   { from: '/blog/deploying-defang-with-defang-part-2', to: '/blog/2025/03/26/deploying-defang-with-defang-part-2' },
   { from: '/blog/website-logo-refresh-announcement', to: '/blog/2025/03/12/website-logo-refresh-announcement' },
   { from: '/blog/2025-05-09-product-update', to: '/blog/2025/05/09/april-product-updates' },
+  { from: '/blog/2025-06-06-product-update', to: '/blog/2025/06/06/may-product-updates' },
+  { from: '/blog/rag-agents-crew-ai-sample', to: '/blog/2025/06/16/crew-ai-sample' },
+  { from: '/blog/defang-docker-compose', to: '/blog/2025/06/16/docker-compose-defang' },
 ];
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
