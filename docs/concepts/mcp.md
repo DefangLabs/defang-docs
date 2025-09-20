@@ -28,9 +28,13 @@ Run the setup command in your terminal for your IDE of choice from the [Supporte
 Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
-defang mcp setup --client=<your-ide>
+defang mcp setup
 ```
 
+An interactive prompt will appear asking you to select your IDE(s) from a list of supported IDE(s). Select your IDE(s) by using the spacebar and arrow keys to navigate and press enter to confirm your selection.
+![Picker](/img/mcp-concept/mcp-picker.png)
+
+Please ensure that your selected IDE(s) are updated to the latest version to ensure compatibility.
 :::
 
 Once the command completes, you may need to restart your IDE for the changes to take effect.
@@ -38,6 +42,12 @@ Once the command completes, you may need to restart your IDE for the changes to 
 Once the MCP Server is running, you can access the Defang MCP tools directly through the AI agent chat in your IDE.
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
+
+Note that we still support the previous client selection method using `--client=<your-ide>` flag, but it is not recommended.
+
+```bash
+defang mcp setup --client=<your-ide>
+```
 
 Note that `npx` installation is supported, but not recommended.
 
@@ -52,8 +62,10 @@ npx -y defang@latest mcp setup --client=<your-ide>
 Setup command:
 
 ```bash
-defang mcp setup --client=cursor
+defang mcp setup
 ```
+
+Select `cursor` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -64,8 +76,14 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-defang mcp setup --client=windsurf
+defang mcp setup
 ```
+
+Select `windsurf` from the [interactive prompt](#installation).
+
+:::warning
+Windsurf currently does not support [MCP prompts](https://docs.windsurf.com/windsurf/cascade/mcp#general-information), therefore BYOC providers (AWS, GCP) cannot be set up through Windsurf. You can still use Playground as your deployment provider or setup AWS/GCP using the Defang CLI or another supported IDE.
+:::
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -76,8 +94,10 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-defang mcp setup --client=vscode
+defang mcp setup
 ```
+
+Select `vscode` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -88,8 +108,10 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-defang mcp setup --client=vscode-insiders
+defang mcp setup
 ```
+
+Select `vscode-insiders` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -100,8 +122,10 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 Setup command:
 
 ```bash
-defang mcp setup --client=kiro
+defang mcp setup
 ```
+
+Select `kiro` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -114,8 +138,10 @@ While this is not an IDE in the traditional sense, it can support MCP servers. F
 Setup command:
 
 ```bash
-defang mcp setup --client=claude-desktop
+defang mcp setup
 ```
+
+Select `claude-desktop` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
@@ -128,8 +154,10 @@ While this is not an IDE in the traditional sense, it can support MCP servers. F
 Setup command:
 
 ```bash
-defang mcp setup --client=claude-code
+defang mcp setup
 ```
+
+Select `claude-code` from the [interactive prompt](#installation).
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
