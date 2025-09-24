@@ -1082,6 +1082,25 @@
     ]
   },
   {
+    "name": "platformatic",
+    "category": "nodejs",
+    "readme": "# [Platformatic App](https://github.com/DefangLabs/samples/tree/main/samples/platformatic)\n\nThis sample project demonstrates how to deploy a simplist Platformatic service that returns \"Platformatic x Defang\" when accessed. The project includes a Dockerized setup with Docker Compose, making it easy to deploy and manage the service.\n\nOnce your app is up and running, you can access it via the defined port (default is 3042). This service is designed to be simple, showcasing how to set up a basic Platformatic application and deploy it using Docker.\n\n## Prerequisites\n\n1. Download <a href=\"https://github.com/defang-io/defang\">Defang CLI</a>\n2. (optional) If you are using <a href=\"https://docs.defang.io/docs/concepts/defang-byoc\">Defang BYOC</a>, make sure you have properly <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html\">authenticated your AWS account</a>.\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Navigate to the directory \"app\" with `cd ./app`\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Local Development\n\n1. After cloning the repository and navigating to the root directory of the project, navigate to the directory called \"app\" with `cd app`\n2. Run `docker compose -f compose.dev.yaml up --build`\n\n---\n\nTitle: Platformatic\n\nShort Description: A sample project showcasing a simple Platformatic service with Docker deployment.\n\nTags: Platformatic, Defang, Docker, Node.js, Service, JavaScript\n\nLanguages: nodejs\n",
+    "directoryName": "platformatic",
+    "title": "Platformatic",
+    "shortDescription": "A sample project showcasing a simple Platformatic service with Docker deployment.",
+    "tags": [
+      "Platformatic",
+      "Defang",
+      "Docker",
+      "Node.js",
+      "Service",
+      "JavaScript"
+    ],
+    "languages": [
+      "nodejs"
+    ]
+  },
+  {
     "name": "pulumi",
     "category": "nodejs",
     "readme": "# [Pulumi](https://github.com/DefangLabs/samples/tree/main/samples/pulumi)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-pulumi-template%26template_owner%3DDefangSamples)\n\nThis basic example shows you how to use the Defang Pulumi provider to deploy the nodejs-http sample with Defang.\n\n## Prerequisites\n\nInstall the Defang CLI by following the instructions in the [Defang CLI documentation](https://docs.defang.io/docs/getting-started).\n\nInstall the dependencies:\n\n```sh\nnpm install\n```\n\n## Deploying\n\nCreate a new stack:\n\n```sh\npulumi stack init production\n```\n\nLogin to Defang:\n\n```sh\ndefang login\n```\n\nDeploy the application:\n\n```sh\npulumi up\n```\n\n---\n\nTitle: Pulumi\n\nShort Description: A basic Pulumi example.\n\nTags: Pulumi, Node.js, HTTP, Server, TypeScript\n\nLanguages: nodejs\n",
