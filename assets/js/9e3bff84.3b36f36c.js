@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[6970],{71502:e=>{e.exports=JSON.parse('{"label":"Heroku","permalink":"/blog/tags/heroku","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
