@@ -16,9 +16,9 @@ But convenience has a cost. As your product grows, you want more control over pe
 
 This trade‑off eventually becomes untenable. Teams need the simplicity of a platform like Heroku *and* the power and trust of running inside their own AWS account. This post unpacks why migrating off Heroku matters, highlights the friction points when you try to move to AWS yourself, and shows how the **Defang CLI** bridges the gap.
 
-## **Heroku vs. AWS: A cloud clash in 2025**
+## **Heroku vs. AWS**
 
-Heroku is a Platform‑as‑a‑Service (PaaS), while AWS is Infrastructure‑as‑a‑Service (IaaS). That distinction matters. A PaaS abstracts away servers so developers can focus on code; an IaaS exposes the underlying compute, storage and networking so you can customize everything. Heroku’s abstraction makes life easy at first: you deploy with a simple git push, scale by adding dynos and pick from a marketplace of add‑ons. AWS, meanwhile, offers granular control over instance types, networking, IAM policies and more. But that power demands a steeper learning curve.
+Heroku is a Platform‑as‑a‑Service very focused on simplicity and ease of use, while AWS offers a huge array of extremely powerful services that can be difficult to navigate alone. What you get from Heroku is the ability to deploy your application with a simple git push, scale by adding dynos and pick from a marketplace of add‑ons. But you miss out on much of the power of AWS, like the ability to organize and network services the way you want, the ability to deploy in a huge number of regions, their reliability, and much of the control you need to be called enterprise-ready. AWS also tends to be more cost effective as you scale and offers a wide variety of scalable storage options including Postgres, MongoDB, Redis, and more.
 
 ### **Pricing and scale**
 
