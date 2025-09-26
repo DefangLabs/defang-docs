@@ -46,7 +46,7 @@ Yet the path off Heroku isn’t trivial. Re‑platforming often means rewriting 
 
 ## **Migration in minutes: how the Defang CLI works**
 
-In our recent video (“*How to migrate from Heroku to AWS in 5 minutes\!*”), we demonstrated a Django \+ Postgres app running on Heroku. The goal: deploy it into our own AWS account without rewriting anything. Here’s how it works:
+In our recent video (“*How to migrate from Heroku to AWS in 5 minutes!*”), we demonstrated a Django \+ Postgres app running on Heroku. The goal: deploy it into our own AWS account without rewriting anything. Here’s how it works:
 
 **Import your Heroku app.** 
 After installing and logging into the Defang CLI, run:
