@@ -37,6 +37,43 @@ You can also set the following optional environment variables to configure the m
 
 You can connect to the managed Postgres instance using the name of your service as the hostname, `POSTGRES_USER`, `POSTGRES_DB`, and `POSTGRES_PASSWORD` environment variables.
 
+#### SSL
+
+By default, Defang configures managed Postgres instances to require SSL connections. To connect to the database, you will need to use a connection string that includes `sslmode=require`.
+
+If your application does not connect using SSL, you will see an error message like the following:
+
+```
+error: no pg_hba.conf entry for host "10.0.12.345", user "mydbuser", database "myappdatabase", no encryption
+```
+
+We recommend setting a defang config variable for the `SSL_MODE`, and then using that variable in your connection string. That way you can keep it empty for local development, and set it to `require` for production.
+
+```
+$ defang config set SSL_MODE=require
+```
+Then you can set up your `compose.yaml` file like this:
+```yaml
+  app:
+    # [...]
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: # load from defang config
+      # Note: you can create a connection string by using interpolation,
+      # reference config variables by using ${<config name>}
+      POSTGRES_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?sslmode=${SSL_MODE}
+  db:
+    image: postgres:18
+    x-defang-postgres: true
+    ports:
+      - mode: host
+        target: 5432
+    environment:
+      POSTGRES_PASSWORD: # load from defang config
+```
+
 ### Example
 
 :::info
@@ -59,7 +96,7 @@ For a smoother experience with Defang, we recommend using Postgres 14 for your c
       # reference config variables by using ${<config name>}
       CONNECTURL: postgresql://postgres:${POSTGRES_PASSWORD}@database:5432/postgres?sslmode=require
   database:
-    image: postgres:14
+    image: postgres:18
     x-defang-postgres: true
     ports:
       - mode: host
@@ -92,13 +129,13 @@ Please note the upgrading will occur immediately and may result in the database 
 
 ```
 database:
-  image: postgres:15
+  image: postgres:17
 ```
 
 to
 
 ```
 database:
-  image: postgres:16
+  image: postgres:18
 ```
  */}
