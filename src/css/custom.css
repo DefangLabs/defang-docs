@@ -61,7 +61,6 @@
   --ifm-code-background: var(--prism-background-color);
   --ifm-pre-background: var(--prism-background-color);
   --ifm-footer-background-color: transparent;
-  --ifm-code-border-radius: 1.25rem;
   --ifm-tabs-border-bottom: 1px solid hsla(var(--border) / 0.7);
   --ifm-tabs-border-radius: 0.875rem;
   --ifm-footer-title-color: hsl(var(--foreground));
@@ -392,10 +391,20 @@ img.unstyled {
 /**
  * Page Specific
  */
-[class*="docs-doc-id-intro/intro"] .theme-doc-markdown .card h2 {
+.theme-doc-markdown .card h2 {
     @apply text-2xl;
 }
 
 .navbar__item.navbar__link.navbar__item-get_started {
   @apply hidden sm:block;
 }
+
+/* selector for code tags with no classes */
+code:not([class]),
+code[class=""] {
+  @apply rounded-[0.5rem] bg-muted px-1.5 py-0.5;
+}
+pre code {
+  @apply bg-white dark:bg-card dark:border dark:border-solid dark:border-gray-600;
+}
+  
