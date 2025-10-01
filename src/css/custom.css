@@ -207,6 +207,9 @@
   .breadcrumbs__item--active {
     @apply text-sm font-medium text-muted-foreground hover:text-foreground;
   }
+  [class^="breadcrumbHomeIcon_node_modules-@docusaurus-theme-classic-lib-theme-DocBreadcrumbs-Items-Home-styles-module"] {
+    display: inline-block !important;
+  }
 
   .table-of-contents {
     @apply bg-card/60 backdrop-blur-sm border border-border/70 rounded-2xl px-4 py-4 text-sm shadow-sm;
@@ -243,6 +246,30 @@
   .theme-doc-footer {
     @apply border-t border-border/60;
   }
+}
+
+.theme-doc-markdown h1 {
+    @apply text-5xl;
+}
+
+.theme-doc-markdown h2 {
+    @apply text-3xl;
+}
+
+.theme-doc-markdown h3 {
+    @apply text-2xl;
+}
+
+.theme-doc-markdown h4 {
+    @apply text-xl;
+}
+
+.theme-doc-markdown h5 {
+    @apply text-base;
+}
+
+.theme-doc-markdown h6 {
+    @apply text-sm;
 }
 
 
