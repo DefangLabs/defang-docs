@@ -83,7 +83,7 @@ export default function Home() {
               These docs walk through the workflows, architecture patterns, and reference deployments that power modern teams.
             </p>
             <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-6">
-              <Button asChild size="lg" className="w-full md:w-auto">
+              <Button asChild size="lg" className="w-full md:w-auto hover:text-white">
                 <Link to="/docs/getting-started">
                   Launch quickstart
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
@@ -222,7 +222,7 @@ export default function Home() {
                   <CardDescription>{description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-2">
-                  <Button asChild variant="ghost" className="gap-2 px-0 text-sm font-semibold">
+                  <Button asChild variant="ghost" className="gap-2 px-0 text-sm font-semibold hover:bg-transparent">
                     <Link to={href}>
                       Read the update
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
