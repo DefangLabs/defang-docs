@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { useEffect } from 'react';
 
 const featureCards = [
   {
@@ -61,6 +62,11 @@ const timeline = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    window.location.href = '/docs';
+  }, []);
+
+  return null;
   return (
     <Layout>
       <main className="relative overflow-hidden">
