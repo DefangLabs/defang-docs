@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 const { themes } = require('prism-react-renderer');
+const path = require('path');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -206,6 +207,20 @@ const config = {
     },
   },
   plugins: [
+    async function shadcnTailwindPlugin() {
+      return {
+        name: 'defang-tailwind-shadcn',
+        configureWebpack() {
+          return {
+            resolve: {
+              alias: {
+                '@': path.resolve(__dirname, 'src'),
+              },
+            },
+          };
+        },
+      };
+    },
     require.resolve('docusaurus-lunr-search'),
     [
       '@docusaurus/plugin-client-redirects',
