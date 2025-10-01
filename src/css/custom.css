@@ -249,27 +249,27 @@
 }
 
 .theme-doc-markdown h1 {
-    @apply text-5xl;
+    @apply text-5xl mb-4;
 }
 
 .theme-doc-markdown h2 {
-    @apply text-3xl;
+    @apply text-3xl mb-4;
 }
 
 .theme-doc-markdown h3 {
-    @apply text-2xl;
+    @apply text-2xl mb-4;
 }
 
 .theme-doc-markdown h4 {
-    @apply text-xl;
+    @apply text-xl mb-4;
 }
 
 .theme-doc-markdown h5 {
-    @apply text-base;
+    @apply text-base mb-4;
 }
 
 .theme-doc-markdown h6 {
-    @apply text-sm;
+    @apply text-sm mb-4;
 }
 
 
@@ -387,4 +387,15 @@ footer.footer--dark .footer__link-item:hover {
 img.unstyled {
   border-radius: 0 !important;
   box-shadow: none !important;
+}
+
+/**
+ * Page Specific
+ */
+[class*="docs-doc-id-intro/intro"] .theme-doc-markdown .card h2 {
+    @apply text-2xl;
+}
+
+.navbar__item.navbar__link.navbar__item-get_started {
+  @apply hidden sm:block;
 }
