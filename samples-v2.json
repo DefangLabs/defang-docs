@@ -638,6 +638,27 @@
     ]
   },
   {
+    "name": "jupyter-postgres",
+    "category": "Python",
+    "readme": "# [Jupyter & Postgres](https://github.com/DefangLabs/samples/tree/main/samples/jupyter-postgres)\n\n[![1-click-deploy](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-jupyter-postgres-template%26template_owner%3DDefangSamples)\n\nThis sample shows you how to spin up a postgres database and a Jupyter notebook server. This is useful if you need to use Jupyter notebooks to read data from or persist data to a database.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc) authenticate with your cloud provider account\n3. (Optional for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Development\n\nTo run the application locally, you can use the following command:\n\n```bash\ndocker compose -f compose.dev.yaml up --build\n```\n\n## Configuration\n\nFor this sample, you will need to provide the following [configuration](https://docs.defang.io/docs/concepts/configuration): \n\n> Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.\n\n### `POSTGRES_PASSWORD`\nThe password to use for the postgres database.\n```bash\ndefang config set POSTGRES_PASSWORD\n```\n\n### `JUPYTER_TOKEN`\nThe token to access your Jupyter notebook server.\n```bash\ndefang config set JUPYTER_TOKEN\n```\n\n## Deployment\n\n> [!NOTE]\n> Download [Defang CLI](https://github.com/DefangLabs/defang)\n\n### Defang Playground\n\nDeploy your application to the Defang Playground by opening up your terminal and typing:\n```bash\ndefang compose up\n```\n\n### BYOC (AWS)\n\nIf you want to deploy to your own cloud account, you can use Defang BYOC:\n\n1. [Authenticate your AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), and check that you have properly set your environment variables like `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`.\n2. Run in a terminal that has access to your AWS environment variables:\n    ```bash\n    defang --provider=aws compose up\n    ```\n\n---\n\nTitle: Jupyter & Postgres\n\nShort Description: This sample shows you how to spin up a postgres database and a Jupyter notebook server.\n\nTags: Jupyter, Postgres, Database\n\nLanguages: Python, SQL\n",
+    "directoryName": "jupyter-postgres",
+    "title": "Jupyter & Postgres",
+    "shortDescription": "This sample shows you how to spin up a postgres database and a Jupyter notebook server.",
+    "tags": [
+      "Jupyter",
+      "Postgres",
+      "Database"
+    ],
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "configs": [
+      "JUPYTER_TOKEN",
+      "POSTGRES_PASSWORD"
+    ]
+  },
+  {
     "name": "langchain",
     "category": "python",
     "readme": "# [Langchain & Flask](https://github.com/DefangLabs/samples/tree/main/samples/langchain)\n\n[![1-click-deploy](https://raw.githubusercontent.com/DefangLabs/defang-assets/main/Logos/Buttons/SVG/deploy-with-defang.svg)](https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3Dsample-langchain-template%26template_owner%3DDefangSamples)\n\nThis sample is an endpoint that tells programming jokes and shows how to deploy a flask app that uses Langchain on to AWS via Defang.\n\n## Prerequisites\n\n1. Download [Defang CLI](https://github.com/DefangLabs/defang)\n2. (Optional) If you are using [Defang BYOC](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) authenticated with your AWS account\n3. (Optional - for local development) [Docker CLI](https://docs.docker.com/engine/install/)\n\n## Deploying\n\n1. Open the terminal and type `defang login`\n2. Set the environment variable `OPENAI_KEY` by typing `defang config set OPENAI_KEY`.\n3. Type `defang compose up` in the CLI.\n4. Your app will be running within a few minutes.\n\n## Development\n\nFor development, first clone the project and navigate to its directory. After such, please run the command\n\n```\ndocker compose up --build\n```\n\nThis will start a Docker container with the flask app which will display the result of the langchain prompt.\n\n---\n\nTitle: LangChain & Flask\n\nShort Description: A sample project demonstrating how to deploy LangChain with Flask on Defang.\n\nTags: LangChain, Flask, AI, Python\n\nLanguages: python\n",
