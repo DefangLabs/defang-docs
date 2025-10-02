@@ -2,11 +2,6 @@
 
 set -e
 
-if [ "$DEFANG_SKIP_GENERATION" = "1" ]; then
-  echo 'Skipping CLI and sample generation (DEFANG_SKIP_GENERATION=1)';
-  exit 0
-fi
-
 CWD=$(pwd)
 CLI_DOCS_PATH=$(readlink -f docs/cli)
 
