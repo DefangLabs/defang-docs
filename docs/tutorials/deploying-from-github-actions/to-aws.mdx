@@ -1,0 +1,174 @@
+---
+title: Deploying to AWS from GitHub Actions
+description: Using the Defang Github Action to deploy your project to AWS from your CI/CD pipeline.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+# Deploying to AWS from GitHub Actions
+
+This tutorial will show you how to use the [Defang GitHub Action](https://github.com/DefangLabs/defang-github-action) to deploy your project to AWS from your GitHub Actions workflow.
+
+## Prerequisites
+
+- [A Defang Account](/docs/concepts/authentication)
+- [A Github Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+- [An AWS Account](https://aws.amazon.com)
+
+The following steps will guide you through setting up a GitHub Actions workflow that can assume a role in your AWS account using OpenID Connect (OIDC) and deploy your project using the Defang GitHub Action. The role which will be assumed must have a trust relationship with an OIDC identity provider (IdP) for GitHub Actions, and that trust relationship must be configured to allow the specific repository and branch to assume the role. This ultimately allows the GitHub Actions workflow to securely access your AWS resources without needing to store long-lived AWS credentials in your repository.
+
+## Step 1 - Identify your AWS Account ID
+
+To configure the GitHub Action to assume a role in your AWS account, you'll need your AWS Account ID.
+
+<Tabs>
+  <TabItem value="cli" label="AWS CLI" default>
+    ```bash
+    aws sts get-caller-identity --query Account --output text
+    123456789012 # for example
+    ```
+  </TabItem>
+  <TabItem value="dashboard" label="AWS Dashboard">
+    1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
+    2. In the top right corner, click on your account name or number.
+    3. Your AWS Account ID will be displayed in the dropdown menu.
+  </TabItem>
+</Tabs>
+
+## Step 2 - Create an AWS Identity Provider for GitHub Actions
+
+You will need to create a new OIDC Identity Provider in AWS to enable GitHub Actions to assume roles in your AWS account.
+
+<Tabs>
+  <TabItem value="cli" label="AWS CLI" default>
+    Using the AWS CLI:
+
+    ```
+    aws iam create-open-id-connect-provider --client-id-list sts.amazonaws.com --url https://token.actions.githubusercontent.com
+    ```
+  </TabItem>
+  <TabItem value="dashboard" label="AWS Dashboard">
+    Using the AWS Dashboard:
+
+    1. Go to the [AWS IAM Console](https://console.aws.amazon.com/iam/home#/roles).
+    2. Click on "Identity providers" in the left sidebar.
+    3. Click on "Add provider".
+    4. Choose "OIDC" as the provider type.
+    5. For the provider URL, enter `https://token.actions.githubusercontent.com`.
+    6. For the audience, enter `sts.amazonaws.com`.
+    7. Click "Add provider".
+  </TabItem>
+</Tabs>
+
+## Step 3 - Create a deployer role with trust relationship for GitHub Actions
+
+<Tabs>
+  <TabItem value="cli" label="AWS CLI" default>
+    Using the AWS CLI:
+
+    1. Create a trust policy document
+
+    ```bash
+    cat > deployer-policy.json << EOF
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": "*",
+          "Resource": "*"
+        },
+        {
+          "Sid": "OidcForGitHub",
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::YOUR_AWS_ACCOUNT_ID:oidc-provider/token.actions.githubusercontent.com"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringLike": {
+              "token.actions.githubusercontent.com:sub": "repo:YOUR_REPO_OWNER/YOUR_REPO_NAME:ref:refs/heads/YOUR_BRANCH_NAME"
+            },
+            "StringEquals": {
+              "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+            }
+          }
+        }
+      ]
+    }
+    EOF
+    ```
+
+    2.  Edit the `deployer-policy.json` file to replace the following placeholders:
+    * `YOUR_AWS_ACCOUNT_ID` replace this with your actual AWS Account ID
+    * `YOUR_REPO_OWNER` your GitHub username or organization name (e.g., `ACMELabs`)
+    * `YOUR_REPO_NAME` your GitHub repository name (e.g., `my-project`)
+    * `YOUR_BRANCH_NAME` the branch you want to deploy from (e.g., `main`). If you want to allow multiple branches, you can use a wildcard like `*`
+
+    3. Create a deployer role
+    ```
+    aws iam create-role --role-name deployer --assume-role-policy-document file://deployer-policy.json
+    ```
+
+  </TabItem>
+  <TabItem value="dashboard" label="AWS Dashboard">
+    Using the AWS Dashboard:
+
+    1. Navigate to [AWS IAM Console](https://console.aws.amazon.com/iam/home#/roles).
+    2. Click on "Create role".
+    3. Select "Web identity" as the trusted entity type.
+    4. For the identity provider, select the OIDC provider you created in the previous step.
+    5. For the audience, enter `sts.amazonaws.com`.
+    6. For the GitHub organization, enter your GitHub username or organization name (e.g., `ACMELabs`).
+    7. For the GitHub repository, enter your GitHub repository name (e.g., `my-project`).
+    8. For the GitHub branch, enter the branch you want to deploy from (e.g., `main`). If you want to allow multiple branches, you can use a wildcard like `*`.
+    9. Click "Next".
+    10. Select the `AdministratorAccess` policy to attach to the role.
+    11. Click "Next".
+    12. For the role name, enter `deployer`.
+    13. For the role description, enter "This role is assumed by GitHub Actions when deploying with Defang".
+    13. Click "Create role".
+
+  </TabItem>
+</Tabs>
+
+## Step 4 - Create a new GitHub Actions workflow
+
+In your GitHub repository, create a new file at `.github/workflows/deploy.yml` with the following content:
+
+```yaml
+name: Deploy with Defang
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not 'main', this must match the branch you specified in the deployer role's trust relationship.
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Configure AWS Credentials for CI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-2
+          # Replace with your AWS Account ID and the name of the role which we previously created.
+          role-to-assume: arn:aws:iam::123456789012:role/deployer
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: DefangLabs/defang-github-action@v1.2.1
+        with:
+          provider: "aws"
+```
+
+:::info
+Full documentation for configuring AWS can be found in the [Defang GitHub Action repository](https://github.com/DefangLabs/defang-github-action).
+:::
+
+Now you have configured a GitHub Actions workflow that uses the Defang GitHub Action to deploy your project to AWS securely using OIDC and short-lived credentials. Whenever you push to the specified branch, the workflow will run and deploy your project using the permissions granted to the `deployer` role in your AWS account.
