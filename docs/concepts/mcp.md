@@ -43,7 +43,7 @@ Once the MCP Server is running, you can access the Defang MCP tools directly thr
 
 That's it! Feel free to explore our [Example Prompts](#example-prompts) to get ideas on how to interact with the AI agent and make the most of the Defang MCP Server.
 
-Note that we still support the previous client selection method using `--client=<your-ide>` flag, but it is not recommended.
+Note that we still support the previous client selection method using `--client=<your-ide>` flag.
 
 ```bash
 defang mcp setup --client=<your-ide>
