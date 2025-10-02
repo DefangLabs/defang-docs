@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[1602],{6601:a=>{a.exports=JSON.parse('{"label":"Kaniko","permalink":"/blog/tags/kaniko","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

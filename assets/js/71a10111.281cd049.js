@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[9286],{16188:e=>{e.exports=JSON.parse('{"label":"Future","permalink":"/blog/tags/future","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

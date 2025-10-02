@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[4260],{9200:e=>{e.exports=JSON.parse('{"label":"defang-website","permalink":"/blog/tags/defang-website","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

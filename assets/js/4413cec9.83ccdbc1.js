@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[763],{70071:e=>{e.exports=JSON.parse('{"label":"Software Development","permalink":"/blog/tags/software-development","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
