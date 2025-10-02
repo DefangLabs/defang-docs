@@ -388,6 +388,10 @@ img.unstyled {
   box-shadow: none !important;
 }
 
+.theme-doc-markdown a {
+  @apply underline;
+}
+
 /**
  * Page Specific
  */

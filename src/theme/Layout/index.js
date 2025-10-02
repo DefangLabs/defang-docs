@@ -33,9 +33,7 @@ export default function LayoutWrapper(props) {
     }
 
     const attachSearchHandler = () => {
-      const search =
-        window.document.getElementById("docsearch-input") ??
-        window.document.getElementById("search_input_react");
+      const search = window.document.getElementById("docsearch-input");
 
       if (!search) {
         return undefined;
@@ -51,10 +49,10 @@ export default function LayoutWrapper(props) {
         trackSearch(event.target.value);
       };
 
-      search.addEventListener("change", handleChange);
+      search.addEventListener("input", handleChange);
 
       return () => {
-        search.removeEventListener("change", handleChange);
+        search.removeEventListener("input", handleChange);
         trackSearch.cancel();
       };
     };
@@ -88,4 +86,3 @@ export default function LayoutWrapper(props) {
     </>
   );
 }
-
