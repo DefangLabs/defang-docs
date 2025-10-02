@@ -2,7 +2,24 @@ import { useLocation } from "@docusaurus/router";
 import Layout from "@theme-original/Layout";
 import React, { useEffect } from "react";
 
-let searchTrackingTimeout;
+const debounce = (fn, delay) => {
+  let timeoutId;
+  const debounced = (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+  debounced.cancel = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+      timeoutId = null;
+    }
+  };
+  return debounced;
+};
 
 export default function LayoutWrapper(props) {
   const location = useLocation();
@@ -11,17 +28,56 @@ export default function LayoutWrapper(props) {
   }, [location]);
 
   useEffect(() => {
-    const search = window.document.getElementById("search_input_react");
-    search.onchange = (e) => {
-      if (searchTrackingTimeout) {
-        clearTimeout(searchTrackingTimeout);
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const attachSearchHandler = () => {
+      const search = window.document.getElementById("docsearch-input");
+
+      if (!search) {
+        return undefined;
       }
-      searchTrackingTimeout = setTimeout(() => {
+
+      const trackSearch = debounce((value) => {
         window?.analytics?.track("docsSearch", {
-          searchQuery: e.target.value,
+          searchQuery: value,
         });
       }, 1000);
+
+      const handleChange = (event) => {
+        trackSearch(event.target.value);
+      };
+
+      search.addEventListener("input", handleChange);
+
+      return () => {
+        search.removeEventListener("input", handleChange);
+        trackSearch.cancel();
+      };
+    };
+
+    let cleanupHandler = attachSearchHandler();
+
+    if (cleanupHandler) {
+      return cleanupHandler;
     }
+
+    const observer = new MutationObserver(() => {
+      if (!cleanupHandler) {
+        cleanupHandler = attachSearchHandler();
+      }
+      if (cleanupHandler) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(window.document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      cleanupHandler?.();
+    };
   }, []);
 
   return (

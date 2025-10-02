@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 const { themes } = require('prism-react-renderer');
+const path = require('path');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -105,7 +106,6 @@ const config = {
       },
     ],
   ],
-
   themeConfig: {
     image: '/img/defang-social-card-2.png',
     navbar: {
@@ -204,9 +204,40 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'O3VFCOSSZ6',
+
+      // Public API key: it is safe to commit it
+      apiKey: '43fd4ebb5bb9875aa8764793ff9a09ff',
+
+      indexName: 'prod_DOCS',
+
+      // Optional: see doc section below
+      contextualSearch: false,
+
+      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+      insights: true,
+
+      // Optional: whether you want to use the new Ask AI feature (undefined by default)
+      askAi: 'MUO629LjH0L5',
+    },
   },
   plugins: [
-    require.resolve('docusaurus-lunr-search'),
+    async function shadcnTailwindPlugin() {
+      return {
+        name: 'defang-tailwind-shadcn',
+        configureWebpack() {
+          return {
+            resolve: {
+              alias: {
+                '@': path.resolve(__dirname, 'src'),
+              },
+            },
+          };
+        },
+      };
+    },
     [
       '@docusaurus/plugin-client-redirects',
       {
