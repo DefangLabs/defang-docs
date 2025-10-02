@@ -2,7 +2,24 @@ import { useLocation } from "@docusaurus/router";
 import Layout from "@theme-original/Layout";
 import React, { useEffect } from "react";
 
-let searchTrackingTimeout;
+const debounce = (fn, delay) => {
+  let timeoutId;
+  const debounced = (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+  debounced.cancel = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+      timeoutId = null;
+    }
+  };
+  return debounced;
+};
 
 export default function LayoutWrapper(props) {
   const location = useLocation();
@@ -24,24 +41,21 @@ export default function LayoutWrapper(props) {
         return undefined;
       }
 
+      const trackSearch = debounce((value) => {
+        window?.analytics?.track("docsSearch", {
+          searchQuery: value,
+        });
+      }, 1000);
+
       const handleChange = (event) => {
-        if (searchTrackingTimeout) {
-          clearTimeout(searchTrackingTimeout);
-        }
-        searchTrackingTimeout = setTimeout(() => {
-          window?.analytics?.track("docsSearch", {
-            searchQuery: event.target.value,
-          });
-        }, 1000);
+        trackSearch(event.target.value);
       };
 
       search.addEventListener("change", handleChange);
 
       return () => {
         search.removeEventListener("change", handleChange);
-        if (searchTrackingTimeout) {
-          clearTimeout(searchTrackingTimeout);
-        }
+        trackSearch.cancel();
       };
     };
 
@@ -74,3 +88,4 @@ export default function LayoutWrapper(props) {
     </>
   );
 }
+

@@ -23,5 +23,3 @@ defang
 samples
 /docs/samples.md
 /static/samples-v2.json
-playwright-report
-test-results
