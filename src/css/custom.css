@@ -96,6 +96,7 @@
 }
 
 @layer base {
+
   *,
   *::before,
   *::after {
@@ -206,6 +207,7 @@
   .breadcrumbs__item--active {
     @apply text-sm font-medium text-muted-foreground hover:text-foreground;
   }
+
   [class^="breadcrumbHomeIcon_node_modules-@docusaurus-theme-classic-lib-theme-DocBreadcrumbs-Items-Home-styles-module"] {
     display: inline-block !important;
   }
@@ -248,31 +250,48 @@
 }
 
 .theme-doc-markdown h1 {
-    @apply text-5xl mb-4;
+  @apply text-5xl mb-4;
 }
 
 .theme-doc-markdown h2 {
-    @apply text-3xl mb-4;
+  @apply text-3xl mb-4;
 }
 
 .theme-doc-markdown h3 {
-    @apply text-2xl mb-4;
+  @apply text-2xl mb-4;
 }
 
 .theme-doc-markdown h4 {
-    @apply text-xl mb-4;
+  @apply text-xl mb-4;
 }
 
 .theme-doc-markdown h5 {
-    @apply text-base mb-4;
+  @apply text-base mb-4;
 }
 
 .theme-doc-markdown h6 {
-    @apply text-sm mb-4;
+  @apply text-sm mb-4;
 }
 
+.theme-doc-markdown ul,
+.theme-doc-markdown ol {
+  @apply mb-6 ml-6 list-inside;
+}
 
-.tabs-container > div {
+.theme-doc-markdown ul {
+  @apply list-disc;
+}
+
+.theme-doc-markdown ol {
+  @apply list-decimal;
+}
+
+.tabs-container>ul.tabs {
+  @apply mb-0;
+  @apply ml-0;
+}
+
+.tabs-container>div {
   /* rounded bottom corners */
   @apply rounded-b-lg p-4 border border-border/70 dark:border-border/60 bg-background dark:bg-card;
 
@@ -365,15 +384,15 @@ footer.footer--dark .footer__link-item:hover {
   display: none !important;
 }
 
-.docs-doc-id-ask main > .container {
+.docs-doc-id-ask main>.container {
   padding: 0 !important;
 }
 
-.docs-doc-id-ask article > nav {
+.docs-doc-id-ask article>nav {
   display: none !important;
 }
 
-.docs-doc-id-ask main > .container > .row > .col {
+.docs-doc-id-ask main>.container>.row>.col {
   max-width: 100% !important;
 }
 
@@ -396,7 +415,7 @@ img.unstyled {
  * Page Specific
  */
 .theme-doc-markdown .card h2 {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 .navbar__item.navbar__link.navbar__item-get_started {
@@ -408,7 +427,7 @@ code:not([class]),
 code[class=""] {
   @apply rounded-[0.5rem] bg-muted px-1.5 py-0.5;
 }
+
 pre code {
   @apply bg-white dark:bg-card dark:border dark:border-solid dark:border-gray-600;
 }
-  
