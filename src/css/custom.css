@@ -1,10 +1,8 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: 'GuarujaNeue-SemiBold';
@@ -14,131 +12,403 @@
   font-style: normal;
 }
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-#__docusaurus_skipToContent_fallback>div>div>aside>nav>div,
-#__docusaurus>nav>div.navbar__inner>div:nth-child(1)>a {
-  font-family: "GuarujaNeue-SemiBold", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #056ebc;
-  --ifm-color-primary-dark: #0563a9;
-  --ifm-color-primary-darker: #045da0;
-  --ifm-color-primary-darkest: #044d84;
-  --ifm-color-primary-light: #0679cf;
-  --ifm-color-primary-lighter: #067ed8;
-  --ifm-color-primary-lightest: #078ff4;
-  --ifm-code-font-size: 95%;
-  --ifm-font-family-base: 'Inter';
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  color-scheme: light;
+  --font-sans: 'Inter', 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'GuarujaNeue-SemiBold', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --background: 216 65% 99%;
+  --foreground: 222 76% 6%;
+  --muted: 215 40% 93%;
+  --muted-foreground: 219 19% 35%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 76% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 76% 6%;
+  --border: 216 36% 90%;
+  --input: 216 36% 86%;
+  --primary: 212 92% 47%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 215 52% 92%;
+  --secondary-foreground: 222 76% 12%;
+  --accent: 221 52% 94%;
+  --accent-foreground: 222 76% 12%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 212 92% 47%;
+  --radius: 1rem;
+
+  --ifm-color-primary: hsl(212, 92%, 47%);
+  --ifm-color-primary-dark: hsl(212, 92%, 42%);
+  --ifm-color-primary-darker: hsl(212, 92%, 38%);
+  --ifm-color-primary-darkest: hsl(212, 92%, 32%);
+  --ifm-color-primary-light: hsl(212, 92%, 60%);
+  --ifm-color-primary-lighter: hsl(212, 92%, 66%);
+  --ifm-color-primary-lightest: hsl(212, 92%, 72%);
+  --ifm-font-family-base: var(--font-sans);
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --ifm-heading-font-family: var(--font-display);
+  --ifm-heading-font-weight: 600;
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-padding-vertical: 0.75rem;
+  --ifm-navbar-padding-horizontal: 1.25rem;
+  --ifm-menu-link-padding-horizontal: 0.75rem;
+  --ifm-code-font-size: 0.9rem;
+  --ifm-global-radius: var(--radius);
+  --ifm-toc-border-color: hsla(var(--border) / 0.8);
+  --docusaurus-highlighted-code-line-bg: hsla(var(--primary) / 0.1);
+  --prism-background-color: hsl(213 55% 97%);
+  --prism-color: hsl(223 41% 18%);
+  --ifm-code-background: var(--prism-background-color);
+  --ifm-pre-background: var(--prism-background-color);
+  --ifm-footer-background-color: transparent;
+  --ifm-tabs-border-bottom: 1px solid hsla(var(--border) / 0.7);
+  --ifm-tabs-border-radius: 0.875rem;
+  --ifm-footer-title-color: hsl(var(--foreground));
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #7eb7e2;
-  --ifm-color-primary-dark: #61a7dc;
-  --ifm-color-primary-darker: #539fd8;
-  --ifm-color-primary-darkest: #2d86c9;
-  --ifm-color-primary-light: #9bc7e8;
-  --ifm-color-primary-lighter: #a9cfec;
-  --ifm-color-primary-lightest: #d4e7f5;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+  --background: 222 62% 7%;
+  --foreground: 220 19% 92%;
+  --muted: 220 30% 20%;
+  --muted-foreground: 218 12% 72%;
+  --popover: 225 48% 10%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 45% 9%;
+  --card-foreground: 210 40% 98%;
+  --border: 220 28% 22%;
+  --input: 220 29% 26%;
+  --primary: 212 90% 60%;
+  --primary-foreground: 210 40% 8%;
+  --secondary: 219 36% 24%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 219 36% 24%;
+  --accent-foreground: 210 40% 96%;
+  --destructive: 0 62% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 212 90% 60%;
+  --docusaurus-highlighted-code-line-bg: hsla(var(--primary) / 0.18);
+  --prism-background-color: hsl(222 42% 18%);
+  --prism-color: hsl(220 19% 92%);
+  --ifm-code-background: var(--prism-background-color);
+  --ifm-pre-background: var(--prism-background-color);
+  --ifm-footer-background-color: transparent;
 }
 
-.docs-doc-id-ask h1 {
-  display: none;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  #__docusaurus {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    background-image: radial-gradient(circle at top left, hsla(var(--primary) / 0.08), transparent 55%), radial-gradient(circle at 75% 10%, hsla(var(--secondary) / 0.12), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  [data-theme='dark'] #__docusaurus {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    background-image: radial-gradient(circle at 20% 15%, hsla(var(--primary) / 0.12), transparent 45%),
+      radial-gradient(circle at 80% 5%, hsla(var(--secondary) / 0.08), transparent 42%);
+    background-attachment: fixed;
+  }
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .navbar__title {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
 }
 
-.docs-doc-id-ask .breadcrumbs {
-  display: none;
+@layer components {
+  .navbar {
+    @apply bg-transparent backdrop-blur-md border-b border-border/80 transition-colors duration-300;
+  }
+
+  .navbar__inner {
+    @apply max-w-screen-2xl mx-auto px-4;
+  }
+
+  .navbar__logo {
+    @apply scale-95 hover:scale-100 transition-transform duration-300;
+  }
+
+  .navbar__items--right {
+    @apply gap-4;
+  }
+
+  .navbar__item-get_started {
+    @apply inline-flex items-center justify-center rounded-full text-sm font-medium text-primary-foreground shadow-glow px-5 py-2 transition-all mr-2;
+    background: linear-gradient(135deg, hsla(var(--primary) / 1) 0%, hsla(var(--primary) / 0.8) 100%);
+  }
+
+  .navbar__item-get_started:hover {
+    @apply translate-y-0.5 shadow-lg;
+    background: linear-gradient(135deg, hsla(var(--primary) / 0.92) 0%, hsla(var(--primary) / 0.72) 100%);
+    box-shadow: 0 18px 35px -18px hsla(var(--primary) / 0.65);
+    color: hsl(var(--primary-foreground));
+  }
+
+  .menu__link--sublist {
+    @apply rounded-lg;
+  }
+
+  .theme-code-block {
+    background: var(--prism-background-color) !important;
+    border: 1px solid hsla(var(--border) / 0.75);
+    box-shadow: 0 22px 40px -30px hsla(var(--primary) / 0.4);
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+
+  .theme-code-block pre {
+    background: transparent !important;
+    color: var(--prism-color);
+  }
+
+  .theme-code-block code {
+    background: transparent;
+  }
+
+  .theme-code-block__header {
+    background: hsla(var(--background) / 0.9);
+    border-bottom: 1px solid hsla(var(--border) / 0.6);
+  }
+
+  .docusaurus-highlight-code-line {
+    background: hsla(var(--primary) / 0.12);
+  }
+
+  .toggleNode {
+    @apply text-muted-foreground hover:text-foreground;
+  }
+
+  .pagination-nav__link {
+    @apply rounded-full border border-border/80 bg-card text-sm font-medium hover:border-primary/60 hover:text-primary-foreground hover:bg-primary/90;
+  }
+
+  .breadcrumbs__link,
+  .breadcrumbs__item--active {
+    @apply text-sm font-medium text-muted-foreground hover:text-foreground;
+  }
+  [class^="breadcrumbHomeIcon_node_modules-@docusaurus-theme-classic-lib-theme-DocBreadcrumbs-Items-Home-styles-module"] {
+    display: inline-block !important;
+  }
+
+  .table-of-contents {
+    @apply bg-card/60 backdrop-blur-sm border border-border/70 rounded-2xl px-4 py-4 text-sm shadow-sm;
+  }
+
+  .footer__title {
+    @apply text-sm uppercase tracking-wider text-foreground/80;
+  }
+
+  .footer__link-item {
+    @apply text-muted-foreground hover:text-primary transition-colors;
+  }
+
+  .docCard {
+    @apply border border-border/70 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/20 transition-all duration-300;
+  }
+
+  .docCard:hover .docCard__title {
+    @apply text-primary;
+  }
+
+  .theme-doc-sidebar-menu .menu__link {
+    @apply rounded-lg text-sm font-medium text-muted-foreground hover:text-primary;
+  }
+
+  .theme-doc-sidebar-menu .menu__link--active {
+    @apply bg-secondary text-secondary-foreground shadow-sm;
+  }
+
+  .theme-doc-markdown code {
+    @apply bg-muted/60 px-1.5 py-0.5 rounded-md text-[0.92em];
+  }
+
+  .theme-doc-footer {
+    @apply border-t border-border/60;
+  }
 }
 
-.docs-doc-id-ask main>.container {
-  padding: 0px !important;
+.theme-doc-markdown h1 {
+    @apply text-5xl mb-4;
 }
 
-.docs-doc-id-ask article>nav {
-  display: none !important;
+.theme-doc-markdown h2 {
+    @apply text-3xl mb-4;
 }
 
-.docs-doc-id-ask main>.container>.row>.col {
-  max-width: 100% !important;
+.theme-doc-markdown h3 {
+    @apply text-2xl mb-4;
 }
 
+.theme-doc-markdown h4 {
+    @apply text-xl mb-4;
+}
+
+.theme-doc-markdown h5 {
+    @apply text-base mb-4;
+}
+
+.theme-doc-markdown h6 {
+    @apply text-sm mb-4;
+}
+
+
+.tabs-container > div {
+  /* rounded bottom corners */
+  @apply rounded-b-lg p-4 border border-border/70 dark:border-border/60 bg-background dark:bg-card;
+
+  margin-top: 0px !important;
+}
+
+.tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid hsla(var(--border) / 0.7);
+  padding-bottom: 0.5rem;
+}
+
+.tabs__item {
+  border-radius: 0.875rem 0.875rem 0 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  background: hsla(var(--background) / 0.78);
+  transition: all 0.25s ease;
+}
+
+.tabs__item:not(.tabs__item--active):hover {
+  color: hsl(var(--foreground));
+  border-color: hsla(var(--border) / 0.85);
+  background: hsla(var(--background) / 0.92);
+}
+
+.tabs__item--active {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  border-color: hsla(var(--border) / 0.9);
+  box-shadow: 0 18px 32px -24px hsla(var(--primary) / 0.55);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom: 2px solid hsla(var(--primary) / 0.9);
+}
+
+[data-theme='dark'] .tabs__item {
+  background: hsla(var(--card) / 0.55);
+  color: hsl(var(--muted-foreground));
+}
+
+[data-theme='dark'] .tabs__item--active {
+  background: hsl(var(--card));
+  border-color: hsla(var(--border) / 0.7);
+  color: hsl(var(--foreground));
+  box-shadow: 0 18px 34px -26px hsla(var(--primary) / 0.6);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom: 2px solid hsla(var(--primary) / 0.9);
+}
+
+
+
+footer.footer--dark {
+  position: relative;
+  background-image: linear-gradient(135deg, #011d50 0%, #093e9f 100%) !important;
+  background-color: #011d50 !important;
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 -18px 48px -32px rgba(1, 29, 80, 0.6);
+}
+
+footer.footer--dark .footer__title {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+footer.footer--dark .footer__link-item {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+footer.footer--dark .footer__link-item:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.docs-doc-id-ask {
+  --docusaurus-content-width: 100%;
+}
+
+.docs-doc-id-ask h1,
+.docs-doc-id-ask .breadcrumbs,
+.docs-doc-id-ask main article footer,
 .docs-doc-id-ask main nav.pagination-nav {
   display: none !important;
 }
 
-.docs-doc-id-ask main article footer {
+.docs-doc-id-ask main > .container {
+  padding: 0 !important;
+}
+
+.docs-doc-id-ask article > nav {
   display: none !important;
+}
+
+.docs-doc-id-ask main > .container > .row > .col {
+  max-width: 100% !important;
 }
 
 .blog-post-page main img,
 .blog-list-page article img {
-  border-radius: 50px;
-  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.25);
-}
-
-.MuiButtonBase-root p {
-  margin: 0px;
-}
-
-a.MuiButtonBase-root:hover {
-  color: white !important;
-}
-
-/* Tentative change to address dark mode text on Samples page.
-To go further, consider looking at implementing MUI custom themes.
-*/
-.MuiTypography-root,
-.MuiFormLabel-root,
-.MuiInputBase-input {
-  color: var(--ifm-font-color-base) !important;
+  border-radius: 2rem;
+  box-shadow: 0px 18px 45px -24px rgba(9, 28, 61, 0.45);
 }
 
 img.unstyled {
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-.navbar__item-get_started {
-  color: white;
-  border-radius: 1rem;
-  background-size: 200% 100%;
-  background-position: 0 0;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(131deg, rgba(1, 30, 80, 0.9), rgba(21, 103, 251, 0.9) 50%, rgba(1, 30, 80, 0.9));
-  margin-right: 1rem;
-  display: inline-block;
-  font-size: smaller;
+.theme-doc-markdown a {
+  @apply underline;
 }
 
-.navbar__item-get_started:hover {
-  color: white;
-  background-position: 200% 0;
-  animation: shimmer 0.25s ease-in forwards;
+/**
+ * Page Specific
+ */
+.theme-doc-markdown .card h2 {
+    @apply text-2xl;
 }
 
-@keyframes shimmer {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 200% 0;
-  }
+.navbar__item.navbar__link.navbar__item-get_started {
+  @apply hidden sm:block;
 }
 
-.menu__list-item.hidden {
-  display: none;
+/* selector for code tags with no classes */
+code:not([class]),
+code[class=""] {
+  @apply rounded-[0.5rem] bg-muted px-1.5 py-0.5;
 }
+pre code {
+  @apply bg-white dark:bg-card dark:border dark:border-solid dark:border-gray-600;
+}
+  

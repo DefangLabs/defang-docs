@@ -66,6 +66,20 @@ In the example above, if we assume the value of the configuration variable ***US
 
 During `defang compose up` all variable references will be replaced with the actual value and made available in the container. If any referenced variable is not found the `defang compose up` command will be canceled.
 
+## Environment Variable Precedence
+
+During a deployment, config vars are exposed to your services as environment variables. Environment variables can be set in multiple places, but Defang uses the following precedence order to determine which value to use:
+
+:::note
+Defang does pass environment variables from the shell into your services. Environment variables must be set in one of the other supported ways listed below.
+:::
+
+1. **Dotenv files**: The `.env` file in the current directory is read by default. This can be overriden per services by specifying the `env_file` service property the `compose.yaml` file.
+2. **Docker Compose environment variables**: These are environment variables defined in the `environment` section of the service in the `compose.yaml` file.
+3. **Defang config**: These are sensitive configuration values set using the `defang config set FOO=bar` command.
+
+Environment variables are resolved in order of precedence, with the highest precedence value taking priority. For example, if you have a variable `DATABASE_URL` set in both a dotenv file and in Defang config, the value from Defang config will be used.
+
 ## Using Config with Pulumi
 In Defang, using config with [Pulumi](./pulumi.md) gives you the advantage of being able to manage your environment variables across different environments using Pulumi stacks.
 
