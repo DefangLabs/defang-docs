@@ -13,7 +13,7 @@ This tutorial will show you how to use the [Defang GitHub Action](https://github
 - [A Github Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 - [A GCP Account](https://cloud.google.com)
 
-The following steps will guide you through setting up a GitHub Actions workflow that can assume a role in your GCP account using OpenID Connect (OIDC) and deploy your project using the Defang GitHub Action. The role which will be assumed must have a trust relationship with an OIDC identity provider (IdP) for GitHub Actions, and that trust relationship must be configured to allow the specific repository and branch to assume the role. This ultimately allows the GitHub Actions workflow to securely access your GCP resources without needing to store long-lived GCP credentials in your repository.AWS
+The following steps will guide you through setting up a GitHub Actions workflow that can assume a role in your GCP account using OpenID Connect (OIDC) and deploy your project using the Defang GitHub Action. The role which will be assumed must have a trust relationship with an OIDC identity provider (IdP) for GitHub Actions, and that trust relationship must be configured to allow the specific repository and branch to assume the role. This ultimately allows the GitHub Actions workflow to securely access your GCP resources without needing to store long-lived GCP credentials in your repository.
 
 ## Step 1 - Identify your GCP Project ID
 
