@@ -9,7 +9,7 @@ tags:
     Defang Compose Update,
     Product Hunt,
   ]
-author: Defang Team
+authors: defang_team
 image: /img/product-hunt/product-hunt.png
 ---
 import { Button } from '@mui/material';

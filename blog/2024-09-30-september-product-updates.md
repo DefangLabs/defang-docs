@@ -12,7 +12,7 @@ tags:
     Debugging,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 import { Button } from '@mui/material';
 

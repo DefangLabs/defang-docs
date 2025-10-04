@@ -1,0 +1,17 @@
+defang_team:
+  name: Defang Team
+  title: Defang Team
+  url: https://defang.io
+  image_url: /img/defang-logo.svg
+
+linda_lee:
+  name: Linda Lee
+  title: Software Engineering Intern at Defang
+  url: https://defang.io
+  image_url: /img/defang-logo.svg
+
+raphael_titsworth_morin:
+  name: Raphaël Titsworth-Morin
+  title: Software Engineer at Defang
+  url: https://defang.io
+  image_url: /img/defang-logo.svg

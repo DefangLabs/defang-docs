@@ -4,7 +4,7 @@ description: "Agentic apps, cloud-native infrastructure, and how Defang simplifi
 slug: agentic-apps
 tags:
   [Agentic Apps, AI, LLMs, Cloud, AWS, GCP, DigitalOcean, DevOps, Deployments]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Agentic Apps](/img/agentic-apps/agentic-apps.png)

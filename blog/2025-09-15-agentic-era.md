@@ -3,7 +3,7 @@ title: "Deployments in the Agentic Era"
 description: "How agentic applications are reshaping the future of software development and deployment"
 slug: agentic-era
 tags: [Agentic Era, AI, Software Development, Future, Automation, Cloud, DevOps]
-author: Defang Team
+authors: defang_team
 date: 2025-09-15
 ---
 

@@ -3,7 +3,7 @@ title: "Beyond Heroku: Owning Your Deployments"
 description: "Why scaling off Heroku matters, what happens during a migration, and how the Defang CLI makes the transition to AWS painless."
 slug: heroku-to-aws
 tags: [Heroku, AWS, Migration, PaaS vs IaaS, Cloud, DevOps, Defang, Docker Compose]
-author: Defang Team
+authors: defang_team
 date: 2025-09-25
 ---
 

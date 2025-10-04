@@ -1,6 +1,6 @@
 ---
 title: "Deploying a Django App with Real-time Moderation Using Defang"
-author: Defang Team
+authors: defang_team
 tags: [deployment, django, docker, compose]
 ---
 

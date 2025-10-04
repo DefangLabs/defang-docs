@@ -1,6 +1,6 @@
 ---
 title: "Introducing Defang's New Look: Website & Logo Refresh"
-author: Defang Team
+authors: defang_team
 tags: [announcement, branding, refresh]
 ---
 

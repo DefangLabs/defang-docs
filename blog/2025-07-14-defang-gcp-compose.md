@@ -3,7 +3,7 @@ title: "Simple, Secure, and Scalable GCP Deployments from Docker Compose"
 description: "Announcing our latest whitepaper: How Defang simplifies Google Cloud deployments with Docker Compose"
 slug: defang-gcp-compose
 tags: [Google Cloud, GCP, Docker Compose, Cloud Deployment, Defang, Whitepaper]
-author: Defang Team
+authors: defang_team
 ---
 
 **Introducing Our New Whitepaper: Simple, Secure, and Scalable GCP Deployments from Docker Compose**

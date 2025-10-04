@@ -1,7 +1,7 @@
 ---
 title: July 2024 Defang Compose Update
 tags: [Cloud, NoDevOps, BYOC, CLI, AI, Debugging, Defang Compose Update]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)

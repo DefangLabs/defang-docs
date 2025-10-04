@@ -3,7 +3,7 @@ title: "Defang: Your AI DevOps Agent"
 description: "From Vibe-Coding to Production… Without a DevOps Team"
 slug: defang-your-ai-devops-agent
 tags: [Cloud, NoDevOps, BYOC, MCP, LLMs, Vibe Deploying, GCP, AWS]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Agent](/img/defang_agent/defang_agent.png)

@@ -15,7 +15,7 @@ tags:
     Chatbot,
     Docker
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![mcp](/img/mcp/mcp.png)

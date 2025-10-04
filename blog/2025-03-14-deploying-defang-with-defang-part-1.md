@@ -1,6 +1,6 @@
 ---
 title: "Deploying Defang with Defang: Part 1"
-author: Defang Team
+authors: defang_team
 tags: [defang-with-defang, deployment, defang-portal]
 ---
 

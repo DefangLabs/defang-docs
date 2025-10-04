@@ -10,7 +10,7 @@ tags:
     Portal,
     Events,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
