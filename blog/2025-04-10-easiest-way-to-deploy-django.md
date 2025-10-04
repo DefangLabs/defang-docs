@@ -26,6 +26,8 @@ We're deploying a real-time chat application that includes automatic moderation 
 - **Postgres Database**: Managed database instance for persistent storage.
 - **Redis Broker**: Managed Redis instance serving as the broker for Celery tasks and Django Channels.
 
+{/* truncate */}
+
 ## Running Locally
 
 To run the app locally, we use Docker Compose, splitting configurations into two YAML files:

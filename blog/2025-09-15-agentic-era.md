@@ -21,6 +21,8 @@ Over the past few decades, the software industry has gone through multiple major
 
 This is not a small adjustment. It is the foundation of how the next generation of software will be trusted and adopted.
 
+{/* truncate */}
+
 ## **Why the Agentic Era Changes the Rules**
 
 AI products are not like SaaS tools. They do not just manage workflows, they ingest and act on the crown jewels of a business. To succeed in this environment, three conditions must hold true:

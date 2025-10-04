@@ -15,6 +15,8 @@ If this sounds familiar (or if you're dreading the prospect of dealing with it),
 You can [find it here](https://github.com/DefangSamples/sample-crew-django-redis-postgres-template).
 :::
 
+{/* truncate */}
+
 ## A Demo in 60 Seconds
 
 Imagine you're building a system. It might use multiple LLM calls. It might do complex, branching logic in its prompts. It might need to store embeddings to retrieve things in the future, either to pull them into a prompt, or to return them outright. It might need to store other records that don't have embeddings. Here's a very lightweight version of a system like that, as a starting point:

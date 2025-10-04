@@ -24,6 +24,8 @@ Anthropic recently unveiled the [Model Context Protocol](https://www.anthropic.
 
 However, to put such containerized AI applications into production, you need to be able to not only test locally, but also easily deploy the application to the cloud. This is what Defang enables. In this blog and the accompanying [sample](https://github.com/DefangLabs/samples/tree/main/samples/mcp), we show how to build a sample AI application using one of the reference MCP Servers, run and test it locally using Docker, and when ready, to easily deploy it to the cloud of your choice (AWS, GCP, or DigitalOcean) using Defang.
 
+{/* truncate */}
+
 ## Sample Model Context Protocol Time Chatbot Application
 
 Using [Docker’s `mcp/time` image](https://hub.docker.com/r/mcp/time) and Anthropic Claude, we made a [chatbot application](https://github.com/DefangLabs/samples/tree/main/samples/mcp) that can access time-based resources directly on the user’s local machine and answer time-based questions.

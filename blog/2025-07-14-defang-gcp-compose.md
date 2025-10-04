@@ -26,6 +26,8 @@ With Defang, you can:
 
 Our whitepaper walks through how Defang integrates with GCP, including how it:
 
+{/* truncate */}
+
 ✅ Builds your containers using Cloud Build  
 ✅ Manages secure deployments via Cloud Run and managed services  
 ✅ Supports custom domains, advanced networking, GPUs, LLMs, and more  

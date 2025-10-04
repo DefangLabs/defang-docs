@@ -25,6 +25,8 @@ Now you are not just building agents; you are picking the right infrastructure, 
 
 The result: weeks of DevOps headaches, lost momentum, and engineers stuck wiring infrastructure instead of shipping agents.
 
+{/* truncate */}
+
 ## We Made it Simple with Cloud Native Support for Agentic Apps
 
 That’s where Defang comes in. We make it easy to deploy full-stack agentic apps to your cloud of choice: native, secure, and scalable.

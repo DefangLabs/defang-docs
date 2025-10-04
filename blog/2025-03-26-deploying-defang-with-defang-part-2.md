@@ -24,6 +24,8 @@ That meant static hosting wouldn't cut it. So we decided to run the site as an a
 
 That being said, our learnings from the previous setup *are* being used to develop the capabilities of Defang. We're using the experience to make sure that Defang can handle the deployment of static sites as well as dynamic ones. We'll keep you updated when that's ready.
 
+{/* truncate */}
+
 ---
 
 ## Deploying with Defang (and Why It Was Easy)
