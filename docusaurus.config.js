@@ -248,11 +248,26 @@ const config = {
   markdown: {
     mermaid: true,
     format: 'mdx',
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownImages: 'throw',
+    },
     mdx1Compat: { //set to false for Docusaurus v3+ compatibility
       comments: false,
       admonitions: false,
       headingIds: false
-    }
+    },
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+      // result.frontMatter.description =
+      //   result.frontMatter.description?.replaceAll('{{MY_VAR}}', 'MY_VALUE');
+      return result;
+    },
+    emoji: true,
+    remarkRehypeOptions: {},
+    anchors: {
+      maintainCase: false,
+    },
   },
 };
 
