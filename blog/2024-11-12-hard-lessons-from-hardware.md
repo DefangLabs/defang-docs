@@ -18,6 +18,8 @@ What is embedded systems/programming? It’s combining hardware with software to
 
 ![hand_typing](/img/hardware-story/hand_typing.png)
 
+{/* truncate */}
+
 ## The Beginning
 
 My journey kicked off with installing the [Arduino IDE](https://www.arduino.cc/en/software) on my computer. It took me two hours—far longer than I expected—because the software versions I kept trying were not the right ones. Little did I know that I would encounter this issue many times later, such as when downloading [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html), a tool for firmware flashing. Figuring out what not to install had become a highly coveted skill. 

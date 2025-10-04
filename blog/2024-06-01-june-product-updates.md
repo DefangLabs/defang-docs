@@ -9,6 +9,7 @@ author: Defang Team
 Hey folks! We’re back with another exciting update about Defang. Our team has been working hard to bring you new features and improvements so you can get deploying faster. Here’s a rundown of what we’ve been up to this month:
 
 
+n{/* truncate */}
 ## Samples, samples, samples!
 
 We've been cranking out samples like there's no tomorrow. We've published samples to get you up and running with FastAPI, Elysia, Angular, React, Svelte, Sveltekit, Sails.js, Phoenix, and more. You can filter through them on the [Defang homepage](https://defang.io/#deploy). Check out our video about all the [new samples and functionality](https://www.youtube.com/watch?v=8wIU_af-sX8).

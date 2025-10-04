@@ -26,6 +26,8 @@ As Defang evolves, so does our message:
 - **What We Enable**: Any App, Any Stack, Any Cloud.
 - **How It Works**: Take your app from Docker Compose to a secure, scalable deployment on your favorite cloud in minutes.
 
+{/* truncate */}
+
 ### 2. A Sleek New Logo
 
 We've modernized our logo while keeping the core hexagonal design. The new look symbolizes Defang's role in seamlessly deploying any cloud application to any cloud.
