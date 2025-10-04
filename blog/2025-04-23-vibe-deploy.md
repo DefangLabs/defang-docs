@@ -19,7 +19,7 @@ tags:
     VSCode,
     Claude,
   ]
-author: Defang Team
+authors: defang_team
 draft: false
 ---
 

@@ -15,7 +15,7 @@ tags:
     Debugging,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 image: /img/november-update/launch-week.png
 ---
 import { Button } from '@mui/material';
