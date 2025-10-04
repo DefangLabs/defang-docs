@@ -26,6 +26,8 @@ Our whitepaper dives deep into how Docker Compose paired with Defang significant
 
 Discover how Docker + Defang can simplify your journey from local development to production-ready deployments across your preferred cloud providers.
 
+{/* truncate */}
+
 import Link from '@docusaurus/Link';
 
 <div style={{marginTop: '2rem', marginBottom: '2rem'}}>

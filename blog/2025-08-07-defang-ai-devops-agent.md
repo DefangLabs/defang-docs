@@ -24,6 +24,8 @@ While AI-powered tools make building apps a breeze, deploying them to the cloud 
 
 The bottleneck is no longer the code. It's the infrastructure.
 
+{/* truncate */}
+
 ## Enter Defang: Your AI DevOps Agent
 
 **Defang** is an AI-enabled agent that takes care of your entire deployment workflow, going from app code to a production-ready deployment on your favorite cloud in a single step.
