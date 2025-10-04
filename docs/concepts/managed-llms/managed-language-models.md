@@ -11,10 +11,10 @@ Each cloud provider offers their own managed Large Language Model services. AWS 
 
 | Provider | Managed Language Models |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-large-language-models) | ✅ |
-| [AWS Bedrock](/docs/providers/aws#managed-large-language-models) | ✅ |
+| [Playground](/docs/providers/playground#managed-llms) | ✅ |
+| [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
-| [GCP Vertex AI](/docs/providers/gcp#managed-large-language-models) | ✅ |
+| [GCP Vertex AI](/docs/providers/gcp#managed-llms) | ✅ |
 
 ## Usage
 

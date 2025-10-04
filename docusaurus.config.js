@@ -117,7 +117,7 @@ const config = {
       },
       items: [
         {
-          to: '/docs/Intro',
+          to: '/docs/intro',
           position: 'left',
           label: 'Docs',
         },

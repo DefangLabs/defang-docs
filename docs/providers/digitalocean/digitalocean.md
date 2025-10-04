@@ -20,7 +20,7 @@ Why should you use Defang with DigitalOcean? Defang allows you to easily create 
 
 ### Install Defang
 
-To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](../getting-started#authenticate-with-defang).
+To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](/docs/getting-started).
 
 ### Sign up for DigitalOcean
 
