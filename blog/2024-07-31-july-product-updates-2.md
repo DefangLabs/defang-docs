@@ -18,7 +18,7 @@ Hey folks! We canâ€™t believe a month has gone by already, time flies when youâ€
 
     Behind the scenes, Defang is having a conversation on your behalf with the LLM to narrow down to the cause of the error.  We would love for you to try the `debug` feature and give us your feedback so we can improve it further. One future improvement already on our list is the ability to, with user consent, automatically apply a chosen fix and re-try. We are also looking for way to improve the range of failures we are able to diagnose successfully.
 
-n{/* truncate */}
+{/* truncate */}
 ## Townhall
 
 If you're excited about what's coming next and want to hear more about our vision for the future, join us for our Townhall on August 21st. We'll be sharing more about our roadmap and what we're working on next. We'll also be making sure to take time to answer any questions you have, hear your feedback, and learn more about what you want from Defang!
