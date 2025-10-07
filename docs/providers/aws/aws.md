@@ -134,3 +134,5 @@ Then, for each project you deploy, Defang will create and manage the following r
 | ec2/SecurityGroup | bootstrap |
 | ec2/VpcDhcpOptions | dhcp-options |
 | cloudwatch/LogGroup | logs |
+
+- [AWS create user](./create-user.md)
