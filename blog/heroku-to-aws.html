@@ -14,8 +14,8 @@
 
 
 <link rel="icon" href="/img/tab_icon.svg">
-<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.b58fb842.css">
-<script src="/assets/js/runtime~main.3a746ced.js" defer="defer"></script>
+<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.eb86f5cc.css">
+<script src="/assets/js/runtime~main.7e12da00.js" defer="defer"></script>
 <script src="/assets/js/main.286e1a5a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,6 +26,7 @@
 <p>When you launch a new app, convenience rules. Platforms like Heroku offer a beautifully simple way to push code and see it live in minutes. You don’t need to think about servers, networks or databases. You just deploy. That’s why so many of us start there.</p>
 <p>But convenience has a cost. As your product grows, you want more control over performance and security. You want to integrate your own services, tune the infrastructure and optimize your spend. Heroku’s dyno‑based pricing, which starts around $25/month for a modest dyno and climbs to hundreds of dollars for high‑performance dynos, can become prohibitive for serious production workloads. And while Heroku abstracts away the underlying cloud, that abstraction also means you can’t fine‑tune the way your application runs.</p>
 <p>This trade‑off eventually becomes untenable. Teams need the simplicity of a platform like Heroku <em>and</em> the power and trust of running inside their own AWS account. This post unpacks why migrating off Heroku matters, highlights the friction points when you try to move to AWS yourself, and shows how the <strong>Defang CLI</strong> bridges the gap.</p>
+<!-- -->
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="heroku-vs-aws"><strong>Heroku vs. AWS</strong><a href="#heroku-vs-aws" class="hash-link" aria-label="Direct link to heroku-vs-aws" title="Direct link to heroku-vs-aws" translate="no">​</a></h2>
 <p>Heroku is a Platform‑as‑a‑Service very focused on simplicity and ease of use, while AWS offers a huge array of extremely powerful services that can be difficult to navigate alone. What you get from Heroku is the ability to deploy your application with a simple git push, scale by adding dynos and pick from a marketplace of add‑ons. But you miss out on much of the power of AWS, like the ability to organize and network services the way you want, the ability to deploy in a huge number of regions, their reliability, and much of the control you need to be called enterprise-ready. AWS also tends to be more cost effective as you scale and offers a wide variety of scalable storage options including Postgres, MongoDB, Redis, and more.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="pricing-and-scale"><strong>Pricing and scale</strong><a href="#pricing-and-scale" class="hash-link" aria-label="Direct link to pricing-and-scale" title="Direct link to pricing-and-scale" translate="no">​</a></h3>

@@ -14,8 +14,8 @@
 
 
 <link rel="icon" href="/img/tab_icon.svg">
-<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.b58fb842.css">
-<script src="/assets/js/runtime~main.3a746ced.js" defer="defer"></script>
+<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.eb86f5cc.css">
+<script src="/assets/js/runtime~main.7e12da00.js" defer="defer"></script>
 <script src="/assets/js/main.286e1a5a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,6 +35,7 @@
 </ul>
 <p>That meant static hosting wouldn&#x27;t cut it. So we decided to run the site as an app in a container.</p>
 <p>That being said, our learnings from the previous setup <em>are</em> being used to develop the capabilities of Defang. We&#x27;re using the experience to make sure that Defang can handle the deployment of static sites as well as dynamic ones. We&#x27;ll keep you updated when that&#x27;s ready.</p>
+<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="deploying-with-defang-and-why-it-was-easy">Deploying with Defang (and Why It Was Easy)<a href="#deploying-with-defang-and-why-it-was-easy" class="hash-link" aria-label="Direct link to Deploying with Defang (and Why It Was Easy)" title="Direct link to Deploying with Defang (and Why It Was Easy)" translate="no">​</a></h2>
 <p>We already deploy our other services with Defang using Compose files. In fact, the static website actually already used a Dockerfile and Compose file to manage the build process. So we just had to make some minor changes to the Compose file to take into account new environment variables for features we&#x27;re adding and make a few small changes to the Dockerfile to handle the new build process.</p>
