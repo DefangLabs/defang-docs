@@ -8,6 +8,7 @@ author: Defang Team
 
 Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.
 
+{/* truncate */}
 ## Windows Experience Improvements
 
 For our Windows users out there, we've made some changes to make your Defang experience even smoother:

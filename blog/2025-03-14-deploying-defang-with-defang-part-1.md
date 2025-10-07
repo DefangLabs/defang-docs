@@ -29,6 +29,8 @@ Initially, we provisioned databases and some DNS configurations using Infra-as-C
 
 This worked, but seemed unnecessarily complex, if we had the right tooling…
 
+{/* truncate */}
+
 ---
 
 ## **The Transition: Expanding Defang to Reduce Complexity**
