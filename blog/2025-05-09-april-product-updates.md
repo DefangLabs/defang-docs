@@ -14,7 +14,7 @@ tags:
     Events,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)

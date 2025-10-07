@@ -2,7 +2,7 @@
 title: "Sample: Starter Kit for RAG + Agents with CrewAI"
 description: "Going over our sample for RAG + Agents with CrewAI"
 tags: [Cloud, NoDevOps, Docker Compose, Defang, Sample]
-author: Defang Team
+authors: defang_team
 ---
 
 ## Why Build a Starter Kit for RAG + Agents?

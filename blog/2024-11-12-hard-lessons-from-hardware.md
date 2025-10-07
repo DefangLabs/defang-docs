@@ -1,7 +1,7 @@
 ---
 title: "Hard Lessons From Hardware"
 tags: [Cloud, NoDevOps, Embedded Systems, Hardware, Wifi, Arduino, Defang]
-author: Linda Lee
+authors: linda_lee
 ---
 
 *About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware at work.* 

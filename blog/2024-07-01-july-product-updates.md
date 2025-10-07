@@ -1,7 +1,7 @@
 ---
 title: June 2024 Defang Compose Update
 tags: [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI, Defang Compose Update]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)

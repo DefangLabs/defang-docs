@@ -15,7 +15,7 @@ tags: [
     LLMs,
     Autoscaling,
 ]
-author: Defang Team
+authors: defang_team
 draft: false
 ---
 
