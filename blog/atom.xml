@@ -77,6 +77,7 @@ Finally, execute:</p>
 <p>If your team is outgrowing Heroku or you need to bring your application into your customers’ cloud, give our migration workflow a spin. Install the Defang CLI, run defang init migrate-from-heroku, and watch your app come to life in AWS. You can find more details in our <a href="https://docs.defang.io/docs/tutorials/migrating-from-heroku" target="_blank" rel="noopener noreferrer">official migration guide</a>. We’d love to hear what you deploy and what features you’d like us to add next.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Heroku" term="Heroku"/>
         <category label="AWS" term="AWS"/>
@@ -136,6 +137,7 @@ Finally, execute:</p>
 <p>Defang is the invisible infrastructure making this era possible.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Agentic Era" term="Agentic Era"/>
         <category label="AI" term="AI"/>
@@ -169,6 +171,7 @@ Finally, execute:</p>
 <p>More coming in September.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -238,6 +241,7 @@ Defang understands the common ingredients of agentic apps and makes them first-c
 Join our community on <a href="https://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a></p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Agentic Apps" term="Agentic Apps"/>
         <category label="AI" term="AI"/>
@@ -272,6 +276,7 @@ Join our community on <a href="https://s.defang.io/discord" target="_blank" rel=
 <p>More coming in August.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -332,6 +337,7 @@ Join our community on <a href="https://s.defang.io/discord" target="_blank" rel=
 </ul>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -372,6 +378,7 @@ Want to simplify your GCP deployments? Start with Compose, scale with Defang.</p
 <div style="margin-top:2rem;margin-bottom:2rem"><a href="https://defang.io/whitepapers/gcp-defang/" target="_blank" rel="noopener noreferrer" class="button button--primary button--lg">Read the full whitepaper</a></div>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Google Cloud" term="Google Cloud"/>
         <category label="GCP" term="GCP"/>
@@ -424,6 +431,7 @@ Whether you’re building a smart Q&amp;A tool or a multi-agent research assista
 <p>More coming in July.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -482,6 +490,7 @@ Whether you’re building a smart Q&amp;A tool or a multi-agent research assista
 <p>Want more? File an <a href="https://github.com/DefangLabs/samples/issues" target="_blank" rel="noopener noreferrer">issue</a> to request a sample—we'll do everything we can to help you deploy better and faster!</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -513,6 +522,7 @@ Whether you’re building a smart Q&amp;A tool or a multi-agent research assista
 <div style="margin-top:2rem;margin-bottom:2rem"><a href="https://defang.io/whitepapers/docker-compose-defang/" target="_blank" rel="noopener noreferrer" class="button button--primary button--lg">Read the full whitepaper</a></div>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -563,6 +573,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>More coming in June.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -603,6 +614,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Let's keep building. 🚀</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -647,6 +659,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>We are so excited to make Defang even more easy to use and accessible now to vibe coders. Give it a try and let us know what you think on our <a href="http://s.defang.io/discord" target="_blank" rel="noopener noreferrer">Discord</a>!</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -698,6 +711,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>As always, we appreciate your feedback and are committed to making Defang even better. Deploy any app to any cloud with a single command. Go build something awesome!</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
@@ -804,6 +818,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Happy deploying!</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="deployment" term="deployment"/>
         <category label="django" term="django"/>
@@ -862,6 +877,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Stay tuned for the next post in the series—because this is just one piece of the puzzle.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="defang-with-defang" term="defang-with-defang"/>
         <category label="deployment" term="deployment"/>
@@ -886,6 +902,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 ]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="DevOps" term="DevOps"/>
@@ -969,6 +986,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Every sample project we built, every conversation we had with developers, and every challenge we encountered with the Portal helped us get to this point where we could focus on closing the gaps last few gaps to deploying everything from a Compose file.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="defang-with-defang" term="defang-with-defang"/>
         <category label="deployment" term="deployment"/>
@@ -1004,6 +1022,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Check out the new look and let us know what you think! And if you haven't, please join us on Discord and follow us on social media.</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="announcement" term="announcement"/>
         <category label="branding" term="branding"/>
@@ -1078,6 +1097,7 @@ Defang makes it easy to use cloud-native language models across providers — an
 <p>Have fun building and deploying MCP-based containerized applications to the cloud with Defang!</p>]]></content>
         <author>
             <name>Defang Team</name>
+            <uri>https://defang.io</uri>
         </author>
         <category label="Cloud" term="Cloud"/>
         <category label="NoDevOps" term="NoDevOps"/>
