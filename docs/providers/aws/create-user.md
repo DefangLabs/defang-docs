@@ -21,7 +21,7 @@ Click the **Create user** button at the top right.
 <img src="/img/aws-user/create-user.png" alt="Create user button" width="470" />
 
 ### c. Enter User Name and Assign Permissions
-Enter a user name and assign permissions. For most Defang use cases, the `PowerUserAccess` policy is used in this example, but you may choose different or more restrictive policies depending on your organization's requirements.
+Enter a user name and assign permissions. The `PowerUserAccess` policy is used in this example, but you may choose different or more restrictive policies depending on your organization's requirements.
 
 <img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="470" />
 
