@@ -16,6 +16,10 @@ You can use the AWS Free Tier to try out Defang. Learn more about it [here](http
 
 Getting started with the Defang BYOC AWS Provider is easy. The first step is to [authenticate your shell](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) with AWS as an admin user. The authenticated user should be an IAM admin because Defang will need permission to create resources and IAM roles in your account.
 
+:::info
+You can create other [AWS users](./create-user.md) for deployment.
+:::
+
 :::tip
 If you have the AWS CLI installed, you should be able to successfully run `aws sts get-caller-identity` and see your account ID.
 :::
