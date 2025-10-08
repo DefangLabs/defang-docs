@@ -11,17 +11,15 @@ To deploy applications with Defang on AWS, you need an IAM user with appropriate
 ## Step 1: Create an IAM User
 
 ### a. Open the IAM Service
-Go to the [AWS Console](https://aws.amazon.com/console/) and open the IAM (Identity and Access Management) service. Under **Access Management**, select **Users**.
-
-<img src="/img/aws-user/side-panel.png" alt="AWS IAM side panel" width="250" />
+Go to the [IAM Users Panel](https://console.aws.amazon.com/iam/home#/users).
 
 ### b. Click Create User
 Click the **Create user** button at the top right.
 
 <img src="/img/aws-user/create-user.png" alt="Create user button" width="470" />
 
-### c. Enter User Name and Assign Permissions
-Enter a user name and assign permissions. The `PowerUserAccess` policy is used in this example, but you may choose different or more restrictive policies depending on your organization's requirements.
+### c. User details
+Enter a user name, and assign permissions. Defang requires the `PowerUserAccess` policy in order to deploy and manage resources in your account.
 
 <img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="470" />
 
@@ -34,10 +32,10 @@ Review your settings and confirm the creation of the user.
 
 ## Step 2: Create Access Keys
 
-Access keys are required for programmatic access to AWS. Follow these steps to create them:
+Access keys are the easiest way to authorize programmatic access to AWS. Follow these steps to create them:
 
 ### a. Select the New User
-After creating the user, locate them in the **Users** panel and select the user.
+After creating the user, locate them in the [IAM Users Panel](https://console.aws.amazon.com/iam/home#/users) and select the user.
 
 <img src="/img/aws-user/new-user-in-panel.png" alt="New user in panel" width="470" />
 
