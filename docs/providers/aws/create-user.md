@@ -1,81 +1,62 @@
 ---
-title: Setting Up AWS users
-description: Follow these instructions to create a user for deployment
+title: Creating an AWS IAM User
+description: Step-by-step instructions for creating an IAM user and access keys for Defang deployments.
 sidebar_position: 100
 ---
 
-# Create a user
+## Creating an AWS IAM User for Defang
 
- Follow these steps to set up a AWS user for deploying applications with Defang.
+To deploy applications with Defang on AWS, you need an IAM user with appropriate permissions and access keys. This guide walks you through the process step by step.
 
-### Step 1: Create Your user
+## Step 1: Create an IAM User
 
-  1. Start by using the [AWS console](https://aws.amazon.com/console/) and go to the AIM (Amazon Identity and Management) console and under **Access Management** select **User**
+### a. Open the IAM Service
+Go to the [AWS Console](https://aws.amazon.com/console/) and open the IAM (Identity and Access Management) service. Under **Access Management**, select **Users**.
 
-<figure>
-  <img src="/img/aws-user/side-panel.png" alt="AWS AIM side panel" style={{ width: 300 }} />
-  <figcaption>Create a AWS user</figcaption>. 
-</figure>
-  
-  2. Select the Create User button on the top right to start the create flow
+<img src="/img/aws-user/side-panel.png" alt="AWS IAM side panel" width="250" />
 
-<figure>
-  <img src="/img/aws-user/create-user.png" alt="Create user button" style={{ width: 300 }} />
-  <figcaption>Create user button</figcaption>
-</figure>
+### b. Click Create User
+Click the **Create user** button at the top right.
 
-  3. Provide user name and permission policy
+<img src="/img/aws-user/create-user.png" alt="Create user button" width="470" />
 
-<figure>
-  <img src="/img/aws-user/create-user-1-name.png" alt="User name input" style={{ width: 300 }} />
-  <figcaption>User name input</figcaption>  
-</figure>
+### c. Enter User Name and Assign Permissions
+Enter a user name and assign permissions. For most Defang use cases, the `PowerUserAccess` policy is used in this example, but you may choose different or more restrictive policies depending on your organization's requirements.
 
-The policy we are add in this example is very permissive. You may wish to more selective of the policies you want your user to have.
-<figure>
-  <img src="/img/aws-user/create-user-2-add-policy.png" alt="Assign policies to user" style={{ width: 300 }} />
-  <figcaption>Assign policies to user</figcaption> 
-</figure>
+<img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="470" />
 
-Once this is done, review and confirm the creation.
+<img src="/img/aws-user/create-user-2-add-policy.png" alt="Assign policies to user" width="470" />
+
+### d. Review and Confirm
+Review your settings and confirm the creation of the user.
 
 ---
 
-### Step 2: Creating keys
-  The next step is to create the action keys used to authenticate the user.
-  
-  1. Once the new user is create they will show up in the **Users** panel. Select that user.
+## Step 2: Create Access Keys
 
-   <figure>
-  <img src="/img/aws-user/new-user-in-panel.png" alt="New user in panel" style={{ width: 300 }} />
-  <figcaption>New user in panel</figcaption>  
-</figure>
+Access keys are required for programmatic access to AWS. Follow these steps to create them:
 
-  2. This opens the **User Summary** panel. Select **Create access key** button to open the key creation flow.
+### a. Select the New User
+After creating the user, locate them in the **Users** panel and select the user.
 
-   <figure>
-  <img src="/img/aws-user/new-user-create-key-panel.png" alt="Key creation panel" style={{ width: 300 }} />
-  <figcaption>Key creation panel</figcaption>  
+<img src="/img/aws-user/new-user-in-panel.png" alt="New user in panel" width="470" />
 
-</figure>
+### b. Create Access Key
+In the **User Summary** panel, click **Create access key**.
 
-  3. Select the Use case for the key, for defang this will be the "Application running on AWS compute service"
+<img src="/img/aws-user/new-user-create-key-panel.png" alt="Key creation panel" width="470" />
 
-   <figure>
-  <img src="/img/aws-user/new-user-use-case.png" alt="Use case" style={{ width: 300 }} />
-  <figcaption>Use case</figcaption>  
-</figure>
+### c. Select Use Case
+For Defang, select the use case "Application running on AWS compute service".
 
-  4. Provide a description of the key and press Next
+<img src="/img/aws-user/new-user-use-case.png" alt="Use case" width="470" />
 
-   <figure>
-  <img src="/img/aws-user/new-user-description.png" alt="Key description" style={{ width: 300 }} />
-  <figcaption>Key description</figcaption>  
-</figure>  
+### d. Add Description and Continue
+Optionally, provide a description for the key and click **Next**.
 
-  5. A new key is generated for you. This is the Access Key Id and Secret Key for this user for authentication during deployment.
+<img src="/img/aws-user/new-user-description.png" alt="Key description" width="470" />
 
-  <figure>
-  <img src="/img/aws-user/new-user-keys.png" alt="Access keys" style={{ width: 300 }} />
-  <figcaption>**Access keys**</figcaption>  
-</figure>
+### e. Save Your Access Keys
+Your new access key will be generated. **Copy and save the Access Key ID and Secret Access Key**—you will need these for Defang deployments.
+
+<img src="/img/aws-user/new-user-keys.png" alt="Access keys" width="470" />
