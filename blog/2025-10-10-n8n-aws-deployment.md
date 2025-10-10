@@ -35,16 +35,13 @@ Verify the installation:
 defang version
 ```
 
-## Step 2: Choose the n8n Sample on Defang
+## Step 2: Clone the n8n Sample on Defang
 
-Create a new directory for your n8n deployment:
+Clone the n8n sample to your directory:
 
 ```bash
 defang new n8n
 cd n8n
-```
-
-Once you choose the n8n sample, it'll create the n8n sample for you.
 
 ## Step 3: Setup Defang for AWS
 
