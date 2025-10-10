@@ -9,7 +9,7 @@ tags:
     Defang Compose Update,
     Product Hunt,
   ]
-author: Defang Team
+authors: defang_team
 image: /img/product-hunt/product-hunt.png
 ---
 import { Button } from '@mui/material';
@@ -20,6 +20,8 @@ import { Button } from '@mui/material';
 # **Defang is live on Product Hunt!**
 
 The moment is finally here – **Defang V1 is officially LIVE on Product Hunt!** 🎉
+
+{/* truncate */}
 
 <a
   href="https://www.producthunt.com/posts/defang?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-defang"

@@ -1,6 +1,6 @@
 ---
 title: "Introducing Defang's New Look: Website & Logo Refresh"
-author: Defang Team
+authors: defang_team
 tags: [announcement, branding, refresh]
 ---
 
@@ -25,6 +25,8 @@ As Defang evolves, so does our message:
 - **Our Promise**: Develop Anything, Deploy Anywhere.
 - **What We Enable**: Any App, Any Stack, Any Cloud.
 - **How It Works**: Take your app from Docker Compose to a secure, scalable deployment on your favorite cloud in minutes.
+
+{/* truncate */}
 
 ### 2. A Sleek New Logo
 

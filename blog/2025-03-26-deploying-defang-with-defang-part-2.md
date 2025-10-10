@@ -1,6 +1,6 @@
 ---
 title: "Deploying Defang with Defang: Part 2"
-author: Defang Team
+authors: defang_team
 tags: [defang-with-defang, deployment, defang-website]
 ---
 
@@ -23,6 +23,8 @@ Our original site was a Next.js app using [static exports](https://nextjs.org/do
 That meant static hosting wouldn't cut it. So we decided to run the site as an app in a container.
 
 That being said, our learnings from the previous setup *are* being used to develop the capabilities of Defang. We're using the experience to make sure that Defang can handle the deployment of static sites as well as dynamic ones. We'll keep you updated when that's ready.
+
+{/* truncate */}
 
 ---
 

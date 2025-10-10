@@ -15,12 +15,14 @@ tags:
     Events,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 June was a big month at Defang. We rolled out powerful features across our CLI, Playground, and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we accomplished.
+
+{/* truncate */}
 
 ## 🚀 Live AWS Cost Estimation
 

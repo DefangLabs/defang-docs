@@ -10,7 +10,7 @@ tags:
     Portal,
     Events,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
@@ -26,3 +26,5 @@ Well, that went by quick! Seems like it was just a couple of weeks ago that we p
 February was an exciting month for the Defang team as we continued to engage with the developer community and showcase what’s possible with Defang. We sponsored and demo’ed at the [DevTools Vancouver meetup](https://lu.ma/devtools3), as well as sponsored the [Vancouver.dev IRL: Building AI Startups](https://lu.ma/vandevirl2) event. Also, at the AWS Startup Innovation Showcase in Vancouver, our CTO [Lio](https://www.linkedin.com/in/lionello/)  [demonstrated](https://www.linkedin.com/feed/update/urn:li:activity:7299861024780808193) how Defang makes it effortless to deploy secure, scalable, and cost-efficient serverless apps on AWS! And finally, we had a great response to our [LinkedIn post](https://www.linkedin.com/posts/defanglabs_mcp-docker-anthropic-activity-7298043665883508736-i4dd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAQqiEBLsVLYYAzEmBFB9oIl31nQ7kDII0) on the Model Context Protocol, catching the attention of many observers, including some of our key partners.
 
 We are eager to see what you deploy with Defang. Join our [Discord](http://s.defang.io/discord) to ask any questions, see what others are building, and share your own experience with Defang. And stay tuned for more to come in March!
+
+{/* truncate */}

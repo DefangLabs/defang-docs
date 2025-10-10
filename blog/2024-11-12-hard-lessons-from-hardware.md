@@ -1,7 +1,7 @@
 ---
 title: "Hard Lessons From Hardware"
 tags: [Cloud, NoDevOps, Embedded Systems, Hardware, Wifi, Arduino, Defang]
-author: Linda Lee
+authors: linda_lee
 ---
 
 *About the author: Linda Lee is an intern at Defang Software Labs who enjoys learning about computer-related things. She wrote this blog post after having fun with hardware at work.* 
@@ -17,6 +17,8 @@ From my background, I was more into the web development and software side of thi
 What is embedded systems/programming? It’s combining hardware with software to perform a function, such as interacting with the physical world or accessing cloud services. A common starting point for beginners is an Arduino board, which is what the SenseCAP Indicator has for its hardware. My goal was to make a UI display for this device, and then send its input to a computer, and get that data into the cloud.
 
 ![hand_typing](/img/hardware-story/hand_typing.png)
+
+{/* truncate */}
 
 ## The Beginning
 

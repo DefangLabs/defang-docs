@@ -15,12 +15,14 @@ tags:
     Cost Estimation,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 July was all about making cloud deployments even smoother and smarter. We focused on removing friction from deployments and giving you better visibility into costs. Railpack now builds production-ready images automatically when no Dockerfile is present, and our real-time cost estimation feature now supports Google Cloud alongside AWS. We also added managed MongoDB on GCP, introduced an Agentic LangGraph sample, and connected with builders at Bière & Code & Beer MTL. Here’s what’s new.
+
+{/* truncate */}
 
 ## Railpack Integration
 

@@ -1,6 +1,6 @@
 ---
 title: "Deploying Defang with Defang: Part 1"
-author: Defang Team
+authors: defang_team
 tags: [defang-with-defang, deployment, defang-portal]
 ---
 
@@ -28,6 +28,8 @@ The Portal isn’t a simple static website; it’s a **full-stack application** 
 Initially, we provisioned databases and some DNS configurations using Infra-as-Code because Defang couldn’t yet manage them for us. We also deployed the services themselves manually through infrastructure-as-code, requiring us to define each service separately.
 
 This worked, but seemed unnecessarily complex, if we had the right tooling…
+
+{/* truncate */}
 
 ---
 

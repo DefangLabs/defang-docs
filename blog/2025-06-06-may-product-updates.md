@@ -14,12 +14,14 @@ tags:
     Events,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 May was a big month at Defang. We shipped support for managed LLMs in Playground, added MongoDB support on AWS, improved the Defang MCP Server, and dropped new AI samples to make deploying faster than ever.
+
+{/* truncate */}
 
 ## 🚀 Managed LLMs in Playground
 

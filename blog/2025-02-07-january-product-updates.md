@@ -14,7 +14,7 @@ tags:
     Debugging,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
@@ -22,6 +22,8 @@ author: Defang Team
 Welcome to 2025! As we had shared in our early [Dec update](/blog/2024-12-04-launch-week), we reached our V1 milestone with support for GCP and DigitalOcean in Preview and production support for AWS. We were very gratified to see the excitement around our launch, with Defang ending 2024 with twice the number of users as our original goal!
 
 We are excited to build on that momentum going into 2025. And we are off to a great start in Jan, with some key advancements:
+
+{/* truncate */}
 
 1. **GCP parity with AWS:** We are really excited to announce that our GCP provider is now feature-complete, with support for key features such as [Managed Postgres](/docs/concepts/managed-storage/managed-postgres), [Managed Redis](/docs/concepts/managed-storage/managed-redis), [BYOD](/docs/concepts/domains#bring-your-own-domain) (Bring-Your-Own-Domain), [GPUs](/docs/tutorials/deploy-with-gpu), AI-assisted [Debugging](/docs/concepts/debug), and more. Install the [latest version of our CLI](https://defang.io/#install) and give it a try! Please let us know your feedback.
 2. **Defang Deployed with Defang:** In 2025, we are doubling our focus on production use-cases where developers are using Defang every day to deploy their production apps. And where better to start than with Defang itself? We had already been using Defang to deploy portions of our infrastructure (such as our web site), but we are super happy to report that now we are using Defang to deploy **all** our services - including our Portal, Playground, the Defang back-end (aka Fabric) and more. We’ll be sharing more about how we did this, and publishing some of the related artifacts, in a blog post soon - stay tuned.

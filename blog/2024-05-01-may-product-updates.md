@@ -1,13 +1,14 @@
 ---
 title: April 2024 Defang Compose Update
 tags: [Cloud, NoDevOps, BYOC, AWS ECS, defang compose up, Defang Compose Update]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:
 
+{/* truncate */}
 ## npx defang
 
 We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally by running:

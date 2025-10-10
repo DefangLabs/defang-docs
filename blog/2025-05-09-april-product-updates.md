@@ -14,12 +14,14 @@ tags:
     Events,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 April flew by with big momentum at Defang. From deeper investments in the **Model Context Protocol** (MCP), to deploying LLM-based inferencing apps, to live demos of **Vibe Deploying**, we're making it easier than ever to go from idea to cloud.
+
+{/* truncate */}
 
 ## MCP + Vibe Deploying
 

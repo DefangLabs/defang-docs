@@ -3,7 +3,7 @@ title: "Defang: Your AI DevOps Agent"
 description: "From Vibe-Coding to Production… Without a DevOps Team"
 slug: defang-your-ai-devops-agent
 tags: [Cloud, NoDevOps, BYOC, MCP, LLMs, Vibe Deploying, GCP, AWS]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Defang Agent](/img/defang_agent/defang_agent.png)
@@ -23,6 +23,8 @@ However, cloud app deployment remains a major challenge! As Andrej Karpathy shar
 While AI-powered tools make building apps a breeze, deploying them to the cloud is still frustratingly complex. Kubernetes, Terraform, IAM policies, load balancers, DNS, CI/CD all add layers of difficulty. This complexity continues to be a significant bottleneck that AI tools have yet to fully address, making deployment a critical challenge for developers.
 
 The bottleneck is no longer the code. It's the infrastructure.
+
+{/* truncate */}
 
 ## Enter Defang: Your AI DevOps Agent
 

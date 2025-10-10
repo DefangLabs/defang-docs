@@ -19,7 +19,7 @@ tags:
     VSCode,
     Claude,
   ]
-author: Defang Team
+authors: defang_team
 draft: false
 ---
 
@@ -28,6 +28,8 @@ draft: false
 – [Andrej Karpathy](https://x.com/karpathy/status/1886192184808149383)
 
 Welcome to the world of **vibe coding**, an AI-assisted, intuition-driven way of building software. You do not spend hours reading diffs, organizing files, or hunting through documentation. You describe what you want, let the AI take a pass, and keep iterating until it works.
+
+{/* truncate */}
 
 **The Tools of Vibe Coding**
 

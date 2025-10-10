@@ -3,7 +3,7 @@ title: "Beyond Heroku: Owning Your Deployments"
 description: "Why scaling off Heroku matters, what happens during a migration, and how the Defang CLI makes the transition to AWS painless."
 slug: heroku-to-aws
 tags: [Heroku, AWS, Migration, PaaS vs IaaS, Cloud, DevOps, Defang, Docker Compose]
-author: Defang Team
+authors: defang_team
 date: 2025-09-25
 ---
 
@@ -15,6 +15,8 @@ When you launch a new app, convenience rules. Platforms like Heroku offer a beau
 But convenience has a cost. As your product grows, you want more control over performance and security. You want to integrate your own services, tune the infrastructure and optimize your spend. Heroku’s dyno‑based pricing, which starts around $25/month for a modest dyno and climbs to hundreds of dollars for high‑performance dynos, can become prohibitive for serious production workloads. And while Heroku abstracts away the underlying cloud, that abstraction also means you can’t fine‑tune the way your application runs.
 
 This trade‑off eventually becomes untenable. Teams need the simplicity of a platform like Heroku *and* the power and trust of running inside their own AWS account. This post unpacks why migrating off Heroku matters, highlights the friction points when you try to move to AWS yourself, and shows how the **Defang CLI** bridges the gap.
+
+{/* truncate */}
 
 ## **Heroku vs. AWS**
 

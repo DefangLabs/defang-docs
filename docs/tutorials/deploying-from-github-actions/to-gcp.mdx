@@ -1,0 +1,224 @@
+---
+title: Deploying to GCP
+description: Using the Defang Github Action to deploy your project to GCP from your CI/CD pipeline.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Deploying to GCP from GitHub Actions
+
+This tutorial will show you how to use the [Defang GitHub Action](https://github.com/DefangLabs/defang-github-action) to deploy your project to GCP from your GitHub Actions workflow.
+
+## Prerequisites
+
+- [A Defang Account](/docs/concepts/authentication)
+- [A Github Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+- [A GCP Account](https://cloud.google.com)
+
+The following steps will guide you through setting up a GitHub Actions workflow that can assume a role in your GCP account using OpenID Connect (OIDC) and deploy your project using the Defang GitHub Action. The role which will be assumed must have a trust relationship with an OIDC identity provider (IdP) for GitHub Actions, and that trust relationship must be configured to allow the specific repository and branch to assume the role. This ultimately allows the GitHub Actions workflow to securely access your GCP resources without needing to store long-lived GCP credentials in your repository.
+
+## Step 1 - Identify your GCP Project ID
+
+To configure the GitHub Action to assume a role in your GCP project, you'll need your GCP Project ID.
+
+<Tabs>
+  <TabItem value="cli" label="gcloud CLI" default>
+    You can list all of the projects you have access to with the following command:
+    ```bash
+    gcloud projects list --format="value(projectId)"
+    export PROJECT_ID="my-project-123456" # export the project ID you want to use
+    ```
+    Identify the appropriate project ID from the list and keep it handy for the next steps.
+  </TabItem>
+  <TabItem value="dashboard" label="GCP Console">
+    1. Go to the [GCP Console](https://console.cloud.google.com/).
+    2. Click on the project dropdown in the top navigation bar.
+    3. Identify the appropriate project from the list.
+    4. Your Project ID will be listed next to the project name.
+  </TabItem>
+</Tabs>
+
+## Step 2 - Create a deployer Service Account
+
+<Tabs>
+  <TabItem value="cli" label="gcloud CLI" default>
+    Using the gcloud CLI:
+
+    ```bash
+    gcloud iam service-accounts create "deployer" \
+      --description="Service account used by Defang for deployment" \
+      --display-name="Deployer" \
+      --project="${PROJECT_ID}"
+    ```
+  </TabItem>
+  <TabItem value="dashboard" label="GCP Console">
+    Using the GCP Console:
+
+    1. Go to the [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) page in the GCP Console.
+    2. Click "Create Service Account" at the top of the page.
+    3. For the Service account name, enter "Deployer"
+    4. For the Service account ID, enter "deployer"
+    5. For the Service account description, enter "Service account used by Defang for deployment"
+    6. Click "Create and Continue"
+    7. In the "Grant this service account access to the project" section, select the "Owner" role from the dropdown.
+    8. Click "Continue"
+    9. Click "Done"
+  </TabItem>
+</Tabs>
+
+## Step 2 - Create a Workload Identity Pool
+
+To configure the GitHub Action to assume a role in your GCP account, you'll need to create a Workload Identity Pool and a Workload Identity Provider in your GCP project.
+
+:::warning
+Always add an Attribute Condition to restrict entry into the Workload Identity Pool.
+
+We recommend replacing `YOUR_REPOSITORY_OWNER` and `YOUR_REPOSITORY_NAME` with your actual GitHub repository owner and name in the next step, and adjusting the `assertion.ref` condition to match your deployment branch. If you want to allow access from any branch, you can omit the `assertion.ref` condition.
+
+We also recommend configuring [GitHub Actions Environments](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments#using-environments). If you do not configure environments, you can omit the `assertion.environment` condition below.
+:::
+
+<Tabs>
+  <TabItem value="cli" label="gcloud CLI" default>
+    Using the gcloud CLI:
+
+    ### Create a Workload Identity Pool
+
+    ```bash
+    gcloud iam workload-identity-pools create "defang-github-actions-pool" \
+      --project="${PROJECT_ID}" \
+      --location="global" \
+      --display-name="Defang Github Actions Pool" \
+      --description="Allow Defang to deploy from Github Actions"
+    ```
+
+    ### Add a Workload Identity Provider to the Pool
+
+    ```bash
+    gcloud iam workload-identity-pools providers create-oidc "defang-github-actions-provider" \
+      --project="${PROJECT_ID}" \
+      --location="global" \
+      --workload-identity-pool="defang-github-actions-pool" \
+      --display-name="Defang Github Actions Provider" \
+      --issuer-uri="https://token.actions.githubusercontent.com" \
+      --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner,attribute.environment=assertion.environment,attribute.ref=assertion.ref" \
+      --attribute-condition="assertion.repository_owner == YOUR_REPOSITORY_OWNER && assertion.repository == 'YOUR_REPOSITORY_NAME' && assertion.ref == 'refs/heads/main' && assertion.environment == 'YOUR_ENVIRONMENT'" \
+    ```
+  </TabItem>
+  <TabItem value="dashboard" label="GCP Console">
+    Using the GCP Console:
+
+    ### Create a Workload Identity Pool
+    1. Go to the [Workload Identity Pools](https://console.cloud.google.com/iam-admin/workload-identity-pools) page in the GCP Console.
+    2. If you haven't created a pool before, click "Get started", or "Create Pool" if you have.
+    3. For the Name field, enter "Defang Github Actions Pool"
+    4. For the Pool ID field, enter "defang-github-actions-pool"
+    5. For the Description field, enter "Allow Defang to deploy from Github Actions"
+    6. Make sure "Enabled pool" is toggled to the "on" position.
+    7. Click "Continue"
+
+    ### Add a Workload Identity Provider
+
+    1. After creating the Workload Identity Pool, you should be on the "Add Provider" page. If not, navigate to the [Workload Identity Pools](https://console.cloud.google.com/iam-admin/workload-identity-pools) page, click on the "defang-github-actions-pool", and then click "Add Provider".
+    2. Select the "OpenID Connect (OIDC)" provider from the "Select a Provider" dropdown.
+    3. For the Provider Name field, enter "Defang Github Actions Provider"
+    4. For the Provider ID field, enter "defang-github-actions-provider"
+    5. For the Issuer URI field, enter `https://token.actions.githubusercontent.com`
+    6. You do not need to upload a JSON Web Key Set (JWKS) URI, so leave that field blank.
+    7. Use the default audience
+    8. Click "Save"
+
+    ### Configure Provider Attributes
+    1. For the `google.subject` attribute, the `OIDC 1` attribute should be set to `assertion.sub`.
+    2. Add a new attribute mapping for `attribute.repository_owner` and set it to `assertion.repository_owner`.
+    3. Add a new attribute mapping for `attribute.repository` and set it to `assertion.repository`.
+    4. Add a new attribute mapping for `attribute.environment` and set it to `assertion.environment`.
+    5. Add a new attribute mapping for `attribute.ref` and set it to `assertion.ref`.
+
+    ### Configure Attribute Conditions
+    1. Click on "Add Condition"
+    2. For the Condition CEL, we recommend entering the following condition, replacing `YOUR_REPOSITORY_OWNER` and `YOUR_REPOSITORY_NAME` with your actual GitHub repository owner and name.
+    ```
+    attribute.repository_owner == 'YOUR_REPOSITORY_OWNER' && attribute.repository == 'YOUR_REPOSITORY_NAME' && attribute.ref == 'refs/heads/main'
+    ```
+    3. Click "Save"
+  </TabItem>
+</Tabs>
+
+## Step 3 - Grant your GCP service account access to the Workload Identity Pool
+
+<Tabs>
+  <TabItem value="cli" label="gcloud CLI" default>
+    Using the gcloud CLI:
+
+    ### Get the ID of the Workload Identity Pool we just created
+
+    ```bash
+    WORKLOAD_IDENTITY_POOL_ID=$(gcloud iam workload-identity-pools describe "defang-github-actions-pool" \
+      --project="${PROJECT_ID}" \
+      --location="global" \
+      --format="value(name)") | awk -F/ '{print $6}')
+    ```
+
+    ```bash
+    gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+      --member="serviceAccount:deployer@${PROJECT_ID}.iam.gserviceaccount.com" \
+      --role="roles/owner"
+      --member="principalSet://iam.googleapis.com/${WORKLOAD_IDENTITY_POOL_ID}/attribute.repository/${REPO}"
+    ```
+  </TabItem>
+  <TabItem value="dashboard" label="GCP Console">
+    Using the GCP Console:
+
+    1. Open the GCP Console and navigate to the [Workload Identity Pool page for the pool we just created](https://console.cloud.google.com/iam-admin/workload-identity-pools/pool/defang-github-actions-pool).
+    2. Click "Grant access" at the top of the page.
+    3. Click "Grant access using service account impersonation"
+    4. Select the "Deployer" service account we created earlier.
+    5. Select principals:
+      a. Select `repository` from the "Attribute name" dropdown.
+      b. Enter your GitHub repository name in the "Attribute value" field.
+    6. Click the "Save" button.
+  </TabItem>
+</Tabs>
+
+## Step 4 - Create a new GitHub Actions workflow
+
+In your GitHub repository, create a new file at `.github/workflows/deploy.yml` with the following content:
+
+```yaml
+name: Deploy with Defang
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not 'main'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      GCP_PROJECT_ID: # Provide your GCP Project ID
+
+    steps:
+      - name: Configure GCP Credentials for Prod
+        uses: "google-github-actions/auth@v2"
+        with:
+          service_account: "deployer@${{ env.GCP_PROJECT_ID }}.iam.gserviceaccount.com"
+          workload_identity_provider: "projects/${{ env.GCP_PROJECT_ID }}/locations/global/workloadIdentityPools/defang-github-actions-pool/providers/defang-github-actions-provider"
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: DefangLabs/defang-github-action@v1.2.1
+        with:
+          mode: "balanced"
+          provider: "gcp"
+```
+
+Full documentation for configuring AWS and GCP credentials can be found in the [Defang GitHub Action repository](https://github.com/DefangLabs/defang-github-action).
+
+

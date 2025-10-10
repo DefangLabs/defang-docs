@@ -15,7 +15,7 @@ tags: [
     LLMs,
     Autoscaling,
 ]
-author: Defang Team
+authors: defang_team
 draft: false
 ---
 
@@ -24,6 +24,8 @@ draft: false
 Wow - another month has gone by, time flies when you're having fun!
 
 Let us share some important updates regarding what we achieved at Defang in March:
+
+{/* truncate */}
 
 **Managed LLMs:** One of the coolest features we have released in a bit is [support for Managed LLMs (such as AWS Bedrock) through the `x-defang-llm` compose service extension](/docs/concepts/managed-llms/managed-language-models). When coupled with the `defang/openai-access-gateway` service image, Defang offers the easiest way to [migrate your OpenAI-compatible application to cloud-native managed LLMs](/docs/tutorials/deploy-openai-apps) without making any changes to your code. Support for GCP and DigitalOcean coming soon.
 

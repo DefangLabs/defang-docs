@@ -13,7 +13,7 @@ tags:
     Debugging,
     Defang Compose Update,
   ]
-author: Defang Team
+authors: defang_team
 ---
 import { Button } from '@mui/material';
 
@@ -22,6 +22,8 @@ import { Button } from '@mui/material';
 Hi everyone,
 
 We are a little late getting our monthly update out this time, but we did ship a number of important updates in October that we would like to inform you about. And more is coming… stay tuned for that!
+
+{/* truncate */}
 
 1. **New CLI version 0.6.5**: this was a big release with a number of improvements and bug fixes. You can find details in the release notes [here](https://github.com/DefangLabs/defang/releases/tag/v0.6.5), but to highlight a few:
     - `defang --provider aws` shows improved error message if unauthenticated

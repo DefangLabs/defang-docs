@@ -2,7 +2,7 @@
 title: "Bridging Local Development and Cloud Deployment"
 description: "Announcing our new whitepaper: Bridging Local Development and Cloud Deployment with Docker Compose and Defang"
 tags: [Cloud, NoDevOps, Docker Compose, Defang, Whitepaper]
-author: Defang Team
+authors: defang_team
 ---
 
 **Introducing Our New Whitepaper: Bridging Local Development and Cloud Deployment with Docker Compose and Defang**
@@ -25,6 +25,8 @@ Defang bridges this gap by extending Docker Compose into native cloud deployment
 Our whitepaper dives deep into how Docker Compose paired with Defang significantly reduces complexity, streamlines workflows, and accelerates development and deployment.
 
 Discover how Docker + Defang can simplify your journey from local development to production-ready deployments across your preferred cloud providers.
+
+{/* truncate */}
 
 import Link from '@docusaurus/Link';
 

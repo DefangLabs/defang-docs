@@ -4,7 +4,7 @@ description: "Agentic apps, cloud-native infrastructure, and how Defang simplifi
 slug: agentic-apps
 tags:
   [Agentic Apps, AI, LLMs, Cloud, AWS, GCP, DigitalOcean, DevOps, Deployments]
-author: Defang Team
+authors: defang_team
 ---
 
 ![Agentic Apps](/img/agentic-apps/agentic-apps.png)
@@ -24,6 +24,8 @@ And for many teams, these apps must run inside the customer’s cloud, where sen
 Now you are not just building agents; you are picking the right infrastructure, rewriting IaC templates for every provider, and untangling the edge cases of each cloud.
 
 The result: weeks of DevOps headaches, lost momentum, and engineers stuck wiring infrastructure instead of shipping agents.
+
+{/* truncate */}
 
 ## We Made it Simple with Cloud Native Support for Agentic Apps
 

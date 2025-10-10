@@ -1,6 +1,6 @@
 ---
 title: "Deploying a Django App with Real-time Moderation Using Defang"
-author: Defang Team
+authors: defang_team
 tags: [deployment, django, docker, compose]
 ---
 
@@ -25,6 +25,8 @@ We're deploying a real-time chat application that includes automatic moderation 
 - **Worker Service**: Background tasks processing messages for profanity and sentiment analysis.
 - **Postgres Database**: Managed database instance for persistent storage.
 - **Redis Broker**: Managed Redis instance serving as the broker for Celery tasks and Django Channels.
+
+{/* truncate */}
 
 ## Running Locally
 

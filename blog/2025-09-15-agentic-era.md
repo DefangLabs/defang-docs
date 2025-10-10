@@ -3,7 +3,7 @@ title: "Deployments in the Agentic Era"
 description: "How agentic applications are reshaping the future of software development and deployment"
 slug: agentic-era
 tags: [Agentic Era, AI, Software Development, Future, Automation, Cloud, DevOps]
-author: Defang Team
+authors: defang_team
 date: 2025-09-15
 ---
 
@@ -20,6 +20,8 @@ Over the past few decades, the software industry has gone through multiple major
 ![Agentic Era](/img/agentic-era/agentic-era.jpg)
 
 This is not a small adjustment. It is the foundation of how the next generation of software will be trusted and adopted.
+
+{/* truncate */}
 
 ## **Why the Agentic Era Changes the Rules**
 

@@ -2,7 +2,7 @@
 title: "Sample: Starter Kit for RAG + Agents with CrewAI"
 description: "Going over our sample for RAG + Agents with CrewAI"
 tags: [Cloud, NoDevOps, Docker Compose, Defang, Sample]
-author: Defang Team
+authors: defang_team
 ---
 
 ## Why Build a Starter Kit for RAG + Agents?
@@ -14,6 +14,8 @@ If this sounds familiar (or if you're dreading the prospect of dealing with it),
 :::info[Just want the sample?]
 You can [find it here](https://github.com/DefangSamples/sample-crew-django-redis-postgres-template).
 :::
+
+{/* truncate */}
 
 ## A Demo in 60 Seconds
 
