@@ -18,7 +18,7 @@ n8n is a powerful open-source workflow automation tool that allows you to connec
 Before getting started, make sure you have:
 
 - A Defang account (sign up at [defang.io](http://defang.io))
-- AWS account
+- An AWS account
 - Basic knowledge of command-line interface
 
 ## Step 1: Install Defang CLI
