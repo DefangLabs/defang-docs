@@ -7,7 +7,7 @@ author: Defang Team
 date: 2025-10-10
 ---
 
-![n8n on AWS](/img/n8n-aws/n8n-aws.png)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hOlNWu2FX1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Introduction
 
@@ -42,6 +42,9 @@ Clone the n8n sample to your directory:
 ```bash
 defang new n8n
 cd n8n
+```
+
+Once you choose the n8n sample, it'll create the n8n sample for you.
 
 ## Step 3: Setup Defang for AWS
 
@@ -67,15 +70,15 @@ You can easily set this to a random string using `defang config set N8N_ENCRYPTI
 
 Set to true to enable SSL. Set to false to disable SSL.
 
-That be stated it recommend that deploy your N8N instance with SSL enable so it would be a managed version of Postgres.
+It is recommended that you deploy your N8N instance with SSL enabled so it would be a managed version of Postgres.
 
 Please enable SSL by using `defang config set DB_POSTGRESDB_SSL_ENABLED=true -Paws`
 
 **DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED**
 
-Set to true to reject unauthorized certificates. Set to false to accept unauthorized certificates. Counterintuitive, but leave this as true to disable SSL.
+Set to true to reject unauthorized certificates. Set to false to accept unauthorized certificates. Counterintuitive, but leave this as false to allow managed Postgres to work.
 
-That be stated it recommend that deploy your N8N instance accept unauthorized certificates it would allow managed version of Postgres to work. Please accept unauthorized certificates by using `defang config set DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false -Paws`
+It is recommended that you deploy your N8N instance to accept unauthorized certificates so it would allow managed version of Postgres to work. Please accept unauthorized certificates by using `defang config set DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false -Paws`
 
 ## Step 5: Deploy with Defang
 
@@ -111,7 +114,7 @@ After logging in:
 
 1. Click on "Create Workflow" to start building your automation
 2. Add nodes by clicking the "+" button
-3. Connect different services and applications
+3. Connect various applications and services
 4. Test your workflow using the "Execute Workflow" button
 5. Activate your workflow when ready
 
