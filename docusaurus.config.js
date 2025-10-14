@@ -14,6 +14,10 @@ const redirects = [
     from: '/docs/faq',
     to: '/docs/faq/warnings-errors',
   },
+  {
+    from: '/docs/providers/playground',
+    to: '/docs/concepts/defang-playground',
+  },
   // Blog slugs to filename redirects
   { from: '/blog/announcement', to: '/blog/2023/06/29/Announcing-the-Private-Beta-for-the-DOP' },
   { from: '/blog/announcing-defang-public-beta', to: '/blog/2024/02/12/announcing-defang-public-beta' },
