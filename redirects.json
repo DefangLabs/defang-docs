@@ -1,0 +1,158 @@
+[
+  {
+    "from": "/blog/2023/06/29/Announcing-the-Private-Beta-for-the-DOP",
+    "to": "https://defang.io/blog/post/announcing-the-private-beta-for-the-defang-opinionated-platform"
+  },
+  {
+    "from": "/blog/2024/02/12/announcing-defang-public-beta",
+    "to": "https://defang.io/blog/post/announcing-the-defang-public-beta"
+  },
+  {
+    "from": "/blog/2024/03/04/about-my-journey-deploying-my-first-web-application",
+    "to": "https://defang.io/blog/post/about-my-journey-deploying-my-first-web-application"
+  },
+  {
+    "from": "/blog/2024/03/20/dev-environments",
+    "to": "https://defang.io/blog/post/add-defang-to-your-developer-environments-instantly"
+  },
+  {
+    "from": "/blog/2024/03/28/slackbot-sample",
+    "to": "https://defang.io/blog/post/deploy-a-go-powered-slackbot-with-defang"
+  },
+  {
+    "from": "/blog/2024/05/01/may-product-updates",
+    "to": "https://defang.io/blog/post/april-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/06/01/june-product-updates",
+    "to": "https://defang.io/blog/post/may-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/07/01/july-product-updates",
+    "to": "https://defang.io/blog/post/june-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/07/31/july-product-updates-2",
+    "to": "https://defang.io/blog/post/july-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/08/30/august-product-updates",
+    "to": "https://defang.io/blog/post/august-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/09/30/september-product-updates",
+    "to": "https://defang.io/blog/post/september-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/11/12/hard-lessons-from-hardware",
+    "to": "https://defang.io/blog/post/hard-lessons-from-hardware"
+  },
+  {
+    "from": "/blog/2024/11/13/october-product-updates",
+    "to": "https://defang.io/blog/post/october-2024-defang-compose-update"
+  },
+  {
+    "from": "/blog/2024/12/04/launch-week",
+    "to": "https://defang.io/blog/post/defang-v1-launch-week-is-here"
+  },
+  {
+    "from": "/blog/2024/12/11/product-hunt",
+    "to": "https://defang.io/blog/post/defang-is-live-on-product-hunt"
+  },
+  {
+    "from": "/blog/2025/02/07/january-product-updates",
+    "to": "https://defang.io/blog/post/january-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025/02/18/model-context-protocol",
+    "to": "https://defang.io/blog/post/simplifying-deployment-of-ai-apps-to-the-cloud-using-docker-and-model-context-protocol"
+  },
+  {
+    "from": "/blog/2025/03/12/website-logo-refresh-announcement",
+    "to": "https://defang.io/blog/post/introducing-defang-s-new-look-website-and-logo-refresh"
+  },
+  {
+    "from": "/blog/2025/03/14/deploying-defang-with-defang-part-1",
+    "to": "https://defang.io/blog/post/deploying-defang-with-defang-part-1"
+  },
+  {
+    "from": "/blog/2025/03/15/feb-product-updates",
+    "to": "https://defang.io/blog/post/february-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025/03/26/deploying-defang-with-defang-part-2",
+    "to": "https://defang.io/blog/post/deploying-defang-with-defang-part-2"
+  },
+  {
+    "from": "/blog/2025/04/10/easiest-way-to-deploy-django",
+    "to": "https://defang.io/blog/post/deploying-a-django-app-with-real-time-moderation-using-defang"
+  },
+  {
+    "from": "/blog/2025/04/11/mar-product-updates",
+    "to": "https://defang.io/blog/post/march-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025/04/23/vibe-deploy",
+    "to": "https://defang.io/blog/post/welcome-to-the-world-of-vibe-deploy-easily-deploying-your-vibe-coding-projects-to-the-cloud-with-defang"
+  },
+  {
+    "from": "/blog/2025/05/09/april-product-updates",
+    "to": "https://defang.io/blog/post/april-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025/06/06/may-product-updates",
+    "to": "https://defang.io/blog/post/may-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025/06/16/crew-ai-sample",
+    "to": "https://defang.io/blog/post/sample-starter-kit-for-rag-agents-with-crewai"
+  },
+  {
+    "from": "/blog/2025/06/16/docker-compose-defang",
+    "to": "https://defang.io/blog/post/bridging-local-development-and-cloud-deployment"
+  },
+  {
+    "from": "/blog/2025-07-10-product-update",
+    "to": "https://defang.io/blog/post/june-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025-08-12-product-update",
+    "to": "https://defang.io/blog/post/july-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/2025-09-09-product-update",
+    "to": "https://defang.io/blog/post/august-2025-defang-compose-update"
+  },
+  {
+    "from": "/blog/agentic-apps",
+    "to": "https://defang.io/blog/post/deploying-agentic-apps-to-the-cloud-shouldn-t-be-this-hard"
+  },
+  {
+    "from": "/blog/agentic-era",
+    "to": "https://defang.io/blog/post/deployments-in-the-agentic-era"
+  },
+  {
+    "from": "/blog/defang-gcp-compose",
+    "to": "https://defang.io/blog/post/simple-secure-and-scalable-gcp-deployments-from-docker-compose"
+  },
+  {
+    "from": "/blog/defang-your-ai-devops-agent",
+    "to": "https://defang.io/blog/post/defang-your-ai-devops-agent"
+  },
+  {
+    "from": "/blog/heroku-to-aws",
+    "to": "https://defang.io/blog/post/beyond-heroku-owning-your-deployments"
+  },
+  {
+    "from": "/blog/archive",
+    "to": "https://defang.io/blog"
+  },
+  {
+    "from": "/blog/authors",
+    "to": "https://defang.io/blog"
+  },
+  {
+    "from": "/blog/n8n-aws-deployment",
+    "to": "https://defang.io/blog/post/deploying-n8n-to-aws-with-defang/"
+  }
+]
