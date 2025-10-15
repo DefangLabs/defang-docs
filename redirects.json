@@ -154,5 +154,9 @@
   {
     "from": "/blog/n8n-aws-deployment",
     "to": "https://defang.io/blog/post/deploying-n8n-to-aws-with-defang/"
+  },
+  {
+    "from": "/blog",
+    "to": "https://defang.io/blog"
   }
 ]
