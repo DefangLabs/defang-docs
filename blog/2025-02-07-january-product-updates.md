@@ -19,7 +19,7 @@ authors: defang_team
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-Welcome to 2025! As we had shared in our early [Dec update](/blog/2024-12-04-launch-week), we reached our V1 milestone with support for GCP and DigitalOcean in Preview and production support for AWS. We were very gratified to see the excitement around our launch, with Defang ending 2024 with twice the number of users as our original goal!
+Welcome to 2025! As we had shared in our early [Dec update](https://defang.io/blog/post/defang-v1-launch-week-is-here/), we reached our V1 milestone with support for GCP and DigitalOcean in Preview and production support for AWS. We were very gratified to see the excitement around our launch, with Defang ending 2024 with twice the number of users as our original goal!
 
 We are excited to build on that momentum going into 2025. And we are off to a great start in Jan, with some key advancements:
 
