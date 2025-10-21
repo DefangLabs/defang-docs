@@ -28,7 +28,7 @@ Run the setup command in your terminal for your IDE of choice from the [Supporte
 Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
-defang mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|claude-desktop|claude-code>
+defang mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|rovo|claude-desktop|claude-code>
 ```
 
 :::
@@ -42,72 +42,26 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 Note that `npx` installation is supported, but not recommended.
 
 ```bash
-npx -y defang@latest mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|claude-desktop|claude-code>
+npx -y defang@latest mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|rovo|claude-desktop|claude-code>
 ```
 
 ## Supported IDEs
 
-### Cursor
+### [Claude Code](https://www.claude.com/product/claude-code)
+
+While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
 
 Setup command:
 
 ```bash
-defang mcp setup --client=cursor
+defang mcp setup --client=claude-code
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
-![Cursor](/img/mcp-concept/cursor.png)
+![Claude Code](/img/mcp-concept/claude-code.png)
 
-### Windsurf
-
-Setup command:
-
-```bash
-defang mcp setup --client=windsurf
-```
-
-Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
-
-![Windsurf](/img/mcp-concept/windsurf.png)
-
-### VS Code
-
-Setup command:
-
-```bash
-defang mcp setup --client=vscode
-```
-
-Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
-
-![VS Code](/img/mcp-concept/vscode.png)
-
-### VS Code Insiders
-
-Setup command:
-
-```bash
-defang mcp setup --client=vscode-insiders
-```
-
-Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
-
-![VS Code](/img/mcp-concept/vscode-insiders.png)
-
-### Kiro
-
-Setup command:
-
-```bash
-defang mcp setup --client=kiro
-```
-
-Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
-
-![Kiro](/img/mcp-concept/kiro.png)
-
-### Claude Desktop
+### [Claude Desktop](https://claude.com/download)
 
 While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
 
@@ -121,19 +75,79 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ![Claude Desktop](/img/mcp-concept/claude-desktop.png)
 
-### Claude Code
+### [Cursor](https://cursor.com/)
+
+Setup command:
+
+```bash
+defang mcp setup --client=cursor
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Cursor](/img/mcp-concept/cursor.png)
+
+### [Kiro](https://kiro.dev/)
+
+Setup command:
+
+```bash
+defang mcp setup --client=kiro
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Kiro](/img/mcp-concept/kiro.png)
+
+### [Rovo](https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/)
 
 While this is not an IDE in the traditional sense, it can support MCP servers. For a smoother experience, consider specifying a project name or directory when making chat prompts to this platform.
 
 Setup command:
 
 ```bash
-defang mcp setup --client=claude-code
+defang mcp setup --client=rovo
 ```
 
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
-![Claude Code](/img/mcp-concept/claude-code.png)
+![Rovo](/img/mcp-concept/rovo.png)
+
+### [VS Code](https://code.visualstudio.com/)
+
+Setup command:
+
+```bash
+defang mcp setup --client=vscode
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![VS Code](/img/mcp-concept/vscode.png)
+
+### [VS Code Insiders](https://code.visualstudio.com/insiders/)
+
+Setup command:
+
+```bash
+defang mcp setup --client=vscode-insiders
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![VS Code](/img/mcp-concept/vscode-insiders.png)
+
+### [Windsurf](https://windsurf.com/)
+
+Setup command:
+
+```bash
+defang mcp setup --client=windsurf
+```
+
+Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
+
+![Windsurf](/img/mcp-concept/windsurf.png)
 
 ## MCP Tools
 
@@ -262,3 +276,18 @@ remove the defang config DATABASE_URL
 ```
 
 Feel free to try any of these prompts or create your own!
+
+## Manual Setup
+
+If you prefer to set up the Defang MCP Server manually without using the setup command and without installing the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli), you can copy this MCP configuration into your IDE's MCP file:
+
+```json
+{
+  "mcpServers": {
+    "defang": {
+      "command": "npx",
+      "args": ["-y", "defang@latest", "mcp", "serve"]
+    }
+  }
+}
+```
