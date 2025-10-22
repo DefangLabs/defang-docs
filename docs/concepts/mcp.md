@@ -28,7 +28,7 @@ Run the setup command in your terminal for your IDE of choice from the [Supporte
 Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
-defang mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|rovo|claude-desktop|claude-code>
+defang mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
 ```
 
 :::
@@ -42,7 +42,7 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 Note that `npx` installation is supported, but not recommended.
 
 ```bash
-npx -y defang@latest mcp setup --client=<vscode|vscode-insiders|cursor|windsurf|kiro|rovo|claude-desktop|claude-code>
+npx -y defang@latest mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
 ```
 
 ## Supported IDEs
