@@ -23,3 +23,5 @@ defang
 samples
 /docs/samples.md
 /static/samples-v2.json
+.envrc
+.direnv
