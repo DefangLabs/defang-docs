@@ -11,7 +11,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Which cloud/region is the app being deployed to?
 
-- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your Defang BYOC [Provider](/docs/category/providers) settings.
+- In the [Defang Playground](/docs/concepts/defang-playground), the app is deployed to AWS `us-west-2`. In the [Defang BYOC](/docs/concepts/defang-byoc) model, the region is determined by your Defang BYOC [Provider](/docs/providers) settings.
 
 ### Can I bring my own AWS or other cloud account?
 
@@ -66,13 +66,13 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 ## Feature Comparisons
 
 ### Is Defang a run-time platform?
-- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/category/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
+- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and platforms such as Vercel, fly.io, Railway, Render, or Heroku?
-- Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/category/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
+- Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application. We do provide [Defang Playground](/docs/concepts/defang-playground), but it is meant to be used as a testing environment only.
 
 ### What is the difference between Defang and tools such as SST?
-- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/category/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
+- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
 
 ## Troubleshooting
 

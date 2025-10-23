@@ -5,7 +5,7 @@ description: Authenticating with Defang.
 
 # Authentication
 
-To do pretty much anything with Defang, you'll need to authenticate with the system. You can do this by running the following command in the [CLI](/docs/getting-started):
+To do pretty much anything with Defang, you'll need to authenticate with the system. You can do this by running the following command in the [CLI](/docs/intro/getting-started):
 
 ```bash
 defang login

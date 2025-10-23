@@ -1,7 +1,7 @@
 {
   "label": "Concepts",
-  "position": 500,
   "link": {
+    "slug": "concepts",
     "type": "generated-index",
     "description": "Some concepts to help explain how the Defang system is organized and tooling that will help you manage your applications."
   }

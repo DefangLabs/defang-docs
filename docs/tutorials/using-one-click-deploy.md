@@ -10,7 +10,7 @@ This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample 
 The 1-Click Deploy button is the easiest way for new users to deploy a sample project to the [Defang Playground](/docs/concepts/defang-playground). No CLI installation is required.
 
 :::info
-To access the full range of features provided by Defang, we recommend using the [Defang CLI](/docs/getting-started).
+To access the full range of features provided by Defang, we recommend using the [Defang CLI](/docs/intro/getting-started).
 :::
 
 ## Step 1 - Choose a Sample
@@ -45,7 +45,7 @@ Once logged in, you'll be redirected to GitHub. Click the "Create repository but
 
 A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository.
 
-You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](/docs/getting-started).  You can also see deployment progress in the "Actions" tab of your GitHub repository:
+You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](/docs/intro/getting-started).  You can also see deployment progress in the "Actions" tab of your GitHub repository:
 
 <img src="/img/use-one-click-tutorial/actions.png" alt="github-actions-tab" width="400"/>
 

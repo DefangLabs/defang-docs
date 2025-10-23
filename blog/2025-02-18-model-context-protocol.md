@@ -132,7 +132,7 @@ Here we can see what changes if we deploy to the cloud:
 1. Service 1 and Service 2 are now deployed to the cloud, not on the local machine anymore.
 2. The only part on the local machine is the browser.
 
-Using the same `compose.yaml` file as shown earlier, we can deploy the containers to the cloud with the [Defang CLI](/docs/getting-started). Once we’ve authenticated and logged in, we can [choose a cloud provider (i.e. AWS, GCP, or DigitalOcean)](/docs/tutorials/deploy-to-your-cloud) and use our own cloud account for deployment. Then, we can set a configuration variable for the Anthropic API key:
+Using the same `compose.yaml` file as shown earlier, we can deploy the containers to the cloud with the [Defang CLI](/docs/intro/getting-started). Once we’ve authenticated and logged in, we can [choose a cloud provider (i.e. AWS, GCP, or DigitalOcean)](/docs/tutorials/deploy-to-your-cloud) and use our own cloud account for deployment. Then, we can set a configuration variable for the Anthropic API key:
 
 ```bash
 defang config set ANTHROPIC_API=<your-api-key-value>

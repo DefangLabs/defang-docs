@@ -28,7 +28,7 @@ $ export DEFANG_PROVIDER=digitalocean
 
 ## AWS
 
-Please read the [AWS Provider](../providers/aws/aws.md) documentation for more details about how the AWS provider works and how to get started.
+Please read the [AWS Provider](/docs/providers/aws) documentation for more details about how the AWS provider works and how to get started.
 
 :::tip[AWS Free Tier & Credits]
 You can use the AWS Free Tier to try out Defang. Learn more about it [here](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all). If you're an eligible startup, you can sign up for credits [here](https://aws.amazon.com/startups/sign-up?referrer_url_path=%2Fstartups).
@@ -41,7 +41,7 @@ You can use the AWS Free Tier to try out Defang. Learn more about it [here](http
 The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
 :::
 
-Please read the [DigitalOcean Provider](../providers/digitalocean/digitalocean.md) documentation for more details about how the DigitalOcean provider works and how to get started.
+Please read the [DigitalOcean Provider](/docs/providers/digitalocean) documentation for more details about how the DigitalOcean provider works and how to get started.
 
 :::tip[DigitalOcean Credits]
 You can get DigitalOcean credits to try out Defang. Learn more about it on their [pricing page](https://www.digitalocean.com/pricing). If you're an eligible startup, you can sign up for credits [here](https://www.digitalocean.com/hatch).
@@ -53,7 +53,7 @@ You can get DigitalOcean credits to try out Defang. Learn more about it on their
 The Defang GCP Provider is available for Public Preview as of December 2024.
 :::
 
-Please check out the [GCP Provider](../providers/gcp/) page for more details.
+Please check out the [GCP Provider](/docs/providers/gcp/) page for more details.
 
 :::tip[GCP Free Tier & Credits]
 You can use the GCP Free Tier to try out Defang. Learn more about it [here](https://cloud.google.com/free). If you're an eligible startup, you can sign up for credits [here](https://cloud.google.com/developers/startups).

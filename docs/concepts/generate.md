@@ -5,7 +5,7 @@ description: Defang uses AI to help you generate a starting point for your cloud
 
 # Generate
 
-Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](/docs/getting-started#install-the-defang-cli).
+Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](/docs/intro/getting-started#install-the-defang-cli).
 
 We are working on expanding the range of supported prompts and improving the accuracy of the AI agent. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
 

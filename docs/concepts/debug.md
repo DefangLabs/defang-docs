@@ -13,7 +13,7 @@ Defang has another AI-driven tool called [`generate`](/docs/concepts/generate).
 
 ## How It Works
 
-Here is a typical workflow in the [Defang CLI](/docs/getting-started) that will automatically run the AI debugger tool:
+Here is a typical workflow in the [Defang CLI](/docs/intro/getting-started) that will automatically run the AI debugger tool:
 
 1. When you deploy a project with Defang (i.e. `defang compose up`), the CLI will wait for all services' statuses to switch to healthy.
 
