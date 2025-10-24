@@ -23,4 +23,5 @@ fi
 cd "$DEFANG_PATH/src/cmd/gendocs" && go run main.go "$CLI_DOCS_PATH"
 cd "$CWD"
 node scripts/prep-cli-docs.js
+cp cli-index.mdx docs/cli/index.mdx
 node scripts/prep-samples.js "$SAMPLES_PATH/samples"

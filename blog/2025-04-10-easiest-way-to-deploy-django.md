@@ -93,7 +93,7 @@ Once deployed, your app is accessible via a public URL provided by Defang, which
 
 ### Deploying to Your Own Cloud
 
-To deploy directly into your AWS account (or other [supported providers](/docs/category/providers)):
+To deploy directly into your AWS account (or other [supported providers](/docs/providers)):
 
 1. Set your cloud provider:
 > In my case, I use an AWS Profile, but you should be able to use [any methods supported by the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)

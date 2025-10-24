@@ -20,12 +20,12 @@ This page is a guide to the Defang MCP Server detailing its installation, tools,
 
 ## Installation
 
-Ensure that you have the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) installed.
+Ensure that you have the [Defang CLI](/docs/intro/getting-started.mdx#install-the-defang-cli) installed.
 
 Run the setup command in your terminal for your IDE of choice from the [Supported IDEs](#supported-ides) section. This will connect the Defang MCP Server to your IDE. The general format of the command is as follows:
 
 :::tip[Recommended Installation]
-Install the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
+Install the [Defang CLI](/docs/intro/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
 defang mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
@@ -279,7 +279,7 @@ Feel free to try any of these prompts or create your own!
 
 ## Manual Setup
 
-If you prefer to set up the Defang MCP Server manually without using the setup command and without installing the [Defang CLI](/docs/getting-started.mdx#install-the-defang-cli), you can copy this MCP configuration into your IDE's MCP file:
+If you prefer to set up the Defang MCP Server manually without using the setup command and without installing the [Defang CLI](/docs/intro/getting-started.mdx#install-the-defang-cli), you can copy this MCP configuration into your IDE's MCP file:
 
 ```json
 {

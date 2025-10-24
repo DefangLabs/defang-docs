@@ -1,7 +1,7 @@
 {
   "label": "Tutorials",
-  "position": 300,
   "link": {
+    "slug": "tutorials",
     "type": "generated-index",
     "description": "Check out these tutorials to learn more about Defang."
   }

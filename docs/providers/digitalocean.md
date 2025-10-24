@@ -1,7 +1,7 @@
 ---
 title: DigitalOcean
 description: Defang allows you to easily create and manage full, scalable applications with DigitalOcean.
-sidebar_position: 010
+sidebar_position: 5
 ---
 
 # DigitalOcean
@@ -20,7 +20,7 @@ Why should you use Defang with DigitalOcean? Defang allows you to easily create 
 
 ### Install Defang
 
-To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](/docs/getting-started).
+To get started with the Defang BYOC DigitalOcean Provider, first [install the latest version of the Defang CLI](/docs/intro/getting-started).
 
 ### Sign up for DigitalOcean
 

@@ -11,13 +11,13 @@ Ever since we shipped our Private Beta in the summer of 2023, we have been worki
 
 And so, today with our Public Beta, we are addressing this request. With today’s release of [Defang BYOC](/docs/concepts/defang-byoc) (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang **and** deploy applications to your own AWS account! Our Private Beta experience is still available as [Defang Playground](/docs/concepts/defang-playground) for you to quickly and easily prototype applications and deploy them to our hosted environment.
 
-You can learn more about Defang [here](/docs/intro). Also check out our [tutorials](/docs/category/tutorials), [samples](https://defang.io/samples), and [FAQ](/docs/category/faq) to know more.
+You can learn more about Defang [here](/docs/intro). Also check out our [tutorials](/docs/tutorials), [samples](https://defang.io/samples), and [FAQ](/docs/category/faq) to know more.
 
 {/* truncate */}
 
 **Try the Public Beta!**
 
-To try the Public Beta, please go to [defang.io](http://defang.io) and click on [Download](https://github.com/DefangLabs/defang/releases/latest) to download the CLI and [get started](/docs/getting-started). We would love to have you kick the tires and give us your feedback! Once you sign up you’ll receive an invitation to our Slack support channel in email. You are also welcome to file [GitHub issues here](https://github.com/DefangLabs/defang/issues).
+To try the Public Beta, please go to [defang.io](http://defang.io) and click on [Download](https://github.com/DefangLabs/defang/releases/latest) to download the CLI and [get started](/docs/intro/getting-started). We would love to have you kick the tires and give us your feedback! Once you sign up you’ll receive an invitation to our Slack support channel in email. You are also welcome to file [GitHub issues here](https://github.com/DefangLabs/defang/issues).
 
 **Stay Tuned for More**
 

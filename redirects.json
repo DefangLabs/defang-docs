@@ -1,5 +1,25 @@
 [
   {
+    "from": "/docs/getting-started",
+    "to": "/docs/intro/getting-started"
+  },
+  {
+    "from": "/docs/category/tutorials",
+    "to": "/docs/tutorials"
+  },
+  {
+    "from": "/docs/category/concepts",
+    "to": "/docs/concepts"
+  },
+  {
+    "from": "/docs/category/providers",
+    "to": "/docs/providers"
+  },
+  {
+    "from": "/docs/category/cli",
+    "to": "/docs/cli"
+  },
+  {
     "from": "/blog/2023/06/29/Announcing-the-Private-Beta-for-the-DOP",
     "to": "https://defang.io/blog/post/announcing-the-private-beta-for-the-defang-opinionated-platform"
   },
