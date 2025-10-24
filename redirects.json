@@ -1,5 +1,13 @@
 [
   {
+    "from": "/docs/faq/questions ",
+    "to": "/docs/intro/faq/questions"
+  },
+  {
+    "from": "/docs/faq/warnings-errors ",
+    "to": "/docs/intro/faq/warnings-errors"
+  },
+  {
     "from": "/docs/getting-started",
     "to": "/docs/intro/getting-started"
   },
