@@ -90,6 +90,7 @@ const config = {
         { type: 'docSidebar', sidebarId: 'providersSidebar', label: 'Providers', position: 'left' },
         { type: 'docSidebar', sidebarId: 'cliSidebar', label: 'CLI', position: 'left' },
         { to: 'https://defang.io/blog', label: 'Blog', position: 'left' },
+        { to: 'https://defang.io/samples', label: 'Samples', position: 'left' },
         {
           href: '/docs/intro/getting-started',
           label: 'Get Started',
