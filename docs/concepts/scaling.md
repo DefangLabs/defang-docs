@@ -31,7 +31,7 @@ In most modern deployments, horizontal scaling is preferred because it aligns we
 
 **Auto-scaling** refers to automatically adjusting the number of service instances based on defined policies or metrics.
 
-Instead of manually adding more instances when traffic increases, an auto-scaling system watches key indicators (like CPU usage) and takes action in real time. Defang autoscaling will create up to 10 new instances of your service as load demands. The maximum 10 replicas is not user configurable.
+Instead of manually adding more instances when traffic increases, an auto-scaling system watches key indicators (like CPU usage) and takes action in real time. Defang autoscaling will scale up to twice (2x) the minimum replica count.
 
 ### Example
 
@@ -62,7 +62,7 @@ Auto-scaling systems typically rely on:
 - **Scaling Policies**: Rules that define when to scale up or down. For example:
   - If average CPU > 85% for 5 minutes → scale up by 2 instances.
 - **Cooldown Periods**: Delays between scaling events to prevent rapid, repeated changes (flapping).
-- **Max Replicas**: There is a maximum of 10 replicas per service.
+- **Max Replicas**: The maximum number of replicas is set to twice (2x) the minimum replica count per service.
 
 ### Supported Providers
 
