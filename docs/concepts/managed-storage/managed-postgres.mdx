@@ -19,6 +19,8 @@ Postgres, or PostgreSQL, is a powerful open-source relational database system kn
 ## How to use Managed Postgres
 
 To use managed Postgres, in your `compose.yaml` file, use the `x-defang-postgres` extension to define your Postgres service. Adding the extension will tell Defang to provision a managed instance, rather than running Postgres as a service.
+Defang will show a warning when this extension is used on a service that does not use either a `postgres` or `pgvector` image.
+Defang will use the image tag to determine the version to provision from your cloud provider.
 
 ### Required Configuration
 

@@ -23,6 +23,8 @@ Managed MongoDB is a service that allows you to store and retrieve large amounts
 ## How to use Managed MongoDB
 
 To use managed MongoDB, in your `compose.yaml` file, use the `x-defang-mongodb` extension to define your MongoDB service. Adding the extension will tell Defang to provision a managed instance, rather than running MongoDB as a container.
+Defang will show a warning when this extension is used on a service that does not use a `mongo` image.
+Defang will use the image tag to determine the version to provision from your cloud provider.
 
 ### Required Configuration
 
