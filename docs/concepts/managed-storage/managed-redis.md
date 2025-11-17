@@ -18,7 +18,11 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 
 ## How to use Managed Redis
 
-To use managed Redis, in your `compose.yaml` file, use the `x-defang-redis` extension to define your Redis service. Adding the extension will tell Defang to provision a managed instance, rather than running Redis as a service. Defang will use the image tag to determine the version to provision from your cloud provider. Here's an example:
+To use managed Redis, in your `compose.yaml` file, use the `x-defang-redis` extension to define your Redis service. Adding the extension will tell Defang to provision a managed instance, rather than running Redis as a service.
+Defang will show a warning when this extension is used on a service that does not use either a `redis` or `valkey` image.
+Defang will use the image tag to determine the version to provision from your cloud provider.
+
+Here's an example:
 
 ```yaml
 cache:
