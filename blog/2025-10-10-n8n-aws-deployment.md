@@ -37,7 +37,7 @@ defang version
 
 ## Step 2: Clone the n8n Sample on Defang
 
-Create a new directory for your n8n deployment:
+Clone the Defang n8n sample for your own deployment:
 
 ```bash
 defang new n8n
