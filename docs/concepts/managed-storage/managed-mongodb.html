@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.3b216952.css">
-<script src="/assets/js/runtime~main.a9da87be.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.30eb67ab.js" defer="defer"></script>
 <script src="/assets/js/main.faae95d5.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,7 +22,9 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-support">Current Support<a href="#current-support" class="hash-link" aria-label="Direct link to Current Support" title="Direct link to Current Support" translate="no">​</a></h2>
 <table><thead><tr><th>Provider</th><th>Managed MongoDB</th></tr></thead><tbody><tr><td><a href="/docs/providers/playground#managed-services">Playground</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/aws#managed-storage">AWS</a></td><td>✅ DocumentDB</td></tr><tr><td><a href="/docs/providers/digitalocean#future-improvements">DigitalOcean</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/gcp#future-improvements">GCP</a></td><td>✅ Firestore</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-use-managed-mongodb">How to use Managed MongoDB<a href="#how-to-use-managed-mongodb" class="hash-link" aria-label="Direct link to How to use Managed MongoDB" title="Direct link to How to use Managed MongoDB" translate="no">​</a></h2>
-<p>To use managed MongoDB, in your <code>compose.yaml</code> file, use the <code>x-defang-mongodb</code> extension to define your MongoDB service. Adding the extension will tell Defang to provision a managed instance, rather than running MongoDB as a container.</p>
+<p>To use managed MongoDB, in your <code>compose.yaml</code> file, use the <code>x-defang-mongodb</code> extension to define your MongoDB service. Adding the extension will tell Defang to provision a managed instance, rather than running MongoDB as a container.
+Defang will show a warning when this extension is used on a service that does not use a <code>mongo</code> image.
+Defang will use the image tag to determine the version to provision from your cloud provider.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="required-configuration">Required Configuration<a href="#required-configuration" class="hash-link" aria-label="Direct link to Required Configuration" title="Direct link to Required Configuration" translate="no">​</a></h3>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="aws">AWS<a href="#aws" class="hash-link" aria-label="Direct link to AWS" title="Direct link to AWS" translate="no">​</a></h3>
 <p>When using managed MongoDB on AWS, you <strong>must</strong> set a username and password for the database. By default, these are read from the <code>MONGO_INITDB_ROOT_USERNAME</code> and <code>MONGO_INITDB_ROOT_PASSWORD</code> config variables, following <a href="https://hub.docker.com/_/mongo" target="_blank" rel="noopener noreferrer">the official MongoDB container image</a> convention.</p>

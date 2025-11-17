@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.3b216952.css">
-<script src="/assets/js/runtime~main.a9da87be.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.30eb67ab.js" defer="defer"></script>
 <script src="/assets/js/main.faae95d5.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,7 +21,9 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-support">Current Support<a href="#current-support" class="hash-link" aria-label="Direct link to Current Support" title="Direct link to Current Support" translate="no">​</a></h2>
 <table><thead><tr><th>Provider</th><th>Managed Postgres</th></tr></thead><tbody><tr><td><a href="/docs/providers/playground#managed-services">Playground</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/aws#managed-storage">AWS</a></td><td>✅ RDS Postgres</td></tr><tr><td><a href="/docs/providers/digitalocean#future-improvements">DigitalOcean</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/gcp#managed-storage">GCP</a></td><td>✅ Cloud SQL Postgres</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-use-managed-postgres">How to use Managed Postgres<a href="#how-to-use-managed-postgres" class="hash-link" aria-label="Direct link to How to use Managed Postgres" title="Direct link to How to use Managed Postgres" translate="no">​</a></h2>
-<p>To use managed Postgres, in your <code>compose.yaml</code> file, use the <code>x-defang-postgres</code> extension to define your Postgres service. Adding the extension will tell Defang to provision a managed instance, rather than running Postgres as a service.</p>
+<p>To use managed Postgres, in your <code>compose.yaml</code> file, use the <code>x-defang-postgres</code> extension to define your Postgres service. Adding the extension will tell Defang to provision a managed instance, rather than running Postgres as a service.
+Defang will show a warning when this extension is used on a service that does not use either a <code>postgres</code> or <code>pgvector</code> image.
+Defang will use the image tag to determine the version to provision from your cloud provider.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="required-configuration">Required Configuration<a href="#required-configuration" class="hash-link" aria-label="Direct link to Required Configuration" title="Direct link to Required Configuration" translate="no">​</a></h3>
 <p>When using managed Postgres, you <strong>must</strong> set a password for the database using <code>defang config set POSTGRES_PASSWORD</code>. If you do not provide the password, the deployment will fail.</p>
 <ul>
