@@ -9,7 +9,6 @@ Scaling is the process of adjusting the number of instances (or replicas) of a s
 
 Scaling is a core concept in distributed systems and cloud-native applications. It ensures your system can handle varying workloads without degrading user experience or over-provisioning resources.
 
-
 ## Why Scale?
 
 Scaling enables services to respond effectively under different conditions:
@@ -32,7 +31,7 @@ In most modern deployments, horizontal scaling is preferred because it aligns we
 
 **Auto-scaling** refers to automatically adjusting the number of service instances based on defined policies or metrics.
 
-Instead of manually adding more instances when traffic increases, an auto-scaling system watches key indicators (like CPU usage) and takes action in real time.
+Instead of manually adding more instances when traffic increases, an auto-scaling system watches key indicators (like CPU usage) and takes action in real time. Defang autoscaling will scale up to twice (2x) the minimum replica count.
 
 ### Example
 
@@ -63,6 +62,7 @@ Auto-scaling systems typically rely on:
 - **Scaling Policies**: Rules that define when to scale up or down. For example:
   - If average CPU > 85% for 5 minutes → scale up by 2 instances.
 - **Cooldown Periods**: Delays between scaling events to prevent rapid, repeated changes (flapping).
+- **Max Replicas**: The maximum number of replicas is set to twice (2x) the minimum replica count per service.
 
 ### Supported Providers
 
