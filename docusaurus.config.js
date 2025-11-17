@@ -83,11 +83,16 @@ const config = {
         {
           to: '/docs/intro',
           position: 'left',
-          label: 'Docs',
+          label: 'Overview',
         },
+        { type: 'docSidebar', sidebarId: 'tutorialsSidebar', label: 'Tutorials', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'conceptsSidebar', label: 'Concepts', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'providersSidebar', label: 'Providers', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'cliSidebar', label: 'CLI', position: 'left' },
         { to: 'https://defang.io/blog', label: 'Blog', position: 'left' },
+        { to: 'https://defang.io/samples', label: 'Samples', position: 'left' },
         {
-          href: '/docs/getting-started',
+          href: '/docs/intro/getting-started',
           label: 'Get Started',
           position: 'right',
           className: 'navbar__item-get_started'
@@ -102,19 +107,19 @@ const config = {
           items: [
             {
               label: 'Tutorials',
-              to: '/docs/category/tutorials',
+              to: '/docs/tutorials',
             },
             {
               label: 'Providers',
-              to: '/docs/category/providers',
+              to: '/docs/providers',
             },
             {
               label: 'CLI Reference',
-              to: '/docs/category/cli',
+              to: '/docs/cli',
             },
             {
               label: 'Concepts',
-              to: '/docs/category/concepts',
+              to: '/docs/concepts',
             },
           ],
         },

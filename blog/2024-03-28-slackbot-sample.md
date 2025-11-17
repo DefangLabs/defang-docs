@@ -11,7 +11,7 @@ Hey folks! Today, I'm going to share one of our code samples that will show you 
 
 Before we dive into the details, let's make sure you have everything you need to get started:
 
-1.  **Install Defang CLI:** Simplify your deployment process by installing the Defang CLI tool. Follow the instructions [here](/docs/getting-started#install-the-defang-cli) to get it up and running quickly.
+1.  **Install Defang CLI:** Simplify your deployment process by installing the Defang CLI tool. Follow the instructions [here](/docs/intro/getting-started#install-the-defang-cli) to get it up and running quickly.
 
 2.  **Slack API Token:** Create a Slack App at https://api.slack.com/apps, granting it the necessary permissions, including the bot `chat:write` scope.
 ![screenshot of the slack admin UI showing the bot scopes](/img/slackbot-sample/scopes.png)

@@ -95,9 +95,9 @@ If you have created a service before a secret you can connect it by running the 
 
 Here are the different ways sensitive config values are stored depending on the provider you are using:
 
-    * [AWS](../providers/aws/aws.md#secrets)
-    * [DigitalOcean](../providers/digitalocean#secrets)
-    * [GCP](../providers/gcp#secrets)
+    * [AWS](/docs/providers/aws#secrets)
+    * [DigitalOcean](/docs/providers/digitalocean#secrets)
+    * [GCP](/docs/providers/gcp#secrets)
 
 :::info
 Please note that while Defang supports setting sensitive config, it does not support the [`secrets`](https://docs.docker.com/reference/compose-file/secrets/) top-level element as seen in the Compose specification. Please see our [Compose](/docs/concepts/compose) page for more details.

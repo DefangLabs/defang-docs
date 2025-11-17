@@ -11,7 +11,7 @@ This tutorial will show you how to configure sensitive environment variables in 
 ## Pre-requisites
 * [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
 * [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/getting-started#install-the-defang-cli)
+* [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
 
 ## Step 1 - Go to your `compose.yaml` file
 :::info

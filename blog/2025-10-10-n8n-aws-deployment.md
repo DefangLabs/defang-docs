@@ -44,7 +44,7 @@ defang new n8n
 cd n8n
 ```
 
-Once you choose the n8n sample, it'll create the n8n sample for you.
+Once you choose the n8n sample, it'll clone the n8n sample for you.
 
 ## Step 3: Setup Defang for AWS
 

@@ -1,7 +1,7 @@
 ---
 title: AWS
 description: Defang allows you to easily create and manage full, scalable applications with AWS.
-sidebar_position: 000
+sidebar_position: 2
 ---
 
 # Amazon Web Services (AWS)
@@ -17,7 +17,7 @@ You can use the AWS Free Tier to try out Defang. Learn more about it [here](http
 Getting started with the Defang BYOC AWS Provider is easy. The first step is to [authenticate your shell](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) with AWS as an admin user. The authenticated user should be an IAM admin because Defang will need permission to create resources and IAM roles in your account.
 
 :::info
-You can create other [AWS users](./create-user.md) for deployment.
+You can create other [AWS users](/docs/providers/aws#creating-an-aws-iam-user-for-defang) for deployment.
 :::
 
 :::tip
@@ -138,3 +138,58 @@ Then, for each project you deploy, Defang will create and manage the following r
 | ec2/SecurityGroup | bootstrap |
 | ec2/VpcDhcpOptions | dhcp-options |
 | cloudwatch/LogGroup | logs |
+
+## Creating an AWS IAM User for Defang
+
+To deploy applications with Defang on AWS, you need an IAM user with appropriate permissions and access keys. This guide walks you through the process step by step.
+
+### Step 1: Create an IAM User
+
+#### a. Open the IAM Service
+Go to the [IAM Users Panel](https://console.aws.amazon.com/iam/home#/users).
+
+#### b. Click Create User
+Click the **Create user** button at the top right.
+
+<img src="/img/aws-user/create-user.png" alt="Create user button" width="470" />
+
+#### c. User details
+Enter a user name, and assign permissions. Defang requires the `PowerUserAccess` policy in order to deploy and manage resources in your account.
+
+<img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="470" />
+
+<img src="/img/aws-user/create-user-2-add-policy.png" alt="Assign policies to user" width="470" />
+
+#### d. Review and Confirm
+Review your settings and confirm the creation of the user.
+
+---
+
+### Step 2: Create Access Keys
+
+Access keys are the easiest way to authorize programmatic access to AWS. Follow these steps to create them:
+
+#### a. Select the New User
+After creating the user, locate them in the [IAM Users Panel](https://console.aws.amazon.com/iam/home#/users) and select the user.
+
+<img src="/img/aws-user/new-user-in-panel.png" alt="New user in panel" width="470" />
+
+#### b. Create Access Key
+In the **User Summary** panel, click **Create access key**.
+
+<img src="/img/aws-user/new-user-create-key-panel.png" alt="Key creation panel" width="470" />
+
+#### c. Select Use Case
+For Defang, select the use case "Application running on AWS compute service".
+
+<img src="/img/aws-user/new-user-use-case.png" alt="Use case" width="470" />
+
+#### d. Add Description and Continue
+Optionally, provide a description for the key and click **Next**.
+
+<img src="/img/aws-user/new-user-description.png" alt="Key description" width="470" />
+
+#### e. Save Your Access Keys
+Your new access key will be generated. **Copy and save the Access Key ID and Secret Access Key**—you will need these for Defang deployments.
+
+<img src="/img/aws-user/new-user-keys.png" alt="Access keys" width="470" />

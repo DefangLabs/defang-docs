@@ -402,6 +402,29 @@ footer.footer--dark .footer__link-item:hover {
   max-width: 100% !important;
 }
 
+@media (max-width: 996px) {
+  .navbar-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: none;
+  }
+
+  .navbar-sidebar__items {
+    flex: 1 1 auto;
+    background: var(--ifm-navbar-background-color);
+  }
+
+  .navbar-sidebar__items .menu__link {
+    @apply text-foreground;
+  }
+
+  .navbar-sidebar__items .menu__link.menu__link--active,
+  .navbar-sidebar__items .menu__link.menu__link--sublist {
+    @apply text-primary;
+  }
+}
+
 .blog-post-page main img,
 .blog-list-page article img {
   border-radius: 2rem;
