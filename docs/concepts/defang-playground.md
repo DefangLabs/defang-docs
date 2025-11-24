@@ -20,7 +20,7 @@ The Playground allows only 1 deployed project at a time. Use the CLI `defang dow
 
 ## Overview
 
-Overall, the Defang Playground is very similar to deploying to your own cloud account. The Playground runs on a Defang-managed AWS account, so you can expect it to work similarly to deploying to [AWS](../providers/aws/aws.md).
+Overall, the Defang Playground is very similar to deploying to your own cloud account. The Playground runs on Defang-managed GCP and AWS accounts, so you can expect it to work similarly to deploying to your own cloud.
 
 This page highlights architectural considerations when deploying to the Playground and any differences you might encounter when deploying to the Playground versus deploying to your own cloud account.
 
