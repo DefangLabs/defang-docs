@@ -154,14 +154,12 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
     ### Get the ID of the Workload Identity Pool we just created
 
     ```bash
-    WORKLOAD_IDENTITY_POOL_ID=$(
+    WORKLOAD_IDENTITY_POOL_ID="$(
       gcloud iam workload-identity-pools describe "defang-github-actions-pool" \
         --project="${PROJECT_ID}" \
         --location="global" \
-        --format="value(name)" \
-      | awk -F/ '{print $6}'
-    )
-
+        --format="value(name)"
+    )"
     ```
 
     ```bash
