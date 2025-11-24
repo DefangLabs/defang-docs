@@ -165,7 +165,7 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
     ```bash
     gcloud projects add-iam-policy-binding ${PROJECT_ID} \
       --member="serviceAccount:deployer@${PROJECT_ID}.iam.gserviceaccount.com" \
-      --role="roles/owner"
+      --role="roles/owner" \
       --member="principalSet://iam.googleapis.com/${WORKLOAD_IDENTITY_POOL_ID}/attribute.repository/${REPO}"
     ```
   </TabItem>
