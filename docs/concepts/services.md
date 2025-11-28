@@ -1,6 +1,6 @@
 ---
 title: Services
-description: Defang allows you deploy services, defined as containers, to the cloud.
+description: Defang allows you to deploy services, defined as containers, to the cloud.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Services
 
-Defang allows you deploy services defined as containers. You can define your services using a [Compose file](./compose.md) or a [Pulumi program](./pulumi.md). Services can be exposed to the internet or kept private, and can communicate between themselves using certain conventions for hostnames.
+Defang allows you to deploy services defined as containers. You can define your services using a [Compose file](./compose.md) or a [Pulumi program](./pulumi.md). Services can be exposed to the internet or kept private, and can communicate between themselves using certain conventions for hostnames.
 
 ### Service Name Resolution
 
