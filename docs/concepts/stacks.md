@@ -3,8 +3,6 @@ title: Stacks
 description: Defang supports deploying multiple instances of a project as separate stacks.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Stacks
 
