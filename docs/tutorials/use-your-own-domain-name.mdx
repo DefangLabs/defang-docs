@@ -6,6 +6,10 @@ title: How to Use Your Own Domain
 
 This tutorial will show you how to set up and use your own domain when deploying to AWS using Defang.
 
+There are two main approaches to using custom domains with Defang on AWS:
+1. **Using Route 53 for DNS management** (Recommended) - Automatic DNS and certificate management
+2. **Using your existing DNS provider** - Manual DNS configuration with CNAMEs
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n4RlMpsdTbs?si=_Ru6tobSbi9LT4Q1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Prerequisites
@@ -13,6 +17,16 @@ This tutorial will show you how to set up and use your own domain when deploying
 * [A Defang Account](/docs/concepts/authentication)
 * [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
 * [AWS Account Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+
+## Approach 1: Using Route 53 (Recommended)
+
+This approach is ideal if you want automatic DNS and certificate management, especially for frequently deployed environments like staging.
+
+**Benefits:**
+- No need to run `defang cert generate` after each deployment
+- DNS records are automatically created and updated
+- SSL certificates are automatically provisioned and renewed
+- Perfect for staging environments that are frequently deployed and torn down
 
 ## Step 1 - Set up a Hosted Zone in AWS Route 53
 
@@ -60,6 +74,101 @@ defang compose up
 This will deploy your service and set up the necessary DNS records in Route 53 as seen in the screenshot below as well as provision SSL certificates. You can now access your service at the domain you specified in your Compose file.
 
 <img src="/img/domains-tutorial/route53-records.png" alt="Route 53 DNS Records Screenshot" />
+
+***
+
+## Approach 2: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)
+
+If you prefer to keep your DNS with your current provider (like CloudFlare or Namecheap), you can use CNAME records to point to Defang-provided domains. This approach is particularly useful for frequently deployed environments.
+
+### Option A: Direct Custom Domain with Certificate Generation
+
+1. Add the `domainname` to your service definition in your Compose file:
+   ```yaml
+   services:
+       web:
+           domainname: staging.example.com
+           ports:
+               target: 3000
+               mode: ingress
+   ```
+
+2. Deploy your service:
+   ```bash
+   defang compose up
+   ```
+
+3. Generate an SSL certificate:
+   ```bash
+   defang cert generate
+   ```
+   This command will provide instructions for DNS configuration.
+
+4. **Important:** You'll need to run `defang cert generate` again after each `defang compose up` to recreate SSL certificates.
+
+### Option B: CNAME to Defang Domain (Recommended for Staging)
+
+This approach avoids having to reconfigure DNS and regenerate certificates for each deployment, making it ideal for staging environments that are frequently torn down and redeployed.
+
+1. **Don't** add a `domainname` to your service definition. Just expose the port:
+   ```yaml
+   services:
+       web:
+           ports:
+               target: 3000
+               mode: ingress
+   ```
+
+2. Deploy your service:
+   ```bash
+   defang compose up
+   ```
+
+3. After deployment, Defang provides you with two domains:
+   - **Defang-hosted domain**: `service-name--port.project-name.username.defang.app`
+   - **AWS load balancer domain**: `defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com`
+
+4. In your DNS provider (CloudFlare, Namecheap, etc.), create a CNAME record:
+   - **Name**: `staging` (or your desired subdomain)
+   - **Target**: Either the `defang.app` domain or the AWS ELB domain
+   - **Example**: `staging.example.com` → `web--3000.myproject.myuser.defang.app`
+
+5. Run `defang cert generate` once to create the SSL certificate for your CNAME.
+
+6. For subsequent deployments, simply run `defang compose up`. Your CNAME record will continue to work without needing DNS changes.
+
+### Managing Multiple Environments
+
+To maintain separate staging and production environments simultaneously, use project names:
+
+**Using the `name` field in your Compose file:**
+```yaml
+name: myapp-staging
+
+services:
+    web:
+        ports:
+            target: 3000
+            mode: ingress
+```
+
+**Or using the `--project-name` flag:**
+```bash
+defang compose up --project-name myapp-staging
+defang compose up --project-name myapp-production
+```
+
+Each project name creates a separate deployment with its own domain:
+- Staging: `web--3000.myapp-staging.username.defang.app`
+- Production: `web--3000.myapp-production.username.defang.app`
+
+:::tip
+Create CNAMEs for both environments:
+- `staging.example.com` → `web--3000.myapp-staging.username.defang.app`
+- `app.example.com` → `web--3000.myapp-production.username.defang.app`
+
+Then you can deploy and tear down your staging environment as needed without touching DNS.
+:::
 
 ***
 
