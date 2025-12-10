@@ -1,5 +1,9 @@
 [
   {
+    "from": "/docs/faq",
+    "to": "/docs/intro/faq/questions"
+  },
+  {
     "from": "/docs/faq/questions",
     "to": "/docs/intro/faq/questions"
   },
