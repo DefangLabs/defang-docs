@@ -60,8 +60,8 @@ services:
             context: ./web
             dockerfile: Dockerfile
         ports:
-            target: 3000
-            mode: ingress
+        - target: 3000
+          mode: ingress
 ```
 
 
@@ -89,8 +89,8 @@ If you prefer to keep your DNS with your current provider (like CloudFlare or Na
        web:
            domainname: staging.example.com
            ports:
-               target: 3000
-               mode: ingress
+           - target: 3000
+             mode: ingress
    ```
 
 2. Deploy your service:
@@ -115,8 +115,8 @@ This approach avoids having to reconfigure DNS and regenerate certificates for e
    services:
        web:
            ports:
-               target: 3000
-               mode: ingress
+           - target: 3000
+             mode: ingress
    ```
 
 2. Deploy your service:
@@ -148,8 +148,8 @@ name: myapp-staging
 services:
     web:
         ports:
-            target: 3000
-            mode: ingress
+        - target: 3000
+          mode: ingress
 ```
 
 **Or using the `--project-name` flag:**
