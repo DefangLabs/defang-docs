@@ -85,11 +85,11 @@ const service = new defang.DefangService("serviceName", {
 
 You can also bring your own domain to a Defang project. This allows you to use your own domain name to access your services, and varies a little bit depending on your setup.
 
-### DNS Management Options
+## DNS Management Options
 
 When bringing your own domain, you have two main approaches:
 
-#### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)
+### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)
 
 If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you have two choices:
 
@@ -113,7 +113,7 @@ If you frequently deploy and tear down your services (e.g., for staging environm
 Use the `--project-name` flag or the `name:` field in your Compose file to create separate environments. For example, a project named "hello" with `--project-name hello-staging` would create a separate deployment, allowing you to maintain both production and staging environments simultaneously.
 :::
 
-#### Option 2: Using Route 53 (AWS) - Automatic DNS Management
+### Option 2: Using Route 53 (AWS) - Automatic DNS Management
 
 If you are using [Defang BYOC](./defang-byoc.md) *and the DNS for your domain is hosted with your cloud provider* (i.e. a Hosted Zone in Route 53, if you're using AWS), all you need to do is specify the `domainname` in your service definition, as in the example below.
 
