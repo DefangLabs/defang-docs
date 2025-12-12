@@ -23,9 +23,7 @@ In order to leverage cloud-native managed language models from your Defang servi
 ## Example
 
 :::info
-Ensure you have enabled model access for the model you intend to use:
-* [Configure AWS Bedrock model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html)
-* [Configure GCP Vertex AI model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access)
+If you are planning to use Google Vertex AI, you must [enable model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access) for each model you intend to use. This is not necessary on AWS Bedrock.
 :::
 
 Assume you have a web service like the following, which uses the cloud native SDK, for example:
