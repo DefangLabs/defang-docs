@@ -44,6 +44,16 @@ or to tail the logs in real-time:
 defang tail --stack=<stack-name>
 ```
 
+## Listing stacks
+
+This command shows all stacks in your project.
+
+```bash
+defang stack list
+
+NAME             PROVIDER  REGION     MODE
+acme-production  aws       us-west-2  BALANCED  
+```
 ## Internals
 
 When you create a new stack, Defang creates a new file for that stack in the `.defang` subfolder of your project directory. This file contains all the configuration and state information specific to that stack. Here's an example:
