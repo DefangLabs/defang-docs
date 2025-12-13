@@ -12,25 +12,12 @@ Defang supports deploying multiple instances of a project as separate stacks. Ea
 Stacks is a new feature introduced in Defang CLI v2.4.0 and is currently in preview. We welcome your feedback! Please open an issue on [GitHub](https://github.com/DefangLabs/defang/issues) if you encounter any problems or have suggestions.
 :::
 
-### Stack creation
+## Stack creation
 
 You can create a new stack using the Defang CLI:
 
 ```bash
 defang stack new [optional-stack-name]
-```
-
-This command initializes a new stack with the specified name. If you don't specify a name, Defang will prompt you to enter one.
-
-### Stack deployment
-
- You can then deploy this stack independently of others:
-
-```bash
-defang up --stack=<stack-name>
-```
-
-### Logging
 
 To view logs for a specific stack, use the following command:
 
