@@ -6,7 +6,8 @@ description: Defang supports deploying multiple instances of a project as separa
 
 # Stacks
 
-Defang supports deploying multiple instances of a project as separate stacks. Each stack represents an isolated deployment of your project, allowing you to manage different environments (e.g., development, staging, production) or configurations within the same project.
+Defang supports deploying multiple instances of a project as separate _stacks_. Each stack represents an isolated deployment of your project. Stacks allow you to manage different deployments of your project. For example, you can use stacks to support distinct staging and production deployments in the same cloud account. You can also use stacks to support deployments of the same project in different cloud accounts or in different regions.
+
 
 :::info
 Stacks is a new feature introduced in Defang CLI v2.4.0 and is currently in preview. We welcome your feedback! Please open an issue on [GitHub](https://github.com/DefangLabs/defang/issues) if you encounter any problems or have suggestions.
