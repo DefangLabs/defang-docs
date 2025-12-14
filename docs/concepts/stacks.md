@@ -18,7 +18,7 @@ Stacks is a new feature introduced in Defang CLI v2.4.0 and is currently in prev
 You can create a new stack using the Defang CLI:
 
 ```bash
-defang stack new [optional-stack-name]
+defang stack new [stack-name]
 
 To view logs for a specific stack, use the following command:
 
