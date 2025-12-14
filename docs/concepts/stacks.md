@@ -52,5 +52,5 @@ AWS_REGION=us-west-2
 DEFANG_MODE=balanced
 ```
 
-This file is very similar to `.env` files, but are specific to deployments of your project. This ensures that the values are
+This file is very similar to `.env` files, but is specific to deployments of your project. This ensures that the values are
 not leaked into your runtime environment.
