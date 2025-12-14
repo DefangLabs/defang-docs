@@ -48,7 +48,6 @@ When you create a new stack, Defang creates a new file for that stack in the `.d
 
 ```dotenv
 DEFANG_PROVIDER=aws
-AWS_PROFILE=defang
 AWS_REGION=us-west-2
 DEFANG_MODE=balanced
 ```
