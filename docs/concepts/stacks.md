@@ -22,7 +22,7 @@ defang stack new [stack-name]
 
 This command initializes a new stack. If you don't specify a name, Defang will prompt you to enter one.
 
-After a stack is created, you will notice a new file in your working directory. If your stack was called `acme_production`, you will see a file called `.defang/acme_production`. This file will never contain secrets. We recommend you add this file to your source code repository so you can share it with other contributors.
+After a stack is created, you will notice a new file in your working directory. If your stack was called `production`, you will see a file called `.defang/production`. Defang will never add secrets to this file. We recommend you add this file to your source code repository so you can share it with other contributors.
 
 ## Stack deployment
 
@@ -53,8 +53,8 @@ This command shows all stacks in your project.
 ```bash
 defang stack list
 
-NAME             PROVIDER  REGION     MODE
-acme-production  aws       us-west-2  BALANCED  
+NAME        PROVIDER  REGION     MODE
+production  aws       us-west-2  BALANCED  
 ```
 
 ## Internals
