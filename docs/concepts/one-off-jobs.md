@@ -4,7 +4,7 @@ description: Defang enables you to run one-off jobs during your deployment workf
 ---
 
 # One-off Jobs
-Defang enables you to run one-off jobs during your deployment workflow. One-off jobs are commands that run at specific points in the deployment process, such as after your database is ready but before your application starts.
+Defang enables you to run one-off jobs (a.k.a release tasks) during your deployment workflow. One-off jobs are commands that run at specific points in the deployment process, such as after your database is ready but before your application starts.
 
 One-off jobs are run a single time, and failure to run a one-off job will cause the entire deployment to fail.
 
