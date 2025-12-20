@@ -7,7 +7,7 @@ description: You can log into the Defang Portal to view the state of your Defang
 
 You can log into the Defang Portal at [portal.defang.dev](https://portal.defang.dev) using your [Defang account](./accounts.md) to view the state of your Defang services running in the Defang Playground for non-production applications.
 
-You can use the Portal to get an overview of your [services](/docs/concepts/services), view the logs for each service, quickly access exposed ports, view environment variables, and more.
+You can use the Portal to get an overview of your [services](/docs/concepts/services), view the logs for each service, quickly access exposed ports, view environment variables, and more. The Portal is also where you manage your [workspaces](./workspaces.md), invite team members, and configure billing.
 
 :::info
 The Defang Portal displays services deployed to Defang Playground.
