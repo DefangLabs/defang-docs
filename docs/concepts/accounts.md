@@ -23,6 +23,12 @@ At the moment, the only way to authenticate with Defang is through GitHub. We pl
 Keep in mind that your Defang account is separate from your [cloud provider account](./defang-byoc.md). You will need to authenticate with your cloud provider account separately to deploy services to your own cloud account.
 :::
 
+## Workspaces
+
+When you create an account, a personal [workspace](./workspaces.md) is automatically created for you. Workspaces are how Defang organizes teams and manages billing. You can create additional workspaces or use workspaces linked to your GitHub or GitLab organizations.
+
+For more information, see [Workspaces](./workspaces.md).
+
 ## Structure
 
 Your GitHub username will be used as your Defang username. Your Defang username is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
