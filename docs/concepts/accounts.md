@@ -25,7 +25,7 @@ Keep in mind that your Defang account is separate from your [cloud provider acco
 
 ## Workspaces
 
-When you create an account, a personal [workspace](./workspaces.md) is automatically created for you. Workspaces are how Defang organizes teams and manages billing. You can create additional workspaces or use workspaces linked to your GitHub or GitLab organizations.
+When you create an account, a personal [workspace](./workspaces.md) is automatically created for you. Workspaces are how Defang organizes teams and manages billing. You can create additional workspaces or use workspaces linked to your GitHub or GitLab organizations. Your personal workspace cannot have any additional members.
 
 For more information, see [Workspaces](./workspaces.md).
 
