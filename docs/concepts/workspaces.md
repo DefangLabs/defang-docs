@@ -5,7 +5,7 @@ description: Workspaces organize teams and manage billing for Defang deployments
 
 # Workspaces
 
-Workspaces are the primary way to organize teams and manage billing in Defang. A workspace represents a billing context that can be shared among team members, allowing multiple developers to deploy services under a single subscription.
+Workspaces are the primary way to organize teams and manage billing in Defang. A workspace represents a billing context that can be shared among team members, allowing multiple developers to deploy services under a team subscription.
 
 ## Types of Workspaces
 
@@ -16,6 +16,7 @@ Defang supports three types of workspaces:
 When you create a Defang account, a personal workspace is automatically created using your username. This workspace:
 
 - Cannot be deleted
+- Cannot have additional members
 - Is always available as your default workspace
 - Can have a subscription attached for individual use
 
@@ -32,8 +33,7 @@ You can create additional workspaces directly in the [Defang Portal](./portal.md
 When you log in with GitHub or GitLab and authorize Defang to access your organizations, workspaces are automatically created for each authorized organization. These workspaces:
 
 - Cannot be deleted (the organization must be disconnected from Defang)
-- Cannot have members directly invited—membership is managed through your Git provider
-- Automatically sync membership when users are added or removed from the organization
+- Cannot have members directly invited: membership is managed through your Git provider
 - The user who initially connects the organization becomes the workspace owner with billing access
 
 :::info
