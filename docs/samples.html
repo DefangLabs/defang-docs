@@ -9,8 +9,8 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.39b67ee2.css">
-<script src="/assets/js/runtime~main.d6a844be.js" defer="defer"></script>
-<script src="/assets/js/main.09d977ba.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.df9cad3f.js" defer="defer"></script>
+<script src="/assets/js/main.dc2a1d62.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -1458,6 +1458,10 @@ Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noo
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="development-35">Development<a href="#development-35" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development" translate="no">​</a></h3>
 <p>To run the application locally for development, use the development compose file:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker compose -f compose.dev.yaml up</span><br></span></code></pre></div></div>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="google_generative_ai_api_key"><code>GOOGLE_GENERATIVE_AI_API_KEY</code><a href="#google_generative_ai_api_key" class="hash-link" aria-label="Direct link to google_generative_ai_api_key" title="Direct link to google_generative_ai_api_key" translate="no">​</a></h4>
+<p>When running locally with Docker Compose, you will need to set the <code>GOOGLE_GENERATIVE_AI_API_KEY</code> environment variable to your GCP API key. You can get the API key from the <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_model"><code>LLM_MODEL</code><a href="#llm_model" class="hash-link" aria-label="Direct link to llm_model" title="Direct link to llm_model" translate="no">​</a></h4>
+<p>When running locally with Docker Compose, you are limited to the models on this list: <a href="https://mastra.ai/models/providers/google" target="_blank" rel="noopener noreferrer">Google models</a>.</p>
 <p>This will:</p>
 <ul>
 <li>Start PostgreSQL with volume persistence for local development</li>
@@ -1467,16 +1471,16 @@ Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noo
 <p>You can access mastra-nextjs at <code>http://localhost:3000</code> once the containers are running.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-33">Configuration<a href="#configuration-33" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration" translate="no">​</a></h3>
 <p>For this sample, you will need to provide the following <a href="https://docs.defang.io/docs/concepts/configuration" target="_blank" rel="noopener noreferrer">configuration</a>. Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="google_generative_ai_api_key"><code>GOOGLE_GENERATIVE_AI_API_KEY</code><a href="#google_generative_ai_api_key" class="hash-link" aria-label="Direct link to google_generative_ai_api_key" title="Direct link to google_generative_ai_api_key" translate="no">​</a></h4>
-<p>Your Google Generative AI API key for accessing the Gemini Flash model. You can get this from the <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="postgres_password-8"><code>POSTGRES_PASSWORD</code><a href="#postgres_password-8" class="hash-link" aria-label="Direct link to postgres_password-8" title="Direct link to postgres_password-8" translate="no">​</a></h4>
 <p>The password for your Postgres database. You need to set this before deploying for the first time.</p>
 <p><em>You can easily set this to a random string using <code>defang config set POSTGRES_PASSWORD --random</code></em></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_url"><code>DB_URL</code><a href="#db_url" class="hash-link" aria-label="Direct link to db_url" title="Direct link to db_url" translate="no">​</a></h4>
-<p>The <a href="https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING" target="_blank" rel="noopener noreferrer">PostgreSQL database connection string</a>. This will be automatically configured when using BYOC managed database services. It should look something like this: <code>postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&amp;...]</code>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_model-1"><code>LLM_MODEL</code><a href="#llm_model-1" class="hash-link" aria-label="Direct link to llm_model-1" title="Direct link to llm_model-1" translate="no">​</a></h4>
+<p><em>You can easily set this using <code>defang config set LLM_MODEL=&lt;SELECTED_MODEL&gt;</code></em></p>
+<p>The large language model to use for the AI-powered chat. This can be set to models like <code>anthropic.claude-3-5-sonnet-20241022-v2:0</code> for AWS or <code>gemini-2.5-flash</code> for Google Cloud. Here is a list of supported models for <a href="https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex#model-capabilities" target="_blank" rel="noopener noreferrer">GCP</a> and <a href="https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock#model-capabilities" target="_blank" rel="noopener noreferrer">AWS</a>. For AWS make sure you <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank" rel="noopener noreferrer">request access</a> to the model in AWS Bedrock console and for GCP make sure you have <a href="https://docs.cloud.google.com/marketplace/docs/enable-ai-models#get-ai-models" target="_blank" rel="noopener noreferrer">request access</a> to the model in GCP Vertex AI console.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_ssl"><code>DB_SSL</code><a href="#db_ssl" class="hash-link" aria-label="Direct link to db_ssl" title="Direct link to db_ssl" translate="no">​</a></h4>
 <p>Set to <code>true</code> to enable SSL. Set to <code>false</code> to disable SSL, which is used for Defang Playground. (Can be set directly in the Docker Compose file.)</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="github_token-optional"><code>GITHUB_TOKEN</code> (Optional)<a href="#github_token-optional" class="hash-link" aria-label="Direct link to github_token-optional" title="Direct link to github_token-optional" translate="no">​</a></h4>
+<p><em>You can easily set this using <code>defang config set GITHUB_TOKEN=&lt;YOUR_GITHUB_TOKEN&gt;</code></em></p>
 <p>A <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token" target="_blank" rel="noopener noreferrer">GitHub personal access token</a> to increase API rate limits when fetching repository data. This is optional but recommended for better performance.
 Setting the permissions to public repositories only is sufficient, unless you want to access private repositories that you have access to.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="usage-1">Usage<a href="#usage-1" class="hash-link" aria-label="Direct link to Usage" title="Direct link to Usage" translate="no">​</a></h3>
@@ -1507,6 +1511,7 @@ Setting the permissions to public repositories only is sufficient, unless you wa
 Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noopener noreferrer">Defang CLI</a></p>
 </blockquote>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="defang-playground-35">Defang Playground<a href="#defang-playground-35" class="hash-link" aria-label="Direct link to Defang Playground" title="Direct link to Defang Playground" translate="no">​</a></h4>
+<p>When deploying, the Playground environment is limited by resource constraints, so only Google Gemini flash or flash-lite models are supported. That said, I recommend using one of the flash models from this <a href="https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex#model-capabilities" target="_blank" rel="noopener noreferrer">list</a>. If you want to use other models, please use <a href="https://docs.defang.io/docs/tutorials/deploy-to-your-cloud" target="_blank" rel="noopener noreferrer">Defang BYOC</a>.</p>
 <p>Deploy your application to the Defang Playground by opening up your terminal and typing:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="byoc-deploy-to-your-own-aws-or-gcp-cloud-account">BYOC (Deploy to your own AWS or GCP cloud account)<a href="#byoc-deploy-to-your-own-aws-or-gcp-cloud-account" class="hash-link" aria-label="Direct link to BYOC (Deploy to your own AWS or GCP cloud account)" title="Direct link to BYOC (Deploy to your own AWS or GCP cloud account)" translate="no">​</a></h4>
