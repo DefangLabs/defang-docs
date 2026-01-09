@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdefang_docs=self.webpackChunkdefang_docs||[]).push([[4583],{36866:(e,n,c)=>{c.r(n),c.d(n,{default:()=>s});var f=c(96540);function s(){return(0,f.useEffect)((()=>{window.location.href="/docs"}),[]),null}}}]);
