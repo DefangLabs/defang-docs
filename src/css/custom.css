@@ -449,7 +449,12 @@ img.unstyled {
 }
 
 .navbar__item.navbar__link.navbar__item-get_started {
-  @apply hidden sm:block;
+  @apply hidden lg:block;
+}
+
+/* Get Started button in mobile sidebar - white text */
+.navbar-sidebar .navbar__item-get_started {
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 /* selector for code tags with no classes */
