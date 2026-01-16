@@ -126,3 +126,24 @@ http://<service-name>:<port>
 ```
   </TabItem>
 </Tabs>
+
+### Custom Network CIDR
+
+By default, Defang creates a separate private/internal network in the 10.0.0.0/16 subnet for each Compose project.
+To customize this CIDR block, you can set the `subnet` of the `default` network in the Compose file:
+
+```yaml
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.12.0.0/16
+```
+
+For example, if you plan to set up peering between two separate Compose projects, the two private networks cannot have
+overlapping IP address ranges. You can use this feature to give a distinct range to each Compose project and use the
+VPC peering features of the cloud provider to set up connectivity.
+
+Alternatively, to allow communication between services from different Compose projects, you can use the Compose [include](https://github.com/compose-spec/compose-spec/blob/main/14-include.md)
+feature to *merge* multiple Compose files into a single project. This way, the services in the different files end up in
+the same network and can use private/internal networking.
