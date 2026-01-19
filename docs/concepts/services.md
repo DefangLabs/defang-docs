@@ -56,9 +56,10 @@ An overview of the possible statuses for a service in Defang.
 | BUILD_STOPPING | The container orchestrator has sent a termination signal to the build container and is waiting for the build process to stop. |
 | BUILD_FAILED | The build container exited with a non-zero status code. |
 | UPDATE_QUEUED | The service update has been received and is now in the queue. |
-| SERVICE_DEPLOYMENT_PENDING | The necessary resources to run your service have been provisioned but the service has not yet been initiated. |
-| SERVICE_DEPLOYMENT_COMPLETED | Your service has been deployed and is healthy. |
-| SERVICE_DEPLOYMENT_FAILED | Your service could not be deployed. |
+| DEPLOYMENT_PENDING | The necessary resources to run your service have been provisioned but the service has not yet been initiated. |
+| DEPLOYMENT_COMPLETED | Your service has been deployed and is healthy. |
+| DEPLOYMENT_FAILED | Your service could not be deployed. |
+| DEPLOYMENT_SCALED_IN | The deployment has been scaled-in (spun down). |
 
 :::tip
 You can run the `defang compose ps` command to view the status of your services.
