@@ -74,6 +74,7 @@ jobs:
         uses: DefangLabs/defang-github-action@v1.3.0
         with:
           provider: aws
+          # stack: production # optional, but recommended to use stacks https://docs.defang.io/docs/concepts/stacks
         env:
           AWS_REGION: us-west-2  # Change to your preferred region
           AWS_ROLE_ARN: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/defang-cd-CIRole
