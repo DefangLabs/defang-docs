@@ -154,11 +154,11 @@ Click the **Create user** button at the top right.
 <img src="/img/aws-user/create-user.png" alt="Create user button" width="470" />
 
 #### c. User details
-Enter a user name, and assign permissions. Defang requires the `PowerUserAccess` policy in order to deploy and manage resources in your account.
+Enter a user name, and assign permissions. Defang requires the `AdministratorAccess` policy in order to deploy and manage resources in your account.
 
-<img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="470" />
+<img src="/img/aws-user/create-user-1-name.png" alt="User name input" width="600" />
 
-<img src="/img/aws-user/create-user-2-add-policy.png" alt="Assign policies to user" width="470" />
+<img src="/img/aws-user/create-user-2-add-policy.png" alt="Assign policies to user" width="600" />
 
 #### d. Review and Confirm
 Review your settings and confirm the creation of the user.
