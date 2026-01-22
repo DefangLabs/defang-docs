@@ -11,7 +11,7 @@ This tutorial will guide you through the process of migrating your Heroku applic
 * [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
 * [The Heroku CLI (optional, but recommended)](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 * Cloud Account Credentials
-  * [AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)
+  * [AWS](/docs/tutorials/setting_up_your_aws_account)
   * [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
 :::tip
