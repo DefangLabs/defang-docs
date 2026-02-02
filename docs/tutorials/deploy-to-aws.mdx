@@ -23,29 +23,38 @@ Head to the folder where your project is located.
 $ cd path/to/your/project
 ```
 
-## Step 2 - Configure your AWS credentials
+## Step 2 - Authenticate with AWS
 
-There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
-Once you've done that, Defang will look for your AWS credentials in your shell environment and expect to find one of the following credential sets:
+There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html),
+but we recommend using the AWS CLI `aws login` command to authenticate when
+deploying from your local machine. This will create a profile with short-lived
+credentials which Defang can use to deploy.
 
-- the `AWS_PROFILE` environment variable, and optionally the `AWS_REGION` environment variable
-- or, the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` environment variables
-
-:::tip
-If you have the AWS CLI installed (which is not required in order to use the Defang CLI), you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID.
+:::note
+The AWS CLI is not required in order to use the Defang CLI, but it is a
+convenient way to authenticate with AWS.
 :::
 
-## Step 3 - Deploy
+## Step 3 - Create a stack
 
-Invoke the `defang compose up` CLI command with the `--provider=aws` flag or set the `DEFANG_PROVIDER=aws` environment variable.
-
-For example:
+Before you deploy, you should create a [stack](/docs/concepts/stacks). In this
+case, we will create a stack called `dev`:
 
 ```bash
-$ defang compose up --provider=aws
+$ defang stack create dev
 ```
 
-### Step 4 - Inspect your deployment
+Defang will ask us which region we want to deploy to, and which profile we should use to authenticate.
+
+## Step 4 - Deploy
+
+Invoke the following CLI command. Defang will ask you which stack you want to deploy to.
+
+```bash
+$ defang compose up
+```
+
+### Step 5 - Inspect your deployment
 
 Defang will provision resources in your AWS account and deploy your services. You can inspect the resources created in your AWS Dashboard.
 

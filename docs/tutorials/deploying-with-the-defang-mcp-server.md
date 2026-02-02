@@ -19,37 +19,19 @@ If the Defang MCP server doesn’t start automatically, try starting or restarti
 
 ### Step 1 - Collect your credentials
 
-There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html).
+There are many ways to authenticate with your [AWS account](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html). We recommend using the [`aws login`](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html) cli command to create a profile with short-lived credentials. Defang can then use this profile to deploy your services.
 
 :::tip
-If you have the AWS CLI installed, you can verify that you've authenticated to AWS by running `aws sts get-caller-identity` and see your account ID. (The AWS CLI is not required in order to use Defang with AWS)
+You can use the AWS CLI to verify that you've authenticated to AWS by running `aws sts get-caller-identity`. This will show you the currently authenticated account ID. (The AWS CLI is not required in order to use Defang with AWS)
 :::
 
-### Step 2 - Setup Defang for AWS
+### Step 2 - Create a stack for deployment on AWS
 
-Open your chat window and type `/defang.AWS_Setup`, or select the corresponding prompt from your IDE’s options.
-
-![Trigger Prompt](/img/prompts/aws-prompt.png)
-
-The [MCP prompt](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) accepts two types of credentials:
+When you deploy your project, you will need to create a new [stack](/docs/concepts/stacks). This stack is an isolated deployment of your project in a specific cloud account and region. Defang will ask you what which region you want the stack to be deployed to, and also what you want the stack to be called. You will also be asked to provide your AWS credentials. If you have created a profile, you can mention it by name, and defang will use the credentials from that profile. Your credentials are never stored by Defang.
 
 :::note
-Credentials never leave memory and are automatically cleared after you close your IDE.
+If you want to use AWS Access Keys, we recommend using `aws configure` to set them up in a profile, rather than passing them directly to Defang.
 :::
-
-1. Method 1 - Using an AWS Profile:
-   The following prompt will have three arguments and only the first argument is required:
-
-   - AWS Credential - REQUIRED : The name of the AWS profile you want to use (e.g., "default" or "my-profile"). ![AWS Profile argument](/img/prompts/aws-profile-arg.png)
-   - AWS_SECRET_ACCESS_KEY - IGNORE : Leave this argument blank and press Enter. ![Ignore AWS Secret Access Key argument](/img/prompts/aws-ignore_secret.png)
-   - AWS_REGION - OPTIONAL : The AWS region where you want to deploy your services (e.g., "us-west-2"). ![AWS Region argument Optional](/img/prompts/aws-optional-region.png)
-
-2. Method 2 - Using Access Keys:
-   The following prompt will have three arguments and all three arguments are required:
-
-   - AWS Credential - REQUIRED : The AWS Access Key ID (e.g., "AKIAIOSFODNN7EXAMPLE"). ![AWS Access Key ID argument](/img/prompts/aws-access-key-arg.png)
-   - AWS_SECRET_ACCESS_KEY - REQUIRED : The AWS Secret Access Key. (e.g., "wJalrXUtnFEMI/K7MDENG/bPExampleSecretKey").![AWS Secret Access Key argument](/img/prompts/aws-secret-key-arg.png)
-   - AWS_REGION - REQUIRED : The AWS region where you want to deploy your services (e.g., "us-west-2"). ![AWS Region argument](/img/prompts/require-aws-region-arg.png)
 
 ### Step 3 - Deploy
 
