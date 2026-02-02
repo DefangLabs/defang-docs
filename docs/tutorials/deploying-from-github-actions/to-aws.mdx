@@ -71,7 +71,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy
-        uses: DefangLabs/defang-github-action@v1.3.0
+        uses: DefangLabs/defang-github-action@v1.4.0
         with:
           provider: aws
           # stack: production # optional, but recommended to use stacks https://docs.defang.io/docs/concepts/stacks
@@ -94,7 +94,7 @@ If your application requires secrets or configuration values, add them to your w
 
 ```yaml
 - name: Deploy
-  uses: DefangLabs/defang-github-action@v1.3.0
+  uses: DefangLabs/defang-github-action@v1.4.0
   with:
     provider: aws
     config-env-vars: |
@@ -276,9 +276,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy
-        uses: DefangLabs/defang-github-action@v1.2.1
+        uses: DefangLabs/defang-github-action@v1.4.0
         with:
           provider: "aws"
+          stack: "mystack"
+          mode: "affordable"
 ```
 
 :::info

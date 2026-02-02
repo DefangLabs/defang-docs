@@ -185,40 +185,6 @@ The `set_config` tool will [set](/docs/tutorials/configure-environment-variables
 
 The `remove_config` tool will [remove](/docs/tutorials/configure-environment-variables#removing-a-config-value) a specific Defang config for your project.
 
-## MCP Prompts
-
-Below are the [prompts](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) available in the Defang MCP Server.
-
-### `defang.AWS_Setup`
-
-The `defang.AWS_Setup` prompt helps you set up your AWS credentials for deploying services to AWS using Defang. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#aws) on how to use this prompt.
-
-:::note
-Credentials never leave memory and are automatically cleared after you close your IDE.
-:::
-
-Arguments:
-
-- AWS Credential - REQUIRED : Will take a profile name if using an AWS profile, or an Access Key ID if using Access Keys.
-- AWS_SECRET_ACCESS_KEY - REQUIRED for Access Keys method: Leave blank if using an AWS profile.
-- AWS_REGION - REQUIRED or OPTIONAL : Required if using Access Keys method, optional if using an AWS profile.
-
-### `defang.GCP_Setup`
-
-The `defang.GCP_Setup` prompt helps you set up your targeted GCP project for deploying services to GCP using Defang. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#gcp) on how to use this prompt.
-
-Arguments:
-
-- GCP Project ID - REQUIRED : The ID of the GCP project you want to use (e.g., "my-gcp-project").
-
-### `defang.Playground_Setup`
-
-The `defang.Playground_Setup` prompt helps you set up Defang Playground as your deployment provider. Please read this [guide](../tutorials/deploying-with-the-defang-mcp-server#playground) on how to use this prompt.
-
-Arguments:
-
-- No arguments required
-
 ## Example Prompts
 
 After connecting the Defang MCP Server to your IDE using an installation method, you can type in prompts in your chat to invoke the AI agent to use any MCP tool(s).

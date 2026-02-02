@@ -215,10 +215,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy
-        uses: DefangLabs/defang-github-action@v1.2.1
+        uses: DefangLabs/defang-github-action@v1.4.0
         with:
-          mode: "balanced"
+          stack: "mystack"
           provider: "gcp"
+          mode: "affordable"
 ```
 
 Full documentation for configuring AWS and GCP credentials can be found in the [Defang GitHub Action repository](https://github.com/DefangLabs/defang-github-action).
