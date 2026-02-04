@@ -146,7 +146,8 @@
     ],
     "configs": [
       "POSTGRES_PASSWORD",
-      "DJANGO_SECRET_KEY"
+      "DJANGO_SECRET_KEY",
+      "SSL_MODE"
     ]
   },
   {
