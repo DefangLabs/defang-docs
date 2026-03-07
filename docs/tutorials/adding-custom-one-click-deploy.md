@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy
-        uses: DefangLabs/defang-github-action@v1.4.0
+        uses: DefangLabs/defang-github-action@v1
 ```
 
 ## Step 3 - Prepare Your Repository
