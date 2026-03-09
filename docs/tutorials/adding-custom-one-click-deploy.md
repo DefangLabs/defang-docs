@@ -18,6 +18,7 @@ If you are trying to use 1-Click Deploy with one of our [samples](https://defang
 :::
 
 ### How 1-Click Deploy Works
+
 A 1-Click Deploy link points to a special URL. Clicking this link will prompt the user to create a new GitHub repo with a clone of your project. This new repo will contain a GitHub Actions workflow which will automatically deploy the project to Defang.
 
 ## Pre-requisites
@@ -35,6 +36,7 @@ In your project, add a new folder named `.github`, then add a folder named `work
 If your app requires [configuration](/docs/concepts/configuration) (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
 
 You should have a `.yaml` file similar to the one below:
+
 ```yaml
 name: Deploy
 
@@ -52,16 +54,17 @@ jobs:
       id-token: write
 
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-    - name: Deploy
-      uses: DefangLabs/defang-github-action@v1.4.0
+      - name: Deploy
+        uses: DefangLabs/defang-github-action@v1
 ```
 
 ## Step 3 - Prepare Your Repository
 
 To support 1-Click Deploy, your repository must be a [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). In order to make your repository into a Template Repository, complete the following steps:
+
 1. Go to the repository's "Settings" near the right on the top bar.
 2. Select the "Template repository" box to turn your repo into a template repo, as seen below:
 
@@ -83,9 +86,11 @@ Now stay on this page and continue to the next step.
 You will need the encoded version of the URL of the page from the previous step. This will be used as a redirect for the 1-Click Deploy link.
 
 1. Copy the URL of the page you are on ( "Create a new repository" page sourced from your template repository). It should look something like the following:
+
 ```
 https://github.com/new?template_name=<your-repo-name>&template_owner=<your-github-username>
 ```
+
 2. You need to URL encode your url for the next step. For example, the url above would be encoded as:
 
 ```
@@ -105,6 +110,7 @@ Optionally, you can add `&name=<your-suggested-name>` to the end of the link if 
 :::
 
 The finished link should look similar to the one below:
+
 ```
 https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>&name=<your-suggested-name>
 ```
@@ -112,11 +118,15 @@ https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate
 Now you have a link for anyone to deploy your app to Defang, with just 1 click.
 
 ## Step 6 - Use the Link
+
 For example, you can add it as a link in a Markdown file:
+
 ```
 [1-Click Deploy Link](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
 ```
+
 Or perhaps you can add it to a button with your own styling:
+
 ```
 [![1-click-deploy-button](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
 ```
