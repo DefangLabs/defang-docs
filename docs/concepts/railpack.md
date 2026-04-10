@@ -152,3 +152,7 @@ services:
 | AWS            |     ✅ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
+
+## Details
+
+Check out the contents of the Railpack image used by Defang in our repo, https://github.com/DefangLabs/railpack-builder
