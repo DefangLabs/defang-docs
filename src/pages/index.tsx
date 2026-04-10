@@ -8,14 +8,14 @@ const items = [
     description: "What is Defang and how does it work?",
   },
   {
+    href: "/docs/tutorials/agent-skills",
+    label: "Let your agent deploy",
+    description: "Use Defang agent skills",
+  },
+  {
     href: "/docs/cli",
     label: "CLI Reference",
     description: "Use the Defang CLI to deploy your app",
-  },
-  {
-    href: "/docs/tutorials/deploy-to-playground",
-    label: "Try Defang",
-    description: "Deploy to our free Playground",
   },
   {
     href: "/docs/tutorials/deploy-to-your-cloud",
