@@ -40,7 +40,7 @@ Whether you're launching a side project or scaling a multi-agent app, **Defang**
 - **Secure and Scalable:** Built-in TLS, secrets, autoscaling, IAM, and HTTPS
 - **Multi-Cloud Ready:** Deploy to your cloud (AWS, GCP, DO) using your own credentials
 - **Language & framework agnostic:** Next.js, Go, Python (Django/Flask), C#, …
-- **Managed LLM:** Add `x-defang-llm: true` and **Defang** auto-configures cloud-native LLMs like Bedrock, Vertex AI, and the Defang Playground
+- **Managed LLM:** Add `x-defang-llm: true` and **Defang** auto-configures cloud-native LLMs like Bedrock and Vertex AI
 - **Configures managed services** (e.g. managed Postgres, MongoDB, Redis) using the target cloud's native services (e.g. RDS for Postgres on AWS, Cloud SQL on GCP).
 - **Tailored deployment modes** (e.g. affordable, balance, high-availability) optimized for different environments (dev, staging, production)
 - **AI Debugging:** Get context-aware assistance to quickly identify and fix deployment issues

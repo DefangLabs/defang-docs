@@ -13,14 +13,9 @@ const items = [
     description: "Use the Defang CLI to deploy your app",
   },
   {
-    href: "/docs/tutorials/deploy-to-playground",
-    label: "Try Defang",
-    description: "Deploy to our free Playground",
-  },
-  {
     href: "/docs/tutorials/deploy-to-your-cloud",
-    label: "Deploy to your own cloud",
-    description: "When you're ready for production",
+    label: "Deploy to your cloud",
+    description: "Deploy to your own cloud account",
   },
 ];
 

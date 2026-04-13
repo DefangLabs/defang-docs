@@ -42,7 +42,7 @@ We've also improved certificate management and simplified networking by removing
 
 Our VS Code extension is now verified on the Marketplace, and we've built MCP setup directly into the installer for easier onboarding. CLI authentication has moved from localhost to auth.defang.io, enabling full compatibility with Docker containers and GitHub Codespaces.
 
-Public DNS now auto-fills in Compose files, saving you time during configuration. We've also expanded MCP tools to include logs, BYOC, and Playground provider support.
+Public DNS now auto-fills in Compose files, saving you time during configuration. We've also expanded MCP tools to include logs and BYOC provider support.
 
 ## Documentation and Tutorials
 

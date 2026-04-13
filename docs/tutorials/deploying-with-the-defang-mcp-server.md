@@ -69,21 +69,7 @@ Once the prompt completes without errors, your chat input will be automatically 
 
 You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
 
-## Playground
+## Inspect your deployment
 
-### Step 1 - Setting your provider
-
-In your chat window, type `/defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
-
-![Trigger Prompt](/img/prompts/playground-prompt.png)
-
-There are no arguments to this prompt.
-
-### Step 2 - Deploy
-
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
-
-### Step 3 - Inspect your deployment
-
-You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the the project on the [Defang portal](https://portal.defang.io/projects).
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the project on the [Defang portal](https://portal.defang.io/projects).
 ![screenshot of the defang portal](/img/getting-started-portal.png)

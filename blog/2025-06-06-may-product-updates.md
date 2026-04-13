@@ -19,17 +19,15 @@ authors: defang_team
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-May was a big month at Defang. We shipped support for managed LLMs in Playground, added MongoDB support on AWS, improved the Defang MCP Server, and dropped new AI samples to make deploying faster than ever.
+May was a big month at Defang. We shipped support for managed LLMs, added MongoDB support on AWS, improved the Defang MCP Server, and dropped new AI samples to make deploying faster than ever.
 
 {/* truncate */}
 
-## 🚀 Managed LLMs in Playground
+## 🚀 Managed LLMs
 
-You can now try managed LLMs directly in the Defang Playground.
-Defang makes it easy to use cloud-native language models across providers — and now you can test them instantly in the Playground.
+Defang makes it easy to use cloud-native language models across providers.
 
-- Managed LLM support
-- Playground-ready
+- Managed LLM support across AWS, GCP, and more
 - Available in CLI v1.1.22 or higher
 
 To use managed language models in your own Defang services, just add `x-defang-llm: true` — Defang will configure the appropriate roles and permissions for you.

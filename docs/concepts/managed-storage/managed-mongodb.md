@@ -15,7 +15,6 @@ Managed MongoDB is a service that allows you to store and retrieve large amounts
 
 | Provider | Managed MongoDB |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
 | [AWS](/docs/providers/aws#managed-storage) | ✅ DocumentDB |
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
 | [GCP](/docs/providers/gcp#future-improvements) | ✅ Firestore |

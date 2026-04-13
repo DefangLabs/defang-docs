@@ -21,7 +21,7 @@ authors: defang_team
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-August was about making migrations smoother and showing how you can already use Defang to deploy agentic apps at scale. We expanded our sample projects for popular multi-agent frameworks like CrewAI, LangGraph, Autogen, and Strands, validating them on Playground, AWS, and GCP so you can run multi-agent workloads in production without extra DevOps. Our new Heroku migration flow inspects dynos and add-ons, generates a clean Compose file, provisions managed equivalents like Postgres and Redis, and ships to your own cloud in one command. This cuts costs and removes lock-in. We also introduced MCP BYOC prompts so you can deploy to AWS and GCP straight from your IDE. Railpack on GCP now delivers faster, more reliable no-Dockerfile builds with clearer logs and closer parity with AWS.
+August was about making migrations smoother and showing how you can already use Defang to deploy agentic apps at scale. We expanded our sample projects for popular multi-agent frameworks like CrewAI, LangGraph, Autogen, and Strands, validating them on AWS and GCP so you can run multi-agent workloads in production without extra DevOps. Our new Heroku migration flow inspects dynos and add-ons, generates a clean Compose file, provisions managed equivalents like Postgres and Redis, and ships to your own cloud in one command. This cuts costs and removes lock-in. We also introduced MCP BYOC prompts so you can deploy to AWS and GCP straight from your IDE. Railpack on GCP now delivers faster, more reliable no-Dockerfile builds with clearer logs and closer parity with AWS.
 
 {/* truncate */}
 
@@ -31,7 +31,7 @@ As more and more teams are moving away from legacy PaaS solutions, looking for m
 
 ## Agentic Applications
 
-We expanded and refined our sample projects for agentic frameworks like CrewAI, LangGraph, Autogen, and Strands, validating across Playground, AWS, and GCP for a seamless move to production. [Agentic applications](https://docs.defang.io/blog/agentic-apps) demand more than code. They need scalable compute, managed databases and caches, security, orchestration, and LLM integrations. That’s why Defang automates all the heavy lifting. When you define your app once in Docker Compose, Defang handles provisioning on AWS or GCP including compute, managed Postgres or MongoDB, Redis, LLM services, security, auto scaling, and compliance so you can focus purely on your agents.
+We expanded and refined our sample projects for agentic frameworks like CrewAI, LangGraph, Autogen, and Strands, validating across AWS and GCP for a seamless move to production. [Agentic applications](https://docs.defang.io/blog/agentic-apps) demand more than code. They need scalable compute, managed databases and caches, security, orchestration, and LLM integrations. That’s why Defang automates all the heavy lifting. When you define your app once in Docker Compose, Defang handles provisioning on AWS or GCP including compute, managed Postgres or MongoDB, Redis, LLM services, security, auto scaling, and compliance so you can focus purely on your agents.
 
 ## MCP BYOC Prompts
 
@@ -43,7 +43,7 @@ Requires Defang CLI v2.1.3 or later.
 
 ## Railpack GCP
 
-[Railpack](https://docs.defang.io/docs/concepts/railpack) now works more smoothly on GCP with fixes to image builds, provider consistency, and a redesigned repo. You’ll see faster first builds and rebuilds with better caching, clearer logs when something fails, and closer parity with AWS so templates behave the same across clouds. Railpack also auto-detects common stacks when no Dockerfile is present, applies sensible defaults for runtime, ports, and health checks, and produces clean OCI images for Playground or your own cloud. Net result: you can ship no-Dockerfile apps across clouds with less setup and fewer surprises.
+[Railpack](https://docs.defang.io/docs/concepts/railpack) now works more smoothly on GCP with fixes to image builds, provider consistency, and a redesigned repo. You’ll see faster first builds and rebuilds with better caching, clearer logs when something fails, and closer parity with AWS so templates behave the same across clouds. Railpack also auto-detects common stacks when no Dockerfile is present, applies sensible defaults for runtime, ports, and health checks, and produces clean OCI images for your cloud. Net result: you can ship no-Dockerfile apps across clouds with less setup and fewer surprises.
 
 ## Events and Community
 

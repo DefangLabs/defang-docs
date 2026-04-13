@@ -9,7 +9,7 @@ authors: defang_team
 
 Let’s be honest: every developer who’s played with LLMs gets that rush of “wow” from the first working demo. But the real headaches show up when you need to stitch LLMs into something production-grade: an app that can pull in real data, coordinate multi-step logic, and more. Suddenly, you’re not just writing single prompts. You’re coordinating between multiple prompts, managing queues, adding vector databases, orchestrating workers, and trying to get things back to the user in real-time. We've found that [CrewAI](https://www.crewai.com/) (coordinating prompts, agents, tools) + [Django](https://www.djangoproject.com/) (building an api, managing data), with a bit of [Celery](https://docs.celeryproject.org/en/stable/) (orchestrating workers/async tasks), is a really nice set of tools for this. We're also going to use [Django Channels](https://channels.readthedocs.io/en/stable/) (real-time updates) to push updates back to the user. And of course, we'll use [Defang](https://www.defang.io/) to deploy all that to the cloud.
 
-If this sounds familiar (or if you're dreading the prospect of dealing with it), you’re the target audience for this sample. Instead of slogging through weeks of configuration and permissions hell, you get a ready-made template that runs on your laptop, then scales—unchanged—to Defang’s Playground, and finally to your own AWS or GCP account. All the gnarly infra is abstracted, so you can focus on getting as much value as possible out of that magical combo of CrewAI and Django.
+If this sounds familiar (or if you're dreading the prospect of dealing with it), you’re the target audience for this sample. Instead of slogging through weeks of configuration and permissions hell, you get a ready-made template that runs on your laptop, then scales—unchanged—to your own AWS or GCP account with Defang. All the gnarly infra is abstracted, so you can focus on getting as much value as possible out of that magical combo of CrewAI and Django.
 
 :::info[Just want the sample?]
 You can [find it here](https://github.com/DefangSamples/sample-crew-django-redis-postgres-template).
@@ -63,7 +63,7 @@ In local dev, your `compose.local.yaml` spins up [Gemma](https://hub.docker.com/
 
 ## The Three-Step Deployment Journey
 
-You can run everything on your laptop with a single `docker compose -f ./compose.local.yaml up` command—no cloud dependencies, fast iteration, and no risk of cloud charges. When you’re ready for the next step, use `defang compose up` to push to the Defang Playground. This free hosted sandbox is perfect for trying Defang, demos, or prototyping. It automatically adds TLS to your endpoints and sleeps after a week. For production, use your own AWS or GCP account. `DEFANG_PROVIDER=aws defang compose up` maps each service to a managed equivalent (ECS, RDS, ElastiCache, Bedrock models), wires up secrets, networking, etc. Your infra. Your data.
+You can run everything on your laptop with a single `docker compose -f ./compose.local.yaml up` command—no cloud dependencies, fast iteration, and no risk of cloud charges. When you’re ready to deploy, use your own AWS or GCP account. `DEFANG_PROVIDER=aws defang compose up` maps each service to a managed equivalent (ECS, RDS, ElastiCache, Bedrock models), wires up secrets, networking, etc. Your infra. Your data.
 
 ## Some Best Practices and Design Choices
 
@@ -82,8 +82,6 @@ Quickstart:
 ```shell
 # Local
 docker compose -f compose.local.yaml up --build
-# Playground
-defang compose up
 # BYOC
 # Setup credentials and then swap <provider> with aws or gcp
 DEFANG_PROVIDER=<provider> defang compose up

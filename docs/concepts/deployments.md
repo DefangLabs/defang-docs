@@ -5,7 +5,7 @@ description: Defang will build your services in the cloud and manage the deploym
 
 # Deployment
 
-When you deploy using Defang, whether it's with `defang compose up` with a [Compose file](./compose.md) or using a [Pulumi program](./pulumi.md), Defang will build your services in the cloud and manage the deployment process for you. If you provide a Dockerfile and build context, Defang will upload the files found within the build context to the cloud (either yours in [Defang BYOC](./defang-byoc.md) or ours in [Defang Playground](./defang-playground.md)), build the image, and store it in the cloud provider's container registry.
+When you deploy using Defang, whether it's with `defang compose up` with a [Compose file](./compose.md) or using a [Pulumi program](./pulumi.md), Defang will build your services in the cloud and manage the deployment process for you. If you provide a Dockerfile and build context, Defang will upload the files found within the build context to your cloud account via [Defang BYOC](./defang-byoc.md), build the image, and store it in the cloud provider's container registry.
 
 ## Deploying Updates
 
@@ -18,7 +18,7 @@ Defang can deploy your services using different [modes](/docs/concepts/deploymen
 By default, using the `affordable` mode, Defang will deprovision your existing services before provisioning replacements. This helps reduce costs.
 
 :::info
-In [Defang BYOC](./defang-byoc.md), Defang uses your cloud provider account to build and store your images. In [Defang Playground](./defang-playground.md), we build and store your images for you.
+In [Defang BYOC](./defang-byoc.md), Defang uses your cloud provider account to build and store your images.
 :::
 
 
