@@ -30,7 +30,7 @@ We are a little late getting our monthly update out this time, but we did ship a
     - Added `--wait` and `--wait-timeout` flags
     - Improved `generate` menu: all samples shown (previously these were restricted by language), and we moved the "Generate with AI" option to now be shown in the search filter.
 
-2. **AI Debug for BYOC**: AI Debug feature is incredibly useful in helping users find and fix issues when something goes wrong. We have extended this to all BYOC environments. We hope this makes it even easier for you to deploy your apps to AWS, DigitalOcean, etc.
+2. **AI Debug for BYOC**: AI Debug feature is incredibly useful in helping users find and fix issues when something goes wrong. Our initial version only worked on Playground, but now we have extended this to BYOC environments. We hope this makes it even easier for you to deploy your apps to AWS, DigitalOcean, etc.
 
 3. A range of other **improvements**, including
     - Network `aliases` support

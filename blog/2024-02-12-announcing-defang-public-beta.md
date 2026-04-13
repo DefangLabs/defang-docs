@@ -9,7 +9,7 @@ tags: [Cloud, GenerativeAI, NoDevOps, BYOC, AWS]
 
 Ever since we shipped our Private Beta in the summer of 2023, we have been working with early adopters and listening to their feedback. While these early customers loved the ease with which they could create, deploy, and manage a cloud application, they had one big request - to deploy their applications to their own cloud (e.g. AWS) account. This was important to them for a number of reasons - to leverage their cloud credits, to enforce their IAM roles and security settings, to integrate new application components with their existing deployments, and more.
 
-And so, today with our Public Beta, we are addressing this request. With today’s release of [Defang BYOC](/docs/concepts/defang-byoc) (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang **and** deploy applications to your own AWS account!
+And so, today with our Public Beta, we are addressing this request. With today’s release of [Defang BYOC](/docs/concepts/defang-byoc) (Bring-your-own-Cloud), you can now enjoy all the benefits of Defang **and** deploy applications to your own AWS account! Our Private Beta experience is still available as [Defang Playground](/docs/concepts/defang-playground) for you to quickly and easily prototype applications and deploy them to our hosted environment.
 
 You can learn more about Defang [here](/docs/intro). Also check out our [tutorials](/docs/tutorials), [samples](https://defang.io/samples), and [FAQ](/docs/category/faq) to know more.
 

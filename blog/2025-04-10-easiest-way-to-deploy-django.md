@@ -65,7 +65,9 @@ The Django admin is setup to quickly visualize messages and their moderation sta
 
 Deploying multi-service applications to cloud providers traditionally involves complex infrastructure setup, including configuring ECS clusters, security groups, networking, and more. Defang simplifies this significantly.
 
-### Quick Deployment
+### Deploying to Defang Playground
+
+The Defang Playground lets you quickly preview your deployed app in a managed environment.
 
 **Secure Configuration**
 

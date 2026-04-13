@@ -20,7 +20,7 @@ authors: defang_team
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
-June was a big month at Defang. We rolled out powerful features across our CLI and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we accomplished.
+June was a big month at Defang. We rolled out powerful features across our CLI, Playground, and Portal, expanded support for both AWS and GCP, and introduced new tools to help you ship faster and smarter. From real-time cloud cost estimation to internal infra upgrades and community highlights, here’s everything we accomplished.
 
 {/* truncate */}
 
@@ -43,9 +43,9 @@ Whether you’re building a smart Q&A tool or a multi-agent research assistant, 
 
 We’ve added active deployment information to the Defang Portal. You can now see your currently active deployments across various cloud providers and understand the details of each, while still managing your cloud environments through the provider’s own tools (e.g. the AWS Console).
 
-## ☁️ Multi-Cloud Infrastructure Milestone
+## ☁️ Playground Now Runs on AWS + GCP
 
-Internally, we also hit a big milestone: our infrastructure now runs on both AWS and GCP, showing the power of Defang’s multi-cloud capabilities. We’ve also enabled load balancing between the two platforms and plan to share a detailed blog post on how it works soon.
+Internally, we also hit a big milestone: The Defang Playground now runs on both AWS and GCP, showing the power of Defang’s multi-cloud infrastructure. We’ve also enabled load balancing between the two platforms and plan to share a detailed blog post on how it works soon.
 
 ## 🧩 VS Code Extension Released
 

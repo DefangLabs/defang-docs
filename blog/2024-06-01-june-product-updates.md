@@ -1,6 +1,6 @@
 ---
 title: May 2024 Defang Compose Update
-tags: [Cloud, NoDevOps, BYOC, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS, Defang Compose Update]
+tags: [Cloud, NoDevOps, BYOC, Playground, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS, Defang Compose Update]
 authors: defang_team
 ---
 
@@ -25,11 +25,11 @@ If you look through our [GitHub organization](https://github.com/DefangLabs), yo
 ![screenshot of github UI pointing towards template button](https://github.com/DefangLabs/defang-docs/assets/910895/97d33d90-43b9-499a-b139-e114b701adcb)
 
 
-Not only will that create a new repo based on the sample in your account, but if you've used Defang before (and accepted the Terms and Conditions) it will automatically deploy it so you can start playing with Defang immediately.
+Not only will that create a new repo based on the sample in your account, but if you've used Defang before (and accepted the Terms and Conditions) it will automatically deploy it to the playground so you can start playing with Defang immediately.
 
 ## ACME for BYOD
 
-We’re excited to announce that ACME support is now available for Bring Your Own Domain (BYOD) in Bring Your Own Cloud (BYOC). This means you can easily add Let's Encrypt certificates to your custom domains, regardless of where your DNS is hosted. Defang will handle the certificate generation and automatic renewal for you. Nice and easy.
+We’re excited to announce that ACME support is now available for Bring Your Own Domain (BYOD) in both Bring Your Own Cloud (BYOC) and Playground. This means you can easily add Let's Encrypt certificates to your custom domains, regardless of where your DNS is hosted. Defang will handle the certificate generation and automatic renewal for you. Nice and easy.
 
 ## Warnings for Stateful Services
 

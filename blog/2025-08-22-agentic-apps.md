@@ -57,7 +57,8 @@ Agentic apps need to be fast, secure, and ready to scale. Defang delivers cloud-
 ## The Developer Journey, Simplified
 
 1. Build your agentic app locally using Docker Compose
-2. Deploy to your cloud:
+2. Test in Defang's free playground with `defang compose up`
+3. Deploy to your cloud:
 
 ```bash
 defang compose up --provider=aws  # or gcp, digitalocean
