@@ -5,7 +5,7 @@ title: Deploy Using Pulumi
 # Deploy Using Pulumi
 
 :::warning
-At the time of writing, the Defang Pulumi Provider only works with [Defang Playground](../concepts/defang-playground.md). We are working on [BYOC](../concepts/defang-byoc.md) support.
+At the time of writing, the Defang Pulumi Provider does not yet support [BYOC](../concepts/defang-byoc.md). We are working on adding support.
 :::
 
 This tutorial will show you how to deploy Minio with Pulumi using the Defang Provider.
@@ -124,7 +124,7 @@ defang tail --name minio
 
 ### Logging Into Minio
 
-The [Defang Playground](../concepts/defang-playground.md) will give you a domain, which you can obtain by running the following command:
+Defang will give you a domain, which you can obtain by running the following command:
 
 ```bash
 defang ls | grep 'minio.*9001'

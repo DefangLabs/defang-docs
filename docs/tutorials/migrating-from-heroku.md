@@ -177,7 +177,7 @@ AWS_REGION=us-west-2 AWS_PROFILE=default defang compose up --provider aws
 </summary>
 
 ```
- * Using Defang Playground provider from stored preference
+ * Using provider from stored preference
  ! Defang cannot monitor status of the following managed service(s): [postgres].
    To check if the managed service is up, check the status of the service which depends on it.
  * Packaging the project files for release at /Users/defang/w/vast-badlands

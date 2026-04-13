@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 # Pulumi
 
 :::warning
-Pulumi support is currently only available for Defang Playground. We are working on support for Defang BYOC.
+Pulumi support is currently only available for deploying to Defang's infrastructure. We are working on support for Defang BYOC.
 :::
 
 [Pulumi](https://www.pulumi.com) is a modern infrastructure-as-code toolkit that allows developers to use a programming language like Typescript to provision and manage cloud resources.

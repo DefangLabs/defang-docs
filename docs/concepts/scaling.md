@@ -68,7 +68,6 @@ Auto-scaling systems typically rely on:
 
 | Provider       | Auto-Scaling Support |
 |----------------|:--------------------:|
-| Playground     |     ❌ |
 | AWS            |     ✅ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |

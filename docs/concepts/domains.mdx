@@ -17,22 +17,11 @@ To make your service accessible from the public internet with Defang-hosted doma
 
 Defang-hosted domains use a structure that is based on your username and service name.
 
-<Tabs>
-  <TabItem value="playground" label="Playground" default>
-If you have a publicly accessible service, you will automatically receive a domain to access it. If you're deploying to the [Defang Playground](./defang-playground.md), your domain will be structured as follows:
-
-```
-https://<username>-<service-name>--<port>.defang.dev
-```
-  </TabItem>
-  <TabItem value="byoc" label="BYOC">
-If you're using [Defang BYOC](./defang-byoc.md), your domain will be:
+If you have a publicly accessible service, you will automatically receive a domain to access it. When using [Defang BYOC](./defang-byoc.md), your domain will be structured as follows:
 
 ```
 https://<service-name>--<port>.<project-name>.<username>.defang.app
 ```
-  </TabItem>
-</Tabs>
 
 ### Sample Configuration
 
@@ -72,9 +61,9 @@ const service = new defang.DefangService("serviceName", {
 
 You can also bring your own domain to a Defang project. This allows you to use your own domain name to access your services, and varies a little bit depending on your setup.
 
-### BYOC or Defang Playground
+### BYOC without Cloud-hosted DNS
 
-If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you will need to follow this flow:
+If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, you will need to follow this flow:
 
 1. Add the `domainname` to your service definition.
 2. Run `defang compose up` to deploy your project.
@@ -109,7 +98,7 @@ services:
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
 :::warning
-As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md) and the [Defang Playground](./defang-playground.md) does not support bringing your own domain, since it is not for production use.
+As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md).
 :::
   </TabItem>
 </Tabs>
@@ -118,7 +107,6 @@ As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md) 
 
 | Provider | BYOD |
 | --- | --- |
-| [Playground](/docs/providers/playground) | ✅ no apex domains |
 | [AWS](/docs/providers/aws) | ✅ |
 | [DigitalOcean](/docs/providers/digitalocean) | ❌ |
 | [GCP](/docs/providers/gcp) | ✅ |
