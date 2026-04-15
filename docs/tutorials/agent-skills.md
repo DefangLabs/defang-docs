@@ -17,6 +17,11 @@ Each plugin includes a `/defang:deploy` skill that walks you through the entire 
 - The Defang CLI does not need to be installed upfront — the `/defang:deploy` skill will guide you through installing it if needed.
 
 <Tabs>
+<TabItem value="npx" label="npx">
+
+- Node.js 18+ installed
+
+</TabItem>
 <TabItem value="claude" label="Claude Code">
 
 - [Claude Code](https://claude.ai/code) installed and authenticated
@@ -32,6 +37,15 @@ Each plugin includes a `/defang:deploy` skill that walks you through the entire 
 ## Step 1 - Install the Defang plugin
 
 <Tabs>
+<TabItem value="npx" label="npx">
+
+Install the Defang skill directly:
+
+```shell
+npx skills add DefangLabs/defang
+```
+
+</TabItem>
 <TabItem value="claude" label="Claude Code">
 
 Add the Defang marketplace, then install the plugin:
