@@ -9,8 +9,8 @@ const items = [
   },
   {
     href: "/docs/tutorials/agent-skills",
-    label: "Let your agent deploy",
-    description: "Use Defang agent skills",
+    label: "Agent Skills",
+    description: "Deploy from your agent",
   },
   {
     href: "/docs/cli",

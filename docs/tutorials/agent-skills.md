@@ -8,30 +8,18 @@ import TabItem from '@theme/TabItem';
 
 # Deploy with Agent Skills
 
-Defang provides agent skills for [Claude Code](https://claude.ai/code) and [OpenAI Codex](https://openai.com/codex) that guide you through deploying your project to AWS, GCP, or DigitalOcean — without leaving your editor.
+Defang provides skills for safe, deterministic deployments to AWS, GCP, and Azure.
 
-Each plugin includes a `/defang:deploy` skill that walks you through the entire deployment workflow, and registers the Defang MCP server so your agent can interact with your deployment directly once the CLI is installed.
-
-## Prerequisites
-
-- The Defang CLI does not need to be installed upfront — the `/defang:deploy` skill will guide you through installing it if needed.
+## Add the Skills
 
 <Tabs>
-<TabItem value="claude" label="Claude Code">
+<TabItem value="npx" label="npx">
 
-- [Claude Code](https://claude.ai/code) installed and authenticated
-
-</TabItem>
-<TabItem value="codex" label="Codex">
-
-- [Codex CLI](https://openai.com/codex) installed and authenticated
+```shell
+npx skills add DefangLabs/defang
+```
 
 </TabItem>
-</Tabs>
-
-## Step 1 - Install the Defang plugin
-
-<Tabs>
 <TabItem value="claude" label="Claude Code">
 
 Add the Defang marketplace, then install the plugin:
@@ -85,7 +73,32 @@ Codex's public plugin registry is not yet available. Until it launches, installa
 </TabItem>
 </Tabs>
 
-## Step 2 - Deploy your project
+## Estimate deployment cost
+
+Before deploying, you can ask your agent to estimate the cost of your deployment:
+
+```shell
+/defang:estimate
+```
+
+Your agent will analyze your `compose.yaml` and provide a cost estimate based on the services you're deploying, their resource requirements, and the current pricing for the cloud resources which will be used. This can help you identify expensive services or configurations before you deploy.
+
+### How the estimate works
+
+1. **Validate the CLI** — checks if the Defang CLI is installed, and provides install instructions if not
+2. **Authenticate** — verifies you're logged in to Defang, or runs `defang login`
+3. **Find your `compose.yaml`** — locates your Compose file
+4. **Determine target stack** — identifies the cloud provider, region, and deployment mode to base the estimate on (or asks you to specify them)
+5. **Run the estimate** — executes `defang compose estimate` with the appropriate flags
+6. **Explain the results** — summarizes cost breakdowns and suggests lower-cost alternatives if needed
+
+### Estimate flags
+
+- `--provider aws|gcp`: override the provider
+- `--region REGION`: override the region
+- `--mode affordable|balanced|high_availability`: override the deployment mode
+
+## Deploy your project
 
 Navigate to your project directory and run:
 
@@ -104,10 +117,28 @@ Your agent will guide you through each step of the deployment:
 7. **Verify** — checks service status and surfaces endpoints
 
 :::tip
-If you install the Defang CLI for the first time during Step 2, reload your plugins afterward to activate the Defang MCP server without restarting your agent.
+If the agent installs the Defang CLI for the first time, reload your plugins afterward to activate the Defang MCP server without restarting your agent.
 :::
 
-## Step 3 - Use the Defang MCP server (optional)
+## Check deployment status
+
+If your deployment fails or you want to check the status of your services, you can ask your agent for updates:
+
+```shell
+/defang:status
+```
+
+### How status checks work
+
+1. **Validate the CLI** — checks if the Defang CLI is installed, and provides install instructions if not
+2. **Authenticate** — verifies you're logged in to Defang, or runs `defang login`
+3. **Find your `compose.yaml`** — locates your Compose file to identify services
+4. **Check the current stack** — runs `defang stack ls` to determine active stack
+5. **Check deployment status** — runs `defang compose ps` to see service health
+6. **Fetch recent logs** — retrieves logs with `defang logs --since 15m` and scans for errors
+7. **Summarize and recommend** — diagnoses issues with root cause analysis and actionable next steps
+
+## - Use the Defang MCP server
 
 Once the Defang CLI is installed, the plugin also registers the Defang MCP server. This gives your agent direct access to Defang tools — so instead of running skill steps, you can ask things like:
 
