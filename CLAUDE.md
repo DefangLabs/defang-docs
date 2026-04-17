@@ -273,7 +273,7 @@ When running inside SAM (detected by `$SAM_WORKSPACE_ID` environment variable):
 
 Documentation changes should be verified against actual behavior:
 - CLI commands: Check the generated CLI docs or the Go source in `projects/defang`
-- Portal features: Check the portal codebase in `projects/portal`
+- Portal features: Check the Portal (Web UI) codebase
 - Provider behavior: Check the BYOC provider implementations in `projects/defang`
 
 Do NOT document features that do not exist. When uncertain, note it and create an idea for follow-up.
