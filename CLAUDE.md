@@ -268,6 +268,19 @@ When running inside SAM (detected by `$SAM_WORKSPACE_ID` environment variable):
 | `create_idea` | When you discover doc improvements, missing content, or broken links during work |
 | `search_messages` | To find context from prior conversations about doc changes |
 
+### Knowledge Graph
+
+SAM maintains a persistent knowledge graph across sessions. Use it to preserve non-obvious context:
+
+| Tool | When to Use |
+|------|-------------|
+| `add_knowledge` | Store observations about user preferences (entityType: `preference`), content conventions not in CLAUDE.md (entityType: `style`), architecture decisions (entityType: `context`), or project context like feature launches and deprecations (entityType: `context`) |
+| `search_knowledge` | Before key decisions — e.g., search "ContentStyle" before writing docs, search "PlaygroundDeprecation" before referencing Playground |
+| `update_knowledge` / `remove_knowledge` | Fix stale or incorrect observations |
+| `confirm_knowledge` | When you verify an existing observation is still accurate |
+
+Do NOT store: content derivable from the docs themselves, git history, ephemeral task details, or anything already in CLAUDE.md.
+
 ### Verification Discipline
 
 Documentation changes should be verified against actual behavior:
