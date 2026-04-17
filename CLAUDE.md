@@ -265,7 +265,6 @@ When running inside SAM (detected by `$SAM_WORKSPACE_ID` environment variable):
 |------|-------------|
 | `update_task_status` | After completing milestones (e.g., "drafted new tutorial", "fixed broken links") |
 | `expose_port` | When running `npm run start` (port 3000) so humans can preview the dev server |
-| `get_ci_status` | After pushing to verify the build passes |
 | `create_idea` | When you discover doc improvements, missing content, or broken links during work |
 | `search_messages` | To find context from prior conversations about doc changes |
 
