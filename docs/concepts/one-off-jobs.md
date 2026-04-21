@@ -139,6 +139,7 @@ One off jobs are deployed as temporary containers on the same infrastructure as 
 |----------------|:--------------------:|
 | Playground     |     ✅ |
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

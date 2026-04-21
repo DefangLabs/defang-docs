@@ -69,6 +69,31 @@ Once the prompt completes without errors, your chat input will be automatically 
 
 You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
 
+## Azure
+
+### Prerequisites
+
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [Azure Application Default Credentials](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+
+### Step 1 - Collect your credentials
+
+After signing in to your Azure account, select an existing subscription or [create a new one](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). Make sure billing is enabled. Then, note down the subscription ID for the next step.
+
+### Step 2 - Setup Defang for Azure
+
+In your chat window, type `/defang.Azure_Setup` or select the corresponding prompt from your IDE's options.
+
+The [MCP argument](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your Azure subscription ID you noted in [Step 1](#step-1---collect-your-credentials-2).
+
+### Step 3 - Deploy
+
+Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the IDE to execute.
+
+### Step 4 - Inspect your deployment
+
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
+
 ## Playground
 
 ### Step 1 - Setting your provider
