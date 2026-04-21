@@ -70,6 +70,7 @@ Auto-scaling systems typically rely on:
 |----------------|:--------------------:|
 | Playground     |     ❌ |
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

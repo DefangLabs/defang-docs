@@ -19,7 +19,7 @@ Defang does run the Defang build service to build your container images, which t
 The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
 
 ```bash
-# Supported provider values: auto, aws, defang, digitalocean
+# Supported provider values: auto, aws, azure, defang, digitalocean, gcp
 # Default is auto, which deploys to the Defang Playground but warns if it detects cloud credentials
 $ defang compose up --provider=aws
 # or
@@ -62,5 +62,11 @@ You can use the GCP Free Tier to try out Defang. Learn more about it [here](http
 ## Azure
 
 :::info
-We will be working on Azure support in the future. If you are interested in Azure support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/57).
+The Defang Azure Provider is available for Public Preview.
+:::
+
+Please read the [Azure Provider](/docs/providers/azure) documentation for more details about how the Azure provider works and how to get started.
+
+:::tip[Azure Free Tier & Credits]
+You can use the Azure Free Tier to try out Defang. Learn more about it [here](https://azure.microsoft.com/en-us/free/). If you're an eligible startup, you can sign up for credits through [Microsoft for Startups](https://www.microsoft.com/en-us/startups).
 :::

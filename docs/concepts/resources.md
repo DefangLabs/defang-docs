@@ -73,5 +73,6 @@ The default `shm_size` values for each platform are as follows. More or less may
 | Provider      | `shm_size` Minimum |
 | ------------- | ------------------ |
 | AWS           | 16G                |
+| Azure         | 16G                |
 | Digital Ocean | 8G                 |
 | GCP           | 16G                |

@@ -12,6 +12,7 @@ This tutorial will guide you through the process of migrating your Heroku applic
 * [The Heroku CLI (optional, but recommended)](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 * Cloud Account Credentials
   * [AWS](/docs/tutorials/setting_up_your_aws_account)
+  * [Azure](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
   * [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
 :::tip
