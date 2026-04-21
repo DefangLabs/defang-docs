@@ -15,7 +15,7 @@ Currently, AWS and GCP are supported for cost estimation.
 
 Navigate your shell to your application's working directory and run
 ```
-defang estimate [--provider=aws|gcp|azure] [--mode=affordable|balanced|high_availability]
+defang estimate [--provider=aws|gcp] [--mode=affordable|balanced|high_availability]
 ```
 
 Here is an example of the output you would see if you estimated the cost deploying the [django-postgres](https://github.com/DefangLabs/samples/tree/main/samples/django-postgres) to AWS sample using the `balanced` [deployment mode](/docs/concepts/deployment-modes).

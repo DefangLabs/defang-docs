@@ -13,7 +13,7 @@ Each cloud provider offers their own managed Large Language Model services. AWS 
 | --- | --- |
 | [Playground](/docs/providers/playground#managed-llms) | ✅ |
 | [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
-| [Azure OpenAI Service](/docs/providers/azure) | ❌ |
+| [Azure OpenAI Service](/docs/providers/azure) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP Vertex AI](/docs/providers/gcp#managed-llms) | ✅ |
 

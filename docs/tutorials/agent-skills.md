@@ -94,7 +94,7 @@ Your agent will analyze your `compose.yaml` and provide a cost estimate based on
 
 ### Estimate flags
 
-- `--provider aws|gcp|azure`: override the provider
+- `--provider aws|gcp`: override the provider
 - `--region REGION`: override the region
 - `--mode affordable|balanced|high_availability`: override the deployment mode
 

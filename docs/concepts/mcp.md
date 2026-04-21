@@ -171,7 +171,7 @@ Given a project name or directory, the `destroy` tool identifies any services de
 
 ### `estimate`
 
-The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports the following providers: `AWS`, `GCP`, or `Azure`.
+The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports the following providers: `AWS`, or `GCP`.
 
 ### `list_configs`
 
