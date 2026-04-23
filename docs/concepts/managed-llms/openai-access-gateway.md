@@ -46,7 +46,6 @@ This can be configured through the following environment variables:
 
 | Provider | Managed Language Models |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ✅ |
 | [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP Vertex AI](/docs/providers/gcp#managed-llms) | ✅ |

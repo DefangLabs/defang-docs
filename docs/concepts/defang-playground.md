@@ -3,6 +3,10 @@ title: Defang Playground
 description: Defang Playground allows you to get a feel for how Defang works without running production workloads in your own cloud accounts.
 ---
 
+:::danger Deprecation Notice
+Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. If you have existing projects on Playground, please migrate them to your own cloud account. See the [migration guide](/docs/tutorials/deploy-to-your-cloud) for instructions.
+:::
+
 # Defang Playground
 
 Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC) which you can read about in more depth [here](./defang-byoc). We also provide Defang Playground, but it is only intended for non-production workloads so you can get a feel for how Defang works.
