@@ -11,7 +11,6 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 
 | Provider | Managed Redis |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
 | [AWS](/docs/providers/aws#managed-storage) | ✅ Elasticache |
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
 | [GCP](/docs/providers/gcp#managed-redis) | ✅ Memorystore |

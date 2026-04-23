@@ -11,7 +11,6 @@ Each cloud provider offers their own managed Large Language Model services. AWS 
 
 | Provider | Managed Language Models |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-llms) | ✅ |
 | [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP Vertex AI](/docs/providers/gcp#managed-llms) | ✅ |
@@ -44,7 +43,4 @@ If you already have an OpenAI-compatible application, Defang makes it easy to de
 Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm) that uses the OpenAI Access Gateway, and a [*Managed LLM with Docker Model Provider sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm-provider) that uses a Docker Model Provider.
 :::
 
-
-## Managed LLM on Playground
-If you are using the Managed LLM feature on [Defang Playground](/docs/concepts/defang-playground), please note that your `MODEL` (model ID) will be limited to a default model chosen by Defang.
-To access a full range of models, consider using [Defang BYOC](/docs/concepts/defang-byoc).
+$

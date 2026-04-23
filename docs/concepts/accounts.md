@@ -7,7 +7,7 @@ description: How accounts are organized in Defang.
 
 Below, we will cover account creation with Defang, and how resources are organized within a cloud environment using your account info.
 
-Defang requires an account so we can organize your resources and provide you with a way to manage them. We also use your account to authenticate you when you interact with [Defang Playground](./defang-playground.md) and the [Defang Portal](./portal.md). Billing and payment information is also associated with your account.
+Defang requires an account so we can organize your resources and provide you with a way to manage them. We also use your account to authenticate you when you interact with the [Defang Portal](./portal.md). Billing and payment information is also associated with your account.
 
 ## Creating an Account
 
