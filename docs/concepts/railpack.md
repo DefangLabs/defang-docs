@@ -150,6 +150,7 @@ services:
 |----------------|:----------------:|
 | Playground     |     ✅ |
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

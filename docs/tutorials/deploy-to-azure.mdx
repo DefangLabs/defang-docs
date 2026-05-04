@@ -1,0 +1,62 @@
+---
+title: Deploy to Azure
+description: Defang allows you to deploy to your own Microsoft Azure account.
+---
+
+# Deploy to Microsoft Azure
+
+This tutorial will show you how to deploy your services to your own Azure subscription using Defang.
+
+## Prerequisites
+
+- [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
+- [A Defang Account](/docs/concepts/authentication)
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [Azure Application Default Credentials](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](../concepts/railpack.md)
+
+## Step 1 - Navigate to your project directory
+
+Head to the folder where your project is located.
+
+```bash
+$ cd path/to/your/project
+```
+
+## Step 2 - Configure your Azure credentials
+
+After signing in to your Azure account, select an existing subscription or [create a new one](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). Make sure billing is enabled.
+
+Run the following Azure CLI command to authenticate:
+
+```bash
+$ az login
+```
+
+## Step 3 - Create a stack
+
+Before you deploy, you should create a [stack](/docs/concepts/stacks). In this
+case, we will create a stack called `dev`:
+
+```bash
+$ defang stack create dev
+```
+
+Defang will ask which region you want to deploy to and which Azure subscription to use.
+
+## Step 4 - Deploy
+
+Invoke the following CLI command. Defang will ask you which stack you want to deploy to.
+
+```bash
+$ defang compose up
+```
+
+## Step 5 - Inspect your deployment
+
+Defang will provision resources in your Azure subscription and deploy your services. You can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
+
+---
+
+For a deeper discussion of the Defang Azure architecture, see our [Azure docs](/docs/providers/azure).
