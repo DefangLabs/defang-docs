@@ -15,6 +15,14 @@ Deployment modes are now part of the broader [Recipe](/docs/concepts/recipe) con
 defang compose up --mode=high_availability
 ```
 
+## Tier Requirements
+
+| Mode | Required Plan |
+|-|-|
+| Affordable | Available on all tiers (Starter, Pro, Enterprise) |
+| Balanced | Requires Pro ($49/mo) or Enterprise |
+| High Availability | Requires Enterprise ($499/mo) |
+
 :::tip
 While the `--mode` flag still works, the recommended way to choose a mode is to configure a [stack](/docs/concepts/stacks), which records the provider, region, and mode for a deployment so you don't have to pass these flags on every command.
 :::
