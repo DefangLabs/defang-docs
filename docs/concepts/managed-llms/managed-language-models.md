@@ -8,14 +8,13 @@ description: Defang makes it easy to leverage cloud-native managed language mode
 Each cloud provider offers their own managed Large Language Model services. AWS offers Bedrock, GCP offers Vertex AI, Azure offers Microsoft Foundry, and Digital Ocean offers their GenAI platform. Defang makes it easy to leverage these services in your projects.
 
 :::info[Availability]
-Managed LLM services are available on all Navigator tiers (Starter, Pro, Enterprise) when deploying via BYOC. Defang Playground provides access to a default model only.
+Managed LLM services are available on all Navigator tiers (Starter, Pro, Enterprise) when deploying via BYOC.
 :::
 
 ## Current Support
 
 | Provider | Managed Language Models |
 | --- | --- |
-| [Playground](/docs/providers/playground#managed-llms) | ✅ |
 | [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [Microsoft Foundry](/docs/providers/azure) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
@@ -48,8 +47,3 @@ If you already have an OpenAI-compatible application, Defang makes it easy to de
 :::tip
 Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm) that uses the OpenAI Access Gateway, and a [*Managed LLM with Docker Model Provider sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm-provider) that uses a Docker Model Provider.
 :::
-
-
-## Managed LLM on Playground
-If you are using the Managed LLM feature on [Defang Playground](/docs/concepts/defang-playground), please note that your `MODEL` (model ID) will be limited to a default model chosen by Defang.
-To access a full range of models, consider using [Defang BYOC](/docs/concepts/defang-byoc).

@@ -24,7 +24,7 @@ The Defang CLI can be configured to deploy to a cloud provider either by using t
 
 ```bash
 # Supported provider values: auto, aws, azure, defang, digitalocean, gcp
-# Default is auto, which deploys to the Defang Playground but warns if it detects cloud credentials
+# Default is auto, which uses detected cloud credentials when available
 $ defang compose up --provider=aws
 # or
 $ export DEFANG_PROVIDER=digitalocean
