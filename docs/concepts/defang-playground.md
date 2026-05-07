@@ -1,17 +1,17 @@
 ---
 title: Defang Playground
-description: Defang Playground allows you to get a feel for how Defang works without running production workloads in your own cloud accounts.
+description: Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
 ---
 
 # Defang Playground
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC) which you can read about in more depth [here](./defang-byoc). We also provide Defang Playground, but it is only intended for non-production workloads so you can get a feel for how Defang works.
-
-Defang Playground is a free environment that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
-
 :::note
 Defang Playground is being deprecated. Users are encouraged to use the **Starter** tier (free) to deploy to their own cloud account via [BYOC](./defang-byoc). Existing Playground users will be migrated to the Starter tier.
 :::
+
+Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC), which you can read about in more depth [here](./defang-byoc).
+
+Defang Playground is a legacy free environment that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
 
 :::warning
 Please note that the Defang Playground is intended for testing/learning purposes only. The environment may be reset at any time. Do not run production workloads in Defang Playground.
