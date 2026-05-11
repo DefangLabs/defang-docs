@@ -5,7 +5,7 @@ description: Defang makes it easy to leverage cloud-native managed language mode
 
 # Managed Language Models
 
-Each cloud provider offers their own managed Large Language Model services. AWS offers Bedrock, GCP offers Vertex AI, and Digital Ocean offers their GenAI platform. Defang makes it easy to leverage these services in your projects.
+Each cloud provider offers their own managed Large Language Model services. AWS offers Bedrock, GCP offers Vertex AI, Scaleway offers Generative APIs, and Digital Ocean offers their GenAI platform. Defang makes it easy to leverage these services in your projects.
 
 ## Current Support
 
@@ -15,6 +15,7 @@ Each cloud provider offers their own managed Large Language Model services. AWS 
 | [AWS Bedrock](/docs/providers/aws#managed-llms) | ✅ |
 | [DigitalOcean GenAI](/docs/providers/digitalocean#future-improvements) | ❌ |
 | [GCP Vertex AI](/docs/providers/gcp#managed-llms) | ✅ |
+| [Scaleway Generative APIs](/docs/providers/scaleway#managed-llms) | ✅ |
 
 ## Usage
 
