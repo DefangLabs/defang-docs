@@ -25,7 +25,7 @@ Now you are not just building agents; you are picking the right infrastructure, 
 
 The result: weeks of DevOps headaches, lost momentum, and engineers stuck wiring infrastructure instead of shipping agents.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## We Made it Simple with Cloud Native Support for Agentic Apps
 
@@ -46,7 +46,6 @@ Defang works seamlessly with leading agentic frameworks. Try them out with our r
 - [CrewAI](https://docs.defang.io/blog/2025/06/16/crew-ai-sample) - sample app showing multi-agent orchestration in action.
 - [LangGraph](https://github.com/DefangLabs/samples/tree/main/samples/agentic-langgraph) - workflow sample that defines and controls multi-step agentic graphs with LangChain.
 - [Agentic Strands](https://github.com/DefangSamples/sample-agentic-strands-template/tree/main) - A Strands Agent application.
-
 
 More framework templates coming soon.
 

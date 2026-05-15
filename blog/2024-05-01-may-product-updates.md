@@ -8,7 +8,8 @@ authors: defang_team
 
 Hey folks! There is a lot going on at Defang and we're excited to share our latest product updates with you. Over the last month, we've been working hard to improve the Defang system and make it even easier for you to deploy your applications. Here's a quick overview of what we've been up to:
 
-{/* truncate */}
+{/_ truncate _/}
+
 ## npx defang
 
 We know a lot of you are using Defang for the first time. To make it easier to get started, we've added a new way to install the Defang CLI. Now you can use npx to run the CLI without installing it globally by running:
@@ -26,17 +27,20 @@ Previously you could bring your own domain with <a href="/docs/concepts/defang-b
 ## Windows Support
 
 Some of you use Defang from a Windows PC and previously a few features didn't work correctly on Windows. Some stuff we've fixed:
-* ansi color codes in logs
-* handle ctrl-c when tailing logs
+
+- ansi color codes in logs
+- handle ctrl-c when tailing logs
 
 ## Improved CLI
 
 We've made a variety of small tweaks and improvements to the CLI which should make things a little bit cleaner and more stable.
-* log messages have been made more clear
-* adding more progress information during compose up
+
+- log messages have been made more clear
+- adding more progress information during compose up
 
 ## Stability and Reliability
 
 Defang is still in Beta and we know we've got to be rock solid by the time we release V1, so we've been working hard to improve the stability and reliability of the Defang architecture. We've been battle-testing different technologies to see how they hold up and have mad a few changes that should make things even better:
-* capacity improvements in build queues
-* improvements in log availability
+
+- capacity improvements in build queues
+- improvements in log availability

@@ -3,7 +3,6 @@ title: Stacks
 description: Defang supports deploying multiple instances of a project as separate stacks.
 ---
 
-
 # Stacks
 
 Defang supports deploying multiple instances of a project as separate _stacks_. Each stack represents an isolated deployment of your project. Stacks allow you to manage different deployments of your project. For example, you can use stacks to support distinct development, staging, and production environments in the same cloud account. You can also use stacks to support deployments for different customers (e.g., Client A, Client B) or regions (e.g., North America, Europe) within the same project.
@@ -54,7 +53,7 @@ This command shows all stacks in your project.
 defang stack list
 
 NAME        PROVIDER  REGION     MODE
-production  aws       us-west-2  BALANCED  
+production  aws       us-west-2  BALANCED
 ```
 
 ## Internals

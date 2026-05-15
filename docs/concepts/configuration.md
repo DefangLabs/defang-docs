@@ -21,6 +21,7 @@ You can use sensitive config by specifying them in the `environment` section of 
 Either one of list notation or map notation is acceptable for defining your environment variable(s). See below for an example of each.
 
 #### With List Notation
+
 ```yaml
 services:
   service1:
@@ -30,6 +31,7 @@ services:
 ```
 
 #### With Map Notation
+
 ```yaml
 services:
   service1:
@@ -61,8 +63,8 @@ service:
         - USER_NAME     // configuration variable
         - CONNECT=dbservice:${USER_NAME}:${USER_PASSWORD}@example.com:9876
 ```
-In the example above, if we assume the value of the configuration variable ***USER_PASSWORD*** is *password* then the value assigned to ***CONNECT*** will resolve to *dbservice:alice:password@example.com:9876*
 
+In the example above, if we assume the value of the configuration variable **_USER_PASSWORD_** is _password_ then the value assigned to **_CONNECT_** will resolve to _dbservice:alice:password@example.com:9876_
 
 During `defang compose up` all variable references will be replaced with the actual value and made available in the container. If any referenced variable is not found the `defang compose up` command will be canceled.
 
@@ -81,6 +83,7 @@ Defang does pass environment variables from the shell into your services. Enviro
 Environment variables are resolved in order of precedence, with the highest precedence value taking priority. For example, if you have a variable `DATABASE_URL` set in both a dotenv file and in Defang config, the value from Defang config will be used.
 
 ## Using Config with Pulumi
+
 In Defang, using config with [Pulumi](./pulumi.md) gives you the advantage of being able to manage your environment variables across different environments using Pulumi stacks.
 
 :::tip
@@ -106,10 +109,10 @@ Please note that while Defang supports setting sensitive config, it does not sup
 
 ## Supported Providers
 
-| Provider       | Config Support |
-|----------------|:--------------:|
-| Playground     |     ✅ |
-| AWS            |     ✅ |
-| Azure          |     ✅ |
-| DigitalOcean   |     ✅ |
-| GCP            |     ✅ |
+| Provider     | Config Support |
+| ------------ | :------------: |
+| Playground   |       ✅       |
+| AWS          |       ✅       |
+| Azure        |       ✅       |
+| DigitalOcean |       ✅       |
+| GCP          |       ✅       |

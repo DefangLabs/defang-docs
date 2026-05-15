@@ -23,7 +23,7 @@ authors: defang_team
 
 August was about making migrations smoother and showing how you can already use Defang to deploy agentic apps at scale. We expanded our sample projects for popular multi-agent frameworks like CrewAI, LangGraph, Autogen, and Strands, validating them on Playground, AWS, and GCP so you can run multi-agent workloads in production without extra DevOps. Our new Heroku migration flow inspects dynos and add-ons, generates a clean Compose file, provisions managed equivalents like Postgres and Redis, and ships to your own cloud in one command. This cuts costs and removes lock-in. We also introduced MCP BYOC prompts so you can deploy to AWS and GCP straight from your IDE. Railpack on GCP now delivers faster, more reliable no-Dockerfile builds with clearer logs and closer parity with AWS.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## Heroku Migration
 

@@ -9,7 +9,7 @@ We're thrilled to announce the release of our Private Beta for the Defang Opinio
 
 We realize that improving on this state of affairs is a long journey. Today, we are taking an initial step with the release of the Private Beta of the DOP. The DOP enables **AI-assisted development**, with the ability to specify a high-level prompt and get back an initial version of your cloud service code, which can then be refined further. The DOP **simplifies CI-CD** by automatically building and deploying new artifacts to your target environments when you push new code to your source repository, taking care of all dependency management and build tasks. And the **DOP pre-provisions properly secured and configured staging and production environments** for your application, optimized for security, scaling, and cost.
 
-{/* truncate */}
+{/_ truncate _/}
 
 **Try the Private Beta!**
 

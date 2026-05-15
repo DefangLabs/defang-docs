@@ -13,13 +13,13 @@ Managed MongoDB is a service that allows you to store and retrieve large amounts
 
 ## Current Support
 
-| Provider | Managed MongoDB |
-| --- | --- |
-| [Playground](/docs/providers/playground#managed-services) | ⚠️ Unmanaged |
-| [AWS](/docs/providers/aws#managed-storage) | ✅ DocumentDB |
-| [Azure](/docs/providers/azure) | ❌ |
-| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
-| [GCP](/docs/providers/gcp#future-improvements) | ✅ Firestore |
+| Provider                                                         | Managed MongoDB |
+| ---------------------------------------------------------------- | --------------- |
+| [Playground](/docs/providers/playground#managed-services)        | ⚠️ Unmanaged    |
+| [AWS](/docs/providers/aws#managed-storage)                       | ✅ DocumentDB   |
+| [Azure](/docs/providers/azure)                                   | ❌              |
+| [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged    |
+| [GCP](/docs/providers/gcp#future-improvements)                   | ✅ Firestore    |
 
 ## How to use Managed MongoDB
 
@@ -30,6 +30,7 @@ Defang will use the image tag to determine the version to provision from your cl
 ### Required Configuration
 
 ### AWS
+
 When using managed MongoDB on AWS, you **must** set a username and password for the database. By default, these are read from the `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` config variables, following [the official MongoDB container image](https://hub.docker.com/_/mongo) convention.
 
 You can set these using the following commands:

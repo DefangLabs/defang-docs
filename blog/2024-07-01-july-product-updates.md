@@ -1,6 +1,7 @@
 ---
 title: June 2024 Defang Compose Update
-tags: [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI, Defang Compose Update]
+tags:
+  [Cloud, NoDevOps, BYOC, Windows, Managed Redis, CLI, Defang Compose Update]
 authors: defang_team
 ---
 
@@ -8,13 +9,14 @@ authors: defang_team
 
 Hey folks! We've got another batch of updates to share with you about what the Defang team has been working on over the past month. We're committed to improving your deployment experience, so let's take a look at what's new.
 
-{/* truncate */}
+{/_ truncate _/}
+
 ## Windows Experience Improvements
 
 For our Windows users out there, we've made some changes to make your Defang experience even smoother:
 
-* You can now install Defang using `winget`, the Windows Package Manager, for a streamlined setup
-* We've introduced a signed binary for added security and peace of mind
+- You can now install Defang using `winget`, the Windows Package Manager, for a streamlined setup
+- We've introduced a signed binary for added security and peace of mind
 
 Deploying your apps from Windows just got a little bit nicer.
 
@@ -34,10 +36,10 @@ We first introduced this last month, but we've since rolled it out to everyone. 
 
 We've updated our sample projects to showcase how to use them with Defang, including:
 
-* [ASP.NET Core](https://github.com/DefangSamples/sample-csharp-dotnet-template)
-* [Feathers.js](https://github.com/DefangSamples/sample-feathersjs-template)
-* [Flask & LangChain](https://github.com/DefangSamples/sample-langchain-template)
-* [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template)
+- [ASP.NET Core](https://github.com/DefangSamples/sample-csharp-dotnet-template)
+- [Feathers.js](https://github.com/DefangSamples/sample-feathersjs-template)
+- [Flask & LangChain](https://github.com/DefangSamples/sample-langchain-template)
+- [BullMQ with Redis](https://github.com/DefangSamples/sample-bullmq-bullboard-redis-template)
 
 Check them out if you're looking for some inspiration or a starting point for your own projects.
 
@@ -45,11 +47,11 @@ Check them out if you're looking for some inspiration or a starting point for yo
 
 We're always looking for ways to enhance the CLI experience. Here's what's new:
 
-* `npx defang` automatically checks to always have the latest version of the CLI
-* The output during `defang compose up` has been streamlined to focus on the most important information
-* `defang tail` now supports listening to specific services, making it easier to troubleshoot issues
-* We've improved hints and error messages to better guide you when something goes wrong
-* The CLI now has improved color support for light theme terminals, making it easier on the eyes
+- `npx defang` automatically checks to always have the latest version of the CLI
+- The output during `defang compose up` has been streamlined to focus on the most important information
+- `defang tail` now supports listening to specific services, making it easier to troubleshoot issues
+- We've improved hints and error messages to better guide you when something goes wrong
+- The CLI now has improved color support for light theme terminals, making it easier on the eyes
 
 It's the small refinements that can make a big difference in your workflow.
 
@@ -57,8 +59,8 @@ It's the small refinements that can make a big difference in your workflow.
 
 Here are a few more things that didn't quite fit with the rest:
 
-* Visibility into ECS deployment events in BYOC tail logs
-* Improvements to ACME certificate generation
+- Visibility into ECS deployment events in BYOC tail logs
+- Improvements to ACME certificate generation
 
 Keep an eye out for these updates in the near future.
 

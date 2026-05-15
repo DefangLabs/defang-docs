@@ -78,6 +78,7 @@ Defang offers integration with managed, cloud-native large language model servic
 ### Future Improvements
 
 The following features are in active development for GCP:
+
 - [Managed Object Storage](/docs/concepts//managed-storage/managed-object-storage.md)
 
 Stayed tuned for future updates!

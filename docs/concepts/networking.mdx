@@ -2,8 +2,9 @@
 title: Networking
 description: Defang helps you safely configure your services' networking.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Networking
 
@@ -69,6 +70,7 @@ services;
 ```
 
 ### Private Services
+
 If you want a service with exposed ports to not be accessible from the public internet, create a private network:
 
 ```yaml
@@ -117,6 +119,7 @@ http://<username>-<service-name>:<port>
 ```
 
 The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
+
   </TabItem>
   <TabItem value="byoc" label="BYOC">
 Internal communication between services in Defang BYOC follows the following pattern:
@@ -124,6 +127,7 @@ Internal communication between services in Defang BYOC follows the following pat
 ```
 http://<service-name>:<port>
 ```
+
   </TabItem>
 </Tabs>
 
@@ -145,5 +149,5 @@ overlapping IP address ranges. You can use this feature to give a distinct range
 VPC peering features of the cloud provider to set up connectivity.
 
 Alternatively, to allow communication between services from different Compose projects, you can use the Compose [include](https://github.com/compose-spec/compose-spec/blob/main/14-include.md)
-feature to *merge* multiple Compose files into a single project. This way, the services in the different files end up in
+feature to _merge_ multiple Compose files into a single project. This way, the services in the different files end up in
 the same network and can use private/internal networking.

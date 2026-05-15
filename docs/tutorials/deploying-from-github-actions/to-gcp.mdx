@@ -2,8 +2,9 @@
 title: Deploying to GCP
 description: Using the Defang Github Action to deploy your project to GCP from your CI/CD pipeline.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Deploying to GCP from GitHub Actions
 
@@ -23,18 +24,17 @@ To configure the GitHub Action to assume a role in your GCP project, you'll need
 
 <Tabs>
   <TabItem value="cli" label="gcloud CLI" default>
-    You can list all of the projects you have access to with the following command:
-    ```bash
-    gcloud projects list --format="value(projectId)"
-    export PROJECT_ID="my-project-123456" # export the project ID you want to use
-    ```
-    Identify the appropriate project ID from the list and keep it handy for the next steps.
+    You can list all of the projects you have access to with the following
+    command: ```bash gcloud projects list --format="value(projectId)" export
+    PROJECT_ID="my-project-123456" # export the project ID you want to use ```
+    Identify the appropriate project ID from the list and keep it handy for the
+    next steps.
   </TabItem>
   <TabItem value="dashboard" label="GCP Console">
-    1. Go to the [GCP Console](https://console.cloud.google.com/).
-    2. Click on the project dropdown in the top navigation bar.
-    3. Identify the appropriate project from the list.
-    4. Your Project ID will be listed next to the project name.
+    1. Go to the [GCP Console](https://console.cloud.google.com/). 2. Click on
+    the project dropdown in the top navigation bar. 3. Identify the appropriate
+    project from the list. 4. Your Project ID will be listed next to the project
+    name.
   </TabItem>
 </Tabs>
 
@@ -50,6 +50,7 @@ To configure the GitHub Action to assume a role in your GCP project, you'll need
       --display-name="Deployer" \
       --project="${PROJECT_ID}"
     ```
+
   </TabItem>
   <TabItem value="dashboard" label="GCP Console">
     Using the GCP Console:
@@ -63,6 +64,7 @@ To configure the GitHub Action to assume a role in your GCP project, you'll need
     7. In the "Grant this service account access to the project" section, select the "Owner" role from the dropdown.
     8. Click "Continue"
     9. Click "Done"
+
   </TabItem>
 </Tabs>
 
@@ -104,6 +106,7 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
       --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner,attribute.environment=assertion.environment,attribute.ref=assertion.ref" \
       --attribute-condition="assertion.repository_owner == YOUR_REPOSITORY_OWNER && assertion.repository == 'YOUR_REPOSITORY_NAME' && assertion.ref == 'refs/heads/main' && assertion.environment == 'YOUR_ENVIRONMENT'" \
     ```
+
   </TabItem>
   <TabItem value="dashboard" label="GCP Console">
     Using the GCP Console:
@@ -142,6 +145,7 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
     attribute.repository_owner == 'YOUR_REPOSITORY_OWNER' && attribute.repository == 'YOUR_REPOSITORY_NAME' && attribute.ref == 'refs/heads/main'
     ```
     3. Click "Save"
+
   </TabItem>
 </Tabs>
 
@@ -168,6 +172,7 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
       --role="roles/owner" \
       --member="principalSet://iam.googleapis.com/${WORKLOAD_IDENTITY_POOL_ID}/attribute.repository/${REPO}"
     ```
+
   </TabItem>
   <TabItem value="dashboard" label="GCP Console">
     Using the GCP Console:
@@ -180,6 +185,7 @@ We also recommend configuring [GitHub Actions Environments](https://docs.github.
       a. Select `repository` from the "Attribute name" dropdown.
       b. Enter your GitHub repository name in the "Attribute value" field.
     6. Click the "Save" button.
+
   </TabItem>
 </Tabs>
 
@@ -192,7 +198,7 @@ name: Deploy with Defang
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main'
+      - main # Change this to your default branch if it's not 'main'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -223,5 +229,3 @@ jobs:
 ```
 
 Full documentation for configuring AWS and GCP credentials can be found in the [Defang GitHub Action repository](https://github.com/DefangLabs/defang-github-action).
-
-

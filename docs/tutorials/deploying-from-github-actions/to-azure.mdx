@@ -2,8 +2,9 @@
 title: Deploying to Azure
 description: Using the Defang Github Action to deploy your project to Azure from your CI/CD pipeline.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Deploying to Azure from GitHub Actions
 
@@ -22,16 +23,14 @@ The following steps will guide you through setting up a GitHub Actions workflow 
 
 <Tabs>
   <TabItem value="cli" label="Azure CLI" default>
-    You can list all of the subscriptions you have access to with the following command:
-    ```bash
-    az account list --output table
-    export SUBSCRIPTION_ID="your-subscription-id" # export the subscription ID you want to use
-    ```
+    You can list all of the subscriptions you have access to with the following
+    command: ```bash az account list --output table export
+    SUBSCRIPTION_ID="your-subscription-id" # export the subscription ID you want
+    to use ```
   </TabItem>
   <TabItem value="dashboard" label="Azure Portal">
-    1. Go to the [Azure Portal](https://portal.azure.com/).
-    2. Navigate to **Subscriptions**.
-    3. Identify the appropriate subscription from the list.
+    1. Go to the [Azure Portal](https://portal.azure.com/). 2. Navigate to
+    **Subscriptions**. 3. Identify the appropriate subscription from the list.
     4. Your Subscription ID will be listed next to the subscription name.
   </TabItem>
 </Tabs>
@@ -94,7 +93,7 @@ name: Deploy with Defang
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main'
+      - main # Change this to your default branch if it's not 'main'
 jobs:
   deploy:
     runs-on: ubuntu-latest

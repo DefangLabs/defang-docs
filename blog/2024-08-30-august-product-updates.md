@@ -13,14 +13,15 @@ tags:
   ]
 authors: defang_team
 ---
-import { Button } from '@mui/material';
 
+import { Button } from '@mui/material';
 
 ![Defang Compose Update](/img/defang-compose-update.webp)
 
 Wow - what a month of August it has been! We made some big strides of progress on our vision of providing a radically simpler way to Develop, Deploy, and Debug _portable_ cloud applications.
 
-{/* truncate */}
+{/_ truncate _/}
+
 ## Ask Defang
 
 We've just rolled out an initial version of Ask Defang, our AI-driven documentation assistant that can help you navigate the Defang docs and get deploying faster. It's deployed with Defang and using a combination of embeddings run on a GPU-powered service, Defang managed Redis, and OpenAI APIs.

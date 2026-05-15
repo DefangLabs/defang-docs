@@ -14,6 +14,7 @@ Currently, AWS and GCP are supported for cost estimation.
 ## Generating an Estimate
 
 Navigate your shell to your application's working directory and run
+
 ```
 defang estimate [--provider=aws|gcp] [--mode=affordable|balanced|high_availability]
 ```
@@ -65,11 +66,10 @@ defang compose up [--provider aws|azure|gcp|digitalocean] [--mode affordable|bal
 
 ## Supported Providers
 
-| Provider       | Estimation Support |
-|----------------|:------------------:|
-| Playground     |     ❌ |
-| AWS            |     ✅ |
-| Azure          |     ❌ |
-| DigitalOcean   |     ❌ |
-| GCP            |     ✅ |
-
+| Provider     | Estimation Support |
+| ------------ | :----------------: |
+| Playground   |         ❌         |
+| AWS          |         ✅         |
+| Azure        |         ❌         |
+| DigitalOcean |         ❌         |
+| GCP          |         ✅         |

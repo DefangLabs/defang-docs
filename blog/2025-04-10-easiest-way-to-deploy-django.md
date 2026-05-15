@@ -26,7 +26,7 @@ We're deploying a real-time chat application that includes automatic moderation 
 - **Postgres Database**: Managed database instance for persistent storage.
 - **Redis Broker**: Managed Redis instance serving as the broker for Celery tasks and Django Channels.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## Running Locally
 
@@ -46,10 +46,13 @@ This runs things with autoreloading so you can iterate on the Django app, all wh
 ## Application Features
 
 ### Real-time Chat
+
 Using Django Channels and Redis, users can engage in real-time conversations within chat rooms.
 
 ### Background Moderation Tasks
+
 The worker service runs independently, handling moderation tasks asynchronously. It uses NLTK to:
+
 - Check for profanity.
 - Perform sentiment analysis.
 - Automatically flag negative or inappropriate messages.
@@ -59,7 +62,6 @@ This decouples resource-intensive tasks from the main API server, ensuring optim
 ### Django Admin
 
 The Django admin is setup to quickly visualize messages and their moderation status. Access it at `/admin` with your superuser credentials: username `admin` and password `admin` setup by default when you first run or deploy.
-
 
 ## Deploying with Defang
 
@@ -85,6 +87,7 @@ defang compose up
 ```
 
 Defang automatically:
+
 - Builds Docker containers.
 - Sets up required services.
 - Manages networking and provisioning.
@@ -96,7 +99,7 @@ Once deployed, your app is accessible via a public URL provided by Defang, which
 To deploy directly into your AWS account (or other [supported providers](/docs/providers)):
 
 1. Set your cloud provider:
-> In my case, I use an AWS Profile, but you should be able to use [any methods supported by the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+   > In my case, I use an AWS Profile, but you should be able to use [any methods supported by the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
 ```bash
 export DEFANG_PROVIDER=AWS
@@ -123,6 +126,7 @@ Defang handles provisioning managed services (RDS for Postgres, ElastiCache for 
 ## Cloud Deployment Results
 
 Post-deployment, your Django app infrastructure includes (among other things):
+
 - **Managed Postgres**: AWS RDS instance.
 - **Managed Redis**: AWS ElastiCache instance.
 - **Containers**: ECS services with load balancers and DNS configured.
@@ -130,6 +134,7 @@ Post-deployment, your Django app infrastructure includes (among other things):
 ## Why Use Defang?
 
 Defang simplifies complex cloud deployments by:
+
 - Automatically provisioning managed cloud resources.
 - Securely handling sensitive configurations.
 - Providing seamless container orchestration without manual infrastructure setup.

@@ -22,9 +22,9 @@ Our original site was a Next.js app using [static exports](https://nextjs.org/do
 
 That meant static hosting wouldn't cut it. So we decided to run the site as an app in a container.
 
-That being said, our learnings from the previous setup *are* being used to develop the capabilities of Defang. We're using the experience to make sure that Defang can handle the deployment of static sites as well as dynamic ones. We'll keep you updated when that's ready.
+That being said, our learnings from the previous setup _are_ being used to develop the capabilities of Defang. We're using the experience to make sure that Defang can handle the deployment of static sites as well as dynamic ones. We'll keep you updated when that's ready.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ---
 
@@ -35,20 +35,22 @@ We already deploy our other services with Defang using Compose files. In fact, t
 Some things we had to change:
 
 **Adding [ports](/docs/concepts/compose#ports) to the Compose file**:
+
 ```yaml
-    ports:
-      - mode: ingress
-        target: 3000
-        published: 3000
+ports:
+  - mode: ingress
+    target: 3000
+    published: 3000
 ```
 
 **Adding [domain](/docs/concepts/domains) info the Composer file**:
+
 ```yaml
-    domainname: defang.io
-    networks:
-      default:
-        aliases:
-          - www.defang.io
+domainname: defang.io
+networks:
+  default:
+    aliases:
+      - www.defang.io
 ```
 
 One other hiccup was that we used to do www to non-www redirects using S3. There are a few ways to switch that up, but for the time being we decided to use Next.js middleware.
@@ -62,12 +64,15 @@ Pretty soon after that, the site was up and running in an AWS account—with TLS
 Deploying the website wasn't just a checkbox—it helped surface real-world pain points and ideas for improvement.
 
 ### 1. Static Assets Still Need CDNs
+
 Even though the site is dynamic now, we still want assets like `/_next/static` to load quickly from a CDN. This made it clear that CDN support—like CloudFront integration—should be easier to configure in Defang. That’s now on our roadmap. That's also going to be useful for other frameworks that use similar asset paths, like Django.
 
 ### 2. Next.js Env Vars Can Be Tricky in Containers
+
 Next.js splits env vars between build-time and runtime, and the rules aren’t always obvious. Some need to be passed as build args, and others as runtime envs. That made us think harder about how Defang could help clarify or streamline this for developers—even if we can’t change that aspect of Next.js itself.
 
 ### 3. Redirects and Rewrites
+
 We had to add a middleware to handle www to non-www redirects. This is a common need, so we're keeping an eye on how we can make this easier to deal with in Defang projects.
 
 These are the kinds of things we only notice by using Defang on real-world projects.
@@ -84,4 +89,3 @@ Our site now runs like the rest of our infrastructure:
 - Deployed with Defang
 
 Stay tuned for the next post in the series—because this is just one piece of the puzzle.
-

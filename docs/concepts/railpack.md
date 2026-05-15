@@ -146,13 +146,13 @@ services:
 
 ## Supported Providers
 
-| Provider       | Railpack Support |
-|----------------|:----------------:|
-| Playground     |     ✅ |
-| AWS            |     ✅ |
-| Azure          |     ❌ |
-| DigitalOcean   |     ❌ |
-| GCP            |     ✅ |
+| Provider     | Railpack Support |
+| ------------ | :--------------: |
+| Playground   |        ✅        |
+| AWS          |        ✅        |
+| Azure        |        ❌        |
+| DigitalOcean |        ❌        |
+| GCP          |        ✅        |
 
 ## Details
 
