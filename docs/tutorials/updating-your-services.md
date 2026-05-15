@@ -37,10 +37,10 @@ To delete your app, use `defang compose down` in your compose file working direc
 
 In some cases, particularly on the AWS platform, additional actions may be required. Specifically load balancers may have Deletion Protection on. To turn this off in the AWS Console for EC2 Load Balancers, follow these steps:
 
-	1.	Select the load balancer corresponding to the app’s name.
-	2.	Go to the Attributes tab.
-	3.	Click the Edit button.
-	4.	Locate Deletion Protection and disable it.
+    1.	Select the load balancer corresponding to the app’s name.
+    2.	Go to the Attributes tab.
+    3.	Click the Edit button.
+    4.	Locate Deletion Protection and disable it.
 
 :::info
 For more information on Deployment Modes, see the [Deployment Modes](/docs/concepts/deployment-modes) concept documentation.

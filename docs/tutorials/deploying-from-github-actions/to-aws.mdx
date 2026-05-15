@@ -2,9 +2,9 @@
 title: Deploying to AWS
 description: Using the Defang GitHub Action to deploy your project to AWS from your CI/CD pipeline.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Deploying to AWS from GitHub Actions
 
@@ -43,6 +43,7 @@ The Defang Portal provides a streamlined setup experience that creates all requi
 7. In AWS CloudFormation, review the stack and click **Create stack**
 
 This creates:
+
 - An OIDC identity provider for GitHub Actions
 - An IAM role named `defang-cd-CIRole` with the necessary trust policy
 - Other resources needed for Defang deployments
@@ -64,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # Required for OIDC authentication
+      id-token: write # Required for OIDC authentication
 
     steps:
       - name: Checkout Repo
@@ -76,11 +77,12 @@ jobs:
           provider: aws
           # stack: production # optional, but recommended to use stacks https://docs.defang.io/docs/concepts/stacks
         env:
-          AWS_REGION: us-west-2  # Change to your preferred region
+          AWS_REGION: us-west-2 # Change to your preferred region
           AWS_ROLE_ARN: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/defang-cd-CIRole
 ```
 
 Replace:
+
 - `YOUR_AWS_ACCOUNT_ID` with your 12-digit AWS account ID
 - `us-west-2` with your preferred AWS region (must match the region you selected in the Portal)
 
@@ -138,15 +140,13 @@ To configure the GitHub Action to assume a role in your AWS account, you'll need
 
 <Tabs>
   <TabItem value="cli" label="AWS CLI" default>
-    ```bash
-    aws sts get-caller-identity --query Account --output text
-    123456789012 # for example
-    ```
+    ```bash aws sts get-caller-identity --query Account --output text
+    123456789012 # for example ```
   </TabItem>
   <TabItem value="dashboard" label="AWS Dashboard">
-    1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
-    2. In the top right corner, click on your account name or number.
-    3. Your AWS Account ID will be displayed in the dropdown menu.
+    1. Go to the [AWS Management Console](https://aws.amazon.com/console/). 2.
+    In the top right corner, click on your account name or number. 3. Your AWS
+    Account ID will be displayed in the dropdown menu.
   </TabItem>
 </Tabs>
 
@@ -161,6 +161,7 @@ You will need to create a new OIDC Identity Provider in AWS to enable GitHub Act
     ```
     aws iam create-open-id-connect-provider --client-id-list sts.amazonaws.com --url https://token.actions.githubusercontent.com
     ```
+
   </TabItem>
   <TabItem value="dashboard" label="AWS Dashboard">
     Using the AWS Dashboard:
@@ -172,6 +173,7 @@ You will need to create a new OIDC Identity Provider in AWS to enable GitHub Act
     5. For the provider URL, enter `https://token.actions.githubusercontent.com`.
     6. For the audience, enter `sts.amazonaws.com`.
     7. Click "Add provider".
+
   </TabItem>
 </Tabs>
 
@@ -256,7 +258,7 @@ name: Deploy with Defang
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main', this must match the branch you specified in the deployer role's trust relationship.
+      - main # Change this to your default branch if it's not 'main', this must match the branch you specified in the deployer role's trust relationship.
 jobs:
   deploy:
     runs-on: ubuntu-latest

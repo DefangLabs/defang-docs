@@ -24,7 +24,7 @@ authors: defang_team
 
 September focused on refinement and speed. We tightened deployment workflows, strengthened authentication, and made collaboration smoother across every environment. We improved Portal stability, added Railpack build logs, and refined Compose handling for managed services like Postgres, Mongo, and Redis. WAF is now enabled for high availability on AWS, and our VS Code extension is verified on the Marketplace with an easier MCP setup built right into the installer. Here's what's new.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## Deployment and Infrastructure Improvements
 

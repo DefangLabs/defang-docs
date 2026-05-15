@@ -24,7 +24,7 @@ While AI-powered tools make building apps a breeze, deploying them to the cloud 
 
 The bottleneck is no longer the code. It's the infrastructure.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## Enter Defang: Your AI DevOps Agent
 

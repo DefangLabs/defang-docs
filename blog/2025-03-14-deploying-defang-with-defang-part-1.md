@@ -29,7 +29,7 @@ Initially, we provisioned databases and some DNS configurations using Infra-as-C
 
 This worked, but seemed unnecessarily complex, if we had the right tooling…
 
-{/* truncate */}
+{/_ truncate _/}
 
 ---
 
@@ -45,7 +45,7 @@ As a result, we reached a point where we no longer needed custom infrastructure 
 
 ## **What Changed?**
 
-- **Previously**: GitHub Actions ran infra-as-code scripts to provision databases, manage DNS, and define services *separately from the Docker Compose file we used for local dev*
+- **Previously**: GitHub Actions ran infra-as-code scripts to provision databases, manage DNS, and define services _separately from the Docker Compose file we used for local dev_
 - **Now**: Our [**Defang GitHub Action**](https://github.com/marketplace/actions/defang-deployment-action) targets normal Compose files and deploys everything, using secrets and variables managed in GitHub Actions environments.
 - **Result**: We **eliminated hundreds of lines of Infra-as-Code**, making our deployment leaner and easier to manage and reducing the differences between running the Portal locally and running it in the cloud.
 
@@ -81,9 +81,9 @@ This wasn’t just about reducing complexity—it was also a validation exercise
 
 By transitioning to **fully Compose-based deployments**, we:
 
-* ✅ **Eliminated hundreds of lines of Infra-as-Code**
-* ✅ **Simplified configuration management** with secure, environment-aware secrets handling
-* ✅ **Streamlined CI/CD** with a lightweight GitHub Actions workflow
-* ✅ **Simplified DNS and cert management**
+- ✅ **Eliminated hundreds of lines of Infra-as-Code**
+- ✅ **Simplified configuration management** with secure, environment-aware secrets handling
+- ✅ **Streamlined CI/CD** with a lightweight GitHub Actions workflow
+- ✅ **Simplified DNS and cert management**
 
 Every sample project we built, every conversation we had with developers, and every challenge we encountered with the Portal helped us get to this point where we could focus on closing the gaps last few gaps to deploying everything from a Compose file.

@@ -10,14 +10,23 @@ At the time of writing, the Defang Pulumi Provider only works with [Defang Playg
 
 This tutorial will show you how to deploy Minio with Pulumi using the Defang Provider.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A4uiP5FIgg0?si=BHZLOxN4noJ56f7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/A4uiP5FIgg0?si=BHZLOxN4noJ56f7x"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ## Pre-requisites
 
-* [A Defang Account](/docs/concepts/authentication)
-* [Pulumi CLI](https://www.pulumi.com/docs/install)
-* [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
-* [The Defang Pulumi Provider](/docs/concepts/pulumi#install-the-defang-pulumi-provider)
+- [A Defang Account](/docs/concepts/authentication)
+- [Pulumi CLI](https://www.pulumi.com/docs/install)
+- [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
+- [The Defang Pulumi Provider](/docs/concepts/pulumi#install-the-defang-pulumi-provider)
 
 ## Step 1 - Authenticate With Defang
 
@@ -26,7 +35,6 @@ Make sure you are logged into the [Defang CLI](/docs/concepts/authentication.md)
 ## Step 2 - Configure the Pulumi Backend
 
 Navigate to your project directly. (If you don't have a project yet, try one of our [samples](https://defang.io/samples))
-
 
 Pulumi uses the `pulumi login` command to select a backend. In this tutorial, we will use the Local Filesystem backend for simplicity. When you are ready to deploy to production, you will probably want to look into other [Pulumi backend options](https://www.pulumi.com/docs/iac/concepts/state-and-backends).
 
@@ -65,44 +73,44 @@ echo ".pulumi" >> .gitignore
 Create an `index.ts` file to contain your Pulumi code. This code will describe our services, our service's dependencies, and our service's configuration.
 
 ```typescript
-import * as defang from '@defang-io/pulumi-defang/lib';
+import * as defang from "@defang-io/pulumi-defang/lib";
 
-export const service = new defang.DefangService('minio', {
-    name: 'minio',
-    image: 'quay.io/minio/minio',
-    // starts the server with the console address set to :9001
-    command: ['server', '--console-address', ':9001', '/data'],
-    // Set the root username
-    environment: {
-        MINIO_ROOT_USER: 'minio',
+export const service = new defang.DefangService("minio", {
+  name: "minio",
+  image: "quay.io/minio/minio",
+  // starts the server with the console address set to :9001
+  command: ["server", "--console-address", ":9001", "/data"],
+  // Set the root username
+  environment: {
+    MINIO_ROOT_USER: "minio",
+  },
+  secrets: [
+    // Set the root password as a secret which will be encrypted at rest
+    {
+      source: "MINIO_ROOT_PASSWORD",
+      value: "minio123",
     },
-    secrets: [
-        // Set the root password as a secret which will be encrypted at rest
-        {
-            source: 'MINIO_ROOT_PASSWORD',
-            value: 'minio123',
-        },
-    ],
-    // Run a healthcheck every 30 seconds
-    healthcheck: {
-        test: ['CMD', 'curl', 'http://localhost:9000/minio/health/live'],
-        interval: 30,
-        timeout: 5,
-        retries: 3,
+  ],
+  // Run a healthcheck every 30 seconds
+  healthcheck: {
+    test: ["CMD", "curl", "http://localhost:9000/minio/health/live"],
+    interval: 30,
+    timeout: 5,
+    retries: 3,
+  },
+  // Expose the server on port 9000 and the console on port 9001
+  ports: [
+    {
+      target: 9000,
+      protocol: "http",
+      mode: "ingress",
     },
-    // Expose the server on port 9000 and the console on port 9001
-    ports: [
-        {
-            target: 9000,
-            protocol: 'http',
-            mode: 'ingress',
-        },
-        {
-            target: 9001,
-            protocol: 'http',
-            mode: 'ingress',
-        },
-    ],
+    {
+      target: 9001,
+      protocol: "http",
+      mode: "ingress",
+    },
+  ],
 });
 ```
 

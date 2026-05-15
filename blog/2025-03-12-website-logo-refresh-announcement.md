@@ -26,7 +26,7 @@ As Defang evolves, so does our message:
 - **What We Enable**: Any App, Any Stack, Any Cloud.
 - **How It Works**: Take your app from Docker Compose to a secure, scalable deployment on your favorite cloud in minutes.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ### 2. A Sleek New Logo
 

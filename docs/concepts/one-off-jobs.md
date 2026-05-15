@@ -4,11 +4,13 @@ description: Defang enables you to run one-off jobs during your deployment workf
 ---
 
 # One-off Jobs
+
 Defang enables you to run one-off jobs (a.k.a release tasks) during your deployment workflow. One-off jobs are commands that run at specific points in the deployment process, such as after your database is ready but before your application starts.
 
 One-off jobs are run a single time, and failure to run a one-off job will cause the entire deployment to fail.
 
 ## When should one-off jobs be used?
+
 One-off jobs are useful for running commands that need to be executed before your application starts. Common use cases include:
 
 - Database migrations
@@ -135,12 +137,10 @@ One off jobs are deployed as temporary containers on the same infrastructure as 
 
 ### Supported Providers
 
-| Provider       | Release Task Support |
-|----------------|:--------------------:|
-| Playground     |     ✅ |
-| AWS            |     ✅ |
-| Azure          |     ❌ |
-| DigitalOcean   |     ❌ |
-| GCP            |     ✅ |
-
-
+| Provider     | Release Task Support |
+| ------------ | :------------------: |
+| Playground   |          ✅          |
+| AWS          |          ✅          |
+| Azure        |          ❌          |
+| DigitalOcean |          ❌          |
+| GCP          |          ✅          |

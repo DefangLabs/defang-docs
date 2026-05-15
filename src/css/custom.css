@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-  font-family: 'GuarujaNeue-SemiBold';
-  src: url('/fonts/guaruja-neue/GuarujaNeue-SemiBold.woff2') format('woff2'),
-    url('/fonts/guaruja-neue/GuarujaNeue-SemiBold.woff') format('woff');
+  font-family: "GuarujaNeue-SemiBold";
+  src:
+    url("/fonts/guaruja-neue/GuarujaNeue-SemiBold.woff2") format("woff2"),
+    url("/fonts/guaruja-neue/GuarujaNeue-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 :root {
   color-scheme: light;
-  --font-sans: 'Inter', 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-display: 'GuarujaNeue-SemiBold', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-sans:
+    "Inter", "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  --font-display:
+    "GuarujaNeue-SemiBold", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, sans-serif;
   --background: 216 65% 99%;
   --foreground: 222 76% 6%;
   --muted: 215 40% 93%;
@@ -45,7 +50,9 @@
   --ifm-color-primary-lighter: hsl(212, 92%, 66%);
   --ifm-color-primary-lightest: hsl(212, 92%, 72%);
   --ifm-font-family-base: var(--font-sans);
-  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --ifm-font-family-monospace:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --ifm-heading-font-family: var(--font-display);
   --ifm-heading-font-weight: 600;
   --ifm-navbar-shadow: none;
@@ -66,7 +73,7 @@
   --ifm-footer-title-color: hsl(var(--foreground));
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   color-scheme: dark;
   --background: 222 62% 7%;
   --foreground: 220 19% 92%;
@@ -96,7 +103,6 @@
 }
 
 @layer base {
-
   *,
   *::before,
   *::after {
@@ -111,18 +117,36 @@
   #__docusaurus {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
-    background-image: radial-gradient(circle at top left, hsla(var(--primary) / 0.08), transparent 55%), radial-gradient(circle at 75% 10%, hsla(var(--secondary) / 0.12), transparent 45%);
+    background-image:
+      radial-gradient(
+        circle at top left,
+        hsla(var(--primary) / 0.08),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 75% 10%,
+        hsla(var(--secondary) / 0.12),
+        transparent 45%
+      );
     background-attachment: fixed;
   }
 
-  [data-theme='dark'] #__docusaurus {
+  [data-theme="dark"] #__docusaurus {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
-    background-image: radial-gradient(circle at 20% 15%, hsla(var(--primary) / 0.12), transparent 45%),
-      radial-gradient(circle at 80% 5%, hsla(var(--secondary) / 0.08), transparent 42%);
+    background-image:
+      radial-gradient(
+        circle at 20% 15%,
+        hsla(var(--primary) / 0.12),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 80% 5%,
+        hsla(var(--secondary) / 0.08),
+        transparent 42%
+      );
     background-attachment: fixed;
   }
-
 
   h1,
   h2,
@@ -155,12 +179,20 @@
 
   .navbar__item-get_started {
     @apply inline-flex items-center justify-center rounded-full text-sm font-medium text-primary-foreground shadow-glow px-5 py-2 transition-all mr-2;
-    background: linear-gradient(135deg, hsla(var(--primary) / 1) 0%, hsla(var(--primary) / 0.8) 100%);
+    background: linear-gradient(
+      135deg,
+      hsla(var(--primary) / 1) 0%,
+      hsla(var(--primary) / 0.8) 100%
+    );
   }
 
   .navbar__item-get_started:hover {
     @apply translate-y-0.5 shadow-lg;
-    background: linear-gradient(135deg, hsla(var(--primary) / 0.92) 0%, hsla(var(--primary) / 0.72) 100%);
+    background: linear-gradient(
+      135deg,
+      hsla(var(--primary) / 0.92) 0%,
+      hsla(var(--primary) / 0.72) 100%
+    );
     box-shadow: 0 18px 35px -18px hsla(var(--primary) / 0.65);
     color: hsl(var(--primary-foreground));
   }
@@ -292,12 +324,12 @@
   @apply list-decimal;
 }
 
-.tabs-container>ul.tabs {
+.tabs-container > ul.tabs {
   @apply mb-0;
   @apply ml-0;
 }
 
-.tabs-container>div {
+.tabs-container > div {
   /* rounded bottom corners */
   @apply rounded-b-lg p-4 border border-border/70 dark:border-border/60 bg-background dark:bg-card;
 
@@ -342,12 +374,12 @@
   border-bottom: 2px solid hsla(var(--primary) / 0.9);
 }
 
-[data-theme='dark'] .tabs__item {
+[data-theme="dark"] .tabs__item {
   background: hsla(var(--card) / 0.55);
   color: hsl(var(--muted-foreground));
 }
 
-[data-theme='dark'] .tabs__item--active {
+[data-theme="dark"] .tabs__item--active {
   background: hsl(var(--card));
   border-color: hsla(var(--border) / 0.7);
   color: hsl(var(--foreground));
@@ -357,11 +389,13 @@
   border-bottom: 2px solid hsla(var(--primary) / 0.9);
 }
 
-
-
 footer.footer--dark {
   position: relative;
-  background-image: linear-gradient(135deg, #011d50 0%, #093e9f 100%) !important;
+  background-image: linear-gradient(
+    135deg,
+    #011d50 0%,
+    #093e9f 100%
+  ) !important;
   background-color: #011d50 !important;
   color: rgba(255, 255, 255, 0.92);
   box-shadow: 0 -18px 48px -32px rgba(1, 29, 80, 0.6);
@@ -390,15 +424,15 @@ footer.footer--dark .footer__link-item:hover {
   display: none !important;
 }
 
-.docs-doc-id-ask main>.container {
+.docs-doc-id-ask main > .container {
   padding: 0 !important;
 }
 
-.docs-doc-id-ask article>nav {
+.docs-doc-id-ask article > nav {
   display: none !important;
 }
 
-.docs-doc-id-ask main>.container>.row>.col {
+.docs-doc-id-ask main > .container > .row > .col {
   max-width: 100% !important;
 }
 

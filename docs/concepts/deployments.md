@@ -21,7 +21,6 @@ By default, using the `affordable` mode, Defang will deprovision your existing s
 In [Defang BYOC](./defang-byoc.md), Defang uses your cloud provider account to build and store your images. In [Defang Playground](./defang-playground.md), we build and store your images for you.
 :::
 
-
 ### Deployment Modes
 
 As mentioned above, Defang offers different [deployment modes](/docs/concepts/deployment-modes): `affordable`, `balanced`, and `high_availability`. You can switch the modes using the `--mode` CLI flag.

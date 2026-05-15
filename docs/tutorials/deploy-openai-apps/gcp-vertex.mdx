@@ -2,8 +2,9 @@
 title: GCP Vertex AI
 description: Deploy OpenAI Apps to GCP Vertex AI using Defang.
 ---
-import React from 'react';
-import {useColorMode} from '@docusaurus/theme-common';
+
+import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 # Deploy OpenAI Apps to GCP Vertex AI
 
@@ -66,6 +67,7 @@ We recommend generating a random secret for authentication with the gateway:
 ```bash
 defang config set OPENAI_API_KEY --random
 ```
+
 :::
 
 ---
@@ -115,12 +117,11 @@ Ensure you have the necessary permissions to access the model you intend to use.
 **Choosing the Right Model**
 
 - For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`). [See available Vertex AI models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
-:::
+  :::
 
 Alternatively, Defang supports [model mapping](/docs/concepts/managed-llms/openai-access-gateway/#model-mapping) through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to
 the closest matching one on the target platform. If no such match can be found, it can fallback onto a known existing model (e.g. `ai/mistral`). These environment
 variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
-
 
 ## Complete Example Compose File
 
@@ -155,11 +156,11 @@ services:
 
 ## Environment Variable Matrix
 
-| Variable           | GCP Vertex AI |
-|--------------------|---------------|
-| `GCP_PROJECT_ID`    | Required      |
-| `REGION`            | Required      |
-| `MODEL`             | Vertex model ID or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
+| Variable         | GCP Vertex AI                                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `GCP_PROJECT_ID` | Required                                                                                                                |
+| `REGION`         | Required                                                                                                                |
+| `MODEL`          | Vertex model ID or Docker model name, for example `publishers/meta/models/llama-3.3-70b-instruct-maas` or `ai/llama3.3` |
 
 ---
 

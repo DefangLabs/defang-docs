@@ -21,7 +21,7 @@ authors: defang_team
 
 April flew by with big momentum at Defang. From deeper investments in the **Model Context Protocol** (MCP), to deploying LLM-based inferencing apps, to live demos of **Vibe Deploying**, we're making it easier than ever to go from idea to cloud.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## MCP + Vibe Deploying
 

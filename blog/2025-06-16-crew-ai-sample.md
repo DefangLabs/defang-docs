@@ -15,7 +15,7 @@ If this sounds familiar (or if you're dreading the prospect of dealing with it),
 You can [find it here](https://github.com/DefangSamples/sample-crew-django-redis-postgres-template).
 :::
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## A Demo in 60 Seconds
 
@@ -25,11 +25,11 @@ Imagine you're building a system. It might use multiple LLM calls. It might do c
 
 ## Architecture at a Glance
 
-Behind the scenes, the workflow is clean and powerful. The browser connects via [WebSockets to our app using Django Channels](https://channels.readthedocs.io/en/latest/deploying.html#http-and-websocket). Heavy work is pushed to a [Celery worker](https://docs.celeryq.dev/en/stable/). That worker generates an [embedding](https://en.wikipedia.org/wiki/Embedding_(machine_learning)), checks [Postgres](https://www.postgresql.org/) with [pgvector](https://github.com/pgvector/pgvector) for a match, and either returns the summary or, if there’s no hit, fires up a [CrewAI agent](https://www.crewai.com/) to generate one. Every update streams back through [Redis](https://redis.io/) and Django Channels so users get progress in real time.
+Behind the scenes, the workflow is clean and powerful. The browser connects via [WebSockets to our app using Django Channels](https://channels.readthedocs.io/en/latest/deploying.html#http-and-websocket). Heavy work is pushed to a [Celery worker](https://docs.celeryq.dev/en/stable/). That worker generates an [embedding](<https://en.wikipedia.org/wiki/Embedding_(machine_learning)>), checks [Postgres](https://www.postgresql.org/) with [pgvector](https://github.com/pgvector/pgvector) for a match, and either returns the summary or, if there’s no hit, fires up a [CrewAI agent](https://www.crewai.com/) to generate one. Every update streams back through [Redis](https://redis.io/) and Django Channels so users get progress in real time.
 
 <img src="/img/crew-ai-sample/arch.png" alt="Architecture" style={{ boxShadow: "none", borderRadius: "0", width: "100%", maxWidth: "650px", height: "auto" }} />
 
-Durable state lives in Postgres and Redis. Model services ([LLMs](https://en.wikipedia.org/wiki/LLM) and embeddings) are fully swappable, so you can upgrade to different models in the cloud or localize with the [Docker Model Runner](https://docs.docker.com/compose/how-tos/model-runner/) without rewriting the full stack. 
+Durable state lives in Postgres and Redis. Model services ([LLMs](https://en.wikipedia.org/wiki/LLM) and embeddings) are fully swappable, so you can upgrade to different models in the cloud or localize with the [Docker Model Runner](https://docs.docker.com/compose/how-tos/model-runner/) without rewriting the full stack.
 
 ## Under the Hood: The Services
 
@@ -51,7 +51,7 @@ The Celery worker is where the magic happens. It takes requests off the queue, g
 
 ### LLM and Embedding Services
 
-Thanks to Docker Model Runner, the LLM and embedding services run as containerized, OpenAI-compatible HTTP endpoints. Want to switch to a different model? Change a single line in your compose file. Environment variables like `LLM_URL` and `EMBEDDING_MODEL` are injected for you—no secret sharing or hard-coding required. 
+Thanks to Docker Model Runner, the LLM and embedding services run as containerized, OpenAI-compatible HTTP endpoints. Want to switch to a different model? Change a single line in your compose file. Environment variables like `LLM_URL` and `EMBEDDING_MODEL` are injected for you—no secret sharing or hard-coding required.
 
 ### CrewAI Workflows
 

@@ -1,6 +1,19 @@
 ---
 title: May 2024 Defang Compose Update
-tags: [Cloud, NoDevOps, BYOC, Playground, Load Testing, ACME, Managed Redis, Kaniko, Postgres, ECS, Defang Compose Update]
+tags:
+  [
+    Cloud,
+    NoDevOps,
+    BYOC,
+    Playground,
+    Load Testing,
+    ACME,
+    Managed Redis,
+    Kaniko,
+    Postgres,
+    ECS,
+    Defang Compose Update,
+  ]
 authors: defang_team
 ---
 
@@ -8,8 +21,8 @@ authors: defang_team
 
 Hey folks! We're back with another exciting update about Defang. Our team has been working hard to bring you new features and improvements so you can get deploying faster. Here's a rundown of what we've been up to this month:
 
+{/_ truncate _/}
 
-{/* truncate */}
 ## Samples, samples, samples!
 
 We've been cranking out samples like there's no tomorrow. We've published samples to get you up and running with FastAPI, Elysia, Angular, React, Svelte, Sveltekit, Sails.js, Phoenix, and more. You can filter through them on the [Defang homepage](https://defang.io/#deploy). Check out our video about all the [new samples and functionality](https://www.youtube.com/watch?v=8wIU_af-sX8).
@@ -24,7 +37,6 @@ If you look through our [GitHub organization](https://github.com/DefangLabs), yo
 
 ![screenshot of github UI pointing towards template button](https://github.com/DefangLabs/defang-docs/assets/910895/97d33d90-43b9-499a-b139-e114b701adcb)
 
-
 Not only will that create a new repo based on the sample in your account, but if you've used Defang before (and accepted the Terms and Conditions) it will automatically deploy it to the playground so you can start playing with Defang immediately.
 
 ## ACME for BYOD
@@ -33,13 +45,13 @@ We’re excited to announce that ACME support is now available for Bring Your Ow
 
 ## Warnings for Stateful Services
 
-To help you avoid potential pitfalls, we’ve added warnings against deploying stateful services with Defang, since you shouldn't actually be deploying anything stateful with Defang. For example, we'll warn you if you try to deploy services with images like `postgres:<version>`, `redis:<version>`, `minio:<version>`, etc. 
+To help you avoid potential pitfalls, we’ve added warnings against deploying stateful services with Defang, since you shouldn't actually be deploying anything stateful with Defang. For example, we'll warn you if you try to deploy services with images like `postgres:<version>`, `redis:<version>`, `minio:<version>`, etc.
 
 In the near future we will be offering ways to run some stateful services using cloud providers' managed offerings. For example Redis, Postgres, and S3. Speaking of which...
 
 ## Managed Redis!
 
-Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition. 
+Redis is such a versatile tool that can help with so many different use cases. So we've introduced Managed Redis! You can now specify the Redis image in your `compose.yaml` file and indicate that you want it managed by your cloud provider using `x-defang-redis: true` in your service definition.
 
 ## Load Testing
 
@@ -59,7 +71,7 @@ Building on the momentum of Managed Redis, we’re introducing Managed Postgres.
 
 ### BYOC ECS Lifecycle Events
 
-Defang runs your services with ECS, and we're working on making it clearer what's happening under the hood. 
+Defang runs your services with ECS, and we're working on making it clearer what's happening under the hood.
 
 ---
 

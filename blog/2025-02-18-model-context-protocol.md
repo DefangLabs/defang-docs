@@ -13,7 +13,7 @@ tags:
     MCP,
     Model Context Protocol,
     Chatbot,
-    Docker
+    Docker,
   ]
 authors: defang_team
 ---
@@ -24,7 +24,7 @@ Anthropic recently unveiled the [Model Context Protocol](https://www.anthropic.
 
 However, to put such containerized AI applications into production, you need to be able to not only test locally, but also easily deploy the application to the cloud. This is what Defang enables. In this blog and the accompanying [sample](https://github.com/DefangLabs/samples/tree/main/samples/mcp), we show how to build a sample AI application using one of the reference MCP Servers, run and test it locally using Docker, and when ready, to easily deploy it to the cloud of your choice (AWS, GCP, or DigitalOcean) using Defang.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## Sample Model Context Protocol Time Chatbot Application
 
@@ -39,8 +39,8 @@ Let’s go over the structure of the application in a local environment.
 ### General Overview
 
 1. There are two containerized services, Service 1 and Service 2, that sit on the local machine.
-    - Service 1 contains a custom-built web server that interacts with an MCP Client.
-    - Service 2 contains an MCP Server from Docker as a base image for the container, and a custom-built MCP Client we created for interacting with the MCP Server.
+   - Service 1 contains a custom-built web server that interacts with an MCP Client.
+   - Service 2 contains an MCP Server from Docker as a base image for the container, and a custom-built MCP Client we created for interacting with the MCP Server.
 2. We have a browser on our local machine, which interacts with the web server in Service 1.
 3. The MCP Server in Service 2 is able to access tools from either a cloud or on our local machine. This configuration is included as a part of the Docker MCP image.
 4. The MCP Client in Service 2 interacts with the Anthropic API and the web server.
@@ -78,6 +78,7 @@ The base image for Service 1 is the `node:bookworm-slim` image. We construct the
 The base image for Service 2 is the Docker `mcp/time` image. Since both the MCP Client and Server run in a virtual environment, we activate a `venv` command in the Dockerfile for Service 2 and create a `run.sh` shell script that runs the file containing the MCP Client and Server connection code. We then add the shell script as an entry point command for the container.
 
 ### Compose File
+
 To define Services 1 and 2 as Docker containers, we’ve written a `compose.yaml` file in the root directory, as shown below.
 
 ```yaml

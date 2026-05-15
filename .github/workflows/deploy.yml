@@ -83,7 +83,6 @@ jobs:
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           cname: docs.defang.io
 
-
       # Notify docs chatbot of new docs with curl command
       - name: Notify docs chatbot of new docs
         run: |

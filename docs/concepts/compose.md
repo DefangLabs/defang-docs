@@ -18,6 +18,7 @@ You can create a `compose.yaml` file in the root of your project, or use the [`d
 When you run `defang compose up`, Defang will read your `compose.yaml` file and [deploy](./deployments.md) the services named in that file to the cloud.
 
 ## Example of a Compose File
+
 Here is a basic `compose.yaml` file that contains all the required properties for deployment in Defang.
 
 ```yaml
@@ -34,9 +35,11 @@ services:
 ```
 
 ## Compose Top-level Properties
+
 Here are a list of top-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
 ### `services`
+
 (Required)
 
 The services defined in your application.
@@ -52,6 +55,7 @@ Defang identifies a service based on your username, project name, and the servic
 :::
 
 ### `networks`
+
 (Optional)
 
 The networks defined in your application. This is commonly added together with a [service-level `networks`](#networks-1) property.
@@ -64,6 +68,7 @@ networks:
 See our [Networking](/docs/concepts/networking) page for more.
 
 ### `volumes`
+
 (Not yet supported)
 
 The volume mounts for a container, reusable across services. This feature is not currently supported by Defang.
@@ -78,53 +83,60 @@ Defang does not support the `secrets` top-level property. Please read our [Confi
 :::
 
 ## Compose Service-level Properties
+
 Here are a list of service-level properties of the [Compose specification](https://docs.docker.com/compose/compose-file/) that Defang supports when writing a `compose.yaml` file.
 
 :::tip
 Service-level means inside your `service`. A service-level property called `build` would look like:
+
 ```yaml
 service:
   build: …
 ```
 
 Note that in your Compose file, you will need a top-level property called `services` to contain all of your services. For example:
+
 ```yaml
 services:
   service:
     build: …
 ```
+
 :::
 
 ### `build`
+
 (Required, unless `image` is defined)
 
 The [build configuration](https://github.com/compose-spec/compose-spec/blob/main/build.md). This property describes how to create an OCI container for this service.
 
 ```yaml
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+build:
+  context: .
+  dockerfile: ./Dockerfile
 ```
 
 ### `image`
+
 (Required, unless `build` is defined)
 
 [This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#image) describes the image from which your container should start.
 
 ```yaml
-    image: nginx:latest
+image: nginx:latest
 ```
 
 ### `ports`
+
 (Optional, but required if you want to access the service from outside the container)
 
 The ports to expose. The default port mode is `ingress`.
 
 ```yaml
-    ports:
-      - mode: ingress
-        target: 80
-        published: 80
+ports:
+  - mode: ingress
+    target: 80
+    published: 80
 ```
 
 :::info
@@ -132,56 +144,65 @@ Defang ignores `published` ports in production. As such, it is common to make `t
 :::
 
 ### `command`
+
 (Optional)
 
 The command which will be run to start your service. If left out, the command from the Docker image will be used.
 
 ```yaml
-    command: nginx -g 'daemon off;'
+command: nginx -g 'daemon off;'
 ```
 
 ### `deploy`
+
 (Optional)
 
 The [Deploy Specification](https://github.com/compose-spec/compose-spec/blob/main/deploy.md) describes the runtime constraints and requirements for how your services will be deployed and managed across different environments (e.g. memory reservations, replicas, number of CPUs, etc.).
 
 ```yaml
-    deploy:
-      replicas: 1
-      reservations:
-        cpus: '0.5'
-        memory: 256M
+deploy:
+  replicas: 1
+  reservations:
+    cpus: "0.5"
+    memory: 256M
 ```
 
 ### `depends_on`
+
 (Limited support)
 
 This property describes startup dependencies between services. This feature currently has limited supported by Defang: dependency on a managed service does not wait for the managed service provisioning to complete.
 
 ```yaml
-    # depends_on:
-    #   - db
+# depends_on:
+#   - db
 ```
 
 ### `environment`
+
 (Optional)
 
 The environment variables to set.
+
 ```yaml
-    environment:
-      DATABASE_USER: someuser
+environment:
+  DATABASE_USER: someuser
 ```
+
 :::info
 For sensitive environment variables (or secret values), you should list the variable's name with a blank or `null` value, and then securely set their actual value with `defang config` in the CLI. See our [Configuration page](/docs/concepts/configuration) for more.
 
- For example:
+For example:
+
 ```yaml
-  - DATABASE_USER=someuser # env var loaded with this literal value
-  - DATABASE_PASSWORD # env var loaded using defang config
+- DATABASE_USER=someuser # env var loaded with this literal value
+- DATABASE_PASSWORD # env var loaded using defang config
 ```
+
 :::
 
 ### `healthcheck`
+
 (Optional, but required for healthchecks on services with a published port)
 
 [This property](https://github.com/compose-spec/compose-spec/blob/main/05-services.md#healthcheck) describes a check that will be run to determine whether or not a service's containers are "healthy". It works in the same way, and has the same default values, as the [HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck) set by the service's Docker image. Your Compose file can override the values set in the Dockerfile.
@@ -193,59 +214,63 @@ When using Defang, your Compose file must have a healthcheck if you want to expo
 :::
 
 ```yaml
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
-      interval: 30s
-      timeout: 90s
-      retries: 3
+healthcheck:
+  test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+  interval: 30s
+  timeout: 90s
+  retries: 3
 ```
 
 or
 
 ```yaml
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "http://localhost:8080/"]
-      interval: 30s
-      timeout: 90s
-      retries: 3
+healthcheck:
+  test: ["CMD", "wget", "--spider", "http://localhost:8080/"]
+  interval: 30s
+  timeout: 90s
+  retries: 3
 ```
 
 ### `networks`
+
 (Optional)
 
 The service network configuration. By default, Compose will add services to the `default` network, which has external connectivity.
 You can also add services to private networks. To avoid warnings, you should add them to the [top-level `networks`](#networks) property as well.
 
 ```yaml
-    networks:
-      default: # when not specified, services are assigned to the "default" network
+networks:
+  default: # when not specified, services are assigned to the "default" network
 ```
 
 You can also assign an alias for a network by using `aliases`, as seen below:
+
 ```yaml
-    networks:
-      default:
-        aliases:
-          - app
+networks:
+  default:
+    aliases:
+      - app
 ```
 
 See our [Networking](/docs/concepts/networking) page for more.
 
 ### `restart`
+
 (Optional, but highly recommended)
 
 The restart mode for a container. Defaults to `unless-stopped` unless otherwise specified.
 
 ```yaml
-    restart: unless-stopped
+restart: unless-stopped
 ```
 
 ### `volumes`
+
 (Not yet supported)
 
 The volume mounts for a container, specific to a service. This feature is not currently supported by Defang.
 
 ```yaml
-    # volumes:
-    #  - "./backend:/app"
+# volumes:
+#  - "./backend:/app"
 ```

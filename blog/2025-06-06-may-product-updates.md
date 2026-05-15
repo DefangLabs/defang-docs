@@ -21,7 +21,7 @@ authors: defang_team
 
 May was a big month at Defang. We shipped support for managed LLMs in Playground, added MongoDB support on AWS, improved the Defang MCP Server, and dropped new AI samples to make deploying faster than ever.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## 🚀 Managed LLMs in Playground
 

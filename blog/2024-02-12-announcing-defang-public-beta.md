@@ -13,7 +13,7 @@ And so, today with our Public Beta, we are addressing this request. With todayâ€
 
 You can learn more about Defang [here](/docs/intro). Also check out our [tutorials](/docs/tutorials), [samples](https://defang.io/samples), and [FAQ](/docs/category/faq) to know more.
 
-{/* truncate */}
+{/_ truncate _/}
 
 **Try the Public Beta!**
 

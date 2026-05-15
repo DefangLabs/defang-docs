@@ -5,7 +5,7 @@ description: Defang Playground allows you to get a feel for how Defang works wit
 
 # Defang Playground
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC) which you can read about in more depth [here](./defang-byoc). We also provide Defang Playground, but it is only intended for non-production workloads so you can get a feel for how Defang works.
+Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your _own_ cloud accounts. We refer to this as bring-your-own-cloud (BYOC) which you can read about in more depth [here](./defang-byoc). We also provide Defang Playground, but it is only intended for non-production workloads so you can get a feel for how Defang works.
 
 Defang Playground is a free tier that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
 
@@ -23,8 +23,8 @@ When you deploy a service to Defang Playground, it will be assigned a domain und
 
 ### Max Resources
 
-* Projects: 1
-* Services: 4
-* CPUs: 2
-* Memory: 1GiB
-* Replicas: 1
+- Projects: 1
+- Services: 4
+- CPUs: 2
+- Memory: 1GiB
+- Replicas: 1

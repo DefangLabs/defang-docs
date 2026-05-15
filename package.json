@@ -14,7 +14,10 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.1",
@@ -48,7 +51,10 @@
     "@docusaurus/types": "^3.9.1",
     "@types/react": "^18.2.29",
     "autoprefixer": "^10.4.21",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
     "postcss": "^8.5.10",
+    "prettier": "^3.8.3",
     "tailwindcss": "^3.4.13",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "~5.2.2"
@@ -67,5 +73,8 @@
   },
   "engines": {
     "node": ">=18.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,md,mdx,json,css}": "prettier --write"
   }
 }

@@ -21,7 +21,7 @@ Over the past few decades, the software industry has gone through multiple major
 
 This is not a small adjustment. It is the foundation of how the next generation of software will be trusted and adopted.
 
-{/* truncate */}
+{/_ truncate _/}
 
 ## **Why the Agentic Era Changes the Rules**
 
