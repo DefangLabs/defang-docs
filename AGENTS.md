@@ -15,3 +15,12 @@ Write prose in Markdown or MDX with frontmatter; use kebab-case filenames such a
 ## External Dependencies & Prebuild Notes
 
 The prebuild step shells into `../defang/src/cmd/gendocs` (requires Go) and ingests `../samples/samples`. Keep those repositories updated locally, or vendor them into `defang-docs/defang` and `defang-docs/samples` when working in CI or preview branches.
+
+## Formatting
+
+This project uses Prettier for code formatting with a pre-commit hook (Husky + lint-staged).
+
+- Agents MUST run `npx prettier --write <file>` on any file they create or edit.
+- Agents MUST NOT use `--no-verify` on commits.
+- The pre-commit hook runs Prettier automatically on staged files, but agents should format before staging to catch issues early.
+- Run `npm run format:check` to verify all files pass formatting.
