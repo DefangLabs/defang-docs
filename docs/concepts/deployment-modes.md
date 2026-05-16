@@ -11,6 +11,14 @@ Defang provides three deployment modes: `affordable`, `balanced`, and `high_avai
 * **Balanced**: This mode serves as a pre-production environment where applications are tested in conditions that closely mimic production. It helps in identifying issues that might not be apparent in the development environment.
 * **High Availability**: This mode is used for live deployments. It involves optimized configurations for performance, security, and reliability. Resource allocations are typically higher, and debugging tools are minimized to ensure stability.
 
+## Tier Requirements
+
+| Mode | Required Plan |
+|-|-|
+| Affordable | Available on all Navigator tiers (Starter, Pro, Enterprise) |
+| Balanced | Requires Pro ($49/mo) or Enterprise |
+| High Availability | Requires Enterprise ($499/mo) |
+
 ## Deployment Mode Comparison
 
 | Feature | Affordable | Balanced | High Availability |

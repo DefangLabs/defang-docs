@@ -7,6 +7,10 @@ description: Defang uses AI to help you generate a starting point for your cloud
 
 Defang includes an AI-driven agent that translates natural language prompts to an outline for your project that you can then refine. The AI agent is available through the [Defang CLI](/docs/intro/getting-started#install-the-defang-cli).
 
+:::info[Plan Availability]
+Starter plan users have a limited number of Compose generations per month. Pro ($49/mo) and Enterprise plans include unlimited generations.
+:::
+
 We are working on expanding the range of supported prompts and improving the accuracy of the AI agent. If you have any feedback or suggestions, please let us know by [opening an issue](https://github.com/DefangLabs/defang/issues/new).
 
 :::info
