@@ -111,6 +111,29 @@ Defang offers integration with managed, cloud-native large language model servic
 
 When using [Managed LLMs](/docs/concepts/managed-llms/managed-language-models.md) on Azure, Defang provisions an [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/) (Cognitive Services) account in your subscription and creates a [model deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource) for each LLM-enabled service. Defang rewrites the relevant environment variables (for example, the OpenAI base URL and API key) so your service talks to the managed Azure OpenAI endpoint without code changes.
 
+## Custom Domains (BYOD)
+
+Defang supports [bringing your own domain](/docs/concepts/domains#bring-your-own-domain) on Azure. To attach a custom domain to a service, set `domainname` in your compose file, deploy with `defang compose up`, then run `defang cert generate` to issue a TLS certificate.
+
+Under the hood, Defang uses [Azure Container Apps managed certificates](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates), which are free, auto-renewing, and validated by Azure. Because the Azure provider does not yet manage Azure DNS zones on your behalf, you provide the DNS records yourself. `defang cert generate` prints the exact values to add at each step, waits for them to propagate, and the command is idempotent — re-running it after a partial failure picks up where it left off.
+
+#### Subdomains (e.g. `app.example.com`)
+
+You'll be prompted for two records up front:
+
+- A `CNAME` for your hostname pointing at the Container App FQDN
+- A `TXT` record at `asuid.<hostname>` containing the Container App's custom-domain verification ID
+
+Once both resolve, Defang registers the hostname on the Container App, issues the managed certificate via CNAME validation, and binds it with SNI enabled.
+
+#### Apex domains (e.g. `example.com`)
+
+Apex (root) domains can't have a CNAME ([RFC 1034](https://www.rfc-editor.org/rfc/rfc1034)), so Azure rejects CNAME validation and Defang falls back to TXT validation. This means a **second DNS prompt** after the initial CNAME + `asuid` records are in place:
+
+- A `TXT` record at `_dnsauth.<hostname>` containing a validation token that Azure only generates after the certificate request is submitted
+
+Defang prints this second record once Azure returns the token, then waits for it to propagate before completing cert issuance and binding.
+
 ## Future Improvements
 
-The Azure provider is in beta and is actively being expanded. Features not yet supported on Azure — including custom domains, managed object storage, and managed MongoDB — are tracked for future releases. Stay tuned for updates, and please file issues or feature requests on [GitHub](https://github.com/DefangLabs/defang/issues) to help us prioritize.
+The Azure provider is in beta and is actively being expanded. Features not yet supported on Azure — including managed object storage and managed MongoDB — are tracked for future releases. Stay tuned for updates, and please file issues or feature requests on [GitHub](https://github.com/DefangLabs/defang/issues) to help us prioritize.
