@@ -41,7 +41,7 @@ services:
 networks:
   default:
   private:
-    internal: true # no egress
+    internal: false # allow egress (the default)
 ```
 
 ### Public Services
