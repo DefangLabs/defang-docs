@@ -104,6 +104,8 @@ The [build configuration](https://github.com/compose-spec/compose-spec/blob/main
     build:
       context: .
       dockerfile: ./Dockerfile
+      args:
+        NEXT_PUBLIC_VERSION: "1.2.3"
 ```
 
 ### `image`
