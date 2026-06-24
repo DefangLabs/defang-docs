@@ -23,6 +23,10 @@ Defang offers multiple [deployment modes](/docs/concepts/deployment-modes). You 
 $ defang compose up --mode=production
 ```
 
+:::tip
+Rather than passing `--mode` (and `--provider`) on every deploy, configure a [stack](/docs/concepts/stacks), which records the provider, region, and mode for a deployment. The flags still work and override the stack when needed.
+:::
+
 ### Development Mode (Default)
 
 The default deployment mode is `development`. This is the In this mode, the existing services will be deprovisioned before your new service will be spun up. This means that there will be a short downtime while the new service is being provisioned.

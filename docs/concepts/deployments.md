@@ -24,7 +24,7 @@ In [Defang BYOC](./defang-byoc.md), Defang uses your cloud provider account to b
 
 ### Deployment Modes
 
-As mentioned above, Defang offers different [deployment modes](/docs/concepts/deployment-modes): `affordable`, `balanced`, and `high_availability`. You can switch the modes using the `--mode` CLI flag.
+As mentioned above, Defang offers different [deployment modes](/docs/concepts/deployment-modes): `affordable`, `balanced`, and `high_availability`. You can switch the modes using the `--mode` CLI flag, though the recommended approach is to configure a [stack](/docs/concepts/stacks), which records the provider, region, and mode for a deployment.
 
 :::warning
 Workloads with GPUs do not support zero downtime deployments. If you have a workload with a GPU, you will experience downtime during updates.
