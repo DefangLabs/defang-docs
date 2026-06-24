@@ -17,6 +17,10 @@ You can select a built-in recipe with the `--mode` CLI flag, which defaults to `
 defang compose up --mode=high_availability
 ```
 
+:::tip
+The recommended way to pin a recipe is to configure a [stack](./stacks.md). A stack records the provider, region, and mode for a deployment, so you don't have to pass `--provider` or `--mode` on every command.
+:::
+
 For example, on AWS, the built-in recipes set values like log retention (1 day for `affordable`, 7 for `balanced`, 30 for `high_availability`), the Fargate capacity provider (spot vs. on-demand), the number of availability zones, the NAT gateway strategy, and whether managed databases use burstable or memory-optimized classes.
 
 ## Built-in Recipes
