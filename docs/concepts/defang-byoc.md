@@ -5,7 +5,11 @@ description: Defang allows you deploy services, defined as containers, to your o
 
 # Defang BYOC
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC). We also provide Defang Playground, but it is only intended for non-production workloads so you can get a feel for how Defang works.
+Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC).
+
+:::info[Pricing]
+BYOC is available on all tiers (Starter, Pro, Enterprise). The Starter tier (free) includes 1 cloud account. Pro ($49/mo) includes 1 cloud account with additional deployment modes. Enterprise ($499/mo) includes 3 cloud accounts with fleet management capabilities.
+:::
 
 Defang provisions and configures the necessary native managed services from your cloud provider to get your services up and running. For example, on AWS, Defang will configure an [ALB](https://aws.amazon.com/elasticloadbalancing/application-load-balancer/), set up [ECR](https://aws.amazon.com/ecr/), configure [CloudWatch](https://aws.amazon.com/cloudwatch/?nc2=type_a), and run your service on [ECS](https://aws.amazon.com/ecs/?nc2=type_a) and more. The following lists the existing and planned support for cloud providers.
 
@@ -20,7 +24,7 @@ The Defang CLI can be configured to deploy to a cloud provider either by using t
 
 ```bash
 # Supported provider values: auto, aws, azure, defang, digitalocean, gcp
-# Default is auto, which deploys to the Defang Playground but warns if it detects cloud credentials
+# Default is auto, which uses detected cloud credentials when available
 $ defang compose up --provider=aws
 # or
 $ export DEFANG_PROVIDER=digitalocean
