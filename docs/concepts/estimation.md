@@ -67,7 +67,6 @@ defang compose up [--provider aws|azure|gcp|digitalocean] [--mode affordable|bal
 
 | Provider       | Estimation Support |
 |----------------|:------------------:|
-| Playground     |     ❌ |
 | AWS            |     ✅ |
 | Azure          |     ❌ |
 | DigitalOcean   |     ❌ |

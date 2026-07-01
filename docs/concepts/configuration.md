@@ -108,7 +108,6 @@ Please note that while Defang supports setting sensitive config, it does not sup
 
 | Provider       | Config Support |
 |----------------|:--------------:|
-| Playground     |     ✅ |
 | AWS            |     ✅ |
 | Azure          |     ✅ |
 | DigitalOcean   |     ✅ |

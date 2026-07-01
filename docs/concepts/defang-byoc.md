@@ -23,7 +23,7 @@ Defang does run the Defang build service to build your container images, which t
 The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
 
 ```bash
-# Supported provider values: auto, aws, azure, defang, digitalocean, gcp
+# Supported provider values: auto, aws, azure, digitalocean, gcp
 # Default is auto, which uses detected cloud credentials when available
 $ defang compose up --provider=aws
 # or

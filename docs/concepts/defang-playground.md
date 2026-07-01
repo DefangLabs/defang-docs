@@ -3,6 +3,10 @@ title: Defang Playground
 description: Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
 ---
 
+:::danger Deprecation Notice
+Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. If you have existing projects on Playground, please migrate them to your own cloud account. See the [migration guide](/docs/tutorials/deploy-to-your-cloud) for instructions.
+:::
+
 # Defang Playground
 
 :::note
