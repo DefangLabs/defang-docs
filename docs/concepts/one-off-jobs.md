@@ -138,6 +138,7 @@ One off jobs are deployed as temporary containers on the same infrastructure as 
 | Provider       | Release Task Support |
 |----------------|:--------------------:|
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

@@ -96,6 +96,7 @@ If you have created a service before a secret you can connect it by running the 
 Here are the different ways sensitive config values are stored depending on the provider you are using:
 
     * [AWS](/docs/providers/aws#secrets)
+    * [Azure](/docs/providers/azure#secrets)
     * [DigitalOcean](/docs/providers/digitalocean#secrets)
     * [GCP](/docs/providers/gcp#secrets)
 
@@ -108,5 +109,6 @@ Please note that while Defang supports setting sensitive config, it does not sup
 | Provider       | Config Support |
 |----------------|:--------------:|
 | AWS            |     ✅ |
+| Azure          |     ✅ |
 | DigitalOcean   |     ✅ |
 | GCP            |     ✅ |

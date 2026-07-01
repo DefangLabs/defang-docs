@@ -5,7 +5,11 @@ description: Defang allows you deploy services, defined as containers, to your o
 
 # Defang BYOC
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your _own_ cloud accounts. We refer to this as bring-your-own-cloud (BYOC).
+Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC).
+
+:::info[Pricing]
+BYOC is available on all tiers (Starter, Pro, Enterprise). The Starter tier (free) includes 1 cloud account. Pro ($49/mo) includes 1 cloud account with additional deployment modes. Enterprise ($499/mo) includes 3 cloud accounts with fleet management capabilities.
+:::
 
 Defang provisions and configures the necessary native managed services from your cloud provider to get your services up and running. For example, on AWS, Defang will configure an [ALB](https://aws.amazon.com/elasticloadbalancing/application-load-balancer/), set up [ECR](https://aws.amazon.com/ecr/), configure [CloudWatch](https://aws.amazon.com/cloudwatch/?nc2=type_a), and run your service on [ECS](https://aws.amazon.com/ecs/?nc2=type_a) and more. The following lists the existing and planned support for cloud providers.
 
@@ -19,7 +23,8 @@ Defang does run the Defang build service to build your container images, which t
 The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
 
 ```bash
-# Supported provider values: aws, defang, digitalocean
+# Supported provider values: auto, aws, azure, digitalocean, gcp
+# Default is auto, which uses detected cloud credentials when available
 $ defang compose up --provider=aws
 # or
 $ export DEFANG_PROVIDER=digitalocean
@@ -61,5 +66,11 @@ You can use the GCP Free Tier to try out Defang. Learn more about it [here](http
 ## Azure
 
 :::info
-We will be working on Azure support in the future. If you are interested in Azure support, please vote on [this issue](https://github.com/DefangLabs/defang/issues/57).
+The Defang Azure Provider is available for Public Preview.
+:::
+
+Please read the [Azure Provider](/docs/providers/azure) documentation for more details about how the Azure provider works and how to get started.
+
+:::tip[Azure Free Tier & Credits]
+You can use the Azure Free Tier to try out Defang. Learn more about it [here](https://azure.microsoft.com/en-us/free/). If you're an eligible startup, you can sign up for credits through [Microsoft for Startups](https://www.microsoft.com/en-us/startups).
 :::

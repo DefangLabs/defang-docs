@@ -9,4 +9,5 @@ Defang makes it easy to deploy your applications directly from your GitHub Actio
 
 There is a dedicated tutorial for deploying to each cloud provider:
 * [AWS](/docs/tutorials/deploying-from-github-actions/to-aws)
+* [Azure](/docs/tutorials/deploying-from-github-actions/to-azure)
 * [GCP](/docs/tutorials/deploying-from-github-actions/to-gcp).

@@ -35,7 +35,7 @@ Instead of manually adding more instances when traffic increases, an auto-scalin
 
 ### Example
 
-With Defang, users on the Pro plan or higher can enable service-level autoscaling in three steps:
+With Defang, users on the Pro plan ($49/mo) or higher can enable service-level autoscaling in three steps:
 
 1. Add the _**x-defang-autoscaling : true**_ extension to the service you want to autoscale.
 2. Remove any _**replicas**_ field in the _**deploy**_ mapping (if present).
@@ -69,6 +69,7 @@ Auto-scaling systems typically rely on:
 | Provider       | Auto-Scaling Support |
 |----------------|:--------------------:|
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

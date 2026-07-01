@@ -149,6 +149,7 @@ services:
 | Provider       | Railpack Support |
 |----------------|:----------------:|
 | AWS            |     ✅ |
+| Azure          |     ❌ |
 | DigitalOcean   |     ❌ |
 | GCP            |     ✅ |
 

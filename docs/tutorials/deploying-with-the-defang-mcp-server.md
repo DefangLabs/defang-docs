@@ -35,7 +35,7 @@ If you want to use AWS Access Keys, we recommend using `aws configure` to set th
 
 ### Step 3 - Deploy
 
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the IDE to execute.
+Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment
 
@@ -54,34 +54,48 @@ After signing in to your GCP account, select an existing project or [create a ne
 
 ### Step 2 - Setup Defang for GCP
 
-In your chat window, type `/defang.GCP_Setup` or select the corresponding prompt from your IDE’s options.
-
-![Trigger Prompt](/img/prompts/gcp-prompt.png)
-
-The [MCP argument](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) will require your GCP project ID you created in [Step 1](#step-1---collect-your-credentials-1).
-![GCP Project ID](/img/prompts/gcp-project-id.png)
+In your chat window, ask the AI assistant to set up Defang for GCP deployment, providing the GCP project ID you noted in [Step 1](#step-1---collect-your-credentials-1).
 
 ### Step 3 - Deploy
 
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the IDE to execute.
+Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment
 
-You can check the status of your depolyment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your GCP Dashboard.
+
+## Azure
+
+### Prerequisites
+
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [Azure Application Default Credentials](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+
+### Step 1 - Collect your credentials
+
+After signing in to your Azure account, select an existing subscription or [create a new one](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). Make sure billing is enabled. Then, note down the subscription ID for the next step.
+
+### Step 2 - Setup Defang for Azure
+
+In your chat window, ask the AI assistant to set up Defang for Azure deployment, providing the Azure subscription ID you noted in [Step 1](#step-1---collect-your-credentials-2).
+
+### Step 3 - Deploy
+
+Once the setup is complete, ask the AI assistant to deploy your project.
+
+### Step 4 - Inspect your deployment
+
+You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
 
 ## Playground
 
 ### Step 1 - Setting your provider
 
-In your chat window, type `/defang.Playground_Setup` or select the corresponding prompt from your IDE’s options.
-
-![Trigger Prompt](/img/prompts/playground-prompt.png)
-
-There are no arguments to this prompt.
+In your chat window, ask the AI assistant to set up Defang for Playground deployment.
 
 ### Step 2 - Deploy
 
-Once the prompt completes without errors, your chat input will be automatically populated with the deployment command for the LLM to execute.
+Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 3 - Inspect your deployment
 
