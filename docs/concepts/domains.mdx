@@ -15,22 +15,35 @@ To make your service accessible from the public internet with Defang-hosted doma
 
 ### Structure
 
-Defang-hosted domains use a structure that is based on your username and service name.
+When you deploy a publicly accessible service, Defang automatically provides you with domain names to access it.
 
 <Tabs>
   <TabItem value="playground" label="Playground" default>
-If you have a publicly accessible service, you will automatically receive a domain to access it. If you're deploying to the [Defang Playground](./defang-playground.md), your domain will be structured as follows:
+If you're deploying to the [Defang Playground](./defang-playground.md), you will receive:
 
+**Defang-hosted domain:**
 ```
 https://<username>-<service-name>--<port>.defang.dev
 ```
   </TabItem>
   <TabItem value="byoc" label="BYOC">
-If you're using [Defang BYOC](./defang-byoc.md), your domain will be:
+If you're using [Defang BYOC](./defang-byoc.md), you will receive **both**:
 
+**Defang-hosted domain:**
 ```
 https://<service-name>--<port>.<project-name>.<username>.defang.app
 ```
+
+**Cloud provider load balancer domain** (AWS example):
+```
+https://defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com
+```
+
+:::tip Choosing Between Domains
+- Use the **Defang-hosted domain** (`defang.app`) for convenience and simplicity
+- Use the **cloud provider domain** (e.g., AWS ELB) if you want to avoid dependency on Defang infrastructure
+- Both domains point to the same service and work identically
+:::
   </TabItem>
 </Tabs>
 
@@ -72,17 +85,43 @@ const service = new defang.DefangService("serviceName", {
 
 You can also bring your own domain to a Defang project. This allows you to use your own domain name to access your services, and varies a little bit depending on your setup.
 
-### BYOC or Defang Playground
+## DNS Management Options
 
-If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you will need to follow this flow:
+When bringing your own domain, you have two main approaches:
 
+### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)
+
+If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you have two choices:
+
+**A. Point directly to your custom domain:**
 1. Add the `domainname` to your service definition.
 2. Run `defang compose up` to deploy your project.
 3. Run `defang cert generate` to generate an SSL certificate. This command will provide instructions for where to point your domain's DNS before the certificate can be issued.
+4. **Note:** You will need to run `defang cert generate` again after each `defang compose up` to recreate SSL certificates.
 
-### BYOC
+**B. Use CNAME to Defang-hosted domain (Recommended for frequent deployments):**
+
+If you frequently deploy and tear down your services (e.g., for staging environments), you can avoid reconfiguring DNS each time by using a CNAME record:
+
+1. Don't add a `domainname` to your service definition.
+2. Run `defang compose up` to deploy your project. 
+3. Defang will provide you with a `defang.app` domain (e.g., `service-name--port.project-name.username.defang.app`) and an AWS load balancer domain (e.g., `defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com`).
+4. In your DNS provider, create a CNAME record pointing your custom domain to the `defang.app` domain or the AWS load balancer domain.
+5. You'll still need to run `defang cert generate` once to create the SSL certificate, but you won't need to update your DNS records on subsequent deployments.
+
+:::tip Managing Multiple Environments
+Use the `--project-name` flag or the `name:` field in your Compose file to create separate environments. For example, a project named "hello" with `--project-name hello-staging` would create a separate deployment, allowing you to maintain both production and staging environments simultaneously.
+:::
+
+### Option 2: Using Route 53 (AWS) - Automatic DNS Management
 
 If you are using [Defang BYOC](./defang-byoc.md) *and the DNS for your domain is hosted with your cloud provider* (i.e. a Hosted Zone in Route 53, if you're using AWS), all you need to do is specify the `domainname` in your service definition, as in the example below.
+
+**Benefits of Route 53:**
+- DNS records are automatically created and updated
+- SSL certificates are automatically provisioned and renewed
+- No need to run `defang cert generate` after each deployment
+- Ideal for environments that are frequently deployed and torn down
 
 :::warning
 For the time being, you can only use one domain per service.
