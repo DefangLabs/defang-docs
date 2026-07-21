@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.140f1172.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5131cb92.js" defer="defer"></script>
 <script src="/assets/js/main.43b11ab1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -2709,7 +2709,7 @@ environment:</p>
 <li><code>db</code> is shared PostgreSQL for auth, todos, and feedback.</li>
 <li><code>chat</code> is the managed model used by the coding agent, declared as a top-level
 <code>models:</code> entry; each cloud&#x27;s env file selects an explicit model — z.ai GLM 5
-on AWS Bedrock, Gemini 3.5 Flash on GCP Vertex AI.</li>
+on AWS Bedrock, Gemini 2.5 Flash on GCP Vertex AI.</li>
 </ul>
 <p>The <strong>admin console is served by the agent server, not the Next.js app</strong> — it
 lives outside the source tree the coding agent edits. Caddy routes <code>/admin</code> to
@@ -2760,7 +2760,7 @@ fallback for when no valid session is available.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-56">Deployment<a href="#deployment-56" class="hash-link" aria-label="Direct link to Deployment" title="Direct link to Deployment" translate="no">​</a></h3>
 <p>The same Compose project deploys to either cloud; each cloud&#x27;s env file selects
-an explicit managed model (z.ai GLM 5 on AWS, Gemini 3.5 Flash on GCP). The
+an explicit managed model (z.ai GLM 5 on AWS, Gemini 2.5 Flash on GCP). The
 first deployment creates managed PostgreSQL and can take about 20 minutes.
 Defang reports separate URLs for <code>app</code> and <code>dev</code>:</p>
 <ul>
@@ -2782,10 +2782,9 @@ in these committed files.</p>
 attached only to <code>dev</code>, never the public <code>app</code>; scope it down before adapting
 this demo for production.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="gcp-vertex-ai">GCP (Vertex AI)<a href="#gcp-vertex-ai" class="hash-link" aria-label="Direct link to GCP (Vertex AI)" title="Direct link to GCP (Vertex AI)" translate="no">​</a></h4>
-<p>The <code>gcp</code> env file selects <code>gemini-3.5-flash</code> on Vertex AI. Gemini 3.x is
-reachable through Vertex&#x27;s <strong>global</strong> endpoint and is not offered on-demand in
-every region, so deploy to a location that serves it. Provide the target project
-when deploying:</p>
+<p>The <code>gcp</code> env file selects <code>gemini-2.5-flash</code> on Vertex AI — a GA model that is
+broadly available on-demand across regions with no special configuration.
+Provide the target project when deploying:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">export GCP_PROJECT_ID=your-gcp-project</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up --stack gcp</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="aws-bedrock">AWS (Bedrock)<a href="#aws-bedrock" class="hash-link" aria-label="Direct link to AWS (Bedrock)" title="Direct link to AWS (Bedrock)" translate="no">​</a></h4>
 <p>The <code>aws</code> env file selects z.ai GLM 5 (<code>zai.glm-5</code>) on Bedrock. Enable model access
