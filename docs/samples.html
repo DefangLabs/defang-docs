@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.ef6115d9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.140f1172.js" defer="defer"></script>
 <script src="/assets/js/main.43b11ab1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -2708,8 +2708,8 @@ environment:</p>
 <li><code>dev</code> contains the source, Caddy, the Next.js dev server, and the Mastra agent.</li>
 <li><code>db</code> is shared PostgreSQL for auth, todos, and feedback.</li>
 <li><code>chat</code> is the managed model used by the coding agent, declared as a top-level
-<code>models:</code> entry with the <code>chat-default</code> alias, so Defang maps it to the
-cloud&#x27;s native inference — Gemini on GCP Vertex AI, Amazon Nova on AWS Bedrock.</li>
+<code>models:</code> entry; each cloud&#x27;s env file selects an explicit model — z.ai GLM 5
+on AWS Bedrock, Gemini 3.5 Flash on GCP Vertex AI.</li>
 </ul>
 <p>The <strong>admin console is served by the agent server, not the Next.js app</strong> — it
 lives outside the source tree the coding agent edits. Caddy routes <code>/admin</code> to
@@ -2759,8 +2759,8 @@ against PostgreSQL, so it works even while the app is down); the token is the
 fallback for when no valid session is available.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-56">Deployment<a href="#deployment-56" class="hash-link" aria-label="Direct link to Deployment" title="Direct link to Deployment" translate="no">​</a></h3>
-<p>The <code>chat</code> model is <code>chat-default</code>, so the same Compose project deploys to
-either cloud — Defang resolves it to that provider&#x27;s managed inference. The
+<p>The same Compose project deploys to either cloud; each cloud&#x27;s env file selects
+an explicit managed model (z.ai GLM 5 on AWS, Gemini 3.5 Flash on GCP). The
 first deployment creates managed PostgreSQL and can take about 20 minutes.
 Defang reports separate URLs for <code>app</code> and <code>dev</code>:</p>
 <ul>
@@ -2775,18 +2775,20 @@ stack files select different non-secret interpolation files:</p>
 <p>| Stack | Environment file | Publish permission |
 | | <code>aws</code> | <code>.env.aws</code> | <code>AdministratorAccess</code> |
 | <code>gcp</code> | <code>.env.gcp</code> | <code>roles/owner</code> |</p>
-<p>The two env files are the place to customize the managed-model alias and other
+<p>The two env files are the place to customize the managed model and other
 cloud-specific scalar settings. Secrets still belong in <code>defang config</code>, never
 in these committed files.</p>
 <p>Self-publishing a full stack is administrator-equivalent. That permission is
 attached only to <code>dev</code>, never the public <code>app</code>; scope it down before adapting
 this demo for production.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="gcp-vertex-ai">GCP (Vertex AI)<a href="#gcp-vertex-ai" class="hash-link" aria-label="Direct link to GCP (Vertex AI)" title="Direct link to GCP (Vertex AI)" translate="no">​</a></h4>
-<p><code>chat-default</code> resolves to Gemini on Vertex AI. The <code>gcp</code> stack selects
-<code>europe-west2</code>; provide the target project when deploying:</p>
+<p>The <code>gcp</code> env file selects <code>gemini-3.5-flash</code> on Vertex AI. Gemini 3.x is
+reachable through Vertex&#x27;s <strong>global</strong> endpoint and is not offered on-demand in
+every region, so deploy to a location that serves it. Provide the target project
+when deploying:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">export GCP_PROJECT_ID=your-gcp-project</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up --stack gcp</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="aws-bedrock">AWS (Bedrock)<a href="#aws-bedrock" class="hash-link" aria-label="Direct link to AWS (Bedrock)" title="Direct link to AWS (Bedrock)" translate="no">​</a></h4>
-<p><code>chat-default</code> resolves to an Amazon Nova model on Bedrock. Enable model access
+<p>The <code>aws</code> env file selects z.ai GLM 5 (<code>zai.glm-5</code>) on Bedrock. Enable model access
 for it in the Bedrock console first. The <code>aws</code> stack selects <code>us-east-1</code>:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up --stack aws</span><br></span></code></pre></div></div>
 <blockquote>
