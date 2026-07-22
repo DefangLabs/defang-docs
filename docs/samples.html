@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.c368d3b5.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.bdf7ad5f.js" defer="defer"></script>
 <script src="/assets/js/main.43b11ab1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -2724,7 +2724,10 @@ for code review, tests, signed artifacts, or a deployment approval process.</p>
 </blockquote>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites-66">Prerequisites<a href="#prerequisites-66" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
 <ol>
-<li>Download the <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noopener noreferrer">Defang CLI</a>.</li>
+<li>Use a <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noopener noreferrer">Defang CLI</a> build that exposes
+the resolved <code>DEFANG_PROVIDER</code> and <code>DEFANG_STACK</code> Compose variables (added by
+<a href="https://github.com/DefangLabs/defang/pull/2189" target="_blank" rel="noopener noreferrer">DefangLabs/defang#2189</a>);
+v3.12.0 does not include this support.</li>
 <li>Authenticate with a cloud account that has managed LLMs: a GCP project with
 Vertex AI, or an AWS account with Bedrock model access.</li>
 <li>For local development, install Docker Desktop with
@@ -2770,9 +2773,9 @@ Defang reports separate URLs for <code>app</code> and <code>dev</code>:</p>
 <p>The <code>dev</code> service deliberately runs as one always-on instance so its working
 tree survives idle periods. The <code>app</code> service remains a stateless production
 build.</p>
-<p>Cloud deployments share the one <code>compose.yaml</code>. The committed <code>aws</code> and <code>gcp</code>
-stack files select different non-secret interpolation files:</p>
-<p>| Stack | Environment file | Publish permission |
+<p>Cloud deployments share the one <code>compose.yaml</code>. After resolving the provider,
+Defang automatically loads its non-secret interpolation file:</p>
+<p>| Provider | Environment file | Publish permission |
 | | <code>aws</code> | <code>.env.aws</code> | <code>AdministratorAccess</code> |
 | <code>gcp</code> | <code>.env.gcp</code> | <code>roles/owner</code> |</p>
 <p>The two env files are the place to customize the managed model and other
@@ -2792,9 +2795,9 @@ for it in the Bedrock console first. The <code>aws</code> stack selects <code>us
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang compose up --stack aws</span><br></span></code></pre></div></div>
 <blockquote>
 <p>[!NOTE]
-Each stack&#x27;s env file sets <code>PUBLISH_STACK</code> to itself. The in-container
-<strong>Publish</strong> button therefore reuses the original cloud and env file without
-copying or renaming configuration.</p>
+Defang supplies the resolved provider and stack to the <code>dev</code> service. The
+in-container <strong>Publish</strong> button therefore reuses the original deployment
+context, including the matching provider env file.</p>
 </blockquote>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-self-redeploy">Publishing (self-redeploy)<a href="#publishing-self-redeploy" class="hash-link" aria-label="Direct link to Publishing (self-redeploy)" title="Direct link to Publishing (self-redeploy)" translate="no">​</a></h3>
 <p>The admin console&#x27;s <strong>Publish</strong> panel promotes the live, agent-edited workspace
@@ -2816,8 +2819,9 @@ CLI reads those workload credentials directly.</li>
 one per publish, each referencing the database rows it addressed) rides
 along in the build context, so the next dev container continues the same
 lineage.</li>
-<li><code>PUBLISH_STACK</code> comes from the selected <code>.env.&lt;cloud&gt;</code> file; publishing is
-disabled in local development.</li>
+<li><code>PUBLISH_PROVIDER</code> and <code>PUBLISH_STACK</code> come from Defang&#x27;s resolved deployment
+context; the standalone local-development Compose file leaves publishing
+disabled.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-history-and-revert">Run history and revert<a href="#run-history-and-revert" class="hash-link" aria-label="Direct link to Run history and revert" title="Direct link to Run history and revert" translate="no">​</a></h3>
 <p>Every successful agent run is committed in the agent worktree and fast-forwarded
