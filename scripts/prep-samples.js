@@ -9,6 +9,15 @@ let samplesMdContent = ''
 const interpolationRegex =
   /(?<!\$)\$(?:{([_a-z][_a-z0-9]*)}|([_a-z][_a-z0-9]*))/gi; // [1] = ${var}, [2] = $var
 
+// Variables that Defang / compose-go populate automatically; they must never be
+// listed as configs a developer has to set. Mirror of the CLI's
+// reservedConfigNames (DefangLabs/defang: src/pkg/cli/compose/validation.go).
+const RESERVED_CONFIG_VARS = new Set([
+  'COMPOSE_PROJECT_NAME',
+  'DEFANG_PROVIDER',
+  'DEFANG_STACK',
+]);
+
 function interpolatedVars(str) {
     return Array.from(str.matchAll(interpolationRegex), (match) => match[1] || match[2]);
 }
@@ -88,6 +97,8 @@ directories.forEach((sample) => {
             console.log(`failed to parse compose for configs for sample`, sample, error);
         }
     }
+
+    RESERVED_CONFIG_VARS.forEach((v) => configs.delete(v));
 
     const sampleSummary = {
         name: directoryName,
