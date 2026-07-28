@@ -1623,9 +1623,7 @@
     "configs": [
       "POSTGRES_PASSWORD",
       "BETTER_AUTH_SECRET",
-      "ADMIN_TOKEN",
-      "DEFANG_PROVIDER",
-      "DEFANG_STACK"
+      "ADMIN_TOKEN"
     ]
   },
   {
