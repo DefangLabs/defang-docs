@@ -32,7 +32,7 @@ jobs:
           fi
         shell: bash
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -42,14 +42,14 @@ jobs:
         run: npm ci
 
       - name: Checkout DefangLabs/defang
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: DefangLabs/defang
           path: defang
           ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.version || 'main' }}
 
       - name: Checkout DefangLabs/samples
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: DefangLabs/samples
           path: samples

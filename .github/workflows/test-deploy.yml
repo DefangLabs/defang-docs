@@ -12,7 +12,7 @@ jobs:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -22,14 +22,14 @@ jobs:
         run: npm ci
 
       - name: Checkout DefangLabs/defang
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: DefangLabs/defang
           path: defang
           ref: main
 
       - name: Checkout DefangLabs/samples
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: DefangLabs/samples
           path: samples
