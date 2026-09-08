@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.c4a2b9bb.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b8bca515.js" defer="defer"></script>
 <script src="/assets/js/main.32322081.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -41,8 +41,10 @@
 <p>Defang can help you provision <a href="/docs/concepts/managed-storage">managed storage</a> services. The following managed storage services are supported on GCP:</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="managed-postgres">Managed Postgres<a href="#managed-postgres" class="hash-link" aria-label="Direct link to Managed Postgres" title="Direct link to Managed Postgres" translate="no">​</a></h3>
 <p>When using <a href="/docs/concepts/managed-storage/managed-postgres">Managed Postgres</a>, the Defang CLI provisions a Cloud SQL instance in your account.</p>
+<p>Cloud SQL is available in all Google Cloud regions, so there&#x27;s no region planning needed for managed Postgres. See the <a href="https://cloud.google.com/sql/docs/postgres/locations" target="_blank" rel="noopener noreferrer">Cloud SQL locations documentation</a> for the full list.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="managed-redis">Managed Redis<a href="#managed-redis" class="hash-link" aria-label="Direct link to Managed Redis" title="Direct link to Managed Redis" translate="no">​</a></h3>
 <p>When using <a href="/docs/concepts/managed-storage/managed-redis">Managed Redis</a>, the Defang CLI provisions a Memorystore for Redis cluster in your account.</p>
+<p>Memorystore for Redis is available in 40+ Google Cloud regions. See the <a href="https://cloud.google.com/memorystore/docs/redis/regions" target="_blank" rel="noopener noreferrer">Memorystore for Redis regions documentation</a> if your target <code>GCP_LOCATION</code> isn&#x27;t listed.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="managed-llms">Managed LLMs<a href="#managed-llms" class="hash-link" aria-label="Direct link to Managed LLMs" title="Direct link to Managed LLMs" translate="no">​</a></h3>
 <p>Defang offers integration with managed, cloud-native large language model services with the x-defang-llm service extension. Add this extension to any services which use the <a href="https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-sdk" target="_blank" rel="noopener noreferrer">Google Vertex AI SDKs</a>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="future-improvements">Future Improvements<a href="#future-improvements" class="hash-link" aria-label="Direct link to Future Improvements" title="Direct link to Future Improvements" translate="no">​</a></h3>

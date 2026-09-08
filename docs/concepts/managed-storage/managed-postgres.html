@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.c4a2b9bb.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b8bca515.js" defer="defer"></script>
 <script src="/assets/js/main.32322081.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,6 +20,7 @@
 <p>Postgres, or PostgreSQL, is a powerful open-source relational database system known for its robustness, extensibility, and compliance with SQL standards, making it ideal for complex applications requiring reliable data integrity and advanced querying. Defang can help you provision a managed Postgres instance.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-support">Current Support<a href="#current-support" class="hash-link" aria-label="Direct link to Current Support" title="Direct link to Current Support" translate="no">​</a></h2>
 <table><thead><tr><th>Provider</th><th>Managed Postgres</th></tr></thead><tbody><tr><td><a href="/docs/providers/aws#managed-storage">AWS</a></td><td>✅ RDS Postgres</td></tr><tr><td><a href="/docs/providers/azure">Azure</a></td><td>✅ Azure Database for PostgreSQL</td></tr><tr><td><a href="/docs/providers/digitalocean#future-improvements">DigitalOcean</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/gcp#managed-storage">GCP</a></td><td>✅ Cloud SQL Postgres</td></tr></tbody></table>
+<p>Managed Postgres is available in all AWS and GCP regions. On Azure, availability varies by region — see <a href="/docs/providers/azure#managed-postgres-and-redis-region-availability">Managed Postgres and Redis region availability</a> before choosing an <code>AZURE_LOCATION</code>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-use-managed-postgres">How to use Managed Postgres<a href="#how-to-use-managed-postgres" class="hash-link" aria-label="Direct link to How to use Managed Postgres" title="Direct link to How to use Managed Postgres" translate="no">​</a></h2>
 <p>To use managed Postgres, in your <code>compose.yaml</code> file, use the <code>x-defang-postgres</code> extension to define your Postgres service. Adding the extension will tell Defang to provision a managed instance, rather than running Postgres as a service.
 Defang will show a warning when this extension is used on a service that does not use either a <code>postgres</code> or <code>pgvector</code> image.

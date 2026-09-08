@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.c4a2b9bb.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b8bca515.js" defer="defer"></script>
 <script src="/assets/js/main.32322081.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,6 +20,7 @@
 <p>Redis is an in-memory data structure store widely used for caching, real-time analytics, and session management due to its high performance, low latency, and support for various data types. Defang can help you provision a managed Redis instance.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-support">Current Support<a href="#current-support" class="hash-link" aria-label="Direct link to Current Support" title="Direct link to Current Support" translate="no">​</a></h2>
 <table><thead><tr><th>Provider</th><th>Managed Redis</th></tr></thead><tbody><tr><td><a href="/docs/providers/aws#managed-storage">AWS</a></td><td>✅ Elasticache</td></tr><tr><td><a href="/docs/providers/azure">Azure</a></td><td>✅ Azure Managed Redis</td></tr><tr><td><a href="/docs/providers/digitalocean#future-improvements">DigitalOcean</a></td><td>⚠️ Unmanaged</td></tr><tr><td><a href="/docs/providers/gcp#managed-redis">GCP</a></td><td>✅ Memorystore</td></tr></tbody></table>
+<p>Managed Redis is available in all AWS and GCP regions. On Azure, availability varies by region — see <a href="/docs/providers/azure#managed-postgres-and-redis-region-availability">Managed Postgres and Redis region availability</a> before choosing an <code>AZURE_LOCATION</code>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-use-managed-redis">How to use Managed Redis<a href="#how-to-use-managed-redis" class="hash-link" aria-label="Direct link to How to use Managed Redis" title="Direct link to How to use Managed Redis" translate="no">​</a></h2>
 <p>To use managed Redis, in your <code>compose.yaml</code> file, use the <code>x-defang-redis</code> extension to define your Redis service. Adding the extension will tell Defang to provision a managed instance, rather than running Redis as a service.
 Defang will show a warning when this extension is used on a service that does not use either a <code>redis</code> or <code>valkey</code> image.
