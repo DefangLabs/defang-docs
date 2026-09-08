@@ -16,6 +16,8 @@ Postgres, or PostgreSQL, is a powerful open-source relational database system kn
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
 | [GCP](/docs/providers/gcp#managed-storage) | ✅ Cloud SQL Postgres |
 
+Managed Postgres is available in all AWS and GCP regions. On Azure, availability varies by region — see [Managed Postgres and Redis region availability](/docs/providers/azure#managed-postgres-and-redis-region-availability) before choosing an `AZURE_LOCATION`.
+
 ## How to use Managed Postgres
 
 To use managed Postgres, in your `compose.yaml` file, use the `x-defang-postgres` extension to define your Postgres service. Adding the extension will tell Defang to provision a managed instance, rather than running Postgres as a service.

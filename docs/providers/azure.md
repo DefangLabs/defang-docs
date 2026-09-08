@@ -69,6 +69,12 @@ $ export DEFANG_PROVIDER=azure
 
 The Defang BYOC Azure Provider uses the region specified in the `AZURE_LOCATION` environment variable. For a list of Azure regions, see the [Azure region documentation](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/). Not every Azure service used by Defang (for example, Azure OpenAI model SKUs) is available in every region — `westus3` is a good default during the beta.
 
+### Managed Postgres and Redis region availability
+
+Azure Database for PostgreSQL and Azure Managed Redis do not ship to every Azure region at the same time, and Microsoft keeps adding regions. Before you set `AZURE_LOCATION`, check the live [Products available by region](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/table) page for **Azure Database for PostgreSQL** and **Azure Managed Redis**.
+
+Even in a region where the service itself is available, Defang picks a specific VM SKU for the tier you request (for example `Standard_D2ds_v5` for a general-purpose Postgres server). That SKU can still run into a regional capacity limit. If a deployment fails with a capacity or SKU error, try a different `AZURE_LOCATION` rather than assuming the whole service is unavailable.
+
 ## Architecture
 
 Defang uses resources that are native to the cloud provider you are using. The following describes the current state of Defang's support for Azure, the specific resources that Defang uses, and the roadmap for future support.
