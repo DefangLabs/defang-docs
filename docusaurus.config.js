@@ -17,8 +17,7 @@ const config = {
     },
   ],
   title: "Defang",
-  tagline:
-    "A radically simpler way to build and deploy production-ready cloud apps",
+  tagline: "Develop Once, Deploy Anywhere.",
   favicon: "/img/favicon.ico",
   headTags: [
     {
@@ -78,33 +77,43 @@ const config = {
         href: "https://defang.io/",
       },
       items: [
+        // Defang Deploy keeps every existing URL. The dropdown only groups the
+        // sections that were previously top-level, so no redirects are needed.
         {
-          to: "/docs/intro",
+          type: "dropdown",
+          label: "Deploy",
           position: "left",
-          label: "Overview",
+          items: [
+            {
+              to: "/docs/intro",
+              label: "Overview",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "tutorialsSidebar",
+              label: "Tutorials",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "conceptsSidebar",
+              label: "Concepts",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "providersSidebar",
+              label: "Providers",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "cliSidebar",
+              label: "CLI",
+            },
+          ],
         },
         {
           type: "docSidebar",
-          sidebarId: "tutorialsSidebar",
-          label: "Tutorials",
-          position: "left",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "conceptsSidebar",
-          label: "Concepts",
-          position: "left",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "providersSidebar",
-          label: "Providers",
-          position: "left",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "cliSidebar",
-          label: "CLI",
+          sidebarId: "stationSidebar",
+          label: "Station",
           position: "left",
         },
         { to: "https://defang.io/blog", label: "Blog", position: "left" },
