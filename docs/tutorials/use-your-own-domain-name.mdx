@@ -110,12 +110,13 @@ If you prefer to keep your DNS with your current provider (like CloudFlare or Na
 
 ### Option B: CNAME to Defang Domain (Recommended for Staging)
 
-This approach avoids having to reconfigure DNS and regenerate certificates for each deployment, making it ideal for staging environments that are frequently torn down and redeployed.
+This approach avoids having to reconfigure your external DNS record for each deployment, making it ideal for staging environments that are frequently torn down and redeployed.
 
-1. **Don't** add a `domainname` to your service definition. Just expose the port:
+1. Keep the `domainname` set to your custom domain in your service definition — `defang cert generate` needs it to know which hostname to issue a certificate for:
    ```yaml
    services:
        web:
+           domainname: staging.example.com
            ports:
            - mode: ingress
              target: 3000
@@ -127,18 +128,19 @@ This approach avoids having to reconfigure DNS and regenerate certificates for e
    defang compose up
    ```
 
-3. After deployment, Defang provides you with two domains:
-   - **Defang-hosted domain**: `service-name--port.project-name.username.defang.app`
-   - **AWS load balancer domain**: `defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com`
+3. After deployment, Defang provides you with a stable domain for your service: `service-name--port.project-name.username.defang.app`. Unlike the AWS load balancer's domain, this one doesn't change across redeploys.
 
 4. In your DNS provider (CloudFlare, Namecheap, etc.), create a CNAME record:
    - **Name**: `staging` (or your desired subdomain)
-   - **Target**: Either the `defang.app` domain or the AWS ELB domain
+   - **Target**: The `defang.app` domain from the previous step
    - **Example**: `staging.example.com` → `web--3000.myproject.myuser.defang.app`
 
-5. Run `defang cert generate` once to create the SSL certificate for your CNAME.
+5. Generate the SSL certificate:
+   ```bash
+   defang cert generate
+   ```
 
-6. For subsequent deployments, simply run `defang compose up`. Your CNAME record will continue to work without needing DNS changes.
+6. For subsequent deployments, run `defang compose up` followed by `defang cert generate` again to recreate the certificate. Your CNAME record will continue to work without needing DNS changes.
 
 ### Managing Multiple Environments
 

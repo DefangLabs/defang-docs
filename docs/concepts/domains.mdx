@@ -97,17 +97,16 @@ If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's
 1. Add the `domainname` to your service definition.
 2. Run `defang compose up` to deploy your project.
 3. Run `defang cert generate` to generate an SSL certificate. This command will provide instructions for where to point your domain's DNS before the certificate can be issued.
-4. **Note:** You will need to run `defang cert generate` again after each `defang compose up` to recreate SSL certificates.
+4. **Note:** The infrastructure behind your domain (e.g., the load balancer) is recreated on every `defang compose down` + `defang compose up`, so you will need to update your DNS record and run `defang cert generate` again after each redeploy.
 
-**B. Use CNAME to Defang-hosted domain (Recommended for frequent deployments):**
+**B. CNAME to your Defang-hosted domain (Recommended for frequent deployments):**
 
-If you frequently deploy and tear down your services (e.g., for staging environments), you can avoid reconfiguring DNS each time by using a CNAME record:
+If you frequently deploy and tear down your services (e.g., for staging environments), you can avoid reconfiguring your external DNS record each time:
 
-1. Don't add a `domainname` to your service definition.
-2. Run `defang compose up` to deploy your project. 
-3. Defang will provide you with a `defang.app` domain (e.g., `service-name--port.project-name.username.defang.app`) and an AWS load balancer domain (e.g., `defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com`).
-4. In your DNS provider, create a CNAME record pointing your custom domain to the `defang.app` domain or the AWS load balancer domain.
-5. You'll still need to run `defang cert generate` once to create the SSL certificate, but you won't need to update your DNS records on subsequent deployments.
+1. Keep the `domainname` set to your custom domain in your service definition — `defang cert generate` needs it to know which hostname to issue a certificate for.
+2. Run `defang compose up` to deploy your project.
+3. In your DNS provider, create a CNAME record pointing your custom domain to the `defang.app` domain Defang provides (e.g., `service-name--port.project-name.username.defang.app`). Unlike the load balancer's domain, this one stays the same across redeploys.
+4. Run `defang cert generate` to create the SSL certificate. **Note:** you'll still need to run this again after each `defang compose up` to recreate the certificate — but your CNAME record won't need to change.
 
 :::tip Managing Multiple Environments
 Use the `--project-name` flag or the `name:` field in your Compose file to create separate environments. For example, a project named "hello" with `--project-name hello-staging` would create a separate deployment, allowing you to maintain both production and staging environments simultaneously.
