@@ -75,9 +75,13 @@ Defang can help you provision [managed storage](/docs/concepts/managed-storage/m
 
 When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions an RDS Postgres instance in your account.
 
+Amazon RDS is included in every AWS Region launch, so there's no region planning needed for managed Postgres.
+
 ### Managed Redis
 
 When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+
+Amazon ElastiCache is included in every AWS Region launch, so there's no region planning needed for managed Redis.
 
 ### Managed LLMs
 

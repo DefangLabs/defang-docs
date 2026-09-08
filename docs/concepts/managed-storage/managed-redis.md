@@ -16,6 +16,8 @@ Redis is an in-memory data structure store widely used for caching, real-time an
 | [DigitalOcean](/docs/providers/digitalocean#future-improvements) | ⚠️ Unmanaged |
 | [GCP](/docs/providers/gcp#managed-redis) | ✅ Memorystore |
 
+Managed Redis is available in all AWS and GCP regions. On Azure, availability varies by region — see [Managed Postgres and Redis region availability](/docs/providers/azure#managed-postgres-and-redis-region-availability) before choosing an `AZURE_LOCATION`.
+
 ## How to use Managed Redis
 
 To use managed Redis, in your `compose.yaml` file, use the `x-defang-redis` extension to define your Redis service. Adding the extension will tell Defang to provision a managed instance, rather than running Redis as a service.

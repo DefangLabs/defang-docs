@@ -67,9 +67,13 @@ Defang can help you provision [managed storage](/docs/concepts/managed-storage/m
 
 When using [Managed Postgres](/docs/concepts/managed-storage/managed-postgres.mdx), the Defang CLI provisions a Cloud SQL instance in your account.
 
+Cloud SQL is available in all Google Cloud regions, so there's no region planning needed for managed Postgres. See the [Cloud SQL locations documentation](https://cloud.google.com/sql/docs/postgres/locations) for the full list.
+
 ### Managed Redis
 
 When using [Managed Redis](/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions a Memorystore for Redis cluster in your account.
+
+Memorystore for Redis is available in 40+ Google Cloud regions. See the [Memorystore for Redis regions documentation](https://cloud.google.com/memorystore/docs/redis/regions) if your target `GCP_LOCATION` isn't listed.
 
 ### Managed LLMs
 
