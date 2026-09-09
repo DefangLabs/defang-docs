@@ -11,7 +11,7 @@ Defang supports deploying multiple instances of a project as separate _stacks_. 
 A stack records the cloud provider, region, and deployment mode (its [recipe](/docs/concepts/recipe)) for a deployment. This supersedes passing `--provider` and `--mode` on every command: instead of repeating those flags, you select a stack and Defang uses its recorded settings. The flags still work and override the stack's values when needed.
 
 :::info
-Stacks is a new feature introduced in Defang CLI v2.4.0 and is currently in preview. We welcome your feedback! Please open an issue on [GitHub](https://github.com/DefangLabs/defang/issues) if you encounter any problems or have suggestions.
+Stacks requires Defang CLI v2.4.0 or later.
 :::
 
 ## Stack creation
