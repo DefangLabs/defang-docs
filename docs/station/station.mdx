@@ -1,18 +1,20 @@
 ---
 sidebar_position: 1
 title: Defang Station
-description: Defang Station is a persistent cloud workspace for AI coding agents.
+description: Defang Station gives your coding agent an always-on machine you can reach from any browser.
 ---
 
 # Defang Station
 
-Defang Station is a persistent cloud workspace for AI coding agents. Your agent
-keeps running when you close your laptop, and the work it does stays where you
-left it.
+**Bring your agent. Run it anywhere.**
+
+Defang Station gives Claude Code or OpenAI Codex an always-on machine, connected to
+your own Anthropic or OpenAI account. Open it in any browser to check in on the work,
+steer it, or take over.
 
 :::info
-Station is in development. This section is a placeholder so the two products
-have a home in the docs. Documentation lands when Station ships.
+Station is in development. This section is a placeholder so the products have a home
+in the docs. Documentation lands when Station ships.
 :::
 
 ## How it relates to Defang Deploy
@@ -22,5 +24,13 @@ have a home in the docs. Documentation lands when Station ships.
 | **[Defang Deploy](/docs/intro)** | Getting an app or an agent into production on your own cloud |
 | **Defang Station** | Giving an AI coding agent a machine to work on |
 
-Station runs on Defang's cloud. It is open source, so you can also run it on
-your own infrastructure. Defang Deploy still deploys into your cloud account.
+Station runs on Defang's cloud. Defang Deploy still deploys into your own cloud
+account, so what your agent builds on Station can ship to dev, staging or production
+on the provider you choose.
+
+## Running it yourself
+
+Station is built on [Agent Box](https://github.com/defangdevs/agent-box), an
+open-source (MIT) runtime that you can run on your own infrastructure — on AWS, on bare
+metal, or as a machine image. Station is the hosted product built around it; the
+runtime underneath is yours to take.
