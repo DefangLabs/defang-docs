@@ -1,7 +1,7 @@
 ---
 sidebar_position: 600
 title: Frequently Asked Questions
-description: Frequently asked questions about Defang.
+description: Frequently asked questions about Defang Deploy.
 ---
 import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 

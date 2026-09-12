@@ -1,12 +1,12 @@
 ---
 sidebar_position: 300
 title: Use Cases
-description: Use cases for Defang
+description: Use cases for Defang Deploy
 ---
 
-# Defang Use Cases
+# Defang Deploy Use Cases
 
-Defang can be used for a wide variety of use cases, generally in line with the [12 Factor architecture](https://12factor.net/). In this section we'll document some examples. At the end of this section we will also cover use cases that are not supported by Defang.
+Defang Deploy can be used for a wide variety of use cases, generally in line with the [12 Factor architecture](https://12factor.net/). In this section we'll document some examples. At the end of this section we will also cover use cases that are not supported by Defang.
 
 ## Web Services and APIs
 

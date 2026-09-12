@@ -4,8 +4,8 @@ import Link from "@docusaurus/Link";
 const items = [
   {
     href: "/docs/intro/what-is-defang",
-    label: "Learn more about Defang",
-    description: "What is Defang and how does it work?",
+    label: "Learn more about Defang Deploy",
+    description: "What is Defang Deploy and how does it work?",
   },
   {
     href: "/docs/tutorials/agent-skills",
@@ -78,7 +78,7 @@ export default function Home() {
           />
           <h1 style={{ fontSize: "3rem" }}>Defang Documentation</h1>
           <p>
-            Defang lets you take your app from Docker Compose to a secure and
+            Defang Deploy lets you take your app from Docker Compose to a secure and
             scalable deployment on your favorite cloud in minutes. Build cloud
             applications in any language and stack, deploy to your account on
             your favorite cloud with a single command, and iterate quickly with
