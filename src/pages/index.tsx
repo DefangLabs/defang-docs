@@ -3,29 +3,14 @@ import Link from "@docusaurus/Link";
 
 const items = [
   {
-    href: "/docs/intro/what-is-defang",
-    label: "Learn more about Defang Deploy",
-    description: "What is Defang Deploy and how does it work?",
+    href: "/docs/intro",
+    label: "Defang Deploy",
+    description: "Take your app to your own cloud on AWS, GCP or Azure.",
   },
   {
     href: "/docs/station",
-    label: "Learn more about Defang Station",
+    label: "Defang Station",
     description: "An always-on machine for your coding agent.",
-  },
-  {
-    href: "/docs/tutorials/agent-skills",
-    label: "Agent Skills",
-    description: "Deploy from your agent",
-  },
-  {
-    href: "/docs/cli",
-    label: "CLI Reference",
-    description: "Use the Defang CLI to deploy your app",
-  },
-  {
-    href: "/docs/tutorials/deploy-to-your-cloud",
-    label: "Deploy to your own cloud",
-    description: "When you're ready for production",
   },
 ];
 
@@ -83,15 +68,13 @@ export default function Home() {
           />
           <h1 style={{ fontSize: "3rem" }}>Defang Documentation</h1>
           <p>
-            Defang Deploy lets you take your app from Docker Compose to a secure and
-            scalable deployment on your favorite cloud in minutes. Build cloud
-            applications in any language and stack, deploy to your account on
-            your favorite cloud with a single command, and iterate quickly with
-            AI-assisted tooling.
+            Defang helps you become AI-native without becoming vendor-native.
+            Your cloud, your models, your accounts. Start with the product you
+            are using.
           </p>
           <div className="h-8" />
           <h2 style={{ fontSize: "1.875rem", marginBottom: "1rem" }}>
-            Getting Started
+            Products
           </h2>
         </div>
         <div className="row">
