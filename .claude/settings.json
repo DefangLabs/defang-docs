@@ -1,0 +1,12 @@
+{
+  "project": {
+    "name": "defang-docs",
+    "description": "Defang platform documentation site (Docusaurus 3)",
+    "conventions": {
+      "language": "TypeScript, Markdown, MDX",
+      "framework": "Docusaurus 3",
+      "packageManager": "npm",
+      "styling": "Tailwind CSS, CSS Modules"
+    }
+  }
+}
