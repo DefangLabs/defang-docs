@@ -65,14 +65,14 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ## Feature Comparisons
 
-### Is Defang a run-time platform?
-- No. Defang is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
+### Is Defang Deploy a run-time platform?
+- No. Defang Deploy is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
 
-### What is the difference between Defang and platforms such as Vercel, fly.io, Railway, Render, or Heroku?
-- Defang is a tool that helps you get your application deployed to a [cloud provider](/docs/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application.
+### What is the difference between Defang Deploy and platforms such as Vercel, fly.io, Railway, Render, or Heroku?
+- Defang Deploy is a tool that helps you get your application deployed to a [cloud provider](/docs/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application.
 
-### What is the difference between Defang and tools such as SST?
-- Defang is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
+### What is the difference between Defang Deploy and tools such as SST?
+- Defang Deploy is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
 
 ## Troubleshooting
 
