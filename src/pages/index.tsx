@@ -8,6 +8,11 @@ const items = [
     description: "What is Defang Deploy and how does it work?",
   },
   {
+    href: "/docs/station",
+    label: "Learn more about Defang Station",
+    description: "An always-on machine for your coding agent.",
+  },
+  {
     href: "/docs/tutorials/agent-skills",
     label: "Agent Skills",
     description: "Deploy from your agent",

@@ -15,7 +15,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I bring my own AWS or other cloud account?
 
-- Yes! Defang makes it easy to deploy your application to your own cloud account. Please check out the [Defang BYOC](/docs/concepts/defang-byoc) documentation for more information.
+- Yes! Defang Deploy makes it easy to deploy your application to your own cloud account. Please check out the [Defang BYOC](/docs/concepts/defang-byoc) documentation for more information.
 
 ### On AWS, can I deploy to services such as EC2, EKS, or Lambda?
 
@@ -23,7 +23,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I access AWS storage services such as S3 or database services such as RDS? How?
 
-- Yes! You can access AWS services in the AWS Dashboard as you normally would when you are [deploying to your AWS account](/docs/providers/aws) using Defang. In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](/docs/concepts/defang-byoc).
+- Yes! You can access AWS services in the AWS Dashboard as you normally would when you are [deploying to your AWS account](/docs/providers/aws) using Defang Deploy. In fact, you can access whatever other resources exist in the cloud account you are using for [Defang BYOC](/docs/concepts/defang-byoc).
 
 ### Do you plan to support other clouds?
 
@@ -31,21 +31,21 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ## Deployment Process
 
-### Can I run production apps with Defang?
+### Can I run production apps with Defang Deploy? {#can-i-run-production-apps-with-defang}
 
-- Yes! Defang makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Yes! Defang Deploy makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
-### Does Defang support blue/green deployments?
+### Does Defang Deploy support blue/green deployments? {#does-defang-support-bluegreen-deployments}
 
-- Defang does not currently support blue/green deployments, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang Deploy does not currently support blue/green deployments, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
-### Does Defang support rolling deployments?
+### Does Defang Deploy support rolling deployments? {#does-defang-support-rolling-deployments}
 
-- Yes! Defang supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Yes! Defang Deploy supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
-### Does Defang support auto-scaling?
+### Does Defang Deploy support auto-scaling? {#does-defang-support-auto-scaling}
 
-- No. Defang does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to see how you can scale your services manually with Defang.
+- No. Defang Deploy does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to see how you can scale your services manually with Defang Deploy.
 
 ### Can I cancel a deployment once it has started?
 
@@ -53,26 +53,26 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang will use the _production_ deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- If you have deployed your application with the `--mode=production` flag, Defang Deploy will use the _production_ deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang Deploy will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I deploy multiple services at once?
 
-- Yes! You can deploy multiple services at once by defining them in a single compose.yaml file. When you run `defang compose up`, Defang will deploy all the services defined in the file at once.
+- Yes! You can deploy multiple services at once by defining them in a single compose.yaml file. When you run `defang compose up`, Defang Deploy will deploy all the services defined in the file at once.
 
 ### Can I deploy a service that depends on another service?
 
-- Defang does not currently support service dependencies. All services will be deployed simultaneously. Defang will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang Deploy does not currently support service dependencies. All services will be deployed simultaneously. Defang Deploy will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ## Feature Comparisons
 
-### Is Defang Deploy a run-time platform?
+### Is Defang Deploy a run-time platform? {#is-defang-a-run-time-platform}
 - No. Defang Deploy is not a run-time platform. Instead, it lets you host and run your application on a [cloud provider](/docs/providers) of your choice. You can think of it as a tool that makes it way easier to deploy to that cloud provider.
 
-### What is the difference between Defang Deploy and platforms such as Vercel, fly.io, Railway, Render, or Heroku?
-- Defang Deploy is a tool that helps you get your application deployed to a [cloud provider](/docs/providers) of your choice, and it is not a platform. Unlike platforms, Defang does not host your application.
+### What is the difference between Defang Deploy and platforms such as Vercel, fly.io, Railway, Render, or Heroku? {#what-is-the-difference-between-defang-and-platforms-such-as-vercel-flyio-railway-render-or-heroku}
+- Defang Deploy is a tool that helps you get your application deployed to a [cloud provider](/docs/providers) of your choice, and it is not a platform. Unlike platforms, Defang Deploy does not host your application.
 
-### What is the difference between Defang Deploy and tools such as SST?
-- Defang Deploy is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/providers), and programming languages. Since Defang is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
+### What is the difference between Defang Deploy and tools such as SST? {#what-is-the-difference-between-defang-and-tools-such-as-sst}
+- Defang Deploy is cloud-agnostic and language-agnostic, meaning that it is designed to work with different [cloud providers](/docs/providers), and programming languages. Since Defang Deploy is not tied to just one cloud or language, this allows for greater flexibility in a wide range of cases. Another difference is that Defang Deploy follows the [Compose specification](https://docs.docker.com/compose/compose-file/), allowing it to work smoothly with various container platforms such as Docker.
 
 ## Troubleshooting
 
