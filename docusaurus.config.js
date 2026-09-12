@@ -81,7 +81,7 @@ const config = {
         // sections that were previously top-level, so no redirects are needed.
         {
           type: "dropdown",
-          label: "Deploy",
+          label: "Defang Deploy",
           position: "left",
           items: [
             {
@@ -113,7 +113,7 @@ const config = {
         {
           type: "docSidebar",
           sidebarId: "stationSidebar",
-          label: "Station",
+          label: "Defang Station",
           position: "left",
         },
         { to: "https://defang.io/blog", label: "Blog", position: "left" },
