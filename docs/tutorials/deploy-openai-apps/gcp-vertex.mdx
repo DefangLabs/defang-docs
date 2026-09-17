@@ -102,7 +102,7 @@ You should configure your application to specify the model you want to use.
      environment:
        OPENAI_API_KEY:
        OPENAI_BASE_URL: "http://llm/api/v1"
-+      MODEL: "google/gemini-2.5-pro-preview-03-25" # for Vertex AI
++      MODEL: "google/gemini-3.5-flash" # for Vertex AI
      healthcheck:
        test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 ```
@@ -114,7 +114,7 @@ Ensure you have the necessary permissions to access the model you intend to use.
 :::info
 **Choosing the Right Model**
 
-- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-2.5-pro-preview-03-25`). [See available Vertex AI models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
+- For **GCP Vertex AI**, use a full model path (e.g., `google/gemini-3.5-flash`). [See available Vertex AI models](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/call-vertex-using-openai-library#client-setup).
 :::
 
 Alternatively, Defang supports [model mapping](/docs/concepts/managed-llms/openai-access-gateway/#model-mapping) through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to
@@ -134,7 +134,7 @@ services:
     environment:
       OPENAI_API_KEY:
       OPENAI_BASE_URL: "http://llm/api/v1"
-      MODEL: "google/gemini-2.5-pro-preview-03-25"
+      MODEL: "google/gemini-3.5-flash"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
 
