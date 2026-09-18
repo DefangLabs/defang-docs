@@ -8,8 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Pulumi
 
-:::warning
-The Defang Pulumi Provider is not currently available. The Defang-hosted environment it deployed to has been discontinued, and it does not yet support deploying to your own cloud account. Use a [Compose file](/docs/concepts/compose) to deploy today. If you need the Pulumi Provider, tell us on the [Defang Discord](https://discord.gg/defang) so we can prioritize it.
+:::info
+The Defang Pulumi Provider is available for AWS, GCP, and Azure. It's a separate workflow from [Defang Deploy](/docs/intro/getting-started) (the Compose-based CLI): use it if you want to provision Defang services directly from a Pulumi program instead. See the [pulumi-defang](https://github.com/DefangLabs/pulumi-defang) repo and its [Pulumi Registry listing](https://www.pulumi.com/registry/packages/defang/) for installation and examples.
 :::
 
 [Pulumi](https://www.pulumi.com) is a modern infrastructure-as-code toolkit that allows developers to use a programming language like Typescript to provision and manage cloud resources.

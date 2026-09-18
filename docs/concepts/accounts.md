@@ -31,10 +31,10 @@ For more information, see [Workspaces](./workspaces.md).
 
 ## Structure
 
-Your GitHub or GitLab username will be used as your Defang username. Your Defang username is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
+Your account is assigned an internal Defang tenant ID, which is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
 
 ```
-<service-name>--<port>.<project-name>.<username>.defang.app
+<service-name>--<port>.<project-name>.<tenant-id>.defang.app
 ```
 
 For more about domain structures, see our [Domains](/docs/concepts/domains#structure) page.

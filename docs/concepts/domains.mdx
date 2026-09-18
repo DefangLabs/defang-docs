@@ -21,7 +21,7 @@ You get **both**:
 
 **Defang-hosted domain:**
 ```
-https://<service-name>--<port>.<project-name>.<username>.defang.app
+https://<service-name>--<port>.<project-name>.<tenant-id>.defang.app
 ```
 
 **Cloud provider load balancer domain** (AWS example):
@@ -53,8 +53,8 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-The Defang Pulumi Provider is not currently available. See [Pulumi](./pulumi.md).
+:::info
+The Defang Pulumi Provider is available — see [Pulumi](./pulumi.md) for setup and current capabilities.
 :::
 ```typescript
 const service = new defang.DefangService("serviceName", {
@@ -135,8 +135,8 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-The Defang Pulumi Provider is not currently available, so you cannot bring your own domain through it. See [Pulumi](./pulumi.md).
+:::info
+See [Pulumi](./pulumi.md) for how to configure a custom domain with the Defang Pulumi Provider.
 :::
   </TabItem>
 </Tabs>
