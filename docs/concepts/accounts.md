@@ -17,7 +17,7 @@ To create an account, log in to Defang and accept the [Terms of Service](https:/
 $ defang login
 ```
 
-At the moment, the only way to authenticate with Defang is through GitHub. We plan to offer other [authentication](/docs/concepts/authentication.md) providers in the future.
+You can log in with GitHub or GitLab. We plan to offer other [authentication](/docs/concepts/authentication.md) providers in the future.
 
 :::tip
 Keep in mind that your Defang account is separate from your [cloud provider account](./defang-byoc.md). You will need to authenticate with your cloud provider account separately to deploy services to your own cloud account.
@@ -31,10 +31,10 @@ For more information, see [Workspaces](./workspaces.md).
 
 ## Structure
 
-Your GitHub username will be used as your Defang username. Your Defang username is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
+Your account is assigned an internal Defang tenant ID, which is used to group all your [services](/docs/concepts/services) and generate domains for your services with the following structure:
 
 ```
-<username>-<servicename>--<port>.prod1.defang.dev
+<service-name>--<port>.<project-name>.<tenant-id>.defang.app
 ```
 
 For more about domain structures, see our [Domains](/docs/concepts/domains#structure) page.

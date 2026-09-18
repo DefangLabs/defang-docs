@@ -11,27 +11,17 @@ Defang helps you provision SSL certificates and expose your services to the inte
 
 ## Defang-hosted Domains
 
-To make your service accessible from the public internet with Defang-hosted domains (under `defang.app`), you simply expose ports in your service definition.
+To make your service accessible from the public internet with Defang-hosted domains (under `defang.app`), you expose ports in your service definition.
 
 ### Structure
 
 When you deploy a publicly accessible service, Defang automatically provides you with domain names to access it.
 
-<Tabs>
-  <TabItem value="playground" label="Playground" default>
-If you're deploying to the [Defang Playground](./defang-playground.md), you will receive:
+You get **both**:
 
 **Defang-hosted domain:**
 ```
-https://<username>-<service-name>--<port>.defang.dev
-```
-  </TabItem>
-  <TabItem value="byoc" label="BYOC">
-If you're using [Defang BYOC](./defang-byoc.md), you will receive **both**:
-
-**Defang-hosted domain:**
-```
-https://<service-name>--<port>.<project-name>.<username>.defang.app
+https://<service-name>--<port>.<project-name>.<tenant-id>.defang.app
 ```
 
 **Cloud provider load balancer domain** (AWS example):
@@ -40,14 +30,11 @@ https://defang-xyz-b0f79bb-123456789012.ca-central-1.elb.amazonaws.com
 ```
 
 :::tip Choosing Between Domains
-- Use the **Defang-hosted domain** (`defang.app`) for convenience and simplicity
+- Use the **Defang-hosted domain** (`defang.app`) if you want a short, readable URL
 - Use the **cloud provider domain** (e.g., AWS ELB) if you want to avoid dependency on Defang infrastructure
 - Both domains point to the same service and work identically
 
 :::
-
-  </TabItem>
-</Tabs>
 
 ### Sample Configuration
 
@@ -66,8 +53,8 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md).
+:::info
+The Defang Pulumi Provider is available — see [Pulumi](./pulumi.md) for setup and current capabilities.
 :::
 ```typescript
 const service = new defang.DefangService("serviceName", {
@@ -93,7 +80,7 @@ When bringing your own domain, you have two main approaches:
 
 ### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)
 
-If you are using [Defang BYOC](./defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](./defang-playground.md), you have two choices:
+If you *do not* have your domain's DNS hosted with your cloud provider, you have two choices:
 
 **A. Point directly to your custom domain:**
 1. Add the `domainname` to your service definition.
@@ -148,8 +135,8 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md) and the [Defang Playground](./defang-playground.md) does not support bringing your own domain, since it is not for production use.
+:::info
+See [Pulumi](./pulumi.md) for how to configure a custom domain with the Defang Pulumi Provider.
 :::
   </TabItem>
 </Tabs>

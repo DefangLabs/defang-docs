@@ -8,8 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Pulumi
 
-:::warning
-Pulumi support is currently only available for Defang Playground. We are working on support for Defang BYOC.
+:::info
+The Defang Pulumi Provider is available for AWS, GCP, and Azure. It's a separate workflow from [Defang Deploy](/docs/intro/getting-started) (the Compose-based CLI): use it if you want to provision Defang services directly from a Pulumi program instead. See the [pulumi-defang](https://github.com/DefangLabs/pulumi-defang) repo and its [Pulumi Registry listing](https://www.pulumi.com/registry/packages/defang/) for installation and examples.
 :::
 
 [Pulumi](https://www.pulumi.com) is a modern infrastructure-as-code toolkit that allows developers to use a programming language like Typescript to provision and manage cloud resources.
@@ -89,8 +89,6 @@ constructor(
 
 ```typescript
 interface DefangServiceArgs {
-  /** the DNS name of the Defang Fabric service; defaults to the value of DEFANG_FABRIC or prod, if unset */
-  fabricDNS?: pulumi.Input<string>;
   /** the name of the service; defaults to the name of the resource */
   name?: pulumi.Input<string>;
   /** the container image to deploy; required when no build configuration was provided */

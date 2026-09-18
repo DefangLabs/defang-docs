@@ -106,13 +106,23 @@ You can open the folder in your favorite editor and see the files that were gene
 * The `Dockerfile` is used to build the container image for your service.
 * The `compose.yaml` file is used to define the services you want to deploy.
 
-## Deploy to the Playground
+## Deploy to your cloud
 
-Go back to your shell and type the following:
+### Choose where to deploy
+
+Defang deploys to your own cloud account, so you need an account with one of the supported providers: AWS, GCP, Azure, or DigitalOcean. Each provider page lists the credentials Defang expects and how to set them up. See [Defang Providers](/docs/providers).
+
+Set up your cloud credentials the way you normally would for that provider, for example `aws configure` or `gcloud auth application-default login`.
+
+### Deploy
+
+Go back to your shell and deploy to the provider you picked:
 
 ```
-$ defang compose up
+$ defang compose up --provider=aws
 ```
+
+Use `--provider=gcp`, `--provider=azure`, or `--provider=digitalocean` to deploy to the other providers.
 
 If you have not used Defang before, you'll be prompted to log in.
 
@@ -131,18 +141,15 @@ When you do this, you should see something similar to the output below:
  * Uploading build context for app
  * Deploying service app
  * Monitor your services' status in the defang portal
-   - https://portal.defang.dev/service/app
+   - https://portal.defang.io/service/app
  * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
  * Press V to toggle verbose mode
-2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
-2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
-2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
  * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
-   - https://jordanstephens-app--3000.prod1.defang.dev
+   - https://app--3000.welcome-to-defang.<tenant-id>.defang.app
  * Done.
 ```
 
-Now we can go to [https://portal.defang.dev/service/app](https://portal.defang.dev/service/app) to see our service listed in the Defang portal.
+Now go to [https://portal.defang.io/service/app](https://portal.defang.io/service/app) to see your service listed in the Defang portal.
 
 ![screenshot of the defang portal](/img/getting-started-portal.png)
 
@@ -177,12 +184,6 @@ Defang Deploy supports various ways of creating and deploying services to the cl
         href: "/docs/intro/what-is-defang",
         label: "Learn more about Defang Deploy",
         description: "What is Defang Deploy and how does it work?",
-    },
-    {
-        type: "link",
-        href: "/docs/tutorials/deploy-using-pulumi",
-        label: "Deploy using Pulumi",
-        description: "Deploy using Pulumi",
     },
     {
         type: "link",

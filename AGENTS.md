@@ -11,3 +11,6 @@ Write prose in Markdown or MDX with frontmatter; use kebab-case filenames such a
 
 ## External Dependencies & Prebuild Notes
 The prebuild step shells into `../defang/src/cmd/gendocs` (requires Go) and ingests `../samples/samples`. Keep those repositories updated locally, or vendor them into `defang-docs/defang` and `defang-docs/samples` when working in CI or preview branches.
+
+## User-facing copy
+Docs are read by developers who just met Defang. Every page should say what to do next, in their words. Never expose internal systems: internal hostnames (anything `*.defang.dev`), internal account IDs, backend names (Fabric), schema terms (tenant), deprecated wire enums (`--mode=production`), or admin and staff surfaces. Product names and taglines are decided, not drafted: Defang Deploy ("Develop Once, Deploy Anywhere." is the tagline for docs), Defang Station ("Bring your agent. Run it anywhere."), and Defang Forge. Retired, never reintroduce: Playground, "Platform" as the product name, and "Cloud, Simplified". Deployment modes are `affordable`, `balanced`, and `high_availability`; plans are Starter, Pro, and Enterprise. Full rules live in `strategy/language-style-guide.md` in DefangLabs/defang-global.
