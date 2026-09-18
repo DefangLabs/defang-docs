@@ -37,7 +37,7 @@ services:
       - .:/web
   local_service:
     image: myservice:latest
- ```
+```
 
 This configuration can then be launched locally with
 

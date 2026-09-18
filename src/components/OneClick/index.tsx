@@ -1,12 +1,10 @@
-import { Stack, TextField } from '@mui/material';
-import { createContext, useContext, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-
-
+import { Stack, TextField } from "@mui/material";
+import { createContext, useContext, useState } from "react";
+import CodeBlock from "@theme/CodeBlock";
 
 const URLContext = createContext({
   url: "",
-  setUrl: (url: string) => { }
+  setUrl: (url: string) => {},
 });
 
 export function URLProvider({ children }: { children: React.ReactNode }) {
@@ -18,13 +16,16 @@ export function URLProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-
-
 export function OriginalRepoUrl() {
   const { url, setUrl } = useContext(URLContext);
   return (
     <Stack spacing={2}>
-      <TextField value={url} onChange={e => setUrl(e.target.value)} label="Your Repo URL" helperText="Like https://github.com/defanglabs/defang" />
+      <TextField
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        label="Your Repo URL"
+        helperText="Like https://github.com/defanglabs/defang"
+      />
     </Stack>
   );
 }
@@ -57,7 +58,6 @@ function getEncodedTemplateUrl(url: string) {
   return encodeURIComponent(templateUrl);
 }
 
-
 export function EncodedTemplateUrl() {
   const { url } = useContext(URLContext);
   const encodedTemplateUrl = getEncodedTemplateUrl(url);
@@ -73,7 +73,6 @@ function getOneClickUrl(url: string) {
   return `https://portal.defang.dev/redirect?url=${encodedTemplateUrl}`;
 }
 
-
 export function OneClickUrl() {
   const { url } = useContext(URLContext);
   const oneClickUrl = getOneClickUrl(url);
@@ -88,10 +87,12 @@ export function URLEncode() {
   const [val, setVal] = useState("");
   return (
     <Stack spacing={2}>
-      <TextField value={val} placeholder='Paste a url here' onChange={e => setVal(e.target.value)} />
-      <CodeBlock className="language-bash">
-        {encodeURIComponent(val)}
-      </CodeBlock>
+      <TextField
+        value={val}
+        placeholder="Paste a url here"
+        onChange={(e) => setVal(e.target.value)}
+      />
+      <CodeBlock className="language-bash">{encodeURIComponent(val)}</CodeBlock>
     </Stack>
-  )
+  );
 }

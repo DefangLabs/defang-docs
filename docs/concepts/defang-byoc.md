@@ -5,7 +5,7 @@ description: Defang allows you deploy services, defined as containers, to your o
 
 # Defang BYOC
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC).
+Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your _own_ cloud accounts. We refer to this as bring-your-own-cloud (BYOC).
 
 :::info[Pricing]
 BYOC is available on all tiers (Starter, Pro, Enterprise). The Starter tier (free) includes 1 cloud account. Pro ($49/mo) includes 1 cloud account with additional deployment modes. Enterprise ($499/mo) includes 3 cloud accounts with fleet management capabilities.

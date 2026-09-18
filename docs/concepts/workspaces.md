@@ -103,6 +103,7 @@ For workspaces created in the Defang Portal:
 4. The owner approves or denies the request from the portal
 
 Members can have different roles:
+
 - **Owner**: Full control including billing, settings, and member management
 - **Admin**: Can manage members and settings
 - **Member**: Can use the workspace subscription for deployments

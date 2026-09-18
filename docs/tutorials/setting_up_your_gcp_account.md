@@ -5,7 +5,7 @@ description: Follow these steps to set up your Google Cloud Platform (GCP) accou
 
 # Setting Up Your GCP Account
 
- Follow these steps to set up your Google Cloud Platform (GCP) account for deploying applications with Defang.
+Follow these steps to set up your Google Cloud Platform (GCP) account for deploying applications with Defang.
 
 ---
 
@@ -30,6 +30,7 @@ To create a new project:
 
 1. Visit the [GCP Console](https://console.cloud.google.com/).
 2. Click the project selector button (it may say **"Select a project"** or display a previous project name).
+
 <figure>
   <img src="/img/setting-up-your-gcp-account/select-project.png" alt="GCP console with the project select button highlighted" style={{ width: 300 }} />
   <figcaption><strong>Select project button to open the project dialog</strong></figcaption>
