@@ -146,12 +146,12 @@ services:
 
 ## Supported Providers
 
-| Provider       | Railpack Support |
-|----------------|:----------------:|
-| AWS            |     ✅ |
-| Azure          |     ❌ |
-| DigitalOcean   |     ❌ |
-| GCP            |     ✅ |
+| Provider     | Railpack Support |
+| ------------ | :--------------: |
+| AWS          |        ✅        |
+| Azure        |        ❌        |
+| DigitalOcean |        ❌        |
+| GCP          |        ✅        |
 
 ## Details
 
