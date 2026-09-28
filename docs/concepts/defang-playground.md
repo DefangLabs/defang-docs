@@ -1,38 +1,10 @@
 ---
 title: Defang Playground
-description: Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
+description: Defang Playground has been discontinued. Deploy to your own cloud account instead.
 ---
-
-:::danger Deprecation Notice
-Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. If you have existing projects on Playground, please migrate them to your own cloud account. See the [migration guide](/docs/tutorials/deploy-to-your-cloud) for instructions.
-:::
 
 # Defang Playground
 
-:::note
-Defang Playground is being deprecated. Users are encouraged to use the **Starter** tier (free) to deploy to their own cloud account via [BYOC](./defang-byoc). Existing Playground users will be migrated to the Starter tier.
-:::
+Defang Playground has been discontinued. It was a Defang-hosted environment for non-production workloads, with limits on projects, services, CPU, and memory. You can no longer deploy to it.
 
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC), which you can read about in more depth [here](./defang-byoc).
-
-Defang Playground is a legacy free environment that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
-
-:::warning
-Please note that the Defang Playground is intended for testing/learning purposes only. The environment may be reset at any time. Do not run production workloads in Defang Playground.
-:::
-
-## Limitations
-
-There are a few limitations to Defang Playground. These limitations are in place to ensure that Defang Playground is only used for non-production workloads. If you are interested in running production workloads, you should use Defang BYOC.
-
-### No Apex Domain Support
-
-When you deploy a service to Defang Playground, it will be assigned a domain under the `defang.dev` domain. We do not support pointing your own apex domains to Defang Playground services, but you can use subdomains.
-
-### Max Resources
-
-* Projects: 1
-* Services: 4
-* CPUs: 2
-* Memory: 1GiB
-* Replicas: 1
+Deploy to your own cloud account instead. Your code and secrets stay in your account. See [Defang Providers](/docs/providers) for what each provider supports, or follow [Deploy to your own cloud](/docs/tutorials/deploy-to-your-cloud).

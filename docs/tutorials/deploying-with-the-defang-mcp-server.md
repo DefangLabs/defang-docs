@@ -87,17 +87,8 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
 
-## Playground
+## Viewing your deployment in the Portal
 
-### Step 1 - Setting your provider
+Whichever provider you deploy to, you can see your project on the [Defang Portal](https://portal.defang.io/projects).
 
-In your chat window, ask the AI assistant to set up Defang for Playground deployment.
-
-### Step 2 - Deploy
-
-Once the setup is complete, ask the AI assistant to deploy your project.
-
-### Step 3 - Inspect your deployment
-
-You can check the status of your deployment by using the [Defang Services tool](../concepts/mcp#services) or you can inspect the the project on the [Defang portal](https://portal.defang.io/projects).
 ![screenshot of the defang portal](/img/getting-started-portal.png)

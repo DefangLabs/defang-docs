@@ -27,7 +27,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp), [DigitalOcean](/docs/providers/digitalocean), and [Azure](/docs/providers/azure) are in preview. We plan to continue expanding cloud provider support in future releases.
+- Defang deploys to AWS, GCP, Azure, and DigitalOcean. See [Defang Providers](/docs/providers) for what each one supports today. We plan to continue expanding cloud provider support in future releases.
 
 ## Deployment Process
 
@@ -35,25 +35,25 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I run production apps with Defang Deploy?
 
-- Yes! Defang Deploy makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=production`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Yes! Defang Deploy makes it easy to deploy your app on production-ready infrastructure in your own cloud account. For example, you can deploy your app to AWS with `defang compose up --provider=aws --mode=high_availability`. Check out your preferred cloud provider on [Defang BYOC](/docs/concepts/defang-byoc) and see our [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 <a id="does-defang-support-bluegreen-deployments"></a>
 
 ### Does Defang Deploy support blue/green deployments?
 
-- Defang Deploy does not currently support blue/green deployments, but it does support rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang Deploy does not currently support blue/green deployments, but it does support rolling updates with the `--mode=high_availability` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 <a id="does-defang-support-rolling-deployments"></a>
 
 ### Does Defang Deploy support rolling deployments?
 
-- Yes! Defang Deploy supports rolling updates with the `--mode=production` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Yes! Defang Deploy supports rolling updates with the `--mode=high_availability` flag. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 <a id="does-defang-support-auto-scaling"></a>
 
 ### Does Defang Deploy support auto-scaling?
 
-- No. Defang Deploy does not currently support auto-scaling. However, you can check out the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to see how you can scale your services manually with Defang Deploy.
+- Yes, on AWS and GCP. Add `x-defang-autoscaling: true` to the service you want to autoscale, and deploy in `balanced` mode or higher. Auto-scaling requires the Pro plan. See [Scaling](/docs/concepts/scaling) for the details, or the [Scaling Your Services](/docs/tutorials/scaling-your-services) tutorial to scale manually instead.
 
 ### Can I cancel a deployment once it has started?
 
@@ -61,7 +61,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Will deploying a new version of my app cause downtime?
 
-- If you have deployed your application with the `--mode=production` flag, Defang Deploy will use the _production_ deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang Deploy will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- If you have deployed your application with the `--mode=high_availability` flag, Defang Deploy will use the `high_availability` deployment mode. This mode will perform a rolling update to ensure zero downtime. If you use another deployment mode, you may experience downtime during the deployment, as Defang Deploy will not provision multiple replicas to save cost. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ### Can I deploy multiple services at once?
 
@@ -69,7 +69,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Can I deploy a service that depends on another service?
 
-- Defang Deploy does not currently support service dependencies. All services will be deployed simultaneously. Defang Deploy will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `production` deployment mode. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
+- Defang Deploy does not currently support service dependencies. All services will be deployed simultaneously. Defang Deploy will however run multiple healthchecks before marking a service as healthy and spinning down any previously deployed services when using the `high_availability` deployment mode. See the [Deployment Modes](/docs/concepts/deployment-modes) documentation for more information.
 
 ## Feature Comparisons
 
