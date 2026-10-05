@@ -35,19 +35,19 @@ The goal isn't to replace engineers. It's to redesign engineering so that humans
 
 Like every major technology transition, this transformation happens gradually. At Defang, we think of it as the **AI-Native Maturity Model**.
 
-| Stage | Maturity | Engineering Organization |
-| --- | --- | --- |
-| 0 | Resistant | AI is prohibited or ignored. Engineering remains entirely human-driven. |
-| 1 | Curious | Individual engineers experiment with AI independently. |
-| 2 | Assisted | AI improves individual productivity through coding assistants and personal AI tools. |
-| 3 | Managed | Organization-wide AI standards, governance, and approved tooling are established. |
-| 4 | Integrated | AI is embedded throughout the software development lifecycle, from design and coding to testing, documentation, and reviews. |
-| 5 | Delegated | Well-defined engineering tasks are delegated to specialized AI agents operating under human supervision. |
-| 6 | Operational | AI agents become trusted participants in deployments, operations, monitoring, and enterprise workflows. |
-| 7 | Collaborative | Engineering teams coordinate multiple specialized AI agents across development, operations, security, testing, and support. |
-| 8 | AI-First | Engineering workflows are redesigned around humans and AI agents working together from the outset. |
-| 9 | Adaptive | AI continuously improves engineering systems and processes while humans provide strategy, governance, and oversight. |
-| 10 | AI-Native | Humans and AI agents function as a single adaptive engineering organization that continuously learns and evolves. |
+| Stage | Maturity      | Engineering Organization                                                                                                     |
+| ----- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 0     | Resistant     | AI is prohibited or ignored. Engineering remains entirely human-driven.                                                      |
+| 1     | Curious       | Individual engineers experiment with AI independently.                                                                       |
+| 2     | Assisted      | AI improves individual productivity through coding assistants and personal AI tools.                                         |
+| 3     | Managed       | Organization-wide AI standards, governance, and approved tooling are established.                                            |
+| 4     | Integrated    | AI is embedded throughout the software development lifecycle, from design and coding to testing, documentation, and reviews. |
+| 5     | Delegated     | Well-defined engineering tasks are delegated to specialized AI agents operating under human supervision.                     |
+| 6     | Operational   | AI agents become trusted participants in deployments, operations, monitoring, and enterprise workflows.                      |
+| 7     | Collaborative | Engineering teams coordinate multiple specialized AI agents across development, operations, security, testing, and support.  |
+| 8     | AI-First      | Engineering workflows are redesigned around humans and AI agents working together from the outset.                           |
+| 9     | Adaptive      | AI continuously improves engineering systems and processes while humans provide strategy, governance, and oversight.         |
+| 10    | AI-Native     | Humans and AI agents function as a single adaptive engineering organization that continuously learns and evolves.            |
 
 Today, most organizations are somewhere between the **Assisted** and **Integrated** stages. The next wave of competitive advantage won't come from adopting another AI tool. It will come from progressing through the higher stages of this maturity model.
 

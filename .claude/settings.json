@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "fileMatcher": "\\.(ts|tsx|js|jsx|md|mdx|json|css)$",
+        "command": "npx prettier --write ${file}"
+      }
+    ]
+  }
+}

@@ -7,13 +7,14 @@ description: Deploy your Heroku Applications in your own Cloud Account with Defa
 This tutorial will guide you through the process of migrating your Heroku applications to your own cloud account with Defang. This will allow you to reduce cost, gain more control, and access to the complete range of available cloud services.
 
 ## Pre-requisites
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
-* [The Heroku CLI (optional, but recommended)](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
-* Cloud Account Credentials
-  * [AWS](/docs/tutorials/setting_up_your_aws_account)
-  * [Azure](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
-  * [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
+
+- [A Defang Account](/docs/concepts/authentication)
+- [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
+- [The Heroku CLI (optional, but recommended)](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+- Cloud Account Credentials
+  - [AWS](/docs/tutorials/setting_up_your_aws_account)
+  - [Azure](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+  - [GCP](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
 :::tip
 **Do I need a Dockerfile?**
@@ -37,6 +38,7 @@ Gemfile.lock	README.md	app		config		db		log		storage		tmp
 ```
 
 Then run `defang init` and select `Migrate from heroku`:
+
 ```
 $ defang init
 ? How would you like to start?  [Use arrows to move, type to filter]
@@ -85,6 +87,7 @@ To deploy this project, run
 At this point, `defang` will have generated a `compose.yaml` file that describes your application and its services. You can review this file in your favorite text editor.
 
 The application I used had a single `web` dyno:
+
 ```
 $ heroku ps -a vast-badlands-production
 
@@ -92,6 +95,7 @@ $ heroku ps -a vast-badlands-production
 ```
 
 And a single PostgreSQL database:
+
 ```
 heroku addons -a vast-badlands-production
 
@@ -138,7 +142,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
+          cpus: "1"
           memory: 512M
 
   release:
@@ -156,7 +160,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
+          cpus: "1"
           memory: 512M
     restart: "no"
 ```
@@ -279,6 +283,7 @@ AWS_REGION=us-west-2 AWS_PROFILE=default defang compose up --provider aws
 2025-08-28T14:53:34.230-07:00 web * Listening on http://0.0.0.0:5000
 2025-08-28T14:53:34.232-07:00 web Use Ctrl-C to stop
 ```
+
 </details>
 
 See our full tutorial on [deploying to AWS](/docs/tutorials/deploy-to-aws).
@@ -364,7 +369,6 @@ export SPACES_ACCESS_KEY_ID=your_spaces_access_key_id
 export SPACES_SECRET_ACCESS_KEY=your_spaces_secret_access_key
 $ defang compose up --provider digitalocean
 ```
-
 
 ## Step 3 - Migrating your data
 

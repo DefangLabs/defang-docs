@@ -1,0 +1,12 @@
+node_modules/
+build/
+.docusaurus/
+static/
+*.lock
+# Docusaurus MDX mixes JSX with indented Markdown (Tabs/TabItem children,
+# JSX comments). Prettier's markdown/mdx printer mis-parses that nesting -
+# it reflows fenced code blocks into prose and escapes `*` inside `{/* */}`
+# JSX comments - which corrupts content without erroring on some files and
+# breaks the Docusaurus build on others. Leave .mdx unformatted until
+# Prettier's MDX support handles this correctly.
+*.mdx

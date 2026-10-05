@@ -60,12 +60,14 @@ The following is a minimal example of a Pulumi program that defines a Defang ser
 import * as defang from "@defang-io/pulumi-defang/lib";
 
 const service = new defang.DefangService("my-service", {
-    image: "strm/helloworld-http:latest",
-    ports: [{
-        target: 80,
-        mode: "ingress",
-        protocol: "http",
-    }],
+  image: "strm/helloworld-http:latest",
+  ports: [
+    {
+      target: 80,
+      mode: "ingress",
+      protocol: "http",
+    },
+  ],
 });
 ```
 
@@ -135,18 +137,25 @@ type Platform = "linux/arm64" | "linux/amd64" | "linux";
 ```
 
 ### `Protocol`
+
 ```typescript
 type Protocol = "tcp" | "udp" | "http" | "http2" | "grpc";
 ```
+
 ### `DeviceCapability`
+
 ```typescript
 type DeviceCapability = "gpu";
 ```
+
 ### `NetworkName`
+
 ```typescript
 type NetworkName = "private" | "public";
 ```
+
 ### `Network`
+
 ```typescript
 type Network = { aliases?: string[] } | null;
 ```
