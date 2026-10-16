@@ -1,5 +1,9 @@
 [
   {
+    "from": "/docs/tutorials/deploy-to-playground",
+    "to": "/docs/tutorials/deploy-to-your-cloud"
+  },
+  {
     "from": "/docs",
     "to": "/"
   },

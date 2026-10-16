@@ -44,7 +44,7 @@ Ownership transfer for provider-managed workspaces is not yet implemented. The u
 
 To create a Defang-managed workspace:
 
-1. Log in to the [Defang Portal](https://portal.defang.dev)
+1. Log in to the [Defang Portal](https://portal.defang.io)
 2. Click the workspace switcher dropdown in the navigation bar
 3. Click **Create Workspace** at the bottom of the dropdown
 4. Enter a name (lowercase kebab-case is recommended, e.g., `my-team`)
@@ -130,6 +130,6 @@ Deployment logs and history are associated with the workspace used at deployment
 
 ## CI/CD Integration
 
-When deploying from GitHub Actions using OIDC authentication, the repository owner automatically becomes the tenant context. This allows CI/CD pipelines to deploy without explicitly specifying a workspace, as long as the repository owner has an active subscription.
+When deploying from GitHub Actions using OIDC authentication, the repository owner's workspace is used automatically. This allows CI/CD pipelines to deploy without explicitly specifying a workspace, as long as the repository owner has an active subscription.
 
 For more details, see [Deploying from GitHub Actions](/docs/tutorials/deploying-from-github-actions).
