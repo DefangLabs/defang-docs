@@ -1,2 +1,5 @@
 # CODEOWNERS file automatically generated based on git history
-*                               @DefangLabs/devs 
+*                               @DefangLabs/devs
+
+# Dependency manifests: route dependabot/major-bump PRs to defangdevs too
+package.json package-lock.json @DefangLabs/devs @defangdevs
