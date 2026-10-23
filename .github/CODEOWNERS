@@ -2,4 +2,5 @@
 *                               @DefangLabs/devs
 
 # Dependency manifests: route dependabot/major-bump PRs to defangdevs too
-package.json package-lock.json @DefangLabs/devs @defangdevs
+package.json                   @DefangLabs/devs @defangdevs
+package-lock.json               @DefangLabs/devs @defangdevs
