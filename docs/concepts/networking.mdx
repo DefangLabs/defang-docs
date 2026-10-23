@@ -2,8 +2,6 @@
 title: Networking
 description: Defang helps you safely configure your services' networking.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Networking
 
@@ -106,26 +104,11 @@ services:
 
 ### Internal DNS
 
-Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
-
-<Tabs>
-  <TabItem value="playground" label="Playground" default>
-Internal communication between services in the Defang Playground follows the following pattern:
-
-```
-http://<username>-<service-name>:<port>
-```
-
-The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
-  </TabItem>
-  <TabItem value="byoc" label="BYOC">
-Internal communication between services in Defang BYOC follows the following pattern:
+Internal communication between services follows this pattern:
 
 ```
 http://<service-name>:<port>
 ```
-  </TabItem>
-</Tabs>
 
 ### Custom Network CIDR
 
