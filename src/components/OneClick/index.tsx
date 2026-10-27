@@ -70,7 +70,7 @@ export function EncodedTemplateUrl() {
 
 function getOneClickUrl(url: string) {
   const encodedTemplateUrl = getEncodedTemplateUrl(url);
-  return `https://portal.defang.dev/redirect?url=${encodedTemplateUrl}`;
+  return `https://portal.defang.io/redirect?url=${encodedTemplateUrl}`;
 }
 
 
