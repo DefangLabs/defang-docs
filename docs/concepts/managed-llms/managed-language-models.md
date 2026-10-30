@@ -22,6 +22,8 @@ Managed LLM services are available on all tiers (Starter, Pro, Enterprise) when 
 
 ## Usage
 
+For applications that use an OpenAI-compatible API, declare models in Compose and [choose their cloud defaults with recipes](./model-defaults.md). Existing aliases such as `chat-default` and `embedding-default` keep the Compose file portable across supported model backends.
+
 In order to leverage cloud-native managed language models from your Defang services, all you need to do is add the `x-defang-llm` extension to the service config and Defang will configure the approprate roles and permissions for you.
 
 ## Example
