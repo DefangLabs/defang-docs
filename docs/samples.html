@@ -9,7 +9,7 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.90da727c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8bce1de0.js" defer="defer"></script>
 <script src="/assets/js/main.20219f8a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -2102,7 +2102,7 @@ Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noo
 <p>Languages: nodejs</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="nodejs--react--postgresql"><a href="https://github.com/DefangLabs/samples/tree/main/samples/nodejs-react-postgres" target="_blank" rel="noopener noreferrer">Node.js &amp; React &amp; PostgreSQL</a><a href="#nodejs--react--postgresql" class="hash-link" aria-label="Direct link to nodejs--react--postgresql" title="Direct link to nodejs--react--postgresql" translate="no">​</a></h2>
 <p>This sample project demonstrates how to deploy a full-stack application using React for the frontend, Node.js for the backend, and PostgreSQL for the database.</p>
-<p>In this sample, we have set up the essential files you need to deploy in production using <a href="https://neon.tech/" target="_blank" rel="noopener noreferrer">Neon</a> to host your database. We use a connection string to connect Neon to your code. By replacing the pre-configured connection string at .env and at the compose file to yours, you will be ready to deploy this sample with Neon.</p>
+<p>In production, the Node.js server also serves the built React app, so one service handles both the UI and the API. The database is a Defang managed Postgres instance.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites-52">Prerequisites<a href="#prerequisites-52" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
 <ol>
 <li>Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noopener noreferrer">Defang CLI</a></li>
@@ -2123,11 +2123,10 @@ Download <a href="https://github.com/DefangLabs/defang" target="_blank" rel="noo
 <blockquote>
 <p>Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.</p>
 </blockquote>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="database_url"><code>DATABASE_URL</code><a href="#database_url" class="hash-link" aria-label="Direct link to database_url" title="Direct link to database_url" translate="no">​</a></h4>
-<p>A connection to the database, which should be in the format of <code>postgres://username:password@host:port/dbname</code>.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang config set DATABASE_URL</span><br></span></code></pre></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="react_app_api_url"><code>REACT_APP_API_URL</code><a href="#react_app_api_url" class="hash-link" aria-label="Direct link to react_app_api_url" title="Direct link to react_app_api_url" translate="no">​</a></h4>
-<p>A URL for the React App. For this, you will need to update the <code>compose.yaml</code> file to replace <code>&lt;YOUR_USERNAME&gt;</code> with your username, which you can get by running <code>defang whoami</code>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="postgres_password-12"><code>POSTGRES_PASSWORD</code><a href="#postgres_password-12" class="hash-link" aria-label="Direct link to postgres_password-12" title="Direct link to postgres_password-12" translate="no">​</a></h4>
+<p>The password for the Postgres database.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">defang config set POSTGRES_PASSWORD</span><br></span></code></pre></div></div>
+<p>The server connects to Postgres over SSL, as Defang managed Postgres requires. If you deploy to the Playground, where Postgres runs as a plain container, set <code>POSTGRES_SSL=false</code> on the <code>app</code> service.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-46">Deployment<a href="#deployment-46" class="hash-link" aria-label="Direct link to Deployment" title="Direct link to Deployment" translate="no">​</a></h3>
 <blockquote>
 <p>[!NOTE]
@@ -2502,7 +2501,7 @@ To provide a value for it, you can use the Defang CLI like this:</p>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-50">Configuration<a href="#configuration-50" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration" translate="no">​</a></h3>
 <p>For this sample, you will need to provide the following <a href="https://docs.defang.io/docs/concepts/configuration" target="_blank" rel="noopener noreferrer">configuration</a>. Note that if you are using the 1-click deploy option, you can set these values as secrets in your GitHub repository and the action will automatically deploy them for you.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="postgres_password-12"><code>POSTGRES_PASSWORD</code><a href="#postgres_password-12" class="hash-link" aria-label="Direct link to postgres_password-12" title="Direct link to postgres_password-12" translate="no">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="postgres_password-13"><code>POSTGRES_PASSWORD</code><a href="#postgres_password-13" class="hash-link" aria-label="Direct link to postgres_password-13" title="Direct link to postgres_password-13" translate="no">​</a></h4>
 <p>This password will be used to initialize the PostgreSQL database and to connect to it.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-51">Deployment<a href="#deployment-51" class="hash-link" aria-label="Direct link to Deployment" title="Direct link to Deployment" translate="no">​</a></h3>
 <blockquote>
