@@ -35,11 +35,18 @@ services:
         target: 5432
         published: 5432
     healthcheck:
-      test: ["CMD", "python3", "-c", "import sys, urllib.request; urllib.request.urlopen(sys.argv[1]).read()", "http://localhost:8000/"]
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import sys, urllib.request; urllib.request.urlopen(sys.argv[1]).read()",
+          "http://localhost:8000/",
+        ]
     deploy:
       resources:
         reservations:
-          cpus: '0.5'
+          cpus: "0.5"
           memory: 256M
 
   django:
@@ -62,7 +69,7 @@ services:
     deploy:
       resources:
         reservations:
-          cpus: '0.5'
+          cpus: "0.5"
           memory: 256M
 ```
 
@@ -122,4 +129,3 @@ Now that you have estimated the costs associated with your project. You are read
 ```
 defang compose up --provider gcp --mode affordable|balanced|high_availability
 ```
-

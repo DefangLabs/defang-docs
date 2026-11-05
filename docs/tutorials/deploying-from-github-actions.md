@@ -8,6 +8,7 @@ description: Using the Defang Github Action to deploy your project from your CI/
 Defang makes it easy to deploy your applications directly from your GitHub Actions workflow using the [Defang GitHub Action](https://github.com/DefangLabs/defang-github-action).
 
 There is a dedicated tutorial for deploying to each cloud provider:
-* [AWS](/docs/tutorials/deploying-from-github-actions/to-aws)
-* [Azure](/docs/tutorials/deploying-from-github-actions/to-azure)
-* [GCP](/docs/tutorials/deploying-from-github-actions/to-gcp).
+
+- [AWS](/docs/tutorials/deploying-from-github-actions/to-aws)
+- [Azure](/docs/tutorials/deploying-from-github-actions/to-azure)
+- [GCP](/docs/tutorials/deploying-from-github-actions/to-gcp).
