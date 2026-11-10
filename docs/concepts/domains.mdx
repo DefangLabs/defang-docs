@@ -66,19 +66,7 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md).
-:::
-```typescript
-const service = new defang.DefangService("serviceName", {
-    // [...]
-    ports: [{
-        target: 3000,
-        mode: "ingress",
-        protocol: "http",
-    }],
-});
-```
+See the [Defang Pulumi provider documentation](/docs/concepts/pulumi) for links to the API reference for your cloud.
   </TabItem>
 </Tabs>
 
@@ -148,9 +136,7 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
-:::warning
-As of now, the Pulumi provider does not support [Defang BYOC](./defang-byoc.md) and the [Defang Playground](./defang-playground.md) does not support bringing your own domain, since it is not for production use.
-:::
+See the [Defang Pulumi provider documentation](/docs/concepts/pulumi) for links to the API reference for your cloud.
   </TabItem>
 </Tabs>
 
