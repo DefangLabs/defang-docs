@@ -15,6 +15,12 @@ This tutorial deploys an NGINX service to your AWS account using the Defang AWS 
 
 ## Create a Pulumi project
 
+Log in to Pulumi Cloud, or select another [state backend](https://www.pulumi.com/docs/iac/concepts/state-and-backends/) with `pulumi login <backend-url>`:
+
+```bash
+pulumi login
+```
+
 Create a directory for your project and initialize a TypeScript project:
 
 ```bash
@@ -23,7 +29,7 @@ cd defang-pulumi-example
 pulumi new typescript
 ```
 
-Follow the prompts to select a Pulumi backend and create a stack. Install the Defang AWS provider in the project:
+Follow the prompts to create a stack. Install the Defang AWS provider in the project:
 
 ```bash
 npm install @defang-io/pulumi-defang-aws

@@ -136,6 +136,23 @@ services:
 ```
   </TabItem>
   <TabItem value="pulumi" label="Pulumi">
+
+This AWS example configures an ingress port and a custom domain:
+
+```typescript
+import * as defangAws from "@defang-io/pulumi-defang-aws";
+
+const project = new defangAws.Project("aws-demo", {
+    services: {
+        app: {
+            image: "nginx",
+            domainName: "example.com",
+            ports: [{ target: 80, mode: "ingress", appProtocol: "http" }],
+        },
+    },
+});
+```
+
 See the [Defang Pulumi provider documentation](/docs/concepts/pulumi) for links to the API reference for your cloud.
   </TabItem>
 </Tabs>
