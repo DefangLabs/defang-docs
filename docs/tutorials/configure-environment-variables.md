@@ -5,15 +5,16 @@ description: How to configure sensitive environment variables in Defang.
 
 # Configure Environment Variables
 
-
 This tutorial will show you how to configure sensitive environment variables in Defang.
 
 ## Pre-requisites
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Defang Account](/docs/concepts/authentication)
-* [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
+
+- [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+- [A Defang Account](/docs/concepts/authentication)
+- [The Defang CLI](/docs/intro/getting-started#install-the-defang-cli)
 
 ## Step 1 - Go to your `compose.yaml` file
+
 :::info
 If you are using [Pulumi](/docs/concepts/pulumi) instead of Compose files to define your services, please see [Using Config With Pulumi](/docs/concepts/configuration#using-config-with-pulumi) instead.
 :::
@@ -30,7 +31,8 @@ services:
       - API_KEY
 ```
 
-The type of notation shown above is called *list notation*. Alternatively, you can use *map notation*, which is also acceptable:
+The type of notation shown above is called _list notation_. Alternatively, you can use _map notation_, which is also acceptable:
+
 ```yaml
 services:
   service1:
@@ -40,10 +42,13 @@ services:
 ```
 
 ## Step 2 - Set the actual value in the Defang CLI
+
 To store the actual (sensitive) value of the variable, open up a terminal and type the command:
+
 ```bash
 defang config set API_KEY=actualvalue
 ```
+
 Remember to replace `API_KEY` with your variable name and `actualvalue` with your actual value.
 
 :::tip
@@ -51,24 +56,31 @@ You can view all the config variables you are storing in Defang by doing: `defan
 :::
 
 ### Editing a config value
+
 To edit a value, you can run the command again with an updated value to overwrite the current value:
+
 ```bash
 defang config set API_KEY=newvalue
 ```
 
 ### Removing a config value
+
 To remove a value, run the command:
+
 ```bash
 defang config rm API_KEY
 ```
+
 :::tip
 Remember to update your Compose file if you remove an environment variable.
 :::
 
 ## Step 3 - Deploy
+
 ```bash
 defang compose up
 ```
 
 ---
+
 For a deeper discussion on how configuration works in Defang, see our [Configuration docs](/docs/concepts/configuration).
