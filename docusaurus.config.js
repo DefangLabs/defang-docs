@@ -7,6 +7,13 @@ const darkCodeTheme = themes.dracula;
 
 const redirects = require("./redirects.json");
 
+// CLI reference pages are generated from Cobra commands, not stored in docs/cli.
+const cliCommandSources = new Set([
+  "cert", "compose", "config", "debug", "deployments", "estimate", "generate",
+  "init", "login", "logout", "mcp", "recipe", "stack", "token", "upgrade",
+  "version", "whoami", "workspace",
+]);
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
   // npm install --save @docusaurus/theme-mermaid
@@ -58,7 +65,19 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/DefangLabs/defang-docs/tree/main/",
+          editUrl: ({ docPath }) => {
+            const docsEditUrl = "https://github.com/DefangLabs/defang-docs/edit/main/";
+            if (docPath === "cli/index.mdx") return `${docsEditUrl}cli-index.mdx`;
+            if (docPath.startsWith("cli/")) {
+              const command = /^cli\/defang_([^_.]+)/.exec(docPath)?.[1];
+              return cliCommandSources.has(command)
+                ? `https://github.com/DefangLabs/defang/edit/main/src/cmd/cli/command/${command}.go`
+                : undefined;
+            }
+            // This page combines README files from the samples repository.
+            if (docPath === "samples.md") return undefined;
+            return `${docsEditUrl}docs/${docPath}`;
+          },
         },
         blog: false, // Disable the blog
         theme: {
