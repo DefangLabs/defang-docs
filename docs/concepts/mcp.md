@@ -171,6 +171,10 @@ Given a project name or directory, the `destroy` tool identifies any services de
 
 ### `estimate`
 
+:::warning
+Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
+:::
+
 The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports the following providers: `AWS`, or `GCP`.
 
 ### `list_configs`

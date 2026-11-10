@@ -75,6 +75,10 @@ Codex's public plugin registry is not yet available. Until it launches, installa
 
 ## Estimate deployment cost
 
+:::warning
+Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
+:::
+
 Before deploying, you can ask your agent to estimate the cost of your deployment:
 
 ```shell
