@@ -6,18 +6,14 @@ description: Overview of the Defang Deploy architecture and how it works in your
 
 # How Defang Deploy Works
 
-Defang Deploy is an AI-assisted tool that lets you take your app from Docker Compose to a secure and scalable deployment on your favorite cloud in minutes. Defang abstracts away the complexity of cloud infrastructure, providing you with a streamlined experience. Defang works by provisioning a "CD" task and a small set of resources in your cloud account. These enable Defang to orchestrate deployments for you in your cloud account from the `defang` CLI. Here's how it works.
+Defang Deploy takes your Docker Compose application to your cloud account. The `defang` CLI prepares the resources needed for deployment and starts a short-lived deployment task, called CD, in your cloud account.
 
 ## Bootstrapping
 
-The first time you deploy with Defang, a new `CD` task will be created in your cloud account. This task acts as an intermediary between you and your cloud provider. It will set up a grpc endpoint with which the `defang` CLI can communicate. When the CLI sends a request to trigger a deployment, for example, this task will orchestrate the build and deployment process—interfacing with the cloud APIs on your behalf. We will also create the necessary resources to support the Defang system. This includes things like roles, a storage space, an image repository, certificates, etc. The specific resources created depend on the cloud provider.
-
-Our architecture and AWS implementation has passed a ["well-architected"](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) review. We are in the process for obtaining similar qualifications with Digital Ocean and Google Cloud.
-
-You can learn more about the specifics by visiting our [provider docs](/docs/providers).
+When you deploy, the CLI prepares or reuses supporting resources in your cloud account, such as permissions and storage, and starts a CD task. The task uses your deployment configuration to build images and provision your application's resources. The resources and services used depend on your cloud provider; see the [provider docs](/docs/providers) for details.
 
 :::info
-The `CD` task does not run all the time. It is only used when you deploy a new service or update an existing service. Once it has finished deploying your service, it will shut itself down.
+The CD task runs for deployment operations and exits when its work is complete. Your deployed services continue running independently.
 :::
 
 ```mermaid
@@ -29,9 +25,9 @@ flowchart TD
   end
 
   subgraph cloud["Cloud"]
-    sdk(("SDK"))
-    CD("CD task")
-    kaniko(Kaniko)
+    CD("Deployment task")
+    build("Image build")
+    resources("Cloud resources")
 
     subgraph services[" "]
       service1("Service 1")
@@ -42,28 +38,25 @@ flowchart TD
 
 compose --> CLI
 
-CLI <-->|project + recipe| CD
-CD --> kaniko
-CD --> sdk
-sdk --> services
+CLI -->|deployment configuration| CD
+CD --> build
+CD --> resources
+build --> services
+resources --> services
 
 ```
 
 ## Orchestrating Deployments
 
-The Defang `CD` task acts as an intermediary between you and your cloud provider. This task receives deployment requests from the `defang` CLI. Each request carries your project (the Compose file(s) and source code) along with a [recipe](/docs/concepts/recipe) — the infrastructure-as-code parameters that aren't derived from your Compose file. Once a request has been received, `CD` orchestrates the process of building application images from your source code, and then continues to provision the necessary resources to deploy your application.
+The CLI passes your deployment configuration, including your Compose file and [recipe](/docs/concepts/recipe), to the CD task. CD orchestrates image builds and provisions the resources needed to run your application.
 
 :::info
-The `defang` CLI will upload your source code to a storage destination within your cloud. Your source code is never processed by Defang's servers.
+The `defang` CLI uploads local build contexts to storage in your cloud. Your source code is never processed by Defang's servers.
 :::
 
 ## Building Images
 
-When you deploy a new service, Defang will build a Docker image from your source code. This source code is uploaded by the `defang` CLI to a storage destination in your cloud account. The Defang `CD` task will then retrieve it and determine if each of your service's images need to be rebuilt. If rebuilding is necessary, `CD` will start a new container for each build it needs to complete.
-
-When you deploy an update to an existing service, the Defang `CD` task will determine if rebuilding your service's images is necessary. For example, when deploying new source code, `CD` will request that a new image be built. When deploying an update which does not require a new image, one will not be built—for example, redeploying the same service with increased or decreased resource requirements. In this case, the same image can be deployed to newly provisioned cloud resources.
-
-Defang uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build your images in a container in your cloud account. The resulting images will be stored in your cloud account's private container registry for future reference.
+For services built from local source, the CLI uploads the build context to storage in your cloud account. CD starts the build using services appropriate to your provider and deploys the resulting image. Services that specify an existing image can use that image instead.
 
 
 ## Service Provisioning
