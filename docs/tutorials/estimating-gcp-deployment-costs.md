@@ -5,6 +5,10 @@ description: Defang enables you to estimate the cost of deploying and running yo
 
 # Estimating GCP Deployment Costs
 
+:::warning
+Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
+:::
+
 Defang enables you to estimate the cost of deploying and running your project without needing to create an account with your cloud provider. This tutorial will walk through estimating the costs of deploying the [django-postgres](https://github.com/DefangLabs/samples/tree/main/samples/django-postgres) to GCP.
 
 ## Clone the sample
