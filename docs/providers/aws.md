@@ -113,7 +113,7 @@ Defang will create and manage the following resources in your AWS account from i
 | ec2/SecurityGroup | sg-032b839c63e70e49  |
 | ec2/Subnet | subnet-086bead399ddc8a0  |
 | ec2/SubnetRouteTableAssociation | rtbassoc-02e200d45e7227fe |
-| ecs/TaskDefinition | arn:aws:ecsus-west-2:381492210770:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
+| ecs/TaskDefinition | `arn:aws:ecs:<region>:<your-account-id>:task-definition/defang-cd-TaskDefinition-RXd5tf9TaN38:1` |
 | iam/Role | defang-cd-askRole-gsEeDPd6sPQY  |
 | ec2/VPC | vpc-0cbca64f13435695  |
 
@@ -123,15 +123,15 @@ Then, for each project you deploy, Defang will create and manage the following r
 |---------------|------------------------|
 | ecr/Repository | project1/kaniko-build |
 | ecr/LifecyclePolicy | project1/kaniko-build |
-| acm/Certificate | *.project1.tenant1.defang.app |
+| acm/Certificate | `*.<project>.<username>.defang.app` |
 | ecr/Repository | project1/kaniko-build/cache |
 | ecr/LifecyclePolicy | project1/kaniko-build/cache |
 | iam/InstanceProfile | ecs-agent-profile |
 | iam/Role | ecs-task-execution-role |
 | cloudwatch/EventRule | project1-ecs-lifecycle-rule |
 | cloudwatch/EventTarget | project1-ecs-event-cw-target |
-| route53/Record | validation-project1.tenant1.defang.app |
-| acm/CertificateValidation | *.project1.tenant1.defang.appValidation |
+| route53/Record | `validation-<project>.<username>.defang.app` |
+| acm/CertificateValidation | `*.<project>.<username>.defang.app` validation |
 | ec2/VpcDhcpOptionsAssociation | dhcp-options-association |
 | cloudwatch/LogGroup | builds |
 | iam/Role | kaniko-task-role |

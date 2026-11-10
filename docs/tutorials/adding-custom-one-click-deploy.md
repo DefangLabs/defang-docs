@@ -9,7 +9,7 @@ import { URLProvider, URLEncode } from "../../src/components/OneClick";
 
 # Adding Custom 1-Click Deploy to Your App
 
-This tutorial will show you how to add a 1-Click Deploy link so other people can easily deploy your app to the Defang Playground and eventually to their own cloud accounts.
+This tutorial will show you how to add a 1-Click Deploy link so other people can deploy your app to their own cloud account.
 
 The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app.
 
@@ -47,7 +47,6 @@ on:
 
 jobs:
   deploy:
-    environment: playground
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -59,7 +58,11 @@ jobs:
 
       - name: Deploy
         uses: DefangLabs/defang-github-action@v1
+        with:
+          provider: aws
 ```
+
+The workflow deploys to whichever cloud account the person running it has connected. See [Deploying from GitHub Actions](/docs/tutorials/deploying-from-github-actions) for how to set up credentials for each provider.
 
 ## Step 3 - Prepare Your Repository
 
@@ -103,7 +106,7 @@ You can just paste your url in here to get the encoded version:
 
 ## Step 5 - Create the 1-Click Deploy Link
 
-You will need to create a 1-Click Deploy link with the following format: `https://portal.defang.dev/redirect?url=` + your encoded URL. This ensures that the user can get [logged in](/docs/concepts/authentication/) to Defang before they get redirected to clone your app for deployment.
+You will need to create a 1-Click Deploy link with the following format: `https://portal.defang.io/redirect?url=` + your encoded URL. This ensures that the user can get [logged in](/docs/concepts/authentication/) to Defang before they get redirected to clone your app for deployment.
 
 :::tip
 Optionally, you can add `&name=<your-suggested-name>` to the end of the link if you'd like to suggest a name for the user to use for their deployment.
@@ -112,7 +115,7 @@ Optionally, you can add `&name=<your-suggested-name>` to the end of the link if 
 The finished link should look similar to the one below:
 
 ```
-https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>&name=<your-suggested-name>
+https://portal.defang.io/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>&name=<your-suggested-name>
 ```
 
 Now you have a link for anyone to deploy your app to Defang, with just 1 click.
@@ -122,13 +125,13 @@ Now you have a link for anyone to deploy your app to Defang, with just 1 click.
 For example, you can add it as a link in a Markdown file:
 
 ```
-[1-Click Deploy Link](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
+[1-Click Deploy Link](https://portal.defang.io/redirect?url=<your-encoded-url>&name=<your-project-here>)
 ```
 
 Or perhaps you can add it to a button with your own styling:
 
 ```
-[![1-click-deploy-button](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
+[![1-click-deploy-button](https://defang.io/deploy-with-defang.png)](https://portal.defang.io/redirect?url=<your-encoded-url>&name=<your-project-here>)
 ```
 
 </URLProvider>

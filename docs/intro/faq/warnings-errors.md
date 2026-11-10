@@ -82,8 +82,6 @@ services:
 ### "AWS provider was selected, but AWS environment variables are not set"
 - This message is displayed when you run `defang compose up` with the `--provider=aws` but none of the AWS environment variables were set. If you proceed, the deployment might fail, unless you have defined defined `default` credentials in the AWS configuration files or are running on an AWS instance.
 
-### "Using Defang provider, but AWS environment variables were detected"
-- This message is displayed when you run `defang compose up` with the `--provider=defang` but AWS environment variables were detected. The AWS environment variables will be ignored.
 
 ## Errors
 

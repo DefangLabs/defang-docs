@@ -1,6 +1,6 @@
 ---
 title: OpenAI Access Gateway
-description: Defang makes it easy to leverage cloud-native managed language models for your OpenAI-compatible application.
+description: Defang connects your OpenAI-compatible app to Bedrock or Vertex AI.
 ---
 
 # OpenAI Access Gateway

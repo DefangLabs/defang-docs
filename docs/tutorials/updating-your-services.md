@@ -20,7 +20,7 @@ If you are using [Compose files](../concepts/compose.md) to define your services
 Defang offers multiple [deployment modes](/docs/concepts/deployment-modes). You can specify which mode you would like to be used when you deploy with the `--mode` flag on the CLI. The default mode is `affordable`. You may also specify `balanced` or `high_availability`.
 
 ```shell
-$ defang compose up --mode=production
+$ defang compose up --mode=high_availability
 ```
 
 :::tip
