@@ -7,13 +7,6 @@ const darkCodeTheme = themes.dracula;
 
 const redirects = require("./redirects.json");
 
-// CLI reference pages are generated from Cobra commands, not stored in docs/cli.
-const cliCommandSources = new Set([
-  "cert", "compose", "config", "debug", "deployments", "estimate", "generate",
-  "init", "login", "logout", "mcp", "recipe", "stack", "token", "upgrade",
-  "version", "whoami", "workspace",
-]);
-
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
   // npm install --save @docusaurus/theme-mermaid
@@ -68,14 +61,8 @@ const config = {
           editUrl: ({ docPath }) => {
             const docsEditUrl = "https://github.com/DefangLabs/defang-docs/edit/main/";
             if (docPath === "cli/index.mdx") return `${docsEditUrl}cli-index.mdx`;
-            if (docPath.startsWith("cli/")) {
-              if (docPath === "cli/defang_compose_ls.md")
-                return "https://github.com/DefangLabs/defang/edit/main/src/cmd/cli/command/deployments.go";
-              const command = /^cli\/defang_([^_.]+)/.exec(docPath)?.[1];
-              return cliCommandSources.has(command)
-                ? `https://github.com/DefangLabs/defang/edit/main/src/cmd/cli/command/${command}.go`
-                : undefined;
-            }
+            // The remaining CLI pages are generated from Cobra commands.
+            if (docPath.startsWith("cli/")) return undefined;
             // This page combines README files from the samples repository.
             if (docPath === "samples.md") return undefined;
             return `${docsEditUrl}docs/${docPath}`;
