@@ -51,3 +51,15 @@ jobs:
 
       - name: Test build website
         run: npm run build
+
+  ci:
+    name: ci
+    if: always()
+    needs: [test-deploy]
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Require the documentation build
+        env:
+          RESULT: ${{ needs.test-deploy.result }}
+        run: test "$RESULT" = success
