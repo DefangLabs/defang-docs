@@ -49,6 +49,12 @@ The following table compares what each built-in recipe configures:
 
 Recipes are managed in the [Defang Portal](./portal.md). You can start from one of the built-in recipes and adjust the parameters to suit a particular [stack](./stacks.md) — for instance, a development stack and a production stack of the same [project](./projects.md) can use different recipes.
 
+## Model defaults
+
+A recipe can also choose the cloud models used by Compose aliases such as `chat-default`, `chat-large`, and `embedding-default`. Keep those names in your Compose file and configure the concrete choices under `defang-aws:models`, `defang-gcp:models`, `defang-azure:models`, or `defang-scaleway:models`.
+
+You can select a model family without its exact revision or pin a specific version. See [Choose models with recipes](./managed-llms/model-defaults.md) for configuration examples, precedence, and embedding migration requirements.
+
 ## How Recipes Are Used
 
 When you run a deployment with `defang up`, Defang sends two things to the Defang [`CD` task](/docs/intro/how-it-works) in your cloud:
