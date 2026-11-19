@@ -27,6 +27,15 @@ const config = {
         href: "/img/tab_icon.svg",
       },
     },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "alternate",
+        type: "text/markdown",
+        title: "llms.txt",
+        href: "/llms.txt",
+      },
+    },
   ],
   // Set the production URL of your site here
   url: "https://docs.defang.io/",
@@ -239,6 +248,27 @@ const config = {
         },
       };
     },
+    [
+      "@signalwire/docusaurus-plugin-llms-txt",
+      {
+        siteTitle: "Defang Docs",
+        siteDescription:
+          'Defang Deploy deploys Docker Compose apps to your own AWS, Google Cloud or Azure account. "Develop Once, Deploy Anywhere." Every page below is also available as Markdown: add ".md" to the page URL (for example /docs/intro.md). The full text of all pages is in https://docs.defang.io/llms-full.txt. Start with [Getting Started](https://docs.defang.io/docs/intro/getting-started.md), the [MCP server](https://docs.defang.io/docs/concepts/mcp.md), [agent skills](https://docs.defang.io/docs/tutorials/agent-skills.md) and the [CLI reference](https://docs.defang.io/docs/cli.md).',
+        depth: 2,
+        // Order the sections; the plugin sorts pages inside a section itself.
+        includeOrder: [
+          "/docs/intro",
+          "/docs/tutorials",
+          "/docs/cli",
+          "/docs/concepts",
+          "/docs/providers",
+        ],
+        content: {
+          enableLlmsFullTxt: true,
+          relativePaths: false,
+        },
+      },
+    ],
     [
       "@docusaurus/plugin-client-redirects",
       {
