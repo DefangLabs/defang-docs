@@ -6,8 +6,8 @@ sidebar_position: 5
 
 # DigitalOcean
 
-:::info
-The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
+:::warning[Deprecated]
+The DigitalOcean provider is deprecated. For new projects, deploy to [AWS](/docs/providers/aws), [Google Cloud](/docs/providers/gcp) or [Azure](/docs/providers/azure) instead.
 :::
 
 :::tip[DigitalOcean Credits]

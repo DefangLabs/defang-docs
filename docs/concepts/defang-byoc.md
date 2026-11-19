@@ -23,11 +23,11 @@ Defang does run the Defang build service to build your container images, which t
 The Defang CLI can be configured to deploy to a cloud provider either by using the `--provider` flag or by setting the `DEFANG_PROVIDER` environment variable. For example:
 
 ```bash
-# Supported provider values: auto, aws, azure, digitalocean, gcp
+# Supported provider values: auto, aws, azure, gcp (digitalocean is deprecated)
 # Default is auto, which uses detected cloud credentials when available
 $ defang compose up --provider=aws
 # or
-$ export DEFANG_PROVIDER=digitalocean
+$ export DEFANG_PROVIDER=gcp
 ```
 
 ## AWS
@@ -40,16 +40,11 @@ You can use the AWS Free Tier to try out Defang. Learn more about it [here](http
 
 ## DigitalOcean
 
-:::info
-
-The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
+:::warning[Deprecated]
+The DigitalOcean provider is deprecated. For new projects, use AWS, Google Cloud or Azure.
 :::
 
-Please read the [DigitalOcean Provider](/docs/providers/digitalocean) documentation for more details about how the DigitalOcean provider works and how to get started.
-
-:::tip[DigitalOcean Credits]
-You can get DigitalOcean credits to try out Defang. Learn more about it on their [pricing page](https://www.digitalocean.com/pricing). If you're an eligible startup, you can sign up for credits [here](https://www.digitalocean.com/hatch).
-:::
+The [DigitalOcean Provider](/docs/providers/digitalocean) page describes how it works for existing users.
 
 ## GCP
 
@@ -64,10 +59,6 @@ You can use the GCP Free Tier to try out Defang. Learn more about it [here](http
 :::
 
 ## Azure
-
-:::info
-The Defang Azure Provider is available for Public Preview.
-:::
 
 Please read the [Azure Provider](/docs/providers/azure) documentation for more details about how the Azure provider works and how to get started.
 

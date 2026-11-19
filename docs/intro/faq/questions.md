@@ -27,7 +27,7 @@ import {Button, ButtonGroup, FormGroup, FormLabel} from "@mui/material"
 
 ### Do you plan to support other clouds?
 
-- While we currently support [AWS](/docs/providers/aws) for production, [GCP](/docs/providers/gcp), [DigitalOcean](/docs/providers/digitalocean), and [Azure](/docs/providers/azure) are in preview. We plan to continue expanding cloud provider support in future releases.
+- We support [AWS](/docs/providers/aws), [GCP](/docs/providers/gcp) and [Azure](/docs/providers/azure). [DigitalOcean](/docs/providers/digitalocean) is deprecated. We plan to continue expanding cloud provider support in future releases.
 
 ## Deployment Process
 

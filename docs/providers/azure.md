@@ -6,10 +6,6 @@ sidebar_position: 4
 
 # Microsoft Azure
 
-:::warning[Beta]
-The Defang Azure Provider is currently in **beta** and supports only a subset of Defang's features. The supported surface is described on this page. For everything else, check back as we expand coverage — or vote on [this issue](https://github.com/DefangLabs/defang/issues/57) to help us prioritize.
-:::
-
 :::tip[Azure Free Account & Credits]
 You can use the Azure free account to try out Defang. Learn more about it [here](https://azure.microsoft.com/en-us/free/). If you're an eligible startup, you can apply for credits through [Microsoft for Startups](https://www.microsoft.com/en-us/startups).
 :::
@@ -67,7 +63,7 @@ $ export DEFANG_PROVIDER=azure
 
 ## Location
 
-The Defang BYOC Azure Provider uses the region specified in the `AZURE_LOCATION` environment variable. For a list of Azure regions, see the [Azure region documentation](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/). Not every Azure service used by Defang (for example, Azure OpenAI model SKUs) is available in every region — `westus3` is a good default during the beta.
+The Defang BYOC Azure Provider uses the region specified in the `AZURE_LOCATION` environment variable. For a list of Azure regions, see the [Azure region documentation](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/). Not every Azure service used by Defang (for example, Azure OpenAI model SKUs) is available in every region — `westus3` is a good default.
 
 ### Managed Postgres and Redis region availability
 
@@ -142,4 +138,4 @@ Defang prints this second record once Azure returns the token, then waits for it
 
 ## Future Improvements
 
-The Azure provider is in beta and is actively being expanded. Features not yet supported on Azure — including managed object storage and managed MongoDB — are tracked for future releases. Stay tuned for updates, and please file issues or feature requests on [GitHub](https://github.com/DefangLabs/defang/issues) to help us prioritize.
+Features not yet supported on Azure, including managed object storage and managed MongoDB, are tracked for future releases. Please file issues or feature requests on [GitHub](https://github.com/DefangLabs/defang/issues) to help us prioritize.
