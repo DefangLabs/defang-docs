@@ -1,0 +1,19 @@
+# docs.defang.io: all crawlers welcome, including AI crawlers.
+# Content-Signal matches https://defang.io/robots.txt
+User-agent: *
+Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+Sitemap: https://docs.defang.io/sitemap.xml
