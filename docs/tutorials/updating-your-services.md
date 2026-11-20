@@ -17,14 +17,15 @@ If you are using [Compose files](../concepts/compose.md) to define your services
 
 ## Deployment Modes
 
-Defang offers multiple [deployment modes](/docs/concepts/deployment-modes). You can specify which mode you would like to be used when you deploy with the `--mode` flag on the CLI. The default mode is `affordable`. You may also specify `balanced` or `high_availability`.
+Defang offers multiple [deployment modes](/docs/concepts/deployment-modes). You choose the mode when you create a [stack](/docs/concepts/stacks). The default mode is `affordable`. You may also choose `balanced` or `high_availability`.
 
 ```shell
-$ defang compose up --mode=production
+$ defang stack new --recipe high_availability
+$ defang compose up
 ```
 
 :::tip
-Rather than passing `--mode` (and `--provider`) on every deploy, configure a [stack](/docs/concepts/stacks), which records the provider, region, and mode for a deployment. The flags still work and override the stack when needed.
+A [stack](/docs/concepts/stacks) records the provider, region, and mode for a deployment, so you don't have to repeat them on every deploy.
 :::
 
 ### Development Mode (Default)

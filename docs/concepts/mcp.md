@@ -28,7 +28,7 @@ Run the setup command in your terminal for your IDE of choice from the [Supporte
 Install the [Defang CLI](/docs/intro/getting-started.mdx#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```bash
-defang mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
+defang mcp setup --client=<claude-code|claude-desktop|codex|cursor|kiro|rovo|vscode|vscode-codespaces|vscode-insiders|windsurf>
 ```
 
 :::
@@ -42,7 +42,7 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 Note that `npx` installation is supported, but not recommended.
 
 ```bash
-npx -y defang@latest mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
+npx -y defang@latest mcp setup --client=<claude-code|claude-desktop|codex|cursor|kiro|rovo|vscode|vscode-codespaces|vscode-insiders|windsurf>
 ```
 
 ## Supported IDEs
@@ -74,6 +74,14 @@ defang mcp setup --client=claude-desktop
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![Claude Desktop](/img/mcp-concept/claude-desktop.png)
+
+### [Codex](https://developers.openai.com/codex)
+
+Setup command:
+
+```bash
+defang mcp setup --client=codex
+```
 
 ### [Cursor](https://cursor.com/)
 
@@ -125,6 +133,14 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ![VS Code](/img/mcp-concept/vscode.png)
 
+### VS Code in GitHub Codespaces
+
+Setup command:
+
+```bash
+defang mcp setup --client=vscode-codespaces
+```
+
 ### [VS Code Insiders](https://code.visualstudio.com/insiders/)
 
 Setup command:
@@ -151,43 +167,48 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ## MCP Tools
 
-Below are the tools available in the Defang MCP Server.
+The Defang MCP Server provides 15 tools. It also provides two read-only resources with Defang's knowledge base and sample projects. It does not provide MCP prompts.
 
 :::info[Prerequisite]
-In order to use any of the MCP tools, you must set a provider using one of the [MCP prompts](#mcp-prompts) first.
+The tools that deploy and manage a project work on the currently selected stack. Create one with `create_aws_stack`, `create_gcp_stack` or `create_azure_stack`, or select an existing one with `select_stack`.
 :::
 
-### `deploy`
+### Deploy and inspect
 
-The `deploy` tool scans your project directory for Dockerfiles and `compose.yaml` files, then deploys the detected service(s) using Defang. You can monitor the deployment process in the Defang Portal.
+| Tool | What it does |
+|-|-|
+| `deploy` | Deploys the Compose project in the current working directory to the selected stack. |
+| `destroy` | Destroys the deployed application in the selected stack. |
+| `services` | Lists the deployed services for the project in the selected stack. |
+| `logs` | Fetches logs for the application in the selected stack, up to 100 lines at a time. Use the `since` and `until` parameters to page through the logs by time. |
+| `project_name` | Returns the current project name. |
 
-### `services`
+### Stacks
 
-The `services` tool displays the details of all your services that are currently deployed in your project with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
+| Tool | What it does |
+|-|-|
+| `create_aws_stack` | Creates a [stack](/docs/concepts/stacks) file for deploying to AWS. |
+| `create_gcp_stack` | Creates a stack file for deploying to Google Cloud. |
+| `create_azure_stack` | Creates a stack file for deploying to Azure. |
+| `list_stacks` | Lists the stacks for the current project. |
+| `select_stack` | Selects the stack to deploy to. |
+| `current_stack` | Returns the currently selected stack. |
 
-### `destroy`
+### Configuration
 
-Given a project name or directory, the `destroy` tool identifies any services deployed with Defang and terminates them. If no services are found, it will display an appropriate message.
+| Tool | What it does |
+|-|-|
+| `list_configs` | [Lists](/docs/cli/defang_config) the config variables set for the selected stack. |
+| `set_config` | [Sets](/docs/tutorials/configure-environment-variables#step-2---set-the-actual-value-in-the-defang-cli) a config variable. It can also generate a random value. |
+| `remove_config` | [Removes](/docs/tutorials/configure-environment-variables#removing-a-config-value) a config variable. |
 
-### `estimate`
+### Cost estimates
 
 :::warning
 Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
 :::
 
-The `estimate` tool scan your project directory and considers your [deployment mode](/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](/docs/concepts/estimation.md) for your project. Currently, the tool supports the following providers: `AWS`, or `GCP`.
-
-### `list_configs`
-
-The `list_configs` tool will [list](/docs/cli/defang_config) all the Defang configs set for your project.
-
-### `set_config`
-
-The `set_config` tool will [set](/docs/tutorials/configure-environment-variables#step-2---set-the-actual-value-in-the-defang-cli) a specific Defang config for your project.
-
-### `remove_config`
-
-The `remove_config` tool will [remove](/docs/tutorials/configure-environment-variables#removing-a-config-value) a specific Defang config for your project.
+The `estimate` tool takes your project and a [deployment mode](/docs/concepts/deployment-modes.md) and returns a [cost estimation](/docs/concepts/estimation.md). It supports AWS and Google Cloud.
 
 ## Example Prompts
 
@@ -217,7 +238,7 @@ deploy this with defang /Users/yourname/Documents/project1
 do I have a service called project1
 ```
 
-You can estimate the cost of a deployment to a supported cloud provider:
+You can ask for a cost estimate for a supported cloud provider. Cost estimation is currently unavailable (see [Cost estimates](#cost-estimates)):
 
 ```
 can you estimate balance mode on aws for this project?
