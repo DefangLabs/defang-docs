@@ -45,19 +45,19 @@ The Defang BYOC GCP Provider will use the location specified in the `GCP_LOCATIO
 
 ## Architecture
 
-Defang uses GCP cloud run to build, deploy, and run your services. The following describes the current state of Defang's support for GCP, the specific resources that Defang uses, and the roadmap for future support.
+Defang uses Google Cloud Build to build and deploy your services, and runs them on Google Cloud Run or Compute Engine. The following describes the current state of Defang's support for GCP, the specific resources that Defang uses, and the roadmap for future support.
 
 ### Deployment
 
-To deploy your services, the Defang CLI sets up some basic resources needed, including enabling required APIs in the project, creating service accounts used to build and deploy your service with the required permissions, and creating a [Google Cloud Storage](https://cloud.google.com/storage) bucket where the Defang CLI uploads your source code to. The CLI then deploys a GCP Cloud Run Job that uses Pulumi to build your container image and run your services.
+To deploy your services, the Defang CLI sets up some basic resources needed, including enabling required APIs in the project, creating service accounts used to build and deploy your service with the required permissions, and creating a [Google Cloud Storage](https://cloud.google.com/storage) bucket where the Defang CLI uploads your source code to. The CLI then starts a Google Cloud Build build in your project that runs Pulumi. Your container images are built with Cloud Build.
 
 ### Runtime
 
-The Provider builds and deploys your services using [Google Cloud Run](https://cloud.google.com/run) jobs, and runs your workloads using the [Google Cloud Run](https://cloud.google.com/run) service.
+A service with exactly one ingress port runs as a [Google Cloud Run](https://cloud.google.com/run) service. A service with `restart: "no"` runs as a Cloud Run job. Other services can run on [Compute Engine](https://cloud.google.com/compute) managed instance groups.
 
 ### Secrets
 
-The GCP provider does not currently support storing sensitive config values.
+Defang stores sensitive config values in [Google Secret Manager](https://cloud.google.com/secret-manager) in your project.
 
 ## Managed Storage
 
