@@ -6,12 +6,8 @@ sidebar_position: 5
 
 # DigitalOcean
 
-:::info
-The Defang DigitalOcean Provider is available for Public Preview as of October 2024.
-:::
-
-:::tip[DigitalOcean Credits]
-You can get DigitalOcean credits to try out Defang. Learn more about it on their [pricing page](https://www.digitalocean.com/pricing). If you're an eligible startup, you can sign up for credits [here](https://www.digitalocean.com/hatch).
+:::warning[Deprecated]
+The DigitalOcean provider is deprecated. For new projects, use [AWS](/docs/providers/aws), [Google Cloud](/docs/providers/gcp) or [Azure](/docs/providers/azure).
 :::
 
 Why should you use Defang with DigitalOcean? Defang allows you to easily create and manage full, scalable applications with DigitalOcean. Defang aims to make it easier to deploy your services to the cloud. DigitalOcean is one of the most popular cloud providers in the world and with Defang, you can bypass the complexities of the DigitalOcean platform. Let Defang do it for you and spend more time working on what's important to you!
