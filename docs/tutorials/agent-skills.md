@@ -75,7 +75,7 @@ Codex's public plugin registry is not yet available. Until it launches, installa
 
 ## What you get
 
-The Claude Code and Codex plugins add one skill, `/defang:deploy`, and register the [Defang MCP server](/docs/concepts/mcp). `npx skills add` installs the skill files from the Defang repository, which also include skills for preparing a project, checking deployment status and estimating cost.
+The Claude Code and Codex plugins add one skill, `/defang:deploy`, and register the [Defang MCP server](/docs/concepts/mcp). `npx skills add` installs the skill files from the Defang repository, which also include skills for preparing a project, checking deployment status and estimating cost (cost estimation is currently unavailable; see below).
 
 ## Deploy your project
 

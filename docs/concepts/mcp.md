@@ -238,7 +238,7 @@ deploy this with defang /Users/yourname/Documents/project1
 do I have a service called project1
 ```
 
-You can estimate the cost of a deployment to a supported cloud provider:
+You can ask for a cost estimate for a supported cloud provider. Cost estimation is currently unavailable (see [Cost estimates](#cost-estimates)):
 
 ```
 can you estimate balance mode on aws for this project?
