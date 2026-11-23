@@ -96,20 +96,7 @@ services:
 
 ### Internal DNS[​](#internal-dns "Direct link to Internal DNS")
 
-Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
-
-* Playground
-* BYOC
-
-Internal communication between services in the Defang Playground follows the following pattern:
-
-```
-http://<username>-<service-name>:<port>
-```
-
-The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
-
-Internal communication between services in Defang BYOC follows the following pattern:
+Internal communication between services follows the following pattern:
 
 ```
 http://<service-name>:<port>

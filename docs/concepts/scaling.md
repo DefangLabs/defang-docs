@@ -34,7 +34,7 @@ With Defang, users on the Pro plan ($49/mo) or higher can enable service-level a
 
 1. Add the ***x-defang-autoscaling : true*** extension to the service you want to autoscale.
 2. Remove any ***replicas*** field in the ***deploy*** mapping (if present).
-3. Deploy using staging or production [mode](https://docs.defang.io/docs/concepts/deployments.md#deployment-modes). (e.g. `defang compose up --provider=aws --mode=production`)
+3. Deploy to a stack that uses the `balanced` or `high_availability` [mode](https://docs.defang.io/docs/concepts/deployment-modes.md). (e.g. `defang stack new --recipe high_availability` and then `defang compose up`)
 
 ```
 services:

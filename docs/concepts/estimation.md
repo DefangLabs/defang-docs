@@ -60,7 +60,8 @@ Some charges will not be included in this estimate, including charges related to
 Now that you have estimated the costs associated with your project. You are ready to deploy to your target cloud.
 
 ```
-defang compose up [--provider aws|azure|gcp|digitalocean] [--mode affordable|balanced|high_availability]
+defang stack new --recipe balanced
+defang compose up
 ```
 
 ## Supported Providers[​](#supported-providers "Direct link to Supported Providers")

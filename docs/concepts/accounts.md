@@ -29,7 +29,7 @@ For more information, see [Workspaces](https://docs.defang.io/docs/concepts/work
 Your GitHub username will be used as your Defang username. Your Defang username is used to group all your [services](https://docs.defang.io/docs/concepts/services.md) and generate domains for your services with the following structure:
 
 ```
-<username>-<servicename>--<port>.prod1.defang.dev
+<service-name>--<port>.<project-name>.<username>.defang.app
 ```
 
 For more about domain structures, see our [Domains](https://docs.defang.io/docs/concepts/domains.md#structure) page.

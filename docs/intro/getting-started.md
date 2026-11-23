@@ -96,45 +96,37 @@ You can open the folder in your favorite editor and see the files that were gene
 * The `Dockerfile` is used to build the container image for your service.
 * The `compose.yaml` file is used to define the services you want to deploy.
 
-## Deploy to the Playground[​](#deploy-to-the-playground "Direct link to Deploy to the Playground")
+## Deploy to your cloud[​](#deploy-to-your-cloud "Direct link to Deploy to your cloud")
 
-Go back to your shell and type the following:
+Defang Deploy runs your app in your own AWS, Google Cloud or Azure account. Before you deploy, you need:
+
+* A Defang account. `defang login` opens a browser window for you to sign in.
+* Credentials for the cloud account you're deploying to, available in the terminal where you run `defang`. Sign in with that cloud's own tooling (for example the AWS CLI or `gcloud`) or set the usual environment variables. Each [provider page](https://docs.defang.io/docs/providers.md) lists the permissions Defang needs.
+* The account details for your cloud: `AWS_REGION` on AWS, `GCP_PROJECT_ID` on Google Cloud, or `AZURE_SUBSCRIPTION_ID` on Azure.
+
+Then, from your project folder:
+
+```
+$ defang login
+```
+
+Sign in with the browser window it opens. To learn more about how authentication works in Defang, see [Authentication](https://docs.defang.io/docs/concepts/authentication.md).
+
+Next, create a [stack](https://docs.defang.io/docs/concepts/stacks.md). A stack records the cloud, region and [deployment mode](https://docs.defang.io/docs/concepts/deployment-modes.md) for a deployment:
+
+```
+$ defang stack new
+```
+
+Finally, deploy:
 
 ```
 $ defang compose up
 ```
 
-If you have not used Defang before, you'll be prompted to log in.
+Defang builds your images, deploys the services in your cloud account, and streams the logs to your terminal. When the deployment finishes, the CLI prints the address of each service. To see what is running, use `defang compose ps`, and to tear it down, use `defang compose down`.
 
-```
- ! Please log in to continue.
-Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press ENTER to open browser)
-```
-
-info
-
-To learn more about how authentication works in Defang, check out our [Authentication](https://docs.defang.io/docs/concepts/authentication.md) page.
-
-When you do this, you should see something similar to the output below:
-
-```
- * Uploading build context for app
- * Deploying service app
- * Monitor your services' status in the defang portal
-   - https://portal.defang.dev/service/app
- * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
- * Press V to toggle verbose mode
-2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
-2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
-2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
- * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
-   - https://jordanstephens-app--3000.prod1.defang.dev
- * Done.
-```
-
-Now we can go to <https://portal.defang.dev/service/app> to see our service listed in the Defang portal.
-
-![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
+If you would rather deploy from GitHub whenever you push, follow one of the GitHub Actions tutorials: [AWS](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-aws.md), [Google Cloud](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-gcp.md) or [Azure](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-azure.md).
 
 ## Next Steps[​](#next-steps "Direct link to Next Steps")
 
@@ -144,7 +136,7 @@ Defang Deploy supports various ways of creating and deploying services to the cl
 
 ## [📄️<!-- --> <!-- -->Deploy to your own cloud](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
 
-[When you're ready for production](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
+[Set up AWS, Google Cloud or Azure for production](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
 
 ## [📄️<!-- --> <!-- -->Generate a Project with AI](https://docs.defang.io/docs/tutorials/generate-new-code-using-ai.md)
 

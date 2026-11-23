@@ -6,15 +6,16 @@ A *recipe* is the set of infrastructure-as-code parameters that Defang applies t
 
 Defang has historically offered three fixed [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md) — `affordable`, `balanced`, and `high_availability` — to let you trade off cost against resiliency. A recipe generalizes this idea: each of those modes is simply a built-in recipe, and recipes let you set the underlying infrastructure parameters directly instead of choosing from a fixed list. This means recipes supersede the enumerable deployment modes, while the three named modes remain available as convenient starting points.
 
-You can select a built-in recipe with the `--mode` CLI flag, which defaults to `affordable`:
+You select a built-in recipe when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md). The default is `affordable`:
 
 ```
-defang compose up --mode=high_availability
+defang stack new --recipe high_availability
+defang compose up
 ```
 
 tip
 
-The recommended way to pin a recipe is to configure a [stack](https://docs.defang.io/docs/concepts/stacks.md). A stack records the provider, region, and mode for a deployment, so you don't have to pass `--provider` or `--mode` on every command.
+A stack records the provider, region, and mode for a deployment, so you don't have to pass them on every command.
 
 For example, on AWS, the built-in recipes set values like log retention (1 day for `affordable`, 7 for `balanced`, 30 for `high_availability`), the Fargate capacity provider (spot vs. on-demand), the number of availability zones, the NAT gateway strategy, and whether managed databases use burstable or memory-optimized classes.
 

@@ -38,7 +38,7 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your AWS Dashboard.
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your AWS Dashboard.
 
 ## GCP[​](#gcp "Direct link to GCP")
 
@@ -61,7 +61,7 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment-1 "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your GCP Dashboard.
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your GCP Dashboard.
 
 ## Azure[​](#azure "Direct link to Azure")
 
@@ -84,18 +84,4 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment-2 "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
-
-## Playground[​](#playground "Direct link to Playground")
-
-### Step 1 - Setting your provider[​](#step-1---setting-your-provider "Direct link to Step 1 - Setting your provider")
-
-In your chat window, ask the AI assistant to set up Defang for Playground deployment.
-
-### Step 2 - Deploy[​](#step-2---deploy "Direct link to Step 2 - Deploy")
-
-Once the setup is complete, ask the AI assistant to deploy your project.
-
-### Step 3 - Inspect your deployment[​](#step-3---inspect-your-deployment "Direct link to Step 3 - Inspect your deployment")
-
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the the project on the [Defang portal](https://portal.defang.io/projects). ![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).

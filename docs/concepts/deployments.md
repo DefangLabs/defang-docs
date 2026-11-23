@@ -18,7 +18,7 @@ In [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md), Defang us
 
 ### Deployment Modes[​](#deployment-modes "Direct link to Deployment Modes")
 
-As mentioned above, Defang offers different [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md): `affordable`, `balanced`, and `high_availability`. You can switch the modes using the `--mode` CLI flag, though the recommended approach is to configure a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment.
+As mentioned above, Defang offers different [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md): `affordable`, `balanced`, and `high_availability`. You choose the mode when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment.
 
 warning
 

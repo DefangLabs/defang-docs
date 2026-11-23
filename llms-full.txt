@@ -25,7 +25,7 @@ Overview of Defang Deploy, an AI-assisted tool that lets you take your app from 
 Learn how to use Defang
 
 - [Featured Tutorials](https://docs.defang.io/docs/tutorials.md): Learn how to use Defang
-- [Adding Custom 1-Click Deploy to Your App](https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy.md): Add a custom 1-Click Deploy link to deploy your own app.
+- [Adding 1-Click Deploy to your project](https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy.md): 1-Click Deploy links deployed to the Defang Playground, which has been shut down.
 - [Deploy with Agent Skills](https://docs.defang.io/docs/tutorials/agent-skills.md): Install the Defang plugin for Claude Code or Codex to deploy your project to the cloud directly from your agent.
 - [Configure Environment Variables](https://docs.defang.io/docs/tutorials/configure-environment-variables.md): How to configure sensitive environment variables in Defang.
 - [Deploy Existing Containers](https://docs.defang.io/docs/tutorials/deploy-container-using-the-cli.md): This tutorial will show you how to deploy an existing container/multi-container application using Defang.
@@ -36,7 +36,7 @@ Learn how to use Defang
 - [Deploy to Microsoft Azure](https://docs.defang.io/docs/tutorials/deploy-to-azure.md): Defang allows you to deploy to your own Microsoft Azure account.
 - [Deploy to DigitalOcean](https://docs.defang.io/docs/tutorials/deploy-to-digitalocean.md): Defang allows you deploy to your own DigitalOcean account.
 - [Deploy to Google Cloud Platform (GCP)](https://docs.defang.io/docs/tutorials/deploy-to-gcp.md): Defang allows you deploy to your own Google Cloud Platform (GCP) account.
-- [Deploy to Playground](https://docs.defang.io/docs/tutorials/deploy-to-playground.md): Deploy to the free Defang Playground.
+- [Deploy to Playground](https://docs.defang.io/docs/tutorials/deploy-to-playground.md): The Defang Playground has been shut down.
 - [Deploy to Your Own Cloud](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md): Defang allows you deploy to your own cloud account.
 - [Deploy Using Pulumi](https://docs.defang.io/docs/tutorials/deploy-using-pulumi.md): This tutorial deploys an NGINX service to your AWS account using the Defang AWS Pulumi provider. Pulumi will create cloud resources that may incur charges.
 - [Deploy a GPU-Powered Application to AWS](https://docs.defang.io/docs/tutorials/deploy-with-gpu.md): This tutorial will show you how to create and deploy a GPU-powered application on AWS using Defang.
@@ -56,7 +56,7 @@ Learn how to use Defang
 - [Updating Your Services](https://docs.defang.io/docs/tutorials/updating-your-services.md): How to update services deployed with Defang
 - [How to Use Your Own Domain With AWS](https://docs.defang.io/docs/tutorials/use-your-own-domain-name.md): This tutorial will show you how to set up and use your own domain when deploying to AWS using Defang.
 - [Using Codespaces and Gitpod](https://docs.defang.io/docs/tutorials/using-codespaces-gitpod.md): This tutorial will guide you to set up Defang in both GitHub Codespaces and Gitpod.
-- [Using 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md): Use 1-Click Deploy to easily deploy a sample to the Defang Playground.
+- [Using 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md): 1-Click Deploy deployed to the Defang Playground, which has been shut down.
 
 ### cli
 
@@ -119,7 +119,7 @@ Learn about Defang concepts
 - [Configuration](https://docs.defang.io/docs/concepts/configuration.md): Configuring your Defang application, including sensitive config values like API keys, passwords, and other credentials.
 - [Debug](https://docs.defang.io/docs/concepts/debug.md): Defang uses AI to help you debug your cloud applications.
 - [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md): Defang allows you deploy services, defined as containers, to your own cloud accounts.
-- [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md): Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
+- [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md): The Defang Playground has been shut down.
 - [Deployment Modes](https://docs.defang.io/docs/concepts/deployment-modes.md): Deployment modes are Defang's built-in recipes; they are now part of the broader Recipe concept.
 - [Deployment](https://docs.defang.io/docs/concepts/deployments.md): Defang will build your services in the cloud and manage the deployment process for you.
 - [Domains](https://docs.defang.io/docs/concepts/domains.md): Defang helps you provision SSL certificates and expose your services to the internet.
@@ -158,7 +158,7 @@ Defang supports all the major cloud providers
 - [Microsoft Azure](https://docs.defang.io/docs/providers/azure.md): Defang allows you to easily create and manage scalable applications with Microsoft Azure.
 - [DigitalOcean](https://docs.defang.io/docs/providers/digitalocean.md): Defang allows you to easily create and manage full, scalable applications with DigitalOcean.
 - [Google Cloud Platform (GCP)](https://docs.defang.io/docs/providers/gcp.md): Defang will allow you to easily create and manage full, scalable applications with GCP.
-- [Playground](https://docs.defang.io/docs/providers/playground.md): The Defang Playground is a free tier that allows you to experiment with Defang.
+- [Playground](https://docs.defang.io/docs/providers/playground.md): The Defang Playground has been shut down.
 
 ### ask
 
@@ -2299,7 +2299,7 @@ For more information, see [Workspaces](https://docs.defang.io/docs/concepts/work
 Your GitHub username will be used as your Defang username. Your Defang username is used to group all your [services](https://docs.defang.io/docs/concepts/services.md) and generate domains for your services with the following structure:
 
 ```
-<username>-<servicename>--<port>.prod1.defang.dev
+<service-name>--<port>.<project-name>.<username>.defang.app
 ```
 
 For more about domain structures, see our [Domains](https://docs.defang.io/docs/concepts/domains.md#structure) page.
@@ -2641,10 +2641,6 @@ tip
 
 You can find a sample of how to set sensitive config values [here](https://github.com/DefangLabs/samples/tree/main/samples/nodejs-openai).
 
-info
-
-If you are using the [1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md) option, you can set sensitive config values as secrets in your GitHub repository and the action will automatically deploy them for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
-
 ## Interpolation[​](#interpolation "Direct link to Interpolation")
 
 Environment variables are set within the `environment` section of a service in a `compose.yaml` file. Any variables declared here will become available within the service container.
@@ -2816,37 +2812,9 @@ You can use the Azure Free Tier to try out Defang. Learn more about it [here](ht
 
 ---
 
-:::danger Deprecation Notice Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. If you have existing projects on Playground, please migrate them to your own cloud account. See the [migration guide](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md) for instructions. :::
-
 # Defang Playground
 
-note
-
-Defang Playground is being deprecated. Users are encouraged to use the **Starter** tier (free) to deploy to their own cloud account via [BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md). Existing Playground users will be migrated to the Starter tier.
-
-Defang aims to make it easier to deploy your services to the cloud. Specifically, Defang's goal is to make it easier to deploy your workloads to your *own* cloud accounts. We refer to this as bring-your-own-cloud (BYOC), which you can read about in more depth [here](https://docs.defang.io/docs/concepts/defang-byoc.md).
-
-Defang Playground is a legacy free environment that allows you to deploy services to a Defang-hosted cloud account without needing to manage your own. It is intended for non-production workloads only.
-
-warning
-
-Please note that the Defang Playground is intended for testing/learning purposes only. The environment may be reset at any time. Do not run production workloads in Defang Playground.
-
-## Limitations[​](#limitations "Direct link to Limitations")
-
-There are a few limitations to Defang Playground. These limitations are in place to ensure that Defang Playground is only used for non-production workloads. If you are interested in running production workloads, you should use Defang BYOC.
-
-### No Apex Domain Support[​](#no-apex-domain-support "Direct link to No Apex Domain Support")
-
-When you deploy a service to Defang Playground, it will be assigned a domain under the `defang.dev` domain. We do not support pointing your own apex domains to Defang Playground services, but you can use subdomains.
-
-### Max Resources[​](#max-resources "Direct link to Max Resources")
-
-* Projects: 1
-* Services: 4
-* CPUs: 2
-* Memory: 1GiB
-* Replicas: 1
+The Defang Playground has been shut down, and you can no longer deploy to it. To deploy with Defang Deploy, use your own AWS, Google Cloud or Azure account: see [Getting Started](https://docs.defang.io/docs/intro/getting-started.md) and [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md).
 
 
 ---
@@ -2857,10 +2825,11 @@ info
 
 Deployment modes are now part of the broader [Recipe](https://docs.defang.io/docs/concepts/recipe.md) concept. See [Recipe](https://docs.defang.io/docs/concepts/recipe.md) for the full details, including a comparison of what each built-in recipe configures.
 
-`affordable`, `balanced`, and `high_availability` are Defang's three built-in [recipes](https://docs.defang.io/docs/concepts/recipe.md) — presets of infrastructure-as-code parameters that trade off cost against resiliency. You can select one with the `--mode` CLI flag, which defaults to `affordable`:
+`affordable`, `balanced`, and `high_availability` are Defang's three built-in [recipes](https://docs.defang.io/docs/concepts/recipe.md) — presets of infrastructure-as-code parameters that trade off cost against resiliency. You choose one when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md), and every deployment to that stack uses it. The default is `affordable`:
 
 ```
-defang compose up --mode=high_availability
+defang stack new --recipe high_availability
+defang compose up
 ```
 
 ## Tier Requirements[​](#tier-requirements "Direct link to Tier Requirements")
@@ -2873,7 +2842,7 @@ defang compose up --mode=high_availability
 
 tip
 
-While the `--mode` flag still works, the recommended way to choose a mode is to configure a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment so you don't have to pass these flags on every command.
+A [stack](https://docs.defang.io/docs/concepts/stacks.md) records the provider, region, and mode for a deployment, so you don't have to pass these flags on every command. `defang compose up` no longer accepts a `--mode` flag.
 
 Recipes generalize and supersede this fixed set of modes by letting you set the underlying infrastructure parameters directly. See the [Recipe](https://docs.defang.io/docs/concepts/recipe.md) concept for more information.
 
@@ -2900,7 +2869,7 @@ In [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md), Defang us
 
 ### Deployment Modes[​](#deployment-modes "Direct link to Deployment Modes")
 
-As mentioned above, Defang offers different [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md): `affordable`, `balanced`, and `high_availability`. You can switch the modes using the `--mode` CLI flag, though the recommended approach is to configure a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment.
+As mentioned above, Defang offers different [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md): `affordable`, `balanced`, and `high_availability`. You choose the mode when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment.
 
 warning
 
@@ -2928,17 +2897,6 @@ To make your service accessible from the public internet with Defang-hosted doma
 ### Structure[​](#structure "Direct link to Structure")
 
 When you deploy a publicly accessible service, Defang automatically provides you with domain names to access it.
-
-* Playground
-* BYOC
-
-If you're deploying to the [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md), you will receive:
-
-**Defang-hosted domain:**
-
-```
-https://<username>-<service-name>--<port>.defang.dev
-```
 
 If you're using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md), you will receive **both**:
 
@@ -2989,7 +2947,7 @@ When bringing your own domain, you have two main approaches:
 
 ### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)[​](#option-1-using-your-existing-dns-provider-cloudflare-namecheap-etc "Direct link to Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)")
 
-If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md), you have two choices:
+If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, you have two choices:
 
 **A. Point directly to your custom domain:**
 
@@ -3132,7 +3090,8 @@ Some charges will not be included in this estimate, including charges related to
 Now that you have estimated the costs associated with your project. You are ready to deploy to your target cloud.
 
 ```
-defang compose up [--provider aws|azure|gcp|digitalocean] [--mode affordable|balanced|high_availability]
+defang stack new --recipe balanced
+defang compose up
 ```
 
 ## Supported Providers[​](#supported-providers "Direct link to Supported Providers")
@@ -3353,7 +3312,7 @@ Defang helps you provision the infrastructure you need to run your services. Tha
 
 Availability
 
-Managed storage services are available on all tiers (Starter, Pro, Enterprise) when deploying via BYOC. Defang Playground does not support managed storage services.
+Managed storage services are available on all tiers (Starter, Pro, Enterprise) when deploying via BYOC.
 
 
 ---
@@ -3637,7 +3596,7 @@ Recommended Installation
 Install the [Defang CLI](https://docs.defang.io/docs/intro/getting-started.md#install-the-defang-cli) using [Curl](https://curl.se/) or [Homebrew](https://brew.sh/)
 
 ```
-defang mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
+defang mcp setup --client=<claude-code|claude-desktop|codex|cursor|kiro|rovo|vscode|vscode-codespaces|vscode-insiders|windsurf>
 ```
 
 Once the command completes, you may need to restart your IDE for the changes to take effect.
@@ -3649,7 +3608,7 @@ That's it! Feel free to explore our [Example Prompts](#example-prompts) to get i
 Note that `npx` installation is supported, but not recommended.
 
 ```
-npx -y defang@latest mcp setup --client=<claude-code|claude-desktop|cursor|kiro|rovo|vscode|vscode-insiders|windsurf>
+npx -y defang@latest mcp setup --client=<claude-code|claude-desktop|codex|cursor|kiro|rovo|vscode|vscode-codespaces|vscode-insiders|windsurf>
 ```
 
 ## Supported IDEs[​](#supported-ides "Direct link to Supported IDEs")
@@ -3681,6 +3640,14 @@ defang mcp setup --client=claude-desktop
 Once setup is complete, you can interact with the AI coding agent using Defang-related actions like `check defang services` or [other prompts](#example-prompts). Here's an example of what it could look like:
 
 ![Claude Desktop](/assets/images/claude-desktop-47ace032d3d4b06f00ac34f4c8090413.png)
+
+### [Codex](https://developers.openai.com/codex)[​](#codex "Direct link to codex")
+
+Setup command:
+
+```
+defang mcp setup --client=codex
+```
 
 ### [Cursor](https://cursor.com/)[​](#cursor "Direct link to cursor")
 
@@ -3732,6 +3699,14 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ![VS Code](/assets/images/vscode-6d9b6219505e45a68463f86807f93f0e.png)
 
+### VS Code in GitHub Codespaces[​](#vs-code-in-github-codespaces "Direct link to VS Code in GitHub Codespaces")
+
+Setup command:
+
+```
+defang mcp setup --client=vscode-codespaces
+```
+
 ### [VS Code Insiders](https://code.visualstudio.com/insiders/)[​](#vs-code-insiders "Direct link to vs-code-insiders")
 
 Setup command:
@@ -3758,43 +3733,48 @@ Once setup is complete, you can interact with the AI coding agent using Defang-r
 
 ## MCP Tools[​](#mcp-tools "Direct link to MCP Tools")
 
-Below are the tools available in the Defang MCP Server.
+The Defang MCP Server provides 15 tools. It also provides two read-only resources with Defang's knowledge base and sample projects. It does not provide MCP prompts.
 
 Prerequisite
 
-In order to use any of the MCP tools, you must set a provider using one of the [MCP prompts](#mcp-prompts) first.
+The tools that deploy and manage a project work on the currently selected stack. Create one with `create_aws_stack`, `create_gcp_stack` or `create_azure_stack`, or select an existing one with `select_stack`.
 
-### `deploy`[​](#deploy "Direct link to deploy")
+### Deploy and inspect[​](#deploy-and-inspect "Direct link to Deploy and inspect")
 
-The `deploy` tool scans your project directory for Dockerfiles and `compose.yaml` files, then deploys the detected service(s) using Defang. You can monitor the deployment process in the Defang Portal.
+| Tool           | What it does                                                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `deploy`       | Deploys the Compose project in the current working directory to the selected stack.                                                                         |
+| `destroy`      | Destroys the deployed application in the selected stack.                                                                                                    |
+| `services`     | Lists the deployed services for the project in the selected stack.                                                                                          |
+| `logs`         | Fetches logs for the application in the selected stack, up to 100 lines at a time. Use the `since` and `until` parameters to page through the logs by time. |
+| `project_name` | Returns the current project name.                                                                                                                           |
 
-### `services`[​](#services "Direct link to services")
+### Stacks[​](#stacks "Direct link to Stacks")
 
-The `services` tool displays the details of all your services that are currently deployed in your project with Defang. It shows the Service Name, Deployment ID, Public URL and Service Status. If there are no services found, it will display an appropriate message.
+| Tool                 | What it does                                                                                 |
+| -------------------- | -------------------------------------------------------------------------------------------- |
+| `create_aws_stack`   | Creates a [stack](https://docs.defang.io/docs/concepts/stacks.md) file for deploying to AWS. |
+| `create_gcp_stack`   | Creates a stack file for deploying to Google Cloud.                                          |
+| `create_azure_stack` | Creates a stack file for deploying to Azure.                                                 |
+| `list_stacks`        | Lists the stacks for the current project.                                                    |
+| `select_stack`       | Selects the stack to deploy to.                                                              |
+| `current_stack`      | Returns the currently selected stack.                                                        |
 
-### `destroy`[​](#destroy "Direct link to destroy")
+### Configuration[​](#configuration "Direct link to Configuration")
 
-Given a project name or directory, the `destroy` tool identifies any services deployed with Defang and terminates them. If no services are found, it will display an appropriate message.
+| Tool            | What it does                                                                                                                                                                             |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list_configs`  | [Lists](https://docs.defang.io/docs/cli/defang_config.md) the config variables set for the selected stack.                                                                               |
+| `set_config`    | [Sets](https://docs.defang.io/docs/tutorials/configure-environment-variables.md#step-2---set-the-actual-value-in-the-defang-cli) a config variable. It can also generate a random value. |
+| `remove_config` | [Removes](https://docs.defang.io/docs/tutorials/configure-environment-variables.md#removing-a-config-value) a config variable.                                                           |
 
-### `estimate`[​](#estimate "Direct link to estimate")
+### Cost estimates[​](#cost-estimates "Direct link to Cost estimates")
 
 warning
 
 Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
 
-The `estimate` tool scan your project directory and considers your [deployment mode](https://docs.defang.io/docs/concepts/deployment-modes.md) (which defaults to `AFFORDABLE`) to provide a [cost estimation](https://docs.defang.io/docs/concepts/estimation.md) for your project. Currently, the tool supports the following providers: `AWS`, or `GCP`.
-
-### `list_configs`[​](#list_configs "Direct link to list_configs")
-
-The `list_configs` tool will [list](https://docs.defang.io/docs/cli/defang_config.md) all the Defang configs set for your project.
-
-### `set_config`[​](#set_config "Direct link to set_config")
-
-The `set_config` tool will [set](https://docs.defang.io/docs/tutorials/configure-environment-variables.md#step-2---set-the-actual-value-in-the-defang-cli) a specific Defang config for your project.
-
-### `remove_config`[​](#remove_config "Direct link to remove_config")
-
-The `remove_config` tool will [remove](https://docs.defang.io/docs/tutorials/configure-environment-variables.md#removing-a-config-value) a specific Defang config for your project.
+The `estimate` tool takes your project and a [deployment mode](https://docs.defang.io/docs/concepts/deployment-modes.md) and returns a [cost estimation](https://docs.defang.io/docs/concepts/estimation.md). It supports AWS and Google Cloud.
 
 ## Example Prompts[​](#example-prompts "Direct link to Example Prompts")
 
@@ -3824,7 +3804,7 @@ deploy this with defang /Users/yourname/Documents/project1
 do I have a service called project1
 ```
 
-You can estimate the cost of a deployment to a supported cloud provider:
+You can ask for a cost estimate for a supported cloud provider. Cost estimation is currently unavailable (see [Cost estimates](#cost-estimates)):
 
 ```
 can you estimate balance mode on aws for this project?
@@ -3970,20 +3950,7 @@ services:
 
 ### Internal DNS[​](#internal-dns "Direct link to Internal DNS")
 
-Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
-
-* Playground
-* BYOC
-
-Internal communication between services in the Defang Playground follows the following pattern:
-
-```
-http://<username>-<service-name>:<port>
-```
-
-The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
-
-Internal communication between services in Defang BYOC follows the following pattern:
+Internal communication between services follows the following pattern:
 
 ```
 http://<service-name>:<port>
@@ -4341,15 +4308,16 @@ A *recipe* is the set of infrastructure-as-code parameters that Defang applies t
 
 Defang has historically offered three fixed [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md) — `affordable`, `balanced`, and `high_availability` — to let you trade off cost against resiliency. A recipe generalizes this idea: each of those modes is simply a built-in recipe, and recipes let you set the underlying infrastructure parameters directly instead of choosing from a fixed list. This means recipes supersede the enumerable deployment modes, while the three named modes remain available as convenient starting points.
 
-You can select a built-in recipe with the `--mode` CLI flag, which defaults to `affordable`:
+You select a built-in recipe when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md). The default is `affordable`:
 
 ```
-defang compose up --mode=high_availability
+defang stack new --recipe high_availability
+defang compose up
 ```
 
 tip
 
-The recommended way to pin a recipe is to configure a [stack](https://docs.defang.io/docs/concepts/stacks.md). A stack records the provider, region, and mode for a deployment, so you don't have to pass `--provider` or `--mode` on every command.
+A stack records the provider, region, and mode for a deployment, so you don't have to pass them on every command.
 
 For example, on AWS, the built-in recipes set values like log retention (1 day for `affordable`, 7 for `balanced`, 30 for `high_availability`), the Fargate capacity provider (spot vs. on-demand), the number of availability zones, the NAT gateway strategy, and whether managed databases use burstable or memory-optimized classes.
 
@@ -4504,7 +4472,7 @@ With Defang, users on the Pro plan ($49/mo) or higher can enable service-level a
 
 1. Add the ***x-defang-autoscaling : true*** extension to the service you want to autoscale.
 2. Remove any ***replicas*** field in the ***deploy*** mapping (if present).
-3. Deploy using staging or production [mode](https://docs.defang.io/docs/concepts/deployments.md#deployment-modes). (e.g. `defang compose up --provider=aws --mode=production`)
+3. Deploy to a stack that uses the `balanced` or `high_availability` [mode](https://docs.defang.io/docs/concepts/deployment-modes.md). (e.g. `defang stack new --recipe high_availability` and then `defang compose up`)
 
 ```
 services:
@@ -4596,16 +4564,7 @@ tip
 
 Service names are defined in your Compose file or in your Pulumi program.
 
-* Playground
-* BYOC
-
-Domains for services in Playground follow the following pattern:
-
-```
-<username>-<service-name>--<port>.prod1a.defang.dev
-```
-
-Domains for services in Defang BYOC follow the following pattern:
+Domains for services follow the following pattern:
 
 ```
 <service-name>--<port>.<project-name>.<username>.defang.app
@@ -4649,7 +4608,7 @@ You can run the `defang compose ps` command to view the status of your services.
 
 Defang supports deploying multiple instances of a project as separate *stacks*. Each stack represents an isolated deployment of your project. Stacks allow you to manage different deployments of your project. For example, you can use stacks to support distinct development, staging, and production environments in the same cloud account. You can also use stacks to support deployments for different customers (e.g., Client A, Client B) or regions (e.g., North America, Europe) within the same project.
 
-A stack records the cloud provider, region, and deployment mode (its [recipe](https://docs.defang.io/docs/concepts/recipe.md)) for a deployment. This supersedes passing `--provider` and `--mode` on every command: instead of repeating those flags, you select a stack and Defang uses its recorded settings. The flags still work and override the stack's values when needed.
+A stack records the cloud provider, region, and deployment mode (its [recipe](https://docs.defang.io/docs/concepts/recipe.md)) for a deployment. Instead of repeating flags on every command, you select a stack and Defang uses its recorded settings. `defang compose up` does not accept `--mode`; set the mode when you create the stack.
 
 info
 
@@ -4756,7 +4715,7 @@ Ownership transfer for provider-managed workspaces is not yet implemented. The u
 
 To create a Defang-managed workspace:
 
-1. Log in to the [Defang Portal](https://portal.defang.dev)
+1. Log in to the [Defang Portal](https://portal.defang.io)
 2. Click the workspace switcher dropdown in the navigation bar
 3. Click **Create Workspace** at the bottom of the dropdown
 4. Enter a name (lowercase kebab-case is recommended, e.g., `my-team`)
@@ -5262,45 +5221,37 @@ You can open the folder in your favorite editor and see the files that were gene
 * The `Dockerfile` is used to build the container image for your service.
 * The `compose.yaml` file is used to define the services you want to deploy.
 
-## Deploy to the Playground[​](#deploy-to-the-playground "Direct link to Deploy to the Playground")
+## Deploy to your cloud[​](#deploy-to-your-cloud "Direct link to Deploy to your cloud")
 
-Go back to your shell and type the following:
+Defang Deploy runs your app in your own AWS, Google Cloud or Azure account. Before you deploy, you need:
+
+* A Defang account. `defang login` opens a browser window for you to sign in.
+* Credentials for the cloud account you're deploying to, available in the terminal where you run `defang`. Sign in with that cloud's own tooling (for example the AWS CLI or `gcloud`) or set the usual environment variables. Each [provider page](https://docs.defang.io/docs/providers.md) lists the permissions Defang needs.
+* The account details for your cloud: `AWS_REGION` on AWS, `GCP_PROJECT_ID` on Google Cloud, or `AZURE_SUBSCRIPTION_ID` on Azure.
+
+Then, from your project folder:
+
+```
+$ defang login
+```
+
+Sign in with the browser window it opens. To learn more about how authentication works in Defang, see [Authentication](https://docs.defang.io/docs/concepts/authentication.md).
+
+Next, create a [stack](https://docs.defang.io/docs/concepts/stacks.md). A stack records the cloud, region and [deployment mode](https://docs.defang.io/docs/concepts/deployment-modes.md) for a deployment:
+
+```
+$ defang stack new
+```
+
+Finally, deploy:
 
 ```
 $ defang compose up
 ```
 
-If you have not used Defang before, you'll be prompted to log in.
+Defang builds your images, deploys the services in your cloud account, and streams the logs to your terminal. When the deployment finishes, the CLI prints the address of each service. To see what is running, use `defang compose ps`, and to tear it down, use `defang compose down`.
 
-```
- ! Please log in to continue.
-Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press ENTER to open browser)
-```
-
-info
-
-To learn more about how authentication works in Defang, check out our [Authentication](https://docs.defang.io/docs/concepts/authentication.md) page.
-
-When you do this, you should see something similar to the output below:
-
-```
- * Uploading build context for app
- * Deploying service app
- * Monitor your services' status in the defang portal
-   - https://portal.defang.dev/service/app
- * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
- * Press V to toggle verbose mode
-2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
-2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
-2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
- * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
-   - https://jordanstephens-app--3000.prod1.defang.dev
- * Done.
-```
-
-Now we can go to <https://portal.defang.dev/service/app> to see our service listed in the Defang portal.
-
-![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
+If you would rather deploy from GitHub whenever you push, follow one of the GitHub Actions tutorials: [AWS](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-aws.md), [Google Cloud](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-gcp.md) or [Azure](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-azure.md).
 
 ## Next Steps[​](#next-steps "Direct link to Next Steps")
 
@@ -5310,7 +5261,7 @@ Defang Deploy supports various ways of creating and deploying services to the cl
 
 ## [📄️<!-- --> <!-- -->Deploy to your own cloud](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
 
-[When you're ready for production](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
+[Set up AWS, Google Cloud or Azure for production](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md)
 
 ## [📄️<!-- --> <!-- -->Generate a Project with AI](https://docs.defang.io/docs/tutorials/generate-new-code-using-ai.md)
 
@@ -5928,27 +5879,7 @@ Stayed tuned for future updates!
 
 # Playground
 
-:::danger Deprecation Notice Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. If you have existing projects on Playground, please migrate them to your own cloud account. See the [migration guide](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md) for instructions. :::
-
-The Defang Playground is a free deployment provider that allows you to experiment with Defang. The Playground is a shared environment that should not be used to run production workloads. The Playground is a great way to get started with Defang. You can even use [1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md) to try it out quickly or you can get started with the [Defang CLI](https://docs.defang.io/docs/intro/getting-started.md).
-
-This page highlights architectural considerations when deploying to the Playground and any differences you might encounter when deploying to the Playground versus deploying to your own cloud account.
-
-info
-
-The Playground allows only 1 deployed project at a time. Use the CLI `defang down` command to tear down a project before deploying a new one.
-
-## Overview[​](#overview "Direct link to Overview")
-
-Overall, the Defang Playground is very similar to deploying to your own cloud account. The Playground runs on a Defang-managed AWS account, so you can expect it to work similarly to deploying to [AWS](https://docs.defang.io/docs/providers/aws.md).
-
-### Managed services[​](#managed-services "Direct link to Managed services")
-
-In essence, the Playground does not support any [managed storage](https://docs.defang.io/docs/concepts/managed-storage.md) services, ie. `x-defang-postgres` and `x-defang-redis` are ignored when deploying to the Playground. You can however run both Postgres and Redis as regular container services for testing purposes.
-
-### Managed LLMs[​](#managed-llms "Direct link to Managed LLMs")
-
-Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension when deploying to your own cloud account with BYOC. This extension is supported in the Defang Playground with one caveat: your MODEL (model ID) will be limited to a default model chosen by Defang.
+The Defang Playground has been shut down, and you can no longer deploy to it. Defang Deploy runs your app in your own AWS, Google Cloud or Azure account. See [Getting Started](https://docs.defang.io/docs/intro/getting-started.md), or [migrate an existing project to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md).
 
 
 ---
@@ -10767,134 +10698,9 @@ For a complete list of tutorials, check out the sidebar.
 
 ---
 
-# Adding Custom 1-Click Deploy to Your App
+# Adding 1-Click Deploy to your project
 
-This tutorial will show you how to add a 1-Click Deploy link so other people can easily deploy your app to the Defang Playground and eventually to their own cloud accounts.
-
-The link is often placed as a button in the `README.md` file of your project repository, and is the easiest way to allow anyone to deploy your app.
-
-info
-
-If you are trying to use 1-Click Deploy with one of our [samples](https://defang.io/samples/), we have a separate tutorial on [how to use 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md).
-
-### How 1-Click Deploy Works[​](#how-1-click-deploy-works "Direct link to How 1-Click Deploy Works")
-
-A 1-Click Deploy link points to a special URL. Clicking this link will prompt the user to create a new GitHub repo with a clone of your project. This new repo will contain a GitHub Actions workflow which will automatically deploy the project to Defang.
-
-## Pre-requisites[​](#pre-requisites "Direct link to Pre-requisites")
-
-* A [GitHub](https://github.com/) repository for your project
-
-## Step 1 - Prepare Your App[​](#step-1---prepare-your-app "Direct link to Step 1 - Prepare Your App")
-
-You will need a `compose.yaml` file in the root folder of your project repository to describe the services which will be deployed. Learn more about writing [Compose files](https://docs.defang.io/docs/concepts/compose.md#example-of-a-compose-file).
-
-## Step 2 - Copy the GitHub Workflow[​](#step-2---copy-the-github-workflow "Direct link to Step 2 - Copy the GitHub Workflow")
-
-In your project, add a new folder named `.github`, then add a folder named `workflows` inside it, and copy the entire GitHub Workflow `deploy.yaml` file from [here](https://github.com/DefangLabs/samples/blob/main/starter-sample/.github/workflows/deploy.yaml) into the `workflows` folder.
-
-If your app requires [configuration](https://docs.defang.io/docs/concepts/configuration.md) (e.g. API keys, passwords, etc.), learn more about [managing config variables with the Defang GitHub Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
-
-You should have a `.yaml` file similar to the one below:
-
-```
-name: Deploy
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    environment: playground
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-
-      - name: Deploy
-        uses: DefangLabs/defang-github-action@v1
-```
-
-## Step 3 - Prepare Your Repository[​](#step-3---prepare-your-repository "Direct link to Step 3 - Prepare Your Repository")
-
-To support 1-Click Deploy, your repository must be a [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). In order to make your repository into a Template Repository, complete the following steps:
-
-1. Go to the repository's "Settings" near the right on the top bar.
-2. Select the "Template repository" box to turn your repo into a template repo, as seen below:
-
-![select-template-repo-box](/assets/images/select-template-repo-box-34f6dee088348d2f156e786c936c7880.png)
-
-3. Go back to your repository's homepage.
-4. Click the dropdown menu next to the green "Use this template" button near the top right corner, then click "Create a new repository":
-
-![use-this-template](/assets/images/use-this-template-92e5c7c792e72457500d1326dd01d66a.png)
-
-5. You will be taken to a page similar to the one shown below.
-
-![create-repo](/assets/images/create-repo-2102ac208d52067569897fb5e9dff12e.png)
-
-Now stay on this page and continue to the next step.
-
-## Step 4 - Get the Encoded URL[​](#step-4---get-the-encoded-url "Direct link to Step 4 - Get the Encoded URL")
-
-You will need the encoded version of the URL of the page from the previous step. This will be used as a redirect for the 1-Click Deploy link.
-
-1. Copy the URL of the page you are on ( "Create a new repository" page sourced from your template repository). It should look something like the following:
-
-```
-https://github.com/new?template_name=<your-repo-name>&template_owner=<your-github-username>
-```
-
-2. You need to URL encode your url for the next step. For example, the url above would be encoded as:
-
-```
-https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>
-```
-
-You can just paste your url in here to get the encoded version:
-
-Paste a url here
-
-​
-
-```
-```
-
-## Step 5 - Create the 1-Click Deploy Link[​](#step-5---create-the-1-click-deploy-link "Direct link to Step 5 - Create the 1-Click Deploy Link")
-
-You will need to create a 1-Click Deploy link with the following format: `https://portal.defang.dev/redirect?url=` + your encoded URL. This ensures that the user can get [logged in](https://docs.defang.io/docs/concepts/authentication.md) to Defang before they get redirected to clone your app for deployment.
-
-tip
-
-Optionally, you can add `&name=<your-suggested-name>` to the end of the link if you'd like to suggest a name for the user to use for their deployment.
-
-The finished link should look similar to the one below:
-
-```
-https://portal.defang.dev/redirect?url=https%3A%2F%2Fgithub.com%2Fnew%3Ftemplate_name%3D<your-repo-name>%26template_owner%3D<your-github-username>&name=<your-suggested-name>
-```
-
-Now you have a link for anyone to deploy your app to Defang, with just 1 click.
-
-## Step 6 - Use the Link[​](#step-6---use-the-link "Direct link to Step 6 - Use the Link")
-
-For example, you can add it as a link in a Markdown file:
-
-```
-[1-Click Deploy Link](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
-```
-
-Or perhaps you can add it to a button with your own styling:
-
-```
-[![1-click-deploy-button](https://defang.io/deploy-with-defang.png)](https://portal.defang.dev/redirect?url=<your-encoded-url>&name=<your-project-here>)
-```
+1-Click Deploy links deployed to the Defang Playground, which has been shut down, so new links no longer work. To let others deploy your app, point them to [Getting Started](https://docs.defang.io/docs/intro/getting-started.md), or set up [deploys from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-aws.md).
 
 
 ---
@@ -10958,38 +10764,13 @@ note
 
 Codex's public plugin registry is not yet available. Until it launches, installation requires adding the marketplace entry manually as shown above.
 
-## Estimate deployment cost[​](#estimate-deployment-cost "Direct link to Estimate deployment cost")
+## What you get[​](#what-you-get "Direct link to What you get")
 
-warning
-
-Cost estimation is temporarily unavailable. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
-
-Before deploying, you can ask your agent to estimate the cost of your deployment:
-
-```
-/defang:estimate
-```
-
-Your agent will analyze your `compose.yaml` and provide a cost estimate based on the services you're deploying, their resource requirements, and the current pricing for the cloud resources which will be used. This can help you identify expensive services or configurations before you deploy.
-
-### How the estimate works[​](#how-the-estimate-works "Direct link to How the estimate works")
-
-1. **Validate the CLI** — checks if the Defang CLI is installed, and provides install instructions if not
-2. **Authenticate** — verifies you're logged in to Defang, or runs `defang login`
-3. **Find your `compose.yaml`** — locates your Compose file
-4. **Determine target stack** — identifies the cloud provider, region, and deployment mode to base the estimate on (or asks you to specify them)
-5. **Run the estimate** — executes `defang compose estimate` with the appropriate flags
-6. **Explain the results** — summarizes cost breakdowns and suggests lower-cost alternatives if needed
-
-### Estimate flags[​](#estimate-flags "Direct link to Estimate flags")
-
-* `--provider aws|gcp`: override the provider
-* `--region REGION`: override the region
-* `--mode affordable|balanced|high_availability`: override the deployment mode
+The Claude Code and Codex plugins add one skill, `/defang:deploy`, and register the [Defang MCP server](https://docs.defang.io/docs/concepts/mcp.md). `npx skills add` installs the skill files from the Defang repository, which also include skills for preparing a project, checking deployment status and estimating cost (cost estimation is currently unavailable; see below).
 
 ## Deploy your project[​](#deploy-your-project "Direct link to Deploy your project")
 
-Navigate to your project directory and run:
+In Claude Code or Codex, navigate to your project directory and run:
 
 ```
 /defang:deploy
@@ -11009,31 +10790,21 @@ tip
 
 If the agent installs the Defang CLI for the first time, reload your plugins afterward to activate the Defang MCP server without restarting your agent.
 
-## Check deployment status[​](#check-deployment-status "Direct link to Check deployment status")
+## Check status and estimate cost[​](#check-status-and-estimate-cost "Direct link to Check status and estimate cost")
 
-If your deployment fails or you want to check the status of your services, you can ask your agent for updates:
+The plugins don't have separate status or estimate commands. To check a deployment, ask your agent in plain language and it will use the MCP server's `services` and `logs` tools, as in the examples below.
 
-```
-/defang:status
-```
+warning
 
-### How status checks work[​](#how-status-checks-work "Direct link to How status checks work")
+Cost estimation is temporarily unavailable, which affects the MCP server's `estimate` tool and the `defang estimate` command. Follow [issue #2316](https://github.com/DefangLabs/defang/issues/2316) for the fix and its release.
 
-1. **Validate the CLI** — checks if the Defang CLI is installed, and provides install instructions if not
-2. **Authenticate** — verifies you're logged in to Defang, or runs `defang login`
-3. **Find your `compose.yaml`** — locates your Compose file to identify services
-4. **Check the current stack** — runs `defang stack ls` to determine active stack
-5. **Check deployment status** — runs `defang compose ps` to see service health
-6. **Fetch recent logs** — retrieves logs with `defang logs --since 15m` and scans for errors
-7. **Summarize and recommend** — diagnoses issues with root cause analysis and actionable next steps
-
-## - Use the Defang MCP server[​](#--use-the-defang-mcp-server "Direct link to - Use the Defang MCP server")
+## Use the Defang MCP server[​](#use-the-defang-mcp-server "Direct link to Use the Defang MCP server")
 
 Once the Defang CLI is installed, the plugin also registers the Defang MCP server. This gives your agent direct access to Defang tools — so instead of running skill steps, you can ask things like:
 
 * *"What services are currently running?"*
 * *"Show me the logs for my api service."*
-* *"How much will this deployment cost?"*
+* *"What stacks do I have?"*
 
 note
 
@@ -11750,72 +11521,9 @@ For a deeper discussion of the Defang GCP Architecture, see our [GCP docs](https
 
 ---
 
-:::danger Deprecation Notice Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. Please [deploy to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md) instead. :::
-
 # Deploy to Playground
 
-This tutorial will show you how to deploy your project to the free [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md).
-
-## Prerequisites[​](#prerequisites "Direct link to Prerequisites")
-
-* [The Defang CLI](https://docs.defang.io/docs/intro/getting-started.md#install-the-defang-cli)
-* [A Defang Account](https://docs.defang.io/docs/concepts/authentication.md)
-* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
-* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](https://docs.defang.io/docs/concepts/railpack.md)
-
-## CLI[​](#cli "Direct link to CLI")
-
-### Step 1 - Navigate to your project directory[​](#step-1---navigate-to-your-project-directory "Direct link to Step 1 - Navigate to your project directory")
-
-Head to the folder where your project is located.
-
-```
-$ cd path/to/your/project
-```
-
-### Step 2 - Deploy[​](#step-2---deploy "Direct link to Step 2 - Deploy")
-
-```
-$ defang compose up
-```
-
-If you have not used Defang before, you'll be prompted to log in.
-
-```
- ! Please log in to continue.
-Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press ENTER to open browser)
-```
-
-info
-
-To learn more about how authentication works in defang, check out the [authenticating page](https://docs.defang.io/docs/concepts/authentication.md).
-
-When you do this, you should see something similar to the output below:
-
-```
- * Uploading build context for app
- * Deploying service app
- * Monitor your services' status in the defang portal
-   - https://portal.defang.dev/service/app
- * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
- * Press V to toggle verbose mode
-2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
-2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
-2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
- * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
-   - https://jordanstephens-app--3000.prod1.defang.dev
- * Done.
-```
-
-You can also check on your deployment on the on the [Defang portal](#defang-portal) as well.
-
-***
-
-## Defang Portal[​](#defang-portal "Direct link to Defang Portal")
-
-Now we can go to <https://portal.defang.dev/service/app> to see our service listed in the Defang portal.
-
-![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
+The Defang Playground has been shut down, and you can no longer deploy to it. To deploy your project, follow [Getting Started](https://docs.defang.io/docs/intro/getting-started.md) or [deploy to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md).
 
 
 ---
@@ -12745,7 +12453,7 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your AWS Dashboard.
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your AWS Dashboard.
 
 ## GCP[​](#gcp "Direct link to GCP")
 
@@ -12768,7 +12476,7 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment-1 "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your GCP Dashboard.
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your GCP Dashboard.
 
 ## Azure[​](#azure "Direct link to Azure")
 
@@ -12791,21 +12499,7 @@ Once the setup is complete, ask the AI assistant to deploy your project.
 
 ### Step 4 - Inspect your deployment[​](#step-4---inspect-your-deployment-2 "Direct link to Step 4 - Inspect your deployment")
 
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
-
-## Playground[​](#playground "Direct link to Playground")
-
-### Step 1 - Setting your provider[​](#step-1---setting-your-provider "Direct link to Step 1 - Setting your provider")
-
-In your chat window, ask the AI assistant to set up Defang for Playground deployment.
-
-### Step 2 - Deploy[​](#step-2---deploy "Direct link to Step 2 - Deploy")
-
-Once the setup is complete, ask the AI assistant to deploy your project.
-
-### Step 3 - Inspect your deployment[​](#step-3---inspect-your-deployment "Direct link to Step 3 - Inspect your deployment")
-
-You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#services) or you can inspect the the project on the [Defang portal](https://portal.defang.io/projects). ![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
+You can check the status of your deployment by using the [Defang Services tool](https://docs.defang.io/docs/concepts/mcp.md#deploy-and-inspect) or you can inspect the resources created in your [Azure Portal](https://portal.azure.com/).
 
 
 ---
@@ -12929,7 +12623,8 @@ This estimate will include a line item for the most significant monthly costs as
 Now that you have estimated the costs associated with your project. You are ready to deploy to AWS.
 
 ```
-defang compose up --provider aws --mode affordable|balanced|high_availability
+defang stack new --recipe balanced
+defang compose up
 ```
 
 
@@ -13056,7 +12751,8 @@ GCP Cloud Run is billed based on usage, so Cloud Run line items will show as $0.
 Now that you have estimated the costs associated with your project. You are ready to deploy to GCP.
 
 ```
-defang compose up --provider gcp --mode affordable|balanced|high_availability
+defang stack new --recipe balanced
+defang compose up
 ```
 
 
@@ -13775,15 +13471,16 @@ If you are using [Compose files](https://docs.defang.io/docs/concepts/compose.md
 
 ## Deployment Modes[​](#deployment-modes "Direct link to Deployment Modes")
 
-Defang offers multiple [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md). You can specify which mode you would like to be used when you deploy with the `--mode` flag on the CLI. The default mode is `affordable`. You may also specify `balanced` or `high_availability`.
+Defang offers multiple [deployment modes](https://docs.defang.io/docs/concepts/deployment-modes.md). You choose the mode when you create a [stack](https://docs.defang.io/docs/concepts/stacks.md). The default mode is `affordable`. You may also choose `balanced` or `high_availability`.
 
 ```
-$ defang compose up --mode=production
+$ defang stack new --recipe high_availability
+$ defang compose up
 ```
 
 tip
 
-Rather than passing `--mode` (and `--provider`) on every deploy, configure a [stack](https://docs.defang.io/docs/concepts/stacks.md), which records the provider, region, and mode for a deployment. The flags still work and override the stack when needed.
+A [stack](https://docs.defang.io/docs/concepts/stacks.md) records the provider, region, and mode for a deployment, so you don't have to repeat them on every deploy.
 
 ### Development Mode (Default)[​](#development-mode-default "Direct link to Development Mode (Default)")
 
@@ -14080,69 +13777,7 @@ Now that you're logged in, you can use Defang commands. You can test that everyt
 
 # Using 1-Click Deploy
 
-This tutorial will show you how to use Defang 1-Click Deploy to deploy a sample to the Defang Playground.
-
-The 1-Click Deploy button is the easiest way for new users to deploy a sample project to the [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md). No CLI installation is required.
-
-info
-
-To access the full range of features provided by Defang, we recommend using the [Defang CLI](https://docs.defang.io/docs/intro/getting-started.md).
-
-## Step 1 - Choose a Sample[​](#step-1---choose-a-sample "Direct link to Step 1 - Choose a Sample")
-
-Head to our [list of samples](https://defang.io/#samples) and click a sample you want to deploy. Then, click on the button that says "1-Click Deploy".
-
-![one-click-deploy-button](/img/use-one-click-tutorial/one-click-deploy-button.png)
-
-<br />
-
-info
-
-Alternatively, you can find the "1-Click Deploy" button located in the `README.md` file of each sample's GitHub repository.
-
-![deploy-with-defang-button](/img/use-one-click-tutorial/deploy-with-defang-button.png)
-
-<br />
-
-## Step 2 - Login[​](#step-2---login "Direct link to Step 2 - Login")
-
-For 1-click deployments to work, Defang must have your permission, which you can grant by logging in. If you are already logged in, you will be automatically taken to the next step.
-
-![login-screen](/assets/images/login-screen-5772df750faab45110ae147a942431e5.png)
-
-## Step 3 - Create Your Repo[​](#step-3---create-your-repo "Direct link to Step 3 - Create Your Repo")
-
-Once logged in, you'll be redirected to GitHub. Click the "Create repository button" to create a new repository with the sample project.
-
-![create-repository](/img/use-one-click-tutorial/create-repository.png)
-
-<br />
-
-## Step 4 - Wait for Deployment to Complete[​](#step-4---wait-for-deployment-to-complete "Direct link to Step 4 - Wait for Deployment to Complete")
-
-A Github Action workflow will automatically start running to install Defang and deploy the sample to the Defang Playground. You can see this by going into the "Actions" tab in your GitHub repository.
-
-You can view the status of your deployment in the [Defang Portal](https://portal.defang.dev/), or by downloading the [Defang CLI](https://docs.defang.io/docs/intro/getting-started.md). You can also see deployment progress in the "Actions" tab of your GitHub repository:
-
-![github-actions-tab](/img/use-one-click-tutorial/actions.png)
-
-<br />
-
-<br />
-
-tip
-
-If you decide to make a commit later to a repository created from 1-Click Deploy, then the project will automatically get deployed again to Defang Playground.
-
-When it is completed, you can view your deployed app using the deployment link generated by Defang, which should appear similar to the format below:
-
-```
-https://<username>-<service-name>--<port>.defang.dev
-```
-
-### Configuration in 1-Click Deploy[​](#configuration-in-1-click-deploy "Direct link to Configuration in 1-Click Deploy")
-
-If the sample you chose requires setting configuration, such as API keys, you can set sensitive config values as secrets in your GitHub repository and the GitHub Action can automatically handle those values for you. [Learn how to manage config values with the Defang Github Action](https://github.com/DefangLabs/defang-github-action?tab=readme-ov-file#managing-config-values).
+1-Click Deploy deployed samples to the Defang Playground, which has been shut down. To deploy a sample now, follow [Getting Started](https://docs.defang.io/docs/intro/getting-started.md), or set up [deploys from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-aws.md) to your own cloud account.
 
 
 ---

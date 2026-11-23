@@ -117,5 +117,6 @@ This estimate will include a line item for the most significant monthly costs as
 Now that you have estimated the costs associated with your project. You are ready to deploy to AWS.
 
 ```
-defang compose up --provider aws --mode affordable|balanced|high_availability
+defang stack new --recipe balanced
+defang compose up
 ```

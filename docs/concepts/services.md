@@ -10,16 +10,7 @@ tip
 
 Service names are defined in your Compose file or in your Pulumi program.
 
-* Playground
-* BYOC
-
-Domains for services in Playground follow the following pattern:
-
-```
-<username>-<service-name>--<port>.prod1a.defang.dev
-```
-
-Domains for services in Defang BYOC follow the following pattern:
+Domains for services follow the following pattern:
 
 ```
 <service-name>--<port>.<project-name>.<username>.defang.app

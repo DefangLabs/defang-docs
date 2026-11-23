@@ -25,7 +25,7 @@ Overview of Defang Deploy, an AI-assisted tool that lets you take your app from 
 Learn how to use Defang
 
 - [Featured Tutorials](https://docs.defang.io/docs/tutorials.md): Learn how to use Defang
-- [Adding Custom 1-Click Deploy to Your App](https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy.md): Add a custom 1-Click Deploy link to deploy your own app.
+- [Adding 1-Click Deploy to your project](https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy.md): 1-Click Deploy links deployed to the Defang Playground, which has been shut down.
 - [Deploy with Agent Skills](https://docs.defang.io/docs/tutorials/agent-skills.md): Install the Defang plugin for Claude Code or Codex to deploy your project to the cloud directly from your agent.
 - [Configure Environment Variables](https://docs.defang.io/docs/tutorials/configure-environment-variables.md): How to configure sensitive environment variables in Defang.
 - [Deploy Existing Containers](https://docs.defang.io/docs/tutorials/deploy-container-using-the-cli.md): This tutorial will show you how to deploy an existing container/multi-container application using Defang.
@@ -36,7 +36,7 @@ Learn how to use Defang
 - [Deploy to Microsoft Azure](https://docs.defang.io/docs/tutorials/deploy-to-azure.md): Defang allows you to deploy to your own Microsoft Azure account.
 - [Deploy to DigitalOcean](https://docs.defang.io/docs/tutorials/deploy-to-digitalocean.md): Defang allows you deploy to your own DigitalOcean account.
 - [Deploy to Google Cloud Platform (GCP)](https://docs.defang.io/docs/tutorials/deploy-to-gcp.md): Defang allows you deploy to your own Google Cloud Platform (GCP) account.
-- [Deploy to Playground](https://docs.defang.io/docs/tutorials/deploy-to-playground.md): Deploy to the free Defang Playground.
+- [Deploy to Playground](https://docs.defang.io/docs/tutorials/deploy-to-playground.md): The Defang Playground has been shut down.
 - [Deploy to Your Own Cloud](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md): Defang allows you deploy to your own cloud account.
 - [Deploy Using Pulumi](https://docs.defang.io/docs/tutorials/deploy-using-pulumi.md): This tutorial deploys an NGINX service to your AWS account using the Defang AWS Pulumi provider. Pulumi will create cloud resources that may incur charges.
 - [Deploy a GPU-Powered Application to AWS](https://docs.defang.io/docs/tutorials/deploy-with-gpu.md): This tutorial will show you how to create and deploy a GPU-powered application on AWS using Defang.
@@ -56,7 +56,7 @@ Learn how to use Defang
 - [Updating Your Services](https://docs.defang.io/docs/tutorials/updating-your-services.md): How to update services deployed with Defang
 - [How to Use Your Own Domain With AWS](https://docs.defang.io/docs/tutorials/use-your-own-domain-name.md): This tutorial will show you how to set up and use your own domain when deploying to AWS using Defang.
 - [Using Codespaces and Gitpod](https://docs.defang.io/docs/tutorials/using-codespaces-gitpod.md): This tutorial will guide you to set up Defang in both GitHub Codespaces and Gitpod.
-- [Using 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md): Use 1-Click Deploy to easily deploy a sample to the Defang Playground.
+- [Using 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md): 1-Click Deploy deployed to the Defang Playground, which has been shut down.
 
 ### cli
 
@@ -119,7 +119,7 @@ Learn about Defang concepts
 - [Configuration](https://docs.defang.io/docs/concepts/configuration.md): Configuring your Defang application, including sensitive config values like API keys, passwords, and other credentials.
 - [Debug](https://docs.defang.io/docs/concepts/debug.md): Defang uses AI to help you debug your cloud applications.
 - [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md): Defang allows you deploy services, defined as containers, to your own cloud accounts.
-- [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md): Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
+- [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md): The Defang Playground has been shut down.
 - [Deployment Modes](https://docs.defang.io/docs/concepts/deployment-modes.md): Deployment modes are Defang's built-in recipes; they are now part of the broader Recipe concept.
 - [Deployment](https://docs.defang.io/docs/concepts/deployments.md): Defang will build your services in the cloud and manage the deployment process for you.
 - [Domains](https://docs.defang.io/docs/concepts/domains.md): Defang helps you provision SSL certificates and expose your services to the internet.
@@ -158,7 +158,7 @@ Defang supports all the major cloud providers
 - [Microsoft Azure](https://docs.defang.io/docs/providers/azure.md): Defang allows you to easily create and manage scalable applications with Microsoft Azure.
 - [DigitalOcean](https://docs.defang.io/docs/providers/digitalocean.md): Defang allows you to easily create and manage full, scalable applications with DigitalOcean.
 - [Google Cloud Platform (GCP)](https://docs.defang.io/docs/providers/gcp.md): Defang will allow you to easily create and manage full, scalable applications with GCP.
-- [Playground](https://docs.defang.io/docs/providers/playground.md): The Defang Playground is a free tier that allows you to experiment with Defang.
+- [Playground](https://docs.defang.io/docs/providers/playground.md): The Defang Playground has been shut down.
 
 ### ask
 

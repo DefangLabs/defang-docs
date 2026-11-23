@@ -10,9 +10,9 @@
 
 <link rel="icon" href="/img/tab_icon.svg">
 <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">
-<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.53bc9548.css">
-<script src="/assets/js/runtime~main.be386de7.js" defer="defer"></script>
-<script src="/assets/js/main.81ecdb0f.js" defer="defer"></script>
+<script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.527de24e.css">
+<script src="/assets/js/runtime~main.27db7757.js" defer="defer"></script>
+<script src="/assets/js/main.a5ecaac3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -27,7 +27,7 @@
 <p>By default, using the <code>affordable</code> mode, Defang will deprovision your existing services before provisioning replacements. This helps reduce costs.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>In <a href="/docs/concepts/defang-byoc">Defang BYOC</a>, Defang uses your cloud provider account to build and store your images.</p></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-modes">Deployment Modes<a href="#deployment-modes" class="hash-link" aria-label="Direct link to Deployment Modes" title="Direct link to Deployment Modes" translate="no">​</a></h3>
-<p>As mentioned above, Defang offers different <a href="/docs/concepts/deployment-modes">deployment modes</a>: <code>affordable</code>, <code>balanced</code>, and <code>high_availability</code>. You can switch the modes using the <code>--mode</code> CLI flag, though the recommended approach is to configure a <a href="/docs/concepts/stacks">stack</a>, which records the provider, region, and mode for a deployment.</p>
+<p>As mentioned above, Defang offers different <a href="/docs/concepts/deployment-modes">deployment modes</a>: <code>affordable</code>, <code>balanced</code>, and <code>high_availability</code>. You choose the mode when you create a <a href="/docs/concepts/stacks">stack</a>, which records the provider, region, and mode for a deployment.</p>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Workloads with GPUs do not support zero downtime deployments. If you have a workload with a GPU, you will experience downtime during updates.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="instance-types">Instance Types<a href="#instance-types" class="hash-link" aria-label="Direct link to Instance Types" title="Direct link to Instance Types" translate="no">​</a></h2>
 <p>Defang defaults to &quot;spot&quot; instances. This is a cost-effective way to run your workloads, but it does mean that your workloads can be interrupted at any time. This is consistent with the <a href="https://12factor.net/" target="_blank" rel="noopener noreferrer">12 Factor</a> principle of <a href="https://12factor.net/disposability" target="_blank" rel="noopener noreferrer">disposability</a>.</p>

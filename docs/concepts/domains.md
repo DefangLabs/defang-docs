@@ -10,17 +10,6 @@ To make your service accessible from the public internet with Defang-hosted doma
 
 When you deploy a publicly accessible service, Defang automatically provides you with domain names to access it.
 
-* Playground
-* BYOC
-
-If you're deploying to the [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md), you will receive:
-
-**Defang-hosted domain:**
-
-```
-https://<username>-<service-name>--<port>.defang.dev
-```
-
 If you're using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md), you will receive **both**:
 
 **Defang-hosted domain:**
@@ -70,7 +59,7 @@ When bringing your own domain, you have two main approaches:
 
 ### Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)[​](#option-1-using-your-existing-dns-provider-cloudflare-namecheap-etc "Direct link to Option 1: Using Your Existing DNS Provider (CloudFlare, Namecheap, etc.)")
 
-If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, or if you are using the [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md), you have two choices:
+If you are using [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md) and *do not* have your domain's DNS hosted with your cloud provider, you have two choices:
 
 **A. Point directly to your custom domain:**
 

@@ -4,4 +4,4 @@ Defang helps you provision the infrastructure you need to run your services. Tha
 
 Availability
 
-Managed storage services are available on all tiers (Starter, Pro, Enterprise) when deploying via BYOC. Defang Playground does not support managed storage services.
+Managed storage services are available on all tiers (Starter, Pro, Enterprise) when deploying via BYOC.
