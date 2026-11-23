@@ -11,7 +11,7 @@
 <link rel="icon" href="/img/tab_icon.svg">
 <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">
 <script src="/analytics.js"></script><link rel="stylesheet" href="/assets/css/styles.527de24e.css">
-<script src="/assets/js/runtime~main.27db7757.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c8914647.js" defer="defer"></script>
 <script src="/assets/js/main.a5ecaac3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,13 +32,13 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="location">Location<a href="#location" class="hash-link" aria-label="Direct link to Location" title="Direct link to Location" translate="no">​</a></h2>
 <p>The Defang BYOC GCP Provider will use the location specified in the <code>GCP_LOCATION</code> environment variable. For a list of locations available in GCP, see the <a href="https://cloud.google.com/about/locations" target="_blank" rel="noopener noreferrer">location documentation</a>. If the <code>GCP_LOCATION</code> environment variable is not set, the default location <code>us-central1</code> (Iowa) will be used.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="architecture">Architecture<a href="#architecture" class="hash-link" aria-label="Direct link to Architecture" title="Direct link to Architecture" translate="no">​</a></h2>
-<p>Defang uses GCP cloud run to build, deploy, and run your services. The following describes the current state of Defang&#x27;s support for GCP, the specific resources that Defang uses, and the roadmap for future support.</p>
+<p>Defang uses Google Cloud Build to build and deploy your services, and runs them on Google Cloud Run or Compute Engine. The following describes the current state of Defang&#x27;s support for GCP, the specific resources that Defang uses, and the roadmap for future support.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment">Deployment<a href="#deployment" class="hash-link" aria-label="Direct link to Deployment" title="Direct link to Deployment" translate="no">​</a></h3>
-<p>To deploy your services, the Defang CLI sets up some basic resources needed, including enabling required APIs in the project, creating service accounts used to build and deploy your service with the required permissions, and creating a <a href="https://cloud.google.com/storage" target="_blank" rel="noopener noreferrer">Google Cloud Storage</a> bucket where the Defang CLI uploads your source code to. The CLI then deploys a GCP Cloud Run Job that uses Pulumi to build your container image and run your services.</p>
+<p>To deploy your services, the Defang CLI sets up some basic resources needed, including enabling required APIs in the project, creating service accounts used to build and deploy your service with the required permissions, and creating a <a href="https://cloud.google.com/storage" target="_blank" rel="noopener noreferrer">Google Cloud Storage</a> bucket where the Defang CLI uploads your source code to. The CLI then starts a Google Cloud Build build in your project that runs Pulumi. Your container images are built with Cloud Build.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="runtime">Runtime<a href="#runtime" class="hash-link" aria-label="Direct link to Runtime" title="Direct link to Runtime" translate="no">​</a></h3>
-<p>The Provider builds and deploys your services using <a href="https://cloud.google.com/run" target="_blank" rel="noopener noreferrer">Google Cloud Run</a> jobs, and runs your workloads using the <a href="https://cloud.google.com/run" target="_blank" rel="noopener noreferrer">Google Cloud Run</a> service.</p>
+<p>A service with exactly one ingress port runs as a <a href="https://cloud.google.com/run" target="_blank" rel="noopener noreferrer">Google Cloud Run</a> service. A service with <code>restart: &quot;no&quot;</code> runs as a Cloud Run job. Other services can run on <a href="https://cloud.google.com/compute" target="_blank" rel="noopener noreferrer">Compute Engine</a> managed instance groups.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="secrets">Secrets<a href="#secrets" class="hash-link" aria-label="Direct link to Secrets" title="Direct link to Secrets" translate="no">​</a></h3>
-<p>The GCP provider does not currently support storing sensitive config values.</p>
+<p>Defang stores sensitive config values in <a href="https://cloud.google.com/secret-manager" target="_blank" rel="noopener noreferrer">Google Secret Manager</a> in your project.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="managed-storage">Managed Storage<a href="#managed-storage" class="hash-link" aria-label="Direct link to Managed Storage" title="Direct link to Managed Storage" translate="no">​</a></h2>
 <p>Defang can help you provision <a href="/docs/concepts/managed-storage">managed storage</a> services. The following managed storage services are supported on GCP:</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="managed-postgres">Managed Postgres<a href="#managed-postgres" class="hash-link" aria-label="Direct link to Managed Postgres" title="Direct link to Managed Postgres" translate="no">​</a></h3>

@@ -50,7 +50,7 @@ Defang allows you to configure your services with sensitive config values. Sensi
 
 ### Deployment[​](#deployment "Direct link to Deployment")
 
-To deploy your services, the Defang CLI packages your code and uploads it to an S3 bucket in your account. The CLI then deploys an ECS task that uses Pulumi to build your container image and run your service.
+To deploy your services, the Defang CLI packages your code and uploads it to an S3 bucket in your account. The CLI then starts an AWS CodeBuild build in your account that runs Pulumi. Your container images are built with CodeBuild and pushed to Amazon ECR, and Pulumi state is kept in the S3 bucket.
 
 ### Runtime[​](#runtime "Direct link to Runtime")
 
@@ -72,7 +72,7 @@ Amazon RDS is included in every AWS Region launch, so there's no region planning
 
 ### Managed Redis[​](#managed-redis "Direct link to Managed Redis")
 
-When using [Managed Redis](https://docs.defang.io/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+When using [Managed Redis](https://docs.defang.io/docs/concepts/managed-storage/managed-redis.md), the Defang CLI provisions an ElastiCache cluster in your account. The cluster runs Valkey if your service's image is a Valkey image, and Redis otherwise.
 
 Amazon ElastiCache is included in every AWS Region launch, so there's no region planning needed for managed Redis.
 
@@ -80,7 +80,7 @@ Amazon ElastiCache is included in every AWS Region launch, so there's no region 
 
 Defang offers integration with managed, cloud-native large language model services with the `x-defang-llm` service extension. Add this extension to any services which use the Bedrock SDKs.
 
-When using [Managed LLMs](https://docs.defang.io/docs/concepts/managed-llms/managed-language-models.md), the Defang CLI provisions an ElastiCache Redis cluster in your account.
+When using [Managed LLMs](https://docs.defang.io/docs/concepts/managed-llms/managed-language-models.md), the Defang CLI gives your service permission to invoke Amazon Bedrock models. It does not provision a cache or a database.
 
 ### Managed MongoDB[​](#managed-mongodb "Direct link to Managed MongoDB")
 
@@ -90,25 +90,14 @@ Defang will provision a DocumentDB instance for services that use the `x-defang-
 
 Defang will create and manage the following resources in your AWS account from its bootstrap CloudFormation template:
 
-| Resource Type                           | Example Resource Name                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| s3/Bucket                               | defang-cd-bucket-cbpbzz8hzm7                                                                              |
-| ecs/ClusterCapacityProviderAssociations | defang-cd-Cluster-pqFhjwuklvm                                                                             |
-| ecs/Cluster                             | defang-cd-ClusterpJqFhjwuklvm                                                                             |
-| iam/Role                                | defang-cd-ExeutionRole-XE7RbQDfeEwx                                                                       |
-| ec2/InternetGateway                     | igw-05bd7adc92541ec3                                                                                      |
-| ec2/VPCGatewayAttachment                | IGW                                                                                                       |
-| logs/LogGroup                           | defang-cd-Logroup-6LSZet3tFnEy                                                                            |
-| ecr/PullThroughCacheRule                | defang-cd-ecrpublic                                                                                       |
-| ec2/Route                               | rtb-08f3f5afc9e6c8c8                                                                                      |
-| ec2/RouteTable                          | rtb-08f3f5ffc9e6c8c8                                                                                      |
-| ec2/VPCEndpoint                         | vpce-02175d8d4f47d0c9                                                                                     |
-| ec2/SecurityGroup                       | sg-032b839c63e70e49                                                                                       |
-| ec2/Subnet                              | subnet-086bead399ddc8a0                                                                                   |
-| ec2/SubnetRouteTableAssociation         | rtbassoc-02e200d45e7227fe                                                                                 |
-| ecs/TaskDefinition                      | arn:aws:ecsus-west-2:381492210770<!-- -->:task-definition<!-- -->/defang-cd-TaskDefinition-RXd5tf9TaN38:1 |
-| iam/Role                                | defang-cd-askRole-gsEeDPd6sPQY                                                                            |
-| ec2/VPC                                 | vpc-0cbca64f13435695                                                                                      |
+| Resource Type              | Purpose                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| S3 bucket                  | Deployment state (Pulumi state)                                                                        |
+| CloudWatch log group       | Logs from the deployment build                                                                         |
+| IAM role                   | Role the deployment build runs as                                                                      |
+| IAM managed policy         | Permissions for that role                                                                              |
+| CodeBuild project          | Runs the deployment                                                                                    |
+| IAM OIDC provider and role | Lets GitHub Actions deploy without stored credentials; created only when GitHub OIDC access is enabled |
 
 Then, for each project you deploy, Defang will create and manage the following resources:
 
