@@ -1,0 +1,63 @@
+# Deploy Using Pulumi
+
+This tutorial deploys an NGINX service to your AWS account using the Defang AWS Pulumi provider. Pulumi will create cloud resources that may incur charges.
+
+## Prerequisites[​](#prerequisites "Direct link to Prerequisites")
+
+* [Pulumi CLI](https://www.pulumi.com/docs/install/)
+* An AWS account with [credentials configured for Pulumi](https://www.pulumi.com/registry/packages/aws/installation-configuration/)
+* A [Defang account](https://docs.defang.io/docs/concepts/authentication.md) and [authentication configured for the provider](https://www.pulumi.com/registry/packages/defang-aws/installation-configuration/)
+* Node.js and npm
+
+## Create a Pulumi project[​](#create-a-pulumi-project "Direct link to Create a Pulumi project")
+
+Log in to Pulumi Cloud, or select another [state backend](https://www.pulumi.com/docs/iac/concepts/state-and-backends/) with `pulumi login <backend-url>`:
+
+```
+pulumi login https://api.pulumi.com
+```
+
+Create a directory for your project and initialize a TypeScript project:
+
+```
+mkdir defang-pulumi-example
+cd defang-pulumi-example
+pulumi new typescript
+```
+
+Follow the prompts to create a stack. Install the Defang AWS provider in the project:
+
+```
+npm install @defang-io/pulumi-defang-aws
+```
+
+## Define the service[​](#define-the-service "Direct link to Define the service")
+
+Replace the contents of `index.ts` with:
+
+```
+import * as defangAws from "@defang-io/pulumi-defang-aws";
+
+const project = new defangAws.Project("aws-demo", {
+    services: {
+        app: {
+            image: "nginx",
+            ports: [{
+                target: 80,
+                mode: "ingress",
+                appProtocol: "http",
+            }],
+        },
+    },
+});
+
+export const endpoints = project.endpoints;
+```
+
+## Deploy and clean up[​](#deploy-and-clean-up "Direct link to Deploy and clean up")
+
+Run `pulumi up` and review the proposed resources before confirming the deployment. When it finishes, Pulumi displays the service endpoints in the stack outputs.
+
+To remove the resources created by this example, run `pulumi destroy` and confirm the changes.
+
+For provider configuration and API details, see the [Defang AWS registry page](https://www.pulumi.com/registry/packages/defang-aws/). For Google Cloud and Azure, see the [Defang Pulumi providers](https://docs.defang.io/docs/concepts/pulumi.md) and the [provider examples](https://github.com/DefangLabs/pulumi-defang/tree/main/examples).

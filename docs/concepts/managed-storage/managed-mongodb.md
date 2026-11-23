@@ -1,0 +1,71 @@
+# Managed MongoDB
+
+info
+
+This feature was introduced in Defang v1.2.0 released on June 3, 2025 for AWS. [Upgrade to the latest version](https://docs.defang.io/docs/cli/defang_upgrade.md)
+
+Managed MongoDB is a service that allows you to store and retrieve large amounts of data in a document-oriented format. MongoDB is ideal for storing unstructured data like JSON documents, making it a popular choice for modern applications.
+
+## Current Support[​](#current-support "Direct link to Current Support")
+
+| Provider                                                                                  | Managed MongoDB |
+| ----------------------------------------------------------------------------------------- | --------------- |
+| [AWS](https://docs.defang.io/docs/providers/aws.md#managed-storage)                       | ✅ DocumentDB   |
+| [Azure](https://docs.defang.io/docs/providers/azure.md)                                   | ❌              |
+| [DigitalOcean](https://docs.defang.io/docs/providers/digitalocean.md#future-improvements) | ⚠️ Unmanaged    |
+| [GCP](https://docs.defang.io/docs/providers/gcp.md#future-improvements)                   | ✅ Firestore    |
+
+## How to use Managed MongoDB[​](#how-to-use-managed-mongodb "Direct link to How to use Managed MongoDB")
+
+To use managed MongoDB, in your `compose.yaml` file, use the `x-defang-mongodb` extension to define your MongoDB service. Adding the extension will tell Defang to provision a managed instance, rather than running MongoDB as a container. Defang will show a warning when this extension is used on a service that does not use a `mongo` image. Defang will use the image tag to determine the version to provision from your cloud provider.
+
+### Required Configuration[​](#required-configuration "Direct link to Required Configuration")
+
+### AWS[​](#aws "Direct link to AWS")
+
+When using managed MongoDB on AWS, you **must** set a username and password for the database. By default, these are read from the `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` config variables, following [the official MongoDB container image](https://hub.docker.com/_/mongo) convention.
+
+You can set these using the following commands:
+
+```
+defang config set MONGO_INITDB_ROOT_USERNAME <your-username>
+defang config set MONGO_INITDB_ROOT_PASSWORD <your-password>
+```
+
+If you do not provide these values, the deployment will fail.
+
+### GCP[​](#gcp "Direct link to GCP")
+
+When using managed MongoDB on GCP, you **must** set a `MONGO_INITDB_DATABASE` environment variable with the name of the database to create.
+
+Defang will automatically create a config variable named `<SERVICE_NAME>_URL` that contains the connection string for your MongoDB database. For example, if your service is named `db`, the config variable will be `DB_URL`.
+
+**Important:** GCP will ignore `MONGO_INITDB_ROOT_USERNAME` and `MONGO_INITDB_ROOT_PASSWORD` credentials since they are not needed. GCP automatically handles authentication and grants your service access to the MongoDB database.
+
+### Example[​](#example "Direct link to Example")
+
+```
+services:
+  app:
+    # [...]
+    environment:
+      DB_URL: mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@db:27017/
+    depends_on:
+      - db
+
+  db:
+    image: mongo:5
+    x-defang-mongodb: true
+    environment:
+      MONGO_INITDB_DATABASE: mydb
+```
+
+Deleting a GCP Firestore MongoDB Database
+
+Please be aware that GCP Firestore does not allow deletion of your database when you bring down your project using `defang compose down`. You must go to the [GCP Cloud Console for Firestore](https://console.cloud.google.com/firestore/databases/) to delete it manually.
+
+Version
+
+AWS DocumentDB is compatible with MongoDB 3.6, 4.0, and 5.0. The `mongo:5` image is compatible with DocumentDB 5.0, so we recommend using this version for your MongoDB service. Deployment will fail for versions higher than 5.
+
+GCP Firestore does not have a configurable version.

@@ -1,0 +1,19 @@
+# Deploy to Your Own Cloud
+
+This tutorial will show you how to deploy your services to your own cloud account using Defang.
+
+tip
+
+Defang makes it easier to deploy to any cloud—in your *own* cloud accounts. We refer to this as [bring-your-own-cloud (BYOC)](https://docs.defang.io/docs/concepts/defang-byoc.md).
+
+## Choose your cloud[​](#choose-your-cloud "Direct link to Choose your cloud")
+
+A good starting point is to choose which cloud provider you want to deploy to. Defang supports the following cloud providers:
+
+* [AWS](https://docs.defang.io/docs/tutorials/deploy-to-aws.md)
+* [Azure](https://docs.defang.io/docs/tutorials/deploy-to-azure.md)
+* [GCP](https://docs.defang.io/docs/tutorials/deploy-to-gcp.md)
+
+DigitalOcean is deprecated.
+
+The above will link to a tutorial page for that cloud. If you run into any problems, please note that we have an [FAQ section](https://docs.defang.io/docs/category/faq.md) for your convenience.

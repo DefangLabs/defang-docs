@@ -1,0 +1,47 @@
+# Deploy Existing Containers
+
+This tutorial will show you how to deploy an existing container/multi-container application using Defang.
+
+This is rather useful if you already have a Docker container built manually, or through a CI/CD system (where the resulting image is available in a public or private repository accessible by Defang), but it is not required in order to follow along.
+
+## Step 1 - Make a Docker Compose file[​](#step-1---make-a-docker-compose-file "Direct link to Step 1 - Make a Docker Compose file")
+
+tip
+
+If you are unfamiliar with Docker Compose files, check out the [Compose](https://docs.defang.io/docs/concepts/compose.md) page.
+
+Create a `compose.yaml` file to define the [service(s)](https://docs.defang.io/docs/concepts/services.md) in your application.
+
+If you already have a Docker Compose file to define your service(s), you can use it directly and skip this step.
+
+```
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - mode: ingress
+        target: 3000
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - mode: ingress
+        target: 4000
+  redis:
+    image: redis:6.2
+    restart: unless-stopped
+    ports:
+      - mode: host
+        target: 6379
+```
+
+The example above shows a multi-container application with 3 services, `web`, `app`, `redis`. If you wanted to deploy only one container, say `app`, then the example would remain the same, except without the `web` and `redis` services.
+
+## Step 2 - Deploy[​](#step-2---deploy "Direct link to Step 2 - Deploy")
+
+Run the following command in the [Defang CLI](https://docs.defang.io/docs/intro/getting-started.md#install-the-defang-cli).
+
+```
+defang compose up
+```

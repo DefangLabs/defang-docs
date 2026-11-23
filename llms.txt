@@ -1,0 +1,188 @@
+# Defang Docs
+
+> Defang Deploy deploys Docker Compose apps to your own AWS, Google Cloud or Azure account. "Develop Once, Deploy Anywhere." Every page below is also available as Markdown: add ".md" to the page URL (for example /docs/intro.md). The full text of all pages is in https://docs.defang.io/llms-full.txt. Start with [Getting Started](https://docs.defang.io/docs/intro/getting-started.md), the [MCP server](https://docs.defang.io/docs/concepts/mcp.md), [agent skills](https://docs.defang.io/docs/tutorials/agent-skills.md) and the [CLI reference](https://docs.defang.io/docs/cli.md).
+
+
+## docs
+
+- [Documentation](https://docs.defang.io/docs.md)
+
+### intro
+
+Overview of Defang Deploy, an AI-assisted tool that lets you take your app from Docker Compose to a secure and scalable deployment on your favorite cloud in minutes.
+
+- [Overview](https://docs.defang.io/docs/intro.md): Overview of Defang Deploy, an AI-assisted tool that lets you take your app from Docker Compose to a secure and scalable deployment on your favorite cloud in minutes.
+- [Frequently Asked Questions (FAQ)](https://docs.defang.io/docs/intro/faq/questions.md): Frequently asked questions about Defang Deploy.
+- [Common Error Messages](https://docs.defang.io/docs/intro/faq/warnings-errors.md): Common warnings and error messages, and their meanings.
+- [Defang Deploy Features](https://docs.defang.io/docs/intro/features.md): Defang Deploy Features
+- [Getting Started](https://docs.defang.io/docs/intro/getting-started.md): Get started with Defang Deploy.
+- [How Defang Deploy Works](https://docs.defang.io/docs/intro/how-it-works.md): Overview of the Defang Deploy architecture and how it works in your cloud
+- [Defang Deploy Use Cases](https://docs.defang.io/docs/intro/use-cases.md): Use cases for Defang Deploy
+- [What is Defang Deploy?](https://docs.defang.io/docs/intro/what-is-defang.md): What is Defang Deploy?
+
+### tutorials
+
+Learn how to use Defang
+
+- [Featured Tutorials](https://docs.defang.io/docs/tutorials.md): Learn how to use Defang
+- [Adding Custom 1-Click Deploy to Your App](https://docs.defang.io/docs/tutorials/adding-custom-one-click-deploy.md): Add a custom 1-Click Deploy link to deploy your own app.
+- [Deploy with Agent Skills](https://docs.defang.io/docs/tutorials/agent-skills.md): Install the Defang plugin for Claude Code or Codex to deploy your project to the cloud directly from your agent.
+- [Configure Environment Variables](https://docs.defang.io/docs/tutorials/configure-environment-variables.md): How to configure sensitive environment variables in Defang.
+- [Deploy Existing Containers](https://docs.defang.io/docs/tutorials/deploy-container-using-the-cli.md): This tutorial will show you how to deploy an existing container/multi-container application using Defang.
+- [Deploy OpenAI Apps on Managed LLMs](https://docs.defang.io/docs/tutorials/deploy-openai-apps.md): Deploy OpenAI Apps on Managed LLMs
+- [Deploy OpenAI Apps to AWS Bedrock](https://docs.defang.io/docs/tutorials/deploy-openai-apps/aws-bedrock.md): Deploy OpenAI Apps to AWS Bedrock using Defang.
+- [Deploy OpenAI Apps to GCP Vertex AI](https://docs.defang.io/docs/tutorials/deploy-openai-apps/gcp-vertex.md): Deploy OpenAI Apps to GCP Vertex AI using Defang.
+- [Deploy to Amazon Web Services (AWS)](https://docs.defang.io/docs/tutorials/deploy-to-aws.md): Defang allows you deploy to your own Amazon Web Services (AWS) account.
+- [Deploy to Microsoft Azure](https://docs.defang.io/docs/tutorials/deploy-to-azure.md): Defang allows you to deploy to your own Microsoft Azure account.
+- [Deploy to DigitalOcean](https://docs.defang.io/docs/tutorials/deploy-to-digitalocean.md): Defang allows you deploy to your own DigitalOcean account.
+- [Deploy to Google Cloud Platform (GCP)](https://docs.defang.io/docs/tutorials/deploy-to-gcp.md): Defang allows you deploy to your own Google Cloud Platform (GCP) account.
+- [Deploy to Playground](https://docs.defang.io/docs/tutorials/deploy-to-playground.md): Deploy to the free Defang Playground.
+- [Deploy to Your Own Cloud](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md): Defang allows you deploy to your own cloud account.
+- [Deploy Using Pulumi](https://docs.defang.io/docs/tutorials/deploy-using-pulumi.md): This tutorial deploys an NGINX service to your AWS account using the Defang AWS Pulumi provider. Pulumi will create cloud resources that may incur charges.
+- [Deploy a GPU-Powered Application to AWS](https://docs.defang.io/docs/tutorials/deploy-with-gpu.md): This tutorial will show you how to create and deploy a GPU-powered application on AWS using Defang.
+- [Deploying from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions.md): Using the Defang Github Action to deploy your project from your CI/CD pipeline.
+- [Deploying to AWS from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-aws.md): Using the Defang GitHub Action to deploy your project to AWS from your CI/CD pipeline.
+- [Deploying to Azure from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-azure.md): Using the Defang Github Action to deploy your project to Azure from your CI/CD pipeline.
+- [Deploying to GCP from GitHub Actions](https://docs.defang.io/docs/tutorials/deploying-from-github-actions/to-gcp.md): Using the Defang Github Action to deploy your project to GCP from your CI/CD pipeline.
+- [Deploying with the Defang MCP Server](https://docs.defang.io/docs/tutorials/deploying-with-the-defang-mcp-server.md): This tutorial will show you how to deploy your services with the Defang MCP Server.
+- [Estimating AWS Deployment Costs](https://docs.defang.io/docs/tutorials/estimating-aws-deployment-costs.md): Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
+- [Estimating GCP Deployment Costs](https://docs.defang.io/docs/tutorials/estimating-gcp-deployment-costs.md): Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
+- [Generate Project Outlines With AI](https://docs.defang.io/docs/tutorials/generate-new-code-using-ai.md): This tutorial will show you how to use Defang's AI agent to generate a project outline, and then deploy that project to the cloud using Defang.
+- [Migrating from Heroku](https://docs.defang.io/docs/tutorials/migrating-from-heroku.md): Deploy your Heroku Applications in your own Cloud Account with Defang
+- [Monitoring Your Services](https://docs.defang.io/docs/tutorials/monitoring-your-services.md): How to monitor services deployed with Defang
+- [Scaling Your Services](https://docs.defang.io/docs/tutorials/scaling-your-services.md): How to scale services deployed with Defang
+- [Setting Up Your AWS Account](https://docs.defang.io/docs/tutorials/setting_up_your_aws_account.md): Follow these steps to set up your Amazon Web Services (AWS) account for deploying applications with Defang.
+- [Setting Up Your GCP Account](https://docs.defang.io/docs/tutorials/setting_up_your_gcp_account.md): Follow these steps to set up your Google Cloud Platform (GCP) account for deploying applications with Defang.
+- [Updating Your Services](https://docs.defang.io/docs/tutorials/updating-your-services.md): How to update services deployed with Defang
+- [How to Use Your Own Domain With AWS](https://docs.defang.io/docs/tutorials/use-your-own-domain-name.md): This tutorial will show you how to set up and use your own domain when deploying to AWS using Defang.
+- [Using Codespaces and Gitpod](https://docs.defang.io/docs/tutorials/using-codespaces-gitpod.md): This tutorial will guide you to set up Defang in both GitHub Codespaces and Gitpod.
+- [Using 1-Click Deploy](https://docs.defang.io/docs/tutorials/using-one-click-deploy.md): Use 1-Click Deploy to easily deploy a sample to the Defang Playground.
+
+### cli
+
+Learn about the Defang CLI
+
+- [Featured Commands](https://docs.defang.io/docs/cli.md): Learn about the Defang CLI
+- [defang](https://docs.defang.io/docs/cli/defang.md): Defang CLI is used to take your app from Docker Compose to a secure and scalable deployment on your favorite cloud in minutes.
+- [defang cert](https://docs.defang.io/docs/cli/defang_cert.md): Manage certificates
+- [defang cert generate](https://docs.defang.io/docs/cli/defang_cert_generate.md): Generate a TLS certificate
+- [defang compose](https://docs.defang.io/docs/cli/defang_compose.md): Work with local Compose files
+- [defang compose config](https://docs.defang.io/docs/cli/defang_compose_config.md): Reads a Compose file and shows the generated config
+- [defang compose down](https://docs.defang.io/docs/cli/defang_compose_down.md): Reads a Compose file and deprovisions its services
+- [defang compose logs](https://docs.defang.io/docs/cli/defang_compose_logs.md): Show logs from one or more services
+- [defang compose ls](https://docs.defang.io/docs/cli/defang_compose_ls.md): List all deployments
+- [defang compose ps](https://docs.defang.io/docs/cli/defang_compose_ps.md): Get list of services in the project
+- [defang compose up](https://docs.defang.io/docs/cli/defang_compose_up.md): Reads a Compose file and deploy a new project or update an existing project
+- [defang config](https://docs.defang.io/docs/cli/defang_config.md): Add, update, or delete service config
+- [defang config create](https://docs.defang.io/docs/cli/defang_config_create.md): Adds or updates a sensitive config value
+- [defang config ls](https://docs.defang.io/docs/cli/defang_config_ls.md): List configs
+- [defang config resolve](https://docs.defang.io/docs/cli/defang_config_resolve.md): Show the final resolved environment for the project
+- [defang config rm](https://docs.defang.io/docs/cli/defang_config_rm.md): Removes one or more config values
+- [defang deployments](https://docs.defang.io/docs/cli/defang_deployments.md): List all deployments
+- [defang estimate](https://docs.defang.io/docs/cli/defang_estimate.md): Estimate the cost of deploying the current project
+- [defang generate](https://docs.defang.io/docs/cli/defang_generate.md): Generate a sample Defang project
+- [defang init](https://docs.defang.io/docs/cli/defang_init.md): Create a new Defang project from a sample
+- [defang login](https://docs.defang.io/docs/cli/defang_login.md): Authenticate to Defang
+- [defang logout](https://docs.defang.io/docs/cli/defang_logout.md): Log out
+- [defang logs](https://docs.defang.io/docs/cli/defang_logs.md): Show logs from one or more services
+- [defang mcp](https://docs.defang.io/docs/cli/defang_mcp.md): Manage MCP Server for defang
+- [defang mcp serve](https://docs.defang.io/docs/cli/defang_mcp_serve.md): Start defang MCP server
+- [defang mcp setup](https://docs.defang.io/docs/cli/defang_mcp_setup.md): Setup MCP client for defang MCP server
+- [defang recipe](https://docs.defang.io/docs/cli/defang_recipe.md): Manage workspace recipes (deployment modes)
+- [defang recipe activate](https://docs.defang.io/docs/cli/defang_recipe_activate.md): Activates a recipe in the current workspace
+- [defang recipe deactivate](https://docs.defang.io/docs/cli/defang_recipe_deactivate.md): Deactivates a recipe in the current workspace
+- [defang recipe list](https://docs.defang.io/docs/cli/defang_recipe_list.md): List recipes in the current workspace
+- [defang recipe show](https://docs.defang.io/docs/cli/defang_recipe_show.md): Show details of a recipe in the current workspace
+- [defang services](https://docs.defang.io/docs/cli/defang_services.md): Get list of services in the project
+- [defang stack](https://docs.defang.io/docs/cli/defang_stack.md): Manage Defang deployment stacks
+- [defang stack default](https://docs.defang.io/docs/cli/defang_stack_default.md): Set the default Defang deployment stack for the current directory
+- [defang stack list](https://docs.defang.io/docs/cli/defang_stack_list.md): List existing Defang deployment stacks
+- [defang stack new](https://docs.defang.io/docs/cli/defang_stack_new.md): Create a new Defang deployment stack
+- [defang stack show](https://docs.defang.io/docs/cli/defang_stack_show.md): Show details of a Defang deployment stack
+- [defang tail](https://docs.defang.io/docs/cli/defang_tail.md): Show logs from one or more services
+- [defang terms](https://docs.defang.io/docs/cli/defang_terms.md): Read and/or agree the Defang terms of service
+- [defang token](https://docs.defang.io/docs/cli/defang_token.md): Manage personal access tokens
+- [defang upgrade](https://docs.defang.io/docs/cli/defang_upgrade.md): Upgrade the Defang CLI to the latest version
+- [defang version](https://docs.defang.io/docs/cli/defang_version.md): Get version information for the CLI and Fabric service
+- [defang whoami](https://docs.defang.io/docs/cli/defang_whoami.md): Show the current user
+- [defang workspace](https://docs.defang.io/docs/cli/defang_workspace.md): Manage workspaces
+- [defang workspace ls](https://docs.defang.io/docs/cli/defang_workspace_ls.md): List available workspaces
+
+### concepts
+
+Learn about Defang concepts
+
+- [Featured Concepts](https://docs.defang.io/docs/concepts.md): Learn about Defang concepts
+- [Accounts](https://docs.defang.io/docs/concepts/accounts.md): How accounts are organized in Defang.
+- [Authentication](https://docs.defang.io/docs/concepts/authentication.md): Authenticating with Defang.
+- [Compose](https://docs.defang.io/docs/concepts/compose.md): Defang allows you to use the compose.yaml specification to deploy your application to the cloud.
+- [Configuration](https://docs.defang.io/docs/concepts/configuration.md): Configuring your Defang application, including sensitive config values like API keys, passwords, and other credentials.
+- [Debug](https://docs.defang.io/docs/concepts/debug.md): Defang uses AI to help you debug your cloud applications.
+- [Defang BYOC](https://docs.defang.io/docs/concepts/defang-byoc.md): Defang allows you deploy services, defined as containers, to your own cloud accounts.
+- [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md): Defang Playground is deprecated in favor of the Starter tier for BYOC deployments.
+- [Deployment Modes](https://docs.defang.io/docs/concepts/deployment-modes.md): Deployment modes are Defang's built-in recipes; they are now part of the broader Recipe concept.
+- [Deployment](https://docs.defang.io/docs/concepts/deployments.md): Defang will build your services in the cloud and manage the deployment process for you.
+- [Domains](https://docs.defang.io/docs/concepts/domains.md): Defang helps you provision SSL certificates and expose your services to the internet.
+- [Cost Estimation](https://docs.defang.io/docs/concepts/estimation.md): Defang enables you to estimate the cost of deploying and running your project before you even create a cloud account.
+- [Generate](https://docs.defang.io/docs/concepts/generate.md): Defang uses AI to help you generate a starting point for your cloud applications.
+- [Local Development](https://docs.defang.io/docs/concepts/local-development.md): Deploying a different configuration than you develop with locally
+- [Managed Language Models](https://docs.defang.io/docs/concepts/managed-llms/managed-language-models.md): Defang makes it easy to leverage cloud-native managed language models.
+- [OpenAI Access Gateway](https://docs.defang.io/docs/concepts/managed-llms/openai-access-gateway.md): Defang makes it easy to leverage cloud-native managed language models for your OpenAI-compatible application.
+- [Managed Storage](https://docs.defang.io/docs/concepts/managed-storage.md): Defang can help you provision managed storage services.
+- [Managed MongoDB](https://docs.defang.io/docs/concepts/managed-storage/managed-mongodb.md): Defang can help you provision managed MongoDB instances.
+- [Managed Object Storage](https://docs.defang.io/docs/concepts/managed-storage/managed-object-storage.md): Defang can help you provision managed Redis instances.
+- [Managed Postgres](https://docs.defang.io/docs/concepts/managed-storage/managed-postgres.md): Defang can help you provision managed Postgres.
+- [Managed Redis](https://docs.defang.io/docs/concepts/managed-storage/managed-redis.md): Defang can help you provision managed Redis instances.
+- [Model Context Protocol (MCP) Server](https://docs.defang.io/docs/concepts/mcp.md): Model Context Protocol (MCP) Server with built-in tools to allow users to deploy with Defang through a supported IDE.
+- [Networking](https://docs.defang.io/docs/concepts/networking.md): Defang helps you safely configure your services' networking.
+- [Observability](https://docs.defang.io/docs/concepts/observability.md): Monitor and debug your Defang services with the Defang CLI and Portal.
+- [One-off Jobs](https://docs.defang.io/docs/concepts/one-off-jobs.md): Defang enables you to run one-off jobs during your deployment workflow.
+- [Portal](https://docs.defang.io/docs/concepts/portal.md): You can log into the Defang Portal to view the state of your Defang services.
+- [Projects](https://docs.defang.io/docs/concepts/projects.md): A _project_ refers to a cohesive collection of services which are defined and managed using a `compose.yml` file.
+- [Pulumi](https://docs.defang.io/docs/concepts/pulumi.md): Define your Defang services with Pulumi to integrate with other cloud resources.
+- [Railpack](https://docs.defang.io/docs/concepts/railpack.md): Defang will use Railpack to make an OCI-Compliant container image for your project.
+- [Recipe](https://docs.defang.io/docs/concepts/recipe.md): A recipe holds the infrastructure-as-code parameters for a deployment that aren't derived from your Compose file.
+- [Resources](https://docs.defang.io/docs/concepts/resources.md): Customize the resources your Defang services use.
+- [Scaling](https://docs.defang.io/docs/concepts/scaling.md): Defang can help you handle service irregular loads.
+- [Security](https://docs.defang.io/docs/concepts/security.md): Defang configures your cloud applications and services with security best practices.
+- [Services](https://docs.defang.io/docs/concepts/services.md): Defang allows you to deploy services, defined as containers, to the cloud.
+- [Stacks](https://docs.defang.io/docs/concepts/stacks.md): Defang supports deploying multiple instances of a project as separate stacks.
+- [Workspaces](https://docs.defang.io/docs/concepts/workspaces.md): Workspaces organize teams and manage billing for Defang deployments.
+
+### providers
+
+Defang supports all the major cloud providers
+
+- [Defang Providers](https://docs.defang.io/docs/providers.md): Defang supports all the major cloud providers
+- [Amazon Web Services (AWS)](https://docs.defang.io/docs/providers/aws.md): Defang allows you to easily create and manage full, scalable applications with AWS.
+- [Microsoft Azure](https://docs.defang.io/docs/providers/azure.md): Defang allows you to easily create and manage scalable applications with Microsoft Azure.
+- [DigitalOcean](https://docs.defang.io/docs/providers/digitalocean.md): Defang allows you to easily create and manage full, scalable applications with DigitalOcean.
+- [Google Cloud Platform (GCP)](https://docs.defang.io/docs/providers/gcp.md): Defang will allow you to easily create and manage full, scalable applications with GCP.
+- [Playground](https://docs.defang.io/docs/providers/playground.md): The Defang Playground is a free tier that allows you to experiment with Defang.
+
+### ask
+
+This is a chatbot that is trained on Defang documentation and designed to answer questions
+
+- [Ask Defang](https://docs.defang.io/docs/ask.md): This is a chatbot that is trained on Defang documentation and designed to answer questions
+
+### category
+
+- [Deploying From Github Actions](https://docs.defang.io/docs/category/deploying-from-github-actions.md): Learn how to deploy with Defang from GitHub Actions
+- [FAQ](https://docs.defang.io/docs/category/faq.md): Wondering about something? Check out one of the guides below for additional support.
+
+### samples
+
+A collection of sample applications and configurations for Defang Labs.
+
+- [Samples](https://docs.defang.io/docs/samples.md): A collection of sample applications and configurations for Defang Labs.
+
+### station
+
+Defang Station gives your coding agent an always-on machine you can reach from any browser.
+
+- [Defang Station](https://docs.defang.io/docs/station.md): Defang Station gives your coding agent an always-on machine you can reach from any browser.
+
+## search
+
+- [Search the documentation](https://docs.defang.io/search.md)

@@ -1,0 +1,3 @@
+# Documentation
+
+Redirecting to the documentation...

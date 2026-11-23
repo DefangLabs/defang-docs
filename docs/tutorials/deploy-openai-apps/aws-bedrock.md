@@ -1,0 +1,151 @@
+# Deploy OpenAI Apps to AWS Bedrock
+
+Let's assume you have an app that uses an OpenAI client library and you want to deploy it to the cloud on **AWS Bedrock**.
+
+This tutorial shows you how **Defang** makes it easy.
+
+Suppose you start with a `compose.yaml` file with one `app` service, like this:
+
+```
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      OPENAI_API_KEY:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+***
+
+## Add an LLM Service to Your Compose File[​](#add-an-llm-service-to-your-compose-file "Direct link to Add an LLM Service to Your Compose File")
+
+You can use AWS Bedrock without changing your `app` code by introducing a new [`defangio/openai-access-gateway`](https://github.com/DefangLabs/openai-access-gateway) service. We'll call the new service `llm`. This new service will act as a proxy between your application and AWS Bedrock, and will transparently handle converting your OpenAI requests into AWS Bedrock requests and Bedrock responses into OpenAI responses. This allows you to use AWS Bedrock with your existing OpenAI client SDK.
+
+```
++  llm:
++    image: defangio/openai-access-gateway
++    x-defang-llm: true
++    ports:
++      - target: 80
++        published: 80
++        mode: host
++    environment:
++      - OPENAI_API_KEY
++      - REGION
+```
+
+### Notes:[​](#notes "Direct link to Notes:")
+
+* The container image is based on [aws-samples/bedrock-access-gateway](https://github.com/aws-samples/bedrock-access-gateway), with enhancements.
+* `x-defang-llm: true` signals to **Defang** that this service should be configured to use target platform AI services.
+* New environment variables:
+  <!-- -->
+  * `REGION` is the zone where the services runs (for AWS, this is the equivalent of AWS\_REGION)
+
+tip
+
+**OpenAI Key**
+
+You no longer need your original OpenAI API Key. We recommend generating a random secret for authentication with the gateway:
+
+```
+defang config set OPENAI_API_KEY --random
+```
+
+***
+
+## Redirect Application Traffic[​](#redirect-application-traffic "Direct link to Redirect Application Traffic")
+
+Modify your `app` service to send API calls to the `openai-access-gateway`:
+
+```
+ services:
+   app:
+     ports:
+       - 3000:3000
+     environment:
+       OPENAI_API_KEY:
++      OPENAI_BASE_URL: "http://llm/api/v1"
+     healthcheck:
+       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+Now, all OpenAI traffic will be routed through your gateway service and onto AWS Bedrock.
+
+***
+
+## Selecting a Model[​](#selecting-a-model "Direct link to Selecting a Model")
+
+You should configure your application to specify the model you want to use.
+
+```
+ services:
+   app:
+     ports:
+       - 3000:3000
+     environment:
+       OPENAI_API_KEY:
+       OPENAI_BASE_URL: "http://llm/api/v1"
++      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
+     healthcheck:
+       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+```
+
+Choose the correct `MODEL` depending on which cloud provider you are using.
+
+info
+
+**Choosing the Right Model**
+
+* For **AWS Bedrock**, use a Bedrock model ID (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`). [See available Bedrock models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html).
+
+Alternatively, Defang supports [model mapping](https://docs.defang.io/docs/concepts/managed-llms/openai-access-gateway.md#model-mapping) through the [openai-access-gateway](https://github.com/DefangLabs/openai-access-gateway). This takes a model with a Docker naming convention (e.g. `ai/llama3.3`) and maps it to the closest equivalent on the target platform. If no such match can be found, a fallback can be defined to use a known existing model (e.g. `ai/mistral`). These environment variables are `USE_MODEL_MAPPING` (default to true) and `FALLBACK_MODEL` (no default), respectively.
+
+## Complete Example Compose File[​](#complete-example-compose-file "Direct link to Complete Example Compose File")
+
+```
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      OPENAI_API_KEY:
+      OPENAI_BASE_URL: "http://llm/api/v1"
+      MODEL: "anthropic.claude-3-sonnet-20240229-v1:0"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+
+  llm:
+    image: defangio/openai-access-gateway
+    x-defang-llm: true
+    ports:
+      - target: 80
+        published: 80
+        mode: host
+    environment:
+      - OPENAI_API_KEY
+      - REGION
+```
+
+***
+
+## Environment Variable Matrix[​](#environment-variable-matrix "Direct link to Environment Variable Matrix")
+
+| Variable | AWS Bedrock                                                                                           |
+| -------- | ----------------------------------------------------------------------------------------------------- |
+| `REGION` | Required                                                                                              |
+| `MODEL`  | Bedrock model ID or Docker model name, for example `meta.llama3-3-70b-instruct-v1:0` or `ai/llama3.3` |
+
+***
+
+You now have a single app that can:
+
+* Talk to **AWS Bedrock**
+* Use the same OpenAI-compatible client code
+* Easily switch between models or cloud providers by changing a few environment variables

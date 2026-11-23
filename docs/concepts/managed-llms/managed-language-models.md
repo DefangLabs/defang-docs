@@ -1,0 +1,44 @@
+# Managed Language Models
+
+Each cloud provider offers their own managed Large Language Model services. AWS offers Bedrock, GCP offers Vertex AI, Azure offers Microsoft Foundry, and Digital Ocean offers their GenAI platform. Defang makes it easy to leverage these services in your projects.
+
+Availability
+
+Managed LLM services are available on all tiers (Starter, Pro, Enterprise) when deploying via BYOC.
+
+## Current Support[​](#current-support "Direct link to Current Support")
+
+| Provider                                                                                        | Managed Language Models |
+| ----------------------------------------------------------------------------------------------- | ----------------------- |
+| [AWS Bedrock](https://docs.defang.io/docs/providers/aws.md#managed-llms)                        | ✅                      |
+| [Microsoft Foundry](https://docs.defang.io/docs/providers/azure.md)                             | ✅                      |
+| [DigitalOcean GenAI](https://docs.defang.io/docs/providers/digitalocean.md#future-improvements) | ❌                      |
+| [GCP Vertex AI](https://docs.defang.io/docs/providers/gcp.md#managed-llms)                      | ✅                      |
+
+## Usage[​](#usage "Direct link to Usage")
+
+In order to leverage cloud-native managed language models from your Defang services, all you need to do is add the `x-defang-llm` extension to the service config and Defang will configure the approprate roles and permissions for you.
+
+## Example[​](#example "Direct link to Example")
+
+info
+
+If you are planning to use Google Vertex AI, you must [enable model access](https://cloud.google.com/vertex-ai/generative-ai/docs/control-model-access) for each model you intend to use. This is not necessary on AWS Bedrock.
+
+Assume you have a web service like the following, which uses the cloud native SDK, for example:
+
+```
+ services:
+     app:
+         build:
+             context: .
++        x-defang-llm: true
+```
+
+## Deploying OpenAI-compatible apps[​](#deploying-openai-compatible-apps "Direct link to Deploying OpenAI-compatible apps")
+
+If you already have an OpenAI-compatible application, Defang makes it easy to deploy on your favourite cloud's managed LLM service. See our [OpenAI Access Gateway](https://docs.defang.io/docs/concepts/managed-llms/openai-access-gateway.md).
+
+tip
+
+Defang has a [*Managed LLM sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm) that uses the OpenAI Access Gateway, and a [*Managed LLM with Docker Model Provider sample*](https://github.com/DefangLabs/samples/tree/main/samples/managed-llm-provider) that uses a Docker Model Provider.

@@ -1,0 +1,132 @@
+# Networking
+
+By default, Defang configures your application's networking and security groups to follow secure best practices. We also configure load-balancers and public IP addresses when appropriate. The following sections describe how to configure different network and security group topologies.
+
+tip
+
+This page is about complex networking. If you want to configure your services to be accessible from the public internet, check the [Domains page](https://docs.defang.io/docs/concepts/domains.md).
+
+## Networks[​](#networks "Direct link to Networks")
+
+The Compose spec has a notion of [networks](https://github.com/compose-spec/compose-spec/blob/main/06-networks.md). By default, each service gets added to the `default` network. Services in the `default` network can have public IPs. Services in any other network will be in a private subnet. These services cannot be reached from outside the network, but they can still make network requests to the public internet.
+
+```
+services:
+  frontend:
+    build: ./fe
+    ports:
+      - 80 # load-balanced, ie. mode: ingress
+    networks:
+      default:
+      private:
+
+  backend:
+    build: ./be
+    ports:
+      - mode: host # no load balancer
+        target: 8080
+    networks:
+      private:
+
+networks:
+  default:
+  private:
+    internal: false # allow egress (the default)
+```
+
+### Public Services[​](#public-services "Direct link to Public Services")
+
+By default, services will be in the `default` network. By default these services are not accessible directly, but may be accessed through a public load-balancer, ie. exposed ports default to `mode: ingress`:
+
+```
+services:
+  web:
+    networks:
+      default: # this is the default, so no need to specify
+    ports:
+      - 80:80 # Defang will use a public load-Balancer
+```
+
+If you want a service to have a public IP address, ensure it's in the `default` network (the default) and set the port to `mode: host`:
+
+```
+services;
+  web:
+    ports:
+      - target: 80
+        mode: host # Defang will assign a public IP
+```
+
+### Private Services[​](#private-services "Direct link to Private Services")
+
+If you want a service with exposed ports to not be accessible from the public internet, create a private network:
+
+```
+services:
+  web: # this service can receive public traffic and communicate to private services
+    ports:
+      - 80
+    networks:
+      default:
+      private:
+  db: # this service can only receive traffic from other services in the same network
+    ports:
+      - 1234
+    networks:
+      private:
+networks:
+  private: # any network that's not "default" is considered private
+```
+
+The service's hostname will be the same as the service's name, in this case `db`.
+
+## Hostname Aliases[​](#hostname-aliases "Direct link to Hostname Aliases")
+
+By using network aliases, a service can be made available at multiple hostnames.
+
+```
+services:
+  web:
+    domainname: example.com
+    networks:
+      default:
+        aliases:
+          - www.example.com # a public alias
+```
+
+### Internal DNS[​](#internal-dns "Direct link to Internal DNS")
+
+Internal communication is handled slightly differently between the Defang Playground and Defang BYOC.
+
+* Playground
+* BYOC
+
+Internal communication between services in the Defang Playground follows the following pattern:
+
+```
+http://<username>-<service-name>:<port>
+```
+
+The Defang CLI applies the `<username>` prefix when it detects service names in the values of environment variables.
+
+Internal communication between services in Defang BYOC follows the following pattern:
+
+```
+http://<service-name>:<port>
+```
+
+### Custom Network CIDR[​](#custom-network-cidr "Direct link to Custom Network CIDR")
+
+By default, Defang creates a separate private/internal network in the 10.0.0.0/16 subnet for each Compose project. To customize this CIDR block, you can set the `subnet` of the `default` network in the Compose file:
+
+```
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.12.0.0/16
+```
+
+For example, if you plan to set up peering between two separate Compose projects, the two private networks cannot have overlapping IP address ranges. You can use this feature to give a distinct range to each Compose project and use the VPC peering features of the cloud provider to set up connectivity.
+
+Alternatively, to allow communication between services from different Compose projects, you can use the Compose [include](https://github.com/compose-spec/compose-spec/blob/main/14-include.md) feature to *merge* multiple Compose files into a single project. This way, the services in the different files end up in the same network and can use private/internal networking.

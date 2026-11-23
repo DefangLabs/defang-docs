@@ -1,0 +1,66 @@
+:::danger Deprecation Notice Defang Playground has been deprecated and will be discontinued. New projects cannot be deployed to Playground. Please [deploy to your own cloud account](https://docs.defang.io/docs/tutorials/deploy-to-your-cloud.md) instead. :::
+
+# Deploy to Playground
+
+This tutorial will show you how to deploy your project to the free [Defang Playground](https://docs.defang.io/docs/concepts/defang-playground.md).
+
+## Prerequisites[​](#prerequisites "Direct link to Prerequisites")
+
+* [The Defang CLI](https://docs.defang.io/docs/intro/getting-started.md#install-the-defang-cli)
+* [A Defang Account](https://docs.defang.io/docs/concepts/authentication.md)
+* [A `compose.yaml` file in your project](https://docs.docker.com/compose/gettingstarted/)
+* [A Dockerfile in your project](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/) or use [Railpack](https://docs.defang.io/docs/concepts/railpack.md)
+
+## CLI[​](#cli "Direct link to CLI")
+
+### Step 1 - Navigate to your project directory[​](#step-1---navigate-to-your-project-directory "Direct link to Step 1 - Navigate to your project directory")
+
+Head to the folder where your project is located.
+
+```
+$ cd path/to/your/project
+```
+
+### Step 2 - Deploy[​](#step-2---deploy "Direct link to Step 2 - Deploy")
+
+```
+$ defang compose up
+```
+
+If you have not used Defang before, you'll be prompted to log in.
+
+```
+ ! Please log in to continue.
+Please visit http://127.0.0.1:49154 and log in. (Right click the URL or press ENTER to open browser)
+```
+
+info
+
+To learn more about how authentication works in defang, check out the [authenticating page](https://docs.defang.io/docs/concepts/authentication.md).
+
+When you do this, you should see something similar to the output below:
+
+```
+ * Uploading build context for app
+ * Deploying service app
+ * Monitor your services' status in the defang portal
+   - https://portal.defang.dev/service/app
+ * Tailing logs for deployment ID o59k89vk3qc8 ; press Ctrl+C to detach:
+ * Press V to toggle verbose mode
+2024-09-19T10:50:53.572443-07:00 cd Update started for stack jordanstephens-prod1
+2024-09-19T10:51:05.536299-07:00 cd Update succeeded in 11.99769745s ; provisioning...
+2024-09-19T10:51:39.419693-07:00 app Server running at http://0.0.0.0:3000/
+ * Service app is in state DEPLOYMENT_COMPLETED and will be available at:
+   - https://jordanstephens-app--3000.prod1.defang.dev
+ * Done.
+```
+
+You can also check on your deployment on the on the [Defang portal](#defang-portal) as well.
+
+***
+
+## Defang Portal[​](#defang-portal "Direct link to Defang Portal")
+
+Now we can go to <https://portal.defang.dev/service/app> to see our service listed in the Defang portal.
+
+![screenshot of the defang portal](/assets/images/getting-started-portal-74f41612cb1dd8027e32e8b7ec078735.png)
