@@ -8,7 +8,7 @@ description: Defang supports deploying multiple instances of a project as separa
 
 Defang supports deploying multiple instances of a project as separate _stacks_. Each stack represents an isolated deployment of your project. Stacks allow you to manage different deployments of your project. For example, you can use stacks to support distinct development, staging, and production environments in the same cloud account. You can also use stacks to support deployments for different customers (e.g., Client A, Client B) or regions (e.g., North America, Europe) within the same project.
 
-A stack records the cloud provider, region, and deployment mode (its [recipe](/docs/concepts/recipe)) for a deployment. This supersedes passing `--provider` and `--mode` on every command: instead of repeating those flags, you select a stack and Defang uses its recorded settings. The flags still work and override the stack's values when needed.
+A stack records the cloud provider, region, and deployment mode (its [recipe](/docs/concepts/recipe)) for a deployment. Instead of repeating flags on every command, you select a stack and Defang uses its recorded settings. `defang compose up` does not accept `--mode`; set the mode when you create the stack.
 
 :::info
 Stacks requires Defang CLI v2.4.0 or later.

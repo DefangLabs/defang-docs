@@ -44,7 +44,7 @@ Ownership transfer for provider-managed workspaces is not yet implemented. The u
 
 To create a Defang-managed workspace:
 
-1. Log in to the [Defang Portal](https://portal.defang.dev)
+1. Log in to the [Defang Portal](https://portal.defang.io)
 2. Click the workspace switcher dropdown in the navigation bar
 3. Click **Create Workspace** at the bottom of the dropdown
 4. Enter a name (lowercase kebab-case is recommended, e.g., `my-team`)

@@ -124,6 +124,7 @@ GCP Cloud Run is billed based on usage, so Cloud Run line items will show as $0.
 Now that you have estimated the costs associated with your project. You are ready to deploy to GCP.
 
 ```
-defang compose up --provider gcp --mode affordable|balanced|high_availability
+defang stack new --recipe balanced
+defang compose up
 ```
 
